@@ -1,0 +1,35 @@
+id: jesseduffield-lazygit-low-github-owner-casing
+repo: jesseduffield/lazygit
+repo_url: https://github.com/jesseduffield/lazygit
+license: MIT
+stars_at_selection: 64000
+size_bucket: small
+language_tags: [go, cli, tui, github]
+pr_number: 5495
+pr_url: https://github.com/jesseduffield/lazygit/pull/5495
+pr_title: Normalize repository owner casing to fix GitHub PR integration
+merged_at: "2026-04-10T16:49:38Z"
+base_commit: 8f258a3650cef809b911df24881712bc6b5d96bd
+original_pr_head_commit: 6eda4c0aabf12e7d4dbc66cde8cf0022708ab1f7
+fixed_commit: 38dd035e289dd71ad16fb0caa34525ad03460d21
+difficulty: low
+instruction: >
+  GitHub pull request integration fails to associate a local branch with its
+  pull request when the repository owner casing differs between the PR API
+  response and the configured remote URL. Reproduce the mismatch and make PR
+  lookup handle owner casing consistently without changing branch-name matching.
+setup:
+  - go mod download
+public_tests:
+  - go test ./pkg/commands/git_commands -run TestGenerateGithubPullRequestMap
+hidden_tests:
+  - benchmark/cases/jesseduffield__lazygit/hidden-tests/low/run.sh
+test_strategy:
+  core_tests:
+    - benchmark/cases/jesseduffield__lazygit/hidden-tests/low/run.sh
+  oracle_suites: []
+  regression_tests: []
+  success_rule: core_tests_pass
+selection_notes: >
+  Small Go logic bug with a focused unit-level behavior. The original PR added
+  a regression test and changed only GitHub owner normalization.

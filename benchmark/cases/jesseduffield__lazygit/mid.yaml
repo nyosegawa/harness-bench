@@ -1,0 +1,36 @@
+id: jesseduffield-lazygit-mid-preserve-commit-message-whitespace
+repo: jesseduffield/lazygit
+repo_url: https://github.com/jesseduffield/lazygit
+license: MIT
+stars_at_selection: 64000
+size_bucket: small
+language_tags: [go, cli, tui, git]
+pr_number: 5528
+pr_url: https://github.com/jesseduffield/lazygit/pull/5528
+pr_title: Preserve whitespace when remembering commit message
+merged_at: "2026-04-18T11:58:02Z"
+base_commit: 2ad6e1a90497ba6ad520176beed6c99a89fd64ba
+original_pr_head_commit: 2e3dd1d68b6dfd0bb2305c203ff89f0e55e22f55
+fixed_commit: 0ecf818a739606d4255e009b66309e6e508ce08a
+difficulty: mid
+instruction: >
+  When a commit message is remembered and restored, whitespace in the body is
+  not preserved correctly. Reproduce the commit-message round trip and fix the
+  message/description handling so intentional blank lines and indentation are
+  kept, while co-author trailers are still appended cleanly.
+setup:
+  - go mod download
+public_tests:
+  - go test ./pkg/commands/git_commands -run TestAddCoAuthorToDescription
+hidden_tests:
+  - benchmark/cases/jesseduffield__lazygit/hidden-tests/mid/run.sh
+test_strategy:
+  core_tests:
+    - benchmark/cases/jesseduffield__lazygit/hidden-tests/mid/run.sh
+  oracle_suites: []
+  regression_tests: []
+  success_rule: core_tests_pass
+selection_notes: >
+  Multi-file TUI commit-message handling bug. Hidden tests check observable
+  string behavior around preserved body whitespace and co-author trailer
+  insertion without requiring the original helper decomposition.
