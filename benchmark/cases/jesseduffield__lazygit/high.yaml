@@ -1,0 +1,37 @@
+id: jesseduffield-lazygit-high-branch-divergence-fast-path
+repo: jesseduffield/lazygit
+repo_url: https://github.com/jesseduffield/lazygit
+license: MIT
+stars_at_selection: 64000
+size_bucket: small
+language_tags: [go, cli, tui, git, performance]
+pr_number: 5536
+pr_url: https://github.com/jesseduffield/lazygit/pull/5536
+pr_title: "Improve performance of showDivergenceFromBaseBranch"
+merged_at: "2026-04-27T05:11:36Z"
+base_commit: 01b617ea184f9fbbdc7a9dad1bad3977c2ecebb7
+original_pr_head_commit: 3d14881f052e991fc8a7c3a4921f78bed07ca784
+fixed_commit: b4f79851dba1337e72b6b2f0180239c9d59d4f8f
+difficulty: high
+instruction: >
+  Loading divergence from configured base branches is too slow in repositories
+  with many local branches because each branch triggers separate Git commands.
+  Reproduce branch behind-base calculation and use Git's ahead-behind ref
+  formatting when available, while preserving the legacy behavior on older Git
+  versions and clearing stale values for branches omitted from fresh output.
+setup:
+  - go mod download
+public_tests:
+  - go test ./pkg/commands/git_commands -run TestGetBehindBaseBranchValuesForAllBranches
+hidden_tests:
+  - benchmark/cases/jesseduffield__lazygit/hidden-tests/high/run.sh
+test_strategy:
+  core_tests:
+    - benchmark/cases/jesseduffield__lazygit/hidden-tests/high/run.sh
+  oracle_suites: []
+  regression_tests: []
+  success_rule: core_tests_pass
+selection_notes: >
+  Higher-difficulty performance bug requiring knowledge of Git version-gated
+  ahead/behind formatting, multiple base branches, parser robustness, and stale
+  branch state handling.
