@@ -1,0 +1,37 @@
+id: vitejs-vite-mid-deno-workspace-root
+repo: vitejs/vite
+repo_url: https://github.com/vitejs/vite
+license: MIT
+stars_at_selection: 80354
+size_bucket: large
+language_tags: [typescript, node, build-tool, deno]
+pr_number: 22238
+pr_url: https://github.com/vitejs/vite/pull/22238
+pr_title: "fix: detect Deno workspace root (fix #22237)"
+merged_at: "2026-04-17T06:27:13Z"
+base_commit: bb5203d01c24cf89b4f497ee968ce6f63876b946
+original_pr_head_commit: 2ea005e5ec4bf2e5c0f4ed5030d84d713f747fac
+fixed_commit: 1b793c0e1726467fffd06ffad9bc81c61a840188
+difficulty: mid
+instruction: >
+  Vite does not detect a Deno workspace root when a project is nested under a
+  directory with a deno.json workspace declaration. Reproduce workspace root
+  discovery for nested Deno workspaces and keep existing package-manager root
+  detection behavior intact.
+setup:
+  - pnpm install --ignore-scripts
+  - pnpm --filter=./packages/vite run build-bundle
+public_tests:
+  - pnpm vitest run packages/vite/src/node/server/__tests__/search-root.spec.ts
+hidden_tests:
+  - benchmark/cases/vitejs__vite/hidden-tests/mid/run.sh
+test_strategy:
+  core_tests:
+    - benchmark/cases/vitejs__vite/hidden-tests/mid/run.sh
+  oracle_suites: []
+  regression_tests: []
+  success_rule: core_tests_pass
+selection_notes: >
+  Mid-difficulty root-search bug requiring filesystem fixture behavior and
+  support for Deno workspace manifests alongside existing package manager
+  workspace detection.

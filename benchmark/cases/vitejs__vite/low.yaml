@@ -1,0 +1,36 @@
+id: vitejs-vite-low-flatten-id-sanitized-chars
+repo: vitejs/vite
+repo_url: https://github.com/vitejs/vite
+license: MIT
+stars_at_selection: 80354
+size_bucket: large
+language_tags: [typescript, node, build-tool]
+pr_number: 22208
+pr_url: https://github.com/vitejs/vite/pull/22208
+pr_title: "fix(optimizer): handle more chars that will be sanitized"
+merged_at: "2026-04-20T02:49:11Z"
+base_commit: a07a4bd052ac75f916391c999c408ad5f2867e61
+original_pr_head_commit: 9f9bc314bf69da896747f92ded5a0651f1b6176c
+fixed_commit: 3f24533ac4845ed22547279d1721bd82a35345e3
+difficulty: low
+instruction: >
+  Optimized dependency file IDs can collide or lose information when package
+  IDs contain characters that are later sanitized for URL paths. Reproduce the
+  flattening edge case and make flattened IDs encode sanitized characters
+  without colliding with underscores or nested IDs.
+setup:
+  - pnpm install --ignore-scripts
+  - pnpm --filter=./packages/vite run build-bundle
+public_tests:
+  - pnpm vitest run packages/vite/src/node/__tests__/utils.spec.ts -t flattenId
+hidden_tests:
+  - benchmark/cases/vitejs__vite/hidden-tests/low/run.sh
+test_strategy:
+  core_tests:
+    - benchmark/cases/vitejs__vite/hidden-tests/low/run.sh
+  oracle_suites: []
+  regression_tests: []
+  success_rule: core_tests_pass
+selection_notes: >
+  Focused utility bug in optimizer ID flattening. Hidden tests check exact
+  encodings and collision avoidance for URL-sanitized characters.

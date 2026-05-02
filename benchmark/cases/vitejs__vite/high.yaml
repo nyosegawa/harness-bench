@@ -1,0 +1,37 @@
+id: vitejs-vite-high-hmr-patch-esm-sentinel
+repo: vitejs/vite
+repo_url: https://github.com/vitejs/vite
+license: MIT
+stars_at_selection: 80354
+size_bucket: large
+language_tags: [typescript, node, build-tool, dev-server, hmr]
+pr_number: 22269
+pr_url: https://github.com/vitejs/vite/pull/22269
+pr_title: "fix(bundled-dev): reject requests to HMR patch files in non potentially trustworthy origins"
+merged_at: "2026-04-20T03:30:04Z"
+base_commit: 3ec9cdaac7936ca32d0956c4cb1eb6e172945996
+original_pr_head_commit: bf4fa5374e38dcd44025d38eb8cdc77a955a9204
+fixed_commit: 868f1411a6f474baa4417f2d6524692dd452f760
+difficulty: high
+instruction: >
+  In bundled dev mode, generated HMR patch files can be served as plain script
+  content. Reproduce the patch generation behavior and make HMR patch responses
+  contain ESM syntax so they cannot be consumed as classic cross-origin
+  scripts, without breaking normal update notifications.
+setup:
+  - pnpm install --ignore-scripts
+  - pnpm --filter=./packages/vite run build-bundle
+public_tests:
+  - pnpm vitest run packages/vite/src/node/server/__tests__
+hidden_tests:
+  - benchmark/cases/vitejs__vite/hidden-tests/high/run.sh
+test_strategy:
+  core_tests:
+    - benchmark/cases/vitejs__vite/hidden-tests/high/run.sh
+  oracle_suites: []
+  regression_tests: []
+  success_rule: core_tests_pass
+selection_notes: >
+  Higher-difficulty bundled-dev HMR behavior touching dev-server internals and
+  security semantics. Hidden tests exercise patch-memory output directly while
+  avoiding browser e2e flakiness.
