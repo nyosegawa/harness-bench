@@ -1,0 +1,35 @@
+id: usememos-memos-mid-mixed-case-user-resource-names
+repo: usememos/memos
+repo_url: https://github.com/usememos/memos
+license: MIT
+stars_at_selection: 47000
+size_bucket: medium
+language_tags: [go, typescript, web-app, api]
+pr_number: 5853
+pr_url: https://github.com/usememos/memos/pull/5853
+pr_title: "fix: mixed-case user resource names"
+merged_at: "2026-04-19T02:44:25Z"
+base_commit: 1fd6a2a385175399fb515d50d44bee4cda30b40c
+original_pr_head_commit: 238f873255cb796529187105456d93564f1c2215
+fixed_commit: 01be01f4b7676af41bdd1758b1e9b096aa922546
+difficulty: mid
+instruction: >
+  Mixed-case usernames become unusable in user resource names after login.
+  Reproduce the API failures for users such as "Gnammi" and fix resource-name
+  parsing and username handling so mixed-case usernames continue to work, while
+  all-numeric usernames remain invalid.
+setup:
+  - go mod download
+public_tests:
+  - go test ./server/router/api/v1/test -run TestUserResourceName
+hidden_tests:
+  - benchmark/cases/usememos__memos/hidden-tests/mid/run.sh
+test_strategy:
+  core_tests:
+    - benchmark/cases/usememos__memos/hidden-tests/mid/run.sh
+  oracle_suites: []
+  regression_tests: []
+  success_rule: core_tests_pass
+selection_notes: >
+  API resource-name compatibility bug touching validation, lookup, and current
+  user flows. Hidden tests assert mixed-case behavior and numeric rejection.

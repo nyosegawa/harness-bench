@@ -1,0 +1,35 @@
+id: usememos-memos-low-omit-internal-user-settings
+repo: usememos/memos
+repo_url: https://github.com/usememos/memos
+license: MIT
+stars_at_selection: 47000
+size_bucket: medium
+language_tags: [go, typescript, web-app, api]
+pr_number: 5917
+pr_url: https://github.com/usememos/memos/pull/5917
+pr_title: "fix(user): omit internal settings from list responses"
+merged_at: "2026-04-30T00:49:04Z"
+base_commit: 0bc56694b0ca347ab1eb083f62997a22007b763d
+original_pr_head_commit: 9a1e7da41795575f8087b074da9cfc2928c227e4
+fixed_commit: 1df3fe79559ccf94b6c71e9ffb58e870ed43820d
+difficulty: low
+instruction: >
+  Listing a user's settings returns internal-only settings such as refresh
+  tokens and shortcuts as ordinary general settings. Reproduce the API behavior
+  and make list responses omit internal user-setting keys while preserving
+  normal public settings.
+setup:
+  - go mod download
+public_tests:
+  - go test ./server/router/api/v1/test -run TestUser
+hidden_tests:
+  - benchmark/cases/usememos__memos/hidden-tests/low/run.sh
+test_strategy:
+  core_tests:
+    - benchmark/cases/usememos__memos/hidden-tests/low/run.sh
+  oracle_suites: []
+  regression_tests: []
+  success_rule: core_tests_pass
+selection_notes: >
+  Focused API data-leak/regression bug in a medium application repository.
+  Hidden tests assert response behavior rather than the converter implementation.
