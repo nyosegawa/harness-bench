@@ -1,0 +1,4801 @@
+{
+  "generatedAt": "2026-05-02T10:20:38.399Z",
+  "repo": "usememos/memos",
+  "since": "2026-01-01",
+  "limit": 50,
+  "debugKeywords": [
+    "bug",
+    "fix",
+    "regression",
+    "crash",
+    "incorrect",
+    "wrong",
+    "error",
+    "exception",
+    "edge",
+    "flaky",
+    "race",
+    "leak",
+    "validation",
+    "parser",
+    "parsing",
+    "timeout",
+    "fail",
+    "failure",
+    "broken"
+  ],
+  "prs": [
+    {
+      "number": 5925,
+      "title": "feat(memo): create memos on the selected calendar date",
+      "url": "https://github.com/usememos/memos/pull/5925",
+      "mergedAt": "2026-05-02T03:53:50Z",
+      "baseRefName": "main",
+      "headRefName": "feat/calendar-date-prefill",
+      "baseRefOid": "d349fe4409cd1912c447f43572ab2e102f4964c0",
+      "headRefOid": "f403be2fae032e05958ec40204edcecc7b015022",
+      "mergeCommitOid": "ef55013418d68e2d6a24a6d02a0365c1ffff03d7",
+      "changedFiles": 10,
+      "additions": 1125,
+      "deletions": 8,
+      "labels": [],
+      "keywordHits": [
+        "parsing"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "docs/superpowers/specs/2026-05-02-calendar-date-prefill-design.md",
+        "web/tests/calendar-cell-empty-clickable.test.tsx",
+        "web/tests/derive-default-create-time.test.ts"
+      ],
+      "debugScore": 2,
+      "suggestedDifficulty": "high",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "docs/superpowers/plans/2026-05-02-calendar-date-prefill.md",
+          "additions": 738,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "docs/superpowers/specs/2026-05-02-calendar-date-prefill-design.md",
+          "additions": 165,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "web/src/components/ActivityCalendar/CalendarCell.tsx",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/hooks/useMemoInit.ts",
+          "additions": 14,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/index.tsx",
+          "additions": 34,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/types/components.ts",
+          "additions": 8,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/utils/deriveDefaultCreateTime.ts",
+          "additions": 26,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "web/src/components/PagedMemoList/PagedMemoList.tsx",
+          "additions": 12,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/tests/calendar-cell-empty-clickable.test.tsx",
+          "additions": 50,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "web/tests/derive-default-create-time.test.ts",
+          "additions": 75,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 5921,
+      "title": "fix(frontend): use correct url path for memos in sitemap.xml",
+      "url": "https://github.com/usememos/memos/pull/5921",
+      "mergedAt": "2026-05-01T08:08:31Z",
+      "baseRefName": "main",
+      "headRefName": "main",
+      "baseRefOid": "a0b64176891d40525c1b8b6634150671a71fdc53",
+      "headRefOid": "e605da370ce39c99e7f3f520a1b7a3bc0f3bbb89",
+      "mergeCommitOid": "603781f792b2603fbda93146988a64a93c92d760",
+      "changedFiles": 1,
+      "additions": 1,
+      "deletions": 1,
+      "labels": [],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "server/router/frontend/frontend.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5917,
+      "title": "fix(user): omit internal settings from list responses",
+      "url": "https://github.com/usememos/memos/pull/5917",
+      "mergedAt": "2026-04-30T00:49:04Z",
+      "baseRefName": "main",
+      "headRefName": "codex/fix-user-settings-internal-rows",
+      "baseRefOid": "0bc56694b0ca347ab1eb083f62997a22007b763d",
+      "headRefOid": "9a1e7da41795575f8087b074da9cfc2928c227e4",
+      "mergeCommitOid": "1df3fe79559ccf94b6c71e9ffb58e870ed43820d",
+      "changedFiles": 2,
+      "additions": 64,
+      "deletions": 8,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "regression"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "server/router/api/v1/test/user_setting_test.go"
+      ],
+      "debugScore": 4,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "server/router/api/v1/test/user_setting_test.go",
+          "additions": 58,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "server/router/api/v1/user_service.go",
+          "additions": 6,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5912,
+      "title": "chore: refactor Settings UI structure",
+      "url": "https://github.com/usememos/memos/pull/5912",
+      "mergedAt": "2026-04-29T01:30:59Z",
+      "baseRefName": "main",
+      "headRefName": "codex/refactor-settings-ui",
+      "baseRefOid": "14480bfc4638213e2b3ccefa31628704354b9034",
+      "headRefOid": "4df1f7a51e0ae302841a21e318b5dd2bce58d676",
+      "mergeCommitOid": "267f90a3fff40a1eadbf1e6e8e7be02475698778",
+      "changedFiles": 15,
+      "additions": 671,
+      "deletions": 417,
+      "labels": [],
+      "keywordHits": [
+        "validation"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "web/src/components/Settings/AISection.tsx",
+          "additions": 19,
+          "deletions": 23,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/Settings/InstanceSection.tsx",
+          "additions": 102,
+          "deletions": 102,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/Settings/MemoRelatedSettings.tsx",
+          "additions": 50,
+          "deletions": 56,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/Settings/PreferencesSection.tsx",
+          "additions": 39,
+          "deletions": 28,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/Settings/SettingGroup.tsx",
+          "additions": 7,
+          "deletions": 7,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/Settings/SettingList.tsx",
+          "additions": 95,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "web/src/components/Settings/SettingRow.tsx",
+          "additions": 9,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/Settings/SettingSection.tsx",
+          "additions": 9,
+          "deletions": 7,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/Settings/StorageSection.tsx",
+          "additions": 19,
+          "deletions": 24,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/Settings/TagsSection.tsx",
+          "additions": 77,
+          "deletions": 75,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/Settings/settingSections.ts",
+          "additions": 120,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "web/src/components/Settings/useInstanceSettingUpdater.ts",
+          "additions": 36,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "web/src/locales/en.json",
+          "additions": 20,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/locales/zh-Hans.json",
+          "additions": 20,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/pages/Setting.tsx",
+          "additions": 49,
+          "deletions": 92,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5911,
+      "title": "chore: upgrade pnpm to 11",
+      "url": "https://github.com/usememos/memos/pull/5911",
+      "mergedAt": "2026-04-28T14:16:23Z",
+      "baseRefName": "main",
+      "headRefName": "codex/upgrade-pnpm-11",
+      "baseRefOid": "328396a97f2219592032e8418c383e0ab7edaca6",
+      "headRefOid": "799cb5a9b8afa611c55a47b5f6c97d8948cd1114",
+      "mergeCommitOid": "ee65e90a39ffef217c98d6c5b93147a97df98f0f",
+      "changedFiles": 6,
+      "additions": 7,
+      "deletions": 9,
+      "labels": [],
+      "keywordHits": [
+        "validation"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".github/workflows/build-canary-image.yml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": ".github/workflows/frontend-tests.yml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": ".github/workflows/release.yml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "AGENTS.md",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/package.json",
+          "additions": 1,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/pnpm-workspace.yaml",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 5903,
+      "title": "fix(web): sync avatar changes immediately after profile update",
+      "url": "https://github.com/usememos/memos/pull/5903",
+      "mergedAt": "2026-04-28T13:57:58Z",
+      "baseRefName": "main",
+      "headRefName": "fix/profile-avatar-not-updating",
+      "baseRefOid": "616487fa373e89ce25cffc5cc0d2c22f8802c561",
+      "headRefOid": "71af95e396d082b451c5e449900134aa6b218b7e",
+      "mergeCommitOid": "328396a97f2219592032e8418c383e0ab7edaca6",
+      "changedFiles": 2,
+      "additions": 25,
+      "deletions": 2,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "validation"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "web/src/components/UpdateAccountDialog.tsx",
+          "additions": 4,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/contexts/AuthContext.tsx",
+          "additions": 21,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5902,
+      "title": "chore: increased muted text contrast in dark theme",
+      "url": "https://github.com/usememos/memos/pull/5902",
+      "mergedAt": "2026-04-28T12:03:24Z",
+      "baseRefName": "main",
+      "headRefName": "fix/5899",
+      "baseRefOid": "616487fa373e89ce25cffc5cc0d2c22f8802c561",
+      "headRefOid": "412362417c588371330a932b11ebd9eb255b4d4a",
+      "mergeCommitOid": "93538486032f18f83aca31bf71382fd7e9191804",
+      "changedFiles": 1,
+      "additions": 1,
+      "deletions": 1,
+      "labels": [],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "web/src/themes/default-dark.css",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5900,
+      "title": "chore: update backend and frontend dependencies",
+      "url": "https://github.com/usememos/memos/pull/5900",
+      "mergedAt": "2026-04-28T00:25:27Z",
+      "baseRefName": "main",
+      "headRefName": "codex/update-dependencies",
+      "baseRefOid": "18e729fe0037e740649f87feaa53c1dadf7cc8e9",
+      "headRefOid": "52d3fde0c90fb72a19c4f4e6228a8adc6a4ba503",
+      "mergeCommitOid": "616487fa373e89ce25cffc5cc0d2c22f8802c561",
+      "changedFiles": 9,
+      "additions": 1451,
+      "deletions": 1595,
+      "labels": [],
+      "keywordHits": [
+        "validation"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "store/test/containers.go"
+      ],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "huge-diff"
+      ],
+      "files": [
+        {
+          "path": ".github/workflows/backend-tests.yml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": ".github/workflows/release.yml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "AGENTS.md",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "go.mod",
+          "additions": 70,
+          "deletions": 76,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "go.sum",
+          "additions": 165,
+          "deletions": 274,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "scripts/Dockerfile",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/test/containers.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/package.json",
+          "additions": 21,
+          "deletions": 21,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/pnpm-lock.yaml",
+          "additions": 1189,
+          "deletions": 1218,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5681,
+      "title": "fix: access token refresh on web app",
+      "url": "https://github.com/usememos/memos/pull/5681",
+      "mergedAt": "2026-03-05T11:29:21Z",
+      "baseRefName": "main",
+      "headRefName": "fix-token-refresh",
+      "baseRefOid": "0729779e0427c68bdbc5b6b711a5683f66ba9bbc",
+      "headRefOid": "32b6ca33b85bda867c0a0a78655240d2b04de47b",
+      "mergeCommitOid": "3010f10eafb49af5aadd71a94b3ef7a6ec71f617",
+      "changedFiles": 2,
+      "additions": 11,
+      "deletions": 6,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "web/src/connect.ts",
+          "additions": 8,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/hooks/useTokenRefreshOnFocus.ts",
+          "additions": 3,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5866,
+      "title": "chore(main): release 0.28.0",
+      "url": "https://github.com/usememos/memos/pull/5866",
+      "mergedAt": "2026-04-27T00:56:01Z",
+      "baseRefName": "main",
+      "headRefName": "release-please--branches--main--components--memos",
+      "baseRefOid": "94ce1e53476d9d15eabdc5ea3f0472468693d42d",
+      "headRefOid": "88e58727c674c1153f02c81c454c85f5d36125fd",
+      "mergeCommitOid": "9bf648ac911be4729283ef5e34f7f4c9bd86c97e",
+      "changedFiles": 2,
+      "additions": 20,
+      "deletions": 1,
+      "labels": [
+        "autorelease: tagged"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "validation"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".release-please-manifest.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "CHANGELOG.md",
+          "additions": 19,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5894,
+      "title": "feat(memos): choose created or updated time for memos",
+      "url": "https://github.com/usememos/memos/pull/5894",
+      "mergedAt": "2026-04-26T03:50:27Z",
+      "baseRefName": "main",
+      "headRefName": "codex/memo-sort-time-toggle",
+      "baseRefOid": "3949a252dbcf0c78458b845aeb345ded8f461423",
+      "headRefOid": "03cfb6f516e206b33faf2a4df10a2552a9060ef9",
+      "mergeCommitOid": "c268551a16929a2cbea6891951feff91926bba59",
+      "changedFiles": 49,
+      "additions": 483,
+      "deletions": 484,
+      "labels": [],
+      "keywordHits": [
+        "error"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "server/router/api/v1/test/memo_service_test.go"
+      ],
+      "debugScore": 2,
+      "suggestedDifficulty": "high",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "proto/api/v1/instance_service.proto",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/api/v1/memo_service.proto",
+          "additions": 5,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/api/v1/user_service.proto",
+          "additions": 5,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/api/v1/instance_service.pb.go",
+          "additions": 4,
+          "deletions": 14,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/api/v1/memo_service.pb.go",
+          "additions": 73,
+          "deletions": 84,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/api/v1/user_service.pb.go",
+          "additions": 16,
+          "deletions": 16,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/openapi.yaml",
+          "additions": 9,
+          "deletions": 16,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/store/instance_setting.pb.go",
+          "additions": 3,
+          "deletions": 13,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/store/instance_setting.proto",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/instance_service.go",
+          "additions": 0,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/memo_service.go",
+          "additions": 17,
+          "deletions": 54,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/memo_service_converter.go",
+          "additions": 8,
+          "deletions": 34,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/test/memo_service_test.go",
+          "additions": 121,
+          "deletions": 28,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/user_service_stats.go",
+          "additions": 5,
+          "deletions": 25,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoActionMenu/memoShareImagePreviewModel.ts",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoCommentSection.tsx",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoDisplaySettingMenu.tsx",
+          "additions": 18,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoMetadata/Relation/LinkMemoDialog.tsx",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoView/MemoViewContext.tsx",
+          "additions": 5,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoView/components/MemoHeader.tsx",
+          "additions": 3,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/PagedMemoList/PagedMemoList.tsx",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/Settings/MemoRelatedSettings.tsx",
+          "additions": 0,
+          "deletions": 7,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/UserMemoMap/UserMemoMap.tsx",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/contexts/ViewContext.tsx",
+          "additions": 28,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/hooks/useFilteredMemoStats.ts",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/hooks/useMemoFilters.ts",
+          "additions": 2,
+          "deletions": 7,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/hooks/useMemoSorting.ts",
+          "additions": 14,
+          "deletions": 9,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/locales/en.json",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/locales/zh-Hans.json",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/locales/zh-Hant.json",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/pages/Home.tsx",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/pages/MemoDetail.tsx",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/pages/UserProfile.tsx",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/types/proto/api/v1/ai_service_pb.ts",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/types/proto/api/v1/attachment_service_pb.ts",
+          "additions": 7,
+          "deletions": 7,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/types/proto/api/v1/auth_service_pb.ts",
+          "additions": 5,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/types/proto/api/v1/common_pb.ts",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/types/proto/api/v1/idp_service_pb.ts",
+          "additions": 6,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/types/proto/api/v1/instance_service_pb.ts",
+          "additions": 9,
+          "deletions": 16,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/types/proto/api/v1/memo_service_pb.ts",
+          "additions": 21,
+          "deletions": 28,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/types/proto/api/v1/shortcut_service_pb.ts",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/types/proto/api/v1/user_service_pb.ts",
+          "additions": 31,
+          "deletions": 31,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/types/proto/google/api/annotations_pb.ts",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/types/proto/google/api/client_pb.ts",
+          "additions": 23,
+          "deletions": 23,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/types/proto/google/api/field_behavior_pb.ts",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/types/proto/google/api/http_pb.ts",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/types/proto/google/api/launch_stage_pb.ts",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/types/proto/google/api/resource_pb.ts",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/types/proto/google/type/color_pb.ts",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5890,
+      "title": "fix(auth): harden authorization and username validation",
+      "url": "https://github.com/usememos/memos/pull/5890",
+      "mergedAt": "2026-04-25T13:24:16Z",
+      "baseRefName": "main",
+      "headRefName": "fix/auth-authorization-hardening",
+      "baseRefOid": "ee1799851e88674a6920c7a56d93428fcf95e662",
+      "headRefOid": "2d7a0f1439068d9cfa88e892f91a5188dfbc3ae4",
+      "mergeCommitOid": "0fb83a745dd5057ade45a3caad2c444af2239113",
+      "changedFiles": 19,
+      "additions": 771,
+      "deletions": 96,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "validation"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "server/router/api/v1/connect_interceptors_test.go",
+        "server/router/api/v1/test/attachment_service_test.go",
+        "server/router/api/v1/test/auth_service_test.go",
+        "server/router/api/v1/test/auth_test.go",
+        "server/router/api/v1/test/user_search_test.go",
+        "server/router/api/v1/test/user_service_email_username_test.go",
+        "server/router/api/v1/test/user_service_registration_test.go",
+        "server/router/api/v1/user_resource_name_test.go"
+      ],
+      "debugScore": 3,
+      "suggestedDifficulty": "high",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "server/auth/authenticator.go",
+          "additions": 12,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/attachment_service.go",
+          "additions": 18,
+          "deletions": 14,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/auth_service.go",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/common.go",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/connect_interceptors_test.go",
+          "additions": 26,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/memo_attachment_service.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/sso_username.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/test/attachment_service_test.go",
+          "additions": 117,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/test/auth_service_test.go",
+          "additions": 17,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/test/auth_test.go",
+          "additions": 27,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/test/user_search_test.go",
+          "additions": 17,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/test/user_service_email_username_test.go",
+          "additions": 124,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/test/user_service_registration_test.go",
+          "additions": 148,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/user_resource_name.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/user_resource_name_test.go",
+          "additions": 116,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "server/router/api/v1/user_service.go",
+          "additions": 85,
+          "deletions": 75,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/v1.go",
+          "additions": 27,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/store.go",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/user.go",
+          "additions": 24,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5886,
+      "title": "feat: redesign account and SSO management",
+      "url": "https://github.com/usememos/memos/pull/5886",
+      "mergedAt": "2026-04-24T01:08:59Z",
+      "baseRefName": "main",
+      "headRefName": "feat/settings-account-sso-refresh",
+      "baseRefOid": "30c0611a82f9254952a74650095105254f2940e4",
+      "headRefOid": "3e428667e7e9e0c7bd0061ffddb83bc9ae9b6908",
+      "mergeCommitOid": "ee1799851e88674a6920c7a56d93428fcf95e662",
+      "changedFiles": 26,
+      "additions": 2060,
+      "deletions": 418,
+      "labels": [],
+      "keywordHits": [
+        "error",
+        "validation",
+        "timeout",
+        "fail",
+        "failure"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "internal/idp/oauth2/oauth2_test.go",
+        "server/router/api/v1/test/test_helper.go",
+        "server/router/api/v1/test/user_service_delete_test.go"
+      ],
+      "debugScore": 4,
+      "suggestedDifficulty": "high",
+      "exclusionHints": [
+        "huge-diff"
+      ],
+      "files": [
+        {
+          "path": "internal/idp/oauth2/oauth2.go",
+          "additions": 14,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "internal/idp/oauth2/oauth2_test.go",
+          "additions": 53,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/auth_service.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/test/test_helper.go",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/test/user_service_delete_test.go",
+          "additions": 422,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/user_service.go",
+          "additions": 23,
+          "deletions": 13,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/attachment.go",
+          "additions": 18,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/db/mysql/memo_share.go",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/db/postgres/memo_share.go",
+          "additions": 6,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/db/sqlite/memo_share.go",
+          "additions": 6,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/memo_share.go",
+          "additions": 4,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/store.go",
+          "additions": 5,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/user.go",
+          "additions": 11,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/user_delete.go",
+          "additions": 666,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "web/src/components/CreateIdentityProviderDialog.tsx",
+          "additions": 382,
+          "deletions": 299,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/Settings/AccessTokenSection.tsx",
+          "additions": 10,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/Settings/InfoChip.tsx",
+          "additions": 42,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "web/src/components/Settings/LinkedIdentitySection.tsx",
+          "additions": 43,
+          "deletions": 19,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/Settings/MemberSection.tsx",
+          "additions": 43,
+          "deletions": 23,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/Settings/MyAccountSection.tsx",
+          "additions": 24,
+          "deletions": 15,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/Settings/SSOSection.tsx",
+          "additions": 35,
+          "deletions": 15,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/Settings/SettingGroup.tsx",
+          "additions": 11,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/Settings/SettingTable.tsx",
+          "additions": 11,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/helpers/sso-display.ts",
+          "additions": 123,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "web/src/locales/en.json",
+          "additions": 49,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/locales/zh-Hans.json",
+          "additions": 52,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5885,
+      "title": "fix: fix legacy username auth flows",
+      "url": "https://github.com/usememos/memos/pull/5885",
+      "mergedAt": "2026-04-23T14:35:39Z",
+      "baseRefName": "main",
+      "headRefName": "codex/fix-legacy-auth-usernames",
+      "baseRefOid": "d688914b2864791eeadbf21c882608632875f17c",
+      "headRefOid": "6e30abe003e30ab6c80a79dcf2fb566ceaf57637",
+      "mergeCommitOid": "30c0611a82f9254952a74650095105254f2940e4",
+      "changedFiles": 13,
+      "additions": 437,
+      "deletions": 26,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "regression",
+        "error",
+        "validation",
+        "parsing",
+        "fail"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "server/router/api/v1/auth_service_client_info_test.go",
+        "server/router/api/v1/connect_interceptors_test.go",
+        "server/router/api/v1/test/shortcut_service_test.go",
+        "server/router/api/v1/test/user_notification_test.go",
+        "server/router/api/v1/test/user_resource_name_test.go",
+        "server/router/api/v1/test/user_service_email_username_test.go",
+        "server/router/api/v1/test/user_service_registration_test.go",
+        "server/router/api/v1/test/user_service_stats_test.go"
+      ],
+      "debugScore": 7,
+      "suggestedDifficulty": "high",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "server/router/api/v1/auth_service.go",
+          "additions": 31,
+          "deletions": 13,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/auth_service_client_info_test.go",
+          "additions": 49,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/connect_interceptors.go",
+          "additions": 9,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/connect_interceptors_test.go",
+          "additions": 39,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "server/router/api/v1/test/shortcut_service_test.go",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/test/user_notification_test.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/test/user_resource_name_test.go",
+          "additions": 83,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/test/user_service_email_username_test.go",
+          "additions": 136,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "server/router/api/v1/test/user_service_registration_test.go",
+          "additions": 64,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/test/user_service_stats_test.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/user_resource_name.go",
+          "additions": 2,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/user_service.go",
+          "additions": 16,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/pages/SignUp.tsx",
+          "additions": 4,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5883,
+      "title": "feat(auth): add SSO user identity linkage",
+      "url": "https://github.com/usememos/memos/pull/5883",
+      "mergedAt": "2026-04-23T00:51:45Z",
+      "baseRefName": "main",
+      "headRefName": "feat/sso-user-identity-linkage",
+      "baseRefOid": "50638040f618b02b0c6d010e1d41554c75067517",
+      "headRefOid": "e35fcf91f3b4124ab0d15223e1ca85715b0e99c1",
+      "mergeCommitOid": "d688914b2864791eeadbf21c882608632875f17c",
+      "changedFiles": 60,
+      "additions": 3981,
+      "deletions": 332,
+      "labels": [],
+      "keywordHits": [
+        "race"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "server/router/api/v1/test/auth_service_test.go",
+        "server/router/api/v1/test/user_service_delete_test.go",
+        "store/test/user_identity_test.go",
+        "web/tests/oauth.test.ts"
+      ],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "huge-diff"
+      ],
+      "files": [
+        {
+          "path": ".gitignore",
+          "additions": 0,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/plans/2026-03-23-memo-detail-outline/definition.md",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "docs/plans/2026-03-23-memo-detail-outline/plan.md",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "docs/plans/2026-03-23-tag-blur-attribute/definition.md",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "docs/plans/2026-03-23-tag-blur-attribute/execution.md",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "docs/plans/2026-03-23-tag-blur-attribute/plan.md",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "docs/plans/2026-03-24-user-resource-identifiers/definition.md",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "docs/plans/2026-03-24-user-resource-identifiers/design.md",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "docs/plans/2026-03-24-user-resource-identifiers/execution.md",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "docs/plans/2026-03-24-user-resource-identifiers/plan.md",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "docs/plans/2026-03-31-quick-voice-input/definition.md",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "docs/plans/2026-03-31-quick-voice-input/design.md",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "docs/plans/2026-03-31-quick-voice-input/execution.md",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "docs/plans/2026-03-31-quick-voice-input/plan.md",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "docs/plans/2026-04-06-memo-mentions/definition.md",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "docs/plans/2026-04-06-memo-mentions/design.md",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "docs/plans/2026-04-06-memo-mentions/execution.md",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "docs/plans/2026-04-06-memo-mentions/plan.md",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "docs/plans/2026-04-21-sso-user-identity-linkage/definition.md",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "docs/plans/2026-04-21-sso-user-identity-linkage/design.md",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "docs/plans/2026-04-21-sso-user-identity-linkage/execution.md",
+          "additions": 105,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "docs/plans/2026-04-21-sso-user-identity-linkage/plan.md",
+          "additions": 328,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "proto/api/v1/user_service.proto",
+          "additions": 108,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/api/v1/apiv1connect/user_service.connect.go",
+          "additions": 124,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/api/v1/user_service.pb.go",
+          "additions": 560,
+          "deletions": 183,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/api/v1/user_service.pb.gw.go",
+          "additions": 318,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/api/v1/user_service_grpc.pb.go",
+          "additions": 160,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/openapi.yaml",
+          "additions": 171,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/auth_service.go",
+          "additions": 236,
+          "deletions": 77,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/connect_services.go",
+          "additions": 35,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/sso_username.go",
+          "additions": 20,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "server/router/api/v1/test/auth_service_test.go",
+          "additions": 254,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "server/router/api/v1/test/user_service_delete_test.go",
+          "additions": 67,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "server/router/api/v1/user_service.go",
+          "additions": 173,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/db/mysql/user_identity.go",
+          "additions": 107,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "store/db/mysql/user_setting.go",
+          "additions": 16,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/db/postgres/user_identity.go",
+          "additions": 95,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "store/db/postgres/user_setting.go",
+          "additions": 16,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/db/sqlite/user_identity.go",
+          "additions": 95,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "store/db/sqlite/user_setting.go",
+          "additions": 16,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/driver.go",
+          "additions": 6,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/migration/mysql/0.28/00__user_identity.sql",
+          "additions": 15,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "store/migration/mysql/LATEST.sql",
+          "additions": 14,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/migration/postgres/0.28/00__user_identity.sql",
+          "additions": 15,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "store/migration/postgres/LATEST.sql",
+          "additions": 14,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/migration/sqlite/0.28/00__user_identity.sql",
+          "additions": 15,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "store/migration/sqlite/LATEST.sql",
+          "additions": 14,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/test/user_identity_test.go",
+          "additions": 199,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "store/user_identity.go",
+          "additions": 59,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "store/user_setting.go",
+          "additions": 22,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/Settings/LinkedIdentitySection.tsx",
+          "additions": 184,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "web/src/components/Settings/MyAccountSection.tsx",
+          "additions": 44,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/Settings/SSOSection.tsx",
+          "additions": 50,
+          "deletions": 17,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/locales/en.json",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/locales/zh-Hans.json",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/pages/AuthCallback.tsx",
+          "additions": 37,
+          "deletions": 18,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/pages/SignIn.tsx",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/types/proto/api/v1/user_service_pb.ts",
+          "additions": 227,
+          "deletions": 22,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/utils/oauth.ts",
+          "additions": 14,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/tests/oauth.test.ts",
+          "additions": 44,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 5880,
+      "title": "fix: reduce list memo query overhead",
+      "url": "https://github.com/usememos/memos/pull/5880",
+      "mergedAt": "2026-04-22T01:31:48Z",
+      "baseRefName": "main",
+      "headRefName": "codex/list-memos-perf-bench",
+      "baseRefOid": "b5863d76be3cfbf3e0f8237d8e762122b5a0a679",
+      "headRefOid": "f133abc8c0419b82c98fb98a4e670328d5f96ab1",
+      "mergeCommitOid": "50638040f618b02b0c6d010e1d41554c75067517",
+      "changedFiles": 12,
+      "additions": 453,
+      "deletions": 43,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "regression",
+        "validation"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "server/router/api/v1/test/memo_service_benchmark_test.go"
+      ],
+      "debugScore": 4,
+      "suggestedDifficulty": "high",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "server/router/api/v1/memo_service.go",
+          "additions": 18,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/memo_service_converter.go",
+          "additions": 69,
+          "deletions": 18,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/memo_share_service.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/test/memo_service_benchmark_test.go",
+          "additions": 282,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "store/db/mysql/memo_relation.go",
+          "additions": 16,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/db/postgres/memo_relation.go",
+          "additions": 20,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/db/sqlite/memo_relation.go",
+          "additions": 16,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/memo_relation.go",
+          "additions": 6,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoMetadata/Relation/RelationListView.tsx",
+          "additions": 11,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoMetadata/Relation/useResolvedRelationMemos.ts",
+          "additions": 4,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoView/components/MemoCommentListView.tsx",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/hooks/useMemoQueries.ts",
+          "additions": 9,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5879,
+      "title": "docs: refine SSO identity linkage design",
+      "url": "https://github.com/usememos/memos/pull/5879",
+      "mergedAt": "2026-04-22T01:09:15Z",
+      "baseRefName": "main",
+      "headRefName": "docs/sso-user-identity-linkage-design",
+      "baseRefOid": "b5863d76be3cfbf3e0f8237d8e762122b5a0a679",
+      "headRefOid": "39cc6b11d5330fa8527e342833e1166c5f99d222",
+      "mergeCommitOid": "ebc0e10f07d416ffe32ae7756e13d84a4b64d339",
+      "changedFiles": 2,
+      "additions": 243,
+      "deletions": 0,
+      "labels": [],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "docs-only",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "docs/issues/2026-04-21-sso-user-identity-linkage/definition.md",
+          "additions": 70,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "docs/issues/2026-04-21-sso-user-identity-linkage/design.md",
+          "additions": 173,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 5871,
+      "title": "SSO: fall back to raw identifier lookup when transform is active",
+      "url": "https://github.com/usememos/memos/pull/5871",
+      "mergedAt": "2026-04-21T04:31:17Z",
+      "baseRefName": "feat/idp-identifier-transform",
+      "headRefName": "copilot/fix-review-issues-5868",
+      "baseRefOid": "7cd0256fca789f515e8e0b0246b726029a642280",
+      "headRefOid": "f82216a92610c3f7dac28e8189ebf9db52adedc8",
+      "mergeCommitOid": "f1a7947feaf13498a81b3910e9e2194143e67b1d",
+      "changedFiles": 1,
+      "additions": 11,
+      "deletions": 0,
+      "labels": [],
+      "keywordHits": [
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "server/router/api/v1/auth_service.go",
+          "additions": 11,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5870,
+      "title": "fix: correct gofmt formatting in transform_test.go",
+      "url": "https://github.com/usememos/memos/pull/5870",
+      "mergedAt": "2026-04-21T04:25:46Z",
+      "baseRefName": "feat/idp-identifier-transform",
+      "headRefName": "copilot/fix-failed-checks",
+      "baseRefOid": "54e875a061697ee8f077e15f0c7c61bfd5cd2a7b",
+      "headRefOid": "96ccbc70782e89d0b76c02686d3b419dabd306b2",
+      "mergeCommitOid": "7cd0256fca789f515e8e0b0246b726029a642280",
+      "changedFiles": 1,
+      "additions": 5,
+      "deletions": 5,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "fail"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "internal/idp/transform_test.go"
+      ],
+      "debugScore": 4,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "internal/idp/transform_test.go",
+          "additions": 5,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5867,
+      "title": "fix(web): preserve task checkbox state",
+      "url": "https://github.com/usememos/memos/pull/5867",
+      "mergedAt": "2026-04-20T15:27:00Z",
+      "baseRefName": "main",
+      "headRefName": "codex/fix-task-checkbox-state",
+      "baseRefOid": "d98f6659190b8d1a8252e64549d9120d85e05d33",
+      "headRefOid": "31f7de9be056b7bc36e8e3884e56dd792a167659",
+      "mergeCommitOid": "b5863d76be3cfbf3e0f8237d8e762122b5a0a679",
+      "changedFiles": 9,
+      "additions": 235,
+      "deletions": 29,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "validation"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "web/tests/memo-content-security.test.tsx",
+        "web/tests/memo-editor-cache.test.ts"
+      ],
+      "debugScore": 3,
+      "suggestedDifficulty": "high",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "web/src/components/MemoContent/TaskListItem.tsx",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoContent/constants.ts",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/hooks/useAutoSave.ts",
+          "additions": 17,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/hooks/useMemoInit.ts",
+          "additions": 2,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/index.tsx",
+          "additions": 6,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/services/cacheService.ts",
+          "additions": 31,
+          "deletions": 11,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/hooks/useMemoQueries.ts",
+          "additions": 102,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/tests/memo-content-security.test.tsx",
+          "additions": 17,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/tests/memo-editor-cache.test.ts",
+          "additions": 57,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 5861,
+      "title": "fix: disable modal prop on DropdownMenu to prevent scroll disappearing",
+      "url": "https://github.com/usememos/memos/pull/5861",
+      "mergedAt": "2026-04-20T13:38:28Z",
+      "baseRefName": "main",
+      "headRefName": "main",
+      "baseRefOid": "765a8c6e28a0b1e2a9bfab6b88d5847d1501e321",
+      "headRefOid": "c1f559180cd8493a711edae9c8f4aecacf206316",
+      "mergeCommitOid": "d98f6659190b8d1a8252e64549d9120d85e05d33",
+      "changedFiles": 1,
+      "additions": 1,
+      "deletions": 1,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "web/src/components/ui/dropdown-menu.tsx",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5856,
+      "title": "fix: user resource names can be uuidv4 from idp sub claim",
+      "url": "https://github.com/usememos/memos/pull/5856",
+      "mergedAt": "2026-04-19T05:05:08Z",
+      "baseRefName": "main",
+      "headRefName": "fix_username_uuidv4_validation",
+      "baseRefOid": "f8a304bae33086320b39095d631288156eec4249",
+      "headRefOid": "de56f23fa57f016e171289795750eb8edda57dc5",
+      "mergeCommitOid": "bbded584ce85a856d863485768e08b53adec7244",
+      "changedFiles": 3,
+      "additions": 4,
+      "deletions": 2,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "error",
+        "validation",
+        "fail"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "internal/base/resource_name_test.go"
+      ],
+      "debugScore": 6,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "internal/base/resource_name.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "internal/base/resource_name_test.go",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/resource_name.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5855,
+      "title": "chore(main): release 0.27.1",
+      "url": "https://github.com/usememos/memos/pull/5855",
+      "mergedAt": "2026-04-19T05:17:09Z",
+      "baseRefName": "main",
+      "headRefName": "release-please--branches--main--components--memos",
+      "baseRefOid": "bbded584ce85a856d863485768e08b53adec7244",
+      "headRefOid": "7bde7019dbf536bf0bab744c11f82c031b545b97",
+      "mergeCommitOid": "765a8c6e28a0b1e2a9bfab6b88d5847d1501e321",
+      "changedFiles": 2,
+      "additions": 10,
+      "deletions": 1,
+      "labels": [
+        "autorelease: tagged"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".release-please-manifest.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "CHANGELOG.md",
+          "additions": 9,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5854,
+      "title": "chore(main): release 0.27.1",
+      "url": "https://github.com/usememos/memos/pull/5854",
+      "mergedAt": "2026-04-19T02:55:17Z",
+      "baseRefName": "main",
+      "headRefName": "release-please--branches--main--components--memos",
+      "baseRefOid": "01be01f4b7676af41bdd1758b1e9b096aa922546",
+      "headRefOid": "64c64a3aa36cea91b76ebdb4eca698b83a12ebc1",
+      "mergeCommitOid": "cfe2cf4cf53ecdc1004a78b3ad7b7f1945439393",
+      "changedFiles": 2,
+      "additions": 8,
+      "deletions": 1,
+      "labels": [
+        "autorelease: tagged"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".release-please-manifest.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "CHANGELOG.md",
+          "additions": 7,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5849,
+      "title": "fix: add unix socket file permission setting (755 -> 660)",
+      "url": "https://github.com/usememos/memos/pull/5849",
+      "mergedAt": "2026-04-18T05:21:03Z",
+      "baseRefName": "main",
+      "headRefName": "main",
+      "baseRefOid": "88cb58ab643f4049d6477f4b1f110488269dbd5b",
+      "headRefOid": "ea64468f4d5fd2e12847194352b8d9346dbb34cf",
+      "mergeCommitOid": "0fc1dab28b33f7fdbe9a21cd3bd3affe75dd7f19",
+      "changedFiles": 1,
+      "additions": 8,
+      "deletions": 0,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "server/server.go",
+          "additions": 8,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5853,
+      "title": "fix: mixed-case user resource names",
+      "url": "https://github.com/usememos/memos/pull/5853",
+      "mergedAt": "2026-04-19T02:44:25Z",
+      "baseRefName": "main",
+      "headRefName": "codex/fix-mixed-case-usernames",
+      "baseRefOid": "1fd6a2a385175399fb515d50d44bee4cda30b40c",
+      "headRefOid": "238f873255cb796529187105456d93564f1c2215",
+      "mergeCommitOid": "01be01f4b7676af41bdd1758b1e9b096aa922546",
+      "changedFiles": 3,
+      "additions": 81,
+      "deletions": 12,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "validation",
+        "parser",
+        "parsing",
+        "fail"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "server/router/api/v1/test/user_resource_name_test.go"
+      ],
+      "debugScore": 8,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "server/router/api/v1/test/user_resource_name_test.go",
+          "additions": 56,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/user_resource_name.go",
+          "additions": 21,
+          "deletions": 7,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/user_service.go",
+          "additions": 4,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5843,
+      "title": "chore(main): release 0.27.0",
+      "url": "https://github.com/usememos/memos/pull/5843",
+      "mergedAt": "2026-04-18T20:02:50Z",
+      "baseRefName": "main",
+      "headRefName": "release-please--branches--main--components--memos",
+      "baseRefOid": "583c3d24f4d785faa5e034c1b88ed90eda119baa",
+      "headRefOid": "88804420b5a8ea191174a4491d392bc504044664",
+      "mergeCommitOid": "1fd6a2a385175399fb515d50d44bee4cda30b40c",
+      "changedFiles": 2,
+      "additions": 103,
+      "deletions": 1,
+      "labels": [
+        "autorelease: tagged"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "error",
+        "leak",
+        "validation",
+        "parsing"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 6,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".release-please-manifest.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "CHANGELOG.md",
+          "additions": 102,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 5850,
+      "title": "feat(mcp): harden tool exposure and side effects",
+      "url": "https://github.com/usememos/memos/pull/5850",
+      "mergedAt": "2026-04-18T14:28:35Z",
+      "baseRefName": "main",
+      "headRefName": "codex/harden-mcp-v1",
+      "baseRefOid": "0fc1dab28b33f7fdbe9a21cd3bd3affe75dd7f19",
+      "headRefOid": "a9024f2790c57a41d8eef7b511266626e17fe6f9",
+      "mergeCommitOid": "583c3d24f4d785faa5e034c1b88ed90eda119baa",
+      "changedFiles": 11,
+      "additions": 1019,
+      "deletions": 320,
+      "labels": [],
+      "keywordHits": [
+        "regression",
+        "validation"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "server/router/mcp/mcp_test.go"
+      ],
+      "debugScore": 1,
+      "suggestedDifficulty": "high",
+      "exclusionHints": [
+        "huge-diff"
+      ],
+      "files": [
+        {
+          "path": "server/router/mcp/README.md",
+          "additions": 32,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/mcp/api_helpers.go",
+          "additions": 74,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "server/router/mcp/mcp.go",
+          "additions": 179,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/mcp/mcp_test.go",
+          "additions": 332,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/mcp/tool_metadata.go",
+          "additions": 102,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "server/router/mcp/tools_attachment.go",
+          "additions": 55,
+          "deletions": 45,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/mcp/tools_memo.go",
+          "additions": 106,
+          "deletions": 190,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/mcp/tools_reaction.go",
+          "additions": 28,
+          "deletions": 35,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/mcp/tools_relation.go",
+          "additions": 108,
+          "deletions": 37,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/mcp/tools_tag.go",
+          "additions": 2,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/server.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5848,
+      "title": "refactor(web/routing): guard-based auth flow, migrate tests to Vitest",
+      "url": "https://github.com/usememos/memos/pull/5848",
+      "mergedAt": "2026-04-17T17:06:54Z",
+      "baseRefName": "main",
+      "headRefName": "cursor/route-guards-vitest",
+      "baseRefOid": "587f5b1b6cb7e1f89c400f4619bdf9af4f7bf306",
+      "headRefOid": "7d923d63f955322751a06399fddec167ee56fcbd",
+      "mergeCommitOid": "88cb58ab643f4049d6477f4b1f110488269dbd5b",
+      "changedFiles": 28,
+      "additions": 1562,
+      "deletions": 172,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "fail",
+        "failure"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "web/tests/auth-redirect.test.ts",
+        "web/tests/guards.test.tsx",
+        "web/tests/memo-content-security.test.mjs",
+        "web/tests/memo-content-security.test.tsx",
+        "web/tests/redirect-safety.test.ts",
+        "web/tests/router-config.test.tsx",
+        "web/tests/setup.ts"
+      ],
+      "debugScore": 3,
+      "suggestedDifficulty": "high",
+      "exclusionHints": [
+        "huge-diff"
+      ],
+      "files": [
+        {
+          "path": ".github/workflows/frontend-tests.yml",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": ".gitignore",
+          "additions": 7,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/package.json",
+          "additions": 9,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/pnpm-lock.yaml",
+          "additions": 710,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoActionMenu/hooks.ts",
+          "additions": 3,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoContent/Tag.tsx",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/Navigation.tsx",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/PagedMemoList/PagedMemoList.tsx",
+          "additions": 3,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/PasswordSignInForm.tsx",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/layouts/MainLayout.tsx",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/layouts/RootLayout.tsx",
+          "additions": 3,
+          "deletions": 19,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/pages/AuthCallback.tsx",
+          "additions": 6,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/pages/Home.tsx",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/pages/SignIn.tsx",
+          "additions": 0,
+          "deletions": 9,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/pages/SignUp.tsx",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/router/guards.tsx",
+          "additions": 63,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "web/src/router/index.tsx",
+          "additions": 41,
+          "deletions": 15,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/router/routes.ts",
+          "additions": 4,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/utils/auth-redirect.ts",
+          "additions": 22,
+          "deletions": 45,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/utils/redirect-safety.ts",
+          "additions": 72,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "web/tests/auth-redirect.test.ts",
+          "additions": 115,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "web/tests/guards.test.tsx",
+          "additions": 202,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "web/tests/memo-content-security.test.mjs",
+          "additions": 0,
+          "deletions": 67,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "web/tests/memo-content-security.test.tsx",
+          "additions": 70,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "web/tests/redirect-safety.test.ts",
+          "additions": 76,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "web/tests/router-config.test.tsx",
+          "additions": 75,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "web/tests/setup.ts",
+          "additions": 42,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "web/vitest.config.mts",
+          "additions": 28,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 5845,
+      "title": "refactor(ai): use official provider SDKs",
+      "url": "https://github.com/usememos/memos/pull/5845",
+      "mergedAt": "2026-04-16T14:27:58Z",
+      "baseRefName": "main",
+      "headRefName": "openai-go-sdk",
+      "baseRefOid": "f394e9469ab46f460d574c116822de6a22703ee3",
+      "headRefOid": "0c5a7056e08ea4e40893107473cf5d0086d23eac",
+      "mergeCommitOid": "a7fd1dacc9d9563419a52c666fd13fe39df7386e",
+      "changedFiles": 12,
+      "additions": 466,
+      "deletions": 494,
+      "labels": [],
+      "keywordHits": [
+        "timeout"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "internal/ai/gemini_test.go",
+        "internal/ai/openai_test.go"
+      ],
+      "debugScore": 2,
+      "suggestedDifficulty": "high",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "go.mod",
+          "additions": 15,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "go.sum",
+          "additions": 111,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "internal/ai/client.go",
+          "additions": 65,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "internal/ai/gemini.go",
+          "additions": 162,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "internal/ai/gemini/client.go",
+          "additions": 0,
+          "deletions": 59,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "internal/ai/gemini/transcription.go",
+          "additions": 0,
+          "deletions": 201,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "internal/ai/gemini_test.go",
+          "additions": 9,
+          "deletions": 9,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "internal/ai/openai.go",
+          "additions": 98,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "internal/ai/openai/client.go",
+          "additions": 0,
+          "deletions": 59,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "internal/ai/openai/transcription.go",
+          "additions": 0,
+          "deletions": 145,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "internal/ai/openai_test.go",
+          "additions": 5,
+          "deletions": 6,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "server/router/api/v1/ai_service.go",
+          "additions": 1,
+          "deletions": 15,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5842,
+      "title": "chore: add release-please automation",
+      "url": "https://github.com/usememos/memos/pull/5842",
+      "mergedAt": "2026-04-15T15:04:11Z",
+      "baseRefName": "main",
+      "headRefName": "codex/release-please-automation",
+      "baseRefOid": "5be530dbac976d2e7b8d939193cd16e872818219",
+      "headRefOid": "ae2b911fcc1ec967a9004409ff9f65fdd6746e22",
+      "mergeCommitOid": "f394e9469ab46f460d574c116822de6a22703ee3",
+      "changedFiles": 5,
+      "additions": 81,
+      "deletions": 1,
+      "labels": [],
+      "keywordHits": [
+        "validation"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".github/workflows/build-canary-image.yml",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": ".github/workflows/release-please.yml",
+          "additions": 37,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": ".github/workflows/release.yml",
+          "additions": 3,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": ".release-please-manifest.json",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "release-please-config.json",
+          "additions": 35,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 5841,
+      "title": "chore: update Italian translation for 'cancel' key",
+      "url": "https://github.com/usememos/memos/pull/5841",
+      "mergedAt": "2026-04-15T13:01:57Z",
+      "baseRefName": "main",
+      "headRefName": "patch-1",
+      "baseRefOid": "a3a5b52d60d6a8b7bca104cab116b2cdc56d8706",
+      "headRefOid": "b746db393ea210f8e9a010fe097223d56a09358c",
+      "mergeCommitOid": "5be530dbac976d2e7b8d939193cd16e872818219",
+      "changedFiles": 1,
+      "additions": 1,
+      "deletions": 1,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "wrong"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "web/src/locales/it.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5840,
+      "title": "chore: set native color scheme for dark themes",
+      "url": "https://github.com/usememos/memos/pull/5840",
+      "mergedAt": "2026-04-15T12:55:41Z",
+      "baseRefName": "main",
+      "headRefName": "codex/theme-color-scheme-5839",
+      "baseRefOid": "a3a5b52d60d6a8b7bca104cab116b2cdc56d8706",
+      "headRefOid": "d45443749821cd9ca5015a7244c29a7a612db543",
+      "mergeCommitOid": "411d8335e7b7ef115ad7b75023cd5488a7f67099",
+      "changedFiles": 1,
+      "additions": 14,
+      "deletions": 1,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "validation"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "web/src/utils/theme.ts",
+          "additions": 14,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5836,
+      "title": "feat(web): add demo mode banner",
+      "url": "https://github.com/usememos/memos/pull/5836",
+      "mergedAt": "2026-04-14T01:08:17Z",
+      "baseRefName": "main",
+      "headRefName": "demo-mode",
+      "baseRefOid": "101704c8eac17c7f34508d8db6c53bc972061cdb",
+      "headRefOid": "264a0da39314ee5295789e03141e960534b01509",
+      "mergeCommitOid": "35504cc8bd6f9921291fb565633d549388a3f948",
+      "changedFiles": 5,
+      "additions": 39,
+      "deletions": 6,
+      "labels": [],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "web/src/layouts/MainLayout.tsx",
+          "additions": 3,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/layouts/RootLayout.tsx",
+          "additions": 22,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/locales/en.json",
+          "additions": 5,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/locales/zh-Hans.json",
+          "additions": 5,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/locales/zh-Hant.json",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5832,
+      "title": "feat(ai): add BYOK audio transcription",
+      "url": "https://github.com/usememos/memos/pull/5832",
+      "mergedAt": "2026-04-13T14:09:25Z",
+      "baseRefName": "main",
+      "headRefName": "transcription",
+      "baseRefOid": "0ad0fec8d48640a8bf8189f3b255453d890fa53b",
+      "headRefOid": "85368dbedce4f564f703a05f7e8c79a90968f6c6",
+      "mergeCommitOid": "101704c8eac17c7f34508d8db6c53bc972061cdb",
+      "changedFiles": 29,
+      "additions": 564,
+      "deletions": 520,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "error"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "server/router/api/v1/test/ai_service_test.go",
+        "server/router/api/v1/test/instance_service_test.go",
+        "store/test/instance_setting_test.go"
+      ],
+      "debugScore": 3,
+      "suggestedDifficulty": "high",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "internal/ai/ai.go",
+          "additions": 5,
+          "deletions": 11,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "internal/ai/models.go",
+          "additions": 22,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "proto/api/v1/ai_service.proto",
+          "additions": 2,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/api/v1/instance_service.proto",
+          "additions": 1,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/api/v1/ai_service.pb.go",
+          "additions": 6,
+          "deletions": 16,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/api/v1/instance_service.pb.go",
+          "additions": 10,
+          "deletions": 36,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/openapi.yaml",
+          "additions": 0,
+          "deletions": 11,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/store/instance_setting.pb.go",
+          "additions": 9,
+          "deletions": 35,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/store/instance_setting.proto",
+          "additions": 1,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/ai_service.go",
+          "additions": 11,
+          "deletions": 32,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/instance_service.go",
+          "additions": 26,
+          "deletions": 52,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/test/ai_service_test.go",
+          "additions": 78,
+          "deletions": 81,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/test/instance_service_test.go",
+          "additions": 18,
+          "deletions": 60,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/test/instance_setting_test.go",
+          "additions": 11,
+          "deletions": 15,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/components/AudioRecorderPanel.tsx",
+          "additions": 49,
+          "deletions": 10,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/hooks/useAudioRecorder.ts",
+          "additions": 22,
+          "deletions": 10,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/index.tsx",
+          "additions": 111,
+          "deletions": 12,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/services/errorService.ts",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/services/index.ts",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/services/transcriptionService.ts",
+          "additions": 26,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/types/components.ts",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/Settings/AISection.tsx",
+          "additions": 40,
+          "deletions": 72,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/contexts/InstanceContext.tsx",
+          "additions": 18,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/locales/en.json",
+          "additions": 16,
+          "deletions": 9,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/locales/zh-Hans.json",
+          "additions": 33,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/locales/zh-Hant.json",
+          "additions": 33,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/pages/Setting.tsx",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/types/proto/api/v1/ai_service_pb.ts",
+          "additions": 3,
+          "deletions": 10,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/types/proto/api/v1/instance_service_pb.ts",
+          "additions": 3,
+          "deletions": 23,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5802,
+      "title": "Complete Turkish (tr) translations to 100% coverage",
+      "url": "https://github.com/usememos/memos/pull/5802",
+      "mergedAt": "2026-04-01T11:25:19Z",
+      "baseRefName": "main",
+      "headRefName": "complete-tr-translations",
+      "baseRefOid": "c0d5854f678f357cf4054d448e0311f2ee90f8ac",
+      "headRefOid": "58be66f27c99ddee3e32bad1d48954fad51e0432",
+      "mergeCommitOid": "9676e725331e82ebc2473f0789db2aff45bd0d02",
+      "changedFiles": 1,
+      "additions": 87,
+      "deletions": 17,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "validation"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "web/src/locales/tr.json",
+          "additions": 87,
+          "deletions": 17,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5830,
+      "title": "feat: add Gemini transcription provider",
+      "url": "https://github.com/usememos/memos/pull/5830",
+      "mergedAt": "2026-04-12T13:12:03Z",
+      "baseRefName": "main",
+      "headRefName": "feat/ai-gemini-transcription",
+      "baseRefOid": "83ed32f1195841d2d6c057c3e00086a3147879a2",
+      "headRefOid": "70951e57396051c5bd34650a40db60b7269626fc",
+      "mergeCommitOid": "d87539a1e1261590ab355220e33fa0ae00bd9431",
+      "changedFiles": 13,
+      "additions": 453,
+      "deletions": 49,
+      "labels": [],
+      "keywordHits": [
+        "validation"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "internal/ai/gemini/transcription_test.go",
+        "server/router/api/v1/test/ai_service_test.go"
+      ],
+      "debugScore": 2,
+      "suggestedDifficulty": "high",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "internal/ai/ai.go",
+          "additions": 0,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "internal/ai/gemini/client.go",
+          "additions": 59,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "internal/ai/gemini/transcription.go",
+          "additions": 201,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "internal/ai/gemini/transcription_test.go",
+          "additions": 99,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "proto/api/v1/instance_service.proto",
+          "additions": 1,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/api/v1/instance_service.pb.go",
+          "additions": 7,
+          "deletions": 11,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/openapi.yaml",
+          "additions": 0,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/store/instance_setting.pb.go",
+          "additions": 6,
+          "deletions": 10,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/store/instance_setting.proto",
+          "additions": 1,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/ai_service.go",
+          "additions": 19,
+          "deletions": 12,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/test/ai_service_test.go",
+          "additions": 57,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/Settings/AISection.tsx",
+          "additions": 0,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/types/proto/api/v1/instance_service_pb.ts",
+          "additions": 3,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5829,
+      "title": "feat(ai): add instance AI providers and transcription",
+      "url": "https://github.com/usememos/memos/pull/5829",
+      "mergedAt": "2026-04-12T11:23:34Z",
+      "baseRefName": "main",
+      "headRefName": "feat/instance-ai-providers",
+      "baseRefOid": "40fd700fb8be27a8d7a300a2636cf4f366572176",
+      "headRefOid": "033421858d114d850628059146d425283b9fb6d4",
+      "mergeCommitOid": "83ed32f1195841d2d6c057c3e00086a3147879a2",
+      "changedFiles": 33,
+      "additions": 3522,
+      "deletions": 111,
+      "labels": [],
+      "keywordHits": [
+        "error"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "internal/ai/openai/transcription_test.go",
+        "server/router/api/v1/test/ai_service_test.go",
+        "server/router/api/v1/test/instance_service_test.go",
+        "store/test/instance_setting_test.go"
+      ],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "huge-diff"
+      ],
+      "files": [
+        {
+          "path": "internal/ai/ai.go",
+          "additions": 26,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "internal/ai/errors.go",
+          "additions": 10,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "internal/ai/openai/client.go",
+          "additions": 59,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "internal/ai/openai/transcription.go",
+          "additions": 145,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "internal/ai/openai/transcription_test.go",
+          "additions": 65,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "internal/ai/resolver.go",
+          "additions": 16,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "internal/ai/transcription.go",
+          "additions": 29,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "proto/api/v1/ai_service.proto",
+          "additions": 63,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "proto/api/v1/instance_service.proto",
+          "additions": 34,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/api/v1/ai_service.pb.go",
+          "additions": 382,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "proto/gen/api/v1/ai_service.pb.gw.go",
+          "additions": 157,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "proto/gen/api/v1/ai_service_grpc.pb.go",
+          "additions": 123,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "proto/gen/api/v1/apiv1connect/ai_service.connect.go",
+          "additions": 110,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "proto/gen/api/v1/instance_service.pb.go",
+          "additions": 326,
+          "deletions": 61,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/openapi.yaml",
+          "additions": 127,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/store/instance_setting.pb.go",
+          "additions": 285,
+          "deletions": 44,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/store/instance_setting.proto",
+          "additions": 27,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/ai_service.go",
+          "additions": 198,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "server/router/api/v1/connect_handler.go",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/connect_services.go",
+          "additions": 10,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/instance_service.go",
+          "additions": 169,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/test/ai_service_test.go",
+          "additions": 185,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "server/router/api/v1/test/instance_service_test.go",
+          "additions": 134,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/v1.go",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/instance_setting.go",
+          "additions": 28,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/test/instance_setting_test.go",
+          "additions": 49,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/Settings/AISection.tsx",
+          "additions": 408,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "web/src/connect.ts",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/contexts/InstanceContext.tsx",
+          "additions": 13,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/locales/en.json",
+          "additions": 26,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/pages/Setting.tsx",
+          "additions": 7,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/types/proto/api/v1/ai_service_pb.ts",
+          "additions": 166,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "web/src/types/proto/api/v1/instance_service_pb.ts",
+          "additions": 138,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5826,
+      "title": "i18n: refine and normalize Japanese locale strings",
+      "url": "https://github.com/usememos/memos/pull/5826",
+      "mergedAt": "2026-04-11T14:15:27Z",
+      "baseRefName": "main",
+      "headRefName": "main",
+      "baseRefOid": "2523d966f4be7912987ef1e0bb882c000b8b4bca",
+      "headRefOid": "85f622c7ce5b603f47dba73045c02fc7d069d68c",
+      "mergeCommitOid": "0f7c7eb75e7a00248fab6cd6c0169a1044f02c05",
+      "changedFiles": 1,
+      "additions": 154,
+      "deletions": 132,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "web/src/locales/ja.json",
+          "additions": 154,
+          "deletions": 132,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5817,
+      "title": "feat(memo-editor): add compact live waveform recorder panel",
+      "url": "https://github.com/usememos/memos/pull/5817",
+      "mergedAt": "2026-04-07T12:40:34Z",
+      "baseRefName": "main",
+      "headRefName": "feat/memo-editor-waveform-recorder-ui",
+      "baseRefOid": "61c963841b2e27333290da9456077a196a1a6913",
+      "headRefOid": "2489d7a6fb075eb88fcfc5b8ad24bb51d93cd794",
+      "mergeCommitOid": "e51985a29ffeeecd318b2fb793358ed45bb0eff4",
+      "changedFiles": 7,
+      "additions": 182,
+      "deletions": 33,
+      "labels": [],
+      "keywordHits": [
+        "bug"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "web/src/components/MemoEditor/components/AudioRecorderPanel.tsx",
+          "additions": 40,
+          "deletions": 32,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/components/VoiceWaveform.tsx",
+          "additions": 34,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/hooks/index.ts",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/hooks/useAudioRecorder.ts",
+          "additions": 5,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/hooks/useAudioWaveform.ts",
+          "additions": 99,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/index.tsx",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/types/components.ts",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5811,
+      "title": "feat(mentions): add memo mention parsing, notifications, and rendering",
+      "url": "https://github.com/usememos/memos/pull/5811",
+      "mergedAt": "2026-04-06T14:16:53Z",
+      "baseRefName": "main",
+      "headRefName": "mention-syntax",
+      "baseRefOid": "38fc22b7541b8a9ddcd848cf77054fcf844eb87f",
+      "headRefOid": "6a18cf38b46df880800579755dde87642ee053f1",
+      "mergeCommitOid": "24fc8ab8ca68d092e7b12a5d51c48ca9420f72b5",
+      "changedFiles": 48,
+      "additions": 2667,
+      "deletions": 509,
+      "labels": [],
+      "keywordHits": [
+        "parser",
+        "parsing"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "internal/markdown/markdown_test.go",
+        "server/router/api/v1/acl_config_test.go",
+        "server/router/api/v1/test/test_helper.go",
+        "server/router/api/v1/test/user_notification_test.go",
+        "server/router/api/v1/test/user_search_test.go"
+      ],
+      "debugScore": 1,
+      "suggestedDifficulty": "high",
+      "exclusionHints": [
+        "huge-diff"
+      ],
+      "files": [
+        {
+          "path": "docs/issues/2026-04-06-memo-mentions/definition.md",
+          "additions": 49,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "docs/issues/2026-04-06-memo-mentions/design.md",
+          "additions": 69,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "docs/issues/2026-04-06-memo-mentions/execution.md",
+          "additions": 37,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "docs/issues/2026-04-06-memo-mentions/plan.md",
+          "additions": 104,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "internal/markdown/ast/mention.go",
+          "additions": 28,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "internal/markdown/extensions/mention.go",
+          "additions": 24,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "internal/markdown/markdown.go",
+          "additions": 18,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "internal/markdown/markdown_test.go",
+          "additions": 9,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "internal/markdown/parser/mention.go",
+          "additions": 87,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "internal/markdown/renderer/markdown_renderer.go",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/api/v1/user_service.proto",
+          "additions": 43,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/api/v1/apiv1connect/user_service.connect.go",
+          "additions": 31,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/api/v1/user_service.pb.go",
+          "additions": 473,
+          "deletions": 240,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/api/v1/user_service.pb.gw.go",
+          "additions": 66,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/api/v1/user_service_grpc.pb.go",
+          "additions": 40,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/openapi.yaml",
+          "additions": 74,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/store/inbox.pb.go",
+          "additions": 91,
+          "deletions": 11,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/store/inbox.proto",
+          "additions": 8,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/acl_config.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/acl_config_test.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/connect_services.go",
+          "additions": 8,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/memo_batch_helpers.go",
+          "additions": 34,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "server/router/api/v1/memo_mention_helpers.go",
+          "additions": 146,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "server/router/api/v1/memo_service.go",
+          "additions": 16,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/test/test_helper.go",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/test/user_notification_test.go",
+          "additions": 144,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/test/user_search_test.go",
+          "additions": 54,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "server/router/api/v1/user_service.go",
+          "additions": 194,
+          "deletions": 37,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/v1.go",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/runner/memopayload/runner.go",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/db/mysql/user.go",
+          "additions": 28,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/db/postgres/user.go",
+          "additions": 25,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/db/sqlite/user.go",
+          "additions": 28,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/user.go",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/Inbox/MemoCommentMessage.tsx",
+          "additions": 31,
+          "deletions": 99,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/Inbox/MemoMentionMessage.tsx",
+          "additions": 164,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "web/src/components/MemoContent/ConditionalComponent.tsx",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoContent/Mention.tsx",
+          "additions": 40,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "web/src/components/MemoContent/MentionResolutionContext.tsx",
+          "additions": 41,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "web/src/components/MemoContent/index.tsx",
+          "additions": 31,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/Editor/useSuggestions.ts",
+          "additions": 9,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/PagedMemoList/PagedMemoList.tsx",
+          "additions": 34,
+          "deletions": 31,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/hooks/useUserQueries.ts",
+          "additions": 31,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/pages/Inboxes.tsx",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/pages/MemoDetail.tsx",
+          "additions": 35,
+          "deletions": 31,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/types/markdown.ts",
+          "additions": 46,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/types/proto/api/v1/user_service_pb.ts",
+          "additions": 156,
+          "deletions": 38,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/utils/remark-plugins/remark-mention.ts",
+          "additions": 102,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 5810,
+      "title": "feat(attachments): add Live Photo and Motion Photo support",
+      "url": "https://github.com/usememos/memos/pull/5810",
+      "mergedAt": "2026-04-06T02:47:02Z",
+      "baseRefName": "main",
+      "headRefName": "live-photos",
+      "baseRefOid": "894b3eb045c7d2c2acce847c34a85295c909dcf7",
+      "headRefOid": "ae44749d66f519380feb5af6eb10347aa8033e4b",
+      "mergeCommitOid": "4b4e719470184e49cd62084b1aa53c9a777a9fec",
+      "changedFiles": 42,
+      "additions": 2499,
+      "deletions": 333,
+      "labels": [],
+      "keywordHits": [],
+      "hasTests": true,
+      "testFiles": [
+        "internal/motionphoto/motionphoto_test.go",
+        "server/router/api/v1/test/attachment_service_test.go",
+        "server/router/api/v1/test/memo_attachment_service_test.go",
+        "server/router/fileserver/fileserver_test.go"
+      ],
+      "debugScore": -1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "huge-diff"
+      ],
+      "files": [
+        {
+          "path": "internal/motionphoto/motionphoto.go",
+          "additions": 110,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "internal/motionphoto/motionphoto_test.go",
+          "additions": 25,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "internal/testutil/motionphoto.go",
+          "additions": 18,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "proto/api/v1/attachment_service.proto",
+          "additions": 35,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/api/v1/apiv1connect/attachment_service.connect.go",
+          "additions": 36,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/api/v1/attachment_service.pb.go",
+          "additions": 320,
+          "deletions": 60,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/api/v1/attachment_service.pb.gw.go",
+          "additions": 76,
+          "deletions": 10,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/api/v1/attachment_service_grpc.pb.go",
+          "additions": 45,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/openapi.yaml",
+          "additions": 59,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/store/attachment.pb.go",
+          "additions": 234,
+          "deletions": 26,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/store/attachment.proto",
+          "additions": 23,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/attachment_motion.go",
+          "additions": 69,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "server/router/api/v1/attachment_service.go",
+          "additions": 125,
+          "deletions": 14,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/connect_services.go",
+          "additions": 8,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/memo_attachment_service.go",
+          "additions": 110,
+          "deletions": 28,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/test/attachment_service_test.go",
+          "additions": 116,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/test/memo_attachment_service_test.go",
+          "additions": 60,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/fileserver/fileserver.go",
+          "additions": 72,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/fileserver/fileserver_test.go",
+          "additions": 46,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/attachment.go",
+          "additions": 70,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/db/mysql/attachment.go",
+          "additions": 33,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/db/postgres/attachment.go",
+          "additions": 33,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/db/sqlite/attachment.go",
+          "additions": 33,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/driver.go",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/components/EditorMetadata.tsx",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/hooks/useFileUpload.ts",
+          "additions": 58,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/services/uploadService.ts",
+          "additions": 4,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/state/actions.ts",
+          "additions": 5,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/state/reducer.ts",
+          "additions": 6,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/state/types.ts",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/types/attachment.ts",
+          "additions": 95,
+          "deletions": 16,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoMetadata/Attachment/AttachmentListEditor.tsx",
+          "additions": 63,
+          "deletions": 28,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoMetadata/Attachment/AttachmentListView.tsx",
+          "additions": 67,
+          "deletions": 79,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoPreview/MemoPreview.tsx",
+          "additions": 27,
+          "deletions": 19,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoView/MemoView.tsx",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoView/MemoViewContext.tsx",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoView/hooks/useImagePreview.ts",
+          "additions": 35,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoView/hooks/useMemoHandlers.ts",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/PreviewImageDialog.tsx",
+          "additions": 35,
+          "deletions": 13,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/types/proto/api/v1/attachment_service_pb.ts",
+          "additions": 138,
+          "deletions": 10,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/utils/attachment.ts",
+          "additions": 23,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/utils/media-item.ts",
+          "additions": 179,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 5809,
+      "title": "fix(api): tolerate missing related users in memo conversions",
+      "url": "https://github.com/usememos/memos/pull/5809",
+      "mergedAt": "2026-04-06T00:23:18Z",
+      "baseRefName": "main",
+      "headRefName": "listmemos",
+      "baseRefOid": "87d411bc70abcdfe1fd2ab32395c473b955866a2",
+      "headRefOid": "cc1ea66ebbc7ed9bfbd11e2f9c9baafe17657027",
+      "mergeCommitOid": "25feef3aadd34bfd474d7e3b685815a6509bc4c6",
+      "changedFiles": 9,
+      "additions": 392,
+      "deletions": 29,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "regression",
+        "error",
+        "race",
+        "fail"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "server/router/api/v1/test/memo_service_test.go",
+        "server/router/api/v1/test/memo_share_service_test.go",
+        "server/router/api/v1/test/reaction_service_test.go",
+        "server/router/api/v1/test/user_notification_test.go"
+      ],
+      "debugScore": 7,
+      "suggestedDifficulty": "high",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "server/router/api/v1/memo_service.go",
+          "additions": 21,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/memo_service_converter.go",
+          "additions": 97,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/memo_share_service.go",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/reaction_service.go",
+          "additions": 13,
+          "deletions": 21,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/test/memo_service_test.go",
+          "additions": 120,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/test/memo_share_service_test.go",
+          "additions": 48,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/test/reaction_service_test.go",
+          "additions": 40,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/test/user_notification_test.go",
+          "additions": 40,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/user_service.go",
+          "additions": 9,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5808,
+      "title": "docs(agents): align contributor guidance with current CI workflows",
+      "url": "https://github.com/usememos/memos/pull/5808",
+      "mergedAt": "2026-04-06T00:02:21Z",
+      "baseRefName": "main",
+      "headRefName": "update-agentsmd",
+      "baseRefOid": "f403f8c03c1186d7d4b7a6f2e03d7bca6ffcec21",
+      "headRefOid": "bb40d535f6f40273014c6f846f38223c8e04fd8b",
+      "mergeCommitOid": "87d411bc70abcdfe1fd2ab32395c473b955866a2",
+      "changedFiles": 1,
+      "additions": 6,
+      "deletions": 2,
+      "labels": [],
+      "keywordHits": [
+        "race"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "docs-only",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "AGENTS.md",
+          "additions": 6,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5529,
+      "title": "chore(i18n): update British English spelling",
+      "url": "https://github.com/usememos/memos/pull/5529",
+      "mergedAt": "2026-01-26T00:48:43Z",
+      "baseRefName": "main",
+      "headRefName": "fix/fix-british-english",
+      "baseRefOid": "45945a1df752a6fcf4c0dc73222e57a2b03f6033",
+      "headRefOid": "34683a80307b71d961135cdac8b7937e23757b97",
+      "mergeCommitOid": "f22b3dad25f904c10b2632f890d2d0fc6c3701c5",
+      "changedFiles": 1,
+      "additions": 12,
+      "deletions": 1,
+      "labels": [],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "web/src/locales/en-GB.json",
+          "additions": 12,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5801,
+      "title": "feat(editor): add voice note recording to the memo composer",
+      "url": "https://github.com/usememos/memos/pull/5801",
+      "mergedAt": "2026-04-01T01:36:33Z",
+      "baseRefName": "main",
+      "headRefName": "voice-input",
+      "baseRefOid": "a0d83e1a9e9d0ba50a0103e594adb011728faf8c",
+      "headRefOid": "1f99c87cd1de04097bd7366165d18ce510afed0c",
+      "mergeCommitOid": "c0d5854f678f357cf4054d448e0311f2ee90f8ac",
+      "changedFiles": 23,
+      "additions": 950,
+      "deletions": 96,
+      "labels": [],
+      "keywordHits": [
+        "validation"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "docs/issues/2026-03-31-quick-voice-input/definition.md",
+          "additions": 47,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "docs/issues/2026-03-31-quick-voice-input/design.md",
+          "additions": 58,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "docs/issues/2026-03-31-quick-voice-input/execution.md",
+          "additions": 40,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "docs/issues/2026-03-31-quick-voice-input/plan.md",
+          "additions": 63,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/Toolbar/InsertMenu.tsx",
+          "additions": 18,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/components/EditorToolbar.tsx",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/components/VoiceRecorderPanel.tsx",
+          "additions": 135,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/components/index.ts",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/hooks/index.ts",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/hooks/useVoiceRecorder.ts",
+          "additions": 192,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/index.tsx",
+          "additions": 89,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/services/memoService.ts",
+          "additions": 8,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/services/validationService.ts",
+          "additions": 5,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/state/actions.ts",
+          "additions": 31,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/state/reducer.ts",
+          "additions": 55,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/state/types.ts",
+          "additions": 30,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/types/attachment.ts",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoEditor/types/components.ts",
+          "additions": 13,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoMetadata/Attachment/AttachmentListEditor.tsx",
+          "additions": 99,
+          "deletions": 68,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoMetadata/Attachment/AudioAttachmentItem.tsx",
+          "additions": 32,
+          "deletions": 13,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/MemoMetadata/Attachment/index.ts",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/locales/en.json",
+          "additions": 22,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/utils/format.ts",
+          "additions": 6,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5800,
+      "title": "fix(tags): allow blur-only tag metadata",
+      "url": "https://github.com/usememos/memos/pull/5800",
+      "mergedAt": "2026-03-31T13:38:56Z",
+      "baseRefName": "main",
+      "headRefName": "make-tags-background-optional",
+      "baseRefOid": "201c8a8ea96f506b52ce187528a8b8dc691f827b",
+      "headRefOid": "80f926588da379d847118f1a6bb2b4ff672aa3f3",
+      "mergeCommitOid": "1921b57662c2129d179930f71e5c42caf9070a19",
+      "changedFiles": 11,
+      "additions": 111,
+      "deletions": 42,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "validation"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "server/router/api/v1/test/instance_service_test.go",
+        "store/test/instance_setting_test.go"
+      ],
+      "debugScore": 3,
+      "suggestedDifficulty": "high",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "proto/api/v1/instance_service.proto",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/api/v1/instance_service.pb.go",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/openapi.yaml",
+          "additions": 3,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/gen/store/instance_setting.pb.go",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "proto/store/instance_setting.proto",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/instance_service.go",
+          "additions": 4,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/test/instance_service_test.go",
+          "additions": 28,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/test/instance_setting_test.go",
+          "additions": 28,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/components/Settings/TagsSection.tsx",
+          "additions": 35,
+          "deletions": 29,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/locales/en.json",
+          "additions": 3,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "web/src/types/proto/api/v1/instance_service_pb.ts",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5796,
+      "title": "chore: add v0.26.2 migration upgrade coverage",
+      "url": "https://github.com/usememos/memos/pull/5796",
+      "mergedAt": "2026-03-30T15:51:59Z",
+      "baseRefName": "main",
+      "headRefName": "codex/migration-upgrade-tests",
+      "baseRefOid": "e520b637fd8d0f6331674003abe72f9dfbae8231",
+      "headRefOid": "fb1bb67d41710f5dad400988e32c82dc4d732c6f",
+      "mergeCommitOid": "7c708ee27e323688e7a40538f80bd12b8f0df90d",
+      "changedFiles": 3,
+      "additions": 437,
+      "deletions": 5,
+      "labels": [],
+      "keywordHits": [
+        "regression",
+        "validation"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "server/router/api/v1/test/memo_share_service_test.go",
+        "store/test/containers.go",
+        "store/test/migrator_upgrade_test.go"
+      ],
+      "debugScore": 4,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "server/router/api/v1/test/memo_share_service_test.go",
+          "additions": 106,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/test/containers.go",
+          "additions": 57,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "store/test/migrator_upgrade_test.go",
+          "additions": 274,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 5795,
+      "title": "fix(webhooks): trigger memo updates for attachment and relation changes",
+      "url": "https://github.com/usememos/memos/pull/5795",
+      "mergedAt": "2026-03-30T12:01:16Z",
+      "baseRefName": "main",
+      "headRefName": "fix/memo-update-webhooks",
+      "baseRefOid": "9610ed8fc809b3e7aa4b93e4909634957fa94cf7",
+      "headRefOid": "2ca1648d3e0fc504723499ca6bbc6a34b93ece94",
+      "mergeCommitOid": "acbc914dea8d4e533028b03929193a4af1ac32b4",
+      "changedFiles": 5,
+      "additions": 216,
+      "deletions": 64,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "regression"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "server/router/api/v1/sse_service_test.go"
+      ],
+      "debugScore": 4,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "server/router/api/v1/memo_attachment_service.go",
+          "additions": 27,
+          "deletions": 11,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/memo_relation_service.go",
+          "additions": 23,
+          "deletions": 7,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/memo_service.go",
+          "additions": 5,
+          "deletions": 46,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/memo_update_helpers.go",
+          "additions": 78,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "server/router/api/v1/sse_service_test.go",
+          "additions": 83,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5794,
+      "title": "fix(lint): correct goimports struct literal alignment after removing write-only credential fields",
+      "url": "https://github.com/usememos/memos/pull/5794",
+      "mergedAt": "2026-03-29T12:31:09Z",
+      "baseRefName": "main",
+      "headRefName": "claude/fix-ci-checks-d3Y4k",
+      "baseRefOid": "9d3a74bcccf934aa2fa95ee240b56cc3b3a25776",
+      "headRefOid": "0bc67169786e629d3fe3cad92e9cbf99f2c5964f",
+      "mergeCommitOid": "9610ed8fc809b3e7aa4b93e4909634957fa94cf7",
+      "changedFiles": 4,
+      "additions": 9,
+      "deletions": 22,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "server/router/api/v1/sse_service_test.go"
+      ],
+      "debugScore": 4,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "server/router/api/v1/idp_service.go",
+          "additions": 1,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/instance_service.go",
+          "additions": 6,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/memo_service.go",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "server/router/api/v1/sse_service_test.go",
+          "additions": 0,
+          "deletions": 14,
+          "changeType": "MODIFIED"
+        }
+      ]
+    }
+  ]
+}

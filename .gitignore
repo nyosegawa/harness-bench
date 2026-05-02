@@ -1,0 +1,18 @@
+# Agent run outputs and cloned workspaces.
+benchmark/runs/
+benchmark/workspaces/
+
+# Local caches and dependency outputs.
+node_modules/
+target/
+dist/
+coverage/
+.DS_Store
+
+# Local environment files.
+.env
+.env.*
+
+# Temporary files.
+*.log
+*.tmp

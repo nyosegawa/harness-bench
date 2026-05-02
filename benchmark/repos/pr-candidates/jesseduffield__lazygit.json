@@ -1,0 +1,5155 @@
+{
+  "generatedAt": "2026-05-02T10:20:46.471Z",
+  "repo": "jesseduffield/lazygit",
+  "since": "2026-01-01",
+  "limit": 50,
+  "debugKeywords": [
+    "bug",
+    "fix",
+    "regression",
+    "crash",
+    "incorrect",
+    "wrong",
+    "error",
+    "exception",
+    "edge",
+    "flaky",
+    "race",
+    "leak",
+    "validation",
+    "parser",
+    "parsing",
+    "timeout",
+    "fail",
+    "failure",
+    "broken"
+  ],
+  "prs": [
+    {
+      "number": 5568,
+      "title": "Clear LC_* env vars when running LANG tests",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5568",
+      "mergedAt": "2026-05-01T06:16:23Z",
+      "baseRefName": "master",
+      "headRefName": "tests/unset-lc_all",
+      "baseRefOid": "749bb2901a2baae32cfd3176f974f54692fcbdc4",
+      "headRefOid": "f4e0e9e93c0c36967ac5d885d66f5208388d3279",
+      "mergeCommitOid": "8bc329a5a662870ff1a95675c0ec2a7d67197814",
+      "changedFiles": 1,
+      "additions": 2,
+      "deletions": 0,
+      "labels": [
+        "maintenance"
+      ],
+      "keywordHits": [
+        "fail"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "pkg/i18n/i18n_test.go"
+      ],
+      "debugScore": 3,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "pkg/i18n/i18n_test.go",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5570,
+      "title": "Fix regressions with alternate edit bindings for backspace and move-cursor-right",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5570",
+      "mergedAt": "2026-05-01T06:11:09Z",
+      "baseRefName": "master",
+      "headRefName": "fix-edit-binding-regressions",
+      "baseRefOid": "dc44e0e231b646e0d0aba2ce19c7599eb05b253f",
+      "headRefOid": "dadc5ffede3befd21aafabc493b54c85207fe030",
+      "mergeCommitOid": "749bb2901a2baae32cfd3176f974f54692fcbdc4",
+      "changedFiles": 1,
+      "additions": 3,
+      "deletions": 2,
+      "labels": [
+        "ignore-for-release"
+      ],
+      "keywordHits": [
+        "fix",
+        "regression"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "pkg/gocui/edit.go",
+          "additions": 3,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5565,
+      "title": "Change canonical keybinding syntax (`<ctrl+a>` instead of `<c-a>`)",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5565",
+      "mergedAt": "2026-04-30T20:46:03Z",
+      "baseRefName": "master",
+      "headRefName": "change-canonical-keybinding-syntax",
+      "baseRefOid": "ccae993b4006a1de9c8fc889cbf8bac8a98ec29b",
+      "headRefOid": "6663867bb5a9f55460ee0027dc2219082827a891",
+      "mergeCommitOid": "dc44e0e231b646e0d0aba2ce19c7599eb05b253f",
+      "changedFiles": 22,
+      "additions": 501,
+      "deletions": 526,
+      "labels": [
+        "enhancement"
+      ],
+      "keywordHits": [],
+      "hasTests": true,
+      "testFiles": [
+        "pkg/config/keynames_test.go",
+        "pkg/integration/tests/filter_and_search/filter_menu_by_keybinding.go",
+        "pkg/integration/tests/ui/accordion.go",
+        "pkg/integration/tests/ui/mode_specific_keybinding_suggestions.go"
+      ],
+      "debugScore": 1,
+      "suggestedDifficulty": "high",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "docs-master/Config.md",
+          "additions": 37,
+          "deletions": 36,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs-master/keybindings/Custom_Keybindings.md",
+          "additions": 20,
+          "deletions": 21,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs-master/keybindings/Keybindings_en.md",
+          "additions": 38,
+          "deletions": 40,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs-master/keybindings/Keybindings_ja.md",
+          "additions": 38,
+          "deletions": 40,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs-master/keybindings/Keybindings_ko.md",
+          "additions": 38,
+          "deletions": 40,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs-master/keybindings/Keybindings_nl.md",
+          "additions": 38,
+          "deletions": 40,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs-master/keybindings/Keybindings_pl.md",
+          "additions": 38,
+          "deletions": 40,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs-master/keybindings/Keybindings_pt.md",
+          "additions": 38,
+          "deletions": 40,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs-master/keybindings/Keybindings_ru.md",
+          "additions": 38,
+          "deletions": 40,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs-master/keybindings/Keybindings_zh-CN.md",
+          "additions": 38,
+          "deletions": 40,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs-master/keybindings/Keybindings_zh-TW.md",
+          "additions": 38,
+          "deletions": 40,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/cheatsheet/generate.go",
+          "additions": 0,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/config/keynames.go",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/config/keynames_test.go",
+          "additions": 19,
+          "deletions": 19,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/config/user_config.go",
+          "additions": 35,
+          "deletions": 35,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/i18n/english.go",
+          "additions": 3,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/integration/components/commit_description_panel_driver.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/integration/components/search_driver.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/integration/tests/filter_and_search/filter_menu_by_keybinding.go",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/integration/tests/ui/accordion.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/integration/tests/ui/mode_specific_keybinding_suggestions.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "schema-master/config.json",
+          "additions": 35,
+          "deletions": 35,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5564,
+      "title": "Platform-specific edit bindings for move-by-word and backspace-word",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5564",
+      "mergedAt": "2026-04-30T20:38:35Z",
+      "baseRefName": "master",
+      "headRefName": "platform-specific-edit-bindings",
+      "baseRefOid": "396e1ae8b9d001fc342df3992ac7ccfc33e5368f",
+      "headRefOid": "bfdea2bb4ff9267b7b83513d6bb557fd948d1a9b",
+      "mergeCommitOid": "ccae993b4006a1de9c8fc889cbf8bac8a98ec29b",
+      "changedFiles": 7,
+      "additions": 89,
+      "deletions": 8,
+      "labels": [
+        "enhancement"
+      ],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "docs-master/Config.md",
+          "additions": 12,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/config/user_config.go",
+          "additions": 8,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gocui/edit.go",
+          "additions": 13,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gocui/gui.go",
+          "additions": 7,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gocui/text_area.go",
+          "additions": 22,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/gui.go",
+          "additions": 7,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "schema-master/config.json",
+          "additions": 20,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5563,
+      "title": "Keybinding revamp",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5563",
+      "mergedAt": "2026-04-30T20:30:27Z",
+      "baseRefName": "master",
+      "headRefName": "keybinding-revamp",
+      "baseRefOid": "69635f379c814b8bb2ff2d5cc8b86c1f24834d5e",
+      "headRefOid": "8a6c97a920d9d9d259c2aea6642a68d16eebcf30",
+      "mergeCommitOid": "396e1ae8b9d001fc342df3992ac7ccfc33e5368f",
+      "changedFiles": 38,
+      "additions": 1168,
+      "deletions": 395,
+      "labels": [
+        "enhancement"
+      ],
+      "keywordHits": [],
+      "hasTests": true,
+      "testFiles": [
+        "pkg/config/keynames_test.go"
+      ],
+      "debugScore": -1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "huge-diff"
+      ],
+      "files": [
+        {
+          "path": "docs-master/Config.md",
+          "additions": 6,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs-master/keybindings/Custom_Keybindings.md",
+          "additions": 96,
+          "deletions": 63,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs-master/keybindings/Keybindings_en.md",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs-master/keybindings/Keybindings_ja.md",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs-master/keybindings/Keybindings_ko.md",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs-master/keybindings/Keybindings_nl.md",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs-master/keybindings/Keybindings_pl.md",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs-master/keybindings/Keybindings_pt.md",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs-master/keybindings/Keybindings_ru.md",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs-master/keybindings/Keybindings_zh-CN.md",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs-master/keybindings/Keybindings_zh-TW.md",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/app/entry_point.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/cheatsheet/generate.go",
+          "additions": 2,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/config/app_config.go",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/config/keynames.go",
+          "additions": 186,
+          "deletions": 67,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/config/keynames_test.go",
+          "additions": 686,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "pkg/config/user_config.go",
+          "additions": 18,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gocui/edit.go",
+          "additions": 30,
+          "deletions": 27,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gocui/gui.go",
+          "additions": 11,
+          "deletions": 12,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gocui/key.go",
+          "additions": 19,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gocui/keybinding.go",
+          "additions": 12,
+          "deletions": 40,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gocui/tcell_driver.go",
+          "additions": 5,
+          "deletions": 34,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/context/menu_context.go",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/commit_description_controller.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/commit_message_controller.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/editors.go",
+          "additions": 11,
+          "deletions": 11,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/gui.go",
+          "additions": 3,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/gui_driver.go",
+          "additions": 5,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/keybindings.go",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/keybindings/keybindings.go",
+          "additions": 0,
+          "deletions": 50,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "pkg/gui/menu_panel.go",
+          "additions": 5,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/options_map.go",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/services/custom_commands/client.go",
+          "additions": 3,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/services/custom_commands/handler_creator.go",
+          "additions": 1,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/services/custom_commands/keybinding_creator.go",
+          "additions": 1,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/i18n/english.go",
+          "additions": 9,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/integration/clients/tui.go",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "schema-master/config.json",
+          "additions": 5,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5562,
+      "title": "Update to tcell v3",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5562",
+      "mergedAt": "2026-04-30T20:22:30Z",
+      "baseRefName": "master",
+      "headRefName": "update-to-tcell-v3",
+      "baseRefOid": "95c237fdbbf249b9d1057039c7310f3c02ba8839",
+      "headRefOid": "5d3715f96b12a36db05f217c42ff313384ae1f9c",
+      "mergeCommitOid": "69635f379c814b8bb2ff2d5cc8b86c1f24834d5e",
+      "changedFiles": 181,
+      "additions": 15815,
+      "deletions": 8756,
+      "labels": [
+        "maintenance"
+      ],
+      "keywordHits": [],
+      "hasTests": true,
+      "testFiles": [
+        "pkg/cheatsheet/generate_test.go"
+      ],
+      "debugScore": -1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "huge-diff"
+      ],
+      "files": [
+        {
+          "path": "go.mod",
+          "additions": 4,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "go.sum",
+          "additions": 8,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/cheatsheet/generate.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/cheatsheet/generate_test.go",
+          "additions": 30,
+          "deletions": 29,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/config/keynames.go",
+          "additions": 1,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gocui/attribute.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gocui/edit.go",
+          "additions": 27,
+          "deletions": 27,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gocui/gui.go",
+          "additions": 36,
+          "deletions": 63,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gocui/key.go",
+          "additions": 49,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "pkg/gocui/keybinding.go",
+          "additions": 75,
+          "deletions": 103,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gocui/tcell_driver.go",
+          "additions": 22,
+          "deletions": 25,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gocui/view.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/command_log_panel.go",
+          "additions": 26,
+          "deletions": 31,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/context/commit_message_context.go",
+          "additions": 2,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/context/menu_context.go",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/context/search_trait.go",
+          "additions": 4,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/basic_commits_controller.go",
+          "additions": 10,
+          "deletions": 10,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/bisect_controller.go",
+          "additions": 9,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/branches_controller.go",
+          "additions": 8,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/commit_description_controller.go",
+          "additions": 5,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/commit_message_controller.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/commits_files_controller.go",
+          "additions": 8,
+          "deletions": 9,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/custom_patch_options_menu_action.go",
+          "additions": 9,
+          "deletions": 9,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/files_controller.go",
+          "additions": 20,
+          "deletions": 20,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/git_flow_controller.go",
+          "additions": 5,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/helpers/commits_helper.go",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/helpers/merge_and_rebase_helper.go",
+          "additions": 14,
+          "deletions": 14,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/helpers/patch_building_helper.go",
+          "additions": 1,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/helpers/refs_helper.go",
+          "additions": 12,
+          "deletions": 12,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/helpers/search_helper.go",
+          "additions": 1,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/helpers/working_tree_helper.go",
+          "additions": 5,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/local_commits_controller.go",
+          "additions": 12,
+          "deletions": 13,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/patch_building_controller.go",
+          "additions": 1,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/prompt_controller.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/search_prompt_controller.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/staging_controller.go",
+          "additions": 2,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/submodules_controller.go",
+          "additions": 5,
+          "deletions": 7,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/tags_controller.go",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/workspace_reset_controller.go",
+          "additions": 7,
+          "deletions": 7,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/editors.go",
+          "additions": 11,
+          "deletions": 11,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/extras_panel.go",
+          "additions": 3,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/gui.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/gui_driver.go",
+          "additions": 2,
+          "deletions": 12,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/keybindings.go",
+          "additions": 12,
+          "deletions": 30,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/keybindings/keybindings.go",
+          "additions": 24,
+          "deletions": 28,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/menu_panel.go",
+          "additions": 3,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/options_map.go",
+          "additions": 6,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/types/common.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/types/context.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/types/keybindings.go",
+          "additions": 1,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/integration/clients/tui.go",
+          "additions": 16,
+          "deletions": 16,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/clipperhouse/displaywidth/.gitignore",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/clipperhouse/displaywidth/AGENTS.md",
+          "additions": 51,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/clipperhouse/displaywidth/CHANGELOG.md",
+          "additions": 129,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/clipperhouse/displaywidth/LICENSE",
+          "additions": 21,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/clipperhouse/displaywidth/README.md",
+          "additions": 190,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/clipperhouse/displaywidth/gen.go",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/clipperhouse/displaywidth/graphemes.go",
+          "additions": 73,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/clipperhouse/displaywidth/options.go",
+          "additions": 30,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/clipperhouse/displaywidth/trie.go",
+          "additions": 1699,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 5561,
+      "title": "Copy gocui into lazygit repo",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5561",
+      "mergedAt": "2026-04-30T20:14:08Z",
+      "baseRefName": "master",
+      "headRefName": "copy-gocui-into-lazygit-repo",
+      "baseRefOid": "b4f79851dba1337e72b6b2f0180239c9d59d4f8f",
+      "headRefOid": "fd52adc75298bd1528a22552e43b37ada9efc644",
+      "mergeCommitOid": "95c237fdbbf249b9d1057039c7310f3c02ba8839",
+      "changedFiles": 131,
+      "additions": 1881,
+      "deletions": 426,
+      "labels": [
+        "maintenance"
+      ],
+      "keywordHits": [],
+      "hasTests": true,
+      "testFiles": [
+        "pkg/commands/git_commands/sync_test.go",
+        "pkg/commands/oscommands/cmd_obj_runner_test.go",
+        "pkg/commands/oscommands/cmd_obj_test.go",
+        "pkg/gocui/escape_test.go",
+        "pkg/gocui/scrollbar_test.go",
+        "pkg/gocui/text_area_test.go",
+        "pkg/gocui/view_test.go"
+      ],
+      "debugScore": -1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "huge-diff"
+      ],
+      "files": [
+        {
+          "path": ".codespellrc",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "go.mod",
+          "additions": 0,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "go.sum",
+          "additions": 0,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/commands/git_commands/remote.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/commands/git_commands/sync.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/commands/git_commands/sync_test.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/commands/git_commands/tag.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/commands/oscommands/cmd_obj.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/commands/oscommands/cmd_obj_runner_test.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/commands/oscommands/cmd_obj_test.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/config/keynames.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gocui/AUTHORS",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "pkg/gocui/CHANGES_tcell.md",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "pkg/gocui/CODE_OF_CONDUCT.md",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "pkg/gocui/CONTRIBUTING.md",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "pkg/gocui/LICENSE",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "pkg/gocui/README.md",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "pkg/gocui/attribute.go",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "pkg/gocui/doc.go",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "pkg/gocui/edit.go",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "pkg/gocui/escape.go",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "pkg/gocui/escape_test.go",
+          "additions": 160,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "pkg/gocui/gui.go",
+          "additions": 2,
+          "deletions": 82,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "pkg/gocui/gui_others.go",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "pkg/gocui/gui_windows.go",
+          "additions": 0,
+          "deletions": 2,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "pkg/gocui/keybinding.go",
+          "additions": 0,
+          "deletions": 148,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "pkg/gocui/scrollbar.go",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "pkg/gocui/scrollbar_test.go",
+          "additions": 114,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "pkg/gocui/task.go",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "pkg/gocui/task_manager.go",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "pkg/gocui/tcell_driver.go",
+          "additions": 22,
+          "deletions": 19,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "pkg/gocui/text_area.go",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "pkg/gocui/text_area_test.go",
+          "additions": 1043,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "pkg/gocui/view.go",
+          "additions": 23,
+          "deletions": 35,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "pkg/gocui/view_test.go",
+          "additions": 415,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "pkg/gui/background.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/context/base_context.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/context/local_commits_context.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/context/main_context.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/context/patch_explorer_context.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/context/simple_context.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/context/sub_commits_context.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/context/view_trait.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/base_controller.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/branches_controller.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/commit_description_controller.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/commit_message_controller.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/commits_files_controller.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/custom_patch_options_menu_action.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/files_controller.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/global_controller.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/helpers/app_status_helper.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/helpers/branches_helper.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/helpers/commits_helper.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/helpers/gpg_helper.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/helpers/inline_status_helper.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/helpers/merge_and_rebase_helper.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/helpers/refresh_helper.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/helpers/refs_helper.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5536,
+      "title": "Improve performance of showDivergenceFromBaseBranch",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5536",
+      "mergedAt": "2026-04-27T05:11:36Z",
+      "baseRefName": "master",
+      "headRefName": "ahead-behind",
+      "baseRefOid": "01b617ea184f9fbbdc7a9dad1bad3977c2ecebb7",
+      "headRefOid": "3d14881f052e991fc8a7c3a4921f78bed07ca784",
+      "mergeCommitOid": "b4f79851dba1337e72b6b2f0180239c9d59d4f8f",
+      "changedFiles": 2,
+      "additions": 502,
+      "deletions": 1,
+      "labels": [
+        "performance"
+      ],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "pkg/commands/git_commands/branch_loader_test.go"
+      ],
+      "debugScore": 3,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "pkg/commands/git_commands/branch_loader.go",
+          "additions": 135,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/commands/git_commands/branch_loader_test.go",
+          "additions": 367,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5548,
+      "title": "Bump golang.org/x/sys from 0.42.0 to 0.43.0",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5548",
+      "mergedAt": "2026-04-26T18:06:36Z",
+      "baseRefName": "master",
+      "headRefName": "dependabot/go_modules/golang.org/x/sys-0.43.0",
+      "baseRefOid": "ced89422c3a19d6f22a9c2f62354f20c9d633ddb",
+      "headRefOid": "4f76206a7b009d6ad457184a95f522c9a8965807",
+      "mergeCommitOid": "01b617ea184f9fbbdc7a9dad1bad3977c2ecebb7",
+      "changedFiles": 5,
+      "additions": 10,
+      "deletions": 41,
+      "labels": [
+        "maintenance",
+        "dependencies",
+        "go"
+      ],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "go.mod",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "go.sum",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/golang.org/x/sys/windows/dll_windows.go",
+          "additions": 1,
+          "deletions": 36,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/golang.org/x/sys/windows/security_windows.go",
+          "additions": 5,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/modules.txt",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5515,
+      "title": "Bump actions/github-script from 8 to 9",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5515",
+      "mergedAt": "2026-04-26T18:00:53Z",
+      "baseRefName": "master",
+      "headRefName": "dependabot/github_actions/actions/github-script-9",
+      "baseRefOid": "3bb2627f9a9e1f7f630ba51a8fc9b3eb0d1d31b1",
+      "headRefOid": "972dd19d0e82fb01a910f433079b2e56de5f7c94",
+      "mergeCommitOid": "ced89422c3a19d6f22a9c2f62354f20c9d633ddb",
+      "changedFiles": 1,
+      "additions": 1,
+      "deletions": 1,
+      "labels": [
+        "maintenance",
+        "dependencies",
+        "github_actions"
+      ],
+      "keywordHits": [
+        "fix",
+        "error",
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".github/workflows/close-issues.yml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5529,
+      "title": "Bump goreleaser/goreleaser-action from 7.0.0 to 7.1.0",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5529",
+      "mergedAt": "2026-04-26T17:57:45Z",
+      "baseRefName": "master",
+      "headRefName": "dependabot/github_actions/goreleaser/goreleaser-action-7.1.0",
+      "baseRefOid": "b83b8a05c5307cb4114f64712b16c11163ee2d7d",
+      "headRefOid": "1e66ec08bd9b947dc160a3052f88b5e931cc015b",
+      "mergeCommitOid": "3bb2627f9a9e1f7f630ba51a8fc9b3eb0d1d31b1",
+      "changedFiles": 1,
+      "additions": 1,
+      "deletions": 1,
+      "labels": [
+        "maintenance",
+        "dependencies",
+        "github_actions"
+      ],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".github/workflows/release.yml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5514,
+      "title": "Bump peter-evans/create-pull-request from 8.1.0 to 8.1.1",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5514",
+      "mergedAt": "2026-04-26T17:54:47Z",
+      "baseRefName": "master",
+      "headRefName": "dependabot/github_actions/peter-evans/create-pull-request-8.1.1",
+      "baseRefOid": "684ee56e36854c1c41654069d3b02bb05b6f0fd3",
+      "headRefOid": "6500e75921f18e847db2ca93ea81e32394b17fea",
+      "mergeCommitOid": "b83b8a05c5307cb4114f64712b16c11163ee2d7d",
+      "changedFiles": 1,
+      "additions": 1,
+      "deletions": 1,
+      "labels": [
+        "maintenance",
+        "dependencies",
+        "github_actions"
+      ],
+      "keywordHits": [
+        "fix",
+        "error"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".github/workflows/sponsors.yml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5484,
+      "title": "Bump dario.cat/mergo from 1.0.1 to 1.0.2",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5484",
+      "mergedAt": "2026-04-26T17:50:36Z",
+      "baseRefName": "master",
+      "headRefName": "dependabot/go_modules/dario.cat/mergo-1.0.2",
+      "baseRefOid": "a1f7c1bc65a857c8faef78856cc6cfb648599595",
+      "headRefOid": "3e6cb8634d016006d83c08244709ac5c9308537c",
+      "mergeCommitOid": "684ee56e36854c1c41654069d3b02bb05b6f0fd3",
+      "changedFiles": 6,
+      "additions": 13,
+      "deletions": 11,
+      "labels": [
+        "maintenance",
+        "dependencies",
+        "go"
+      ],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "go.mod",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "go.sum",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/dario.cat/mergo/FUNDING.json",
+          "additions": 7,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/dario.cat/mergo/README.md",
+          "additions": 0,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/dario.cat/mergo/SECURITY.md",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/modules.txt",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5546,
+      "title": "Fix dependabot label for github-actions-related updates",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5546",
+      "mergedAt": "2026-04-26T17:43:52Z",
+      "baseRefName": "master",
+      "headRefName": "fix-dependabot.yml",
+      "baseRefOid": "d93b1e7dc3a67aba4323ecc1ad0f50fa8a327b3a",
+      "headRefOid": "b22c9cffc521db4501a6795bb1d2c23dd40c1e88",
+      "mergeCommitOid": "a1f7c1bc65a857c8faef78856cc6cfb648599595",
+      "changedFiles": 1,
+      "additions": 1,
+      "deletions": 1,
+      "labels": [
+        "ignore-for-release"
+      ],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".github/dependabot.yml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5483,
+      "title": "Bump github.com/sirupsen/logrus from 1.9.3 to 1.9.4",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5483",
+      "mergedAt": "2026-04-26T17:40:16Z",
+      "baseRefName": "master",
+      "headRefName": "dependabot/go_modules/github.com/sirupsen/logrus-1.9.4",
+      "baseRefOid": "59984d0644fcba89905e12dc42960ada24721508",
+      "headRefOid": "6ab8d71555c2a3923eb524195fb2c4c1a06f82f3",
+      "mergeCommitOid": "d93b1e7dc3a67aba4323ecc1ad0f50fa8a327b3a",
+      "changedFiles": 16,
+      "additions": 208,
+      "deletions": 154,
+      "labels": [
+        "maintenance",
+        "dependencies",
+        "go"
+      ],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "go.mod",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "go.sum",
+          "additions": 2,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/sirupsen/logrus/.golangci.yml",
+          "additions": 61,
+          "deletions": 34,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/sirupsen/logrus/CHANGELOG.md",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/sirupsen/logrus/README.md",
+          "additions": 65,
+          "deletions": 61,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/sirupsen/logrus/appveyor.yml",
+          "additions": 7,
+          "deletions": 9,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/sirupsen/logrus/entry.go",
+          "additions": 14,
+          "deletions": 11,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/sirupsen/logrus/hooks.go",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/sirupsen/logrus/logger.go",
+          "additions": 17,
+          "deletions": 17,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/sirupsen/logrus/logrus.go",
+          "additions": 12,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/sirupsen/logrus/terminal_check_bsd.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/sirupsen/logrus/terminal_check_unix.go",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/sirupsen/logrus/terminal_check_wasi.go",
+          "additions": 8,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/sirupsen/logrus/terminal_check_wasip1.go",
+          "additions": 8,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/sirupsen/logrus/text_formatter.go",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/modules.txt",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5482,
+      "title": "Bump github.com/gookit/color from 1.4.2 to 1.6.0",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5482",
+      "mergedAt": "2026-04-26T17:35:47Z",
+      "baseRefName": "master",
+      "headRefName": "dependabot/go_modules/github.com/gookit/color-1.6.0",
+      "baseRefOid": "c85285523818adca336be0f394e081c028925819",
+      "headRefOid": "1a7bbd2067709840133bf2c957fcf79a626cbb5b",
+      "mergeCommitOid": "59984d0644fcba89905e12dc42960ada24721508",
+      "changedFiles": 21,
+      "additions": 1931,
+      "deletions": 903,
+      "labels": [
+        "maintenance",
+        "dependencies",
+        "go"
+      ],
+      "keywordHits": [
+        "fix",
+        "race",
+        "parsing"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "huge-diff",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "go.mod",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "go.sum",
+          "additions": 4,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/gookit/color/.gitignore",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/gookit/color/.nojekyll",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/gookit/color/README.md",
+          "additions": 161,
+          "deletions": 51,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/gookit/color/README.zh-CN.md",
+          "additions": 163,
+          "deletions": 46,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/gookit/color/color.go",
+          "additions": 89,
+          "deletions": 83,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/gookit/color/color_16.go",
+          "additions": 134,
+          "deletions": 67,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/gookit/color/color_256.go",
+          "additions": 47,
+          "deletions": 76,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/gookit/color/color_rgb.go",
+          "additions": 127,
+          "deletions": 101,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/gookit/color/color_tag.go",
+          "additions": 209,
+          "deletions": 56,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/gookit/color/convert.go",
+          "additions": 570,
+          "deletions": 9,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/gookit/color/detect_env.go",
+          "additions": 67,
+          "deletions": 62,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/gookit/color/detect_nonwin.go",
+          "additions": 10,
+          "deletions": 10,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/gookit/color/detect_windows.go",
+          "additions": 43,
+          "deletions": 41,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/gookit/color/index.html",
+          "additions": 25,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/gookit/color/printer.go",
+          "additions": 0,
+          "deletions": 122,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "vendor/github.com/gookit/color/quickstart.go",
+          "additions": 178,
+          "deletions": 61,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/gookit/color/style.go",
+          "additions": 50,
+          "deletions": 66,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/gookit/color/utils.go",
+          "additions": 50,
+          "deletions": 44,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/modules.txt",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5481,
+      "title": "Bump github.com/kyokomi/emoji/v2 from 2.2.8 to 2.2.13",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5481",
+      "mergedAt": "2026-04-26T17:30:58Z",
+      "baseRefName": "master",
+      "headRefName": "dependabot/go_modules/github.com/kyokomi/emoji/v2-2.2.13",
+      "baseRefOid": "25ea907f705c6ee20da0cdf71580bfdf7648bb1f",
+      "headRefOid": "b7fa6b190c3f876beb6b1c983927a0c6eb8aba36",
+      "mergeCommitOid": "c85285523818adca336be0f394e081c028925819",
+      "changedFiles": 7,
+      "additions": 4982,
+      "deletions": 4834,
+      "labels": [
+        "maintenance",
+        "dependencies",
+        "go"
+      ],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -5,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "huge-diff",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "go.mod",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "go.sum",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/kyokomi/emoji/v2/README.md",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/kyokomi/emoji/v2/emoji.go",
+          "additions": 7,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/kyokomi/emoji/v2/emoji_codemap.go",
+          "additions": 4970,
+          "deletions": 4790,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/kyokomi/emoji/v2/wercker.yml",
+          "additions": 0,
+          "deletions": 33,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "vendor/modules.txt",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5545,
+      "title": "Bump samber.lo to latest version",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5545",
+      "mergedAt": "2026-04-26T17:26:56Z",
+      "baseRefName": "master",
+      "headRefName": "update-samber-lo",
+      "baseRefOid": "9969fdc0064980a5c234d1a5d82017abeb8bd3fa",
+      "headRefOid": "e13cd140b7ce1004f17c458d1af84f482477a893",
+      "mergeCommitOid": "25ea907f705c6ee20da0cdf71580bfdf7648bb1f",
+      "changedFiles": 74,
+      "additions": 25278,
+      "deletions": 1685,
+      "labels": [
+        "maintenance"
+      ],
+      "keywordHits": [
+        "error"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -6,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "huge-diff",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "go.mod",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "go.sum",
+          "additions": 4,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/.golangci.yml",
+          "additions": 104,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/.travis.yml",
+          "additions": 0,
+          "deletions": 7,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/CHANGELOG.md",
+          "additions": 0,
+          "deletions": 347,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/Dockerfile",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/LICENSE",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/Makefile",
+          "additions": 35,
+          "deletions": 22,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/README.md",
+          "additions": 2903,
+          "deletions": 341,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/channel.go",
+          "additions": 119,
+          "deletions": 43,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/concurrency.go",
+          "additions": 72,
+          "deletions": 20,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/condition.go",
+          "additions": 14,
+          "deletions": 13,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/docker-compose.yml",
+          "additions": 0,
+          "deletions": 9,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/errors.go",
+          "additions": 79,
+          "deletions": 53,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/find.go",
+          "additions": 758,
+          "deletions": 131,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/func.go",
+          "additions": 40,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/internal/constraints/README.md",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/internal/constraints/constraints.go",
+          "additions": 42,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/internal/constraints/ordered_go118.go",
+          "additions": 11,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/internal/constraints/ordered_go121.go",
+          "additions": 13,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/internal/xrand/ordered_go118.go",
+          "additions": 32,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/internal/xrand/ordered_go122.go",
+          "additions": 23,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/internal/xtime/README.md",
+          "additions": 6,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/internal/xtime/fake.go",
+          "additions": 40,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/internal/xtime/noCopy.go",
+          "additions": 14,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/internal/xtime/real.go",
+          "additions": 30,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/internal/xtime/time.go",
+          "additions": 33,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/intersect.go",
+          "additions": 248,
+          "deletions": 87,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/map.go",
+          "additions": 383,
+          "deletions": 52,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/math.go",
+          "additions": 161,
+          "deletions": 22,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/mutable/slice.go",
+          "additions": 73,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/retry.go",
+          "additions": 300,
+          "deletions": 16,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/slice.go",
+          "additions": 936,
+          "deletions": 161,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/string.go",
+          "additions": 274,
+          "deletions": 21,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/test.go",
+          "additions": 0,
+          "deletions": 32,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/time.go",
+          "additions": 99,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/tuples.go",
+          "additions": 1545,
+          "deletions": 261,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/type_manipulation.go",
+          "additions": 152,
+          "deletions": 26,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/samber/lo/types.go",
+          "additions": 56,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/golang.org/x/text/cases/cases.go",
+          "additions": 162,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/golang.org/x/text/cases/context.go",
+          "additions": 376,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/golang.org/x/text/cases/fold.go",
+          "additions": 34,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/golang.org/x/text/cases/icu.go",
+          "additions": 61,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/golang.org/x/text/cases/info.go",
+          "additions": 82,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/golang.org/x/text/cases/map.go",
+          "additions": 816,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/golang.org/x/text/cases/tables15.0.0.go",
+          "additions": 2527,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/golang.org/x/text/cases/tables17.0.0.go",
+          "additions": 2642,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/golang.org/x/text/cases/trieval.go",
+          "additions": 217,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/golang.org/x/text/internal/internal.go",
+          "additions": 49,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/golang.org/x/text/internal/language/common.go",
+          "additions": 16,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/golang.org/x/text/internal/language/compact.go",
+          "additions": 29,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/golang.org/x/text/internal/language/compact/compact.go",
+          "additions": 61,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/golang.org/x/text/internal/language/compact/language.go",
+          "additions": 260,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/golang.org/x/text/internal/language/compact/parents.go",
+          "additions": 120,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/golang.org/x/text/internal/language/compact/tables.go",
+          "additions": 1015,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/golang.org/x/text/internal/language/compact/tags.go",
+          "additions": 91,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/golang.org/x/text/internal/language/compose.go",
+          "additions": 167,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/golang.org/x/text/internal/language/coverage.go",
+          "additions": 28,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/golang.org/x/text/internal/language/language.go",
+          "additions": 627,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/golang.org/x/text/internal/language/lookup.go",
+          "additions": 412,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 5480,
+      "title": "Define PR colors as hex colors to make them the same as GitHub's",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5480",
+      "mergedAt": "2026-04-26T15:03:51Z",
+      "baseRefName": "master",
+      "headRefName": "better-pr-colors",
+      "baseRefOid": "db380b402b75ca640955b70e5e65ec0b79d1e626",
+      "headRefOid": "cb36455f875da1b0b9c6544e04f74cb90a5ed9f8",
+      "mergeCommitOid": "9969fdc0064980a5c234d1a5d82017abeb8bd3fa",
+      "changedFiles": 2,
+      "additions": 12,
+      "deletions": 41,
+      "labels": [
+        "enhancement"
+      ],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "pkg/gui/controllers/branches_controller.go",
+          "additions": 4,
+          "deletions": 34,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/presentation/branches.go",
+          "additions": 8,
+          "deletions": 7,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5544,
+      "title": "If multiple remotes exist but only one is a Github remote, pick it without prompting",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5544",
+      "mergedAt": "2026-04-26T14:59:10Z",
+      "baseRefName": "master",
+      "headRefName": "auto-select-single-github-remote",
+      "baseRefOid": "c826d83697c3523ec867a834d17923440bdfa91c",
+      "headRefOid": "cef1f8fc2c416d32cc407ce4f0a2c28d44236831",
+      "mergeCommitOid": "db380b402b75ca640955b70e5e65ec0b79d1e626",
+      "changedFiles": 2,
+      "additions": 111,
+      "deletions": 26,
+      "labels": [
+        "bug"
+      ],
+      "keywordHits": [
+        "bug"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "pkg/gui/controllers/helpers/refresh_helper_test.go"
+      ],
+      "debugScore": 3,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "pkg/gui/controllers/helpers/refresh_helper.go",
+          "additions": 38,
+          "deletions": 26,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/helpers/refresh_helper_test.go",
+          "additions": 73,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 5543,
+      "title": "Stop showing cached PRs when we no longer have a base remote",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5543",
+      "mergedAt": "2026-04-26T14:53:23Z",
+      "baseRefName": "master",
+      "headRefName": "clear-pr-cache-when-no-base-remote",
+      "baseRefOid": "0ecf818a739606d4255e009b66309e6e508ce08a",
+      "headRefOid": "5b596bb62b7c42369f8e8ceeab717fedc9f23e71",
+      "mergeCommitOid": "c826d83697c3523ec867a834d17923440bdfa91c",
+      "changedFiles": 1,
+      "additions": 3,
+      "deletions": 0,
+      "labels": [
+        "bug"
+      ],
+      "keywordHits": [
+        "bug",
+        "error"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "pkg/gui/controllers/helpers/refresh_helper.go",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5528,
+      "title": "Preserve whitespace when remembering commit message",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5528",
+      "mergedAt": "2026-04-21T16:55:08Z",
+      "baseRefName": "master",
+      "headRefName": "preserve-whitespace-when-remembering-commit-message",
+      "baseRefOid": "2ad6e1a90497ba6ad520176beed6c99a89fd64ba",
+      "headRefOid": "227081f1d1b758adc1fc5af6cf5857110eaaa529",
+      "mergeCommitOid": "0ecf818a739606d4255e009b66309e6e508ce08a",
+      "changedFiles": 10,
+      "additions": 99,
+      "deletions": 35,
+      "labels": [
+        "enhancement"
+      ],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "pkg/commands/git_commands/commit_test.go",
+        "pkg/integration/tests/commit/preserve_commit_message_whitespace.go",
+        "pkg/integration/tests/test_list.go"
+      ],
+      "debugScore": 2,
+      "suggestedDifficulty": "high",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "pkg/commands/git_commands/commit.go",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/commands/git_commands/commit_test.go",
+          "additions": 5,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/context/commit_message_context.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers.go",
+          "additions": 3,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/commit_message_controller.go",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/helpers/commits_helper.go",
+          "additions": 41,
+          "deletions": 20,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/helpers/working_tree_helper.go",
+          "additions": 5,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/integration/tests/commit/preserve_commit_message_whitespace.go",
+          "additions": 39,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "pkg/integration/tests/test_list.go",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "scripts/check_for_fixups.sh",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5524,
+      "title": "Preserve commit message when quitting while the commit message panel is open",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5524",
+      "mergedAt": "2026-04-21T09:30:53Z",
+      "baseRefName": "master",
+      "headRefName": "save-commit-message-on-quit",
+      "baseRefOid": "c183f1ea8ce291eda49e36d6b8f4096177202736",
+      "headRefOid": "337ab2a276325556e0ac4ff68aef6ab042a86466",
+      "mergeCommitOid": "2ad6e1a90497ba6ad520176beed6c99a89fd64ba",
+      "changedFiles": 9,
+      "additions": 48,
+      "deletions": 4,
+      "labels": [
+        "bug"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "pkg/gui/context/base_context.go",
+          "additions": 8,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/context/simple_context.go",
+          "additions": 6,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/attach.go",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/base_controller.go",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/commit_description_controller.go",
+          "additions": 6,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/commit_message_controller.go",
+          "additions": 6,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/helpers/commits_helper.go",
+          "additions": 5,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/gui.go",
+          "additions": 6,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/types/context.go",
+          "additions": 6,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5161,
+      "title": "Retry on ref lock errors during fetch/pull",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5161",
+      "mergedAt": "2026-04-20T07:09:18Z",
+      "baseRefName": "master",
+      "headRefName": "fix-5124-unable-to-update-local-ref-0102-1206",
+      "baseRefOid": "ce7f8a829d2a516ce99490c50e555d6ad5472421",
+      "headRefOid": "a42d79f228b6e1ad8175b384f713366815c6f543",
+      "mergeCommitOid": "c183f1ea8ce291eda49e36d6b8f4096177202736",
+      "changedFiles": 1,
+      "additions": 13,
+      "deletions": 6,
+      "labels": [
+        "enhancement"
+      ],
+      "keywordHits": [
+        "error"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "pkg/commands/git_cmd_obj_runner.go",
+          "additions": 13,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5523,
+      "title": "Fix copying a file's absolute path when running in a linked worktree",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5523",
+      "mergedAt": "2026-04-19T09:35:16Z",
+      "baseRefName": "master",
+      "headRefName": "fix-copy-absolute-path",
+      "baseRefOid": "d167063b4f45d044524f3fba97f850d1eec3f95c",
+      "headRefOid": "d3095f6fd4080ee8ff0a43f469bcca6b6b750cf7",
+      "mergeCommitOid": "ce7f8a829d2a516ce99490c50e555d6ad5472421",
+      "changedFiles": 4,
+      "additions": 28,
+      "deletions": 7,
+      "labels": [
+        "bug"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "pkg/integration/tests/diff/copy_to_clipboard.go",
+        "pkg/integration/tests/file/copy_menu.go"
+      ],
+      "debugScore": 4,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "pkg/gui/controllers/commits_files_controller.go",
+          "additions": 5,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/files_controller.go",
+          "additions": 5,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/integration/tests/diff/copy_to_clipboard.go",
+          "additions": 9,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/integration/tests/file/copy_menu.go",
+          "additions": 9,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5508,
+      "title": "Don't default the base repo for pull requests to \"origin\"",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5508",
+      "mergedAt": "2026-04-13T20:04:11Z",
+      "baseRefName": "master",
+      "headRefName": "dont-default-base-repo-to-origin",
+      "baseRefOid": "9cd5fb87cef203b75b91fac2d58c0e3cb5122ab1",
+      "headRefOid": "4218f97a21d4dd8c35e1f4fb64c03339f58442ca",
+      "mergeCommitOid": "d167063b4f45d044524f3fba97f850d1eec3f95c",
+      "changedFiles": 1,
+      "additions": 4,
+      "deletions": 4,
+      "labels": [
+        "bug"
+      ],
+      "keywordHits": [
+        "bug"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "pkg/gui/controllers/helpers/refresh_helper.go",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5501,
+      "title": "Hide closed pull requests on main branches",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5501",
+      "mergedAt": "2026-04-13T19:59:04Z",
+      "baseRefName": "master",
+      "headRefName": "hide-pull-requests-on-main-branches",
+      "baseRefOid": "dba814c1df2a465503c077fde17345355a5a6900",
+      "headRefOid": "c0d9640c0b37540bb15bb25d53e62ad0b4c8911e",
+      "mergeCommitOid": "9cd5fb87cef203b75b91fac2d58c0e3cb5122ab1",
+      "changedFiles": 2,
+      "additions": 14,
+      "deletions": 2,
+      "labels": [
+        "enhancement"
+      ],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "pkg/gui/controllers/branches_controller.go",
+          "additions": 3,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/presentation/branches.go",
+          "additions": 11,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5498,
+      "title": "Change contribution policy",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5498",
+      "mergedAt": "2026-04-13T19:50:19Z",
+      "baseRefName": "master",
+      "headRefName": "contribution-policy",
+      "baseRefOid": "dff44dde18510c9cec12e85efebe4421e629ae3d",
+      "headRefOid": "aef4feb501d12c670bb9bbed92d9ff102509cd84",
+      "mergeCommitOid": "dba814c1df2a465503c077fde17345355a5a6900",
+      "changedFiles": 1,
+      "additions": 18,
+      "deletions": 4,
+      "labels": [
+        "ignore-for-release"
+      ],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "docs-only",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "CONTRIBUTING.md",
+          "additions": 18,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5507,
+      "title": "Add a warning about adding new config options",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5507",
+      "mergedAt": "2026-04-13T19:37:32Z",
+      "baseRefName": "master",
+      "headRefName": "warning-for-adding-new-config-options",
+      "baseRefOid": "38dd035e289dd71ad16fb0caa34525ad03460d21",
+      "headRefOid": "913e118d121dd50a1aaae7f0b6c728ffe24a16b8",
+      "mergeCommitOid": "dff44dde18510c9cec12e85efebe4421e629ae3d",
+      "changedFiles": 1,
+      "additions": 9,
+      "deletions": 8,
+      "labels": [
+        "ignore-for-release"
+      ],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "docs-only",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "VISION.md",
+          "additions": 9,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 2781,
+      "title": "Show pull requests against branches",
+      "url": "https://github.com/jesseduffield/lazygit/pull/2781",
+      "mergedAt": "2026-04-01T08:18:01Z",
+      "baseRefName": "master",
+      "headRefName": "gh-integration-3",
+      "baseRefOid": "eb351dcdeb108825f63516453b51566a4a40b1a9",
+      "headRefOid": "6c8110f0282aee26b389da6cdeffd4d66698c6b0",
+      "mergeCommitOid": "a33f83cf76d2c444d4adb6a1d8d7b2fbe9a2ebe0",
+      "changedFiles": 63,
+      "additions": 2648,
+      "deletions": 878,
+      "labels": [
+        "feature"
+      ],
+      "keywordHits": [
+        "error"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "pkg/commands/git_commands/github_test.go",
+        "pkg/gui/presentation/branches_test.go"
+      ],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "huge-diff"
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs-master/Config.md",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs-master/keybindings/Keybindings_en.md",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs-master/keybindings/Keybindings_ja.md",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs-master/keybindings/Keybindings_ko.md",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs-master/keybindings/Keybindings_nl.md",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs-master/keybindings/Keybindings_pl.md",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs-master/keybindings/Keybindings_pt.md",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs-master/keybindings/Keybindings_ru.md",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs-master/keybindings/Keybindings_zh-CN.md",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs-master/keybindings/Keybindings_zh-TW.md",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "go.mod",
+          "additions": 5,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "go.sum",
+          "additions": 13,
+          "deletions": 7,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/commands/git.go",
+          "additions": 47,
+          "deletions": 41,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/commands/git_commands/github.go",
+          "additions": 380,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "pkg/commands/git_commands/github_test.go",
+          "additions": 329,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "pkg/commands/git_commands/hosting_service.go",
+          "additions": 34,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "pkg/commands/hosting_service/definitions.go",
+          "additions": 13,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/commands/hosting_service/hosting_service.go",
+          "additions": 68,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/commands/models/github.go",
+          "additions": 24,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "pkg/config/app_config.go",
+          "additions": 18,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/config/user_config.go",
+          "additions": 40,
+          "deletions": 36,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/background.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/context/branches_context.go",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/context/menu_context.go",
+          "additions": 8,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/branches_controller.go",
+          "additions": 115,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/helpers/refresh_helper.go",
+          "additions": 196,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/helpers/refs_helper.go",
+          "additions": 18,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/local_commits_controller.go",
+          "additions": 27,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/menu_controller.go",
+          "additions": 1,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/gui.go",
+          "additions": 22,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/menu_panel.go",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/presentation/branches.go",
+          "additions": 33,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/presentation/branches_test.go",
+          "additions": 25,
+          "deletions": 25,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/presentation/icons/git_icons.go",
+          "additions": 9,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/types/common.go",
+          "additions": 22,
+          "deletions": 18,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/types/common_commands.go",
+          "additions": 5,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/types/refresh.go",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/i18n/english.go",
+          "additions": 8,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "schema-master/config.json",
+          "additions": 8,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/cli/go-gh/v2/LICENSE",
+          "additions": 21,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/cli/go-gh/v2/internal/set/string_set.go",
+          "additions": 70,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/cli/go-gh/v2/internal/yamlmap/yaml_map.go",
+          "additions": 210,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/cli/go-gh/v2/pkg/auth/auth.go",
+          "additions": 203,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/cli/go-gh/v2/pkg/config/config.go",
+          "additions": 344,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/cli/go-gh/v2/pkg/config/errors.go",
+          "additions": 32,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/cli/safeexec/LICENSE",
+          "additions": 25,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/cli/safeexec/README.md",
+          "additions": 48,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/cli/safeexec/lookpath.go",
+          "additions": 17,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/cli/safeexec/lookpath_1.18.go",
+          "additions": 10,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/cli/safeexec/lookpath_windows.go",
+          "additions": 120,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/mattn/go-colorable/noncolorable.go",
+          "additions": 0,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/mattn/go-isatty/isatty_bsd.go",
+          "additions": 3,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/mattn/go-isatty/isatty_others.go",
+          "additions": 3,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/mattn/go-isatty/isatty_tcgets.go",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/xo/terminfo/caps.go",
+          "additions": 0,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/xo/terminfo/capvals.go",
+          "additions": 1,
+          "deletions": 499,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/xo/terminfo/color.go",
+          "additions": 0,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/xo/terminfo/dec.go",
+          "additions": 12,
+          "deletions": 33,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "vendor/github.com/xo/terminfo/load.go",
+          "additions": 0,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5495,
+      "title": "Normalize repository owner casing to fix GitHub PR integration",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5495",
+      "mergedAt": "2026-04-10T16:49:38Z",
+      "baseRefName": "master",
+      "headRefName": "fix-case-insensitive",
+      "baseRefOid": "8f258a3650cef809b911df24881712bc6b5d96bd",
+      "headRefOid": "6eda4c0aabf12e7d4dbc66cde8cf0022708ab1f7",
+      "mergeCommitOid": "38dd035e289dd71ad16fb0caa34525ad03460d21",
+      "changedFiles": 2,
+      "additions": 37,
+      "deletions": 3,
+      "labels": [
+        "bug"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "pkg/commands/git_commands/github_test.go"
+      ],
+      "debugScore": 4,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "pkg/commands/git_commands/github.go",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/commands/git_commands/github_test.go",
+          "additions": 34,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5490,
+      "title": "Add a justfile",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5490",
+      "mergedAt": "2026-04-08T17:29:36Z",
+      "baseRefName": "master",
+      "headRefName": "add-justfile",
+      "baseRefOid": "84b7d1e2664fb922c054bc6b7ad81944fcb1222d",
+      "headRefOid": "665fcbf38990dadf98123e82217d6159c3a26a0c",
+      "mergeCommitOid": "8f258a3650cef809b911df24881712bc6b5d96bd",
+      "changedFiles": 1,
+      "additions": 57,
+      "deletions": 0,
+      "labels": [
+        "maintenance"
+      ],
+      "keywordHits": [
+        "error"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "justfile",
+          "additions": 57,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 5487,
+      "title": "Security fix: avoid using `${{ }}` variable interpolation in `run:` steps",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5487",
+      "mergedAt": "2026-04-08T08:20:12Z",
+      "baseRefName": "master",
+      "headRefName": "fix-fix-github-actions-shell-injection-release-yml",
+      "baseRefOid": "bb5d5f2deb88d495b4613328816fbfea954ba9bc",
+      "headRefOid": "4caee0886b5b9ada7020a965e83f6f5d38b5881b",
+      "mergeCommitOid": "84b7d1e2664fb922c054bc6b7ad81944fcb1222d",
+      "changedFiles": 1,
+      "additions": 16,
+      "deletions": 9,
+      "labels": [
+        "maintenance"
+      ],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".github/workflows/release.yml",
+          "additions": 16,
+          "deletions": 9,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5477,
+      "title": "Update docs and schema for release",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5477",
+      "mergedAt": "2026-04-06T17:37:08Z",
+      "baseRefName": "master",
+      "headRefName": "update-docs-for-release",
+      "baseRefOid": "26faf9d20fb3189f045fde60cb15010118cf6c92",
+      "headRefOid": "ffe645c50351c81c18dca1ba1d75af1dec858a6c",
+      "mergeCommitOid": "bb5d5f2deb88d495b4613328816fbfea954ba9bc",
+      "changedFiles": 12,
+      "additions": 207,
+      "deletions": 94,
+      "labels": [
+        "ignore-for-release"
+      ],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "docs/Config.md",
+          "additions": 19,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/Custom_Command_Keybindings.md",
+          "additions": 36,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/keybindings/Keybindings_en.md",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/keybindings/Keybindings_ja.md",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/keybindings/Keybindings_ko.md",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/keybindings/Keybindings_nl.md",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/keybindings/Keybindings_pl.md",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/keybindings/Keybindings_pt.md",
+          "additions": 96,
+          "deletions": 94,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/keybindings/Keybindings_ru.md",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/keybindings/Keybindings_zh-CN.md",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/keybindings/Keybindings_zh-TW.md",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "schema/config.json",
+          "additions": 40,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5476,
+      "title": "Update translations from Crowdin",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5476",
+      "mergedAt": "2026-04-06T17:31:47Z",
+      "baseRefName": "master",
+      "headRefName": "update-translations",
+      "baseRefOid": "7f5250a64a1c0a3ef17605ce7077b26fab27c907",
+      "headRefOid": "f47ee726c701100f98c60a3528d90357d183c8fd",
+      "mergeCommitOid": "26faf9d20fb3189f045fde60cb15010118cf6c92",
+      "changedFiles": 3,
+      "additions": 319,
+      "deletions": 103,
+      "labels": [
+        "i18n"
+      ],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "docs-master/keybindings/Keybindings_pt.md",
+          "additions": 94,
+          "deletions": 94,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/i18n/translations/pl.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/i18n/translations/pt.json",
+          "additions": 224,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5364,
+      "title": "Add condition field to custom command prompts",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5364",
+      "mergedAt": "2026-04-06T17:17:54Z",
+      "baseRefName": "master",
+      "headRefName": "add-conditional-prompts",
+      "baseRefOid": "2057dc1ea9e7ea008b3ca6016c8e3bbb93c25f22",
+      "headRefOid": "4cb6fafb087b338a599844d2b05d654cc611b61c",
+      "mergeCommitOid": "7f5250a64a1c0a3ef17605ce7077b26fab27c907",
+      "changedFiles": 8,
+      "additions": 300,
+      "deletions": 0,
+      "labels": [
+        "enhancement"
+      ],
+      "keywordHits": [],
+      "hasTests": true,
+      "testFiles": [
+        "pkg/integration/tests/custom_commands/conditional_prompt_false_string.go",
+        "pkg/integration/tests/custom_commands/conditional_prompt_false_value.go",
+        "pkg/integration/tests/custom_commands/conditional_prompts.go",
+        "pkg/integration/tests/test_list.go"
+      ],
+      "debugScore": 2,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "docs-master/Custom_Command_Keybindings.md",
+          "additions": 36,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/config/user_config.go",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/services/custom_commands/handler_creator.go",
+          "additions": 29,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/integration/tests/custom_commands/conditional_prompt_false_string.go",
+          "additions": 71,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "pkg/integration/tests/custom_commands/conditional_prompt_false_value.go",
+          "additions": 55,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "pkg/integration/tests/custom_commands/conditional_prompts.go",
+          "additions": 96,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "pkg/integration/tests/test_list.go",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "schema-master/config.json",
+          "additions": 7,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5441,
+      "title": "Log hashes of local branches when deleting them",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5441",
+      "mergedAt": "2026-04-06T17:10:04Z",
+      "baseRefName": "master",
+      "headRefName": "log-hash-when-deleting-branches",
+      "baseRefOid": "4c2c0ce32dd3136503ceef2e1bd6649794047cf0",
+      "headRefOid": "e4309f101c4c53a404750a1a848065861de8ce62",
+      "mergeCommitOid": "2057dc1ea9e7ea008b3ca6016c8e3bbb93c25f22",
+      "changedFiles": 3,
+      "additions": 27,
+      "deletions": 3,
+      "labels": [
+        "enhancement"
+      ],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "pkg/gui/controllers/helpers/branches_helper.go",
+          "additions": 16,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/gui/controllers/stash_controller.go",
+          "additions": 4,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pkg/i18n/english.go",
+          "additions": 7,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5457,
+      "title": "Bump github.com/spkg/bom from 0.0.0-20160624110644-59b7046e48ad to 1.0.1",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5457",
+      "mergedAt": "2026-04-01T09:15:48Z",
+      "baseRefName": "master",
+      "headRefName": "dependabot/go_modules/github.com/spkg/bom-1.0.1",
+      "baseRefOid": "4b7388bbe3badcc2afcc3f00aa937d0002e65ff6",
+      "headRefOid": "5a4a917e6f4be400071aef426f890e983b564c1d",
+      "mergeCommitOid": "03e75bd3eda86c801788572398b2454f9395109b",
+      "changedFiles": 9,
+      "additions": 8,
+      "deletions": 48,
+      "labels": [
+        "maintenance",
+        "dependencies",
+        "go"
+      ],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -5,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "go.mod",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "go.sum",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/spkg/bom/.gitignore",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/spkg/bom/.travis.yml",
+          "additions": 0,
+          "deletions": 16,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "vendor/github.com/spkg/bom/README.md",
+          "additions": 1,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/spkg/bom/bom.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/spkg/bom/discard_go14.go",
+          "additions": 0,
+          "deletions": 12,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "vendor/github.com/spkg/bom/discard_go15.go",
+          "additions": 0,
+          "deletions": 10,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "vendor/modules.txt",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5460,
+      "title": "Bump github.com/sasha-s/go-deadlock from 0.3.6 to 0.3.9",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5460",
+      "mergedAt": "2026-04-01T09:27:22Z",
+      "baseRefName": "master",
+      "headRefName": "dependabot/go_modules/github.com/sasha-s/go-deadlock-0.3.9",
+      "baseRefOid": "8aaed47c6313ae5d72fdc100418e726c649deb23",
+      "headRefOid": "5928e851dd00279f3a9d4756f374842e8ae879ed",
+      "mergeCommitOid": "4c2c0ce32dd3136503ceef2e1bd6649794047cf0",
+      "changedFiles": 20,
+      "additions": 960,
+      "deletions": 137,
+      "labels": [
+        "maintenance",
+        "dependencies",
+        "go"
+      ],
+      "keywordHits": [
+        "fix",
+        "race",
+        "leak",
+        "fail",
+        "failure"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "go.mod",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "go.sum",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/sasha-s/go-deadlock/Readme.md",
+          "additions": 32,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/sasha-s/go-deadlock/beforeafter_go124.go",
+          "additions": 30,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/sasha-s/go-deadlock/beforeafter_legacy.go",
+          "additions": 12,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/sasha-s/go-deadlock/deadlock.go",
+          "additions": 281,
+          "deletions": 124,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/sasha-s/go-deadlock/deadlock_map.go",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/sasha-s/go-deadlock/mutex.go",
+          "additions": 21,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/sasha-s/go-deadlock/stacktraces.go",
+          "additions": 32,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/sasha-s/go-deadlock/sync_disable.go",
+          "additions": 55,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/sasha-s/go-deadlock/sync_disable_go118.go",
+          "additions": 55,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/sasha-s/go-deadlock/sync_mutex_go118.go",
+          "additions": 65,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/sasha-s/go-deadlock/sync_mutex_legacy.go",
+          "additions": 68,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/sasha-s/go-deadlock/synctest_mutex.go",
+          "additions": 234,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/sasha-s/go-deadlock/timerpool_default.go",
+          "additions": 18,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/sasha-s/go-deadlock/timerpool_disable.go",
+          "additions": 9,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/sasha-s/go-deadlock/timerpool_go125.go",
+          "additions": 18,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/sasha-s/go-deadlock/timerpool_synctest.go",
+          "additions": 18,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/sasha-s/go-deadlock/trylock.go",
+          "additions": 7,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/modules.txt",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5459,
+      "title": "Bump github.com/sahilm/fuzzy from 0.1.0 to 0.1.1",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5459",
+      "mergedAt": "2026-04-01T09:23:47Z",
+      "baseRefName": "master",
+      "headRefName": "dependabot/go_modules/github.com/sahilm/fuzzy-0.1.1",
+      "baseRefOid": "f12a77ca8117a82e8cad911edd647686b7271020",
+      "headRefOid": "7d6c151296009cb0acf061159523effc32358a97",
+      "mergeCommitOid": "8aaed47c6313ae5d72fdc100418e726c649deb23",
+      "changedFiles": 6,
+      "additions": 32,
+      "deletions": 8,
+      "labels": [
+        "maintenance",
+        "dependencies",
+        "go"
+      ],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "go.mod",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "go.sum",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/sahilm/fuzzy/.travis.yml",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/sahilm/fuzzy/README.md",
+          "additions": 5,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/sahilm/fuzzy/fuzzy.go",
+          "additions": 20,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/modules.txt",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5458,
+      "title": "Bump github.com/integrii/flaggy from 1.4.0 to 1.8.0",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5458",
+      "mergedAt": "2026-04-01T09:19:50Z",
+      "baseRefName": "master",
+      "headRefName": "dependabot/go_modules/github.com/integrii/flaggy-1.8.0",
+      "baseRefOid": "03e75bd3eda86c801788572398b2454f9395109b",
+      "headRefOid": "dbb1ff4f24f759121cc364aa2d99148575fec199",
+      "mergeCommitOid": "f12a77ca8117a82e8cad911edd647686b7271020",
+      "changedFiles": 18,
+      "additions": 1762,
+      "deletions": 308,
+      "labels": [
+        "maintenance",
+        "dependencies",
+        "go"
+      ],
+      "keywordHits": [
+        "fix",
+        "error",
+        "validation",
+        "parser"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "huge-diff",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "go.mod",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "go.sum",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/integrii/flaggy/AGENTS.md",
+          "additions": 23,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/integrii/flaggy/CONTRIBUTING.md",
+          "additions": 17,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/integrii/flaggy/LICENSE",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/integrii/flaggy/README.md",
+          "additions": 38,
+          "deletions": 21,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/integrii/flaggy/byte_types.go",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/integrii/flaggy/completion.go",
+          "additions": 390,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/integrii/flaggy/flag.go",
+          "additions": 373,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/integrii/flaggy/flaggy.go",
+          "additions": 102,
+          "deletions": 4,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "vendor/github.com/integrii/flaggy/help.go",
+          "additions": 2,
+          "deletions": 18,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/integrii/flaggy/helpValues.go",
+          "additions": 323,
+          "deletions": 38,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/integrii/flaggy/logo.png",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "vendor/github.com/integrii/flaggy/parsedValue.go",
+          "additions": 5,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/integrii/flaggy/parser.go",
+          "additions": 168,
+          "deletions": 28,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/integrii/flaggy/scan_result.go",
+          "additions": 39,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/integrii/flaggy/subCommand.go",
+          "additions": 272,
+          "deletions": 185,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/modules.txt",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5456,
+      "title": "Bump github.com/adrg/xdg from 0.4.0 to 0.5.3",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5456",
+      "mergedAt": "2026-04-01T08:58:29Z",
+      "baseRefName": "master",
+      "headRefName": "dependabot/go_modules/github.com/adrg/xdg-0.5.3",
+      "baseRefOid": "a33f83cf76d2c444d4adb6a1d8d7b2fbe9a2ebe0",
+      "headRefOid": "a205bb74ebc458c188c21a2f11150bcd0aa6a47e",
+      "mergeCommitOid": "4b7388bbe3badcc2afcc3f00aa937d0002e65ff6",
+      "changedFiles": 17,
+      "additions": 418,
+      "deletions": 213,
+      "labels": [
+        "maintenance",
+        "dependencies",
+        "go"
+      ],
+      "keywordHits": [
+        "fix",
+        "error",
+        "parsing"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "go.mod",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "go.sum",
+          "additions": 2,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/adrg/xdg/README.md",
+          "additions": 42,
+          "deletions": 20,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/adrg/xdg/base_dirs.go",
+          "additions": 18,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/adrg/xdg/doc.go",
+          "additions": 7,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/adrg/xdg/internal/pathutil/pathutil.go",
+          "additions": 50,
+          "deletions": 14,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/adrg/xdg/internal/pathutil/pathutil_plan9.go",
+          "additions": 15,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/adrg/xdg/internal/pathutil/pathutil_unix.go",
+          "additions": 15,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/adrg/xdg/internal/pathutil/pathutil_windows.go",
+          "additions": 11,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/adrg/xdg/internal/userdirs/config_unix.go",
+          "additions": 82,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/adrg/xdg/internal/userdirs/userdirs.go",
+          "additions": 11,
+          "deletions": 11,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "vendor/github.com/adrg/xdg/paths_darwin.go",
+          "additions": 24,
+          "deletions": 24,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/adrg/xdg/paths_plan9.go",
+          "additions": 20,
+          "deletions": 24,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/adrg/xdg/paths_unix.go",
+          "additions": 27,
+          "deletions": 28,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/adrg/xdg/paths_windows.go",
+          "additions": 69,
+          "deletions": 41,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/adrg/xdg/xdg.go",
+          "additions": 21,
+          "deletions": 27,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/modules.txt",
+          "additions": 3,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5397,
+      "title": "README.md: Update Sponsors",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5397",
+      "mergedAt": "2026-03-31T11:57:17Z",
+      "baseRefName": "master",
+      "headRefName": "create-pull-request/patch",
+      "baseRefOid": "09a584c5756326b2e950b82c528698dec397ff14",
+      "headRefOid": "6bb1051292222298b768a68b9fe8586179369a8d",
+      "mergeCommitOid": "eb351dcdeb108825f63516453b51566a4a40b1a9",
+      "changedFiles": 1,
+      "additions": 1,
+      "deletions": 1,
+      "labels": [
+        "ignore-for-release"
+      ],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "docs-only",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5451,
+      "title": "Bump github.com/sanity-io/litter from 1.5.2 to 1.5.8",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5451",
+      "mergedAt": "2026-03-31T11:54:21Z",
+      "baseRefName": "master",
+      "headRefName": "dependabot/go_modules/github.com/sanity-io/litter-1.5.8",
+      "baseRefOid": "508d328f70fb23d5f7021baee043bfcca0254344",
+      "headRefOid": "9c2d120153a4b2c59815328cb8d5f29a59befed7",
+      "mergeCommitOid": "09a584c5756326b2e950b82c528698dec397ff14",
+      "changedFiles": 6,
+      "additions": 43,
+      "deletions": 22,
+      "labels": [
+        "maintenance",
+        "dependencies",
+        "go"
+      ],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "go.mod",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "go.sum",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/sanity-io/litter/.travis.yml",
+          "additions": 0,
+          "deletions": 7,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "vendor/github.com/sanity-io/litter/dump.go",
+          "additions": 36,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/sanity-io/litter/pointers.go",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/modules.txt",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5450,
+      "title": "Bump github.com/stretchr/testify from 1.10.0 to 1.11.1",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5450",
+      "mergedAt": "2026-03-31T11:50:39Z",
+      "baseRefName": "master",
+      "headRefName": "dependabot/go_modules/github.com/stretchr/testify-1.11.1",
+      "baseRefOid": "df0ba8fce5a44f496c7ebe459cb7e5071a61b3ee",
+      "headRefOid": "5606ba6d067d63313d555fb1459e7dea6d61bae5",
+      "mergeCommitOid": "508d328f70fb23d5f7021baee043bfcca0254344",
+      "changedFiles": 13,
+      "additions": 378,
+      "deletions": 185,
+      "labels": [
+        "maintenance",
+        "dependencies",
+        "go"
+      ],
+      "keywordHits": [
+        "fix",
+        "error",
+        "fail",
+        "failure"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "go.mod",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "go.sum",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/stretchr/testify/assert/assertion_compare.go",
+          "additions": 14,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/stretchr/testify/assert/assertion_format.go",
+          "additions": 38,
+          "deletions": 13,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/stretchr/testify/assert/assertion_forward.go",
+          "additions": 76,
+          "deletions": 26,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/stretchr/testify/assert/assertion_order.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/stretchr/testify/assert/assertions.go",
+          "additions": 239,
+          "deletions": 128,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/stretchr/testify/assert/doc.go",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/stretchr/testify/assert/http_assertions.go",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/stretchr/testify/assert/yaml/yaml_custom.go",
+          "additions": 0,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/stretchr/testify/assert/yaml/yaml_default.go",
+          "additions": 0,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/stretchr/testify/assert/yaml/yaml_fail.go",
+          "additions": 0,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/modules.txt",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5449,
+      "title": "Bump github.com/creack/pty from 1.1.11 to 1.1.24",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5449",
+      "mergedAt": "2026-03-31T11:47:06Z",
+      "baseRefName": "master",
+      "headRefName": "dependabot/go_modules/github.com/creack/pty-1.1.24",
+      "baseRefOid": "7ab5d569c225824ed77a799dda0b385fc3eb8d18",
+      "headRefOid": "8a1f965e64a2215d62f191ab4c06f83834c527c3",
+      "mergeCommitOid": "df0ba8fce5a44f496c7ebe459cb7e5071a61b3ee",
+      "changedFiles": 56,
+      "additions": 1165,
+      "deletions": 302,
+      "labels": [
+        "maintenance",
+        "dependencies",
+        "go"
+      ],
+      "keywordHits": [
+        "fix",
+        "race",
+        "timeout"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "huge-diff",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "go.mod",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "go.sum",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/.editorconfig",
+          "additions": 54,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/.golangci.yml",
+          "additions": 324,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/Dockerfile.golang",
+          "additions": 17,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/Dockerfile.riscv",
+          "additions": 0,
+          "deletions": 14,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/README.md",
+          "additions": 13,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/asm_solaris_amd64.s",
+          "additions": 18,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/doc.go",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/ioctl.go",
+          "additions": 21,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/ioctl_bsd.go",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/ioctl_inner.go",
+          "additions": 20,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/ioctl_legacy.go",
+          "additions": 10,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/ioctl_solaris.go",
+          "additions": 28,
+          "deletions": 10,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/ioctl_unsupported.go",
+          "additions": 13,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/mktypes.bash",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/pty_darwin.go",
+          "additions": 7,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/pty_dragonfly.go",
+          "additions": 8,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/pty_freebsd.go",
+          "additions": 7,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/pty_linux.go",
+          "additions": 7,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/pty_netbsd.go",
+          "additions": 69,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/pty_openbsd.go",
+          "additions": 17,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/pty_solaris.go",
+          "additions": 101,
+          "deletions": 69,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/pty_unsupported.go",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/pty_zos.go",
+          "additions": 141,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/run.go",
+          "additions": 6,
+          "deletions": 23,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/start.go",
+          "additions": 25,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/start_windows.go",
+          "additions": 19,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/test_crosscompile.sh",
+          "additions": 29,
+          "deletions": 19,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/util.go",
+          "additions": 0,
+          "deletions": 64,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/util_solaris.go",
+          "additions": 0,
+          "deletions": 51,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/winsize.go",
+          "additions": 24,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/winsize_unix.go",
+          "additions": 35,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/winsize_unsupported.go",
+          "additions": 23,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/ztypes_386.go",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/ztypes_amd64.go",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/ztypes_arm.go",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/ztypes_arm64.go",
+          "additions": 3,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/ztypes_dragonfly_amd64.go",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/ztypes_freebsd_386.go",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/ztypes_freebsd_amd64.go",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/ztypes_freebsd_arm.go",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/ztypes_freebsd_arm64.go",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/ztypes_freebsd_ppc64.go",
+          "additions": 14,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/ztypes_freebsd_riscv64.go",
+          "additions": 13,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/ztypes_loong64.go",
+          "additions": 12,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/ztypes_mipsx.go",
+          "additions": 4,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/ztypes_netbsd_32bit_int.go",
+          "additions": 17,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/ztypes_openbsd_32bit_int.go",
+          "additions": 5,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/ztypes_ppc.go",
+          "additions": 9,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/ztypes_ppc64.go",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/ztypes_ppc64le.go",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/ztypes_riscvx.go",
+          "additions": 3,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/ztypes_s390x.go",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/creack/pty/ztypes_sparcx.go",
+          "additions": 12,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/modules.txt",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5448,
+      "title": "Bump github.com/spf13/afero from 1.9.5 to 1.15.0",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5448",
+      "mergedAt": "2026-03-31T11:41:41Z",
+      "baseRefName": "master",
+      "headRefName": "dependabot/go_modules/github.com/spf13/afero-1.15.0",
+      "baseRefOid": "4bc6b7dd2b790fef6bd328b813f7e44051b0fd39",
+      "headRefOid": "40438e7b6c730f0de9b965c48effa3330ec5d57a",
+      "mergeCommitOid": "7ab5d569c225824ed77a799dda0b385fc3eb8d18",
+      "changedFiles": 15,
+      "additions": 501,
+      "deletions": 753,
+      "labels": [
+        "maintenance",
+        "dependencies",
+        "go"
+      ],
+      "keywordHits": [
+        "fix",
+        "error"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -5,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "huge-diff",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "go.mod",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "go.sum",
+          "additions": 2,
+          "deletions": 414,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/spf13/afero/.editorconfig",
+          "additions": 15,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/spf13/afero/.golangci.yaml",
+          "additions": 48,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/github.com/spf13/afero/README.md",
+          "additions": 338,
+          "deletions": 306,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/spf13/afero/const_bsds.go",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/spf13/afero/const_win_unix.go",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/spf13/afero/copyOnWriteFs.go",
+          "additions": 7,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/spf13/afero/iofs.go",
+          "additions": 7,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/spf13/afero/lstater.go",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/spf13/afero/mem/file.go",
+          "additions": 18,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/spf13/afero/memmap.go",
+          "additions": 52,
+          "deletions": 11,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/spf13/afero/unionFile.go",
+          "additions": 3,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/spf13/afero/util.go",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/modules.txt",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5447,
+      "title": "Bump github.com/lucasb-eyer/go-colorful from 1.3.0 to 1.4.0",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5447",
+      "mergedAt": "2026-03-31T11:35:59Z",
+      "baseRefName": "master",
+      "headRefName": "dependabot/go_modules/github.com/lucasb-eyer/go-colorful-1.4.0",
+      "baseRefOid": "ec48231f52c354b496403153072134886476f299",
+      "headRefOid": "b37911eba89d4db3191b61b92a8b252b3bfbad97",
+      "mergeCommitOid": "4bc6b7dd2b790fef6bd328b813f7e44051b0fd39",
+      "changedFiles": 7,
+      "additions": 317,
+      "deletions": 10,
+      "labels": [
+        "maintenance",
+        "dependencies",
+        "go"
+      ],
+      "keywordHits": [
+        "parsing"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "go.mod",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "go.sum",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/lucasb-eyer/go-colorful/CHANGELOG.md",
+          "additions": 7,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/lucasb-eyer/go-colorful/README.md",
+          "additions": 12,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/lucasb-eyer/go-colorful/hexcolor.go",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "vendor/github.com/lucasb-eyer/go-colorful/widegamut.go",
+          "additions": 290,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vendor/modules.txt",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5446,
+      "title": "Bump actions/upload-artifact from 6 to 7",
+      "url": "https://github.com/jesseduffield/lazygit/pull/5446",
+      "mergedAt": "2026-03-31T11:25:00Z",
+      "baseRefName": "master",
+      "headRefName": "dependabot/github_actions/actions/upload-artifact-7",
+      "baseRefOid": "d0e7842c15db6bd79a6a94da666b921a5f55028f",
+      "headRefOid": "ba386fd19c67026daa24eb6644d1f02da5a1f3af",
+      "mergeCommitOid": "ec48231f52c354b496403153072134886476f299",
+      "changedFiles": 1,
+      "additions": 2,
+      "deletions": 2,
+      "labels": [
+        "maintenance",
+        "dependencies",
+        "github_actions"
+      ],
+      "keywordHits": [
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".github/workflows/ci.yml",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    }
+  ]
+}

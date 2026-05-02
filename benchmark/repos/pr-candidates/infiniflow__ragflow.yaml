@@ -1,0 +1,3166 @@
+generatedAt: 2026-05-02T10:20:20.805Z
+repo: infiniflow/ragflow
+since: 2026-01-01
+limit: 50
+debugKeywords: 
+  - bug
+  - fix
+  - regression
+  - crash
+  - incorrect
+  - wrong
+  - error
+  - exception
+  - edge
+  - flaky
+  - race
+  - leak
+  - validation
+  - parser
+  - parsing
+  - timeout
+  - fail
+  - failure
+  - broken
+prs: 
+  - 
+    number: 13464
+    title: "Feat/configurable metadata display"
+    url: https://github.com/infiniflow/ragflow/pull/13464
+    mergedAt: 2026-04-30T15:13:27Z
+    baseRefName: main
+    headRefName: feat/configurable-metadata-display
+    baseRefOid: d38d6e7931bc16f0b3815966662fea2b28673a87
+    headRefOid: 824b701c97a82e537b7e9399de28e050f8d95418
+    mergeCommitOid: 24af0875e532ec2f9d7edd5c9a0b50a27f379bfa
+    changedFiles: 23
+    additions: 1004
+    deletions: 67
+    labels: 
+      - "💞 feature"
+      - "🌈 python"
+      - ci
+      - size:XL
+      - lgtm
+      - "🐖api"
+    keywordHits: 
+      - bug
+      - fix
+      - edge
+    hasTests: true
+    testFiles: 
+      - test/testcases/test_http_api/test_file_management_within_dataset/test_doc_sdk_routes_unit.py
+      - test/testcases/test_http_api/test_session_management/test_session_sdk_routes_unit.py
+    debugScore: 4
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: api/apps/restful_apis/openai_api.py
+        additions: 21
+        deletions: 30
+        changeType: MODIFIED
+      - 
+        path: api/apps/sdk/doc.py
+        additions: 23
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: api/apps/sdk/session.py
+        additions: 18
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: api/db/services/dialog_service.py
+        additions: 83
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: api/db/services/doc_metadata_service.py
+        additions: 30
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: api/utils/reference_metadata_utils.py
+        additions: 125
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: rag/prompts/generator.py
+        additions: 4
+        deletions: 13
+        changeType: MODIFIED
+      - 
+        path: run_tests.py
+        additions: 25
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: sdk/python/ragflow_sdk/modules/dataset.py
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: test/testcases/test_http_api/test_file_management_within_dataset/test_doc_sdk_routes_unit.py
+        additions: 146
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: test/testcases/test_http_api/test_session_management/test_session_sdk_routes_unit.py
+        additions: 189
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: web/src/components/fallback-component/index.tsx
+        additions: 27
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: web/src/components/markdown-content/index.tsx
+        additions: 22
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: web/src/hooks/use-knowledge-request.ts
+        additions: 19
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: web/src/interfaces/database/chat.ts
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/agent/form/doc-generator-form/use-values.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/next-chats/chat/app-settings/chat-basic-settings.tsx
+        additions: 83
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/next-chats/chat/app-settings/chat-settings.tsx
+        additions: 24
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/next-chats/chat/app-settings/use-chat-setting-schema.tsx
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/next-search/search-setting.tsx
+        additions: 115
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/next-search/search-view.tsx
+        additions: 26
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/next-searches/hooks.ts
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: web/src/services/knowledge-service.ts
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 14544
+    title: "Doc: RAGFlow now supports DeepSeek v4"
+    url: https://github.com/infiniflow/ragflow/pull/14544
+    mergedAt: 2026-04-30T12:12:29Z
+    baseRefName: main
+    headRefName: v4
+    baseRefOid: f14abf858e265e11b6c314fa5744e8211a371423
+    headRefOid: fb18c52da15d431bb11642a51ccfb8e43c8ca273
+    mergeCommitOid: d38d6e7931bc16f0b3815966662fea2b28673a87
+    changedFiles: 10
+    additions: 13
+    deletions: 3
+    labels: 
+      - "📖 documentation"
+      - size:S
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -5
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: README.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: README_ar.md
+        additions: 3
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: README_fr.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: README_id.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: README_ja.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: README_ko.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: README_pt_br.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: README_tr.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: README_tzh.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: README_zh.md
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 14543
+    title: "Doc: Minor editorial updates"
+    url: https://github.com/infiniflow/ragflow/pull/14543
+    mergedAt: 2026-04-30T12:06:29Z
+    baseRefName: main
+    headRefName: minortweaks
+    baseRefOid: 12af73f2ca74c81eb5f40fcd4aa8a3ff2ed2019e
+    headRefOid: 0ac04ccee504fe573d8c77043d552abe71abf060
+    mergeCommitOid: f14abf858e265e11b6c314fa5744e8211a371423
+    changedFiles: 3
+    additions: 1
+    deletions: 60
+    labels: 
+      - size:M
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docs/administrator/migration/_category_.json
+        additions: 0
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: docs/administrator/migration/database_migration.md
+        additions: 0
+        deletions: 56
+        changeType: DELETED
+      - 
+        path: docs/release_notes.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 14537
+    title: "Support stream for multimodal chat"
+    url: https://github.com/infiniflow/ragflow/pull/14537
+    mergedAt: 2026-04-30T11:33:57Z
+    baseRefName: main
+    headRefName: stream_multimodal
+    baseRefOid: bedf9592ef6af9ca7c36c670a62651904ff01bec
+    headRefOid: 7bb73e8ef19957319a38f9f9cd9b2fe99f94c977
+    mergeCommitOid: 12af73f2ca74c81eb5f40fcd4aa8a3ff2ed2019e
+    changedFiles: 15
+    additions: 369
+    deletions: 227
+    labels: 
+      - ci
+      - size:XL
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: internal/entity/models/aliyun.go
+        additions: 19
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/deepseek.go
+        additions: 73
+        deletions: 63
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/dummy.go
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/gitee.go
+        additions: 19
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/google.go
+        additions: 53
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/minimax.go
+        additions: 18
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/moonshot.go
+        additions: 19
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/siliconflow.go
+        additions: 47
+        deletions: 34
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/types.go
+        additions: 4
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/vllm.go
+        additions: 20
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/volcengine.go
+        additions: 18
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/zhipu-ai.go
+        additions: 47
+        deletions: 34
+        changeType: MODIFIED
+      - 
+        path: internal/handler/providers.go
+        additions: 9
+        deletions: 19
+        changeType: MODIFIED
+      - 
+        path: internal/service/chat_session.go
+        additions: 14
+        deletions: 9
+        changeType: MODIFIED
+      - 
+        path: internal/service/model_service.go
+        additions: 6
+        deletions: 6
+        changeType: MODIFIED
+  - 
+    number: 14530
+    title: "Fix: sync data source empty list"
+    url: https://github.com/infiniflow/ragflow/pull/14530
+    mergedAt: 2026-04-30T10:56:44Z
+    baseRefName: main
+    headRefName: main
+    baseRefOid: 93f3b9012101c0f500a81c0016debcd5902986d5
+    headRefOid: a2b8e9fba32fb87620b3e0b4f8f635f9f6ed7370
+    mergeCommitOid: 5fd4579a2ffba4e85e778917a3b70072a926906a
+    changedFiles: 1
+    additions: 1
+    deletions: 9
+    labels: 
+      - "🐞 bug"
+      - ci
+      - size:S
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: rag/svr/sync_data_source.py
+        additions: 1
+        deletions: 9
+        changeType: MODIFIED
+  - 
+    number: 14533
+    title: "Fix: remove delete_documents uuid validation"
+    url: https://github.com/infiniflow/ragflow/pull/14533
+    mergedAt: 2026-04-30T10:56:33Z
+    baseRefName: main
+    headRefName: b030
+    baseRefOid: 93f3b9012101c0f500a81c0016debcd5902986d5
+    headRefOid: f1bf9a59e053dd9f605d1b4291835d7168e4c55b
+    mergeCommitOid: 05ee7f8bb68836b099bd99eac079ad5e1e5bc544
+    changedFiles: 4
+    additions: 34
+    deletions: 12
+    labels: 
+      - "🐞 bug"
+      - ci
+      - size:S
+      - "🧪 test"
+    keywordHits: 
+      - bug
+      - fix
+      - validation
+    hasTests: true
+    testFiles: 
+      - test/testcases/test_http_api/test_file_management_within_dataset/test_delete_documents.py
+      - test/testcases/test_sdk_api/test_file_management_within_dataset/test_delete_documents.py
+      - test/testcases/test_web_api/test_document_app/test_rm_documents.py
+    debugScore: 5
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: api/utils/validation_utils.py
+        additions: 25
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: test/testcases/test_http_api/test_file_management_within_dataset/test_delete_documents.py
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: test/testcases/test_sdk_api/test_file_management_within_dataset/test_delete_documents.py
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: test/testcases/test_web_api/test_document_app/test_rm_documents.py
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 14493
+    title: "feat(rss): support deleted-file sync"
+    url: https://github.com/infiniflow/ragflow/pull/14493
+    mergedAt: 2026-04-30T10:56:13Z
+    baseRefName: main
+    headRefName: fix/issue-14362-rss-sync-deleted
+    baseRefOid: 45d77dc778ae67e1320b414be7c2ccfa433bc15f
+    headRefOid: 27095cf1c6158c6e7af7a59eafb8626f5948fd87
+    mergeCommitOid: a69e0c73c7fc4e43342931ced2285e3f23fdb2a3
+    changedFiles: 3
+    additions: 64
+    deletions: 7
+    labels: 
+      - ci
+      - size:M
+    keywordHits: 
+      - edge
+      - race
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: common/data_source/rss_connector.py
+        additions: 39
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: rag/svr/sync_data_source.py
+        additions: 22
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/user-setting/data-source/constant/index.tsx
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 14491
+    title: "feat(webdav): support deleted-file sync via slim snapshot"
+    url: https://github.com/infiniflow/ragflow/pull/14491
+    mergedAt: 2026-04-30T09:26:27Z
+    baseRefName: main
+    headRefName: feat/webdav-sync-deleted-files
+    baseRefOid: 265f92c83e7855461423b53a7438aabb789b860b
+    headRefOid: d7e61b3250f6caae1433fef8d32bc16d6bf8c6b5
+    mergeCommitOid: bedf9592ef6af9ca7c36c670a62651904ff01bec
+    changedFiles: 3
+    additions: 118
+    deletions: 14
+    labels: 
+      - "💞 feature"
+      - ci
+      - size:L
+      - python
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: common/data_source/webdav_connector.py
+        additions: 78
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: rag/svr/sync_data_source.py
+        additions: 37
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/user-setting/data-source/constant/index.tsx
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 14536
+    title: "Fix #14443"
+    url: https://github.com/infiniflow/ragflow/pull/14536
+    mergedAt: 2026-04-30T09:21:29Z
+    baseRefName: main
+    headRefName: enhance/add-os-env-support
+    baseRefOid: 93f3b9012101c0f500a81c0016debcd5902986d5
+    headRefOid: 4acd93df5581f8d568b18f4cb4b4bab5b5e83694
+    mergeCommitOid: c363e4366464d43f58a63f439d263c8e4330d7d1
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+      - size:XS
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docker/.env
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 14532
+    title: "Go: implement provider: Vllm"
+    url: https://github.com/infiniflow/ragflow/pull/14532
+    mergedAt: 2026-04-30T08:30:14Z
+    baseRefName: main
+    headRefName: main
+    baseRefOid: 265f92c83e7855461423b53a7438aabb789b860b
+    headRefOid: 2fed66fe1f72731b211eb1833475ade4795d0d45
+    mergeCommitOid: 93f3b9012101c0f500a81c0016debcd5902986d5
+    changedFiles: 2
+    additions: 244
+    deletions: 5
+    labels: 
+      - ci
+      - size:L
+    keywordHits: 
+      - bug
+      - fix
+      - error
+      - parsing
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: internal/entity/models/vllm.go
+        additions: 204
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: internal/service/model_service.go
+        additions: 40
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 14531
+    title: "Fix: LaTeX formulas cannot be displayed on the chat page."
+    url: https://github.com/infiniflow/ragflow/pull/14531
+    mergedAt: 2026-04-30T08:12:14Z
+    baseRefName: main
+    headRefName: fix-search-embed
+    baseRefOid: 265f92c83e7855461423b53a7438aabb789b860b
+    headRefOid: ed987588d7b6651a20db37c3bfc71b48398f05b5
+    mergeCommitOid: 00e03a1945539d3c67692dc1252dc9bd1b134f83
+    changedFiles: 1
+    additions: 2
+    deletions: 2
+    labels: 
+      - ci
+      - size:XS
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: web/src/utils/chat.ts
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 14523
+    title: "Simplify chat and support multimodal chat"
+    url: https://github.com/infiniflow/ragflow/pull/14523
+    mergedAt: 2026-04-30T07:25:02Z
+    baseRefName: main
+    headRefName: simplify_chat
+    baseRefOid: e992fe39b2d9968982973bb16069f6f5993f6df4
+    headRefOid: c0afd500c9267fd7045f7b8ec3f3ba547588356e
+    mergeCommitOid: 265f92c83e7855461423b53a7438aabb789b860b
+    changedFiles: 17
+    additions: 911
+    deletions: 486
+    labels: 
+      - ci
+      - size:XXL
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: internal/cli/http_client.go
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: internal/cli/user_command.go
+        additions: 18
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/aliyun.go
+        additions: 41
+        deletions: 38
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/deepseek.go
+        additions: 72
+        deletions: 68
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/dummy.go
+        additions: 2
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/gitee.go
+        additions: 67
+        deletions: 47
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/google.go
+        additions: 54
+        deletions: 27
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/minimax.go
+        additions: 129
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/moonshot.go
+        additions: 47
+        deletions: 37
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/siliconflow.go
+        additions: 62
+        deletions: 85
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/types.go
+        additions: 10
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/vllm.go
+        additions: 131
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/volcengine.go
+        additions: 157
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/zhipu-ai.go
+        additions: 47
+        deletions: 135
+        changeType: MODIFIED
+      - 
+        path: internal/handler/providers.go
+        additions: 40
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: internal/service/chat_session.go
+        additions: 9
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: internal/service/model_service.go
+        additions: 23
+        deletions: 9
+        changeType: MODIFIED
+  - 
+    number: 14526
+    title: "Not allow to sort by id"
+    url: https://github.com/infiniflow/ragflow/pull/14526
+    mergedAt: 2026-04-30T06:52:44Z
+    baseRefName: main
+    headRefName: bugfix/not-allow-sort-by-id
+    baseRefOid: 4ee0702aed1395e88fccf4b8b0aea68ce76b9d62
+    headRefOid: e8ef638fe21521c80bae9f3f26ead30de9ba46cb
+    mergeCommitOid: f45ce00347f56052a8690e4380b1b812a8cc509b
+    changedFiles: 3
+    additions: 6
+    deletions: 2
+    labels: 
+      - ci
+      - size:XS
+    keywordHits: 
+      - bug
+      - fix
+      - error
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docker/.env
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: memory/utils/es_conn.py
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: rag/utils/es_conn.py
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 14529
+    title: "Fix version info"
+    url: https://github.com/infiniflow/ragflow/pull/14529
+    mergedAt: 2026-04-30T06:47:28Z
+    baseRefName: main
+    headRefName: fix410
+    baseRefOid: 17eda04b8d717c14fc0fe364363291ea56f40cc0
+    headRefOid: 2ec4e741ec4308b22835c0e5c045016b13abbd22
+    mergeCommitOid: 45d77dc778ae67e1320b414be7c2ccfa433bc15f
+    changedFiles: 1
+    additions: 2
+    deletions: 2
+    labels: 
+      - size:XS
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docker/.env
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 14487
+    title: "feat(zendesk): support deleted-file sync"
+    url: https://github.com/infiniflow/ragflow/pull/14487
+    mergedAt: 2026-04-30T06:44:06Z
+    baseRefName: main
+    headRefName: fix/issue-14362-zendesk-sync-deleted
+    baseRefOid: 4ee0702aed1395e88fccf4b8b0aea68ce76b9d62
+    headRefOid: 23bd123036bf2c59783b6b94b78688a71308a1d4
+    mergeCommitOid: 17eda04b8d717c14fc0fe364363291ea56f40cc0
+    changedFiles: 3
+    additions: 42
+    deletions: 9
+    labels: 
+      - "💞 feature"
+      - "🌈 python"
+      - ci
+      - size:M
+    keywordHits: 
+      - bug
+      - fix
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: common/data_source/zendesk_connector.py
+        additions: 22
+        deletions: 9
+        changeType: MODIFIED
+      - 
+        path: rag/svr/sync_data_source.py
+        additions: 17
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/user-setting/data-source/constant/index.tsx
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 14468
+    title: "feat(asana): support deleted-file sync"
+    url: https://github.com/infiniflow/ragflow/pull/14468
+    mergedAt: 2026-04-30T06:41:37Z
+    baseRefName: main
+    headRefName: codex/asana-sync-deleted-files
+    baseRefOid: 4ee0702aed1395e88fccf4b8b0aea68ce76b9d62
+    headRefOid: d2841f5724fe5cf35c3602120d76f36e5df47e15
+    mergeCommitOid: 8f75e52bbf2287e3b386a8f242a9bb59f7353ae2
+    changedFiles: 3
+    additions: 117
+    deletions: 33
+    labels: 
+      - "💞 feature"
+      - "🌈 python"
+      - ci
+      - size:L
+      - "🧪 test"
+    keywordHits: 
+      - error
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: common/data_source/asana_connector.py
+        additions: 99
+        deletions: 21
+        changeType: MODIFIED
+      - 
+        path: rag/svr/sync_data_source.py
+        additions: 15
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/user-setting/data-source/constant/index.tsx
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 14470
+    title: "fix: the oceanbase database connector constructs sql... in ob_conn.py"
+    url: https://github.com/infiniflow/ragflow/pull/14470
+    mergedAt: 2026-04-30T06:25:17Z
+    baseRefName: main
+    headRefName: fix-v-003-sql-injection-ob-conn
+    baseRefOid: 96909235167edc0d1a9b5ed4cc104efea92f522b
+    headRefOid: fecd6fc711ac4935136dfbf48005a7ca8a3479f1
+    mergeCommitOid: e992fe39b2d9968982973bb16069f6f5993f6df4
+    changedFiles: 1
+    additions: 42
+    deletions: 25
+    labels: 
+      - "🐞 bug"
+      - ci
+      - size:M
+    keywordHits: 
+      - bug
+      - fix
+      - edge
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: rag/utils/ob_conn.py
+        additions: 42
+        deletions: 25
+        changeType: MODIFIED
+  - 
+    number: 14356
+    title: "Fix: allow search id or _id"
+    url: https://github.com/infiniflow/ragflow/pull/14356
+    mergedAt: 2026-04-24T13:38:19Z
+    baseRefName: main
+    headRefName: fix/display-metadata
+    baseRefOid: ca01c7a7452dcfd3578ce41ba747b95bcf7bffa1
+    headRefOid: 8fff6465142a1cf15a54a7bc3179e673bc0d0bab
+    mergeCommitOid: e22cf333edfd6e9bee78e2b5fe6b53055f27774a
+    changedFiles: 1
+    additions: 10
+    deletions: 0
+    labels: 
+      - "🐞 bug"
+      - ci
+      - size:S
+      - lgtm
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: rag/utils/es_conn.py
+        additions: 10
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 13908
+    title: "Feat: add skills space to context engine"
+    url: https://github.com/infiniflow/ragflow/pull/13908
+    mergedAt: 2026-04-30T04:36:03Z
+    baseRefName: main
+    headRefName: skills
+    baseRefOid: 71952b6b5825a0918f6a7b093a850708d00ce6bb
+    headRefOid: baa9d3dc908ec5c770a6b67f0e03744af8b0d37f
+    mergeCommitOid: 4ee0702aed1395e88fccf4b8b0aea68ce76b9d62
+    changedFiles: 101
+    additions: 19157
+    deletions: 629
+    labels: 
+      - "💞 feature"
+      - ci
+      - size:XXL
+    keywordHits: 
+      - parser
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: api/apps/restful_apis/file_api.py
+        additions: 3
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: api/apps/services/file_api_service.py
+        additions: 166
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: api/db/__init__.py
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: api/db/services/file_service.py
+        additions: 28
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: cmd/cli/ragflow_cli.go
+        additions: 10
+        deletions: 0
+        changeType: RENAMED
+      - 
+        path: cmd/server_main.go
+        additions: 12
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: conf/skill_es_mapping.json
+        additions: 136
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: conf/skill_infinity_mapping.json
+        additions: 64
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docker/nginx/ragflow.conf.golang
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docker/nginx/ragflow.conf.hybrid
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: internal/cli/README.md
+        additions: 14
+        deletions: 32
+        changeType: MODIFIED
+      - 
+        path: internal/cli/cli.go
+        additions: 320
+        deletions: 127
+        changeType: MODIFIED
+      - 
+        path: internal/cli/client.go
+        additions: 11
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: internal/cli/context_command.go
+        additions: 0
+        deletions: 135
+        changeType: DELETED
+      - 
+        path: internal/cli/context_parser.go
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: internal/cli/contextengine/README.md
+        additions: 0
+        deletions: 49
+        changeType: DELETED
+      - 
+        path: internal/cli/filesystem/README.md
+        additions: 195
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: internal/cli/filesystem/base.go
+        additions: 1
+        deletions: 1
+        changeType: RENAMED
+      - 
+        path: internal/cli/filesystem/dataset.go
+        additions: 4
+        deletions: 2
+        changeType: RENAMED
+      - 
+        path: internal/cli/filesystem/engine.go
+        additions: 21
+        deletions: 3
+        changeType: RENAMED
+      - 
+        path: internal/cli/filesystem/file.go
+        additions: 87
+        deletions: 1
+        changeType: RENAMED
+      - 
+        path: internal/cli/filesystem/skill.go
+        additions: 2154
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: internal/cli/filesystem/skill_hub/security/guard.go
+        additions: 164
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: internal/cli/filesystem/skill_hub/security/patterns.go
+        additions: 284
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: internal/cli/filesystem/skill_hub/security/scanner.go
+        additions: 150
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: internal/cli/filesystem/skill_hub/source/clawhub.go
+        additions: 933
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: internal/cli/filesystem/skill_hub/source/github.go
+        additions: 260
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: internal/cli/filesystem/skill_hub/source/interface.go
+        additions: 177
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: internal/cli/filesystem/skill_hub/source/local.go
+        additions: 206
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: internal/cli/filesystem/skill_hub/source/skillssh.go
+        additions: 574
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: internal/cli/filesystem/skill_hub/source/types.go
+        additions: 47
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: internal/cli/filesystem/skill_install.go
+        additions: 437
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: internal/cli/filesystem/skill_uninstall.go
+        additions: 166
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: internal/cli/filesystem/types.go
+        additions: 3
+        deletions: 3
+        changeType: RENAMED
+      - 
+        path: internal/cli/filesystem/utils.go
+        additions: 1
+        deletions: 1
+        changeType: RENAMED
+      - 
+        path: internal/cli/http_client.go
+        additions: 44
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: internal/cli/lexer.go
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: internal/cli/parser.go
+        additions: 166
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: internal/cli/response.go
+        additions: 23
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: internal/cli/types.go
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: internal/cli/user_command.go
+        additions: 33
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: internal/cli/user_parser.go
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: internal/dao/database.go
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: internal/dao/file.go
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: internal/dao/migration.go
+        additions: 161
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: internal/dao/skill_search_config.go
+        additions: 196
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: internal/dao/skill_space.go
+        additions: 141
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: internal/engine/elasticsearch/client.go
+        additions: 44
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: internal/engine/elasticsearch/document.go
+        additions: 259
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: internal/engine/elasticsearch/index.go
+        additions: 187
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: internal/engine/elasticsearch/search.go
+        additions: 187
+        deletions: 48
+        changeType: MODIFIED
+      - 
+        path: internal/engine/engine.go
+        additions: 8
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: internal/engine/infinity/client.go
+        additions: 8
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: internal/engine/infinity/common.go
+        additions: 24
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: internal/engine/infinity/dataset.go
+        additions: 87
+        deletions: 36
+        changeType: MODIFIED
+      - 
+        path: internal/engine/infinity/document.go
+        additions: 239
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: internal/engine/infinity/search.go
+        additions: 139
+        deletions: 48
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/types.go
+        additions: 3
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: internal/entity/skill_search.go
+        additions: 112
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: internal/entity/skill_space.go
+        additions: 90
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 14486
+    title: "Feat: add button for remove header & footer in pipeline"
+    url: https://github.com/infiniflow/ragflow/pull/14486
+    mergedAt: 2026-04-30T04:30:41Z
+    baseRefName: main
+    headRefName: main
+    baseRefOid: 1692f0928ff2bade2f553e010653064bc0d9cbf7
+    headRefOid: e26eeb9b24b6c2597532032e4703c74f7be69ffa
+    mergeCommitOid: bb3b99f0a5b5501b50e1e2d0325f51f92e0df035
+    changedFiles: 13
+    additions: 135
+    deletions: 82
+    labels: 
+      - ci
+      - size:L
+    keywordHits: 
+      - parser
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: deepdoc/parser/html_parser.py
+        additions: 1
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: rag/flow/parser/parser.py
+        additions: 24
+        deletions: 75
+        changeType: MODIFIED
+      - 
+        path: rag/flow/parser/pdf_chunk_metadata.py
+        additions: 1
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: rag/flow/parser/utils.py
+        additions: 43
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: web/src/locales/en.ts
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: web/src/locales/zh.ts
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/agent/constant/pipeline.tsx
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/agent/form/parser-form/common-form-fields.tsx
+        additions: 22
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/agent/form/parser-form/index.tsx
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/agent/form/parser-form/pdf-form-fields.tsx
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/agent/form/parser-form/text-html-form-fields.tsx
+        additions: 7
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/agent/form/parser-form/word-form-fields.tsx
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/agent/utils.ts
+        additions: 23
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 14499
+    title: "feat(seafile): support deleted-file sync via slim snapshot"
+    url: https://github.com/infiniflow/ragflow/pull/14499
+    mergedAt: 2026-04-30T04:05:12Z
+    baseRefName: main
+    headRefName: feat/seafile-sync-deleted-files
+    baseRefOid: 5018459112460a584c48c6f0d086590ee80e958b
+    headRefOid: d7e4feda62774393a0ec96f4bd1ac435d966ff82
+    mergeCommitOid: 2932b65da6b69f834e52888a0c13157d646d7d34
+    changedFiles: 3
+    additions: 141
+    deletions: 13
+    labels: 
+      - "💞 feature"
+      - "🌈 python"
+      - ci
+      - size:L
+    keywordHits: 
+      - edge
+      - fail
+      - failure
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: common/data_source/seafile_connector.py
+        additions: 104
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: rag/svr/sync_data_source.py
+        additions: 34
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/user-setting/data-source/constant/index.tsx
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 14519
+    title: "Doc: Updated v0.25.1 release notes"
+    url: https://github.com/infiniflow/ragflow/pull/14519
+    mergedAt: 2026-04-30T03:59:53Z
+    baseRefName: main
+    headRefName: 0251rl
+    baseRefOid: 71952b6b5825a0918f6a7b093a850708d00ce6bb
+    headRefOid: 7719d193efc98cb834b45b63b5f0b0d1ffadf7ac
+    mergeCommitOid: 8aaf0942b131c5ad81780555cffbb2033aede8d9
+    changedFiles: 1
+    additions: 7
+    deletions: 6
+    labels: 
+      - size:S
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docs/release_notes.md
+        additions: 7
+        deletions: 6
+        changeType: MODIFIED
+  - 
+    number: 14518
+    title: "Fix: Manual/Naive outline tuple unpack crash"
+    url: https://github.com/infiniflow/ragflow/pull/14518
+    mergedAt: 2026-04-30T03:55:02Z
+    baseRefName: main
+    headRefName: fix/manual-naive-outline-unpack
+    baseRefOid: 06c6da5d94d530d82025d08ab2d14216f91b41d3
+    headRefOid: b72a83dde3971c52eab83133540a47961716d2cf
+    mergeCommitOid: 90758724357856accc2e9e39ce2d79195c06a6ee
+    changedFiles: 2
+    additions: 2
+    deletions: 2
+    labels: 
+      - "🐞 bug"
+      - ci
+      - size:XS
+    keywordHits: 
+      - bug
+      - fix
+      - crash
+      - parsing
+      - fail
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 5
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: rag/app/manual.py
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: rag/app/naive.py
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 14516
+    title: "Chore(deps): Bump go.opentelemetry.io/otel from 1.39.0 to 1.41.0"
+    url: https://github.com/infiniflow/ragflow/pull/14516
+    mergedAt: 2026-04-30T03:43:24Z
+    baseRefName: main
+    headRefName: dependabot/go_modules/go.opentelemetry.io/otel-1.41.0
+    baseRefOid: 06c6da5d94d530d82025d08ab2d14216f91b41d3
+    headRefOid: 02f7bc7d2cd8dc3f06d43b5cf0481d10cef290d9
+    mergeCommitOid: 71952b6b5825a0918f6a7b093a850708d00ce6bb
+    changedFiles: 2
+    additions: 9
+    deletions: 9
+    labels: 
+      - dependencies
+      - ci
+      - size:XS
+      - go
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: go.mod
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: go.sum
+        additions: 6
+        deletions: 6
+        changeType: MODIFIED
+  - 
+    number: 14472
+    title: "Fix: add document delete permission check"
+    url: https://github.com/infiniflow/ragflow/pull/14472
+    mergedAt: 2026-04-30T03:01:09Z
+    baseRefName: main
+    headRefName: b029
+    baseRefOid: 96909235167edc0d1a9b5ed4cc104efea92f522b
+    headRefOid: 2c4d240817d31ad3bbaa4d2b8661ca88e8e69129
+    mergeCommitOid: 06c6da5d94d530d82025d08ab2d14216f91b41d3
+    changedFiles: 3
+    additions: 27
+    deletions: 2
+    labels: 
+      - "🐞 bug"
+      - ci
+      - size:XS
+      - "🧪 test"
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: true
+    testFiles: 
+      - test/testcases/test_http_api/test_file_management_within_dataset/test_delete_documents.py
+      - test/testcases/test_web_api/test_document_app/test_rm_documents.py
+    debugScore: 4
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: api/apps/restful_apis/document_api.py
+        additions: 7
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: test/testcases/test_http_api/test_file_management_within_dataset/test_delete_documents.py
+        additions: 19
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: test/testcases/test_web_api/test_document_app/test_rm_documents.py
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 14473
+    title: "Fix: optimize file batch delete"
+    url: https://github.com/infiniflow/ragflow/pull/14473
+    mergedAt: 2026-04-30T03:00:39Z
+    baseRefName: main
+    headRefName: b028
+    baseRefOid: 96909235167edc0d1a9b5ed4cc104efea92f522b
+    headRefOid: 73959342c349480912524e81c6367d702c0008e6
+    mergeCommitOid: 47129fdd0832d2631613bef061c67824d46c8b7c
+    changedFiles: 6
+    additions: 84
+    deletions: 28
+    labels: 
+      - ci
+      - size:L
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: true
+    testFiles: 
+      - test/testcases/test_http_api/test_file_app/test_file_routes.py
+      - test/testcases/test_web_api/test_file_app/test_file_routes_unit.py
+    debugScore: 4
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: api/apps/restful_apis/file_api.py
+        additions: 12
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: api/apps/services/file_api_service.py
+        additions: 53
+        deletions: 15
+        changeType: MODIFIED
+      - 
+        path: docs/references/http_api_reference.md
+        additions: 11
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: test/testcases/test_http_api/test_file_app/test_file_routes.py
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: test/testcases/test_web_api/test_file_app/test_file_routes_unit.py
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: web/src/hooks/use-file-request.ts
+        additions: 6
+        deletions: 6
+        changeType: MODIFIED
+  - 
+    number: 14369
+    title: "perf: avoid O(n²) array growth in embedding accumulation"
+    url: https://github.com/infiniflow/ragflow/pull/14369
+    mergedAt: 2026-04-30T03:00:10Z
+    baseRefName: main
+    headRefName: perf/embedding-vstack
+    baseRefOid: 345bec812d30229cbf384b810294a6894a97e5c7
+    headRefOid: 6ff0308e2eca274d4f8a85a8af02979346434dd6
+    mergeCommitOid: 811e9826d0cf2055c239ccf995f0307cb4584508
+    changedFiles: 3
+    additions: 13
+    deletions: 22
+    labels: 
+      - ci
+      - size:M
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: rag/flow/tokenizer/tokenizer.py
+        additions: 4
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: rag/llm/embedding_model.py
+        additions: 3
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: rag/svr/task_executor.py
+        additions: 6
+        deletions: 11
+        changeType: MODIFIED
+  - 
+    number: 14419
+    title: "feat: add FuturMix as model provider"
+    url: https://github.com/infiniflow/ragflow/pull/14419
+    mergedAt: 2026-04-30T02:59:38Z
+    baseRefName: main
+    headRefName: feat/add-futurmix-provider
+    baseRefOid: ae420f6358ddd9775f8e1ed5f2a0c4211599853b
+    headRefOid: 69b4cc95006ab4a71db874604693ed8d7df64651
+    mergeCommitOid: 2548c28d65b71a142698711014675255b28f7b7b
+    changedFiles: 9
+    additions: 184
+    deletions: 1
+    labels: 
+      - "📖 documentation"
+      - "💞 feature"
+      - "🌈 python"
+      - ci
+      - size:M
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: conf/llm_factories.json
+        additions: 116
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/guides/models/supported_models.mdx
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: rag/llm/__init__.py
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: rag/llm/chat_model.py
+        additions: 10
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: rag/llm/cv_model.py
+        additions: 10
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: rag/llm/embedding_model.py
+        additions: 10
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: rag/llm/rerank_model.py
+        additions: 12
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: rag/llm/sequence2txt_model.py
+        additions: 11
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: rag/llm/tts_model.py
+        additions: 11
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 14488
+    title: "Docs: Update version references to v0.25.1 in READMEs and docs"
+    url: https://github.com/infiniflow/ragflow/pull/14488
+    mergedAt: 2026-04-30T02:49:26Z
+    baseRefName: main
+    headRefName: docs/update_version_references_to_v0.25.1
+    baseRefOid: 261be81127158ce76209f99e3977be5a975340c5
+    headRefOid: 733b1cea9ced9f146403c75542f3be4567595610
+    mergeCommitOid: ce4c782fd73c78ad6cb2b831d76b6b0975416070
+    changedFiles: 31
+    additions: 75
+    deletions: 75
+    labels: 
+      - size:L
+    keywordHits: 
+      - edge
+    hasTests: true
+    testFiles: 
+      - test/README.md
+    debugScore: 2
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: README.md
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: README_ar.md
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: README_fr.md
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: README_id.md
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: README_ja.md
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: README_ko.md
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: README_pt_br.md
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: README_tr.md
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: README_tzh.md
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: README_zh.md
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: admin/client/README.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: admin/client/pyproject.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: admin/client/uv.lock
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docker/.env
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docker/README.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/administrator/admin/ragflow_cli.md
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: docs/administrator/configurations.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/administrator/upgrade_ragflow.mdx
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: docs/develop/build_docker_image.mdx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/faq.mdx
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: docs/guides/dataset/configure_knowledge_base.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/guides/manage_files.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/quickstart.mdx
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: helm/values.yaml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: pyproject.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: sdk/python/pyproject.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: sdk/python/uv.lock
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: test/README.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: tools/scripts/README.md
+        additions: 9
+        deletions: 9
+        changeType: MODIFIED
+      - 
+        path: tools/scripts/db_schema_sync.py
+        additions: 8
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: uv.lock
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 14514
+    title: "Fix: The GraphRAG icon is not displaying."
+    url: https://github.com/infiniflow/ragflow/pull/14514
+    mergedAt: 2026-04-30T02:44:06Z
+    baseRefName: main
+    headRefName: fix-search-embed
+    baseRefOid: 0fa2bd539dbb9503e43d7ec35a1205f577555478
+    headRefOid: c6c0f5e07599dd9e43fb64ecccde886381da770c
+    mergeCommitOid: 7c0584a2b7c840f662f7afbc74b67b241c9a1039
+    changedFiles: 2
+    additions: 3
+    deletions: 1
+    labels: 
+      - size:XS
+      - lgtm
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: web/src/pages/dataset/dataset-overview/dataset-common.ts
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/dataset/dataset-overview/overview-table.tsx
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 14513
+    title: "Chore(deps): Bump google.golang.org/grpc from 1.66.2 to 1.79.3"
+    url: https://github.com/infiniflow/ragflow/pull/14513
+    mergedAt: 2026-04-30T02:35:03Z
+    baseRefName: main
+    headRefName: dependabot/go_modules/google.golang.org/grpc-1.79.3
+    baseRefOid: 6dd38eca6a3227a4cbc5b1fa0ebd52f876405316
+    headRefOid: 6cc4899980665520e5624d417f374d8312e4e6fb
+    mergeCommitOid: 0fa2bd539dbb9503e43d7ec35a1205f577555478
+    changedFiles: 2
+    additions: 40
+    deletions: 37
+    labels: 
+      - dependencies
+      - ci
+      - size:S
+      - go
+    keywordHits: 
+      - bug
+      - fix
+      - error
+      - validation
+      - fail
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: go.mod
+        additions: 10
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: go.sum
+        additions: 30
+        deletions: 25
+        changeType: MODIFIED
+  - 
+    number: 14479
+    title: "fix: file logs not displayed in dataset ingestion page"
+    url: https://github.com/infiniflow/ragflow/pull/14479
+    mergedAt: 2026-04-29T14:10:25Z
+    baseRefName: main
+    headRefName: file-logs-empty-on-ingestion-tab
+    baseRefOid: 5018459112460a584c48c6f0d086590ee80e958b
+    headRefOid: 57fe0871d0abd5a5a27cb9d68c6f34947fe779b9
+    mergeCommitOid: 6dd38eca6a3227a4cbc5b1fa0ebd52f876405316
+    changedFiles: 9
+    additions: 119
+    deletions: 148
+    labels: 
+      - ci
+      - size:L
+      - lgtm
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: true
+    testFiles: 
+      - test/testcases/test_http_api/test_chunk_management_within_dataset/test_retrieval_chunks.py
+      - test/testcases/test_sdk_api/test_chunk_management_within_dataset/test_retrieval_chunks.py
+    debugScore: 3
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: api/apps/restful_apis/dataset_api.py
+        additions: 12
+        deletions: 23
+        changeType: MODIFIED
+      - 
+        path: api/apps/sdk/dify_retrieval.py
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: api/apps/sdk/doc.py
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: api/apps/sdk/session.py
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: api/apps/services/dataset_api_service.py
+        additions: 82
+        deletions: 78
+        changeType: MODIFIED
+      - 
+        path: api/db/services/pipeline_operation_log_service.py
+        additions: 6
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: test/testcases/test_http_api/test_chunk_management_within_dataset/test_retrieval_chunks.py
+        additions: 1
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: test/testcases/test_sdk_api/test_chunk_management_within_dataset/test_retrieval_chunks.py
+        additions: 1
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/dataset/dataset-overview/hook.ts
+        additions: 11
+        deletions: 11
+        changeType: MODIFIED
+  - 
+    number: 14480
+    title: "Fix metadata config"
+    url: https://github.com/infiniflow/ragflow/pull/14480
+    mergedAt: 2026-04-29T13:09:55Z
+    baseRefName: main
+    headRefName: bugfix/fix-metadata-config
+    baseRefOid: 3991bdfaf57dafcca398295f399d88f8dc78aad2
+    headRefOid: d5c761d9b2923ef7fa89d6ac1f68f8ba0588ba71
+    mergeCommitOid: 5018459112460a584c48c6f0d086590ee80e958b
+    changedFiles: 5
+    additions: 14
+    deletions: 169
+    labels: 
+      - ci
+      - size:M
+    keywordHits: 
+      - bug
+      - fix
+      - validation
+    hasTests: true
+    testFiles: 
+      - test/testcases/test_http_api/test_file_management_within_dataset/test_metadata_retrieval.py
+      - test/testcases/test_sdk_api/test_dataset_mangement/test_auto_metadata.py
+    debugScore: 5
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: api/apps/services/dataset_api_service.py
+        additions: 4
+        deletions: 32
+        changeType: MODIFIED
+      - 
+        path: api/utils/validation_utils.py
+        additions: 5
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: test/testcases/test_http_api/test_file_management_within_dataset/test_metadata_retrieval.py
+        additions: 4
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: test/testcases/test_sdk_api/test_dataset_mangement/test_auto_metadata.py
+        additions: 0
+        deletions: 126
+        changeType: DELETED
+      - 
+        path: web/src/pages/dataset/components/metedata/hooks/use-manage-modal.ts
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 14492
+    title: "Docs: "
+    url: https://github.com/infiniflow/ragflow/pull/14492
+    mergedAt: 2026-04-29T12:29:58Z
+    baseRefName: main
+    headRefName: 0.25.1rl
+    baseRefOid: c4d0b0ebcfd87c033bd4c671e189037c11a21629
+    headRefOid: b2596c774564776647378dd6af10653b80c31526
+    mergeCommitOid: d4147efc66688d2118f17bf1d867bf64faec0752
+    changedFiles: 1
+    additions: 26
+    deletions: 0
+    labels: 
+      - size:S
+      - lgtm
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docs/release_notes.md
+        additions: 26
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 14490
+    title: "Fix visit dataset error"
+    url: https://github.com/infiniflow/ragflow/pull/14490
+    mergedAt: 2026-04-29T12:17:01Z
+    baseRefName: main
+    headRefName: bugfix/fix-cannot-load-dataset
+    baseRefOid: 1692f0928ff2bade2f553e010653064bc0d9cbf7
+    headRefOid: af64daa476cd39664c7862857621f8c058fd6efd
+    mergeCommitOid: c4d0b0ebcfd87c033bd4c671e189037c11a21629
+    changedFiles: 1
+    additions: 7
+    deletions: 1
+    labels: 
+      - size:XS
+    keywordHits: 
+      - bug
+      - fix
+      - error
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: web/src/pages/dataset/dataset-overview/overview-table.tsx
+        additions: 7
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 14489
+    title: "Fix: The pipeline column header in the FileLogsTable is displaying incorrectly."
+    url: https://github.com/infiniflow/ragflow/pull/14489
+    mergedAt: 2026-04-29T11:52:29Z
+    baseRefName: main
+    headRefName: fix-search-embed
+    baseRefOid: 9280c64518209a91bf39afb974305ea256ff03e7
+    headRefOid: 9510ed9ead3d258b0c32c871cc6036e7a8e241c5
+    mergeCommitOid: 1692f0928ff2bade2f553e010653064bc0d9cbf7
+    changedFiles: 4
+    additions: 3
+    deletions: 2
+    labels: 
+      - ci
+      - size:XS
+    keywordHits: 
+      - bug
+      - fix
+      - incorrect
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: web/src/locales/en.ts
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: web/src/locales/zh.ts
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/dataset/dataset-overview/index.tsx
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/dataset/dataset-overview/overview-table.tsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 14483
+    title: "Docs: Updated Title chunker references"
+    url: https://github.com/infiniflow/ragflow/pull/14483
+    mergedAt: 2026-04-29T11:37:24Z
+    baseRefName: main
+    headRefName: title_chunker_hg
+    baseRefOid: 3991bdfaf57dafcca398295f399d88f8dc78aad2
+    headRefOid: 39a20225ccdba84f38c9d63c72cf6b9d297e645f
+    mergeCommitOid: 9280c64518209a91bf39afb974305ea256ff03e7
+    changedFiles: 4
+    additions: 91
+    deletions: 11
+    labels: 
+      - size:L
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docs/administrator/migration/database_schema_and_migration.md
+        additions: 56
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/guides/agent/agent_component_reference/chunker_title.md
+        additions: 26
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: web/src/locales/en.ts
+        additions: 7
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: web/src/locales/zh.ts
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 14485
+    title: "Go: add drop instance models"
+    url: https://github.com/infiniflow/ragflow/pull/14485
+    mergedAt: 2026-04-29T11:18:49Z
+    baseRefName: main
+    headRefName: fix408
+    baseRefOid: 1b84892e3ab5be550381530b574afbae57a2f11b
+    headRefOid: 37a06876b25caf07478ed527742009021d773b1b
+    mergeCommitOid: 261be81127158ce76209f99e3977be5a975340c5
+    changedFiles: 9
+    additions: 237
+    deletions: 74
+    labels: 
+      - ci
+      - size:L
+    keywordHits: 
+      - fix
+      - parser
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: internal/cli/admin_parser.go
+        additions: 0
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: internal/cli/client.go
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: internal/cli/user_command.go
+        additions: 52
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: internal/cli/user_parser.go
+        additions: 52
+        deletions: 61
+        changeType: MODIFIED
+      - 
+        path: internal/dao/tenant_model.go
+        additions: 10
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/types.go
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: internal/handler/providers.go
+        additions: 50
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: internal/router/router.go
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: internal/service/model_service.go
+        additions: 69
+        deletions: 8
+        changeType: MODIFIED
+  - 
+    number: 14478
+    title: "Go: implement provider: MiniMax"
+    url: https://github.com/infiniflow/ragflow/pull/14478
+    mergedAt: 2026-04-29T11:06:40Z
+    baseRefName: main
+    headRefName: main
+    baseRefOid: 3991bdfaf57dafcca398295f399d88f8dc78aad2
+    headRefOid: e69ecc1bcaede9a2677a2da3b9b28b00b9d2096d
+    mergeCommitOid: 0e1477eb23562008a1a78c434e211a4daa0cc6ef
+    changedFiles: 3
+    additions: 351
+    deletions: 12
+    labels: 
+      - ci
+      - size:L
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: conf/models/minimax.json
+        additions: 41
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/minimax.go
+        additions: 309
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/volcengine.go
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 14451
+    title: "Feat: enable sync deleted file for Discord"
+    url: https://github.com/infiniflow/ragflow/pull/14451
+    mergedAt: 2026-04-29T11:05:41Z
+    baseRefName: main
+    headRefName: discord
+    baseRefOid: 3991bdfaf57dafcca398295f399d88f8dc78aad2
+    headRefOid: 891087a8241b2e5146d37b2c0d26bb60054e92b7
+    mergeCommitOid: de8c6ad0f3487e79ab04bba2aa48f2f8a389d2b1
+    changedFiles: 3
+    additions: 136
+    deletions: 65
+    labels: 
+      - ci
+      - size:L
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: common/data_source/discord_connector.py
+        additions: 101
+        deletions: 47
+        changeType: MODIFIED
+      - 
+        path: rag/svr/sync_data_source.py
+        additions: 29
+        deletions: 17
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/user-setting/data-source/constant/index.tsx
+        additions: 6
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 14476
+    title: "feat(dropbox): support deleted-file sync"
+    url: https://github.com/infiniflow/ragflow/pull/14476
+    mergedAt: 2026-04-29T11:05:11Z
+    baseRefName: main
+    headRefName: fix/issue-14362-dropbox-sync-deleted
+    baseRefOid: 3991bdfaf57dafcca398295f399d88f8dc78aad2
+    headRefOid: 9ab622fb84e6e50e3d8eee567f673251d940fe1f
+    mergeCommitOid: 2bc8c6d35e7d62e50b49fd1f27325aabac9a4974
+    changedFiles: 5
+    additions: 321
+    deletions: 50
+    labels: 
+      - "🌈 python"
+      - ci
+      - size:L
+      - "🧪 test"
+    keywordHits: 
+      - regression
+    hasTests: true
+    testFiles: 
+      - test/unit_test/common/test_dropbox_connector.py
+      - test/unit_test/rag/test_sync_data_source.py
+    debugScore: 3
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: common/data_source/dropbox_connector.py
+        additions: 58
+        deletions: 44
+        changeType: MODIFIED
+      - 
+        path: rag/svr/sync_data_source.py
+        additions: 10
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: test/unit_test/common/test_dropbox_connector.py
+        additions: 157
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: test/unit_test/rag/test_sync_data_source.py
+        additions: 93
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/user-setting/data-source/constant/index.tsx
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 14481
+    title: "Feat: enable sync deleted files in gitlab"
+    url: https://github.com/infiniflow/ragflow/pull/14481
+    mergedAt: 2026-04-29T11:04:11Z
+    baseRefName: main
+    headRefName: gitlab
+    baseRefOid: 3991bdfaf57dafcca398295f399d88f8dc78aad2
+    headRefOid: 81c40ffb2a53e7d674ba011dac1620f254a03e26
+    mergeCommitOid: db1a73b25585e46cbc8f7be742196bd176b7cab7
+    changedFiles: 3
+    additions: 75
+    deletions: 3
+    labels: 
+      - size:M
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: common/data_source/gitlab_connector.py
+        additions: 66
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: rag/svr/sync_data_source.py
+        additions: 6
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/user-setting/data-source/constant/index.tsx
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 14477
+    title: "Fix: RAPTOR \"Generation scope\" reset to \"Single file\" when selecting \"Dataset\""
+    url: https://github.com/infiniflow/ragflow/pull/14477
+    mergedAt: 2026-04-29T10:46:28Z
+    baseRefName: main
+    headRefName: raptor-generation-scope-dataset
+    baseRefOid: 3991bdfaf57dafcca398295f399d88f8dc78aad2
+    headRefOid: d5884738da7827f76ad6ae7e050e6239b3aca408
+    mergeCommitOid: a0f9ae16d2d84660bc5ee7db8acf7a89a697c3e3
+    changedFiles: 2
+    additions: 24
+    deletions: 25
+    labels: 
+      - ci
+      - size:M
+    keywordHits: 
+      - bug
+      - fix
+      - validation
+      - parser
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: api/utils/validation_utils.py
+        additions: 22
+        deletions: 25
+        changeType: MODIFIED
+      - 
+        path: web/src/hooks/parser-config-utils.ts
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 14484
+    title: "Fix delete graph"
+    url: https://github.com/infiniflow/ragflow/pull/14484
+    mergedAt: 2026-04-29T10:09:11Z
+    baseRefName: main
+    headRefName: bugfix/fix-delete-graph
+    baseRefOid: 3991bdfaf57dafcca398295f399d88f8dc78aad2
+    headRefOid: 2bbd11596dc88ebd45dcd4b6b123c2216c4c6c7c
+    mergeCommitOid: 1b84892e3ab5be550381530b574afbae57a2f11b
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+      - size:XS
+    keywordHits: 
+      - bug
+      - fix
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: web/src/services/knowledge-service.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 14471
+    title: "Fix query param type"
+    url: https://github.com/infiniflow/ragflow/pull/14471
+    mergedAt: 2026-04-29T08:53:28Z
+    baseRefName: main
+    headRefName: bugfix/fix-query-param-type
+    baseRefOid: 96909235167edc0d1a9b5ed4cc104efea92f522b
+    headRefOid: 41cb5bd27474f6b4ca7944a40cc621621c698df3
+    mergeCommitOid: 6afb1957d88d8473334d0f994dd93d3e3d4fa2af
+    changedFiles: 1
+    additions: 3
+    deletions: 0
+    labels: 
+      - "🐞 bug"
+      - ci
+      - size:XS
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: api/apps/restful_apis/dataset_api.py
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 14475
+    title: "Fix graph task type"
+    url: https://github.com/infiniflow/ragflow/pull/14475
+    mergedAt: 2026-04-29T09:05:57Z
+    baseRefName: main
+    headRefName: bugfix/fix-graph-type
+    baseRefOid: bb05a8bd7e009276629629633def6443f448381e
+    headRefOid: 09f2871afa321f157b0263f568cc2dc582288a6a
+    mergeCommitOid: 3991bdfaf57dafcca398295f399d88f8dc78aad2
+    changedFiles: 2
+    additions: 3
+    deletions: 3
+    labels: 
+      - size:XS
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: web/src/pages/dataset/dataset-overview/dataset-common.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: web/src/utils/api.ts
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 14441
+    title: "Update create model instance command"
+    url: https://github.com/infiniflow/ragflow/pull/14441
+    mergedAt: 2026-04-29T09:05:08Z
+    baseRefName: main
+    headRefName: fix406
+    baseRefOid: decf673049c6f170765aac100df7866d1150462c
+    headRefOid: 4e8c35e8ea775eb561ce9b9eddd99e1834bb1aca
+    mergeCommitOid: bb05a8bd7e009276629629633def6443f448381e
+    changedFiles: 24
+    additions: 753
+    deletions: 21
+    labels: 
+      - "💞 feature"
+      - ci
+      - "☯️ refactor"
+      - size:XL
+    keywordHits: 
+      - parser
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: conf/models/vllm.json
+        additions: 8
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: internal/cli/client.go
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: internal/cli/http_client.go
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: internal/cli/lexer.go
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: internal/cli/types.go
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: internal/cli/user_command.go
+        additions: 81
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: internal/cli/user_parser.go
+        additions: 189
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: internal/entity/model.go
+        additions: 4
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/aliyun.go
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/deepseek.go
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/dummy.go
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/factory.go
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/gitee.go
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/google.go
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/minimax.go
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/moonshot.go
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/siliconflow.go
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/types.go
+        additions: 3
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/vllm.go
+        additions: 229
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: internal/entity/models/volcengine.go
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: internal/entity/models/zhipu-ai.go
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: internal/handler/providers.go
+        additions: 64
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: internal/router/router.go
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: internal/service/model_service.go
+        additions: 123
+        deletions: 10
+        changeType: MODIFIED
+  - 
+    number: 14463
+    title: "Port PR14454 to GO (PruneDeletedChunks)"
+    url: https://github.com/infiniflow/ragflow/pull/14463
+    mergedAt: 2026-04-29T09:04:23Z
+    baseRefName: main
+    headRefName: port_14454_go
+    baseRefOid: b684c899501ce6b7236d3027f66b75d1097e4873
+    headRefOid: 3e43bd35a614de65d5a558e8ea73ed10fba2fa0c
+    mergeCommitOid: 486ca463aadf1a5ff088e6879efa4ac1f54ae2b2
+    changedFiles: 4
+    additions: 148
+    deletions: 13
+    labels: 
+      - ci
+      - size:L
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: internal/dao/document.go
+        additions: 10
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: internal/service/chat_session.go
+        additions: 22
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: internal/service/chunk.go
+        additions: 3
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: internal/service/nlp/retrieval.go
+        additions: 113
+        deletions: 4
+        changeType: MODIFIED
+  - 
+    number: 14462
+    title: "Feat: enable sync deleted files for Gmail && fix google drive issues"
+    url: https://github.com/infiniflow/ragflow/pull/14462
+    mergedAt: 2026-04-29T09:03:56Z
+    baseRefName: main
+    headRefName: gmail
+    baseRefOid: a7ce1b16779de9dcd801b184eb95f4b2f7cf5bfa
+    headRefOid: 80220adf93dc4ac51b402a96945b84d2dcb30cc7
+    mergeCommitOid: e0b3070012b7f9cda16e06812ac165bef1f5bea0
+    changedFiles: 33
+    additions: 237
+    deletions: 256
+    labels: 
+      - ci
+      - size:L
+    keywordHits: 
+      - bug
+      - fix
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: api/apps/services/dataset_api_service.py
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: common/data_source/google_drive/connector.py
+        additions: 15
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: common/data_source/google_util/resource.py
+        additions: 12
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: rag/svr/sync_data_source.py
+        additions: 7
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: web/src/components/knowledge-base-item.tsx
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: web/src/components/pdf-drawer/index.tsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: web/src/hooks/logic-hooks.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: web/src/hooks/use-chunk-request.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: web/src/hooks/use-document-request.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: web/src/hooks/use-knowledge-request.ts
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: web/src/hooks/use-user-setting-request.tsx
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: web/src/interfaces/database/agent.ts
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: web/src/interfaces/database/dataset.ts
+        additions: 142
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: web/src/interfaces/database/knowledge.ts
+        additions: 0
+        deletions: 194
+        changeType: DELETED
+      - 
+        path: web/src/pages/agent/components/publish-confirm-dialog.tsx
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/chunk/parsed-result/add-knowledge/components/knowledge-chunk/components/chunk-card/index.tsx
+        additions: 1
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/chunk/parsed-result/add-knowledge/components/knowledge-chunk/components/chunk-creating-modal/index.tsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/chunk/parsed-result/add-knowledge/components/knowledge-chunk/hooks.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/dataflow-result/components/chunk-card/index.tsx
+        additions: 1
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/dataset/contexts/knowledge-base-context.tsx
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/dataset/dataset-setting/components/link-data-source-modal.tsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/dataset/dataset-setting/components/link-data-source.tsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/dataset/dataset-setting/hooks.ts
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/dataset/dataset-setting/index.tsx
+        additions: 13
+        deletions: 13
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/dataset/dataset/index.tsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/dataset/sidebar/index.tsx
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/dataset/testing/testing-result.tsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/next-search/document-preview-modal/index.tsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/next-search/hooks.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: web/src/pages/user-setting/data-source/constant/index.tsx
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: web/src/services/knowledge-service.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: web/src/utils/document-util.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: web/src/utils/request.ts
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 14465
+    title: "Fix: Clicking the button in the bottom-right corner of the `/chats/widget` page fails to display the dialog box."
+    url: https://github.com/infiniflow/ragflow/pull/14465
+    mergedAt: 2026-04-29T09:03:33Z
+    baseRefName: main
+    headRefName: fix-search-embed
+    baseRefOid: b684c899501ce6b7236d3027f66b75d1097e4873
+    headRefOid: 00a0e99b593ffb22d8c62966f0997d3c4c3c18a1
+    mergeCommitOid: a736948493072ea3c978cc5626d4b19a1dc067e3
+    changedFiles: 3
+    additions: 38
+    deletions: 18
+    labels: 
+      - size:M
+    keywordHits: 
+      - bug
+      - fix
+      - fail
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .gitignore
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: web/src/components/floating-chat-widget.tsx
+        additions: 33
+        deletions: 17
+        changeType: MODIFIED
+      - 
+        path: web/src/components/next-message-item/group-button.tsx
+        additions: 4
+        deletions: 1
+        changeType: MODIFIED

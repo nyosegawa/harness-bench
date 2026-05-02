@@ -1,0 +1,1918 @@
+generatedAt: 2026-05-02T10:20:14.642Z
+repo: browser-use/browser-use
+since: 2026-01-01
+limit: 50
+debugKeywords: 
+  - bug
+  - fix
+  - regression
+  - crash
+  - incorrect
+  - wrong
+  - error
+  - exception
+  - edge
+  - flaky
+  - race
+  - leak
+  - validation
+  - parser
+  - parsing
+  - timeout
+  - fail
+  - failure
+  - broken
+prs: 
+  - 
+    number: 4704
+    title: "fix: remove dead code `'type'` from second elif branch in optimize_schema()"
+    url: https://github.com/browser-use/browser-use/pull/4704
+    mergedAt: 2026-05-01T22:49:24Z
+    baseRefName: main
+    headRefName: fix/optimize-schema-dead-code
+    baseRefOid: 8653e59419fa431681b9133a3925876fa49d76fb
+    headRefOid: 6ccae6980e3d884d28fef8805b0a31833d3768a7
+    mergeCommitOid: 8c7d333ec3642fa74b2232368013b6a7f2be0b70
+    changedFiles: 0
+    additions: 0
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+[]
+  - 
+    number: 4680
+    title: "Find more recent versions of Playwright-installed Chromium for Mac/ARM users"
+    url: https://github.com/browser-use/browser-use/pull/4680
+    mergedAt: 2026-05-01T22:45:57Z
+    baseRefName: main
+    headRefName: main
+    baseRefOid: d19ec6ef20e5c68bf4ca198e8b0b5aea69280fe6
+    headRefOid: 98a86bead7c7bef4c4fb6af4a7d615b16cddf816
+    mergeCommitOid: 8653e59419fa431681b9133a3925876fa49d76fb
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: browser_use/browser/watchdogs/local_browser_watchdog.py
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 4746
+    title: "docs: update issue template setup and docs links"
+    url: https://github.com/browser-use/browser-use/pull/4746
+    mergedAt: 2026-04-26T16:59:07Z
+    baseRefName: main
+    headRefName: docs/update-issue-template-links
+    baseRefOid: f3878b0e074a53119defe6cbc625687a1343ba8e
+    headRefOid: 88d61e8b623f0f9a316ffb82743843fb832abe60
+    mergeCommitOid: d19ec6ef20e5c68bf4ca198e8b0b5aea69280fe6
+    changedFiles: 2
+    additions: 2
+    deletions: 2
+    labels: 
+[]
+    keywordHits: 
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/ISSUE_TEMPLATE/3_feature_request.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: .github/ISSUE_TEMPLATE/4_docs_issue.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 4489
+    title: "fix: set default temperature to 1.0 for gemini-3 models"
+    url: https://github.com/browser-use/browser-use/pull/4489
+    mergedAt: 2026-03-25T16:15:57Z
+    baseRefName: main
+    headRefName: fix-gemini-3-temperature
+    baseRefOid: 45f3dc5593b3036f1a8665a3e3b30ef57d797379
+    headRefOid: c657ba72c34c26311930633a83697fa326ef2425
+    mergeCommitOid: c186be39c40119ac8041b27691c612e7a9449ac9
+    changedFiles: 1
+    additions: 3
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: browser_use/llm/google/chat.py
+        additions: 3
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 4734
+    title: "fix(schema): remove unreachable 'type' key from validation fields list"
+    url: https://github.com/browser-use/browser-use/pull/4734
+    mergedAt: 2026-04-25T01:08:02Z
+    baseRefName: main
+    headRefName: fix/4703-dead-code-in-optimize-schema
+    baseRefOid: 1da2d3ff28cd03be47c9a1e0fc2ac762aadb6c35
+    headRefOid: c4f712b90b73cee6c493273e3d34946cbfbacc8e
+    mergeCommitOid: c4f712b90b73cee6c493273e3d34946cbfbacc8e
+    changedFiles: 1
+    additions: 0
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - error
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: browser_use/llm/schema.py
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 4736
+    title: "fix(element): redact sensitive values in fill() debug logging"
+    url: https://github.com/browser-use/browser-use/pull/4736
+    mergedAt: 2026-04-25T01:08:00Z
+    baseRefName: main
+    headRefName: fix/security-redact-sensitive-values-in-fill-log
+    baseRefOid: 1da2d3ff28cd03be47c9a1e0fc2ac762aadb6c35
+    headRefOid: 99e9a455e77b9809c9358674555ac2ab87133b18
+    mergeCommitOid: f3878b0e074a53119defe6cbc625687a1343ba8e
+    changedFiles: 2
+    additions: 1
+    deletions: 2
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - error
+      - leak
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 5
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: browser_use/actor/element.py
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: browser_use/llm/schema.py
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 4712
+    title: "docs: fix malformed HTML attributes in README picture/img tags"
+    url: https://github.com/browser-use/browser-use/pull/4712
+    mergedAt: 2026-04-21T02:08:44Z
+    baseRefName: main
+    headRefName: contrib-bot/2026-04-21-browser-use
+    baseRefOid: 981e747707c219efa174c812278087e4a2d626fb
+    headRefOid: eb12fb9df66247cff615686f7afb296b45530327
+    mergeCommitOid: 1da2d3ff28cd03be47c9a1e0fc2ac762aadb6c35
+    changedFiles: 1
+    additions: 3
+    deletions: 3
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - parser
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: README.md
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 4715
+    title: "Bump aiohttp to 3.13.4 (CVE-2026-34515)"
+    url: https://github.com/browser-use/browser-use/pull/4715
+    mergedAt: 2026-04-21T02:00:26Z
+    baseRefName: main
+    headRefName: fix/aiohttp-cve-2026-34515
+    baseRefOid: 66e577d8b6013dee0b0e4277597eaa4a59a0e664
+    headRefOid: 8e9c3488de3329cec920e48f24f1d8639b69442a
+    mergeCommitOid: 981e747707c219efa174c812278087e4a2d626fb
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - leak
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: pyproject.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 4714
+    title: "Bump pypdf to 6.10.2 (CVE-2026-40260)"
+    url: https://github.com/browser-use/browser-use/pull/4714
+    mergedAt: 2026-04-21T01:50:18Z
+    baseRefName: main
+    headRefName: fix/pypdf-cve-2026-40260
+    baseRefOid: 895a0543ce211daceef205799742ff7dc5cb2ef1
+    headRefOid: eca52101a9ede75458aa65a1233586c686750d82
+    mergeCommitOid: 66e577d8b6013dee0b0e4277597eaa4a59a0e664
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: pyproject.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 4713
+    title: "Bump pillow to 12.2.0 (CVE-2026-40192)"
+    url: https://github.com/browser-use/browser-use/pull/4713
+    mergedAt: 2026-04-21T01:43:22Z
+    baseRefName: main
+    headRefName: fix/pillow-cve-2026-40192
+    baseRefOid: d1690e510a311cd69ad437ab53a024c86cf2a138
+    headRefOid: e7b0caac9f4130f20ac24d0b1c76acde5e674ff6
+    mergeCommitOid: 895a0543ce211daceef205799742ff7dc5cb2ef1
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: pyproject.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 4711
+    title: "fix(tools): enforce per-action timeout to prevent hung event handlers"
+    url: https://github.com/browser-use/browser-use/pull/4711
+    mergedAt: 2026-04-21T00:59:15Z
+    baseRefName: main
+    headRefName: fix/action-timeout-hang
+    baseRefOid: 8ad6f896ae18097adb20c60d4564b03dae6d7e64
+    headRefOid: 32416bb48cf49e34384c13fa26dab67d4710e970
+    mergeCommitOid: d1690e510a311cd69ad437ab53a024c86cf2a138
+    changedFiles: 7
+    additions: 544
+    deletions: 20
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - regression
+      - error
+      - race
+      - timeout
+      - fail
+      - failure
+    hasTests: true
+    testFiles: 
+      - tests/ci/browser/test_cdp_headers.py
+      - tests/ci/test_action_timeout.py
+      - tests/ci/test_cdp_timeout.py
+    debugScore: 10
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: browser_use/agent/service.py
+        additions: 16
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: browser_use/browser/_cdp_timeout.py
+        additions: 125
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: browser_use/browser/session.py
+        additions: 3
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: browser_use/tools/service.py
+        additions: 105
+        deletions: 13
+        changeType: MODIFIED
+      - 
+        path: tests/ci/browser/test_cdp_headers.py
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: tests/ci/test_action_timeout.py
+        additions: 176
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/ci/test_cdp_timeout.py
+        additions: 116
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 4710
+    title: "Add `record start/stop` CLI command for session video capture"
+    url: https://github.com/browser-use/browser-use/pull/4710
+    mergedAt: 2026-04-20T22:49:35Z
+    baseRefName: main
+    headRefName: feat/cli-record-start-stop
+    baseRefOid: 702b7352c3dc1d39ab8daef2f076dfe7adcfa1c3
+    headRefOid: 44f7ead5cd5dbda9bc30640fdbc7f37666f05320
+    mergeCommitOid: 8ad6f896ae18097adb20c60d4564b03dae6d7e64
+    changedFiles: 5
+    additions: 341
+    deletions: 27
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - error
+      - race
+      - parsing
+      - timeout
+    hasTests: true
+    testFiles: 
+      - tests/ci/test_action_record.py
+    debugScore: 8
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: browser_use/browser/watchdogs/recording_watchdog.py
+        additions: 72
+        deletions: 25
+        changeType: MODIFIED
+      - 
+        path: browser_use/skill_cli/commands/browser.py
+        additions: 55
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: browser_use/skill_cli/daemon.py
+        additions: 17
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: browser_use/skill_cli/main.py
+        additions: 13
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/ci/test_action_record.py
+        additions: 184
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 4524
+    title: "fix bedrock structured output w SchemaOptimizer to flatten schema"
+    url: https://github.com/browser-use/browser-use/pull/4524
+    mergedAt: 2026-03-25T19:53:02Z
+    baseRefName: main
+    headRefName: fix/bedrock-structured-output-schema
+    baseRefOid: c186be39c40119ac8041b27691c612e7a9449ac9
+    headRefOid: d897ffbd4c7a7f78a7b27d2b4b31f49d28857e45
+    mergeCommitOid: 762a1ee269b45130582814ab92fc2295e654ffd0
+    changedFiles: 1
+    additions: 3
+    deletions: 15
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - error
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: browser_use/llm/aws/chat_bedrock.py
+        additions: 3
+        deletions: 15
+        changeType: MODIFIED
+  - 
+    number: 4104
+    title: "Fix: Catch TypeError during lmnr import to prevent CLI startup crash (#4046)"
+    url: https://github.com/browser-use/browser-use/pull/4104
+    mergedAt: 2026-04-15T22:38:49Z
+    baseRefName: main
+    headRefName: fix/handle-lmnr-type-error-on-import-4046
+    baseRefOid: d49d3bd1ef41a81a3ebb58f76902fe002bbe6752
+    headRefOid: 80f798bc176ba44532c1e84698d3bc1e562506ef
+    mergeCommitOid: 702b7352c3dc1d39ab8daef2f076dfe7adcfa1c3
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+      - stale
+    keywordHits: 
+      - bug
+      - fix
+      - regression
+      - crash
+      - error
+      - exception
+      - fail
+      - failure
+      - broken
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 9
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: browser_use/observability.py
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 4692
+    title: "fix input clear fallbacks and clarify clear-then-type behavior"
+    url: https://github.com/browser-use/browser-use/pull/4692
+    mergedAt: 2026-04-15T21:35:56Z
+    baseRefName: main
+    headRefName: issue-4683-fix
+    baseRefOid: 91d2eff4acd7eced3b56fae20d4a20a38f4fcec8
+    headRefOid: 4476f6e16e557d1cf10cc40989a5479e17438d51
+    mergeCommitOid: d49d3bd1ef41a81a3ebb58f76902fe002bbe6752
+    changedFiles: 6
+    additions: 11
+    deletions: 9
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - fail
+      - failure
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: browser_use/browser/watchdogs/default_action_watchdog.py
+        additions: 0
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: browser_use/mcp/server.py
+        additions: 5
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: browser_use/skill_cli/main.py
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: browser_use/tools/service.py
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: browser_use/tools/views.py
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: skills/browser-use/SKILL.md
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 4690
+    title: "fix: add utf-8 encoding to Local State file read in list_chrome_profiles"
+    url: https://github.com/browser-use/browser-use/pull/4690
+    mergedAt: 2026-04-15T20:09:37Z
+    baseRefName: main
+    headRefName: fix/local-state-utf8-encoding
+    baseRefOid: 15373241cd9cac886e7aeeb68b12d6a585fa1044
+    headRefOid: 9c314e626ecf6f24c36903ceb3c161ae919e75f1
+    mergeCommitOid: 91d2eff4acd7eced3b56fae20d4a20a38f4fcec8
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: browser_use/skill_cli/utils.py
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 4678
+    title: "improve connect failure UX: fix chrome://inspect link and add fallbac…"
+    url: https://github.com/browser-use/browser-use/pull/4678
+    mergedAt: 2026-04-14T22:01:38Z
+    baseRefName: main
+    headRefName: improve-failure
+    baseRefOid: ef32ed708ad90b3cffea0b622d54002c0c5fd94a
+    headRefOid: d0fbf4c5807a2904e19ac2c1468d2639189a8f26
+    mergeCommitOid: 15373241cd9cac886e7aeeb68b12d6a585fa1044
+    changedFiles: 2
+    additions: 15
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - error
+      - fail
+      - failure
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 5
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: browser_use/skill_cli/utils.py
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: skills/browser-use/SKILL.md
+        additions: 14
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 4656
+    title: "ci: pin stale workflow action"
+    url: https://github.com/browser-use/browser-use/pull/4656
+    mergedAt: 2026-04-14T00:34:47Z
+    baseRefName: main
+    headRefName: codex/ci-pin-stale-bot-sha
+    baseRefOid: 5970007d86b99c073307ac78150eaff6631de807
+    headRefOid: b1f755d509198fbbcd80d3e066248ca1f4d9d0c6
+    mergeCommitOid: ef32ed708ad90b3cffea0b622d54002c0c5fd94a
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/workflows/stale-bot.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 4665
+    title: "close alias for BrowserSession stop"
+    url: https://github.com/browser-use/browser-use/pull/4665
+    mergedAt: 2026-04-12T21:51:28Z
+    baseRefName: main
+    headRefName: fix/browser-session-close
+    baseRefOid: 36438e409e70ab6018a222c931c887b4a4720a71
+    headRefOid: 76604913ad0ca43cc4797da338a395a3e5ea9bb4
+    mergeCommitOid: 5970007d86b99c073307ac78150eaff6631de807
+    changedFiles: 1
+    additions: 4
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: browser_use/browser/session.py
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 4664
+    title: "prefer Playwright chromium over sys Chrome by default"
+    url: https://github.com/browser-use/browser-use/pull/4664
+    mergedAt: 2026-04-12T15:47:27Z
+    baseRefName: main
+    headRefName: issue-4610-fix
+    baseRefOid: 700833d2c064e306442ea913e616a6998b0dc3ae
+    headRefOid: 03e2bc4da8afd409aa65fe8dfde4803cf5db4f28
+    mergeCommitOid: 36438e409e70ab6018a222c931c887b4a4720a71
+    changedFiles: 1
+    additions: 11
+    deletions: 11
+    labels: 
+[]
+    keywordHits: 
+      - error
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: browser_use/browser/watchdogs/local_browser_watchdog.py
+        additions: 11
+        deletions: 11
+        changeType: MODIFIED
+  - 
+    number: 4663
+    title: "fix: handle BrokenPipeError gracefully when MCP client disconnects"
+    url: https://github.com/browser-use/browser-use/pull/4663
+    mergedAt: 2026-04-12T15:37:56Z
+    baseRefName: main
+    headRefName: fix/mcp-broken-pipe
+    baseRefOid: 1324a88445573da09bea4f19adac5c0a4731ec88
+    headRefOid: df4e2f9f151803decbb1555b5278e31a558814b0
+    mergeCommitOid: 700833d2c064e306442ea913e616a6998b0dc3ae
+    changedFiles: 1
+    additions: 14
+    deletions: 11
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - crash
+      - error
+      - race
+      - broken
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 6
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: browser_use/mcp/server.py
+        additions: 14
+        deletions: 11
+        changeType: MODIFIED
+  - 
+    number: 4661
+    title: "fix pagination classifier to prioritize semantic labels over glyph syms"
+    url: https://github.com/browser-use/browser-use/pull/4661
+    mergedAt: 2026-04-11T22:39:05Z
+    baseRefName: main
+    headRefName: issue-4620-fix
+    baseRefOid: 24be2f04881226cab938e8c79d63129fc2ba7e9b
+    headRefOid: 9ad4c63cdbd6d66c4122ee486f015707bea4945f
+    mergeCommitOid: 1324a88445573da09bea4f19adac5c0a4731ec88
+    changedFiles: 1
+    additions: 11
+    deletions: 9
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: browser_use/dom/service.py
+        additions: 11
+        deletions: 9
+        changeType: MODIFIED
+  - 
+    number: 4660
+    title: "fix sensitive_data redaction order to prevent substring leaks"
+    url: https://github.com/browser-use/browser-use/pull/4660
+    mergedAt: 2026-04-11T22:21:03Z
+    baseRefName: main
+    headRefName: issue-4609-review
+    baseRefOid: 67c2eddf85469a453c889040a865631364a4d25b
+    headRefOid: 65f87b7fcae6c329cb1ccb3fd7154ec5990703a1
+    mergeCommitOid: 24be2f04881226cab938e8c79d63129fc2ba7e9b
+    changedFiles: 3
+    additions: 35
+    deletions: 37
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - leak
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: browser_use/agent/message_manager/service.py
+        additions: 8
+        deletions: 19
+        changeType: MODIFIED
+      - 
+        path: browser_use/agent/views.py
+        additions: 3
+        deletions: 18
+        changeType: MODIFIED
+      - 
+        path: browser_use/utils.py
+        additions: 24
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 4659
+    title: "fix asyncio.get_event_loop for python 3.14 compat"
+    url: https://github.com/browser-use/browser-use/pull/4659
+    mergedAt: 2026-04-11T22:13:27Z
+    baseRefName: main
+    headRefName: issue-4626-fix
+    baseRefOid: 184c49713e8e2e209a028a3bb832510c8309a0ce
+    headRefOid: 99a8674214ec66a784cd368e3d6e3116779d4162
+    mergeCommitOid: 67c2eddf85469a453c889040a865631364a4d25b
+    changedFiles: 1
+    additions: 4
+    deletions: 5
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - error
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: browser_use/skill_cli/main.py
+        additions: 4
+        deletions: 5
+        changeType: MODIFIED
+  - 
+    number: 4658
+    title: "fix(#4631): clear dom cache after scroll to prevent stale extract data"
+    url: https://github.com/browser-use/browser-use/pull/4658
+    mergedAt: 2026-04-11T22:09:26Z
+    baseRefName: main
+    headRefName: issue-4631-review
+    baseRefOid: cd60e6bdd5bc44f0e00eed7143c26e563adb135c
+    headRefOid: 60e7767228c6078dba22c320d9e006bf3aad5029
+    mergeCommitOid: 184c49713e8e2e209a028a3bb832510c8309a0ce
+    changedFiles: 1
+    additions: 7
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: browser_use/browser/watchdogs/default_action_watchdog.py
+        additions: 7
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 4653
+    title: "Add per-link utm_medium slugs to README cloud links"
+    url: https://github.com/browser-use/browser-use/pull/4653
+    mergedAt: 2026-04-10T22:53:12Z
+    baseRefName: main
+    headRefName: readme-utm-placement-tracking
+    baseRefOid: eeb767ef189ec80e47b982c149e82bd79b6ad224
+    headRefOid: 889ccb81bbf8ca1ba88075a4986adc9e96609235
+    mergeCommitOid: cd60e6bdd5bc44f0e00eed7143c26e563adb135c
+    changedFiles: 1
+    additions: 8
+    deletions: 8
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: README.md
+        additions: 8
+        deletions: 8
+        changeType: MODIFIED
+  - 
+    number: 4646
+    title: "Improve OSS-to-cloud conversion: UTM tracking, better error messages, and cloud nudges"
+    url: https://github.com/browser-use/browser-use/pull/4646
+    mergedAt: 2026-04-09T05:19:39Z
+    baseRefName: main
+    headRefName: oss-cloud-conversion
+    baseRefOid: fa17b89846f2c8f732f4ee5814d3eb2b0fc20884
+    headRefOid: f8f7be2e907bddc103b879ab6dea946dad3a0c97
+    mergeCommitOid: eeb767ef189ec80e47b982c149e82bd79b6ad224
+    changedFiles: 9
+    additions: 68
+    deletions: 46
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - wrong
+      - error
+      - fail
+      - failure
+    hasTests: true
+    testFiles: 
+      - tests/ci/browser/test_cloud_browser.py
+    debugScore: 6
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: README.md
+        additions: 12
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: browser_use/agent/service.py
+        additions: 8
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: browser_use/browser/cloud/cloud.py
+        additions: 6
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: browser_use/browser/session.py
+        additions: 6
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: browser_use/cli.py
+        additions: 17
+        deletions: 11
+        changeType: MODIFIED
+      - 
+        path: browser_use/init_cmd.py
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: browser_use/llm/browser_use/chat.py
+        additions: 12
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: browser_use/skill_cli/commands/cloud.py
+        additions: 4
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: tests/ci/browser/test_cloud_browser.py
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 4644
+    title: "chore: update browser-use-sdk from 2.0.15 to 3.4.2"
+    url: https://github.com/browser-use/browser-use/pull/4644
+    mergedAt: 2026-04-09T01:28:17Z
+    baseRefName: main
+    headRefName: chore/update-browser-use-sdk
+    baseRefOid: 92d3d152a276415d221573da21b4ac8ae04e907f
+    headRefOid: 1a94f96ce9c116700ac2fcb58bb0795cd607a7d9
+    mergeCommitOid: fa17b89846f2c8f732f4ee5814d3eb2b0fc20884
+    changedFiles: 3
+    additions: 10
+    deletions: 10
+    labels: 
+[]
+    keywordHits: 
+      - error
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: browser_use/skills/service.py
+        additions: 7
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: browser_use/skills/views.py
+        additions: 2
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: pyproject.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 4642
+    title: "fix: guard against missing stdin in MCP stdio server startup"
+    url: https://github.com/browser-use/browser-use/pull/4642
+    mergedAt: 2026-04-08T21:29:25Z
+    baseRefName: main
+    headRefName: fix/mcp-stdin-guard
+    baseRefOid: fa7bae340095770728a5f69f629e53e91ff59f4f
+    headRefOid: 83317179cbf721b7a9cee863fdf54eb5ebffc371
+    mergeCommitOid: 92d3d152a276415d221573da21b4ac8ae04e907f
+    changedFiles: 1
+    additions: 3
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - error
+      - fail
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: browser_use/mcp/server.py
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 4641
+    title: "fix: use setattr for LLM ainvoke patching to avoid pydantic crash"
+    url: https://github.com/browser-use/browser-use/pull/4641
+    mergedAt: 2026-04-08T21:24:47Z
+    baseRefName: main
+    headRefName: fix-issue-2-ainvoke-setattr
+    baseRefOid: 8de903dfddc35764f0b7ef27c1c44d867b235656
+    headRefOid: 3242d9dbc21bbcffcc49537de367c3fc49f943db
+    mergeCommitOid: fa7bae340095770728a5f69f629e53e91ff59f4f
+    changedFiles: 1
+    additions: 3
+    deletions: 3
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - crash
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: browser_use/tokens/service.py
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 4464
+    title: "fix: prevent KeyError in load_from_dict and IndexError in final_result"
+    url: https://github.com/browser-use/browser-use/pull/4464
+    mergedAt: 2026-04-07T18:20:28Z
+    baseRefName: main
+    headRefName: fix/agent-history-safe-access
+    baseRefOid: 55ca9cb27d3ae65e734207224590d705d2ab4afd
+    headRefOid: 6129ceb0b0d09c319c381775a65e19ab63c2dce4
+    mergeCommitOid: 8de903dfddc35764f0b7ef27c1c44d867b235656
+    changedFiles: 1
+    additions: 14
+    deletions: 8
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - crash
+      - error
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: browser_use/agent/views.py
+        additions: 14
+        deletions: 8
+        changeType: MODIFIED
+  - 
+    number: 4616
+    title: "improve model docs"
+    url: https://github.com/browser-use/browser-use/pull/4616
+    mergedAt: 2026-04-06T02:01:37Z
+    baseRefName: main
+    headRefName: model-docs
+    baseRefOid: de14b9aa31d167696a7ea7185d71876dbd7e6c94
+    headRefOid: c1151715d35810aa7149f2b66af035e3be76c540
+    mergeCommitOid: 55ca9cb27d3ae65e734207224590d705d2ab4afd
+    changedFiles: 1
+    additions: 152
+    deletions: 58
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: skills/open-source/references/models.md
+        additions: 152
+        deletions: 58
+        changeType: MODIFIED
+  - 
+    number: 4598
+    title: "fix: add per-session auth token to daemon socket"
+    url: https://github.com/browser-use/browser-use/pull/4598
+    mergedAt: 2026-04-03T17:54:19Z
+    baseRefName: main
+    headRefName: "worktree-fix+daemon-socket-auth"
+    baseRefOid: 9b43d66c5354924f11af06d09136d2aa65a8ecca
+    headRefOid: ca2185ba61d5013f23ad9024e36171994b7c0946
+    mergeCommitOid: de14b9aa31d167696a7ea7185d71876dbd7e6c94
+    changedFiles: 3
+    additions: 62
+    deletions: 6
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - error
+      - fail
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: browser_use/skill_cli/daemon.py
+        additions: 43
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: browser_use/skill_cli/main.py
+        additions: 14
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: browser_use/skill_cli/utils.py
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 4597
+    title: "fix: upgrade requests to 2.33.0 to patch temp-file path-traversal vulnerability"
+    url: https://github.com/browser-use/browser-use/pull/4597
+    mergedAt: 2026-04-02T23:45:14Z
+    baseRefName: main
+    headRefName: "worktree-fix+requests-security-upgrade"
+    baseRefOid: 8e98dd46b58226f96919f13a7d86c4ca73d34b63
+    headRefOid: bd26395428b0635c15a5672176159f8bcaa39416
+    mergeCommitOid: 9b43d66c5354924f11af06d09136d2aa65a8ecca
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - race
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: pyproject.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 4596
+    title: "fix: upgrade aiohttp to 3.13.4 to patch memory exhaustion vulnerability"
+    url: https://github.com/browser-use/browser-use/pull/4596
+    mergedAt: 2026-04-02T23:34:41Z
+    baseRefName: main
+    headRefName: "worktree-fix+aiohttp-security-upgrade"
+    baseRefOid: e2ce72fd94877fa644804ce22184a0c28b8c5c82
+    headRefOid: 14ada65183cb8b398618607b3d16d7f645141263
+    mergeCommitOid: 8e98dd46b58226f96919f13a7d86c4ca73d34b63
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -7
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: browser_use/skill_cli/requirements-cli.txt
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 4590
+    title: "fix: security and correctness issues found in #4514 review"
+    url: https://github.com/browser-use/browser-use/pull/4590
+    mergedAt: 2026-04-02T23:27:37Z
+    baseRefName: main
+    headRefName: fix/pr-4514-review-fixes
+    baseRefOid: ad87b452006e814b4f151dc9a542d9331d7c9f97
+    headRefOid: 56d8aa8483f3d7fb723db72d2fa4d7ec7d83803b
+    mergeCommitOid: e2ce72fd94877fa644804ce22184a0c28b8c5c82
+    changedFiles: 3
+    additions: 67
+    deletions: 17
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - error
+      - fail
+      - failure
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: browser_use/skill_cli/commands/cloud.py
+        additions: 8
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: browser_use/skill_cli/commands/setup.py
+        additions: 32
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: browser_use/skill_cli/config.py
+        additions: 27
+        deletions: 5
+        changeType: MODIFIED
+  - 
+    number: 4514
+    title: "another big cli update"
+    url: https://github.com/browser-use/browser-use/pull/4514
+    mergedAt: 2026-04-02T20:06:16Z
+    baseRefName: main
+    headRefName: multi-session
+    baseRefOid: 329c67f069427e928ff81ad52415efdca7692007
+    headRefOid: a7b476ee4623767254673969edd24edd63baa8fb
+    mergeCommitOid: ad87b452006e814b4f151dc9a542d9331d7c9f97
+    changedFiles: 31
+    additions: 2525
+    deletions: 793
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - error
+      - race
+      - validation
+      - timeout
+      - fail
+      - failure
+    hasTests: true
+    testFiles: 
+      - tests/ci/test_cli_cloud.py
+      - tests/ci/test_cli_connect.py
+      - tests/ci/test_cli_coordinate_click.py
+      - tests/ci/test_cli_lifecycle.py
+      - tests/ci/test_cli_upload.py
+      - tests/ci/test_setup_command.py
+      - tests/ci/test_tunnel.py
+    debugScore: 6
+    suggestedDifficulty: high
+    exclusionHints: 
+      - huge-diff
+    files: 
+      - 
+        path: browser_use/browser/cloud/views.py
+        additions: 7
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: browser_use/skill_cli/README.md
+        additions: 7
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: browser_use/skill_cli/actions.py
+        additions: 201
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: browser_use/skill_cli/browser.py
+        additions: 225
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: browser_use/skill_cli/commands/browser.py
+        additions: 82
+        deletions: 72
+        changeType: MODIFIED
+      - 
+        path: browser_use/skill_cli/commands/cloud.py
+        additions: 187
+        deletions: 28
+        changeType: MODIFIED
+      - 
+        path: browser_use/skill_cli/commands/doctor.py
+        additions: 1
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: browser_use/skill_cli/commands/python_exec.py
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: browser_use/skill_cli/commands/setup.py
+        additions: 205
+        deletions: 183
+        changeType: MODIFIED
+      - 
+        path: browser_use/skill_cli/commands/utils.py
+        additions: 0
+        deletions: 31
+        changeType: DELETED
+      - 
+        path: browser_use/skill_cli/config.py
+        additions: 149
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: browser_use/skill_cli/daemon.py
+        additions: 178
+        deletions: 43
+        changeType: MODIFIED
+      - 
+        path: browser_use/skill_cli/install.sh
+        additions: 7
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: browser_use/skill_cli/install_lite.sh
+        additions: 10
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: browser_use/skill_cli/main.py
+        additions: 529
+        deletions: 145
+        changeType: MODIFIED
+      - 
+        path: browser_use/skill_cli/profile_use.py
+        additions: 5
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: browser_use/skill_cli/python_session.py
+        additions: 19
+        deletions: 26
+        changeType: MODIFIED
+      - 
+        path: browser_use/skill_cli/sessions.py
+        additions: 24
+        deletions: 18
+        changeType: MODIFIED
+      - 
+        path: browser_use/skill_cli/tunnel.py
+        additions: 0
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: browser_use/skill_cli/utils.py
+        additions: 2
+        deletions: 90
+        changeType: MODIFIED
+      - 
+        path: skills/browser-use/SKILL.md
+        additions: 45
+        deletions: 28
+        changeType: MODIFIED
+      - 
+        path: skills/browser-use/references/cdp-python.md
+        additions: 76
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: skills/browser-use/references/multi-session.md
+        additions: 92
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: skills/remote-browser/SKILL.md
+        additions: 21
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: tests/ci/test_cli_cloud.py
+        additions: 25
+        deletions: 9
+        changeType: MODIFIED
+      - 
+        path: tests/ci/test_cli_connect.py
+        additions: 4
+        deletions: 11
+        changeType: MODIFIED
+      - 
+        path: tests/ci/test_cli_coordinate_click.py
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/ci/test_cli_lifecycle.py
+        additions: 388
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/ci/test_cli_upload.py
+        additions: 12
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/ci/test_setup_command.py
+        additions: 17
+        deletions: 67
+        changeType: MODIFIED
+      - 
+        path: tests/ci/test_tunnel.py
+        additions: 0
+        deletions: 18
+        changeType: MODIFIED
+  - 
+    number: 4587
+    title: "perf: fix O(n²) bottlenecks in DOM capture for heavy pages"
+    url: https://github.com/browser-use/browser-use/pull/4587
+    mergedAt: 2026-04-02T07:47:08Z
+    baseRefName: main
+    headRefName: fix/heavy-page-dom-capture
+    baseRefOid: e026a51fd34d7af6ef47084318bf2614cabfd4f1
+    headRefOid: 3aa68384ad42b7c4c8cd4161add6128fe8b3911e
+    mergeCommitOid: ef536d4ffeb354165463175c82f1bed9642f36e7
+    changedFiles: 4
+    additions: 43
+    deletions: 8
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - regression
+      - flaky
+      - timeout
+      - fail
+      - failure
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 7
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: browser_use/browser/watchdogs/dom_watchdog.py
+        additions: 5
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: browser_use/dom/enhanced_snapshot.py
+        additions: 12
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: browser_use/dom/serializer/paint_order.py
+        additions: 15
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: browser_use/dom/service.py
+        additions: 11
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 4577
+    title: "fix: close httpx client pool on session stop to prevent OOM on Lambda"
+    url: https://github.com/browser-use/browser-use/pull/4577
+    mergedAt: 2026-03-31T18:39:05Z
+    baseRefName: main
+    headRefName: fix/close-httpx-clients-on-session-cleanup
+    baseRefOid: eee98ff2725739b56fdd7ebf71ac04a5eab54cf7
+    headRefOid: 5e644981e82cc1276aca768b27df54155d9ddc3c
+    mergeCommitOid: e026a51fd34d7af6ef47084318bf2614cabfd4f1
+    changedFiles: 2
+    additions: 12
+    deletions: 2
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - regression
+      - crash
+      - error
+      - leak
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 6
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: browser_use/browser/cloud/cloud.py
+        additions: 6
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: browser_use/browser/session.py
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 4457
+    title: "fix: use login shell for PATH configuration in install script"
+    url: https://github.com/browser-use/browser-use/pull/4457
+    mergedAt: 2026-03-25T20:16:52Z
+    baseRefName: main
+    headRefName: fix/install-shell-detection
+    baseRefOid: 762a1ee269b45130582814ab92fc2295e654ffd0
+    headRefOid: b6e17ceb052bc57b95163a4a10348f1acd57d70e
+    mergeCommitOid: e9d2e91bf79d5fd165caefea926529a9268d9ba6
+    changedFiles: 1
+    additions: 13
+    deletions: 13
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: browser_use/skill_cli/install.sh
+        additions: 13
+        deletions: 13
+        changeType: MODIFIED
+  - 
+    number: 4534
+    title: "feat(cli): add install-lite.sh script for the CLI"
+    url: https://github.com/browser-use/browser-use/pull/4534
+    mergedAt: 2026-03-26T16:47:18Z
+    baseRefName: main
+    headRefName: install-lite
+    baseRefOid: 76cc49089b2f21fa1e5c3b1b6c01124733cf2d57
+    headRefOid: 7e92031593af074fca41d73797eb042a2a0c2553
+    mergeCommitOid: eee98ff2725739b56fdd7ebf71ac04a5eab54cf7
+    changedFiles: 3
+    additions: 602
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - validation
+      - fail
+      - failure
+    hasTests: true
+    testFiles: 
+      - tests/ci/test_cli_lite_deps.py
+    debugScore: 7
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: browser_use/skill_cli/install_lite.sh
+        additions: 500
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: browser_use/skill_cli/requirements-cli.txt
+        additions: 12
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/ci/test_cli_lite_deps.py
+        additions: 90
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 4212
+    title: "fix(mcp): remove oneOf from browser_click schema that breaks Claude API clients"
+    url: https://github.com/browser-use/browser-use/pull/4212
+    mergedAt: 2026-03-26T15:08:20Z
+    baseRefName: main
+    headRefName: fix/mcp-browser-click-oneof-schema
+    baseRefOid: 8f201decd30f0a4ebedb12716930dced76e65f1e
+    headRefOid: 6094cddd900f141310ffce31f289e4f911edfa9b
+    mergeCommitOid: 76cc49089b2f21fa1e5c3b1b6c01124733cf2d57
+    changedFiles: 1
+    additions: 3
+    deletions: 7
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - error
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: browser_use/mcp/server.py
+        additions: 3
+        deletions: 7
+        changeType: MODIFIED
+  - 
+    number: 4096
+    title: "fix: stop cloud sessions when reconnecting via cdp_url"
+    url: https://github.com/browser-use/browser-use/pull/4096
+    mergedAt: 2026-03-25T23:39:20Z
+    baseRefName: main
+    headRefName: fix/cloud-session-stop-cdp-reconnect
+    baseRefOid: 6ce58afbc3f10d2184c34c2fc221f06592b46136
+    headRefOid: 4c883feb7c6f9d71600818b94e0f4a5359651362
+    mergeCommitOid: 8f201decd30f0a4ebedb12716930dced76e65f1e
+    changedFiles: 1
+    additions: 17
+    deletions: 5
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - leak
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: browser_use/browser/session.py
+        additions: 17
+        deletions: 5
+        changeType: MODIFIED
+  - 
+    number: 4530
+    title: "fix tunnel process kill and daemon spawn on windows"
+    url: https://github.com/browser-use/browser-use/pull/4530
+    mergedAt: 2026-03-25T23:34:17Z
+    baseRefName: main
+    headRefName: fix-4352
+    baseRefOid: 86d33635c592e5dea6f8513e76cf932d4e4120fb
+    headRefOid: 4950c3baa1638acc7efccadda1ea87eec77eb338
+    mergeCommitOid: 6ce58afbc3f10d2184c34c2fc221f06592b46136
+    changedFiles: 1
+    additions: 41
+    deletions: 17
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: browser_use/skill_cli/tunnel.py
+        additions: 41
+        deletions: 17
+        changeType: MODIFIED
+  - 
+    number: 4481
+    title: "fix(agent): prevent stale history and stuck step counter on timeout"
+    url: https://github.com/browser-use/browser-use/pull/4481
+    mergedAt: 2026-03-25T23:28:21Z
+    baseRefName: main
+    headRefName: fix/step-timeout-counter-and-stale-history
+    baseRefOid: 34597151bc6e081e3c07c1ce81509422c23f49aa
+    headRefOid: 8fcbe9f2fa2ba46c671c1f3f4ebac3f55fa8fea8
+    mergeCommitOid: 86d33635c592e5dea6f8513e76cf932d4e4120fb
+    changedFiles: 1
+    additions: 11
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - error
+      - timeout
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: browser_use/agent/service.py
+        additions: 11
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 4529
+    title: "fix anthropic action field double-serialization"
+    url: https://github.com/browser-use/browser-use/pull/4529
+    mergedAt: 2026-03-25T23:20:51Z
+    baseRefName: main
+    headRefName: fix-4510
+    baseRefOid: fe2a72a59b409dea11caead310317db622d9c6b6
+    headRefOid: f74a4435b1041f7b3ab9740dace47a8b60caba1c
+    mergeCommitOid: 34597151bc6e081e3c07c1ce81509422c23f49aa
+    changedFiles: 2
+    additions: 45
+    deletions: 17
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - error
+      - race
+      - validation
+      - fail
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 6
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: browser_use/llm/anthropic/chat.py
+        additions: 23
+        deletions: 9
+        changeType: MODIFIED
+      - 
+        path: browser_use/llm/aws/chat_anthropic.py
+        additions: 22
+        deletions: 8
+        changeType: MODIFIED
+  - 
+    number: 4528
+    title: "feat(tokens): allow overriding model pricing URL"
+    url: https://github.com/browser-use/browser-use/pull/4528
+    mergedAt: 2026-03-25T22:22:50Z
+    baseRefName: main
+    headRefName: override-price-config
+    baseRefOid: db7bdb3d1bdb4f961b657ffdd83dbd466214515b
+    headRefOid: 4f268e439088c7828d9e80e4e2423d9a374f295a
+    mergeCommitOid: fe2a72a59b409dea11caead310317db622d9c6b6
+    changedFiles: 4
+    additions: 52
+    deletions: 16
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: browser_use/agent/service.py
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: browser_use/config.py
+        additions: 8
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: browser_use/tokens/service.py
+        additions: 41
+        deletions: 15
+        changeType: MODIFIED
+      - 
+        path: browser_use/tokens/views.py
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED

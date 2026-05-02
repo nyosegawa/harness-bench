@@ -1,0 +1,3586 @@
+{
+  "generatedAt": "2026-05-02T10:20:34.573Z",
+  "repo": "hoppscotch/hoppscotch",
+  "since": "2026-01-01",
+  "limit": 50,
+  "debugKeywords": [
+    "bug",
+    "fix",
+    "regression",
+    "crash",
+    "incorrect",
+    "wrong",
+    "error",
+    "exception",
+    "edge",
+    "flaky",
+    "race",
+    "leak",
+    "validation",
+    "parser",
+    "parsing",
+    "timeout",
+    "fail",
+    "failure",
+    "broken"
+  ],
+  "prs": [
+    {
+      "number": 6257,
+      "title": "fix(cli): ship `semver` as a runtime dependency",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6257",
+      "mergedAt": "2026-05-01T09:47:14Z",
+      "baseRefName": "main",
+      "headRefName": "fix/cli-semver-runtime-dep",
+      "baseRefOid": "7036ab5b53d1213fceb142d60e7dd506033d96e8",
+      "headRefOid": "f15ee7b1bbe037ba7de7822b8d47642978abe2dd",
+      "mergeCommitOid": "cbb32d1aacfc72eaa49879cd8d7de4837597f64c",
+      "changedFiles": 2,
+      "additions": 5,
+      "deletions": 5,
+      "labels": [
+        "bug fix",
+        "cli"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "error",
+        "validation",
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 5,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/hoppscotch-cli/package.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pnpm-lock.yaml",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5745,
+      "title": "feat: add collection-level pre-request and test scripts",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/5745",
+      "mergedAt": "2026-04-27T18:18:53Z",
+      "baseRefName": "next",
+      "headRefName": "feat/collection-level-scripts",
+      "baseRefOid": "00c75b9de05b209155267acfd9e0b0baa5712029",
+      "headRefOid": "4fa4155baa00518b3fce1cea75d5673636cf2861",
+      "mergeCommitOid": "696ddc336c8b687bf4c6d828cf4a8fe1c14edab1",
+      "changedFiles": 75,
+      "additions": 2791,
+      "deletions": 305,
+      "labels": [
+        "feature"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "error",
+        "race",
+        "validation",
+        "fail",
+        "failure"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+        "packages/hoppscotch-cli/src/__tests__/e2e/commands/test.spec.ts",
+        "packages/hoppscotch-cli/src/__tests__/e2e/fixtures/collections/collection-level-scripts-coll.json",
+        "packages/hoppscotch-cli/src/__tests__/unit/fixtures/workspace-access.mock.ts",
+        "packages/hoppscotch-cli/src/__tests__/unit/pre-request-inheritance.spec.ts",
+        "packages/hoppscotch-cli/src/__tests__/unit/scripting.spec.ts",
+        "packages/hoppscotch-cli/src/__tests__/unit/test-runner-inheritance.spec.ts",
+        "packages/hoppscotch-common/src/components/http/test/Runner.vue",
+        "packages/hoppscotch-common/src/services/__tests__/documentation.service.spec.ts",
+        "packages/hoppscotch-common/src/services/persistence/__tests__/__mocks__/index.ts"
+      ],
+      "debugScore": 6,
+      "suggestedDifficulty": "high",
+      "exclusionHints": [
+        "huge-diff"
+      ],
+      "files": [
+        {
+          "path": "packages/hoppscotch-backend/src/prisma/prisma-error-codes.ts",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/team-collection/team-collection.service.ts",
+          "additions": 58,
+          "deletions": 27,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/team-request/team-request.service.ts",
+          "additions": 16,
+          "deletions": 13,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/user-collection/user-collection.service.spec.ts",
+          "additions": 162,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/user-collection/user-collection.service.ts",
+          "additions": 56,
+          "deletions": 16,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-cli/src/__tests__/e2e/commands/test.spec.ts",
+          "additions": 15,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-cli/src/__tests__/e2e/fixtures/collections/collection-level-scripts-coll.json",
+          "additions": 114,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/hoppscotch-cli/src/__tests__/unit/fixtures/workspace-access.mock.ts",
+          "additions": 56,
+          "deletions": 12,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-cli/src/__tests__/unit/pre-request-inheritance.spec.ts",
+          "additions": 216,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/hoppscotch-cli/src/__tests__/unit/scripting.spec.ts",
+          "additions": 168,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/hoppscotch-cli/src/__tests__/unit/test-runner-inheritance.spec.ts",
+          "additions": 234,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/hoppscotch-cli/src/interfaces/response.ts",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-cli/src/types/request.ts",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-cli/src/utils/collections.ts",
+          "additions": 20,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-cli/src/utils/mutators.ts",
+          "additions": 3,
+          "deletions": 16,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-cli/src/utils/pre-request.ts",
+          "additions": 18,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-cli/src/utils/request.ts",
+          "additions": 19,
+          "deletions": 7,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-cli/src/utils/scripting.ts",
+          "additions": 71,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/hoppscotch-cli/src/utils/test.ts",
+          "additions": 41,
+          "deletions": 21,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-cli/src/utils/workspace-access.ts",
+          "additions": 6,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/locales/en.json",
+          "additions": 8,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/components.d.ts",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/components/MonacoScriptEditor.vue",
+          "additions": 35,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/components/collections/Properties.vue",
+          "additions": 156,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/components/collections/documentation/index.vue",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/components/collections/graphql/Add.vue",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/components/collections/index.vue",
+          "additions": 11,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/components/http/InheritedScriptsModal.vue",
+          "additions": 148,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/components/http/PreRequestScript.vue",
+          "additions": 40,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/components/http/RequestOptions.vue",
+          "additions": 24,
+          "deletions": 10,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/components/http/Tests.vue",
+          "additions": 42,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/components/http/test/Runner.vue",
+          "additions": 40,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/helpers/RequestRunner.ts",
+          "additions": 50,
+          "deletions": 24,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/helpers/backend/helpers.ts",
+          "additions": 36,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/helpers/backend/queries/PublishedDocs.ts",
+          "additions": 15,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/helpers/collection/collection.ts",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/helpers/import-export/import/har.ts",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/helpers/import-export/import/insomnia/insomniaColl.ts",
+          "additions": 6,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/helpers/import-export/import/openapi/index.ts",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/helpers/import-export/import/postman.ts",
+          "additions": 40,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/helpers/mockServer/exampleCollection.ts",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/helpers/mockServer/exampleMockCollection.ts",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/helpers/scripting.ts",
+          "additions": 70,
+          "deletions": 7,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/helpers/teams/TeamCollectionAdapter.ts",
+          "additions": 28,
+          "deletions": 20,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/helpers/teams/TeamsSearch.service.ts",
+          "additions": 77,
+          "deletions": 20,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/helpers/types/HoppInheritedProperties.ts",
+          "additions": 6,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/newstore/collections.ts",
+          "additions": 61,
+          "deletions": 16,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/pages/view/_id/_version.vue",
+          "additions": 18,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/services/__tests__/documentation.service.spec.ts",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/services/persistence/__tests__/__mocks__/index.ts",
+          "additions": 7,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/services/persistence/validation-schemas/index.ts",
+          "additions": 10,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/services/team-collection.service.ts",
+          "additions": 31,
+          "deletions": 20,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/services/test-runner/test-runner.service.ts",
+          "additions": 46,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-data/src/collection/index.ts",
+          "additions": 14,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-data/src/collection/v/10.ts",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-data/src/collection/v/11.ts",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-data/src/collection/v/12.ts",
+          "additions": 47,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/hoppscotch-data/src/graphql/v/6.ts",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-data/src/rest/v/16.ts",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-data/src/rest/v/17.ts",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6160,
+      "title": "fix(common): add missing aria-labels to icon-only sidenav links",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6160",
+      "mergedAt": "2026-04-20T13:00:55Z",
+      "baseRefName": "next",
+      "headRefName": "feat/a11y-sidenav",
+      "baseRefOid": "3a4b6d81578ed9354b95b928d4222313847645fd",
+      "headRefOid": "719e30aa47cc70ccfaecdc64f25bf35531a76246",
+      "mergeCommitOid": "a0740399b113afc3037110215434a8fd297f0a56",
+      "changedFiles": 1,
+      "additions": 1,
+      "deletions": 0,
+      "labels": [
+        "a11y"
+      ],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/hoppscotch-common/src/components/app/Sidenav.vue",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6071,
+      "title": "chore(common): complete missing Turkish translations",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6071",
+      "mergedAt": "2026-04-17T14:15:04Z",
+      "baseRefName": "next",
+      "headRefName": "update-tr-translations",
+      "baseRefOid": "21448c526d6367d1312b72f2e6815af2c6ae8114",
+      "headRefOid": "f78963b00bf8dd4d19e95fad6f403485f2dab939",
+      "mergeCommitOid": "a21ca7ed5ab5df0fb8260ef442774d7ccd382531",
+      "changedFiles": 1,
+      "additions": 1278,
+      "deletions": 46,
+      "labels": [
+        "i18n"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "broken"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "huge-diff",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/hoppscotch-common/locales/tr.json",
+          "additions": 1278,
+          "deletions": 46,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6109,
+      "title": "chore(common): complete missing Spanish translations",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6109",
+      "mergedAt": "2026-04-17T14:02:02Z",
+      "baseRefName": "next",
+      "headRefName": "complete-spanish-translation",
+      "baseRefOid": "d25f1f738eee94facb6478b541d3b3fb02845338",
+      "headRefOid": "72d91e3c212bf1c6464b5790543a5ab51047d397",
+      "mergeCommitOid": "21448c526d6367d1312b72f2e6815af2c6ae8114",
+      "changedFiles": 1,
+      "additions": 1271,
+      "deletions": 53,
+      "labels": [
+        "i18n"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "huge-diff",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/hoppscotch-common/locales/es.json",
+          "additions": 1271,
+          "deletions": 53,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5996,
+      "title": "chore(common): modify Chinese translation of words",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/5996",
+      "mergedAt": "2026-04-17T15:30:12Z",
+      "baseRefName": "next",
+      "headRefName": "chinese-translation",
+      "baseRefOid": "a21ca7ed5ab5df0fb8260ef442774d7ccd382531",
+      "headRefOid": "51d24f8e9124bd57d874578a265e8ff310d236ed",
+      "mergeCommitOid": "3d19cf5c79b076646a1ab2dfa9866dee19ee8980",
+      "changedFiles": 2,
+      "additions": 21,
+      "deletions": 20,
+      "labels": [
+        "i18n"
+      ],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/hoppscotch-common/locales/cn.json",
+          "additions": 20,
+          "deletions": 19,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/composables/oauth2/useOAuth2GrantTypes.ts",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6244,
+      "title": "fix(common): preserve string contract for GQL history responses",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6244",
+      "mergedAt": "2026-04-29T11:41:33Z",
+      "baseRefName": "next",
+      "headRefName": "fix/gql-history-response-encoding",
+      "baseRefOid": "c4e1f02abf53659347532c05872754b585581016",
+      "headRefOid": "4f3fafc900ebc838fde5d0eba72883c495ebe4be",
+      "mergeCommitOid": "7036ab5b53d1213fceb142d60e7dd506033d96e8",
+      "changedFiles": 5,
+      "additions": 172,
+      "deletions": 8,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "error",
+        "fail"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "packages/hoppscotch-common/src/services/persistence/__tests__/index.spec.ts"
+      ],
+      "debugScore": 2,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [
+        "dependency-update"
+      ],
+      "files": [
+        {
+          "path": "packages/hoppscotch-common/src/newstore/history.ts",
+          "additions": 12,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/services/persistence/__tests__/index.spec.ts",
+          "additions": 68,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/services/persistence/index.ts",
+          "additions": 86,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-selfhost-web/src/platform/history/desktop/index.ts",
+          "additions": 3,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-selfhost-web/src/platform/history/web/index.ts",
+          "additions": 3,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6243,
+      "title": "fix(common): subfolder add-new in team collections respects write access",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6243",
+      "mergedAt": "2026-04-29T08:45:49Z",
+      "baseRefName": "next",
+      "headRefName": "fix/team-subfolder-acess-bug",
+      "baseRefOid": "f344d4e395a2d8213515e90339a64e290d209fc5",
+      "headRefOid": "59395eb908fb115869dc135a74e3b2cc15757f41",
+      "mergeCommitOid": "aee017ced338b01fb779260a85ed7bcccc274baf",
+      "changedFiles": 2,
+      "additions": 16,
+      "deletions": 5,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/hoppscotch-common/src/components/collections/TeamCollections.vue",
+          "additions": 9,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/components/collections/index.vue",
+          "additions": 7,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6185,
+      "title": "fix(common): set domain url  as mockserver environment",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6185",
+      "mergedAt": "2026-04-29T06:44:03Z",
+      "baseRefName": "next",
+      "headRefName": "fix/mockserver-env-set-url-priority",
+      "baseRefOid": "c4e1f02abf53659347532c05872754b585581016",
+      "headRefOid": "5fb330034ae5e21276864432a532477ec54a3efe",
+      "mergeCommitOid": "50f16e2ab58352219f5ae2d6417cf25a6c193e2c",
+      "changedFiles": 1,
+      "additions": 161,
+      "deletions": 20,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/hoppscotch-common/src/composables/useMockServer.ts",
+          "additions": 161,
+          "deletions": 20,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6240,
+      "title": "fix(backend): harden onboarding config endpoint",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6240",
+      "mergedAt": "2026-04-28T18:40:03Z",
+      "baseRefName": "next",
+      "headRefName": "fix/onboarding-config-fetch",
+      "baseRefOid": "f344d4e395a2d8213515e90339a64e290d209fc5",
+      "headRefOid": "fabbd7a2ab5a9ee67b6667bce98a466b08b58f96",
+      "mergeCommitOid": "c4e1f02abf53659347532c05872754b585581016",
+      "changedFiles": 3,
+      "additions": 180,
+      "deletions": 1,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "regression",
+        "wrong",
+        "edge",
+        "validation",
+        "fail",
+        "failure"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts"
+      ],
+      "debugScore": 9,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts",
+          "additions": 157,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/infra-config/infra-config.service.ts",
+          "additions": 5,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/infra-config/onboarding.controller.ts",
+          "additions": 18,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6191,
+      "title": "chore: security patch for the dependency chain `v2026.4.0`",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6191",
+      "mergedAt": "2026-04-28T12:21:43Z",
+      "baseRefName": "next",
+      "headRefName": "chore/security-fix-2026-4-0",
+      "baseRefOid": "bb1c9a9fe9b2aedfb97794c935d82670709b51eb",
+      "headRefOid": "19f4acf05c1ff18abda5aadb07437f4dc88fd6a0",
+      "mergeCommitOid": "078d71036b9da3c9f1f2e3d4e9d90d8f7f47c037",
+      "changedFiles": 15,
+      "additions": 3393,
+      "deletions": 2498,
+      "labels": [],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "huge-diff",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "package.json",
+          "additions": 6,
+          "deletions": 19,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-agent/package.json",
+          "additions": 9,
+          "deletions": 9,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/package.json",
+          "additions": 37,
+          "deletions": 29,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/auth/stateless-state-store.ts",
+          "additions": 6,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/mailer/helper.ts",
+          "additions": 4,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/mailer/mailer.module.ts",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-cli/package.json",
+          "additions": 4,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/package.json",
+          "additions": 28,
+          "deletions": 28,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/package.json",
+          "additions": 10,
+          "deletions": 10,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-js-sandbox/package.json",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-kernel/package.json",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-selfhost-web/package.json",
+          "additions": 17,
+          "deletions": 17,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-sh-admin/package.json",
+          "additions": 21,
+          "deletions": 21,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pnpm-lock.yaml",
+          "additions": 3221,
+          "deletions": 2328,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "prod.Dockerfile",
+          "additions": 22,
+          "deletions": 21,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6238,
+      "title": "fix(desktop): unified store scope and migration reroute",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6238",
+      "mergedAt": "2026-04-28T09:29:11Z",
+      "baseRefName": "next",
+      "headRefName": "desktop-settings-phase-0-schema-bridge-shell-patch-1",
+      "baseRefOid": "df97d11753871142ffddd3de2aa6742c3c9e9b23",
+      "headRefOid": "e7061ba63227954c0e72e638c34637151fa0ae6f",
+      "mergeCommitOid": "96ceb84df9a1aa48d8f5326124bf20a726946cab",
+      "changedFiles": 4,
+      "additions": 168,
+      "deletions": 45,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "error"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/hoppscotch-common/src/composables/desktop-settings.ts",
+          "additions": 17,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/composables/update-check.ts",
+          "additions": 16,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/kernel/store.ts",
+          "additions": 94,
+          "deletions": 43,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/src/services/persistence.service.ts",
+          "additions": 41,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6237,
+      "title": "fix(common): restore magic-link sign-in flow on cloud for orgs",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6237",
+      "mergedAt": "2026-04-28T08:32:51Z",
+      "baseRefName": "next",
+      "headRefName": "fix/cloud-magic-link-cycle",
+      "baseRefOid": "bb1c9a9fe9b2aedfb97794c935d82670709b51eb",
+      "headRefOid": "615bd7f72afdc3c52b08d195f50a954089a9b0ba",
+      "mergeCommitOid": "df97d11753871142ffddd3de2aa6742c3c9e9b23",
+      "changedFiles": 1,
+      "additions": 7,
+      "deletions": 6,
+      "labels": [
+        "bug fix"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "regression"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/hoppscotch-common/src/pages/enter.vue",
+          "additions": 7,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6172,
+      "title": "feat(desktop): settings phase 0 - infra and update check",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6172",
+      "mergedAt": "2026-04-27T19:06:07Z",
+      "baseRefName": "next",
+      "headRefName": "desktop-settings-phase-0-schema-bridge-shell",
+      "baseRefOid": "696ddc336c8b687bf4c6d828cf4a8fe1c14edab1",
+      "headRefOid": "d8028d946e3572731e9f8d92a19a084667993907",
+      "mergeCommitOid": "9861ee84ad593372885ebfc7cb1c487f3b9dd290",
+      "changedFiles": 20,
+      "additions": 1593,
+      "deletions": 245,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "error",
+        "parsing",
+        "timeout",
+        "fail",
+        "failure"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "huge-diff",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/hoppscotch-common/locales/en.json",
+          "additions": 14,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/locales/pt-br.json",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/components.d.ts",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/components/settings/Desktop.vue",
+          "additions": 282,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/composables/desktop-settings.ts",
+          "additions": 164,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/composables/update-check.ts",
+          "additions": 368,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/platform/desktop-settings.ts",
+          "additions": 72,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/platform/update-state.ts",
+          "additions": 69,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/src-tauri/src/config.rs",
+          "additions": 120,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/src-tauri/src/lib.rs",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/src/composables/useAppInitialization.ts",
+          "additions": 16,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/src/kernel/store-resource.ts",
+          "additions": 120,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/src/services/persistence.service.ts",
+          "additions": 287,
+          "deletions": 184,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/src/types/index.ts",
+          "additions": 13,
+          "deletions": 32,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/src/views/PortableHome.vue",
+          "additions": 33,
+          "deletions": 20,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/src/views/StandardHome.vue",
+          "additions": 16,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/src/views/shared/UpdateFlow.vue",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-selfhost-web/src/main.ts",
+          "additions": 8,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-selfhost-web/tsconfig.json",
+          "additions": 3,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-selfhost-web/vite.config.ts",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6147,
+      "title": "feat(selfhost-web): make webapp-server timeouts configurable",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6147",
+      "mergedAt": "2026-04-27T19:15:42Z",
+      "baseRefName": "next",
+      "headRefName": "fix/expose-webserver-timeouts",
+      "baseRefOid": "9861ee84ad593372885ebfc7cb1c487f3b9dd290",
+      "headRefOid": "6ecb581ce27895dbafeb402dc32a65443c19df6e",
+      "mergeCommitOid": "40ac84c1155a4f2d310538addf44cdcaa53abb76",
+      "changedFiles": 3,
+      "additions": 48,
+      "deletions": 14,
+      "labels": [],
+      "keywordHits": [
+        "timeout"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/hoppscotch-selfhost-web/webapp-server/README.md",
+          "additions": 12,
+          "deletions": 9,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-selfhost-web/webapp-server/internal/config/config.go",
+          "additions": 30,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-selfhost-web/webapp-server/main.go",
+          "additions": 6,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6144,
+      "title": "fix(common): support `id_token` in Authorization Code OAuth flow",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6144",
+      "mergedAt": "2026-04-27T19:04:02Z",
+      "baseRefName": "next",
+      "headRefName": "fix/oauth-2",
+      "baseRefOid": "00c75b9de05b209155267acfd9e0b0baa5712029",
+      "headRefOid": "be90f080b567b21ef76aa0fe1de9f2a93d75caf7",
+      "mergeCommitOid": "15d12f8ce5b685fe69fdade6164577bd81bbe6f8",
+      "changedFiles": 1,
+      "additions": 20,
+      "deletions": 8,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/hoppscotch-common/src/services/oauth/flows/authCode.ts",
+          "additions": 20,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6142,
+      "title": "fix(common): apply platform default proxy URL on load and reset",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6142",
+      "mergedAt": "2026-04-23T12:55:27Z",
+      "baseRefName": "next",
+      "headRefName": "fix/proxy-url-updation-bug",
+      "baseRefOid": "5d855f95c9fb64e4ec9cac09385ede0a842c3ac9",
+      "headRefOid": "a3abf4682f8f6913c704d365f1d1b2d13386a9c6",
+      "mergeCommitOid": "0cdf8de02db571afbe4d07c4aa4f5b94dc1ba7c4",
+      "changedFiles": 3,
+      "additions": 109,
+      "deletions": 52,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "race"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/hoppscotch-common/src/components/settings/Proxy.vue",
+          "additions": 34,
+          "deletions": 24,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/newstore/settings.ts",
+          "additions": 5,
+          "deletions": 9,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/platform/std/kernel-interceptors/proxy/store.ts",
+          "additions": 70,
+          "deletions": 19,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6158,
+      "title": "docs: security threat model and policy update",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6158",
+      "mergedAt": "2026-04-23T12:05:03Z",
+      "baseRefName": "main",
+      "headRefName": "security-threat-model-and-policy",
+      "baseRefOid": "5d1be0b8f621a38b5566193c70f0776e83dd2e3a",
+      "headRefOid": "7135b8b1435ee3b8d6c391e56f74751f020cfe88",
+      "mergeCommitOid": "6fc63d07929805331b1bd78d2237a50fceaafa79",
+      "changedFiles": 1,
+      "additions": 119,
+      "deletions": 29,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "docs-only",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "SECURITY.md",
+          "additions": 119,
+          "deletions": 29,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6174,
+      "title": "fix: remediate `quinn-proto` vulnerability across native packages",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6174",
+      "mergedAt": "2026-04-22T18:25:28Z",
+      "baseRefName": "next",
+      "headRefName": "security-cve-2026-31812-quinn-proto",
+      "baseRefOid": "eb801889ba186fad9aa43dcbf5cd864869f488a0",
+      "headRefOid": "7c8a058a7f7593ab66372e750fa9bcad90950468",
+      "mergeCommitOid": "84f774265b36180477622b627c561fbf65db0b1e",
+      "changedFiles": 9,
+      "additions": 139,
+      "deletions": 125,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "crash",
+        "parser"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/hoppscotch-agent/src-tauri/Cargo.lock",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/plugin-workspace/tauri-plugin-relay/Cargo.lock",
+          "additions": 42,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/plugin-workspace/tauri-plugin-relay/devenv.lock",
+          "additions": 34,
+          "deletions": 82,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/plugin-workspace/tauri-plugin-relay/devenv.nix",
+          "additions": 3,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/plugin-workspace/tauri-plugin-relay/devenv.yaml",
+          "additions": 7,
+          "deletions": 16,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/src-tauri/Cargo.lock",
+          "additions": 44,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/src-tauri/Cargo.toml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-kernel/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pnpm-lock.yaml",
+          "additions": 5,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6116,
+      "title": "feat(common): improve API documentation publishing UX",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6116",
+      "mergedAt": "2026-04-22T17:35:40Z",
+      "baseRefName": "next",
+      "headRefName": "chore/api-doc-imrovements",
+      "baseRefOid": "bc3dbdea423538c5a0aa91ff2a4b73814e519750",
+      "headRefOid": "c12783072d0b16f8b54e7985ab1c227463f6a0c1",
+      "mergeCommitOid": "30df20ea7aaaa5671254bfcab7c3f86c41755a4f",
+      "changedFiles": 8,
+      "additions": 307,
+      "deletions": 220,
+      "labels": [],
+      "keywordHits": [
+        "validation"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "packages/hoppscotch-common/src/services/__tests__/documentation.service.spec.ts"
+      ],
+      "debugScore": 3,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "packages/hoppscotch-common/locales/en.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/components/collections/documentation/PublishDocForm.vue",
+          "additions": 37,
+          "deletions": 49,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/components/collections/documentation/PublishDocModal.vue",
+          "additions": 33,
+          "deletions": 11,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/components/collections/documentation/PublishDocSnapshotPreview.vue",
+          "additions": 116,
+          "deletions": 45,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/components/collections/documentation/index.vue",
+          "additions": 56,
+          "deletions": 26,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/components/documentation/Header.vue",
+          "additions": 55,
+          "deletions": 51,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/services/__tests__/documentation.service.spec.ts",
+          "additions": 4,
+          "deletions": 27,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/services/documentation.service.ts",
+          "additions": 4,
+          "deletions": 9,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5962,
+      "title": "fix: resolve invalid environment validation when publishing docs in personal workspace",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/5962",
+      "mergedAt": "2026-04-22T15:55:11Z",
+      "baseRefName": "next",
+      "headRefName": "fix-published-docs-environment-validation",
+      "baseRefOid": "eb801889ba186fad9aa43dcbf5cd864869f488a0",
+      "headRefOid": "4fcc81a5e7aded1ac69458eca1aa2ec0c17b056a",
+      "mergeCommitOid": "bc3dbdea423538c5a0aa91ff2a4b73814e519750",
+      "changedFiles": 3,
+      "additions": 68,
+      "deletions": 41,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "error",
+        "validation"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts"
+      ],
+      "debugScore": 6,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "packages/hoppscotch-backend/src/errors.ts",
+          "additions": 8,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/published-docs/published-docs.service.spec.ts",
+          "additions": 16,
+          "deletions": 14,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/published-docs/published-docs.service.ts",
+          "additions": 44,
+          "deletions": 25,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6141,
+      "title": "feat: add SMTP OAuth2 authentication support",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6141",
+      "mergedAt": "2026-04-22T11:41:03Z",
+      "baseRefName": "next",
+      "headRefName": "feat/smtp-oauth2",
+      "baseRefOid": "7be31a298601c24053033dc64928aae659a4921f",
+      "headRefOid": "1b2cdea2cfab714ade93e39664c49d8d55604aa5",
+      "mergeCommitOid": "eb801889ba186fad9aa43dcbf5cd864869f488a0",
+      "changedFiles": 17,
+      "additions": 856,
+      "deletions": 188,
+      "labels": [],
+      "keywordHits": [
+        "validation"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts"
+      ],
+      "debugScore": 2,
+      "suggestedDifficulty": "high",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "packages/hoppscotch-backend/src/infra-config/dto/onboarding.dto.ts",
+          "additions": 44,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/infra-config/helper.ts",
+          "additions": 31,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/infra-config/infra-config.service.spec.ts",
+          "additions": 55,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/infra-config/infra-config.service.ts",
+          "additions": 13,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/mailer/helper.ts",
+          "additions": 45,
+          "deletions": 13,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/types/InfraConfig.ts",
+          "additions": 7,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-sh-admin/locales/en.json",
+          "additions": 9,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-sh-admin/src/components.d.ts",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-sh-admin/src/components/onboarding/AuthSetup.vue",
+          "additions": 25,
+          "deletions": 16,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-sh-admin/src/components/onboarding/OAuthSetup.vue",
+          "additions": 17,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-sh-admin/src/components/onboarding/SmtpSetup.vue",
+          "additions": 153,
+          "deletions": 33,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-sh-admin/src/components/settings/SmtpConfiguration.vue",
+          "additions": 262,
+          "deletions": 100,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-sh-admin/src/components/ui/Accordion.vue",
+          "additions": 10,
+          "deletions": 10,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-sh-admin/src/composables/useConfigHandler.ts",
+          "additions": 32,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-sh-admin/src/composables/useOnboardingConfigHandler.ts",
+          "additions": 57,
+          "deletions": 14,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-sh-admin/src/composables/useSmtpAuthTypeSwitch.ts",
+          "additions": 63,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/hoppscotch-sh-admin/src/helpers/configs.ts",
+          "additions": 30,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6155,
+      "title": "fix(common): variable hover tooltip was not clickable (disappeared)",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6155",
+      "mergedAt": "2026-04-21T13:45:18Z",
+      "baseRefName": "next",
+      "headRefName": "fix/improve-edit-variables-modal",
+      "baseRefOid": "a0740399b113afc3037110215434a8fd297f0a56",
+      "headRefOid": "71ea7154e4445720ec06ec9ecb99cfa6998063d0",
+      "mergeCommitOid": "7be31a298601c24053033dc64928aae659a4921f",
+      "changedFiles": 5,
+      "additions": 54,
+      "deletions": 0,
+      "labels": [
+        "bug fix"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "packages/hoppscotch-common/src/helpers/utils/__tests__/tooltip.spec.ts"
+      ],
+      "debugScore": 4,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "packages/hoppscotch-common/assets/scss/styles.scss",
+          "additions": 16,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/helpers/editor/extensions/HoppEnvironment.ts",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/helpers/editor/extensions/HoppPredefinedVariables.ts",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/helpers/utils/__tests__/tooltip.spec.ts",
+          "additions": 19,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/helpers/utils/tooltip.ts",
+          "additions": 11,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6125,
+      "title": "fix(data): make `$randomUUID` predefined variable RFC 4122 compliant",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6125",
+      "mergedAt": "2026-04-17T08:38:02Z",
+      "baseRefName": "next",
+      "headRefName": "fix/randomuuid-rfc4122-compliance",
+      "baseRefOid": "87e20ed2d6eec9487ab55906c7d1653e62c2bd60",
+      "headRefOid": "19b088b124fe618722b0e09e19f7098fdb71b41d",
+      "mergeCommitOid": "d25f1f738eee94facb6478b541d3b3fb02845338",
+      "changedFiles": 1,
+      "additions": 21,
+      "deletions": 34,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/hoppscotch-data/src/predefinedVariables.ts",
+          "additions": 21,
+          "deletions": 34,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6117,
+      "title": "fix(common): correct environment locale wording",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6117",
+      "mergedAt": "2026-04-16T11:22:54Z",
+      "baseRefName": "next",
+      "headRefName": "fix/environment-text",
+      "baseRefOid": "91590405e866dcae5637cbb9db99cc4619d7c865",
+      "headRefOid": "5142535a3b9adfb074bc3a9e33fb6b2a7fa161df",
+      "mergeCommitOid": "87e20ed2d6eec9487ab55906c7d1653e62c2bd60",
+      "changedFiles": 1,
+      "additions": 4,
+      "deletions": 4,
+      "labels": [],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/hoppscotch-common/locales/en.json",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6137,
+      "title": "fix(common): handle non-string values in Postman collection import",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6137",
+      "mergedAt": "2026-04-15T14:44:43Z",
+      "baseRefName": "next",
+      "headRefName": "fix/postman-import-non-string-crash",
+      "baseRefOid": "76329eaf3112b84bd04c077978016b70379779ed",
+      "headRefOid": "48578df6cae3cd49dbd414076b7e42750f3a1b8b",
+      "mergeCommitOid": "174c87d5d34c0094b93fa3dee106986b4ee21fe0",
+      "changedFiles": 2,
+      "additions": 64,
+      "deletions": 4,
+      "labels": [
+        "bug fix"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "crash",
+        "error"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "packages/hoppscotch-common/src/helpers/__tests__/postman-import.spec.ts"
+      ],
+      "debugScore": 6,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "packages/hoppscotch-common/src/helpers/__tests__/postman-import.spec.ts",
+          "additions": 60,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/helpers/import-export/import/postman.ts",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6122,
+      "title": "refactor(cli): match test-result helper name to documented contract",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6122",
+      "mergedAt": "2026-04-15T08:18:31Z",
+      "baseRefName": "next",
+      "headRefName": "fix-hasFailedTestCases",
+      "baseRefOid": "3e63bdab021c4fb7d7de7010743b2a3a0c04f994",
+      "headRefOid": "761068b618ef82252640c66b4326a6d566b58c49",
+      "mergeCommitOid": "5d855f95c9fb64e4ec9cac09385ede0a842c3ac9",
+      "changedFiles": 2,
+      "additions": 6,
+      "deletions": 7,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/hoppscotch-cli/src/utils/request.ts",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-cli/src/utils/test.ts",
+          "additions": 3,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6098,
+      "title": "feat(backend): use stateless OAuth2 state store",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6098",
+      "mergedAt": "2026-04-15T13:02:43Z",
+      "baseRefName": "next",
+      "headRefName": "feat/stateless-auth-flow",
+      "baseRefOid": "5d855f95c9fb64e4ec9cac09385ede0a842c3ac9",
+      "headRefOid": "67034dcf2bac65737d5537a365488c85e7539c93",
+      "mergeCommitOid": "76329eaf3112b84bd04c077978016b70379779ed",
+      "changedFiles": 7,
+      "additions": 289,
+      "deletions": 60,
+      "labels": [],
+      "keywordHits": [
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/hoppscotch-backend/package.json",
+          "additions": 0,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/auth/stateless-state-store.ts",
+          "additions": 265,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/auth/strategies/github.strategy.ts",
+          "additions": 8,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/auth/strategies/google.strategy.ts",
+          "additions": 8,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/auth/strategies/microsoft.strategy.ts",
+          "additions": 8,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/main.ts",
+          "additions": 0,
+          "deletions": 17,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pnpm-lock.yaml",
+          "additions": 0,
+          "deletions": 39,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6131,
+      "title": "chore: patch axios CVEs and bump related dependencies",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6131",
+      "mergedAt": "2026-04-13T11:43:17Z",
+      "baseRefName": "next",
+      "headRefName": "dependabot/npm_and_yarn/packages/hoppscotch-agent/npm_and_yarn-ff91eef130",
+      "baseRefOid": "2837ef789a0e3955fbc0963f4c5a40f4fb7c3493",
+      "headRefOid": "047a9db5a4d45769413e70ca408b798eaaa54db3",
+      "mergeCommitOid": "7e22e2553cd0ad89397b0c3e0147e9c4708932b9",
+      "changedFiles": 11,
+      "additions": 251,
+      "deletions": 240,
+      "labels": [
+        "major",
+        "javascript",
+        "dependencies"
+      ],
+      "keywordHits": [
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/hoppscotch-agent/package.json",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/package.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-cli/package.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/package.json",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-data/package.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-js-sandbox/package.json",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-kernel/package.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-selfhost-web/package.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-sh-admin/package.json",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pnpm-lock.yaml",
+          "additions": 228,
+          "deletions": 217,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5921,
+      "title": "fix(common): persist OAuth2 code challenge method selection",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/5921",
+      "mergedAt": "2026-03-13T17:41:13Z",
+      "baseRefName": "next",
+      "headRefName": "fix/oauth-code-challenge-persistence",
+      "baseRefOid": "4cbe23cf00e3da2d098a31a457b5c70356b40eed",
+      "headRefOid": "51600c42210a55841d3a8645df19bca3ddac19b7",
+      "mergeCommitOid": "be536f0ca3d1caa36c088625947ddc416a37440a",
+      "changedFiles": 1,
+      "additions": 4,
+      "deletions": 1,
+      "labels": [
+        "bug fix"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "error",
+        "fail",
+        "failure"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 5,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/hoppscotch-common/src/composables/oauth2/useOAuth2GrantTypes.ts",
+          "additions": 4,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6059,
+      "title": "fix(common): newly created folder not shown in save-as dialog",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6059",
+      "mergedAt": "2026-03-30T14:57:52Z",
+      "baseRefName": "next",
+      "headRefName": "fix/issue-6031-save-as-directory-reactivity",
+      "baseRefOid": "42934b90e66518ff0d7a9f3dbd92e418c497209b",
+      "headRefOid": "35dea7dfc81a79c6eac637492f0068bc9e5d9fdc",
+      "mergeCommitOid": "d45903d2e5363a0993f6aafa503ab20fb1b6bec5",
+      "changedFiles": 1,
+      "additions": 8,
+      "deletions": 8,
+      "labels": [
+        "bug fix"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/hoppscotch-common/src/services/team-collection.service.ts",
+          "additions": 8,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6069,
+      "title": "chore: align Tauri plugin-shell versions",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6069",
+      "mergedAt": "2026-03-30T10:23:20Z",
+      "baseRefName": "next",
+      "headRefName": "native-align-plugin-shell-2.3.3",
+      "baseRefOid": "ad4041e51a39b0ee2cdbdd19cc6f37d1a18a7cbe",
+      "headRefOid": "fe5076b9264841e907eb969119827dd5a060e948",
+      "mergeCommitOid": "42934b90e66518ff0d7a9f3dbd92e418c497209b",
+      "changedFiles": 5,
+      "additions": 174,
+      "deletions": 190,
+      "labels": [],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/hoppscotch-desktop/src-tauri/Cargo.lock",
+          "additions": 167,
+          "deletions": 176,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/src-tauri/Cargo.toml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-kernel/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-selfhost-web/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pnpm-lock.yaml",
+          "additions": 4,
+          "deletions": 11,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6013,
+      "title": "chore: security patch for the dependency chain `v2026.3.0`",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6013",
+      "mergedAt": "2026-03-24T11:04:36Z",
+      "baseRefName": "next",
+      "headRefName": "chore/security-fix-2026-3-0",
+      "baseRefOid": "08921786e7351fd5a05b5ce9092197483d95dbea",
+      "headRefOid": "0f03ce3a6b9a221c4a89084650178f90409472d2",
+      "mergeCommitOid": "2fcf5b7a5fb827a4ecab69e5131afce64e9d4227",
+      "changedFiles": 16,
+      "additions": 3625,
+      "deletions": 3068,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "parser"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -5,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "huge-diff",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "package.json",
+          "additions": 20,
+          "deletions": 10,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/codemirror-lang-graphql/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-agent/package.json",
+          "additions": 8,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/package.json",
+          "additions": 22,
+          "deletions": 23,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-cli/package.json",
+          "additions": 5,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/package.json",
+          "additions": 32,
+          "deletions": 32,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-data/package.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/package.json",
+          "additions": 11,
+          "deletions": 11,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/plugin-workspace/tauri-plugin-appload/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/plugin-workspace/tauri-plugin-relay/package.json",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-js-sandbox/package.json",
+          "additions": 6,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-kernel/package.json",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-selfhost-web/package.json",
+          "additions": 18,
+          "deletions": 18,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-sh-admin/package.json",
+          "additions": 18,
+          "deletions": 18,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pnpm-lock.yaml",
+          "additions": 3442,
+          "deletions": 2898,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "prod.Dockerfile",
+          "additions": 33,
+          "deletions": 29,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6068,
+      "title": "fix(common): resolve history schema mismatch on page reload",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6068",
+      "mergedAt": "2026-03-30T09:57:54Z",
+      "baseRefName": "next",
+      "headRefName": "fix/history-schema-bug",
+      "baseRefOid": "ad4041e51a39b0ee2cdbdd19cc6f37d1a18a7cbe",
+      "headRefOid": "40729c7e627d6ce86fb45fa5ef254eb4a0c89c33",
+      "mergeCommitOid": "40d65dba49ac1f98bbedf662f9e88cfbd789843f",
+      "changedFiles": 3,
+      "additions": 36,
+      "deletions": 70,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "error",
+        "parsing"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/hoppscotch-common/src/newstore/history.ts",
+          "additions": 6,
+          "deletions": 14,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-selfhost-web/src/platform/history/desktop/index.ts",
+          "additions": 15,
+          "deletions": 28,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-selfhost-web/src/platform/history/web/index.ts",
+          "additions": 15,
+          "deletions": 28,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6057,
+      "title": "fix: use team.findMany for fetching user teams",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6057",
+      "mergedAt": "2026-03-28T02:37:10Z",
+      "baseRefName": "next",
+      "headRefName": "fix/get-teams-of-user",
+      "baseRefOid": "d5a19320b8ea37caec91de6a2a3fa7af0b4ec73b",
+      "headRefOid": "dfd5e722c850ca9e946cd73df75f21c034406c7f",
+      "mergeCommitOid": "8ac1b29b887d342e8a13014d498a1a333bcc2c3a",
+      "changedFiles": 5,
+      "additions": 79,
+      "deletions": 66,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "edge"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "packages/hoppscotch-backend/src/auth/redirect-uri.validator.spec.ts",
+        "packages/hoppscotch-backend/src/team/team.service.spec.ts"
+      ],
+      "debugScore": 4,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "packages/hoppscotch-backend/src/auth/redirect-uri.validator.spec.ts",
+          "additions": 44,
+          "deletions": 14,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/auth/redirect-uri.validator.ts",
+          "additions": 3,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/mock-server/mock-server.controller.ts",
+          "additions": 1,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/team/team.service.spec.ts",
+          "additions": 20,
+          "deletions": 19,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/team/team.service.ts",
+          "additions": 11,
+          "deletions": 28,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5898,
+      "title": "feat(common): fall back to `ref_id` in remove functions when `id` is missing",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/5898",
+      "mergedAt": "2026-03-27T12:52:31Z",
+      "baseRefName": "next",
+      "headRefName": "feature/proxy-backend-issues",
+      "baseRefOid": "4cbe23cf00e3da2d098a31a457b5c70356b40eed",
+      "headRefOid": "9aeb98d62bcad07875b85db109decf4482e598d7",
+      "mergeCommitOid": "088ea9f4dc834392bd8fd5b76107b2b09c25f7b5",
+      "changedFiles": 3,
+      "additions": 39,
+      "deletions": 1,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "regression",
+        "error"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/hoppscotch-common/src/components/collections/SaveRequest.vue",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/newstore/collections.ts",
+          "additions": 34,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/services/tab/rest.ts",
+          "additions": 3,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6055,
+      "title": "chore: patch dependency vulnerabilities and harden production image",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6055",
+      "mergedAt": "2026-03-27T13:56:27Z",
+      "baseRefName": "next",
+      "headRefName": "chore/security-fix-2026-2-0-v2",
+      "baseRefOid": "088ea9f4dc834392bd8fd5b76107b2b09c25f7b5",
+      "headRefOid": "a55f170eafc8d4842f9b65856998eb150cce0079",
+      "mergeCommitOid": "e4eee306a7cf76efc6f2b738c6a26b76356e742e",
+      "changedFiles": 12,
+      "additions": 461,
+      "deletions": 597,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "package.json",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-agent/package.json",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/package.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-cli/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/package.json",
+          "additions": 8,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/package.json",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-js-sandbox/package.json",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-kernel/package.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-selfhost-web/package.json",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-sh-admin/package.json",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pnpm-lock.yaml",
+          "additions": 416,
+          "deletions": 563,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "prod.Dockerfile",
+          "additions": 12,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6012,
+      "title": "fix: validate device-login redirect_uri to prevent token theft via DNS wildcard bypass",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6012",
+      "mergedAt": "2026-03-27T09:15:47Z",
+      "baseRefName": "next",
+      "headRefName": "fix/device-login-redirect-uri-validation-CVE",
+      "baseRefOid": "c690937fd18894846553bf0d8c6d3d92b74ff891",
+      "headRefOid": "a8a347cdb0ac5d32be6e5586b55dd57a005000e4",
+      "mergeCommitOid": "60c607c185d48026f22dfb182822f8471d688f0b",
+      "changedFiles": 4,
+      "additions": 134,
+      "deletions": 5,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "validation"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "packages/hoppscotch-backend/src/auth/redirect-uri.validator.spec.ts"
+      ],
+      "debugScore": 5,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "packages/hoppscotch-backend/src/auth/auth.controller.ts",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/auth/redirect-uri.validator.spec.ts",
+          "additions": 89,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/auth/redirect-uri.validator.ts",
+          "additions": 22,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/hoppscotch-selfhost-web/src/pages/device-login.vue",
+          "additions": 21,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5950,
+      "title": "fix(common): use operation title as fallback in OpenAPI import",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/5950",
+      "mergedAt": "2026-03-26T15:21:30Z",
+      "baseRefName": "next",
+      "headRefName": "fix/openapi-import-title-fallback",
+      "baseRefOid": "37b06fb07e66c579e3e8aadf04ec331967cba1f2",
+      "headRefOid": "ad95660aa033cc7b4e035b738ab0c008b5ad3d62",
+      "mergeCommitOid": "744f4346989ccae15c4a2fe72710d53f736cb5f9",
+      "changedFiles": 1,
+      "additions": 27,
+      "deletions": 2,
+      "labels": [
+        "bug fix"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/hoppscotch-common/src/helpers/import-export/import/openapi/index.ts",
+          "additions": 27,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6006,
+      "title": "fix(backend): prevent stored XSS via mock server responses and cross-team request moves",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6006",
+      "mergedAt": "2026-03-25T10:46:38Z",
+      "baseRefName": "next",
+      "headRefName": "fix/advisories/GHSA-wj4r-hr4h-g98v",
+      "baseRefOid": "2fcf5b7a5fb827a4ecab69e5131afce64e9d4227",
+      "headRefOid": "c0e5841f3f4ed213e9534bb38a1ef28ef4559b96",
+      "mergeCommitOid": "da3b8c5d37bdf2cfe2b94301e8535b0e034310b9",
+      "changedFiles": 6,
+      "additions": 171,
+      "deletions": 16,
+      "labels": [
+        "bug fix"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "validation"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts"
+      ],
+      "debugScore": 5,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "packages/hoppscotch-backend/src/mock-server/mock-request.guard.ts",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/mock-server/mock-server.controller.ts",
+          "additions": 64,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/team-request/team-request.service.spec.ts",
+          "additions": 49,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/team-request/team-request.service.ts",
+          "additions": 12,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-sh-admin/locales/en.json",
+          "additions": 4,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-sh-admin/src/components/settings/MockServerConfig.vue",
+          "additions": 40,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6047,
+      "title": "fix(desktop): add missing backport changes",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6047",
+      "mergedAt": "2026-03-26T17:56:22Z",
+      "baseRefName": "next",
+      "headRefName": "desktop-fix-cloud-for-orgs-phase-3-backport-patch-1",
+      "baseRefOid": "b728f5da242047a66771a4e9715abb6db4a7eb22",
+      "headRefOid": "a1b0f5a7860667aa5a47e6699b3e0f93ce36f567",
+      "mergeCommitOid": "c690937fd18894846553bf0d8c6d3d92b74ff891",
+      "changedFiles": 4,
+      "additions": 1218,
+      "deletions": 1747,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "validation"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "huge-diff",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/hoppscotch-common/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/src-tauri/src/lib.rs",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/src-tauri/src/path.rs",
+          "additions": 14,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pnpm-lock.yaml",
+          "additions": 1202,
+          "deletions": 1746,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5972,
+      "title": "feat: add `MAILER_SMTP_IGNORE_TLS` and optional SMTP auth",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/5972",
+      "mergedAt": "2026-03-25T18:00:47Z",
+      "baseRefName": "next",
+      "headRefName": "feat/smtp-optional-auth",
+      "baseRefOid": "da3b8c5d37bdf2cfe2b94301e8535b0e034310b9",
+      "headRefOid": "99c8d96bebb40ca3412c8398ea8a00af1e37321d",
+      "mergeCommitOid": "06bdd7ca6ae836888d9f1f9e082aac2cc7eb3e54",
+      "changedFiles": 12,
+      "additions": 194,
+      "deletions": 41,
+      "labels": [
+        "feature"
+      ],
+      "keywordHits": [
+        "error",
+        "validation"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/hoppscotch-backend/src/infra-config/dto/onboarding.dto.ts",
+          "additions": 7,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/infra-config/helper.ts",
+          "additions": 5,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/infra-config/infra-config.service.ts",
+          "additions": 57,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/mailer/helper.ts",
+          "additions": 19,
+          "deletions": 12,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/types/InfraConfig.ts",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-sh-admin/locales/en.json",
+          "additions": 10,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-sh-admin/src/components/onboarding/SmtpSetup.vue",
+          "additions": 22,
+          "deletions": 9,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-sh-admin/src/components/settings/SmtpConfiguration.vue",
+          "additions": 10,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-sh-admin/src/composables/useConfigHandler.ts",
+          "additions": 20,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-sh-admin/src/composables/useOnboardingConfigHandler.ts",
+          "additions": 33,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-sh-admin/src/helpers/configs.ts",
+          "additions": 5,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-sh-admin/src/pages/settings.vue",
+          "additions": 5,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5968,
+      "title": "feat: show user workspace memberships in admin dashboard",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/5968",
+      "mergedAt": "2026-03-25T18:58:36Z",
+      "baseRefName": "next",
+      "headRefName": "feat/user-with-team",
+      "baseRefOid": "06bdd7ca6ae836888d9f1f9e082aac2cc7eb3e54",
+      "headRefOid": "5014381bf3d4530246ffdcb4c3878d794c619559",
+      "mergeCommitOid": "59c1b595a650d50fe701259e5d7ee720f9c880a7",
+      "changedFiles": 7,
+      "additions": 203,
+      "deletions": 8,
+      "labels": [
+        "feature"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/hoppscotch-backend/src/gql-schema.ts",
+          "additions": 0,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/team/team.resolver.ts",
+          "additions": 38,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-backend/src/team/team.service.ts",
+          "additions": 7,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-sh-admin/locales/en.json",
+          "additions": 10,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-sh-admin/src/components/users/Teams.vue",
+          "additions": 112,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/hoppscotch-sh-admin/src/helpers/backend/gql/queries/TeamsOfUserByAdmin.graphql",
+          "additions": 13,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/hoppscotch-sh-admin/src/pages/users/_id.vue",
+          "additions": 23,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6009,
+      "title": "fix: keyboard shortcuts on non-English layouts",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6009",
+      "mergedAt": "2026-03-26T13:36:00Z",
+      "baseRefName": "next",
+      "headRefName": "fix-non-english-keyboard-shortcuts",
+      "baseRefOid": "8aac537c7ad7327a2e151e73cbb6fb65d485419f",
+      "headRefOid": "2e988c44003dda641c902844ad97017dbfbe65a9",
+      "mergeCommitOid": "ce0fdeccfbc1aca7dc1ac8bef950da12fe85f91c",
+      "changedFiles": 2,
+      "additions": 50,
+      "deletions": 27,
+      "labels": [
+        "bug fix"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/hoppscotch-common/src/helpers/keybindings.ts",
+          "additions": 44,
+          "deletions": 16,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-selfhost-web/src/main.ts",
+          "additions": 6,
+          "deletions": 11,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5917,
+      "title": "fix(common): handle File objects in HAR postData text resolution",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/5917",
+      "mergedAt": "2026-03-26T15:26:36Z",
+      "baseRefName": "next",
+      "headRefName": "fix/codegen-octet-stream",
+      "baseRefOid": "37b06fb07e66c579e3e8aadf04ec331967cba1f2",
+      "headRefOid": "cf2b11cb1d1db667ef8b7d1d9db17a6c0aa8c80c",
+      "mergeCommitOid": "b728f5da242047a66771a4e9715abb6db4a7eb22",
+      "changedFiles": 1,
+      "additions": 23,
+      "deletions": 0,
+      "labels": [
+        "bug fix"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "crash",
+        "wrong"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/hoppscotch-common/src/helpers/new-codegen/har.ts",
+          "additions": 23,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6043,
+      "title": "feat(desktop): cloud for orgs support - phase 3",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6043",
+      "mergedAt": "2026-03-26T12:30:51Z",
+      "baseRefName": "next",
+      "headRefName": "desktop-feat-cloud-for-orgs-phase-3",
+      "baseRefOid": "f690d5969a52913c1f082f8f9baf29b886fdbd82",
+      "headRefOid": "f839b2d94dd3348b1aa6b8c62bf21ef110f015e2",
+      "mergeCommitOid": "8aac537c7ad7327a2e151e73cbb6fb65d485419f",
+      "changedFiles": 36,
+      "additions": 1158,
+      "deletions": 128,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "error",
+        "race",
+        "fail",
+        "failure"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "huge-diff",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "devenv.lock",
+          "additions": 16,
+          "deletions": 71,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "devenv.nix",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/components/app/Header.vue",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/components/instance/Switcher.vue",
+          "additions": 14,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/index.ts",
+          "additions": 8,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/kernel/index.ts",
+          "additions": 5,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/kernel/log.ts",
+          "additions": 140,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/kernel/store.ts",
+          "additions": 74,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/modules/router.ts",
+          "additions": 24,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/services/initialization.service.ts",
+          "additions": 13,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/services/persistence/index.ts",
+          "additions": 69,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/plugin-workspace/tauri-plugin-appload/src/commands.rs",
+          "additions": 123,
+          "deletions": 23,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/plugin-workspace/tauri-plugin-appload/src/config/model.rs",
+          "additions": 7,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/plugin-workspace/tauri-plugin-appload/src/kernel.js",
+          "additions": 36,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/plugin-workspace/tauri-plugin-appload/src/lib.rs",
+          "additions": 12,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/plugin-workspace/tauri-plugin-appload/src/uri/handler.rs",
+          "additions": 22,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/src-tauri/Cargo.lock",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/src-tauri/Cargo.toml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/src-tauri/src/config.rs",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/src-tauri/src/lib.rs",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/src-tauri/src/logger.rs",
+          "additions": 25,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/src-tauri/src/path.rs",
+          "additions": 22,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/src/composables/useAppInitialization.ts",
+          "additions": 115,
+          "deletions": 11,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-kernel/src/index.ts",
+          "additions": 12,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-kernel/src/log/impl/desktop/index.ts",
+          "additions": 5,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/hoppscotch-kernel/src/log/impl/desktop/v/1.ts",
+          "additions": 193,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/hoppscotch-kernel/src/log/impl/web/index.ts",
+          "additions": 5,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/hoppscotch-kernel/src/log/impl/web/v/1.ts",
+          "additions": 96,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/hoppscotch-kernel/src/log/index.ts",
+          "additions": 9,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/hoppscotch-kernel/src/log/v/1.ts",
+          "additions": 46,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/hoppscotch-kernel/src/store/v/1.ts",
+          "additions": 39,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-kernel/tsconfig.base.json",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-kernel/vite.config.ts",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-selfhost-web/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pnpm-lock.yaml",
+          "additions": 12,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6036,
+      "title": "refactor(common): route mock server and published docs operations through platform backend",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/6036",
+      "mergedAt": "2026-03-25T19:11:36Z",
+      "baseRefName": "next",
+      "headRefName": "refactor/add-platform-def-for-mock-doc",
+      "baseRefOid": "2fcf5b7a5fb827a4ecab69e5131afce64e9d4227",
+      "headRefOid": "abee33bd2039975a6ff37aa0742c79057d8a65cd",
+      "mergeCommitOid": "f690d5969a52913c1f082f8f9baf29b886fdbd82",
+      "changedFiles": 17,
+      "additions": 221,
+      "deletions": 159,
+      "labels": [],
+      "keywordHits": [],
+      "hasTests": true,
+      "testFiles": [
+        "packages/hoppscotch-common/src/services/__tests__/documentation.service.spec.ts"
+      ],
+      "debugScore": 1,
+      "suggestedDifficulty": "high",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "packages/hoppscotch-common/src/components/collections/documentation/index.vue",
+          "additions": 4,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/components/mockServer/ConfigureMockServerModal.vue",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/components/mockServer/CreateNewMockServerModal.vue",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/components/mockServer/EditMockServer.vue",
+          "additions": 6,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/components/mockServer/MockServerCreatedInfo.vue",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/components/mockServer/MockServerDashboard.vue",
+          "additions": 5,
+          "deletions": 7,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/components/mockServer/MockServerLogs.vue",
+          "additions": 3,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/composables/mockServer.ts",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/composables/useMockServer.ts",
+          "additions": 7,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/helpers/backend/mutations/MockServer.ts",
+          "additions": 1,
+          "deletions": 63,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/helpers/backend/queries/PublishedDocs.ts",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/helpers/backend/types/MockServer.ts",
+          "additions": 31,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/newstore/mockServers.ts",
+          "additions": 6,
+          "deletions": 34,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/platform/backend.ts",
+          "additions": 95,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/platform/std/backend.ts",
+          "additions": 39,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/services/__tests__/documentation.service.spec.ts",
+          "additions": 15,
+          "deletions": 13,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/services/documentation.service.ts",
+          "additions": 3,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5982,
+      "title": "fix(common): prevent open redirect in enter page",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/5982",
+      "mergedAt": "2026-03-20T07:11:31Z",
+      "baseRefName": "next",
+      "headRefName": "fix/open-redirect-enter-vue",
+      "baseRefOid": "4cbe23cf00e3da2d098a31a457b5c70356b40eed",
+      "headRefOid": "aff808dc2d5cb88dfae290731c73bea3f002bcf2",
+      "mergeCommitOid": "e03ffc5d855c0fc571d1cc237f0c7b301f5d86db",
+      "changedFiles": 3,
+      "additions": 139,
+      "deletions": 7,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "regression",
+        "validation",
+        "parser",
+        "parsing"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "packages/hoppscotch-common/src/pages/__tests__/enter-redirect.spec.ts"
+      ],
+      "debugScore": 7,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "packages/hoppscotch-common/src/pages/__tests__/enter-redirect.spec.ts",
+          "additions": 92,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/pages/enter-redirect.ts",
+          "additions": 24,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/pages/enter.vue",
+          "additions": 23,
+          "deletions": 7,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5920,
+      "title": "fix(desktop): add native Edit menu to enable clipboard shortcuts on Linux",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/5920",
+      "mergedAt": "2026-03-19T18:00:23Z",
+      "baseRefName": "next",
+      "headRefName": "fix/script-editor-paste",
+      "baseRefOid": "e418a51432553f843c04036778765cf68b027521",
+      "headRefOid": "ba025dc949c006d6a213393046840584fb8a2274",
+      "mergeCommitOid": "402955d55fafc2ea7c928413a9a2894c4073e8d2",
+      "changedFiles": 2,
+      "additions": 38,
+      "deletions": 2,
+      "labels": [
+        "bug fix"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "error",
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/hoppscotch-desktop/src-tauri/src/lib.rs",
+          "additions": 37,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-desktop/src-tauri/src/server.rs",
+          "additions": 1,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 5893,
+      "title": "fix(common): prevent infinite auth refresh retry loop on permanent token failure",
+      "url": "https://github.com/hoppscotch/hoppscotch/pull/5893",
+      "mergedAt": "2026-03-19T17:39:01Z",
+      "baseRefName": "next",
+      "headRefName": "fix/issue-5885-auth-infinite-retry",
+      "baseRefOid": "08921786e7351fd5a05b5ce9092197483d95dbea",
+      "headRefOid": "e4c14c768f19af2ef4b0f96c2c672ff472e3280c",
+      "mergeCommitOid": "4a61e3464d2fac1854b8d4bed7f90043ef69f76c",
+      "changedFiles": 8,
+      "additions": 427,
+      "deletions": 25,
+      "labels": [
+        "bug fix"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "error",
+        "fail",
+        "failure"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "packages/hoppscotch-common/src/helpers/__tests__/retryAuthGuard.spec.ts"
+      ],
+      "debugScore": 7,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "packages/hoppscotch-common/src/helpers/__tests__/retryAuthGuard.spec.ts",
+          "additions": 205,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/helpers/backend/GQLClient.ts",
+          "additions": 18,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-common/src/helpers/retryAuthGuard.ts",
+          "additions": 78,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/hoppscotch-selfhost-web/src/platform/auth/desktop/index.ts",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-selfhost-web/src/platform/auth/web/index.ts",
+          "additions": 0,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-sh-admin/src/helpers/auth.ts",
+          "additions": 21,
+          "deletions": 10,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/hoppscotch-sh-admin/src/helpers/retryAuthGuard.ts",
+          "additions": 82,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/hoppscotch-sh-admin/src/main.ts",
+          "additions": 20,
+          "deletions": 7,
+          "changeType": "MODIFIED"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2196 @@
+generatedAt: 2026-05-02T10:12:08.056Z
+repo: fastapi/fastapi
+since: 2026-01-01
+limit: 50
+debugKeywords: 
+  - bug
+  - fix
+  - regression
+  - crash
+  - incorrect
+  - wrong
+  - error
+  - exception
+  - edge
+  - flaky
+  - race
+  - leak
+  - validation
+  - parser
+  - parsing
+  - timeout
+  - fail
+  - failure
+  - broken
+prs: 
+  - 
+    number: 15468
+    title: "👷 Fix missing credentials issue in `translate` workflow"
+    url: https://github.com/fastapi/fastapi/pull/15468
+    mergedAt: 2026-05-01T14:29:41Z
+    baseRefName: master
+    headRefName: fix-translation-workflow
+    baseRefOid: d8a2c1edaa793ae926e0ac76b242a1c6631eefd1
+    headRefOid: 27888570ac6fda598a930fe472ab40f130fcdb53
+    mergeCommitOid: 33ed5aecdf978bc2802bde4505d368f96f3c279f
+    changedFiles: 1
+    additions: 3
+    deletions: 1
+    labels: 
+      - internal
+    keywordHits: 
+      - fix
+      - fail
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/workflows/translate.yml
+        additions: 3
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 15462
+    title: "💄 Improve layout and styling"
+    url: https://github.com/fastapi/fastapi/pull/15462
+    mergedAt: 2026-04-30T16:03:33Z
+    baseRefName: master
+    headRefName: ref/index-tweaks
+    baseRefOid: a3ceb9ca7415d8874233edac857e85e47d2a6680
+    headRefOid: 5a2a9bc378bdeb151aba1321ae0bb48684c7d138
+    mergeCommitOid: b363a1d0023b25fba9231c17ae371c9d44c65c68
+    changedFiles: 4
+    additions: 123
+    deletions: 39
+    labels: 
+      - docs
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: README.md
+        additions: 6
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: docs/en/docs/css/custom.css
+        additions: 96
+        deletions: 20
+        changeType: MODIFIED
+      - 
+        path: docs/en/docs/index.md
+        additions: 16
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: scripts/docs.py
+        additions: 5
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 15458
+    title: "💄 Refactor opinions section with interactive tabs and new logos"
+    url: https://github.com/fastapi/fastapi/pull/15458
+    mergedAt: 2026-04-30T13:39:31Z
+    baseRefName: master
+    headRefName: ref/opinions-section
+    baseRefOid: 6b20159c596709731fa764a4c3b0edc55d353f35
+    headRefOid: 48075ed7bedd8c22ebc55a903f12a2b32ecf3eff
+    mergeCommitOid: aff0b7cd43ddce84b2f80780e199e208ef85e6fa
+    changedFiles: 8
+    additions: 283
+    deletions: 40
+    labels: 
+      - docs
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: README.md
+        additions: 9
+        deletions: 20
+        changeType: MODIFIED
+      - 
+        path: docs/en/docs/css/custom.css
+        additions: 110
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs/en/docs/img/logos/cisco.svg
+        additions: 35
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/en/docs/img/logos/microsoft.svg
+        additions: 8
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/en/docs/img/logos/netflix.svg
+        additions: 1
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/en/docs/img/logos/uber.svg
+        additions: 39
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/en/docs/index.md
+        additions: 43
+        deletions: 20
+        changeType: MODIFIED
+      - 
+        path: docs/en/docs/js/custom.js
+        additions: 38
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 15457
+    title: "📝 Add FastAPI Conf '26 announcement to docs"
+    url: https://github.com/fastapi/fastapi/pull/15457
+    mergedAt: 2026-04-30T10:15:21Z
+    baseRefName: master
+    headRefName: docs/conf-announcement
+    baseRefOid: 4f64b8f65191b497255004e896a2bbfd7cfd1886
+    headRefOid: 520fba148b0e30da642f3be9cdcbf9e7713397b0
+    mergeCommitOid: a217d2ff2a46475d6d33fcb8245d132f057d1cce
+    changedFiles: 4
+    additions: 19
+    deletions: 0
+    labels: 
+      - docs
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: README.md
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs/en/docs/img/fastapi-conf.jpeg
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/en/docs/index.md
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs/en/overrides/main.html
+        additions: 7
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 15437
+    title: "⬆ Bump sqlmodel from 0.0.32 to 0.0.38"
+    url: https://github.com/fastapi/fastapi/pull/15437
+    mergedAt: 2026-04-27T20:25:27Z
+    baseRefName: master
+    headRefName: dependabot/uv/sqlmodel-0.0.38
+    baseRefOid: 44ddc3e7c8bd8546ee59a08e00cb0fa1961f0b71
+    headRefOid: 9e5d9a4f5ed522eafb62d2c1a1bb16198bdbb9b1
+    mergeCommitOid: 1f7c8c1ad328857d158e922da46a573b8b08e38a
+    changedFiles: 1
+    additions: 4
+    deletions: 3
+    labels: 
+      - dependencies
+      - internal
+      - python:uv
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: uv.lock
+        additions: 4
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 15436
+    title: "⬆ Bump CodSpeedHQ/action from 4.12.1 to 4.14.0"
+    url: https://github.com/fastapi/fastapi/pull/15436
+    mergedAt: 2026-04-27T20:22:06Z
+    baseRefName: master
+    headRefName: dependabot/github_actions/CodSpeedHQ/action-4.14.0
+    baseRefOid: b44585589a04a095abf4bf0f1b4526b35ddaeca8
+    headRefOid: 59748de90aa43e9f77d11c4ba1bd3130a94b20cc
+    mergeCommitOid: 4bad6d2597f8df0251aa39cf388e3567bfd6290e
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+      - dependencies
+      - github_actions
+      - internal
+    keywordHits: 
+      - bug
+      - fix
+      - crash
+      - parsing
+      - fail
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/workflows/test.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 15439
+    title: "⬆ Bump pydantic from 2.12.5 to 2.13.2"
+    url: https://github.com/fastapi/fastapi/pull/15439
+    mergedAt: 2026-04-27T20:11:28Z
+    baseRefName: master
+    headRefName: dependabot/uv/pydantic-2.13.2
+    baseRefOid: b44585589a04a095abf4bf0f1b4526b35ddaeca8
+    headRefOid: 37910f5aaf6c61b3d5b792b574235b03b2edc4ad
+    mergeCommitOid: edc4c8ba33f1851d0ac589f34e8d7dcdc5b9b856
+    changedFiles: 1
+    additions: 111
+    deletions: 113
+    labels: 
+      - dependencies
+      - internal
+      - python:uv
+    keywordHits: 
+      - fix
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: uv.lock
+        additions: 111
+        deletions: 113
+        changeType: MODIFIED
+  - 
+    number: 15417
+    title: "⬆ Bump pydantic-ai from 1.63.0 to 1.83.0"
+    url: https://github.com/fastapi/fastapi/pull/15417
+    mergedAt: 2026-04-24T13:06:10Z
+    baseRefName: master
+    headRefName: dependabot/uv/pydantic-ai-1.83.0
+    baseRefOid: 4fa826ce0a3b16884a04f51e5aac95d01790b599
+    headRefOid: 6bcb372ac98638b832461f548323e5130d53dc53
+    mergeCommitOid: f43cc1c0efae89d2c44579847c478d8b6ba11c41
+    changedFiles: 1
+    additions: 74
+    deletions: 68
+    labels: 
+      - dependencies
+      - internal
+      - python:uv
+    keywordHits: 
+      - bug
+      - fix
+      - race
+      - leak
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: uv.lock
+        additions: 74
+        deletions: 68
+        changeType: MODIFIED
+  - 
+    number: 15418
+    title: "⬆ Bump prek from 0.3.2 to 0.3.9"
+    url: https://github.com/fastapi/fastapi/pull/15418
+    mergedAt: 2026-04-24T12:37:27Z
+    baseRefName: master
+    headRefName: dependabot/uv/prek-0.3.9
+    baseRefOid: 4fa826ce0a3b16884a04f51e5aac95d01790b599
+    headRefOid: 8ae6719e9ddd36427af0b43a442a3ac7625783a0
+    mergeCommitOid: 4216f9951558a825d33891029a02df06fcc7d53c
+    changedFiles: 1
+    additions: 20
+    deletions: 20
+    labels: 
+      - dependencies
+      - internal
+      - python:uv
+    keywordHits: 
+      - bug
+      - fix
+      - fail
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: uv.lock
+        additions: 20
+        deletions: 20
+        changeType: MODIFIED
+  - 
+    number: 15419
+    title: "⬆ Bump fastar from 0.9.0 to 0.11.0"
+    url: https://github.com/fastapi/fastapi/pull/15419
+    mergedAt: 2026-04-24T12:25:04Z
+    baseRefName: master
+    headRefName: dependabot/uv/fastar-0.11.0
+    baseRefOid: 4fa826ce0a3b16884a04f51e5aac95d01790b599
+    headRefOid: 4fb62f38d8a70d959e168e49025e1d8ba4b83997
+    mergeCommitOid: 086048e395490d78a6416cff9c4fdb364792170f
+    changedFiles: 1
+    additions: 111
+    deletions: 111
+    labels: 
+      - dependencies
+      - internal
+      - python:uv
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: uv.lock
+        additions: 111
+        deletions: 111
+        changeType: MODIFIED
+  - 
+    number: 15415
+    title: "⬆ Bump astral-sh/setup-uv from 7.6.0 to 8.1.0"
+    url: https://github.com/fastapi/fastapi/pull/15415
+    mergedAt: 2026-04-24T09:34:24Z
+    baseRefName: master
+    headRefName: dependabot/github_actions/astral-sh/setup-uv-8.1.0
+    baseRefOid: 4fa826ce0a3b16884a04f51e5aac95d01790b599
+    headRefOid: d82adea66abdc994494e301e18829825dedafe54
+    mergeCommitOid: 37472046770ac0de07a23d9744327c1c59cb040d
+    changedFiles: 13
+    additions: 17
+    deletions: 17
+    labels: 
+      - dependencies
+      - github_actions
+      - internal
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/workflows/build-docs.yml
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/contributors.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/deploy-docs.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/label-approved.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/notify-translations.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/people.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/pre-commit.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/publish.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/smokeshow.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/sponsors.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/test.yml
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/topic-repos.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/translate.yml
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 15101
+    title: "⬆️ Update Pydantic v2 code to address deprecations"
+    url: https://github.com/fastapi/fastapi/pull/15101
+    mergedAt: 2026-04-23T16:40:29Z
+    baseRefName: master
+    headRefName: feat/depr
+    baseRefOid: cbd64b09a32681d3b0ea097608bc62eb0d1587e0
+    headRefOid: e0e25685acdda24e2a36faf7d435c50295fe0807
+    mergeCommitOid: 7815a32f2ed177b8b786a48b3e0712c05b5c644f
+    changedFiles: 5
+    additions: 55
+    deletions: 7
+    labels: 
+      - upgrade
+    keywordHits: 
+      - fail
+    hasTests: true
+    testFiles: 
+      - tests/test_jsonable_encoder.py
+    debugScore: 3
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: fastapi/_compat/__init__.py
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: fastapi/_compat/v2.py
+        additions: 15
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: fastapi/dependencies/utils.py
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: fastapi/encoders.py
+        additions: 19
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: tests/test_jsonable_encoder.py
+        additions: 18
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 15174
+    title: "🔨 Tweak translation script"
+    url: https://github.com/fastapi/fastapi/pull/15174
+    mergedAt: 2026-04-23T16:35:43Z
+    baseRefName: master
+    headRefName: tweak-translation-script
+    baseRefOid: 2fa00db8581bb4e74b2d00d859c8469b6da296c4
+    headRefOid: 1931046ba1512c156d05f2b87f1fa58d66d30095
+    mergeCommitOid: 38039e12a86e67f2001b9b7d96c219691d6cb4af
+    changedFiles: 2
+    additions: 67
+    deletions: 33
+    labels: 
+      - internal
+    keywordHits: 
+      - fix
+      - error
+      - validation
+      - fail
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: scripts/general-llm-prompt.md
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: scripts/translate.py
+        additions: 63
+        deletions: 33
+        changeType: MODIFIED
+  - 
+    number: 15408
+    title: "⬆ Bump mkdocs-material from 9.7.1 to 9.7.6"
+    url: https://github.com/fastapi/fastapi/pull/15408
+    mergedAt: 2026-04-22T13:10:45Z
+    baseRefName: master
+    headRefName: dependabot/uv/mkdocs-material-9.7.6
+    baseRefOid: c38782e0e806634e90a9861c0a59fb99828d5484
+    headRefOid: 468c4c03b069234516814b868c6b7d2e5fae2aaf
+    mergeCommitOid: c39415673e621665fdb7bbdde69beba7eb1dfd12
+    changedFiles: 1
+    additions: 3
+    deletions: 3
+    labels: 
+      - dependencies
+      - internal
+      - python:uv
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: uv.lock
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 15409
+    title: "⬆ Bump inline-snapshot from 0.31.1 to 0.32.6"
+    url: https://github.com/fastapi/fastapi/pull/15409
+    mergedAt: 2026-04-22T13:04:27Z
+    baseRefName: master
+    headRefName: dependabot/uv/inline-snapshot-0.32.6
+    baseRefOid: 4f8b5d14d324ae8e15cfae8d85adb4186d4c2175
+    headRefOid: 8d28089a68a4429e7dd416d56be7668211e2ac76
+    mergeCommitOid: d9eb39d1a1bf2f6e6e5d3a55088f61c712cb864e
+    changedFiles: 1
+    additions: 4
+    deletions: 3
+    labels: 
+      - dependencies
+      - internal
+      - python:uv
+    keywordHits: 
+      - bug
+      - fix
+      - error
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: uv.lock
+        additions: 4
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 15407
+    title: "⬆ Bump pytest-codspeed from 4.3.0 to 4.4.0"
+    url: https://github.com/fastapi/fastapi/pull/15407
+    mergedAt: 2026-04-22T12:53:36Z
+    baseRefName: master
+    headRefName: dependabot/uv/pytest-codspeed-4.4.0
+    baseRefOid: c38782e0e806634e90a9861c0a59fb99828d5484
+    headRefOid: 56fae0246012d9ebf552daf338523b799d40b363
+    mergeCommitOid: 04958499e0a3c11881233f5e2fe0416b86f90db6
+    changedFiles: 1
+    additions: 16
+    deletions: 16
+    labels: 
+      - dependencies
+      - internal
+      - python:uv
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: uv.lock
+        additions: 16
+        deletions: 16
+        changeType: MODIFIED
+  - 
+    number: 15406
+    title: "⬆ Bump pytest-cov from 7.0.0 to 7.1.0"
+    url: https://github.com/fastapi/fastapi/pull/15406
+    mergedAt: 2026-04-22T12:49:01Z
+    baseRefName: master
+    headRefName: dependabot/uv/pytest-cov-7.1.0
+    baseRefOid: c38782e0e806634e90a9861c0a59fb99828d5484
+    headRefOid: 2535b387dc1aba163bf550927c2f1271bd72fd17
+    mergeCommitOid: ea230dc80b2ce061f82aceb59755553934a1e181
+    changedFiles: 1
+    additions: 3
+    deletions: 3
+    labels: 
+      - dependencies
+      - internal
+      - python:uv
+    keywordHits: 
+      - fix
+      - race
+      - fail
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: uv.lock
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 15405
+    title: "⬆ Bump cloudflare/wrangler-action from 3.14.1 to 3.15.0"
+    url: https://github.com/fastapi/fastapi/pull/15405
+    mergedAt: 2026-04-22T12:44:48Z
+    baseRefName: master
+    headRefName: dependabot/github_actions/cloudflare/wrangler-action-3.15.0
+    baseRefOid: c38782e0e806634e90a9861c0a59fb99828d5484
+    headRefOid: cbaf7762951748825c9cb24163c32b9b9deed7df
+    mergeCommitOid: 7402e33375f9ea85bbceadd52c6a667891d5375f
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+      - dependencies
+      - github_actions
+      - internal
+    keywordHits: 
+      - fix
+      - fail
+      - failure
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/workflows/deploy-docs.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 15410
+    title: "⬆ Bump mypy from 1.19.1 to 1.20.1"
+    url: https://github.com/fastapi/fastapi/pull/15410
+    mergedAt: 2026-04-22T12:41:23Z
+    baseRefName: master
+    headRefName: dependabot/uv/mypy-1.20.1
+    baseRefOid: c38782e0e806634e90a9861c0a59fb99828d5484
+    headRefOid: 2116518ecafe86190a90696330cc4db1cb69cbf2
+    mergeCommitOid: 7c6b79eb3bee614dc2f0eedba513a1866d9979b4
+    changedFiles: 1
+    additions: 127
+    deletions: 103
+    labels: 
+      - dependencies
+      - internal
+      - python:uv
+    keywordHits: 
+      - fix
+      - regression
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: uv.lock
+        additions: 127
+        deletions: 103
+        changeType: MODIFIED
+  - 
+    number: 15400
+    title: "⬆ Bump python-dotenv from 1.2.1 to 1.2.2"
+    url: https://github.com/fastapi/fastapi/pull/15400
+    mergedAt: 2026-04-22T07:42:50Z
+    baseRefName: master
+    headRefName: dependabot/uv/python-dotenv-1.2.2
+    baseRefOid: 88021c3dc016d02fe609397cb034648262c270e8
+    headRefOid: 17e825b429c1f2d1e0d0a2bf70c111aab07e9698
+    mergeCommitOid: 840e462667f882610a58ef70fb3fabbaa800b0da
+    changedFiles: 1
+    additions: 3
+    deletions: 3
+    labels: 
+      - dependencies
+      - internal
+      - python:uv
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: uv.lock
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 15397
+    title: "⬆ Bump starlette from 0.52.1 to 1.0.0"
+    url: https://github.com/fastapi/fastapi/pull/15397
+    mergedAt: 2026-04-21T12:45:41Z
+    baseRefName: master
+    headRefName: dependabot/uv/starlette-1.0.0
+    baseRefOid: 916edab52685d6275f67017aab9905cabd8b9cae
+    headRefOid: ed057f9c8c48f220b6f60f038e88ad9c5703a8ed
+    mergeCommitOid: 13eade2fd96b63603517440f5f7382e67c6cade6
+    changedFiles: 1
+    additions: 3
+    deletions: 3
+    labels: 
+      - dependencies
+      - internal
+      - python:uv
+    keywordHits: 
+      - bug
+      - fix
+      - parser
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: uv.lock
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 15396
+    title: "⬆ Bump pygithub from 2.8.1 to 2.9.1"
+    url: https://github.com/fastapi/fastapi/pull/15396
+    mergedAt: 2026-04-21T12:43:26Z
+    baseRefName: master
+    headRefName: dependabot/uv/pygithub-2.9.1
+    baseRefOid: 916edab52685d6275f67017aab9905cabd8b9cae
+    headRefOid: 98a2af57b09c8544180631798b616bacb2e492d7
+    mergeCommitOid: 4e6d8dc60064af8734e598215d264fec2701949d
+    changedFiles: 1
+    additions: 3
+    deletions: 3
+    labels: 
+      - dependencies
+      - internal
+      - python:uv
+    keywordHits: 
+      - bug
+      - fix
+      - exception
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: uv.lock
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 15393
+    title: "⬆ Bump pyjwt from 2.12.0 to 2.12.1"
+    url: https://github.com/fastapi/fastapi/pull/15393
+    mergedAt: 2026-04-21T12:34:09Z
+    baseRefName: master
+    headRefName: dependabot/uv/pyjwt-2.12.1
+    baseRefOid: 916edab52685d6275f67017aab9905cabd8b9cae
+    headRefOid: 6c6dcd43a32e856004ecb5dd9fb458d9d9976118
+    mergeCommitOid: 043fdce921a8d1edc6ea8e30f4eb769eda9a1693
+    changedFiles: 1
+    additions: 6
+    deletions: 3
+    labels: 
+      - dependencies
+      - internal
+      - python:uv
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: uv.lock
+        additions: 6
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 15394
+    title: "⬆ Bump zizmor from 1.23.1 to 1.24.1"
+    url: https://github.com/fastapi/fastapi/pull/15394
+    mergedAt: 2026-04-21T12:27:24Z
+    baseRefName: master
+    headRefName: dependabot/uv/zizmor-1.24.1
+    baseRefOid: 916edab52685d6275f67017aab9905cabd8b9cae
+    headRefOid: c24db1dbbbd17459b316b4f2cc06b17d81c11536
+    mergeCommitOid: 6fadc67d621036eb1a6b6edc2b2a555c987b5a10
+    changedFiles: 1
+    additions: 14
+    deletions: 14
+    labels: 
+      - dependencies
+      - internal
+      - python:uv
+    keywordHits: 
+      - bug
+      - fix
+      - incorrect
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: uv.lock
+        additions: 14
+        deletions: 14
+        changeType: MODIFIED
+  - 
+    number: 15395
+    title: "⬆ Bump strawberry-graphql from 0.312.3 to 0.314.3"
+    url: https://github.com/fastapi/fastapi/pull/15395
+    mergedAt: 2026-04-21T12:24:45Z
+    baseRefName: master
+    headRefName: dependabot/uv/strawberry-graphql-0.314.3
+    baseRefOid: 916edab52685d6275f67017aab9905cabd8b9cae
+    headRefOid: 9730abf05a3464760c5cbc01d3e57121d5e93d5d
+    mergeCommitOid: e5a86c3972d904678182631278447cfd3c2d60b9
+    changedFiles: 1
+    additions: 3
+    deletions: 3
+    labels: 
+      - dependencies
+      - internal
+      - python:uv
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: uv.lock
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 15360
+    title: "⬆ Bump python-multipart from 0.0.22 to 0.0.26"
+    url: https://github.com/fastapi/fastapi/pull/15360
+    mergedAt: 2026-04-21T08:15:51Z
+    baseRefName: master
+    headRefName: dependabot/uv/python-multipart-0.0.26
+    baseRefOid: 19c7b4bc28df85d66ffdbaeb2b9d3a6026e954af
+    headRefOid: 26d7e9afc511708ac922e752240b847595dac070
+    mergeCommitOid: 355c12ce0ed17831b6af84c94c4141559a1b0152
+    changedFiles: 1
+    additions: 3
+    deletions: 3
+    labels: 
+      - dependencies
+      - internal
+      - python:uv
+    keywordHits: 
+      - fix
+      - parser
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: uv.lock
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 15373
+    title: "⬆ Bump authlib from 1.6.9 to 1.6.11"
+    url: https://github.com/fastapi/fastapi/pull/15373
+    mergedAt: 2026-04-21T08:12:58Z
+    baseRefName: master
+    headRefName: dependabot/uv/authlib-1.6.11
+    baseRefOid: 19c7b4bc28df85d66ffdbaeb2b9d3a6026e954af
+    headRefOid: 79a023c247e1dbbe03773617c633df9d834d68ba
+    mergeCommitOid: c6bf1a9702d9cac5d9d5f20ad62f9071b2e4f8b0
+    changedFiles: 1
+    additions: 3
+    deletions: 3
+    labels: 
+      - dependencies
+      - internal
+      - python:uv
+    keywordHits: 
+      - fix
+      - error
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: uv.lock
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 15282
+    title: "⬆ Bump aiohttp from 3.13.3 to 3.13.4"
+    url: https://github.com/fastapi/fastapi/pull/15282
+    mergedAt: 2026-04-21T07:57:13Z
+    baseRefName: master
+    headRefName: dependabot/uv/aiohttp-3.13.4
+    baseRefOid: fb5f830bf82f2220d9c56ee01166cad597b2abf3
+    headRefOid: 489b04b29108545e56b7016c6cfcf441330b3e04
+    mergeCommitOid: 0d68ccc87cb6b7dbecf2b266e26e2b222bb22308
+    changedFiles: 1
+    additions: 105
+    deletions: 105
+    labels: 
+      - dependencies
+      - internal
+      - python:uv
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: uv.lock
+        additions: 105
+        deletions: 105
+        changeType: MODIFIED
+  - 
+    number: 15263
+    title: "⬆ Bump pygments from 2.19.2 to 2.20.0"
+    url: https://github.com/fastapi/fastapi/pull/15263
+    mergedAt: 2026-04-21T07:47:00Z
+    baseRefName: master
+    headRefName: dependabot/uv/pygments-2.20.0
+    baseRefOid: 28b18ced2d941db24a61172b85b3cafeccaae1c8
+    headRefOid: c2ed202daca1820bd72d240bc3ab11425dbf22b6
+    mergeCommitOid: 7ce742e2c131db1a1d39dd1eaa915e73e86a608f
+    changedFiles: 1
+    additions: 3
+    deletions: 3
+    labels: 
+      - dependencies
+      - internal
+      - python:uv
+    keywordHits: 
+      - fix
+      - parsing
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: uv.lock
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 15391
+    title: "⬆ Bump pymdown-extensions from 10.20.1 to 10.21.2"
+    url: https://github.com/fastapi/fastapi/pull/15391
+    mergedAt: 2026-04-21T07:38:21Z
+    baseRefName: master
+    headRefName: bump-pymdown-extensions-to-10.21.2
+    baseRefOid: ecc9069b90c503f9bc07aff15094e92e718cbe8c
+    headRefOid: e8cb8ff35a520a37ed095275307b0ad32d5141f8
+    mergeCommitOid: 2d625c09622b95c3ff2b0bcb4874f0be62f84e60
+    changedFiles: 1
+    additions: 3
+    deletions: 3
+    labels: 
+      - dependencies
+      - internal
+      - python:uv
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: uv.lock
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 15333
+    title: "⬆ Bump pillow from 12.1.1 to 12.2.0"
+    url: https://github.com/fastapi/fastapi/pull/15333
+    mergedAt: 2026-04-20T21:40:50Z
+    baseRefName: master
+    headRefName: dependabot/uv/pillow-12.2.0
+    baseRefOid: 636998e53afe10c58e87b4ca92222a563c53d66f
+    headRefOid: a2ce4328f2bd21f348bfda637331ae77b2e52778
+    mergeCommitOid: 7d23cc8fe8998e0ca0db93f977012a49261e2449
+    changedFiles: 1
+    additions: 94
+    deletions: 94
+    labels: 
+      - dependencies
+      - internal
+      - python:uv
+    keywordHits: 
+      - fix
+      - error
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: uv.lock
+        additions: 94
+        deletions: 94
+        changeType: MODIFIED
+  - 
+    number: 15334
+    title: "⬆ Bump pytest from 9.0.2 to 9.0.3"
+    url: https://github.com/fastapi/fastapi/pull/15334
+    mergedAt: 2026-04-20T21:32:59Z
+    baseRefName: master
+    headRefName: dependabot/uv/pytest-9.0.3
+    baseRefOid: 13be6a3a0f12d3f36c286196ef555dd51dc09edb
+    headRefOid: 7107b393f6b752ab33bcd6e789160c439d505f3e
+    mergeCommitOid: a8773aadf89633835be513f743b89b6dd44edc04
+    changedFiles: 1
+    additions: 3
+    deletions: 3
+    labels: 
+      - dependencies
+      - internal
+      - python:uv
+    keywordHits: 
+      - bug
+      - fix
+      - crash
+      - incorrect
+      - error
+      - exception
+      - race
+      - fail
+      - failure
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 5
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: uv.lock
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 15374
+    title: "⬆ Bump actions/upload-artifact from 7.0.0 to 7.0.1"
+    url: https://github.com/fastapi/fastapi/pull/15374
+    mergedAt: 2026-04-20T21:19:34Z
+    baseRefName: master
+    headRefName: dependabot/github_actions/actions/upload-artifact-7.0.1
+    baseRefOid: 2fa00db8581bb4e74b2d00d859c8469b6da296c4
+    headRefOid: daef9bf679ad897559841bb86349c4b09e82916d
+    mergeCommitOid: c874e067dc47add40793ae95992d9a11f923202e
+    changedFiles: 2
+    additions: 3
+    deletions: 3
+    labels: 
+      - dependencies
+      - github_actions
+      - internal
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/workflows/build-docs.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/test.yml
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 15385
+    title: "⬆ Bump actions/cache from 5.0.4 to 5.0.5"
+    url: https://github.com/fastapi/fastapi/pull/15385
+    mergedAt: 2026-04-20T21:10:03Z
+    baseRefName: master
+    headRefName: dependabot/github_actions/actions/cache-5.0.5
+    baseRefOid: 2fa00db8581bb4e74b2d00d859c8469b6da296c4
+    headRefOid: 0c98afb4100d7dfc853ff27943751409240011d3
+    mergeCommitOid: a595e44d28e11a3e46b6105ecbb4f53b8cdb6579
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+      - dependencies
+      - github_actions
+      - internal
+    keywordHits: 
+      - fix
+      - exception
+      - validation
+      - parser
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/workflows/build-docs.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 15316
+    title: "🔒️ Add zizmor and fix audit findings"
+    url: https://github.com/fastapi/fastapi/pull/15316
+    mergedAt: 2026-04-16T12:21:03Z
+    baseRefName: master
+    headRefName: setup-zizmor
+    baseRefOid: 708606c982cf35718cb2214c0bb9261cf548f042
+    headRefOid: bb712e199814f6fc7575fb057968d297054d4896
+    mergeCommitOid: 3f4169be1afaca39b0227e4947cf4e2596aa4e31
+    changedFiles: 23
+    additions: 266
+    deletions: 135
+    labels: 
+      - internal
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/dependabot.yml
+        additions: 14
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/add-to-project.yml
+        additions: 5
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/build-docs.yml
+        additions: 23
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/contributors.yml
+        additions: 11
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/deploy-docs.yml
+        additions: 18
+        deletions: 17
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/detect-conflicts.yml
+        additions: 4
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/issue-manager.yml
+        additions: 6
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/label-approved.yml
+        additions: 9
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/labeler.yml
+        additions: 5
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/latest-changes.yml
+        additions: 9
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/notify-translations.yml
+        additions: 12
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/people.yml
+        additions: 11
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/pre-commit.yml
+        additions: 13
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/publish.yml
+        additions: 9
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/smokeshow.yml
+        additions: 12
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/sponsors.yml
+        additions: 11
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/test-redistribute.yml
+        additions: 7
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/test.yml
+        additions: 29
+        deletions: 16
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/topic-repos.yml
+        additions: 9
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/translate.yml
+        additions: 19
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: .pre-commit-config.yaml
+        additions: 9
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: pyproject.toml
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: uv.lock
+        additions: 20
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 15149
+    title: "⬆️ Support free-threaded Python 3.14t"
+    url: https://github.com/fastapi/fastapi/pull/15149
+    mergedAt: 2026-04-16T11:42:01Z
+    baseRefName: master
+    headRefName: feat/314t
+    baseRefOid: c3c9dd6b1a08bcda766e7b43eafe72c4c5e9e193
+    headRefOid: 4850599704b04b3c63b98ca65ba9838f9a43d7a3
+    mergeCommitOid: 4b264878d71b2dc0e9e0f90ef15459d4302a7f9c
+    changedFiles: 11
+    additions: 190
+    deletions: 342
+    labels: 
+      - upgrade
+    keywordHits: 
+      - fix
+    hasTests: true
+    testFiles: 
+      - tests/test_default_response_class.py
+      - tests/test_deprecated_responses.py
+      - tests/test_orjson_response_class.py
+      - tests/test_tutorial/test_custom_response/test_tutorial001.py
+      - tests/test_tutorial/test_custom_response/test_tutorial001b.py
+      - tests/test_tutorial/test_custom_response/test_tutorial009c.py
+      - tests/utils.py
+    debugScore: -2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+    files: 
+      - 
+        path: .github/workflows/test.yml
+        additions: 21
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: fastapi/responses.py
+        additions: 20
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: pyproject.toml
+        additions: 1
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: tests/test_default_response_class.py
+        additions: 7
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: tests/test_deprecated_responses.py
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/test_orjson_response_class.py
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/test_tutorial/test_custom_response/test_tutorial001.py
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/test_tutorial/test_custom_response/test_tutorial001b.py
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/test_tutorial/test_custom_response/test_tutorial009c.py
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/utils.py
+        additions: 11
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: uv.lock
+        additions: 113
+        deletions: 324
+        changeType: MODIFIED
+  - 
+    number: 15369
+    title: "🔧 Update sponsors: remove Zuplo"
+    url: https://github.com/fastapi/fastapi/pull/15369
+    mergedAt: 2026-04-16T12:47:22Z
+    baseRefName: master
+    headRefName: sponsors
+    baseRefOid: 6976b0d4e62b5054526063d29259c1cddb2f11fe
+    headRefOid: 153b62b01acca7104d16d140f7b3a46fcd0f954a
+    mergeCommitOid: 41df44a29c986a908527fae7d3cdd613fb9fadb0
+    changedFiles: 3
+    additions: 0
+    deletions: 10
+    labels: 
+      - internal
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: README.md
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/en/data/sponsors.yml
+        additions: 0
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: docs/en/overrides/main.html
+        additions: 0
+        deletions: 6
+        changeType: MODIFIED
+  - 
+    number: 15368
+    title: "🔧 Update sponsors: remove Speakeasy"
+    url: https://github.com/fastapi/fastapi/pull/15368
+    mergedAt: 2026-04-16T12:42:28Z
+    baseRefName: master
+    headRefName: sponsors
+    baseRefOid: 24db1286eb548f9130716cc8866df98d35ae2063
+    headRefOid: 3531211a0b9669076c4108a86abaf228a91f6a6e
+    mergeCommitOid: 3808d8540fe62cc55bafe723fb276094e6d7e27d
+    changedFiles: 3
+    additions: 0
+    deletions: 5
+    labels: 
+      - internal
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: README.md
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/en/data/sponsors.yml
+        additions: 0
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: docs/en/docs/advanced/generate-clients.md
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 15363
+    title: "🔥 Remove April Fool's `@app.vibe()` 🤪"
+    url: https://github.com/fastapi/fastapi/pull/15363
+    mergedAt: 2026-04-16T11:35:06Z
+    baseRefName: master
+    headRefName: novibe
+    baseRefOid: 9653034b8d459607a4b7f761e6c23a6f287fa5fa
+    headRefOid: e66753ca2651e22128904adb17cf86cd198e7f1c
+    mergeCommitOid: ae4e45c5cc20a1e1503fbcab2369821d188feb09
+    changedFiles: 5
+    additions: 1
+    deletions: 133
+    labels: 
+      - refactor
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - tests/test_vibe.py
+    debugScore: 2
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: docs/en/docs/advanced/vibe.md
+        additions: 0
+        deletions: 44
+        changeType: DELETED
+      - 
+        path: docs/en/mkdocs.yml
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs_src/vibe/tutorial001_py310.py
+        additions: 0
+        deletions: 12
+        changeType: DELETED
+      - 
+        path: fastapi/applications.py
+        additions: 1
+        deletions: 59
+        changeType: MODIFIED
+      - 
+        path: tests/test_vibe.py
+        additions: 0
+        deletions: 17
+        changeType: DELETED
+  - 
+    number: 15314
+    title: "⬆ Bump cryptography from 46.0.5 to 46.0.7"
+    url: https://github.com/fastapi/fastapi/pull/15314
+    mergedAt: 2026-04-13T12:43:26Z
+    baseRefName: master
+    headRefName: dependabot/uv/cryptography-46.0.7
+    baseRefOid: eba8942c81dbf990d25fbae34e6601bdbc21e74b
+    headRefOid: df232152d5cc66c5d3a7c8f7d4b91d4521803cb5
+    mergeCommitOid: 6f9a102faf071dbfa812a3af88d7d309d2ded4a6
+    changedFiles: 1
+    additions: 51
+    deletions: 51
+    labels: 
+      - dependencies
+      - internal
+      - python:uv
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: uv.lock
+        additions: 51
+        deletions: 51
+        changeType: MODIFIED
+  - 
+    number: 15279
+    title: "👥 Update FastAPI People - Experts"
+    url: https://github.com/fastapi/fastapi/pull/15279
+    mergedAt: 2026-04-01T15:47:21Z
+    baseRefName: master
+    headRefName: fastapi-people-experts-bce23468
+    baseRefOid: 96df35f7a4337d612811483d8ade74f91cce2d61
+    headRefOid: 023ca5b6ac3b49f035633b8d4f32119ce3d1dcd2
+    mergeCommitOid: 3e72c09a2abfe9e1b55eede6a297cb1847126e49
+    changedFiles: 1
+    additions: 147
+    deletions: 167
+    labels: 
+      - internal
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docs/en/data/people.yml
+        additions: 147
+        deletions: 167
+        changeType: MODIFIED
+  - 
+    number: 15030
+    title: "✨ Add support for Server Sent Events"
+    url: https://github.com/fastapi/fastapi/pull/15030
+    mergedAt: 2026-03-01T09:21:53Z
+    baseRefName: master
+    headRefName: sse
+    baseRefOid: 48d58ae3b6ef4ded5a4794618c00345667256d98
+    headRefOid: 2269bb446a1233118812c9a4a62beb0aaf2054b0
+    mergeCommitOid: 22381558446c5d1ac376680a6581dd63b3a04119
+    changedFiles: 23
+    additions: 1681
+    deletions: 37
+    labels: 
+      - feature
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - tests/test_sse.py
+      - tests/test_tutorial/test_server_sent_events/__init__.py
+      - tests/test_tutorial/test_server_sent_events/test_tutorial001.py
+      - tests/test_tutorial/test_server_sent_events/test_tutorial002.py
+      - tests/test_tutorial/test_server_sent_events/test_tutorial003.py
+      - tests/test_tutorial/test_server_sent_events/test_tutorial004.py
+      - tests/test_tutorial/test_server_sent_events/test_tutorial005.py
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+    files: 
+      - 
+        path: docs/en/docs/advanced/stream-data.md
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs/en/docs/tutorial/server-sent-events.md
+        additions: 120
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/en/docs/tutorial/stream-json-lines.md
+        additions: 8
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: docs/en/mkdocs.yml
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs_src/server_sent_events/__init__.py
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs_src/server_sent_events/tutorial001_py310.py
+        additions: 43
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs_src/server_sent_events/tutorial002_py310.py
+        additions: 26
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs_src/server_sent_events/tutorial003_py310.py
+        additions: 17
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs_src/server_sent_events/tutorial004_py310.py
+        additions: 31
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs_src/server_sent_events/tutorial005_py310.py
+        additions: 19
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: fastapi/.agents/skills/fastapi/SKILL.md
+        additions: 50
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: fastapi/openapi/utils.py
+        additions: 21
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: fastapi/responses.py
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: fastapi/routing.py
+        additions: 145
+        deletions: 35
+        changeType: MODIFIED
+      - 
+        path: fastapi/sse.py
+        additions: 222
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: pyproject.toml
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/test_sse.py
+        additions: 318
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/test_tutorial/test_server_sent_events/__init__.py
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/test_tutorial/test_server_sent_events/test_tutorial001.py
+        additions: 191
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/test_tutorial/test_server_sent_events/test_tutorial002.py
+        additions: 83
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/test_tutorial/test_server_sent_events/test_tutorial003.py
+        additions: 73
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/test_tutorial/test_server_sent_events/test_tutorial004.py
+        additions: 164
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/test_tutorial/test_server_sent_events/test_tutorial005.py
+        additions: 141
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 14962
+    title: "✨ Serialize JSON response with Pydantic (in Rust), when there's a Pydantic return type or response model"
+    url: https://github.com/fastapi/fastapi/pull/14962
+    mergedAt: 2026-02-22T16:07:19Z
+    baseRefName: master
+    headRefName: serialize-pydantic
+    baseRefOid: 1e78a36b7310003f0ff634627d8a7bc53c6ccdee
+    headRefOid: 880ad19087c65436da083118aad4b4b9f4da1503
+    mergeCommitOid: 590a5e535587cc07041ba12d308c748433ccb168
+    changedFiles: 10
+    additions: 196
+    deletions: 74
+    labels: 
+      - feature
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - tests/test_dump_json_fast_path.py
+      - tests/test_tutorial/test_custom_response/test_tutorial001.py
+      - tests/test_tutorial/test_custom_response/test_tutorial010.py
+    debugScore: 1
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: docs/en/docs/advanced/custom-response.md
+        additions: 19
+        deletions: 61
+        changeType: MODIFIED
+      - 
+        path: docs/en/docs/advanced/response-directly.md
+        additions: 22
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: docs/en/docs/how-to/general.md
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs/en/docs/tutorial/response-model.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs_src/custom_response/tutorial010_py310.py
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: fastapi/_compat/v2.py
+        additions: 26
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: fastapi/routing.py
+        additions: 20
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: tests/test_dump_json_fast_path.py
+        additions: 51
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/test_tutorial/test_custom_response/test_tutorial001.py
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: tests/test_tutorial/test_custom_response/test_tutorial010.py
+        additions: 50
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 15309
+    title: "⬆ Bump strawberry-graphql from 0.307.1 to 0.312.3"
+    url: https://github.com/fastapi/fastapi/pull/15309
+    mergedAt: 2026-04-07T09:49:52Z
+    baseRefName: master
+    headRefName: dependabot/uv/strawberry-graphql-0.312.3
+    baseRefOid: c3c9dd6b1a08bcda766e7b43eafe72c4c5e9e193
+    headRefOid: 7f2db1c165f60f925c9856fc2908d1acb1a12ac3
+    mergeCommitOid: 77d080caf850b8af5c0f467389edf03c057c7697
+    changedFiles: 1
+    additions: 3
+    deletions: 3
+    labels: 
+      - dependencies
+      - internal
+      - python:uv
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: uv.lock
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 15293
+    title: "🔨 Add pre-commit hook to ensure latest release header has date"
+    url: https://github.com/fastapi/fastapi/pull/15293
+    mergedAt: 2026-04-03T12:06:36Z
+    baseRefName: master
+    headRefName: release-date-hook
+    baseRefOid: 1f442c454f2f74c7419f83c203e6333955399528
+    headRefOid: a394083a109deaeb12f91bab5456d4cfca6c5ed1
+    mergeCommitOid: 180e81bb4b38aee59fd8e15e72808975a8c4354e
+    changedFiles: 2
+    additions: 47
+    deletions: 0
+    labels: 
+      - internal
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .pre-commit-config.yaml
+        additions: 7
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: scripts/add_latest_release_date.py
+        additions: 40
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 15280
+    title: "✨ Add support for `@app.vibe()`"
+    url: https://github.com/fastapi/fastapi/pull/15280
+    mergedAt: 2026-04-01T16:16:25Z
+    baseRefName: master
+    headRefName: vibe
+    baseRefOid: 6ee87478d821171139264cd9cd17cbd2232934ce
+    headRefOid: 479c53611c923ca3639c30eef99ff8691584040f
+    mergeCommitOid: 70580da818722cce68b7a88928d67bd0f64f42c5
+    changedFiles: 5
+    additions: 133
+    deletions: 1
+    labels: 
+      - feature
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - tests/test_vibe.py
+    debugScore: 2
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: docs/en/docs/advanced/vibe.md
+        additions: 44
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/en/mkdocs.yml
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs_src/vibe/tutorial001_py310.py
+        additions: 12
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: fastapi/applications.py
+        additions: 59
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: tests/test_vibe.py
+        additions: 17
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 15276
+    title: "⬆ Bump orjson from 3.11.7 to 3.11.8"
+    url: https://github.com/fastapi/fastapi/pull/15276
+    mergedAt: 2026-04-01T14:29:59Z
+    baseRefName: master
+    headRefName: dependabot/uv/orjson-3.11.8
+    baseRefOid: cc477965097d1cbb780fae7b731e43132fe75890
+    headRefOid: d0fcf4acf0abe0bd3c28d3bac7e4f25708629646
+    mergeCommitOid: 6c8112555bd86f21cfee8500140dca094ad26e20
+    changedFiles: 1
+    additions: 77
+    deletions: 77
+    labels: 
+      - dependencies
+      - internal
+      - python:uv
+    keywordHits: 
+      - error
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: uv.lock
+        additions: 77
+        deletions: 77
+        changeType: MODIFIED
+  - 
+    number: 15277
+    title: "⬆ Bump ruff from 0.15.0 to 0.15.8"
+    url: https://github.com/fastapi/fastapi/pull/15277
+    mergedAt: 2026-04-01T14:27:20Z
+    baseRefName: master
+    headRefName: dependabot/uv/ruff-0.15.8
+    baseRefOid: cc477965097d1cbb780fae7b731e43132fe75890
+    headRefOid: fe99e745301e325a8ed22beabf9c4763ed7af939
+    mergeCommitOid: 5599c59b9e7112109f04b63a58034fb95833f514
+    changedFiles: 1
+    additions: 21
+    deletions: 21
+    labels: 
+      - dependencies
+      - internal
+      - python:uv
+    keywordHits: 
+      - bug
+      - fix
+      - parsing
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: uv.lock
+        additions: 21
+        deletions: 21
+        changeType: MODIFIED
+  - 
+    number: 15274
+    title: "👥 Update FastAPI GitHub topic repositories"
+    url: https://github.com/fastapi/fastapi/pull/15274
+    mergedAt: 2026-04-01T12:36:41Z
+    baseRefName: master
+    headRefName: fastapi-topic-repos-666d8f58
+    baseRefOid: 681146d90b5534d6139668ac240c7bff63e4a7bc
+    headRefOid: 9708b611dac65cc4747e6fba298bcb187129a782
+    mergeCommitOid: 9274097c302071f8506808c0c2faf1e4393fbb5c
+    changedFiles: 1
+    additions: 182
+    deletions: 182
+    labels: 
+      - internal
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docs/en/data/topic_repos.yml
+        additions: 182
+        deletions: 182
+        changeType: MODIFIED

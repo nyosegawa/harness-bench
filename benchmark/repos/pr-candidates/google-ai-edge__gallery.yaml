@@ -1,0 +1,2307 @@
+generatedAt: 2026-05-02T10:21:17.337Z
+repo: google-ai-edge/gallery
+since: 2026-01-01
+limit: 50
+debugKeywords: 
+  - bug
+  - fix
+  - regression
+  - crash
+  - incorrect
+  - wrong
+  - error
+  - exception
+  - edge
+  - flaky
+  - race
+  - leak
+  - validation
+  - parser
+  - parsing
+  - timeout
+  - fail
+  - failure
+  - broken
+prs: 
+  - 
+    number: 731
+    title: "internal changes"
+    url: https://github.com/google-ai-edge/gallery/pull/731
+    mergedAt: 2026-04-24T23:41:56Z
+    baseRefName: main
+    headRefName: test_905223417
+    baseRefOid: 302f7e463b19f45f51825f4ec2fd30309366cb06
+    headRefOid: 3b368f4aefec2358bdd915e3577e86dfcc5ba9d8
+    mergeCommitOid: 3b368f4aefec2358bdd915e3577e86dfcc5ba9d8
+    changedFiles: 5
+    additions: 52
+    deletions: 8
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/build.gradle.kts
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/AndroidManifest.xml
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/home/SettingsDialog.kt
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/res/drawable/icon.xml
+        additions: 34
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: Android/src/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+        additions: 14
+        deletions: 5
+        changeType: MODIFIED
+  - 
+    number: 724
+    title: "internal changes"
+    url: https://github.com/google-ai-edge/gallery/pull/724
+    mergedAt: 2026-04-23T23:04:21Z
+    baseRefName: main
+    headRefName: test_904676856
+    baseRefOid: c756475c497857def0692b0e7b7724fdbf7c8963
+    headRefOid: 302f7e463b19f45f51825f4ec2fd30309366cb06
+    mergeCommitOid: 302f7e463b19f45f51825f4ec2fd30309366cb06
+    changedFiles: 2
+    additions: 2
+    deletions: 2
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/build.gradle.kts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/DownloadAndTryButton.kt
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 722
+    title: "internal changes"
+    url: https://github.com/google-ai-edge/gallery/pull/722
+    mergedAt: 2026-04-23T17:24:56Z
+    baseRefName: main
+    headRefName: test_904498717
+    baseRefOid: eb9180a5368b3fa5901dc8d38e2c0456ac18cfbb
+    headRefOid: c756475c497857def0692b0e7b7724fdbf7c8963
+    mergeCommitOid: c756475c497857def0692b0e7b7724fdbf7c8963
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/build.gradle.kts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 716
+    title: "Bug fix: always show home screen after being killed by OS in background."
+    url: https://github.com/google-ai-edge/gallery/pull/716
+    mergedAt: 2026-04-23T01:12:40Z
+    baseRefName: main
+    headRefName: test_904128249
+    baseRefOid: 8413c98f77471692f17775eea391954011355f22
+    headRefOid: eb9180a5368b3fa5901dc8d38e2c0456ac18cfbb
+    mergeCommitOid: eb9180a5368b3fa5901dc8d38e2c0456ac18cfbb
+    changedFiles: 1
+    additions: 4
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/MainActivity.kt
+        additions: 4
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 715
+    title: "Bug fix: Ensure model download button is interactable"
+    url: https://github.com/google-ai-edge/gallery/pull/715
+    mergedAt: 2026-04-22T23:49:38Z
+    baseRefName: main
+    headRefName: test_904110459
+    baseRefOid: 53a066072188276b2b8ec388213e78bcd1b2a231
+    headRefOid: 8413c98f77471692f17775eea391954011355f22
+    mergeCommitOid: 8413c98f77471692f17775eea391954011355f22
+    changedFiles: 1
+    additions: 18
+    deletions: 29
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/llmsingleturn/LlmSingleTurnScreen.kt
+        additions: 18
+        deletions: 29
+        changeType: MODIFIED
+  - 
+    number: 710
+    title: "Add support for updatable model."
+    url: https://github.com/google-ai-edge/gallery/pull/710
+    mergedAt: 2026-04-22T22:46:39Z
+    baseRefName: main
+    headRefName: test_903530823
+    baseRefOid: 258c4fdbb5e770669b8a98089ab9eabb8e61bdea
+    headRefOid: 53a066072188276b2b8ec388213e78bcd1b2a231
+    mergeCommitOid: 53a066072188276b2b8ec388213e78bcd1b2a231
+    changedFiles: 7
+    additions: 214
+    deletions: 11
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/data/Model.kt
+        additions: 46
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/data/ModelAllowlist.kt
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/modelitem/DownloadModelPanel.kt
+        additions: 66
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/modelitem/ModelItem.kt
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/modelitem/ModelNameAndStatus.kt
+        additions: 53
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/modelmanager/ModelManagerViewModel.kt
+        additions: 41
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/res/values/strings.xml
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 711
+    title: "Add Firebase Analytics logging for Agent Chat on Android."
+    url: https://github.com/google-ai-edge/gallery/pull/711
+    mergedAt: 2026-04-22T22:13:23Z
+    baseRefName: main
+    headRefName: test_903604949
+    baseRefOid: 67e26b8ce1bf2394b82a5b60d30f91eaa4b438cd
+    headRefOid: 258c4fdbb5e770669b8a98089ab9eabb8e61bdea
+    mergeCommitOid: 258c4fdbb5e770669b8a98089ab9eabb8e61bdea
+    changedFiles: 4
+    additions: 151
+    deletions: 3
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/Analytics.kt
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/customtasks/agentchat/AgentChatScreen.kt
+        additions: 52
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/customtasks/agentchat/SkillManagerViewModel.kt
+        additions: 77
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/llmchat/LlmChatScreen.kt
+        additions: 20
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 713
+    title: "internal changes"
+    url: https://github.com/google-ai-edge/gallery/pull/713
+    mergedAt: 2026-04-22T17:02:35Z
+    baseRefName: main
+    headRefName: test_903893684
+    baseRefOid: 89cfc4bfabedb06028aea317e1315b44398f1065
+    headRefOid: 67e26b8ce1bf2394b82a5b60d30f91eaa4b438cd
+    mergeCommitOid: 67e26b8ce1bf2394b82a5b60d30f91eaa4b438cd
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/build.gradle.kts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 709
+    title: "Add ModelCapability and capabilityToTaskTypes to Model and ModelAllowlist."
+    url: https://github.com/google-ai-edge/gallery/pull/709
+    mergedAt: 2026-04-22T00:13:54Z
+    baseRefName: main
+    headRefName: test_902894088
+    baseRefOid: fd2750f984b5b9616b2fa40ea2d8a776a19ee253
+    headRefOid: 89cfc4bfabedb06028aea317e1315b44398f1065
+    mergeCommitOid: 89cfc4bfabedb06028aea317e1315b44398f1065
+    changedFiles: 6
+    additions: 37
+    deletions: 14
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/data/Model.kt
+        additions: 9
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/data/ModelAllowlist.kt
+        additions: 5
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/data/Tasks.kt
+        additions: 2
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/ModelPageAppBar.kt
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/llmchat/LlmChatScreen.kt
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/modelmanager/ModelManagerViewModel.kt
+        additions: 16
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 708
+    title: "internal change"
+    url: https://github.com/google-ai-edge/gallery/pull/708
+    mergedAt: 2026-04-21T17:05:14Z
+    baseRefName: main
+    headRefName: test_903283303
+    baseRefOid: 0e742def7df56aead1b87b4d5cae80dc5d621a90
+    headRefOid: fd2750f984b5b9616b2fa40ea2d8a776a19ee253
+    mergeCommitOid: fd2750f984b5b9616b2fa40ea2d8a776a19ee253
+    changedFiles: 1
+    additions: 0
+    deletions: 11
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/res/values/strings.xml
+        additions: 0
+        deletions: 11
+        changeType: MODIFIED
+  - 
+    number: 707
+    title: "internal change"
+    url: https://github.com/google-ai-edge/gallery/pull/707
+    mergedAt: 2026-04-21T16:14:40Z
+    baseRefName: main
+    headRefName: test_900744590
+    baseRefOid: 2f7d6ad1e02db5cb2f18856632d6c2c5a42bfc6c
+    headRefOid: 0e742def7df56aead1b87b4d5cae80dc5d621a90
+    mergeCommitOid: 0e742def7df56aead1b87b4d5cae80dc5d621a90
+    changedFiles: 1
+    additions: 11
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/res/values/strings.xml
+        additions: 11
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 697
+    title: "Improve model variant download button animation/transition between different states."
+    url: https://github.com/google-ai-edge/gallery/pull/697
+    mergedAt: 2026-04-17T23:37:45Z
+    baseRefName: main
+    headRefName: test_901506683
+    baseRefOid: 5e20e1d5877790f05a73d4e23f404e173291ee15
+    headRefOid: 2f7d6ad1e02db5cb2f18856632d6c2c5a42bfc6c
+    mergeCommitOid: 2f7d6ad1e02db5cb2f18856632d6c2c5a42bfc6c
+    changedFiles: 4
+    additions: 97
+    deletions: 49
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/DownloadAndTryButton.kt
+        additions: 10
+        deletions: 16
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/chat/ModelDownloadStatusInfoPanel.kt
+        additions: 3
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/modelitem/DownloadModelPanel.kt
+        additions: 5
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/modelitem/ModelItem.kt
+        additions: 79
+        deletions: 28
+        changeType: MODIFIED
+  - 
+    number: 695
+    title: "Sort models in global model manager by their orders in allowlist."
+    url: https://github.com/google-ai-edge/gallery/pull/695
+    mergedAt: 2026-04-17T20:34:38Z
+    baseRefName: main
+    headRefName: test_901375228
+    baseRefOid: 5767615c2969ef89f080ebf843fe0645d245e1da
+    headRefOid: 5e20e1d5877790f05a73d4e23f404e173291ee15
+    mergeCommitOid: 5e20e1d5877790f05a73d4e23f404e173291ee15
+    changedFiles: 2
+    additions: 26
+    deletions: 7
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/modelmanager/GlobalModelManager.kt
+        additions: 18
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/modelmanager/ModelManagerViewModel.kt
+        additions: 8
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 687
+    title: "Add support for showing related models in a single model card."
+    url: https://github.com/google-ai-edge/gallery/pull/687
+    mergedAt: 2026-04-16T21:51:20Z
+    baseRefName: main
+    headRefName: test_900908512
+    baseRefOid: 889652f1079fd62dd6eac285a67c99faa95a2afd
+    headRefOid: 625c4e886c6fab03de106799cf7be244629ea5d6
+    mergeCommitOid: 625c4e886c6fab03de106799cf7be244629ea5d6
+    changedFiles: 13
+    additions: 464
+    deletions: 221
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/data/Model.kt
+        additions: 11
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/data/ModelAllowlist.kt
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/DownloadAndTryButton.kt
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/modelitem/DownloadModelPanel.kt
+        additions: 9
+        deletions: 64
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/modelitem/ModelItem.kt
+        additions: 258
+        deletions: 25
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/modelitem/ModelNameAndStatus.kt
+        additions: 102
+        deletions: 85
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/tos/TosViewModel.kt
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/modelmanager/GlobalModelManager.kt
+        additions: 11
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/modelmanager/ModelList.kt
+        additions: 52
+        deletions: 24
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/modelmanager/ModelManager.kt
+        additions: 2
+        deletions: 16
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/modelmanager/ModelManagerViewModel.kt
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/navigation/GalleryNavGraph.kt
+        additions: 7
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/theme/Type.kt
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 684
+    title: "Correct accelerator NPU/TPU display"
+    url: https://github.com/google-ai-edge/gallery/pull/684
+    mergedAt: 2026-04-16T17:08:29Z
+    baseRefName: main
+    headRefName: test_900745573
+    baseRefOid: 2ccb6035539b7d43726c3dcdd79cd2e3e02a9afd
+    headRefOid: 889652f1079fd62dd6eac285a67c99faa95a2afd
+    mergeCommitOid: 889652f1079fd62dd6eac285a67c99faa95a2afd
+    changedFiles: 4
+    additions: 25
+    deletions: 6
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/data/ModelAllowlist.kt
+        additions: 17
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/data/Types.kt
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/benchmark/BenchmarkViewModel.kt
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/llmchat/LlmChatModelHelper.kt
+        additions: 5
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 636
+    title: "Fix a bug in how data is passed to a JavaScript function."
+    url: https://github.com/google-ai-edge/gallery/pull/636
+    mergedAt: 2026-04-08T22:14:52Z
+    baseRefName: main
+    headRefName: test_896565835
+    baseRefOid: 533855e8bd6af5615084f5cd259580a846d97dee
+    headRefOid: 34324280e681de437b3e020db725bf2f8fc135ed
+    mergeCommitOid: 34324280e681de437b3e020db725bf2f8fc135ed
+    changedFiles: 1
+    additions: 4
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/customtasks/agentchat/AgentChatScreen.kt
+        additions: 4
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 547
+    title: "Implement AICore integration"
+    url: https://github.com/google-ai-edge/gallery/pull/547
+    mergedAt: 2026-04-08T20:53:04Z
+    baseRefName: main
+    headRefName: test_893633566
+    baseRefOid: 0c97a6994800b07194c5cee4a6ca83c489c49c9b
+    headRefOid: 533855e8bd6af5615084f5cd259580a846d97dee
+    mergeCommitOid: 533855e8bd6af5615084f5cd259580a846d97dee
+    changedFiles: 20
+    additions: 693
+    deletions: 13
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/build.gradle.kts
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/AndroidManifest.xml
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/common/Utils.kt
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/data/Config.kt
+        additions: 35
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/data/Consts.kt
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/data/Model.kt
+        additions: 17
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/data/ModelAllowlist.kt
+        additions: 30
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/runtime/ModelHelperExt.kt
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/runtime/aicore/AICoreModelHelper.kt
+        additions: 378
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/DownloadAndTryButton.kt
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/ModelPicker.kt
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/chat/ChatPanel.kt
+        additions: 7
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/chat/MessageInputText.kt
+        additions: 21
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/modelitem/AICoreAccessPanel.kt
+        additions: 80
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/modelitem/ModelItem.kt
+        additions: 7
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/modelitem/ModelNameAndStatus.kt
+        additions: 1
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/llmchat/LlmChatScreen.kt
+        additions: 3
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/modelmanager/ModelManagerViewModel.kt
+        additions: 86
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/res/values/strings.xml
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/gradle/libs.versions.toml
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 628
+    title: "[Android] Handle FCM data messages with deeplinks and custom content."
+    url: https://github.com/google-ai-edge/gallery/pull/628
+    mergedAt: 2026-04-08T19:44:48Z
+    baseRefName: main
+    headRefName: test_896117636
+    baseRefOid: 65e794bf2f247d0eee21a79ac0595f24fd3ac4cc
+    headRefOid: 0c97a6994800b07194c5cee4a6ca83c489c49c9b
+    mergeCommitOid: 0c97a6994800b07194c5cee4a6ca83c489c49c9b
+    changedFiles: 2
+    additions: 79
+    deletions: 16
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/FcmMessagingService.kt
+        additions: 36
+        deletions: 16
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/MainActivity.kt
+        additions: 43
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 533
+    title: "Update litertlm version"
+    url: https://github.com/google-ai-edge/gallery/pull/533
+    mergedAt: 2026-04-02T17:15:26Z
+    baseRefName: main
+    headRefName: test_893560665
+    baseRefOid: db3346c3d1bdcb2fd1d0cda2f36500864c6f23af
+    headRefOid: 65e794bf2f247d0eee21a79ac0595f24fd3ac4cc
+    mergeCommitOid: 65e794bf2f247d0eee21a79ac0595f24fd3ac4cc
+    changedFiles: 2
+    additions: 3
+    deletions: 2
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/llmchat/LlmChatModelHelper.kt
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/gradle/libs.versions.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 530
+    title: "internal changes"
+    url: https://github.com/google-ai-edge/gallery/pull/530
+    mergedAt: 2026-04-02T00:59:55Z
+    baseRefName: main
+    headRefName: test_893196193
+    baseRefOid: 9757f031a32d9eb06d9602e2354100a2d5faab1d
+    headRefOid: 2cb14cb320a31db9830ff592134d35b774576f88
+    mergeCommitOid: 2cb14cb320a31db9830ff592134d35b774576f88
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/build.gradle.kts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 529
+    title: "Increment version code to 22."
+    url: https://github.com/google-ai-edge/gallery/pull/529
+    mergedAt: 2026-04-01T18:18:06Z
+    baseRefName: main
+    headRefName: test_892929752
+    baseRefOid: a36e84e93a9508bf5f36f81fe289e8a5a7499d27
+    headRefOid: 9aa62839c9ebb5d5c72bf6d18ba97abab6e45db1
+    mergeCommitOid: 9aa62839c9ebb5d5c72bf6d18ba97abab6e45db1
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/build.gradle.kts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 528
+    title: "Increment version code to 21."
+    url: https://github.com/google-ai-edge/gallery/pull/528
+    mergedAt: 2026-04-01T01:18:36Z
+    baseRefName: main
+    headRefName: test_892635251
+    baseRefOid: 81cea10afdc5062c6ffc711e870ca00b031132c2
+    headRefOid: a36e84e93a9508bf5f36f81fe289e8a5a7499d27
+    mergeCommitOid: a36e84e93a9508bf5f36f81fe289e8a5a7499d27
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/build.gradle.kts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 527
+    title: "Internal changes"
+    url: https://github.com/google-ai-edge/gallery/pull/527
+    mergedAt: 2026-03-31T22:14:58Z
+    baseRefName: main
+    headRefName: test_892404369
+    baseRefOid: b873d37cd918faf1beef142ab161a81d0f0eb694
+    headRefOid: 81cea10afdc5062c6ffc711e870ca00b031132c2
+    mergeCommitOid: 81cea10afdc5062c6ffc711e870ca00b031132c2
+    changedFiles: 1
+    additions: 3
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/data/ModelAllowlist.kt
+        additions: 3
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 526
+    title: "internal changes"
+    url: https://github.com/google-ai-edge/gallery/pull/526
+    mergedAt: 2026-03-31T18:28:33Z
+    baseRefName: main
+    headRefName: test_892004851
+    baseRefOid: 886a7273cfd20892751d65bb2bc777bb2a0bd67f
+    headRefOid: b873d37cd918faf1beef142ab161a81d0f0eb694
+    mergeCommitOid: b873d37cd918faf1beef142ab161a81d0f0eb694
+    changedFiles: 3
+    additions: 37
+    deletions: 15
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/DownloadAndTryButton.kt
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/chat/ChatPanel.kt
+        additions: 32
+        deletions: 15
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/res/values/strings.xml
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 524
+    title: "Show a dedicated \"Initializing model\" screen on first model load."
+    url: https://github.com/google-ai-edge/gallery/pull/524
+    mergedAt: 2026-03-30T23:33:23Z
+    baseRefName: main
+    headRefName: test_891885781
+    baseRefOid: 66545d9fd1936fd516f071d0b0c7db1e14f4a2ec
+    headRefOid: 8629bab085a37326bcbf60476ef0d595f60027d4
+    mergeCommitOid: 8629bab085a37326bcbf60476ef0d595f60027d4
+    changedFiles: 3
+    additions: 67
+    deletions: 4
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/chat/ChatPanel.kt
+        additions: 29
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/modelmanager/ModelManagerViewModel.kt
+        additions: 36
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/res/values/strings.xml
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 525
+    title: "Internal changes"
+    url: https://github.com/google-ai-edge/gallery/pull/525
+    mergedAt: 2026-03-30T23:04:30Z
+    baseRefName: main
+    headRefName: test_891938606
+    baseRefOid: 68715fc615b7253ec1f1ba5d4081eeb495cfc66e
+    headRefOid: 66545d9fd1936fd516f071d0b0c7db1e14f4a2ec
+    mergeCommitOid: 66545d9fd1936fd516f071d0b0c7db1e14f4a2ec
+    changedFiles: 2
+    additions: 93
+    deletions: 87
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/ModelPicker.kt
+        additions: 21
+        deletions: 16
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/modelitem/ModelNameAndStatus.kt
+        additions: 72
+        deletions: 71
+        changeType: MODIFIED
+  - 
+    number: 522
+    title: "Internal changes"
+    url: https://github.com/google-ai-edge/gallery/pull/522
+    mergedAt: 2026-03-27T23:51:05Z
+    baseRefName: main
+    headRefName: test_890683652
+    baseRefOid: 77f0bc923f4e5ef0e9b42ab66f7d5afba029417d
+    headRefOid: 68715fc615b7253ec1f1ba5d4081eeb495cfc66e
+    mergeCommitOid: 68715fc615b7253ec1f1ba5d4081eeb495cfc66e
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/modelitem/ModelItem.kt
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 521
+    title: "internal changes"
+    url: https://github.com/google-ai-edge/gallery/pull/521
+    mergedAt: 2026-03-27T02:38:24Z
+    baseRefName: main
+    headRefName: test_890169185
+    baseRefOid: e9ea352bbd50e4982bdafa8db175d7d4daf05edb
+    headRefOid: 77f0bc923f4e5ef0e9b42ab66f7d5afba029417d
+    mergeCommitOid: 77f0bc923f4e5ef0e9b42ab66f7d5afba029417d
+    changedFiles: 1
+    additions: 1
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/modelitem/ModelNameAndStatus.kt
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 517
+    title: "Internal change"
+    url: https://github.com/google-ai-edge/gallery/pull/517
+    mergedAt: 2026-03-27T01:10:24Z
+    baseRefName: main
+    headRefName: test_890061800
+    baseRefOid: 1bf07d69200e2d660005af5b8a8082d8ef5fe1a6
+    headRefOid: e9ea352bbd50e4982bdafa8db175d7d4daf05edb
+    mergeCommitOid: e9ea352bbd50e4982bdafa8db175d7d4daf05edb
+    changedFiles: 1
+    additions: 3
+    deletions: 3
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/gradle/libs.versions.toml
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 520
+    title: "Set defaultl runtime to litertlm for imported models."
+    url: https://github.com/google-ai-edge/gallery/pull/520
+    mergedAt: 2026-03-27T00:11:34Z
+    baseRefName: main
+    headRefName: test_890119601
+    baseRefOid: 14c308920353eca842a70fbd1edb86e6bb229b63
+    headRefOid: 1bf07d69200e2d660005af5b8a8082d8ef5fe1a6
+    mergeCommitOid: 1bf07d69200e2d660005af5b8a8082d8ef5fe1a6
+    changedFiles: 1
+    additions: 1
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/modelmanager/ModelManagerViewModel.kt
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 519
+    title: "Enable sending messages with only audio clips."
+    url: https://github.com/google-ai-edge/gallery/pull/519
+    mergedAt: 2026-03-27T00:10:40Z
+    baseRefName: main
+    headRefName: test_890116151
+    baseRefOid: b24ed29f40ac4c8e4884c76525b2dd16270f8d83
+    headRefOid: 14c308920353eca842a70fbd1edb86e6bb229b63
+    mergeCommitOid: 14c308920353eca842a70fbd1edb86e6bb229b63
+    changedFiles: 2
+    additions: 7
+    deletions: 2
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/chat/MessageInputText.kt
+        additions: 4
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/llmchat/LlmChatScreen.kt
+        additions: 3
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 515
+    title: "Internal changes"
+    url: https://github.com/google-ai-edge/gallery/pull/515
+    mergedAt: 2026-03-26T17:01:01Z
+    baseRefName: main
+    headRefName: test_889649036
+    baseRefOid: bfd6a633978f45c4fad981626b9f102741f9b5fb
+    headRefOid: 07fb05fb39908ba9242c5957f8e4b466c64aff7c
+    mergeCommitOid: 07fb05fb39908ba9242c5957f8e4b466c64aff7c
+    changedFiles: 2
+    additions: 58
+    deletions: 3
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/FloatingBanner.kt
+        additions: 56
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/chat/ChatPanel.kt
+        additions: 2
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 514
+    title: "Update max tokens slider minimum and improve config dialog UI. The ConfigDialog now displays the minimum value of the slider range and includes horizontal padding for the slider."
+    url: https://github.com/google-ai-edge/gallery/pull/514
+    mergedAt: 2026-03-26T05:19:19Z
+    baseRefName: main
+    headRefName: test_889586593
+    baseRefOid: 9a5e1930264e19a125bb4af875d1105e14bcbe54
+    headRefOid: bfd6a633978f45c4fad981626b9f102741f9b5fb
+    mergeCommitOid: bfd6a633978f45c4fad981626b9f102741f9b5fb
+    changedFiles: 2
+    additions: 8
+    deletions: 2
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/data/Config.kt
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/ConfigDialog.kt
+        additions: 7
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 513
+    title: "Support thinking mode in the chat panel. This change introduces a new `ChatMessageThinking` type, which allows displaying a collapsable section for the agent's thought process. The section automatically expands when the thinking is in progress and can be manually toggled by the user. It also allows user to scroll back and view the thought process while the model is generating output."
+    url: https://github.com/google-ai-edge/gallery/pull/513
+    mergedAt: 2026-03-26T03:41:58Z
+    baseRefName: main
+    headRefName: test_888826364
+    baseRefOid: 515f3223e5f812dc6e350663c8d053e4e854ceec
+    headRefOid: 9a5e1930264e19a125bb4af875d1105e14bcbe54
+    mergeCommitOid: 9a5e1930264e19a125bb4af875d1105e14bcbe54
+    changedFiles: 12
+    additions: 326
+    deletions: 73
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/data/Tasks.kt
+        additions: 7
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/runtime/LlmModelHelper.kt
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/ModelPageAppBar.kt
+        additions: 1
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/chat/ChatMessage.kt
+        additions: 27
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/chat/ChatPanel.kt
+        additions: 28
+        deletions: 19
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/chat/ChatViewModel.kt
+        additions: 24
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/chat/MessageBodyThinking.kt
+        additions: 102
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/llmchat/LlmChatModelHelper.kt
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/llmchat/LlmChatScreen.kt
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/llmchat/LlmChatViewModel.kt
+        additions: 127
+        deletions: 45
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/llmsingleturn/LlmSingleTurnViewModel.kt
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/res/values/strings.xml
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 506
+    title: "Remove deprecated experimental flag for NPU in Kotlin"
+    url: https://github.com/google-ai-edge/gallery/pull/506
+    mergedAt: 2026-03-26T01:35:43Z
+    baseRefName: main
+    headRefName: test_888837208
+    baseRefOid: 3ccfe7a52ad8678c1de9ab9bfa313c748823be03
+    headRefOid: 515f3223e5f812dc6e350663c8d053e4e854ceec
+    mergeCommitOid: 515f3223e5f812dc6e350663c8d053e4e854ceec
+    changedFiles: 3
+    additions: 6
+    deletions: 12
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/benchmark/BenchmarkViewModel.kt
+        additions: 1
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/llmchat/LlmChatModelHelper.kt
+        additions: 4
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: Android/src/gradle/libs.versions.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 511
+    title: "...Internal Changes..."
+    url: https://github.com/google-ai-edge/gallery/pull/511
+    mergedAt: 2026-03-25T19:00:14Z
+    baseRefName: main
+    headRefName: test_889308620
+    baseRefOid: 8a9b2abe4672af3110f8a23b757c99512fc5e166
+    headRefOid: 3ccfe7a52ad8678c1de9ab9bfa313c748823be03
+    mergeCommitOid: 3ccfe7a52ad8678c1de9ab9bfa313c748823be03
+    changedFiles: 1
+    additions: 7
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/ModelPageAppBar.kt
+        additions: 7
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 510
+    title: "Internal changes"
+    url: https://github.com/google-ai-edge/gallery/pull/510
+    mergedAt: 2026-03-25T16:23:35Z
+    baseRefName: main
+    headRefName: test_889051547
+    baseRefOid: 0060a4ef62e04a68fe1337f06a774d882fbbf988
+    headRefOid: 8a9b2abe4672af3110f8a23b757c99512fc5e166
+    mergeCommitOid: 8a9b2abe4672af3110f8a23b757c99512fc5e166
+    changedFiles: 3
+    additions: 42
+    deletions: 16
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/chat/ChatPanel.kt
+        additions: 13
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/chat/MessageInputText.kt
+        additions: 25
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/llmchat/LlmChatScreen.kt
+        additions: 4
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 508
+    title: "internal changes"
+    url: https://github.com/google-ai-edge/gallery/pull/508
+    mergedAt: 2026-03-25T07:03:05Z
+    baseRefName: main
+    headRefName: test_888855838
+    baseRefOid: ee7af4e1097c4e1735503ba3d3eaaea01cacd737
+    headRefOid: 0060a4ef62e04a68fe1337f06a774d882fbbf988
+    mergeCommitOid: 0060a4ef62e04a68fe1337f06a774d882fbbf988
+    changedFiles: 2
+    additions: 3
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/chat/ChatMessage.kt
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/chat/MessageBodyWebview.kt
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 505
+    title: "Use model's max token as the max number of prefill tokens in benchmark config screen."
+    url: https://github.com/google-ai-edge/gallery/pull/505
+    mergedAt: 2026-03-24T18:48:14Z
+    baseRefName: main
+    headRefName: test_888769466
+    baseRefOid: 729656164a78fc285b29f815cfc251e46eb769af
+    headRefOid: 33fed4dd39d8cd60080b44a0cc742755e769acf6
+    mergeCommitOid: 33fed4dd39d8cd60080b44a0cc742755e769acf6
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/benchmark/BenchmarkScreen.kt
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 503
+    title: "internal changes"
+    url: https://github.com/google-ai-edge/gallery/pull/503
+    mergedAt: 2026-03-24T18:40:03Z
+    baseRefName: main
+    headRefName: test_888745382
+    baseRefOid: 5aa412a173bfc54cf3f0d890f3d95de003350047
+    headRefOid: 729656164a78fc285b29f815cfc251e46eb769af
+    mergeCommitOid: 729656164a78fc285b29f815cfc251e46eb769af
+    changedFiles: 2
+    additions: 8
+    deletions: 9
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/modelmanager/GlobalModelManager.kt
+        additions: 7
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/modelmanager/ModelList.kt
+        additions: 1
+        deletions: 9
+        changeType: MODIFIED
+  - 
+    number: 501
+    title: "Update empty state of various screens."
+    url: https://github.com/google-ai-edge/gallery/pull/501
+    mergedAt: 2026-03-24T16:55:01Z
+    baseRefName: main
+    headRefName: test_888480754
+    baseRefOid: 15a7e8ee04bc80fdd585b9b780a441fdd40dc240
+    headRefOid: 5aa412a173bfc54cf3f0d890f3d95de003350047
+    mergeCommitOid: 5aa412a173bfc54cf3f0d890f3d95de003350047
+    changedFiles: 16
+    additions: 294
+    deletions: 74
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/ClickableLink.kt
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/chat/ChatPanel.kt
+        additions: 2
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/chat/ChatView.kt
+        additions: 13
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/chat/MessageBodyWebview.kt
+        additions: 97
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/chat/MessageInputText.kt
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/modelitem/ModelItem.kt
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/modelitem/ModelNameAndStatus.kt
+        additions: 6
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/tos/AppTosDialog.kt
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/llmchat/LlmChatScreen.kt
+        additions: 49
+        deletions: 43
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/llmchat/LlmChatTaskModule.kt
+        additions: 36
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/llmchat/LlmChatViewModel.kt
+        additions: 11
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/modelmanager/ModelList.kt
+        additions: 13
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/modelmanager/ModelManagerViewModel.kt
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/theme/Theme.kt
+        additions: 43
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/theme/Type.kt
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/res/values/strings.xml
+        additions: 8
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 500
+    title: "Add support for \"thinking mode\" in LLM configurations."
+    url: https://github.com/google-ai-edge/gallery/pull/500
+    mergedAt: 2026-03-24T05:00:37Z
+    baseRefName: main
+    headRefName: test_888282247
+    baseRefOid: fd8ec201be3b26976072c645c5396f439b44521e
+    headRefOid: 15a7e8ee04bc80fdd585b9b780a441fdd40dc240
+    mergeCommitOid: 15a7e8ee04bc80fdd585b9b780a441fdd40dc240
+    changedFiles: 9
+    additions: 69
+    deletions: 33
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/data/Config.kt
+        additions: 39
+        deletions: 29
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/data/Model.kt
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/data/ModelAllowlist.kt
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/runtime/LlmModelHelper.kt
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/llmchat/LlmChatModelHelper.kt
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/llmchat/LlmChatViewModel.kt
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/modelmanager/ModelImportDialog.kt
+        additions: 8
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/modelmanager/ModelManagerViewModel.kt
+        additions: 7
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/proto/settings.proto
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 498
+    title: "Migrate tools type from List<Any> to List<ToolProvider>"
+    url: https://github.com/google-ai-edge/gallery/pull/498
+    mergedAt: 2026-03-23T18:58:10Z
+    baseRefName: main
+    headRefName: test_888175592
+    baseRefOid: 3a790cf90f91f45dacdae89654a7548dcb76d865
+    headRefOid: fd8ec201be3b26976072c645c5396f439b44521e
+    mergeCommitOid: fd8ec201be3b26976072c645c5396f439b44521e
+    changedFiles: 11
+    additions: 34
+    deletions: 21
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/customtasks/mobileactions/MobileActionsScreen.kt
+        additions: 3
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/customtasks/mobileactions/MobileActionsTask.kt
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/customtasks/mobileactions/MobileActionsTools.kt
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/customtasks/mobileactions/MobileActionsViewModel.kt
+        additions: 4
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/customtasks/tinygarden/TinyGardenScreen.kt
+        additions: 3
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/customtasks/tinygarden/TinyGardenTask.kt
+        additions: 7
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/customtasks/tinygarden/TinyGardenTools.kt
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/customtasks/tinygarden/TinyGardenViewModel.kt
+        additions: 3
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/runtime/LlmModelHelper.kt
+        additions: 3
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/llmchat/LlmChatModelHelper.kt
+        additions: 3
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/llmchat/LlmChatViewModel.kt
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 499
+    title: "Allow copying selective text in chat"
+    url: https://github.com/google-ai-edge/gallery/pull/499
+    mergedAt: 2026-03-23T18:08:05Z
+    baseRefName: main
+    headRefName: test_888177629
+    baseRefOid: 694137a8d6160a669341db956ab6707871199e5a
+    headRefOid: 3a790cf90f91f45dacdae89654a7548dcb76d865
+    mergeCommitOid: 3a790cf90f91f45dacdae89654a7548dcb76d865
+    changedFiles: 4
+    additions: 40
+    deletions: 112
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/DownloadAndTryButton.kt
+        additions: 5
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/chat/ChatPanel.kt
+        additions: 0
+        deletions: 78
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/chat/MessageBodyText.kt
+        additions: 35
+        deletions: 32
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/chat/MessageInputText.kt
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 494
+    title: "Internal Changes"
+    url: https://github.com/google-ai-edge/gallery/pull/494
+    mergedAt: 2026-03-23T17:25:26Z
+    baseRefName: main
+    headRefName: test_886946822
+    baseRefOid: b968c0c27cbf31d2a25a5e7b90617ff502eb3e95
+    headRefOid: 694137a8d6160a669341db956ab6707871199e5a
+    mergeCommitOid: 694137a8d6160a669341db956ab6707871199e5a
+    changedFiles: 4
+    additions: 34
+    deletions: 12
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/DownloadAndTryButton.kt
+        additions: 10
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/modelitem/DownloadModelPanel.kt
+        additions: 8
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/modelitem/ModelItem.kt
+        additions: 11
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/modelitem/ModelNameAndStatus.kt
+        additions: 5
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 496
+    title: "Re-layout text input to align better with ux design."
+    url: https://github.com/google-ai-edge/gallery/pull/496
+    mergedAt: 2026-03-23T17:02:29Z
+    baseRefName: main
+    headRefName: test_887734111
+    baseRefOid: 32926b7368cc3481771d772ff4e49d158d2d46a2
+    headRefOid: b968c0c27cbf31d2a25a5e7b90617ff502eb3e95
+    mergeCommitOid: b968c0c27cbf31d2a25a5e7b90617ff502eb3e95
+    changedFiles: 29
+    additions: 969
+    deletions: 305
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/common/Types.kt
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/common/Utils.kt
+        additions: 37
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/customtasks/mobileactions/MobileActionsTask.kt
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/customtasks/tinygarden/TinyGardenTask.kt
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/data/Config.kt
+        additions: 14
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/data/DataStoreRepository.kt
+        additions: 37
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/data/ModelAllowlist.kt
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/data/Tasks.kt
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/GalleryWebView.kt
+        additions: 11
+        deletions: 9
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/Utils.kt
+        additions: 7
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/chat/ChatMessage.kt
+        additions: 15
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/chat/ChatPanel.kt
+        additions: 5
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/chat/ChatViewModel.kt
+        additions: 28
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/chat/LogsViewer.kt
+        additions: 240
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/chat/MessageBodyCollapsableProgressPanel.kt
+        additions: 37
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/chat/MessageBodyWebview.kt
+        additions: 0
+        deletions: 9
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/chat/MessageInputText.kt
+        additions: 214
+        deletions: 213
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/modelitem/ModelNameAndStatus.kt
+        additions: 5
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/home/HomeScreen.kt
+        additions: 224
+        deletions: 62
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/llmchat/LlmChatScreen.kt
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/llmchat/LlmChatTaskModule.kt
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/llmsingleturn/LlmSingleTurnTaskModule.kt
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/modelmanager/ModelManagerViewModel.kt
+        additions: 1
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/navigation/GalleryNavGraph.kt
+        additions: 7
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/theme/Theme.kt
+        additions: 9
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/proto/settings.proto
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/res/drawable/bg_star.xml
+        additions: 26
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: Android/src/app/src/main/res/drawable/twirl.xml
+        additions: 27
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: Android/src/app/src/main/res/values/strings.xml
+        additions: 4
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 490
+    title: "Internal change"
+    url: https://github.com/google-ai-edge/gallery/pull/490
+    mergedAt: 2026-03-21T06:26:45Z
+    baseRefName: main
+    headRefName: test_886387387
+    baseRefOid: 09eb1e5931ed2c33f2f08c84993bcaf8c2c86daa
+    headRefOid: 32926b7368cc3481771d772ff4e49d158d2d46a2
+    mergeCommitOid: 32926b7368cc3481771d772ff4e49d158d2d46a2
+    changedFiles: 5
+    additions: 36
+    deletions: 12
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/chat/ChatPanel.kt
+        additions: 4
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/chat/ChatView.kt
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/common/chat/MessageInputText.kt
+        additions: 8
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/llmchat/LlmChatScreen.kt
+        additions: 18
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/llmchat/LlmChatViewModel.kt
+        additions: 2
+        deletions: 6
+        changeType: MODIFIED
+  - 
+    number: 491
+    title: "Update \"Add audio\" and \"Add image\" strings."
+    url: https://github.com/google-ai-edge/gallery/pull/491
+    mergedAt: 2026-03-21T06:18:46Z
+    baseRefName: main
+    headRefName: test_886932573
+    baseRefOid: f3e2697d7474a9480f4199ec16e6f70ddbf9f062
+    headRefOid: 09eb1e5931ed2c33f2f08c84993bcaf8c2c86daa
+    mergeCommitOid: 09eb1e5931ed2c33f2f08c84993bcaf8c2c86daa
+    changedFiles: 1
+    additions: 2
+    deletions: 2
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/res/values/strings.xml
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 493
+    title: "...Internal changes ..."
+    url: https://github.com/google-ai-edge/gallery/pull/493
+    mergedAt: 2026-03-20T22:49:58Z
+    baseRefName: main
+    headRefName: test_886337740
+    baseRefOid: 906ee4345e40629e16c3e7393a45eee3a34ead8f
+    headRefOid: 1b0dc4600444ff88b97cccf99548d30fa7894e01
+    mergeCommitOid: 1b0dc4600444ff88b97cccf99548d30fa7894e01
+    changedFiles: 1
+    additions: 2
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/ui/llmchat/LlmChatViewModel.kt
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 489
+    title: "Internal Changes"
+    url: https://github.com/google-ai-edge/gallery/pull/489
+    mergedAt: 2026-03-19T19:01:11Z
+    baseRefName: main
+    headRefName: test_885874844
+    baseRefOid: b4d1cbaf94c86a65b71edf2ca99969e0118e960f
+    headRefOid: 906ee4345e40629e16c3e7393a45eee3a34ead8f
+    mergeCommitOid: 906ee4345e40629e16c3e7393a45eee3a34ead8f
+    changedFiles: 1
+    additions: 3
+    deletions: 2
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Android/src/app/src/main/java/com/google/ai/edge/gallery/data/ModelAllowlist.kt
+        additions: 3
+        deletions: 2
+        changeType: MODIFIED

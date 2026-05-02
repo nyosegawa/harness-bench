@@ -1,0 +1,4309 @@
+generatedAt: 2026-05-02T10:20:58.323Z
+repo: spree/spree
+since: 2026-01-01
+limit: 50
+debugKeywords: 
+  - bug
+  - fix
+  - regression
+  - crash
+  - incorrect
+  - wrong
+  - error
+  - exception
+  - edge
+  - flaky
+  - race
+  - leak
+  - validation
+  - parser
+  - parsing
+  - timeout
+  - fail
+  - failure
+  - broken
+prs: 
+  - 
+    number: 13977
+    title: "Strengthen Admin API payment capture/void test coverage"
+    url: https://github.com/spree/spree/pull/13977
+    mergedAt: 2026-04-30T17:54:38Z
+    baseRefName: main
+    headRefName: test/admin-payments-capture-void-assertions
+    baseRefOid: c04766f91c9e4bb9863208af879b36511900e713
+    headRefOid: fd317e7d6c46869e5b87d830b7dc5298cba81393
+    mergeCommitOid: 188766cde87645c87725fe6ed46ad465f70bd080
+    changedFiles: 3
+    additions: 319
+    deletions: 262
+    labels: 
+[]
+    keywordHits: 
+      - error
+      - fail
+      - failure
+    hasTests: true
+    testFiles: 
+      - spree/api/spec/controllers/spree/api/v3/admin/orders/payments_controller_spec.rb
+      - spree/api/spec/integration/spree/api/v3/admin/orders/payments_spec.rb
+    debugScore: 5
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: docs/api-reference/admin.yaml
+        additions: 273
+        deletions: 262
+        changeType: MODIFIED
+      - 
+        path: spree/api/spec/controllers/spree/api/v3/admin/orders/payments_controller_spec.rb
+        additions: 23
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: spree/api/spec/integration/spree/api/v3/admin/orders/payments_spec.rb
+        additions: 23
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 13976
+    title: "Added missing Admin API Order Complete docs"
+    url: https://github.com/spree/spree/pull/13976
+    mergedAt: 2026-04-30T17:14:59Z
+    baseRefName: main
+    headRefName: fix/missing-admin-order-complete-docs
+    baseRefOid: f4fecc9b326579af0036b7d19f7d9bbe1d604c59
+    headRefOid: ac1061e3dd852ab3e0b9b0ca008248e440030792
+    mergeCommitOid: c04766f91c9e4bb9863208af879b36511900e713
+    changedFiles: 5
+    additions: 485
+    deletions: 259
+    labels: 
+[]
+    keywordHits: 
+      - error
+    hasTests: true
+    testFiles: 
+      - spree/api/spec/controllers/spree/api/v3/admin/orders_controller_spec.rb
+      - spree/api/spec/integration/spree/api/v3/admin/orders_spec.rb
+    debugScore: 3
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: docs/api-reference/admin.yaml
+        additions: 386
+        deletions: 258
+        changeType: MODIFIED
+      - 
+        path: spree/api/app/controllers/concerns/spree/api/v3/error_handler.rb
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: spree/api/app/controllers/spree/api/v3/admin/orders_controller.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/api/spec/controllers/spree/api/v3/admin/orders_controller_spec.rb
+        additions: 44
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: spree/api/spec/integration/spree/api/v3/admin/orders_spec.rb
+        additions: 53
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 13975
+    title: "Admin SPA layout improvements"
+    url: https://github.com/spree/spree/pull/13975
+    mergedAt: 2026-04-30T16:01:59Z
+    baseRefName: main
+    headRefName: feature/admin-spa-layout-improvements
+    baseRefOid: 65a5430aa850fe608fe56027cd6551f703f41962
+    headRefOid: 620c1847e123dbc4f8346b99c480f0d0607cd198
+    mergeCommitOid: f4fecc9b326579af0036b7d19f7d9bbe1d604c59
+    changedFiles: 18
+    additions: 1461
+    deletions: 488
+    labels: 
+[]
+    keywordHits: 
+      - error
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docs/plans/6.0-admin-spa.md
+        additions: 221
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/components/resource-table.tsx
+        additions: 11
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/components/spree/empty-state.tsx
+        additions: 38
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/admin/src/components/spree/page-header.tsx
+        additions: 200
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/admin/src/components/spree/page-tabs.tsx
+        additions: 78
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/admin/src/components/spree/resource-layout.tsx
+        additions: 31
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/admin/src/components/spree/route-error-boundary.tsx
+        additions: 93
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/admin/src/components/spree/slot.tsx
+        additions: 50
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/admin/src/components/spree/sticky-form-footer.tsx
+        additions: 61
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/admin/src/components/ui/card.tsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/hooks/use-order.ts
+        additions: 46
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/admin/src/hooks/use-resource-mutation.ts
+        additions: 71
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/admin/src/lib/slot-registry.ts
+        additions: 116
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: "packages/admin/src/routes/_authenticated/$storeId.tsx"
+        additions: 0
+        deletions: 15
+        changeType: MODIFIED
+      - 
+        path: "packages/admin/src/routes/_authenticated/$storeId/customers/$customerId.tsx"
+        additions: 11
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: "packages/admin/src/routes/_authenticated/$storeId/orders/$orderId.tsx"
+        additions: 160
+        deletions: 172
+        changeType: MODIFIED
+      - 
+        path: "packages/admin/src/routes/_authenticated/$storeId/orders/new.tsx"
+        additions: 217
+        deletions: 219
+        changeType: MODIFIED
+      - 
+        path: "packages/admin/src/routes/_authenticated/$storeId/products/$productId.tsx"
+        additions: 56
+        deletions: 57
+        changeType: MODIFIED
+  - 
+    number: 13972
+    title: "Mark requires Spree version for major features"
+    url: https://github.com/spree/spree/pull/13972
+    mergedAt: 2026-04-30T12:05:52Z
+    baseRefName: main
+    headRefName: fix/docs-mark-version-requirement
+    baseRefOid: 8bbc313ca9563c845a6d99a1a8270f2ed6d6d1e6
+    headRefOid: 55c53dad6f4f4a1ff7460ee103dc29a1b0c3882e
+    mergeCommitOid: 65a5430aa850fe608fe56027cd6551f703f41962
+    changedFiles: 12
+    additions: 72
+    deletions: 7
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -5
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docs/api-reference/admin-api/introduction.mdx
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs/api-reference/store-api/introduction.mdx
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs/developer/core-concepts/events.mdx
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs/developer/core-concepts/markets.mdx
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs/developer/core-concepts/media.mdx
+        additions: 3
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/developer/core-concepts/pricing.mdx
+        additions: 7
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: docs/developer/core-concepts/search-filtering.mdx
+        additions: 3
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/developer/core-concepts/store-credits-gift-cards.mdx
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs/developer/core-concepts/webhooks.mdx
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs/snippets/since.mdx
+        additions: 27
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/user/manage-products/price-lists.mdx
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs/user/settings/markets.mdx
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 13971
+    title: "Bump zod from 4.3.6 to 4.4.1 in the typescript-packages group across 1 directory"
+    url: https://github.com/spree/spree/pull/13971
+    mergedAt: 2026-04-30T10:29:12Z
+    baseRefName: main
+    headRefName: dependabot/npm_and_yarn/typescript-packages-e12b680833
+    baseRefOid: 4db3c0ef284d7eaeda5da684dc1676149c7a4040
+    headRefOid: 1250cda2605beae1b95a70cb170023ff5ef31597
+    mergeCommitOid: 8bbc313ca9563c845a6d99a1a8270f2ed6d6d1e6
+    changedFiles: 3
+    additions: 9
+    deletions: 9
+    labels: 
+      - dependencies
+      - javascript
+    keywordHits: 
+      - bug
+      - fix
+      - parsing
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: packages/admin/package.json
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/sdk/package.json
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: pnpm-lock.yaml
+        additions: 7
+        deletions: 7
+        changeType: MODIFIED
+  - 
+    number: 13969
+    title: "Fixed admin `<Select>` positioning + standarize Biome config across p…"
+    url: https://github.com/spree/spree/pull/13969
+    mergedAt: 2026-04-30T08:46:53Z
+    baseRefName: main
+    headRefName: fix/biome-admin-selects
+    baseRefOid: 50d29826be82c780bf00d18b14be8aa405b290af
+    headRefOid: 6166c44ae4141d65a810108c7f8b817bb749453b
+    mergeCommitOid: bdb11fcea98ab4ec27f830b40cbcb8e33ea97281
+    changedFiles: 152
+    additions: 5262
+    deletions: 4568
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/workflows/packages.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: .zed/settings.json
+        additions: 21
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: biome.json
+        additions: 62
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: package.json
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/admin-sdk/.changeset/config.json
+        additions: 1
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: packages/admin-sdk/biome.json
+        additions: 8
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/admin-sdk/package.json
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/admin-sdk/scripts/generate-admin-client.ts
+        additions: 448
+        deletions: 419
+        changeType: MODIFIED
+      - 
+        path: packages/admin-sdk/src/admin-client.ts
+        additions: 492
+        deletions: 174
+        changeType: MODIFIED
+      - 
+        path: packages/admin-sdk/src/client.ts
+        additions: 43
+        deletions: 43
+        changeType: MODIFIED
+      - 
+        path: packages/admin-sdk/src/index.ts
+        additions: 14
+        deletions: 9
+        changeType: MODIFIED
+      - 
+        path: packages/admin-sdk/src/params.ts
+        additions: 225
+        deletions: 225
+        changeType: MODIFIED
+      - 
+        path: packages/admin-sdk/src/types/index.ts
+        additions: 42
+        deletions: 42
+        changeType: MODIFIED
+      - 
+        path: packages/admin-sdk/tsup.config.ts
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: packages/admin-sdk/vitest.config.ts
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: packages/admin/biome.json
+        additions: 4
+        deletions: 47
+        changeType: MODIFIED
+      - 
+        path: packages/admin/package.json
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/components/address-form-dialog.tsx
+        additions: 27
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/components/app-sidebar.tsx
+        additions: 4
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/components/back-button.tsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/components/can.tsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/components/confirm-dialog.tsx
+        additions: 4
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/components/date-range-picker.tsx
+        additions: 36
+        deletions: 15
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/components/nav-main.tsx
+        additions: 34
+        deletions: 62
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/components/store-switcher.tsx
+        additions: 5
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/components/table-toolbar.tsx
+        additions: 127
+        deletions: 163
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/components/tag-combobox.tsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/components/ui/avatar.tsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/components/ui/badge.tsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/components/ui/breadcrumb.tsx
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/components/ui/button.tsx
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/components/ui/card.tsx
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/components/ui/collapsible.tsx
+        additions: 3
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/components/ui/combobox.tsx
+        additions: 44
+        deletions: 71
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/components/ui/data-table.tsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/components/ui/date-picker.tsx
+        additions: 5
+        deletions: 15
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/components/ui/dialog.tsx
+        additions: 21
+        deletions: 19
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/components/ui/dropdown-menu.tsx
+        additions: 17
+        deletions: 19
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/components/ui/field.tsx
+        additions: 53
+        deletions: 68
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/components/ui/input-group.tsx
+        additions: 46
+        deletions: 59
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/components/ui/label.tsx
+        additions: 6
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/components/ui/popover.tsx
+        additions: 4
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/components/ui/rich-text-editor.tsx
+        additions: 2
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/components/ui/select.tsx
+        additions: 17
+        deletions: 11
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/components/ui/separator.tsx
+        additions: 7
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/components/ui/sheet.tsx
+        additions: 22
+        deletions: 17
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/components/ui/sidebar.tsx
+        additions: 199
+        deletions: 227
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/components/ui/textarea.tsx
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/components/ui/tooltip.tsx
+        additions: 2
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/hooks/use-categories.ts
+        additions: 1
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/hooks/use-direct-upload.ts
+        additions: 4
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/hooks/use-product-media.ts
+        additions: 2
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/hooks/use-product.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/providers/auth-provider.tsx
+        additions: 24
+        deletions: 18
+        changeType: MODIFIED
+      - 
+        path: packages/admin/src/providers/store-provider.tsx
+        additions: 16
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: "packages/admin/src/routes/_authenticated/$storeId/customers/$customerId.tsx"
+        additions: 141
+        deletions: 46
+        changeType: MODIFIED
+      - 
+        path: "packages/admin/src/routes/_authenticated/$storeId/index.tsx"
+        additions: 20
+        deletions: 26
+        changeType: MODIFIED
+      - 
+        path: "packages/admin/src/routes/_authenticated/$storeId/orders/$orderId.tsx"
+        additions: 228
+        deletions: 132
+        changeType: MODIFIED
+      - 
+        path: "packages/admin/src/routes/_authenticated/$storeId/orders/new.tsx"
+        additions: 33
+        deletions: 9
+        changeType: MODIFIED
+      - 
+        path: "packages/admin/src/routes/_authenticated/$storeId/products/$productId.tsx"
+        additions: 49
+        deletions: 69
+        changeType: MODIFIED
+  - 
+    number: 13968
+    title: "CI: only run backend tests when spree/ changes"
+    url: https://github.com/spree/spree/pull/13968
+    mergedAt: 2026-04-30T07:29:11Z
+    baseRefName: main
+    headRefName: ci/backend-tests-paths-allowlist
+    baseRefOid: bc9b6beec378807c89faf2111448da567568eee6
+    headRefOid: 19dcaa9136e26c36da11e8e7300e8f15441e17d4
+    mergeCommitOid: 50d29826be82c780bf00d18b14be8aa405b290af
+    changedFiles: 1
+    additions: 6
+    deletions: 8
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/workflows/tests.yml
+        additions: 6
+        deletions: 8
+        changeType: MODIFIED
+  - 
+    number: 13964
+    title: "Bump the typescript-packages group across 1 directory with 28 updates"
+    url: https://github.com/spree/spree/pull/13964
+    mergedAt: 2026-04-30T07:13:18Z
+    baseRefName: main
+    headRefName: dependabot/npm_and_yarn/typescript-packages-6350f32030
+    baseRefOid: 7b129e5ac80aaf4f43383754b35c83e985f7df6a
+    headRefOid: 8688263958a69b637433da9dae93d6f14ed271db
+    mergeCommitOid: a384994f3971d76c14fad52ff893276f43ac9aef
+    changedFiles: 10
+    additions: 1169
+    deletions: 1875
+    labels: 
+      - dependencies
+      - javascript
+    keywordHits: 
+      - fix
+      - crash
+      - error
+      - parsing
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - huge-diff
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: package.json
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: packages/admin-sdk/package.json
+        additions: 6
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: packages/admin/package.json
+        additions: 22
+        deletions: 22
+        changeType: MODIFIED
+      - 
+        path: packages/admin/tsconfig.app.json
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/cli/package.json
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: packages/create-spree-app/package.json
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: packages/docs/package.json
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/sdk-core/package.json
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/sdk/package.json
+        additions: 6
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: pnpm-lock.yaml
+        additions: 1121
+        deletions: 1826
+        changeType: MODIFIED
+  - 
+    number: 13747
+    title: "Admin API and SDK WIP"
+    url: https://github.com/spree/spree/pull/13747
+    mergedAt: 2026-04-29T21:17:38Z
+    baseRefName: main
+    headRefName: feature/admin-api
+    baseRefOid: 7b103ff6b1411e3386dcf57656df4ab0e73d2957
+    headRefOid: 02c2d241922283f6c89b81673b69489587c96519
+    mergeCommitOid: 7b129e5ac80aaf4f43383754b35c83e985f7df6a
+    changedFiles: 305
+    additions: 45629
+    deletions: 1122
+    labels: 
+[]
+    keywordHits: 
+      - error
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .agents/skills/shadcn/SKILL.md
+        additions: 246
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: .agents/skills/shadcn/agents/openai.yml
+        additions: 5
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: .agents/skills/shadcn/assets/shadcn-small.png
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: .agents/skills/shadcn/assets/shadcn.png
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: .agents/skills/shadcn/cli.md
+        additions: 276
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: .agents/skills/shadcn/customization.md
+        additions: 209
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: .agents/skills/shadcn/evals/evals.json
+        additions: 47
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: .agents/skills/shadcn/mcp.md
+        additions: 94
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: .agents/skills/shadcn/rules/base-vs-radix.md
+        additions: 306
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: .agents/skills/shadcn/rules/composition.md
+        additions: 195
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: .agents/skills/shadcn/rules/forms.md
+        additions: 192
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: .agents/skills/shadcn/rules/icons.md
+        additions: 101
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: .agents/skills/shadcn/rules/styling.md
+        additions: 162
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: .claude/skills/shadcn
+        additions: 1
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: .github/workflows/packages.yml
+        additions: 58
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: CLAUDE.md
+        additions: 14
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/api-reference/admin-api/authentication.mdx
+        additions: 173
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/api-reference/admin-api/errors.mdx
+        additions: 277
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/api-reference/admin-api/introduction.mdx
+        additions: 70
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/api-reference/admin-api/querying.mdx
+        additions: 318
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/api-reference/admin.yaml
+        additions: 9062
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/api-reference/store.yaml
+        additions: 610
+        deletions: 528
+        changeType: MODIFIED
+      - 
+        path: docs/docs.json
+        additions: 23
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs/plans/5.5-6.0-order-cancellation-and-approval.md
+        additions: 252
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/plans/5.5-admin-api-key-scopes.md
+        additions: 242
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/plans/5.5-admin-customers-api.md
+        additions: 377
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/plans/6.0-admin-api.md
+        additions: 837
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/plans/6.0-admin-spa.md
+        additions: 372
+        deletions: 28
+        changeType: MODIFIED
+      - 
+        path: package.json
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/admin-sdk/.changeset/config.json
+        additions: 14
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/admin-sdk/README.md
+        additions: 182
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/admin-sdk/package.json
+        additions: 8
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: packages/admin-sdk/scripts/generate-admin-client.ts
+        additions: 839
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/admin-sdk/src/admin-client.ts
+        additions: 596
+        deletions: 9
+        changeType: MODIFIED
+      - 
+        path: packages/admin-sdk/src/client.ts
+        additions: 39
+        deletions: 38
+        changeType: MODIFIED
+      - 
+        path: packages/admin-sdk/src/index.ts
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/admin-sdk/src/params.ts
+        additions: 331
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/admin-sdk/src/types/generated/Adjustment.ts
+        additions: 1
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: packages/admin-sdk/src/types/generated/Category.ts
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/admin-sdk/src/types/generated/Customer.ts
+        additions: 13
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: packages/admin-sdk/src/types/generated/GiftCard.ts
+        additions: 1
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: packages/admin-sdk/src/types/generated/LineItem.ts
+        additions: 2
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: packages/admin-sdk/src/types/generated/OptionType.ts
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: packages/admin-sdk/src/types/generated/Order.ts
+        additions: 4
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: packages/admin-sdk/src/types/generated/PaymentMethod.ts
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/admin-sdk/src/types/generated/Price.ts
+        additions: 3
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/admin-sdk/src/types/generated/ShippingCategory.ts
+        additions: 0
+        deletions: 12
+        changeType: DELETED
+      - 
+        path: packages/admin-sdk/src/types/generated/Store.ts
+        additions: 30
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/admin-sdk/src/types/generated/Variant.ts
+        additions: 3
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/admin-sdk/src/types/generated/index.ts
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: packages/admin-sdk/src/types/index.ts
+        additions: 38
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: packages/admin-sdk/tsup.config.ts
+        additions: 3
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: packages/admin/.gitignore
+        additions: 25
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/admin/README.md
+        additions: 73
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/admin/biome.json
+        additions: 57
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/admin/components.json
+        additions: 25
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/admin/index.html
+        additions: 12
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/admin/package.json
+        additions: 60
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/admin/src/client.ts
+        additions: 10
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/admin/src/components/address-block.tsx
+        additions: 30
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 13961
+    title: "Prevent deletion of default and last market in store"
+    url: https://github.com/spree/spree/pull/13961
+    mergedAt: 2026-04-27T19:37:16Z
+    baseRefName: main
+    headRefName: claude/prevent-default-market-deletion-T3R9j
+    baseRefOid: 7a72a2d9defcae98272ae7a703cb9fef3b36737f
+    headRefOid: 38040e3e77f3d2170fcd1518b6559b569239f022
+    mergeCommitOid: 9e6057a125abadd9b8a089ab2567a50f629d7c58
+    changedFiles: 4
+    additions: 82
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+      - error
+      - edge
+      - validation
+    hasTests: true
+    testFiles: 
+      - spree/admin/spec/controllers/spree/admin/markets_controller_spec.rb
+      - spree/core/spec/models/spree/market_spec.rb
+    debugScore: 5
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: spree/admin/spec/controllers/spree/admin/markets_controller_spec.rb
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/market.rb
+        additions: 25
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: spree/core/config/locales/en.yml
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: spree/core/spec/models/spree/market_spec.rb
+        additions: 51
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 13958
+    title: "Fix applying gift cards in a multi-store scenario"
+    url: https://github.com/spree/spree/pull/13958
+    mergedAt: 2026-04-27T14:26:19Z
+    baseRefName: main
+    headRefName: fix/applying-gift-cards
+    baseRefOid: 3002c04f309511541906f67c10fe02b950f8f74d
+    headRefOid: dd880226ab781028429fdab11ba3aecb5f059926
+    mergeCommitOid: 26159d1d60a284ff30ebc6370af9e4e748b054c6
+    changedFiles: 2
+    additions: 51
+    deletions: 2
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - incorrect
+    hasTests: true
+    testFiles: 
+      - spree/core/spec/services/spree/gift_cards/apply_spec.rb
+    debugScore: 5
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: spree/core/app/services/spree/gift_cards/apply.rb
+        additions: 5
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/spec/services/spree/gift_cards/apply_spec.rb
+        additions: 46
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 13959
+    title: "improve CONTRIBUTING guide"
+    url: https://github.com/spree/spree/pull/13959
+    mergedAt: 2026-04-27T13:04:29Z
+    baseRefName: main
+    headRefName: fix/contributing-guides
+    baseRefOid: ac054ad00911ca2c364d62316bfdc4089f2c271a
+    headRefOid: f8b29e8a8c4a87bb5fc2e1fdc78ecbebeac9bf90
+    mergeCommitOid: 3002c04f309511541906f67c10fe02b950f8f74d
+    changedFiles: 2
+    additions: 41
+    deletions: 27
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/CONTRIBUTING.md
+        additions: 13
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: docs/developer/contributing/developing-spree.mdx
+        additions: 28
+        deletions: 20
+        changeType: MODIFIED
+  - 
+    number: 13957
+    title: "Update payment_method_id example in PayPal integration"
+    url: https://github.com/spree/spree/pull/13957
+    mergedAt: 2026-04-27T11:37:49Z
+    baseRefName: main
+    headRefName: paypal-doc-update
+    baseRefOid: c934081ab8a293ce278aed7ce437d625dd818466
+    headRefOid: d1af3ec1aa69379d79cae329d91a822dccf5bbd4
+    mergeCommitOid: ac054ad00911ca2c364d62316bfdc4089f2c271a
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docs/integrations/payments/paypal.mdx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 13934
+    title: "Updated Adyen setup guide"
+    url: https://github.com/spree/spree/pull/13934
+    mergedAt: 2026-04-24T11:10:23Z
+    baseRefName: main
+    headRefName: adyen-guide
+    baseRefOid: 7884947def158ebce4ff4a4c56fd8dae862e742f
+    headRefOid: 2a2f618fdbcd9ceb22f2f7ab8d551baa5d4cd6f7
+    mergeCommitOid: cd12092c5a62355d9af703f2e574ae9ab8ea3926
+    changedFiles: 9
+    additions: 93
+    deletions: 20
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -5
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docs/images/integrations/adyen/1-payment-method-list.png
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/images/integrations/adyen/1.get_started.png
+        additions: 0
+        deletions: 0
+        changeType: DELETED
+      - 
+        path: docs/images/integrations/adyen/2-setup-form.png
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/images/integrations/adyen/2.setup_form.png
+        additions: 0
+        deletions: 0
+        changeType: DELETED
+      - 
+        path: docs/images/integrations/adyen/3-adyen-enabled.png
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/images/integrations/adyen/3.adyen_enabled.png
+        additions: 0
+        deletions: 0
+        changeType: DELETED
+      - 
+        path: docs/images/integrations/adyen/4-additional-settings.png
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/images/integrations/adyen/4.additional_settings.png
+        additions: 0
+        deletions: 0
+        changeType: DELETED
+      - 
+        path: docs/integrations/payments/adyen.mdx
+        additions: 93
+        deletions: 20
+        changeType: MODIFIED
+  - 
+    number: 13956
+    title: "Add 30s delay to AutoMatchTaxonsJob"
+    url: https://github.com/spree/spree/pull/13956
+    mergedAt: 2026-04-27T08:23:56Z
+    baseRefName: main
+    headRefName: fix/auto-match-taxons-job-delays
+    baseRefOid: 173d0b454c53fd1507989ea5addcea55b12f3edc
+    headRefOid: 07fb6a68d0c4194642a8afbf08bd524109564cd9
+    mergeCommitOid: f3243dee91135e876fe7e72fb5dbf5ed7ae0d516
+    changedFiles: 1
+    additions: 5
+    deletions: 10
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: spree/core/app/models/spree/product.rb
+        additions: 5
+        deletions: 10
+        changeType: MODIFIED
+  - 
+    number: 13949
+    title: "Paginate option values in admin option type form"
+    url: https://github.com/spree/spree/pull/13949
+    mergedAt: 2026-04-26T10:28:32Z
+    baseRefName: main
+    headRefName: fix/admin-option-values-pagination
+    baseRefOid: 0adbb2a3dda5e042d566adc74d42e07e3cf4ee00
+    headRefOid: fb1a01567365b346d3b42992237eab2802fc3684
+    mergeCommitOid: 173d0b454c53fd1507989ea5addcea55b12f3edc
+    changedFiles: 3
+    additions: 54
+    deletions: 5
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: spree/admin/app/controllers/spree/admin/option_types_controller.rb
+        additions: 16
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: spree/admin/app/views/spree/admin/option_types/_form.html.erb
+        additions: 37
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: spree/admin/lib/spree/admin/runtime_configuration.rb
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 13947
+    title: "Fix PostgreSQL volume mount path in docker-compose"
+    url: https://github.com/spree/spree/pull/13947
+    mergedAt: 2026-04-25T15:17:02Z
+    baseRefName: main
+    headRefName: claude/fix-spree-13946-0wPgY
+    baseRefOid: edba094f9fbbea01124a9cf3177822b7b6b01080
+    headRefOid: 2019b00659cc863d53cbe45dca8aa5e6d3668542
+    mergeCommitOid: 0adbb2a3dda5e042d566adc74d42e07e3cf4ee00
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docker-compose.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 13945
+    title: "Improve performance of Products API with database adapter for large S…"
+    url: https://github.com/spree/spree/pull/13945
+    mergedAt: 2026-04-25T11:43:44Z
+    baseRefName: main
+    headRefName: fix/api-v3-products-database-performance
+    baseRefOid: 6b6e781b5312d7d98c21641491bf97fca5ed4edb
+    headRefOid: 7b736cec404bb8a440036c0d300953de8a8f18f9
+    mergeCommitOid: edba094f9fbbea01124a9cf3177822b7b6b01080
+    changedFiles: 11
+    additions: 515
+    deletions: 212
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - spree/api/spec/services/spree/api/v3/filters_aggregator_spec.rb
+      - spree/core/spec/models/spree/search_provider/database_spec.rb
+      - spree/core/spec/models/spree/search_provider/meilisearch_spec.rb
+    debugScore: 1
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: spree/api/app/controllers/spree/api/v3/store/products/filters_controller.rb
+        additions: 38
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: spree/api/app/controllers/spree/api/v3/store/products_controller.rb
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/api/app/services/spree/api/v3/filters_aggregator.rb
+        additions: 113
+        deletions: 23
+        changeType: MODIFIED
+      - 
+        path: spree/api/spec/services/spree/api/v3/filters_aggregator_spec.rb
+        additions: 63
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/search_provider/base.rb
+        additions: 13
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/search_provider/database.rb
+        additions: 44
+        deletions: 29
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/search_provider/filters_result.rb
+        additions: 5
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: spree/core/app/models/spree/search_provider/meilisearch.rb
+        additions: 99
+        deletions: 82
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/search_provider/search_result.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/spec/models/spree/search_provider/database_spec.rb
+        additions: 30
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: spree/core/spec/models/spree/search_provider/meilisearch_spec.rb
+        additions: 109
+        deletions: 57
+        changeType: MODIFIED
+  - 
+    number: 13944
+    title: "Parallel CSV import processing for large files"
+    url: https://github.com/spree/spree/pull/13944
+    mergedAt: 2026-04-25T10:05:23Z
+    baseRefName: main
+    headRefName: feature/csv-import-large-files
+    baseRefOid: 49693ea5a7c3787e0e9b17537311319518c0053c
+    headRefOid: 5cdf58fd1f8ad4cde8802b601b7b67b4ec15ca8f
+    mergeCommitOid: 6b6e781b5312d7d98c21641491bf97fca5ed4edb
+    changedFiles: 19
+    additions: 488
+    deletions: 68
+    labels: 
+[]
+    keywordHits: 
+      - error
+      - validation
+      - fail
+      - failure
+    hasTests: true
+    testFiles: 
+      - spree/core/spec/jobs/spree/imports/process_group_job_spec.rb
+      - spree/core/spec/jobs/spree/imports/process_rows_job_spec.rb
+    debugScore: 5
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: spree/admin/app/controllers/spree/admin/imports_controller.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/admin/app/subscribers/spree/admin/import_row_subscriber.rb
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: spree/admin/app/subscribers/spree/admin/import_subscriber.rb
+        additions: 25
+        deletions: 11
+        changeType: MODIFIED
+      - 
+        path: spree/admin/app/views/spree/admin/imports/_loader.html.erb
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: spree/admin/app/views/spree/admin/imports/show.html.erb
+        additions: 14
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: spree/admin/config/locales/en.yml
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/jobs/spree/imports/process_group_job.rb
+        additions: 45
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: spree/core/app/jobs/spree/imports/process_rows_job.rb
+        additions: 51
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/import.rb
+        additions: 15
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/import_row.rb
+        additions: 14
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/imports/product_translations.rb
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/imports/products.rb
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/services/spree/imports/row_processors/base.rb
+        additions: 19
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/services/spree/imports/row_processors/product_translation.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/services/spree/imports/row_processors/product_variant.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/db/migrate/20260424100000_add_processing_groups_to_spree_imports.rb
+        additions: 6
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: spree/core/lib/spree/core/configuration.rb
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: spree/core/spec/jobs/spree/imports/process_group_job_spec.rb
+        additions: 187
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: spree/core/spec/jobs/spree/imports/process_rows_job_spec.rb
+        additions: 88
+        deletions: 45
+        changeType: MODIFIED
+  - 
+    number: 13941
+    title: "Move CreditCard/PaymentSource post destroy cleanup to models/concern"
+    url: https://github.com/spree/spree/pull/13941
+    mergedAt: 2026-04-24T16:50:19Z
+    baseRefName: main
+    headRefName: fix/credit-card-destroy-callbacks
+    baseRefOid: 7f07341f7ed265fb8a8c9ea51302f62cc62b3eae
+    headRefOid: 493bf60c81b0d3154bfda8946a0efea62eb6d71e
+    mergeCommitOid: 49693ea5a7c3787e0e9b17537311319518c0053c
+    changedFiles: 4
+    additions: 96
+    deletions: 70
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - spree/core/spec/models/spree/credit_card_spec.rb
+      - spree/core/spec/services/spree/credit_cards/destroy_spec.rb
+    debugScore: 2
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: spree/core/app/models/concerns/spree/payment_source_concern.rb
+        additions: 21
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/services/spree/credit_cards/destroy.rb
+        additions: 10
+        deletions: 26
+        changeType: MODIFIED
+      - 
+        path: spree/core/spec/models/spree/credit_card_spec.rb
+        additions: 44
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: spree/core/spec/services/spree/credit_cards/destroy_spec.rb
+        additions: 21
+        deletions: 44
+        changeType: MODIFIED
+  - 
+    number: 13939
+    title: "Fix payment unique index migration to deduplicate first"
+    url: https://github.com/spree/spree/pull/13939
+    mergedAt: 2026-04-24T15:44:09Z
+    baseRefName: main
+    headRefName: fix/payment-unique-index-and-bogus-gateway
+    baseRefOid: 24432fb0333a591e25abd059fc16db2918021e41
+    headRefOid: 7acf3943aaa7973e83c87b8c4381382890247fce
+    mergeCommitOid: 7f07341f7ed265fb8a8c9ea51302f62cc62b3eae
+    changedFiles: 1
+    additions: 36
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: spree/core/db/migrate/20260424000001_add_unique_index_to_spree_payments_response_code.rb
+        additions: 36
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 13938
+    title: "Fixed Payment Sessions API concurrency issues"
+    url: https://github.com/spree/spree/pull/13938
+    mergedAt: 2026-04-24T14:50:10Z
+    baseRefName: main
+    headRefName: fix/payment-session-race-conditions
+    baseRefOid: cd12092c5a62355d9af703f2e574ae9ab8ea3926
+    headRefOid: 1e266d8ec2f652df5b78ce02ec3ac7b195e91886
+    mergeCommitOid: 24432fb0333a591e25abd059fc16db2918021e41
+    changedFiles: 16
+    additions: 138
+    deletions: 52
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - race
+    hasTests: true
+    testFiles: 
+      - spree/api/spec/controllers/spree/api/v3/store/carts/payment_sessions_controller_spec.rb
+      - spree/api/spec/controllers/spree/api/v3/webhooks/payments_controller_spec.rb
+      - spree/api/spec/serializers/spree/api/v3/payment_serializer_spec.rb
+      - spree/core/spec/models/spree/order_spec.rb
+      - spree/core/spec/models/spree/payment_session_spec.rb
+      - spree/core/spec/models/spree/payment_spec.rb
+      - spree/core/spec/services/spree/payments/handle_webhook_spec.rb
+    debugScore: 3
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: spree/api/app/controllers/spree/api/v3/store/carts/payment_sessions_controller.rb
+        additions: 47
+        deletions: 31
+        changeType: MODIFIED
+      - 
+        path: spree/api/app/controllers/spree/api/v3/webhooks/payments_controller.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/api/spec/controllers/spree/api/v3/store/carts/payment_sessions_controller_spec.rb
+        additions: 13
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: spree/api/spec/controllers/spree/api/v3/webhooks/payments_controller_spec.rb
+        additions: 12
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: spree/api/spec/serializers/spree/api/v3/payment_serializer_spec.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/gateway/bogus.rb
+        additions: 10
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/payment.rb
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/payment_session.rb
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/services/spree/payments/handle_webhook.rb
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: spree/core/db/migrate/20260424000001_add_unique_index_to_spree_payments_response_code.rb
+        additions: 16
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: spree/core/db/sample_data/orders.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/lib/spree/testing_support/factories/payment_factory.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/spec/models/spree/order_spec.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/spec/models/spree/payment_session_spec.rb
+        additions: 15
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: spree/core/spec/models/spree/payment_spec.rb
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: spree/core/spec/services/spree/payments/handle_webhook_spec.rb
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 13935
+    title: "Allow payment session lookup by external_id"
+    url: https://github.com/spree/spree/pull/13935
+    mergedAt: 2026-04-23T19:30:26Z
+    baseRefName: main
+    headRefName: allow-payment-session-lookup-by-external-id
+    baseRefOid: 7884947def158ebce4ff4a4c56fd8dae862e742f
+    headRefOid: f6dd9a5c62a2c1d90b04f00ec2393fad4fa18db0
+    mergeCommitOid: 6b1aaed1e4c64199be29f9b4e94050c7815b2633
+    changedFiles: 2
+    additions: 29
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: true
+    testFiles: 
+      - spree/api/spec/controllers/spree/api/v3/store/carts/payment_sessions_controller_spec.rb
+    debugScore: 3
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: spree/api/app/controllers/spree/api/v3/store/carts/payment_sessions_controller.rb
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/api/spec/controllers/spree/api/v3/store/carts/payment_sessions_controller_spec.rb
+        additions: 27
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 13933
+    title: "Update PayPal setup guide"
+    url: https://github.com/spree/spree/pull/13933
+    mergedAt: 2026-04-23T12:17:26Z
+    baseRefName: main
+    headRefName: paypal-guide
+    baseRefOid: 330c11965f1a859428cbfffe0196b05140274608
+    headRefOid: 26608492e809e36c694572a55550f2d75950c638
+    mergeCommitOid: 1c740475d1fae068694413e155a49bc6a5345294
+    changedFiles: 8
+    additions: 120
+    deletions: 13
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docs/images/integrations/paypal/1-payment-method-list.png
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/images/integrations/paypal/2-setup-form.png
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/images/integrations/paypal/3-credentials.png
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/images/integrations/paypal/4-additional-settings.png
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/images/integrations/paypal/paypal_credentials.png
+        additions: 0
+        deletions: 0
+        changeType: DELETED
+      - 
+        path: docs/images/integrations/paypal/paypal_form.png
+        additions: 0
+        deletions: 0
+        changeType: DELETED
+      - 
+        path: docs/images/integrations/paypal/paypal_payment_method_list.png
+        additions: 0
+        deletions: 0
+        changeType: DELETED
+      - 
+        path: docs/integrations/payments/paypal.mdx
+        additions: 120
+        deletions: 13
+        changeType: MODIFIED
+  - 
+    number: 13912
+    title: "Consolidate customer creation params and support current_password"
+    url: https://github.com/spree/spree/pull/13912
+    mergedAt: 2026-04-13T12:18:16Z
+    baseRefName: main
+    headRefName: claude/extract-create-params-DR533
+    baseRefOid: 5963e3a157de4dd8af2a8befad57fdbce0dece05
+    headRefOid: f3b2a3cf17d5ec4c368272b772a48fef4af49228
+    mergeCommitOid: 852364a9b0df97aab94aafecbd64c1b398d63369
+    changedFiles: 1
+    additions: 1
+    deletions: 6
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: spree/api/app/controllers/spree/api/v3/store/customers_controller.rb
+        additions: 1
+        deletions: 6
+        changeType: MODIFIED
+  - 
+    number: 13926
+    title: "Replace slack links with discord"
+    url: https://github.com/spree/spree/pull/13926
+    mergedAt: 2026-04-22T10:30:33Z
+    baseRefName: main
+    headRefName: fix/discord-links
+    baseRefOid: 39b3b446cb70bb5aedc437d0afab35989a233012
+    headRefOid: 44767c162b4a51a1fe26710eea1b7969a96d6dcf
+    mergeCommitOid: 5b3e6187d9c321ac2dc6df00b2a4660979fbc9cc
+    changedFiles: 14
+    additions: 19
+    deletions: 26
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: README.md
+        additions: 2
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: docs/api-reference/tutorials/quick-checkout-with-stripe.mdx
+        additions: 0
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: docs/api-reference/v2/introduction.mdx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/developer/advanced/adding_spree_to_rails_app.mdx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/developer/contributing/quickstart.mdx
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: docs/developer/getting-started/quickstart.mdx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/developer/upgrades/4.3-to-4.4.mdx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/docs.json
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: docs/use-case/overview.mdx
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: docs/user/using-spree.mdx
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: docs/user/what-is-spree-commerce.mdx
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: spree/admin/app/views/spree/admin/shared/_user_dropdown.html.erb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/admin/config/locales/en.yml
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/config/locales/en.yml
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 13927
+    title: "Fix nil errors when trying to call `Address#country_iso` without coun…"
+    url: https://github.com/spree/spree/pull/13927
+    mergedAt: 2026-04-22T14:37:10Z
+    baseRefName: main
+    headRefName: fix/address-country-iso-nil-error
+    baseRefOid: 5b3e6187d9c321ac2dc6df00b2a4660979fbc9cc
+    headRefOid: fca7a8ceddd361053ea7b8fe0cc05f0d2c9ecc9f
+    mergeCommitOid: 4f261b0a052ed52b38b3483e09999dece42f9478
+    changedFiles: 2
+    additions: 15
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - error
+    hasTests: true
+    testFiles: 
+      - spree/core/spec/models/spree/address_spec.rb
+    debugScore: 4
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: spree/core/app/models/spree/address.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/spec/models/spree/address_spec.rb
+        additions: 14
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 13931
+    title: "Consolidate pagy dependency to spree_core"
+    url: https://github.com/spree/spree/pull/13931
+    mergedAt: 2026-04-23T10:36:58Z
+    baseRefName: main
+    headRefName: claude/update-pagy-dependency-RLXPk
+    baseRefOid: 4f261b0a052ed52b38b3483e09999dece42f9478
+    headRefOid: 8956c997a4184971c0bae49934ce93d511e3d2be
+    mergeCommitOid: 8499c70e1e2a73e42d293969ace4dd7dc3123c9d
+    changedFiles: 3
+    additions: 1
+    deletions: 3
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: spree/admin/spree_admin.gemspec
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/api/spree_api.gemspec
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/spree_core.gemspec
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 13928
+    title: "fix changing shipping rate when gift card is applied"
+    url: https://github.com/spree/spree/pull/13928
+    mergedAt: 2026-04-23T12:20:16Z
+    baseRefName: main
+    headRefName: kacper_mekarski/fix-changing-shipping-rate-when-gift-card-is-applied
+    baseRefOid: 4f261b0a052ed52b38b3483e09999dece42f9478
+    headRefOid: b2962fe22794ba622143d42a34c9d62498e0c7b8
+    mergeCommitOid: 7884947def158ebce4ff4a4c56fd8dae862e742f
+    changedFiles: 2
+    additions: 26
+    deletions: 2
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - error
+      - fail
+      - failure
+    hasTests: true
+    testFiles: 
+      - spree/api/spec/controllers/spree/api/v3/store/carts/fulfillments_controller_spec.rb
+    debugScore: 6
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: spree/api/app/controllers/spree/api/v3/store/carts/fulfillments_controller.rb
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: spree/api/spec/controllers/spree/api/v3/store/carts/fulfillments_controller_spec.rb
+        additions: 24
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 13923
+    title: "How-to Guide: Set Up Multiple languages"
+    url: https://github.com/spree/spree/pull/13923
+    mergedAt: 2026-04-23T10:41:48Z
+    baseRefName: main
+    headRefName: multiple-languages
+    baseRefOid: cf4c5fa9acef7f86f5e864891bd9ba1e26eca310
+    headRefOid: 7a113d8815070ae23c4c0363dcdcc5882ff05e51
+    mergeCommitOid: 330c11965f1a859428cbfffe0196b05140274608
+    changedFiles: 13
+    additions: 97
+    deletions: 256
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -5
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docs/docs.json
+        additions: 1
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: docs/images/user/how-to/multiple-languages/1-markets-overview.png
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/images/user/how-to/multiple-languages/2-translations-overview.png
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/images/user/how-to/multiple-languages/3-import-panel.png
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/images/user/how-to/multiple-languages/4-translation-drawer.png
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/images/user/how-to/multiple-languages/5-category-configurator.png
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/images/user/how-to/multiple-languages/6-category-translations-panel.png
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/images/user/how-to/multiple-languages/7-policy-editor.png
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/images/user/how-to/multiple-languages/8-policy-translations-panel.png
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/use-case/chatgpt-integration/chatgpt-buyer-experience.mdx
+        additions: 0
+        deletions: 69
+        changeType: DELETED
+      - 
+        path: docs/use-case/chatgpt-integration/chatgpt-instant-checkout.mdx
+        additions: 0
+        deletions: 90
+        changeType: DELETED
+      - 
+        path: docs/use-case/chatgpt-integration/chatgpt-shopping.mdx
+        additions: 0
+        deletions: 89
+        changeType: DELETED
+      - 
+        path: docs/user/how-to/multiple-languages.mdx
+        additions: 96
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 13913
+    title: "Added ability to extend SDK plus improved documentation and tutorial"
+    url: https://github.com/spree/spree/pull/13913
+    mergedAt: 2026-04-13T13:37:12Z
+    baseRefName: main
+    headRefName: docs/api-sdk-customization
+    baseRefOid: 852364a9b0df97aab94aafecbd64c1b398d63369
+    headRefOid: 8679059b99dfc3cc92a739d4c2b5c55860683613
+    mergeCommitOid: 3cd0bd79bb2af886d09d5dd54ccf85e7a875a0f9
+    changedFiles: 11
+    additions: 1079
+    deletions: 68
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docs/developer/customization/api.mdx
+        additions: 153
+        deletions: 57
+        changeType: MODIFIED
+      - 
+        path: docs/developer/sdk/extending.mdx
+        additions: 33
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/developer/tutorial/extending-models.mdx
+        additions: 9
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs/developer/tutorial/introduction.mdx
+        additions: 11
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: docs/developer/tutorial/sdk.mdx
+        additions: 173
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/developer/tutorial/store-api.mdx
+        additions: 507
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/developer/tutorial/testing.mdx
+        additions: 166
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: docs/docs.json
+        additions: 4
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/sdk/.changeset/expose-request-fn.md
+        additions: 10
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/sdk/src/index.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/sdk/src/store-client.ts
+        additions: 12
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 13915
+    title: "Relax active_storage_validations version constraint"
+    url: https://github.com/spree/spree/pull/13915
+    mergedAt: 2026-04-13T16:19:49Z
+    baseRefName: main
+    headRefName: claude/upgrade-active-storage-validations-hC1ps
+    baseRefOid: 3cd0bd79bb2af886d09d5dd54ccf85e7a875a0f9
+    headRefOid: 72c20581b0c09bf98961e960901fb140ea400be9
+    mergeCommitOid: 18c42c225246e9121197f8d2d50057f96ec48dba
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: spree/core/spree_core.gemspec
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 13922
+    title: "Fix duplicate event logging across Zeitwerk reloads"
+    url: https://github.com/spree/spree/pull/13922
+    mergedAt: 2026-04-21T11:39:01Z
+    baseRefName: main
+    headRefName: fix/events-doubler-log-outpuit
+    baseRefOid: 4b4898f649d34e166361d99d804844b6b231107f
+    headRefOid: d91db65541407ee9c74fccec0afd6ec9fc57f01f
+    mergeCommitOid: b0e79afcd86b6d3b32e91092b485b99881ecf823
+    changedFiles: 4
+    additions: 42
+    deletions: 12
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - regression
+    hasTests: true
+    testFiles: 
+      - spree/core/spec/subscribers/spree/event_log_subscriber_spec.rb
+    debugScore: 5
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: spree/core/app/subscribers/spree/event_log_subscriber.rb
+        additions: 9
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: spree/core/lib/spree/core/engine.rb
+        additions: 2
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: spree/core/lib/spree/events.rb
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: spree/core/spec/subscribers/spree/event_log_subscriber_spec.rb
+        additions: 25
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 13925
+    title: "Fix error when creating promo coupon code with blank expiration date"
+    url: https://github.com/spree/spree/pull/13925
+    mergedAt: 2026-04-21T12:50:27Z
+    baseRefName: main
+    headRefName: kacper_mekarski/fix-error-on-creating-coupon-code-with-blank-expiration-date
+    baseRefOid: b0e79afcd86b6d3b32e91092b485b99881ecf823
+    headRefOid: 421a49bac942acb16d4e8908e224ac4a7136bfef
+    mergeCommitOid: 39b3b446cb70bb5aedc437d0afab35989a233012
+    changedFiles: 2
+    additions: 2
+    deletions: 2
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - error
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: spree/core/lib/generators/spree/dummy/dummy_generator.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/lib/spree/core/engine.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 13924
+    title: "Use Spree::Money instance correctly as argument for money column type"
+    url: https://github.com/spree/spree/pull/13924
+    mergedAt: 2026-04-21T11:33:54Z
+    baseRefName: main
+    headRefName: kacper_mekarski/fix-money-column-for-spree-money-instance-as-argument
+    baseRefOid: cf4c5fa9acef7f86f5e864891bd9ba1e26eca310
+    headRefOid: e9d0090723779cdf2800e30d92b2e39ad743b8a2
+    mergeCommitOid: a25fc873ea4010548bd70c75d22e8e0bcc4b3281
+    changedFiles: 2
+    additions: 16
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - spree/admin/spec/helpers/spree/admin/table_helper_spec.rb
+    debugScore: 2
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: spree/admin/app/helpers/spree/admin/table_helper.rb
+        additions: 7
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/admin/spec/helpers/spree/admin/table_helper_spec.rb
+        additions: 9
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 13896
+    title: "Added user docs for translations and multi-currency imports"
+    url: https://github.com/spree/spree/pull/13896
+    mergedAt: 2026-04-09T14:50:17Z
+    baseRefName: main
+    headRefName: translations-currencies
+    baseRefOid: b6027cc750b8d8b35e69dc1c6cfa2763f086547d
+    headRefOid: b0f29e8dbac742e98f4e8b5f83542ca1710da10b
+    mergeCommitOid: 37e764163358a5d0e2f985b3da2c3229909f5459
+    changedFiles: 14
+    additions: 141
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -5
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docs/docs.json
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs/images/user/products/export-products/3.download_link.png
+        additions: 0
+        deletions: 0
+        changeType: DELETED
+      - 
+        path: docs/images/user/products/multi-currency-import-export/1-export-modal.png
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/images/user/products/multi-currency-import-export/2-import-panel.png
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/images/user/products/translations/1-translations-overview.png
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/images/user/products/translations/2-coverage-table.png
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/images/user/products/translations/3-product-grid.png
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/images/user/products/translations/4-translation-drawer.png
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/images/user/products/translations/5-export-modal.png
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/images/user/products/translations/6-import-panel.png
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/user/manage-products/export-products.mdx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/user/manage-products/import-products.mdx
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs/user/manage-products/multi-currency-import-export.mdx
+        additions: 67
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/user/manage-products/translations.mdx
+        additions: 68
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 13916
+    title: "Added missing totals for DeliveryRate and Fullfillment"
+    url: https://github.com/spree/spree/pull/13916
+    mergedAt: 2026-04-14T10:36:02Z
+    baseRefName: main
+    headRefName: fix/fulfillment-serializer-missing-totals
+    baseRefOid: d430ac673a177f267b12355c718b20dd524a52a1
+    headRefOid: af7eac486482b0aeeaaa24c741e263ab9ad5aa22
+    mergeCommitOid: d0beef3310e06e0fad164d9c288690282efdb82f
+    changedFiles: 18
+    additions: 858
+    deletions: 214
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - incorrect
+    hasTests: true
+    testFiles: 
+      - spree/api/spec/serializers/spree/api/v3/delivery_rate_serializer_spec.rb
+      - spree/api/spec/serializers/spree/api/v3/fulfillment_serializer_spec.rb
+      - spree/core/spec/models/spree/shipping_rate_spec.rb
+    debugScore: 3
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: docs/api-reference/store.yaml
+        additions: 511
+        deletions: 187
+        changeType: MODIFIED
+      - 
+        path: packages/admin-sdk/src/types/generated/DeliveryRate.ts
+        additions: 9
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/admin-sdk/src/types/generated/Fulfillment.ts
+        additions: 11
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: packages/sdk/.changeset/expose-request-fn.md
+        additions: 0
+        deletions: 10
+        changeType: DELETED
+      - 
+        path: packages/sdk/CHANGELOG.md
+        additions: 10
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/sdk/package.json
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/sdk/src/types/generated/DeliveryRate.ts
+        additions: 9
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/sdk/src/types/generated/Fulfillment.ts
+        additions: 11
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/sdk/src/zod/generated/DeliveryRate.ts
+        additions: 8
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/sdk/src/zod/generated/Fulfillment.ts
+        additions: 10
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: spree/api/app/serializers/spree/api/v3/admin/fulfillment_serializer.rb
+        additions: 2
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: spree/api/app/serializers/spree/api/v3/delivery_rate_serializer.rb
+        additions: 25
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: spree/api/app/serializers/spree/api/v3/fulfillment_serializer.rb
+        additions: 11
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/api/spec/serializers/spree/api/v3/delivery_rate_serializer_spec.rb
+        additions: 92
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: spree/api/spec/serializers/spree/api/v3/fulfillment_serializer_spec.rb
+        additions: 61
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: spree/core/app/models/spree/shipment.rb
+        additions: 5
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/shipping_rate.rb
+        additions: 26
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/spec/models/spree/shipping_rate_spec.rb
+        additions: 56
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 13917
+    title: "Fix Carmen deprecation warning for Rails 8.2 compatibility"
+    url: https://github.com/spree/spree/pull/13917
+    mergedAt: 2026-04-14T18:45:20Z
+    baseRefName: main
+    headRefName: claude/fix-carmen-deprecation-F1kqO
+    baseRefOid: ad52ffd250ca11db8f8614d118d56795fee39a70
+    headRefOid: fb66b8b7498e6046c87a0515a9cca99ef81a2bba
+    mergeCommitOid: e7e8da870a86ea18bafbf643fef781bf6d93daa4
+    changedFiles: 1
+    additions: 23
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: spree/core/config/initializers/carmen.rb
+        additions: 23
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 13918
+    title: "Fix FulfillmentSerializer crash when line item is deleted"
+    url: https://github.com/spree/spree/pull/13918
+    mergedAt: 2026-04-14T21:06:35Z
+    baseRefName: main
+    headRefName: fix/fulfillment-serializer-manifest-stale
+    baseRefOid: e7e8da870a86ea18bafbf643fef781bf6d93daa4
+    headRefOid: f6f6ccf527d5f3b6892e71ed179fe804ac022e76
+    mergeCommitOid: c0fa2c5eb29d8956a0a08890d828fd9ecce84a5c
+    changedFiles: 2
+    additions: 60
+    deletions: 9
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - regression
+      - crash
+    hasTests: true
+    testFiles: 
+      - spree/api/spec/serializers/spree/api/v3/fulfillment_serializer_spec.rb
+    debugScore: 5
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: spree/api/app/serializers/spree/api/v3/fulfillment_serializer.rb
+        additions: 3
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/api/spec/serializers/spree/api/v3/fulfillment_serializer_spec.rb
+        additions: 57
+        deletions: 8
+        changeType: MODIFIED
+  - 
+    number: 13920
+    title: claude/remove-mailpit-references-xqa8v
+    url: https://github.com/spree/spree/pull/13920
+    mergedAt: 2026-04-15T12:53:02Z
+    baseRefName: main
+    headRefName: claude/remove-mailpit-references-xqa8v
+    baseRefOid: c0fa2c5eb29d8956a0a08890d828fd9ecce84a5c
+    headRefOid: 63ffd44824dabb8090f0e3d4378522fd1ae054f3
+    mergeCommitOid: 4b4898f649d34e166361d99d804844b6b231107f
+    changedFiles: 7
+    additions: 11
+    deletions: 14
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/CONTRIBUTING.md
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: docs/developer/contributing/developing-spree.mdx
+        additions: 2
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: docs/developer/create-spree-app/quickstart.mdx
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/create-spree-app/.changeset/bump-cli-version.md
+        additions: 0
+        deletions: 5
+        changeType: DELETED
+      - 
+        path: packages/create-spree-app/CHANGELOG.md
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/create-spree-app/package.json
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/create-spree-app/src/templates/readme.ts
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 13914
+    title: "extract CSV stock location to make it editable in spree extensions"
+    url: https://github.com/spree/spree/pull/13914
+    mergedAt: 2026-04-13T16:35:12Z
+    baseRefName: main
+    headRefName: kacper_mekarski/extract-csv-stock-location-to-make-it-editable-in-spree-extentions
+    baseRefOid: 3cd0bd79bb2af886d09d5dd54ccf85e7a875a0f9
+    headRefOid: 4be2a42bf0f1b10bdb00cb4062db6a87d6eda4f0
+    mergeCommitOid: 1fb5a6db49031fe8b05a2875d83210f6ad654d60
+    changedFiles: 4
+    additions: 9
+    deletions: 5
+    labels: 
+[]
+    keywordHits: 
+      - race
+    hasTests: true
+    testFiles: 
+      - spree/core/spec/services/spree/imports/row_processors/product_variant_spec.rb
+    debugScore: 3
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: spree/admin/app/views/spree/admin/products/form/_variants.html.erb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/variant.rb
+        additions: 6
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/services/spree/imports/row_processors/product_variant.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/spec/services/spree/imports/row_processors/product_variant_spec.rb
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 13911
+    title: "Consolidate metadata: drop public_metadata, rename private_metadata → metadata"
+    url: https://github.com/spree/spree/pull/13911
+    mergedAt: 2026-04-13T12:21:03Z
+    baseRefName: 6-0-dev
+    headRefName: 6-0-dev-remove-public-metadata
+    baseRefOid: ed75610b74f48bdc8d9e37f3fd7543141bcaed52
+    headRefOid: 90f27ffb713e1be671b02d40764bc09520e01cea
+    mergeCommitOid: 72d0d624e566b4ad26db9dfafa7da049dcd36388
+    changedFiles: 38
+    additions: 139
+    deletions: 183
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - spree/api/spec/controllers/spree/api/v3/store/carts_controller_spec.rb
+      - spree/api/spec/controllers/spree/api/v3/store/customers_controller_spec.rb
+      - spree/api/spec/serializers/spree/api/v3/admin/line_item_serializer_spec.rb
+      - spree/api/spec/serializers/spree/api/v3/admin/order_serializer_spec.rb
+      - spree/api/spec/serializers/spree/api/v3/line_item_serializer_spec.rb
+      - spree/api/spec/serializers/spree/api/v3/payment_source_serializer_spec.rb
+      - spree/core/spec/models/spree/base_spec.rb
+      - spree/core/spec/models/spree/concerns/metadata_spec.rb
+      - spree/core/spec/models/spree/credit_card_spec.rb
+      - spree/core/spec/models/spree/order/address_spec.rb
+      - spree/core/spec/services/spree/cart/add_item_spec.rb
+      - spree/core/spec/services/spree/carts/upsert_items_spec.rb
+    debugScore: 1
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: spree/api/spec/controllers/spree/api/v3/store/carts_controller_spec.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/api/spec/controllers/spree/api/v3/store/customers_controller_spec.rb
+        additions: 1
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: spree/api/spec/serializers/spree/api/v3/admin/line_item_serializer_spec.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/api/spec/serializers/spree/api/v3/admin/order_serializer_spec.rb
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: spree/api/spec/serializers/spree/api/v3/line_item_serializer_spec.rb
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: spree/api/spec/serializers/spree/api/v3/payment_source_serializer_spec.rb
+        additions: 0
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/concerns/spree/metadata.rb
+        additions: 2
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/address.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/asset.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/credit_card.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/order_promotion.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/services/spree/cart/add_item.rb
+        additions: 3
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: spree/core/db/migrate/20210915064321_add_metadata_to_spree_orders.rb
+        additions: 2
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: spree/core/db/migrate/20210915064322_add_metadata_to_spree_products.rb
+        additions: 2
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: spree/core/db/migrate/20210915064323_add_metadata_to_spree_variants.rb
+        additions: 2
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: spree/core/db/migrate/20210915064324_add_metadata_to_spree_line_items.rb
+        additions: 2
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: spree/core/db/migrate/20210915064325_add_metadata_to_spree_shipments.rb
+        additions: 2
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: spree/core/db/migrate/20210915064326_add_metadata_to_spree_payments.rb
+        additions: 2
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: spree/core/db/migrate/20210915064327_add_metadata_to_spree_taxons_and_taxonomies.rb
+        additions: 2
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: spree/core/db/migrate/20210915064328_add_metadata_to_spree_stock_transfers.rb
+        additions: 2
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: spree/core/db/migrate/20210915064329_add_metadata_to_spree_multiple_tables.rb
+        additions: 2
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: spree/core/db/migrate/20220113052823_create_payment_sources.rb
+        additions: 2
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: spree/core/db/migrate/20220120092821_add_metadata_to_spree_tax_rates.rb
+        additions: 2
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: spree/core/db/migrate/20220613133029_add_metadata_to_spree_stock_items.rb
+        additions: 2
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: spree/core/db/migrate/20250114193857_add_metadata_to_spree_stores.rb
+        additions: 2
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: spree/core/db/migrate/20250119165904_create_spree_custom_domains.rb
+        additions: 2
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: spree/core/db/migrate/20250605131334_add_missing_fields_to_users.rb
+        additions: 4
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: spree/core/db/migrate/20250915093930_add_metadata_to_spree_newsletter_subscribers.rb
+        additions: 3
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: spree/core/db/migrate/20260413000001_rename_private_metadata_to_metadata.rb
+        additions: 36
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: spree/core/lib/spree/permitted_attributes.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/lib/spree/testing_support/factories/user_factory.rb
+        additions: 1
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: spree/core/lib/spree/testing_support/metadata.rb
+        additions: 35
+        deletions: 38
+        changeType: MODIFIED
+      - 
+        path: spree/core/spec/models/spree/base_spec.rb
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: spree/core/spec/models/spree/concerns/metadata_spec.rb
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: spree/core/spec/models/spree/credit_card_spec.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/spec/models/spree/order/address_spec.rb
+        additions: 1
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: spree/core/spec/services/spree/cart/add_item_spec.rb
+        additions: 6
+        deletions: 27
+        changeType: MODIFIED
+      - 
+        path: spree/core/spec/services/spree/carts/upsert_items_spec.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 13909
+    title: "Remove remaining deprecated model methods, concerns, and services"
+    url: https://github.com/spree/spree/pull/13909
+    mergedAt: 2026-04-13T09:33:42Z
+    baseRefName: 6-0-dev
+    headRefName: 6-0-dev-remove-remaining-deprecations
+    baseRefOid: 49286dc474ddf604973516611fc91b5561593e84
+    headRefOid: 0f718b39697d2e41ede4a6e25648dff9d7d9db61
+    mergeCommitOid: ed75610b74f48bdc8d9e37f3fd7543141bcaed52
+    changedFiles: 80
+    additions: 98
+    deletions: 1684
+    labels: 
+[]
+    keywordHits: 
+      - fail
+      - failure
+    hasTests: true
+    testFiles: 
+      - spree/admin/spec/controllers/spree/admin/addresses_controller_spec.rb
+      - spree/admin/spec/controllers/spree/admin/line_items_controller_spec.rb
+      - spree/admin/spec/controllers/spree/admin/variants_controller_spec.rb
+      - spree/admin/spec/helpers/spree/admin/table_helper_spec.rb
+      - spree/api/spec/serializers/spree/api/v3/line_item_serializer_spec.rb
+      - spree/api/spec/serializers/spree/api/v3/price_history_serializer_spec.rb
+      - spree/api/spec/serializers/spree/api/v3/price_serializer_spec.rb
+      - spree/api/spec/serializers/spree/api/v3/product_serializer_spec.rb
+      - spree/api/spec/serializers/spree/api/v3/variant_serializer_spec.rb
+      - spree/core/spec/helpers/products_helper_spec.rb
+    debugScore: 1
+    suggestedDifficulty: high
+    exclusionHints: 
+      - huge-diff
+    files: 
+      - 
+        path: spree/admin/app/controllers/spree/admin/base_controller.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/admin/app/helpers/spree/admin/orders_helper.rb
+        additions: 0
+        deletions: 28
+        changeType: MODIFIED
+      - 
+        path: spree/admin/spec/controllers/spree/admin/addresses_controller_spec.rb
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: spree/admin/spec/controllers/spree/admin/line_items_controller_spec.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/admin/spec/controllers/spree/admin/variants_controller_spec.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/admin/spec/helpers/spree/admin/table_helper_spec.rb
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/api/spec/serializers/spree/api/v3/line_item_serializer_spec.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/api/spec/serializers/spree/api/v3/price_history_serializer_spec.rb
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: spree/api/spec/serializers/spree/api/v3/price_serializer_spec.rb
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: spree/api/spec/serializers/spree/api/v3/product_serializer_spec.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/api/spec/serializers/spree/api/v3/variant_serializer_spec.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/helpers/spree/currency_helper.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/helpers/spree/products_helper.rb
+        additions: 0
+        deletions: 29
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/concerns/spree/default_price.rb
+        additions: 0
+        deletions: 138
+        changeType: DELETED
+      - 
+        path: spree/core/app/models/concerns/spree/image_methods.rb
+        additions: 0
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/concerns/spree/metadata.rb
+        additions: 0
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/concerns/spree/number_as_param.rb
+        additions: 0
+        deletions: 13
+        changeType: DELETED
+      - 
+        path: spree/core/app/models/concerns/spree/product_scopes.rb
+        additions: 1
+        deletions: 166
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/concerns/spree/user_roles.rb
+        additions: 0
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/ability.rb
+        additions: 0
+        deletions: 22
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/address.rb
+        additions: 0
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/calculator/flat_rate.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/calculator/flexi_rate.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/calculator/price_sack.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/calculator/shipping/digital_delivery.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/calculator/shipping/flat_rate.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/calculator/shipping/flexi_rate.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/calculator/shipping/per_item.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/calculator/shipping/price_sack.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/line_item.rb
+        additions: 6
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/option_type.rb
+        additions: 0
+        deletions: 13
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/order.rb
+        additions: 0
+        deletions: 17
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/price.rb
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/product.rb
+        additions: 8
+        deletions: 66
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/promotion/rules/product.rb
+        additions: 0
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/promotion/rules/taxon.rb
+        additions: 0
+        deletions: 15
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/promotion/rules/user.rb
+        additions: 0
+        deletions: 16
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/return_authorization.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/return_item.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/store.rb
+        additions: 1
+        deletions: 92
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/store_credit.rb
+        additions: 0
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/taxon.rb
+        additions: 0
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/models/spree/variant.rb
+        additions: 4
+        deletions: 39
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/presenters/spree/data_feeds/google_presenter.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/services/spree/addresses/update.rb
+        additions: 6
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/services/spree/checkout/advance.rb
+        additions: 9
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/services/spree/checkout/select_shipping_method.rb
+        additions: 0
+        deletions: 63
+        changeType: DELETED
+      - 
+        path: spree/core/app/services/spree/seeds/stock_locations.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/services/spree/seeds/stores.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/lib/spree/core/configuration.rb
+        additions: 0
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: spree/core/lib/spree/core/controller_helpers/auth.rb
+        additions: 0
+        deletions: 11
+        changeType: MODIFIED
+      - 
+        path: spree/core/lib/spree/core/controller_helpers/currency.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/lib/spree/core/controller_helpers/order.rb
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/lib/spree/core/dependencies.rb
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/lib/spree/money.rb
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: spree/core/lib/spree/testing_support/factories/customer_return_factory.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/lib/spree/testing_support/factories/payment_method_factory.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/lib/spree/testing_support/factories/promotion_factory.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/lib/spree/testing_support/factories/wishlist_factory.rb
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/spec/helpers/products_helper_spec.rb
+        additions: 0
+        deletions: 104
+        changeType: MODIFIED
+  - 
+    number: 13910
+    title: "Add store resolution to webhook payments controller"
+    url: https://github.com/spree/spree/pull/13910
+    mergedAt: 2026-04-13T08:48:06Z
+    baseRefName: main
+    headRefName: claude/fix-payments-webhook-store-WPgV8
+    baseRefOid: e9d46c296c7289b7f02559b7ac4f9d74c85a5da2
+    headRefOid: 175e38de76b70854aeb932418b18369a991e0f04
+    mergeCommitOid: 5963e3a157de4dd8af2a8befad57fdbce0dece05
+    changedFiles: 2
+    additions: 26
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - spree/api/spec/controllers/spree/api/v3/webhooks/payments_controller_spec.rb
+    debugScore: 2
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: spree/api/app/controllers/spree/api/v3/webhooks/payments_controller.rb
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/api/spec/controllers/spree/api/v3/webhooks/payments_controller_spec.rb
+        additions: 24
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 13899
+    title: "fix doubled order canceled event"
+    url: https://github.com/spree/spree/pull/13899
+    mergedAt: 2026-04-13T07:56:32Z
+    baseRefName: main
+    headRefName: kacper_mekarski/fix-doubled-order-canceled-event
+    baseRefOid: 37e764163358a5d0e2f985b3da2c3229909f5459
+    headRefOid: 3be822607fea91a55f2df745fb51f66063eb2bc6
+    mergeCommitOid: e9d46c296c7289b7f02559b7ac4f9d74c85a5da2
+    changedFiles: 4
+    additions: 10
+    deletions: 53
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: true
+    testFiles: 
+      - spree/core/spec/models/spree/order_spec.rb
+      - spree/core/spec/services/spree/orders/cancel_spec.rb
+      - spree/emails/spec/models/spree/order_spec.rb
+    debugScore: 3
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: spree/core/app/models/spree/order.rb
+        additions: 0
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: spree/core/spec/models/spree/order_spec.rb
+        additions: 0
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: spree/core/spec/services/spree/orders/cancel_spec.rb
+        additions: 10
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: spree/emails/spec/models/spree/order_spec.rb
+        additions: 0
+        deletions: 38
+        changeType: MODIFIED
+  - 
+    number: 13908
+    title: "Remove deprecated helper methods (5.5/6.0)"
+    url: https://github.com/spree/spree/pull/13908
+    mergedAt: 2026-04-12T20:08:54Z
+    baseRefName: 6-0-dev
+    headRefName: feature/6-0-dev-deprecated-removal
+    baseRefOid: e204d706eb1a823109c3a0ce6b53df257ab0da16
+    headRefOid: c317e57246354134bf427c4baa6abeb119812717
+    mergeCommitOid: 49286dc474ddf604973516611fc91b5561593e84
+    changedFiles: 22
+    additions: 13
+    deletions: 508
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - spree/core/spec/helpers/base_helper_spec.rb
+      - spree/core/spec/helpers/currency_helper_spec.rb
+      - spree/core/spec/lib/spree/core/controller_helpers/order_spec.rb
+      - spree/core/spec/lib/spree/core/token_generator_spec.rb
+    debugScore: 1
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: spree/admin/app/helpers/spree/admin/base_helper.rb
+        additions: 0
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: spree/admin/app/helpers/spree/admin/modal_helper.rb
+        additions: 0
+        deletions: 31
+        changeType: DELETED
+      - 
+        path: spree/admin/app/helpers/spree/admin/navigation_helper.rb
+        additions: 0
+        deletions: 23
+        changeType: MODIFIED
+      - 
+        path: spree/admin/app/helpers/spree/admin/turbo_helper.rb
+        additions: 0
+        deletions: 18
+        changeType: MODIFIED
+      - 
+        path: spree/admin/app/views/spree/admin/shared/_modal.html.erb
+        additions: 8
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/helpers/spree/base_helper.rb
+        additions: 0
+        deletions: 96
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/helpers/spree/currency_helper.rb
+        additions: 0
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/helpers/spree/products_helper.rb
+        additions: 0
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/presenters/spree/variant_presenter.rb
+        additions: 4
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: spree/core/lib/spree/core.rb
+        additions: 1
+        deletions: 17
+        changeType: MODIFIED
+      - 
+        path: spree/core/lib/spree/core/controller_helpers/auth.rb
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: spree/core/lib/spree/core/controller_helpers/common.rb
+        additions: 0
+        deletions: 14
+        changeType: DELETED
+      - 
+        path: spree/core/lib/spree/core/controller_helpers/currency.rb
+        additions: 0
+        deletions: 17
+        changeType: MODIFIED
+      - 
+        path: spree/core/lib/spree/core/controller_helpers/order.rb
+        additions: 0
+        deletions: 19
+        changeType: MODIFIED
+      - 
+        path: spree/core/lib/spree/core/token_generator.rb
+        additions: 0
+        deletions: 23
+        changeType: DELETED
+      - 
+        path: spree/core/lib/spree/database_type_utilities.rb
+        additions: 0
+        deletions: 22
+        changeType: DELETED
+      - 
+        path: spree/core/lib/spree/webhooks.rb
+        additions: 0
+        deletions: 22
+        changeType: DELETED
+      - 
+        path: spree/core/spec/helpers/base_helper_spec.rb
+        additions: 0
+        deletions: 115
+        changeType: MODIFIED
+      - 
+        path: spree/core/spec/helpers/currency_helper_spec.rb
+        additions: 0
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: spree/core/spec/lib/spree/core/controller_helpers/order_spec.rb
+        additions: 0
+        deletions: 21
+        changeType: MODIFIED
+      - 
+        path: spree/core/spec/lib/spree/core/token_generator_spec.rb
+        additions: 0
+        deletions: 24
+        changeType: DELETED
+      - 
+        path: spree/emails/app/helpers/spree/mail_helper.rb
+        additions: 0
+        deletions: 7
+        changeType: MODIFIED
+  - 
+    number: 13907
+    title: "Remove API v2 legacy code: finders, sorters, presenters, services, dependencies"
+    url: https://github.com/spree/spree/pull/13907
+    mergedAt: 2026-04-12T18:52:58Z
+    baseRefName: 6-0-dev
+    headRefName: 6-0-dev-api-v2-removal
+    baseRefOid: 15cfb3860d0f0dac252b107893ff91610b8bf3ff
+    headRefOid: 3f6407da3c8108a382d67d6bab4786f22e4fe949
+    mergeCommitOid: e204d706eb1a823109c3a0ce6b53df257ab0da16
+    changedFiles: 63
+    additions: 61
+    deletions: 4113
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: true
+    testFiles: 
+      - spree/api/spec/lib/spree/api/api_dependencies_spec.rb
+      - spree/api/spec/models/spree/api_dependencies_spec.rb
+      - spree/core/spec/finders/spree/addresses/find_spec.rb
+      - spree/core/spec/finders/spree/option_values/find_available_spec.rb
+      - spree/core/spec/finders/spree/products/find_spec.rb
+      - spree/core/spec/finders/spree/taxons/find_spec.rb
+      - spree/core/spec/models/spree/app_dependencies_spec.rb
+      - spree/core/spec/presenters/spree/filters/options_presenter_spec.rb
+      - spree/core/spec/presenters/spree/variants/options_presenter_spec.rb
+      - spree/core/spec/services/spree/account/create_spec.rb
+      - spree/core/spec/services/spree/account/update_spec.rb
+      - spree/core/spec/services/spree/cart/change_currency_spec.rb
+      - spree/core/spec/services/spree/checkout/get_shipping_rates_spec.rb
+      - spree/core/spec/services/spree/checkout/select_shipping_method_spec.rb
+      - spree/core/spec/services/spree/checkout/update_spec.rb
+      - spree/core/spec/services/spree/classifications/reposition_spec.rb
+      - spree/core/spec/services/spree/payments/create_spec.rb
+      - spree/core/spec/services/spree/shipments/add_item_spec.rb
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+    files: 
+      - 
+        path: spree/api/config/locales/en.yml
+        additions: 0
+        deletions: 16
+        changeType: MODIFIED
+      - 
+        path: spree/api/lib/spree/api.rb
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: spree/api/lib/spree/api/configuration.rb
+        additions: 0
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: spree/api/lib/spree/api/dependencies.rb
+        additions: 0
+        deletions: 214
+        changeType: MODIFIED
+      - 
+        path: spree/api/spec/lib/spree/api/api_dependencies_spec.rb
+        additions: 0
+        deletions: 61
+        changeType: MODIFIED
+      - 
+        path: spree/api/spec/models/spree/api_dependencies_spec.rb
+        additions: 13
+        deletions: 35
+        changeType: MODIFIED
+      - 
+        path: spree/core/app/finders/concerns/spree/product_filterable.rb
+        additions: 0
+        deletions: 9
+        changeType: DELETED
+      - 
+        path: spree/core/app/finders/spree/addresses/find.rb
+        additions: 0
+        deletions: 27
+        changeType: DELETED
+      - 
+        path: spree/core/app/finders/spree/base_finder.rb
+        additions: 0
+        deletions: 14
+        changeType: DELETED
+      - 
+        path: spree/core/app/finders/spree/countries/find.rb
+        additions: 0
+        deletions: 31
+        changeType: DELETED
+      - 
+        path: spree/core/app/finders/spree/credit_cards/find.rb
+        additions: 0
+        deletions: 12
+        changeType: DELETED
+      - 
+        path: spree/core/app/finders/spree/option_values/find_available.rb
+        additions: 0
+        deletions: 28
+        changeType: DELETED
+      - 
+        path: spree/core/app/finders/spree/orders/find_complete.rb
+        additions: 0
+        deletions: 114
+        changeType: DELETED
+      - 
+        path: spree/core/app/finders/spree/orders/find_current.rb
+        additions: 0
+        deletions: 24
+        changeType: DELETED
+      - 
+        path: spree/core/app/finders/spree/orders/finder_helper.rb
+        additions: 0
+        deletions: 17
+        changeType: DELETED
+      - 
+        path: spree/core/app/finders/spree/products/find.rb
+        additions: 0
+        deletions: 328
+        changeType: DELETED
+      - 
+        path: spree/core/app/finders/spree/taxons/find.rb
+        additions: 0
+        deletions: 99
+        changeType: DELETED
+      - 
+        path: spree/core/app/finders/spree/variants/find.rb
+        additions: 0
+        deletions: 30
+        changeType: DELETED
+      - 
+        path: spree/core/app/finders/spree/variants/visible_finder.rb
+        additions: 0
+        deletions: 23
+        changeType: DELETED
+      - 
+        path: spree/core/app/paginators/spree/shared/paginate.rb
+        additions: 0
+        deletions: 30
+        changeType: DELETED
+      - 
+        path: spree/core/app/presenters/spree/filters/options_presenter.rb
+        additions: 0
+        deletions: 47
+        changeType: DELETED
+      - 
+        path: spree/core/app/presenters/spree/filters/price_presenter.rb
+        additions: 0
+        deletions: 23
+        changeType: DELETED
+      - 
+        path: spree/core/app/presenters/spree/filters/price_range_presenter.rb
+        additions: 0
+        deletions: 30
+        changeType: DELETED
+      - 
+        path: spree/core/app/presenters/spree/filters/quantified_price_range_presenter.rb
+        additions: 0
+        deletions: 45
+        changeType: DELETED
+      - 
+        path: spree/core/app/presenters/spree/product_summary_presenter.rb
+        additions: 0
+        deletions: 27
+        changeType: DELETED
+      - 
+        path: spree/core/app/presenters/spree/variants/options_presenter.rb
+        additions: 0
+        deletions: 82
+        changeType: DELETED
+      - 
+        path: spree/core/app/services/spree/account/create.rb
+        additions: 0
+        deletions: 17
+        changeType: DELETED
+      - 
+        path: spree/core/app/services/spree/account/update.rb
+        additions: 0
+        deletions: 15
+        changeType: DELETED
+      - 
+        path: spree/core/app/services/spree/cart/change_currency.rb
+        additions: 0
+        deletions: 27
+        changeType: DELETED
+      - 
+        path: spree/core/app/services/spree/cart/create.rb
+        additions: 0
+        deletions: 26
+        changeType: DELETED
+      - 
+        path: spree/core/app/services/spree/cart/estimate_shipping_rates.rb
+        additions: 0
+        deletions: 39
+        changeType: DELETED
+      - 
+        path: spree/core/app/services/spree/checkout/complete.rb
+        additions: 0
+        deletions: 23
+        changeType: DELETED
+      - 
+        path: spree/core/app/services/spree/checkout/get_shipping_rates.rb
+        additions: 0
+        deletions: 52
+        changeType: DELETED
+      - 
+        path: spree/core/app/services/spree/checkout/update.rb
+        additions: 0
+        deletions: 72
+        changeType: DELETED
+      - 
+        path: spree/core/app/services/spree/classifications/reposition.rb
+        additions: 0
+        deletions: 23
+        changeType: DELETED
+      - 
+        path: spree/core/app/services/spree/payments/create.rb
+        additions: 0
+        deletions: 66
+        changeType: DELETED
+      - 
+        path: spree/core/app/services/spree/shipments/add_item.rb
+        additions: 0
+        deletions: 32
+        changeType: DELETED
+      - 
+        path: spree/core/app/services/spree/shipments/change_state.rb
+        additions: 0
+        deletions: 14
+        changeType: DELETED
+      - 
+        path: spree/core/app/services/spree/shipments/create.rb
+        additions: 0
+        deletions: 48
+        changeType: DELETED
+      - 
+        path: spree/core/app/services/spree/shipments/remove_item.rb
+        additions: 0
+        deletions: 55
+        changeType: DELETED
+      - 
+        path: spree/core/app/sorters/spree/orders/sort.rb
+        additions: 0
+        deletions: 10
+        changeType: DELETED
+      - 
+        path: spree/core/app/sorters/spree/products/sort.rb
+        additions: 0
+        deletions: 73
+        changeType: DELETED
+      - 
+        path: spree/core/config/brakeman.ignore
+        additions: 0
+        deletions: 69
+        changeType: MODIFIED
+      - 
+        path: spree/core/lib/spree/core/dependencies.rb
+        additions: 0
+        deletions: 34
+        changeType: MODIFIED
+      - 
+        path: spree/core/spec/finders/spree/addresses/find_spec.rb
+        additions: 0
+        deletions: 61
+        changeType: DELETED
+      - 
+        path: spree/core/spec/finders/spree/option_values/find_available_spec.rb
+        additions: 0
+        deletions: 102
+        changeType: DELETED
+      - 
+        path: spree/core/spec/finders/spree/products/find_spec.rb
+        additions: 0
+        deletions: 514
+        changeType: DELETED
+      - 
+        path: spree/core/spec/finders/spree/taxons/find_spec.rb
+        additions: 0
+        deletions: 28
+        changeType: DELETED
+      - 
+        path: spree/core/spec/models/spree/app_dependencies_spec.rb
+        additions: 41
+        deletions: 41
+        changeType: MODIFIED
+      - 
+        path: spree/core/spec/presenters/spree/filters/options_presenter_spec.rb
+        additions: 0
+        deletions: 37
+        changeType: DELETED
+      - 
+        path: spree/core/spec/presenters/spree/variants/options_presenter_spec.rb
+        additions: 0
+        deletions: 46
+        changeType: DELETED
+      - 
+        path: spree/core/spec/services/spree/account/create_spec.rb
+        additions: 0
+        deletions: 36
+        changeType: DELETED
+      - 
+        path: spree/core/spec/services/spree/account/update_spec.rb
+        additions: 0
+        deletions: 114
+        changeType: DELETED
+      - 
+        path: spree/core/spec/services/spree/cart/change_currency_spec.rb
+        additions: 0
+        deletions: 67
+        changeType: DELETED
+      - 
+        path: spree/core/spec/services/spree/checkout/get_shipping_rates_spec.rb
+        additions: 0
+        deletions: 127
+        changeType: DELETED
+      - 
+        path: spree/core/spec/services/spree/checkout/select_shipping_method_spec.rb
+        additions: 4
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: spree/core/spec/services/spree/checkout/update_spec.rb
+        additions: 0
+        deletions: 347
+        changeType: DELETED
+      - 
+        path: spree/core/spec/services/spree/classifications/reposition_spec.rb
+        additions: 0
+        deletions: 24
+        changeType: DELETED
+      - 
+        path: spree/core/spec/services/spree/payments/create_spec.rb
+        additions: 0
+        deletions: 155
+        changeType: DELETED
+      - 
+        path: spree/core/spec/services/spree/shipments/add_item_spec.rb
+        additions: 0
+        deletions: 109
+        changeType: DELETED
+  - 
+    number: 13894
+    title: "Update tsup and other TS dependencies"
+    url: https://github.com/spree/spree/pull/13894
+    mergedAt: 2026-04-09T10:41:06Z
+    baseRefName: main
+    headRefName: chore/update-rollup-and-other-deps
+    baseRefOid: 6ca337fbc904beb19668c6f3101993287bd4426a
+    headRefOid: df0b92bcccd62e636351b9072d4473cc45c72981
+    mergeCommitOid: b6027cc750b8d8b35e69dc1c6cfa2763f086547d
+    changedFiles: 6
+    additions: 43
+    deletions: 556
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: packages/admin-sdk/package.json
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: packages/cli/package.json
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: packages/create-spree-app/package.json
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: packages/sdk-core/package.json
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/sdk/package.json
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: pnpm-lock.yaml
+        additions: 32
+        deletions: 545
+        changeType: MODIFIED
+  - 
+    number: 13898
+    title: "Expand shipping zones and markets to additional continents"
+    url: https://github.com/spree/spree/pull/13898
+    mergedAt: 2026-04-11T07:02:28Z
+    baseRefName: main
+    headRefName: claude/add-continent-sample-data-NLDB5
+    baseRefOid: 37e764163358a5d0e2f985b3da2c3229909f5459
+    headRefOid: e7c00abb7ed92022ad2477f266f3a58ca64e582d
+    mergeCommitOid: 2bbbdd89c1614a992566498ff6d792e81fb743f8
+    changedFiles: 3
+    additions: 67
+    deletions: 5
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - error
+      - race
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: spree/core/app/services/spree/seeds/zones.rb
+        additions: 8
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: spree/core/db/sample_data/markets.rb
+        additions: 34
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: spree/core/db/sample_data/shipping_methods.rb
+        additions: 25
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 13906
+    title: "SDK docs fixes: use `media` instead of `images` and `custom_fields` i…"
+    url: https://github.com/spree/spree/pull/13906
+    mergedAt: 2026-04-12T15:00:16Z
+    baseRefName: main
+    headRefName: fix/docs-images-media
+    baseRefOid: 43a0cdccbf453d53b14649541591ef41365fe91d
+    headRefOid: 80d9bca4f848f14c8965cc9a9c1994e4921dba3f
+    mergeCommitOid: 15cfb3860d0f0dac252b107893ff91610b8bf3ff
+    changedFiles: 34
+    additions: 190
+    deletions: 181
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - error
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docs/api-reference/store-api/authentication.mdx
+        additions: 11
+        deletions: 11
+        changeType: MODIFIED
+      - 
+        path: docs/api-reference/store-api/errors.mdx
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: docs/api-reference/store-api/idempotency.mdx
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: docs/api-reference/store-api/introduction.mdx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/api-reference/store-api/localization.mdx
+        additions: 14
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: docs/api-reference/store-api/metadata.mdx
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: docs/api-reference/store-api/querying.mdx
+        additions: 23
+        deletions: 23
+        changeType: MODIFIED
+      - 
+        path: docs/api-reference/store-api/rate-limitting.mdx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/api-reference/store-api/relations.mdx
+        additions: 34
+        deletions: 25
+        changeType: MODIFIED
+      - 
+        path: docs/api-reference/webhooks-events.mdx
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: docs/developer/core-concepts/addresses.mdx
+        additions: 6
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: docs/developer/core-concepts/adjustments.mdx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/developer/core-concepts/customers.mdx
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: docs/developer/core-concepts/events.mdx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/developer/core-concepts/markets.mdx
+        additions: 8
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: docs/developer/core-concepts/media.mdx
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: docs/developer/core-concepts/metafields.mdx
+        additions: 14
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: docs/developer/core-concepts/orders.mdx
+        additions: 10
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: docs/developer/core-concepts/pricing.mdx
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: docs/developer/core-concepts/products.mdx
+        additions: 12
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: docs/developer/core-concepts/promotions.mdx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/developer/core-concepts/search-filtering.mdx
+        additions: 11
+        deletions: 11
+        changeType: MODIFIED
+      - 
+        path: docs/developer/core-concepts/shipments.mdx
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: docs/developer/core-concepts/slugs.mdx
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: docs/developer/core-concepts/stores.mdx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/developer/core-concepts/translations.mdx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/developer/core-concepts/users.mdx
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: docs/developer/customization/metadata.mdx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/developer/sdk/admin/quickstart.mdx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/developer/sdk/configuration.mdx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/developer/sdk/quickstart.mdx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/developer/sdk/store/markets.mdx
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: docs/snippets/store-api/sdk-client-setup.mdx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/sdk/README.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED

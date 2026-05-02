@@ -1,0 +1,5209 @@
+generatedAt: 2026-05-02T10:20:25.564Z
+repo: Mintplex-Labs/anything-llm
+since: 2026-01-01
+limit: 50
+debugKeywords: 
+  - bug
+  - fix
+  - regression
+  - crash
+  - incorrect
+  - wrong
+  - error
+  - exception
+  - edge
+  - flaky
+  - race
+  - leak
+  - validation
+  - parser
+  - parsing
+  - timeout
+  - fail
+  - failure
+  - broken
+prs: 
+  - 
+    number: 5549
+    title: "fix: tools popover overflowing screen on small viewports"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5549
+    mergedAt: 2026-05-02T00:27:33Z
+    baseRefName: master
+    headRefName: 5530-bug-cannot-scroll-to-bottom-of-fully-populated-slash-command-entries
+    baseRefOid: 2c82e9df5fb4934888f6bc0cd047b9dc388f4a23
+    headRefOid: 59471209250cd5bbd46de048fe1f19624895fab6
+    mergeCommitOid: ce900cb517f81a4f0c45392918654b9b28005b32
+    changedFiles: 1
+    additions: 31
+    deletions: 4
+    labels: 
+      - "PR: Zulu"
+    keywordHits: 
+      - bug
+      - fix
+      - edge
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: frontend/src/components/WorkspaceChat/ChatContainer/PromptInput/ToolsMenu/index.jsx
+        additions: 31
+        deletions: 4
+        changeType: MODIFIED
+  - 
+    number: 5528
+    title: "fix: SPA nav for thread/workspace switching"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5528
+    mergedAt: 2026-05-02T00:09:40Z
+    baseRefName: master
+    headRefName: 5512-bug-whole-page-blinks-when-switching-between-threads
+    baseRefOid: 7ea61965705b822339092751869b518ad0cf2d62
+    headRefOid: 91488cc46cd40aa038ed9f0417a75fd2eee318d5
+    mergeCommitOid: 2c82e9df5fb4934888f6bc0cd047b9dc388f4a23
+    changedFiles: 7
+    additions: 60
+    deletions: 48
+    labels: 
+      - "PR: Zulu"
+    keywordHits: 
+      - bug
+      - fix
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: frontend/src/components/Sidebar/ActiveWorkspaces/ThreadContainer/ThreadItem/index.jsx
+        additions: 4
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/Sidebar/ActiveWorkspaces/index.jsx
+        additions: 4
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/Sidebar/SearchBox/index.jsx
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/WorkspaceChat/ChatContainer/index.jsx
+        additions: 6
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/WorkspaceChat/index.jsx
+        additions: 24
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: frontend/src/main.jsx
+        additions: 1
+        deletions: 9
+        changeType: MODIFIED
+      - 
+        path: frontend/src/pages/WorkspaceChat/index.jsx
+        additions: 21
+        deletions: 11
+        changeType: MODIFIED
+  - 
+    number: 5544
+    title: "Fix Community Hub import page responsiveness on narrow widths"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5544
+    mergedAt: 2026-05-01T23:01:09Z
+    baseRefName: master
+    headRefName: 5529-bug-make-ui-more-responsive-when-gui-snaps-to-edges-vs-maximized-community-hub
+    baseRefOid: 7d884c7863c4ffc7709a2c082f4875e1ab74aa98
+    headRefOid: 406fcd0aa04f12ed0e7581bf3cbe15dd045f7608
+    mergeCommitOid: 7ea61965705b822339092751869b518ad0cf2d62
+    changedFiles: 3
+    additions: 8
+    deletions: 8
+    labels: 
+      - "PR: Zulu"
+    keywordHits: 
+      - bug
+      - fix
+      - edge
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: frontend/src/pages/GeneralSettings/CommunityHub/ImportItem/Steps/PullAndReview/index.jsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/pages/GeneralSettings/CommunityHub/ImportItem/Steps/index.jsx
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: frontend/src/pages/GeneralSettings/CommunityHub/ImportItem/index.jsx
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+  - 
+    number: 5560
+    title: "fix(tts): strip Markdown syntax before sending text to TTS engines"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5560
+    mergedAt: 2026-05-01T19:44:19Z
+    baseRefName: master
+    headRefName: gb-fix/tts-strip-markdown
+    baseRefOid: 667db6d13bfeb74e43546a4a59ea1e43287e1a81
+    headRefOid: a6027ab1018026b546a8b324d4beca1f014a6777
+    mergeCommitOid: 7d884c7863c4ffc7709a2c082f4875e1ab74aa98
+    changedFiles: 3
+    additions: 96
+    deletions: 2
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: frontend/src/components/WorkspaceChat/ChatContainer/ChatHistory/HistoricalMessage/Actions/TTSButton/native.jsx
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/WorkspaceChat/ChatContainer/ChatHistory/HistoricalMessage/Actions/TTSButton/piperTTS.jsx
+        additions: 4
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/utils/chat/messageToSpeech.js
+        additions: 90
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 5558
+    title: "update scheduled job continue CTA"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5558
+    mergedAt: 2026-04-29T23:27:55Z
+    baseRefName: master
+    headRefName: update-sched-job-cta
+    baseRefOid: b2285180af4cf7b50d9c0571b5d0b2cb78601574
+    headRefOid: 73762b9596ea539bc7850f55f3479dea02c915d5
+    mergeCommitOid: 667db6d13bfeb74e43546a4a59ea1e43287e1a81
+    changedFiles: 25
+    additions: 25
+    deletions: 25
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: frontend/src/locales/ar/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ca/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/cs/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/da/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/de/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/en/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/es/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/et/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/fa/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/fr/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/he/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/it/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ja/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ko/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/lt/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/lv/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/nl/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/pl/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/pt_BR/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ro/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ru/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/tr/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/vn/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/zh/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/zh_TW/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 5550
+    title: "Auto-rename thread in agent mode"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5550
+    mergedAt: 2026-04-29T19:33:42Z
+    baseRefName: master
+    headRefName: 5546-bug-thread-renaming-broken-in-auto-mode
+    baseRefOid: b5f29f6dca435e19f3c617e4fa5f135c53ff27e9
+    headRefOid: 6294bfdf6d31b0569f390e776736bde89ecdf3a0
+    mergeCommitOid: b2285180af4cf7b50d9c0571b5d0b2cb78601574
+    changedFiles: 4
+    additions: 61
+    deletions: 6
+    labels: 
+      - "PR: Zulu"
+    keywordHits: 
+      - bug
+      - fix
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: frontend/src/utils/chat/agent.js
+        additions: 14
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/endpoints/chat.js
+        additions: 1
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: server/models/workspaceThread.js
+        additions: 5
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: server/utils/agents/aibitat/plugins/chat-history.js
+        additions: 41
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 5551
+    title: "Rename auto mode to agent mode"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5551
+    mergedAt: 2026-04-29T19:23:16Z
+    baseRefName: master
+    headRefName: 5545-chore-rename-auto-mode-to-agent-mode
+    baseRefOid: 41495cdabe1de79b9e471cc154987bcfe9b83a48
+    headRefOid: e8e5e6331ead4c5998c994b1a82bc985ca08780a
+    mergeCommitOid: b5a72eb62e8365fec0a8d9b4203ebf34689fbea2
+    changedFiles: 25
+    additions: 25
+    deletions: 25
+    labels: 
+      - "PR: Zulu"
+    keywordHits: 
+      - bug
+      - fix
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: frontend/src/locales/ar/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ca/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/cs/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/da/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/de/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/en/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/es/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/et/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/fa/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/fr/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/he/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/it/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ja/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ko/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/lt/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/lv/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/nl/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/pl/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/pt_BR/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ro/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ru/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/tr/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/vn/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/zh/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/zh_TW/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 5322
+    title: "feat: Scheduled Jobs"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5322
+    mergedAt: 2026-04-29T19:05:47Z
+    baseRefName: master
+    headRefName: feat-background-jobs
+    baseRefOid: 02c2db4ee340e55f06e2c5aef702bd4f55741488
+    headRefOid: 18388a58787a2f8f74fad1ec1a3646b176f75dba
+    mergeCommitOid: 41495cdabe1de79b9e471cc154987bcfe9b83a48
+    changedFiles: 76
+    additions: 9031
+    deletions: 101
+    labels: 
+      - PR:Ready-to-merge
+      - "PR: Zulu"
+    keywordHits: 
+      - race
+      - validation
+      - timeout
+      - fail
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: README.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/package.json
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/PrivateRoute/index.jsx
+        additions: 19
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/SettingsSidebar/index.jsx
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/WorkspaceChat/ChatContainer/ChatHistory/HistoricalMessage/Actions/RenderMetrics/index.jsx
+        additions: 1
+        deletions: 15
+        changeType: MODIFIED
+      - 
+        path: frontend/src/hooks/useCopyText.js
+        additions: 4
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: frontend/src/hooks/usePolling.js
+        additions: 52
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/hooks/useWebPushNotifications.js
+        additions: 17
+        deletions: 9
+        changeType: MODIFIED
+      - 
+        path: frontend/src/index.css
+        additions: 30
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ar/common.js
+        additions: 158
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ca/common.js
+        additions: 160
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/cs/common.js
+        additions: 161
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/da/common.js
+        additions: 161
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/de/common.js
+        additions: 163
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/en/common.js
+        additions: 159
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/es/common.js
+        additions: 160
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/et/common.js
+        additions: 161
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/fa/common.js
+        additions: 161
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/fr/common.js
+        additions: 162
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/he/common.js
+        additions: 158
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/it/common.js
+        additions: 163
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ja/common.js
+        additions: 159
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ko/common.js
+        additions: 159
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/lt/common.js
+        additions: 161
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/lv/common.js
+        additions: 161
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/nl/common.js
+        additions: 162
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/pl/common.js
+        additions: 161
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/pt_BR/common.js
+        additions: 160
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ro/common.js
+        additions: 162
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ru/common.js
+        additions: 161
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/tr/common.js
+        additions: 160
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/vn/common.js
+        additions: 160
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/zh/common.js
+        additions: 158
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/zh_TW/common.js
+        additions: 158
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/main.jsx
+        additions: 30
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/models/scheduledJobs.js
+        additions: 127
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/pages/GeneralSettings/ScheduledJobs/JobFormModal/CronBuilder.jsx
+        additions: 196
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/pages/GeneralSettings/ScheduledJobs/JobFormModal/FormActions.jsx
+        additions: 28
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/pages/GeneralSettings/ScheduledJobs/JobFormModal/JobDescription.jsx
+        additions: 57
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/pages/GeneralSettings/ScheduledJobs/JobFormModal/JobSchedule.jsx
+        additions: 89
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/pages/GeneralSettings/ScheduledJobs/JobFormModal/ToolsSelector.jsx
+        additions: 352
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/pages/GeneralSettings/ScheduledJobs/JobFormModal/index.jsx
+        additions: 163
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/pages/GeneralSettings/ScheduledJobs/RunDetailPage.jsx
+        additions: 434
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/pages/GeneralSettings/ScheduledJobs/RunHistoryPage.jsx
+        additions: 165
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/pages/GeneralSettings/ScheduledJobs/components/CollapsibleSection.jsx
+        additions: 71
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/pages/GeneralSettings/ScheduledJobs/components/GeneratedFileCard.jsx
+        additions: 134
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/pages/GeneralSettings/ScheduledJobs/components/JobRow.jsx
+        additions: 107
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/pages/GeneralSettings/ScheduledJobs/components/RunRow.jsx
+        additions: 101
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/pages/GeneralSettings/ScheduledJobs/components/StatusBadge.jsx
+        additions: 51
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/pages/GeneralSettings/ScheduledJobs/components/ToolCallCard.jsx
+        additions: 144
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/pages/GeneralSettings/ScheduledJobs/index.jsx
+        additions: 242
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/pages/GeneralSettings/ScheduledJobs/utils/cron.js
+        additions: 277
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/utils/clipboard.js
+        additions: 25
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/utils/numbers.js
+        additions: 29
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/utils/paths.js
+        additions: 9
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/yarn.lock
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/.env.example
+        additions: 9
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: server/endpoints/agentFileServer.js
+        additions: 89
+        deletions: 53
+        changeType: MODIFIED
+      - 
+        path: server/endpoints/scheduledJobs.js
+        additions: 376
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/index.js
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 5547
+    title: "Normalize lemonade embedder error handling"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5547
+    mergedAt: 2026-04-28T17:59:14Z
+    baseRefName: master
+    headRefName: 5305-lemonade-fixes
+    baseRefOid: c8113aa18870f13d79d50b39b2d0a0d051cdf330
+    headRefOid: f184480911334f690411d6c8b70cbed493e70f9b
+    mergeCommitOid: b5f29f6dca435e19f3c617e4fa5f135c53ff27e9
+    changedFiles: 1
+    additions: 50
+    deletions: 26
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - error
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: server/utils/EmbeddingEngines/lemonade/index.js
+        additions: 50
+        deletions: 26
+        changeType: MODIFIED
+  - 
+    number: 5136
+    title: "fix: support OpenShift arbitrary UID/GID-0 in Docker image"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5136
+    mergedAt: 2026-04-28T17:10:27Z
+    baseRefName: master
+    headRefName: fix/docker-openshift-arbitrary-uid
+    baseRefOid: 5eb9842533f89b23fb25e45390141240ac9f8159
+    headRefOid: e286585e9fadf37216016127c6a148b8e77bdb15
+    mergeCommitOid: c8113aa18870f13d79d50b39b2d0a0d051cdf330
+    changedFiles: 3
+    additions: 410
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - error
+      - validation
+      - fail
+      - failure
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 6
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: cloud-deployments/openshift/Dockerfile
+        additions: 225
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: cloud-deployments/openshift/README.md
+        additions: 146
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: cloud-deployments/openshift/docker-entrypoint.sh
+        additions: 39
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 5516
+    title: "Fix double /reset in agent mode"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5516
+    mergedAt: 2026-04-28T16:50:22Z
+    baseRefName: master
+    headRefName: 5487-feat-fix-double-reset-in-agent-mode
+    baseRefOid: ae9960b8ba0e8a6a83dcaf60aa156b35783de8fb
+    headRefOid: e616151f19e758dfaed0c250903c7e56f5ec7982
+    mergeCommitOid: 5eb9842533f89b23fb25e45390141240ac9f8159
+    changedFiles: 3
+    additions: 62
+    deletions: 53
+    labels: 
+      - "PR: Zulu"
+    keywordHits: 
+      - bug
+      - fix
+      - edge
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: frontend/src/components/WorkspaceChat/ChatContainer/PromptInput/ToolsMenu/Tabs/SlashCommands/index.jsx
+        additions: 27
+        deletions: 38
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/WorkspaceChat/ChatContainer/index.jsx
+        additions: 28
+        deletions: 15
+        changeType: MODIFIED
+      - 
+        path: server/utils/agents/aibitat/plugins/chat-history.js
+        additions: 7
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 5511
+    title: "fix(agent): check auto-approved skills env correctly"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5511
+    mergedAt: 2026-04-28T16:29:46Z
+    baseRefName: master
+    headRefName: fix/agent-auto-approved-env-guard
+    baseRefOid: 2029f90b4249e0977695808dfc04e91117accc36
+    headRefOid: fefab13bc83493b807cd48a62e286907062fbebd
+    mergeCommitOid: ae9960b8ba0e8a6a83dcaf60aa156b35783de8fb
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: server/utils/helpers/agents.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 5388
+    title: "[FEAT] Add native Baidu Search provider for Agent web browsing"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5388
+    mergedAt: 2026-04-23T00:53:21Z
+    baseRefName: master
+    headRefName: codex/add-baidu-search-provider
+    baseRefOid: 55567239b0ba48b60b20330736600e31dcbaf163
+    headRefOid: e5f8103df1ffcd2589366b831a9385f0f7280a71
+    mergeCommitOid: 680d38a3ce914537738b0b406e056045da2af7b6
+    changedFiles: 8
+    additions: 170
+    deletions: 1
+    labels: 
+      - "PR:needs review"
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docker/.env.example
+        additions: 4
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/pages/Admin/Agents/WebSearchSelection/SearchProviderOptions/index.jsx
+        additions: 37
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/pages/Admin/Agents/WebSearchSelection/icons/baidu.png
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/pages/Admin/Agents/WebSearchSelection/index.jsx
+        additions: 10
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/.env.example
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/models/systemSettings.js
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/utils/agents/aibitat/plugins/web-browsing.js
+        additions: 110
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/utils/helpers/updateENV.js
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 5527
+    title: "Fix deepseek v4 reasoning inject thoughts"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5527
+    mergedAt: 2026-04-24T22:40:05Z
+    baseRefName: master
+    headRefName: 5509-fix-deepseek-reasoning-inject-thoughts
+    baseRefOid: bde72505ffb85210541aed5a1509852b8d41b8c8
+    headRefOid: 0f059c640602880e06fa45c4901fcf4eedd6411a
+    mergeCommitOid: 7ead0449f25ee5d17cf1828d405e49756587395c
+    changedFiles: 1
+    additions: 13
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: server/utils/agents/aibitat/providers/deepseek.js
+        additions: 13
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 5524
+    title: "Claude Feedback"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5524
+    mergedAt: 2026-04-24T22:13:57Z
+    baseRefName: master
+    headRefName: 5522-claude-report-qa
+    baseRefOid: bee383f19d4fa9c76197593dcdcc7a8d0af0f5f6
+    headRefOid: b638c9c3c2550e89e2b26ff9d925935f967ae2be
+    mergeCommitOid: bde72505ffb85210541aed5a1509852b8d41b8c8
+    changedFiles: 8
+    additions: 12
+    deletions: 50
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docker/.env.example
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/LLMSelection/AnthropicAiOptions/index.jsx
+        additions: 2
+        deletions: 41
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/WorkspaceChat/ChatContainer/PromptInput/LLMSelector/ChatModelSelection/index.jsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/pages/WorkspaceSettings/AgentConfig/AgentModelSelection/index.jsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/pages/WorkspaceSettings/ChatSettings/WorkspaceLLMSelection/ChatModelSelection/index.jsx
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: server/.env.example
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: server/models/systemSettings.js
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: server/utils/agents/aibitat/providers/anthropic.js
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 5518
+    title: "fix: invalid docs links in FileSystemSkillPanel"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5518
+    mergedAt: 2026-04-24T20:50:45Z
+    baseRefName: master
+    headRefName: 5517-invalid-docs-links-in-filesystemskillpanel-agents-settings
+    baseRefOid: bd0faba9be36ba3935a7fbb75c7983024bbe5415
+    headRefOid: e651771429a771727731545b1555afacd2de899c
+    mergeCommitOid: bee383f19d4fa9c76197593dcdcc7a8d0af0f5f6
+    changedFiles: 25
+    additions: 29
+    deletions: 27
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - leak
+      - validation
+      - broken
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: frontend/src/locales/ar/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ca/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/cs/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/da/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/de/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/en/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/es/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/et/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/fr/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/he/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/it/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ja/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ko/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/lt/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/lv/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/nl/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/pl/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/pt_BR/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ro/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ru/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/tr/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/vn/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/zh/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/zh_TW/common.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/pages/Admin/Agents/FileSystemSkillPanel/index.jsx
+        additions: 5
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 5513
+    title: "fix(embedder): surface Mistral embedding failures"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5513
+    mergedAt: 2026-04-24T19:55:51Z
+    baseRefName: master
+    headRefName: fix/mistral-embedder-errors
+    baseRefOid: 680d38a3ce914537738b0b406e056045da2af7b6
+    headRefOid: ffadafdb44889b4f8dc079178667b25bba43fb0e
+    mergeCommitOid: eeb29948e3504dda3771cbc3214de49371c93cdb
+    changedFiles: 1
+    additions: 9
+    deletions: 12
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - fail
+      - failure
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: server/utils/EmbeddingEngines/mistral/index.js
+        additions: 9
+        deletions: 12
+        changeType: MODIFIED
+  - 
+    number: 5482
+    title: "Scheduled Jobs: Translations"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5482
+    mergedAt: 2026-04-24T00:42:55Z
+    baseRefName: feat-background-jobs
+    headRefName: feat-background-jobs-translations
+    baseRefOid: 889650c27074eef1a239e5639f508e659e027522
+    headRefOid: 80112793a01d071b6887fb29773765189b855932
+    mergeCommitOid: ed1e1419e923982ed85e43b3eba7de0907b86262
+    changedFiles: 24
+    additions: 3730
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: frontend/src/locales/ar/common.js
+        additions: 153
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ca/common.js
+        additions: 155
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/cs/common.js
+        additions: 156
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/da/common.js
+        additions: 156
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/de/common.js
+        additions: 158
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/es/common.js
+        additions: 155
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/et/common.js
+        additions: 156
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/fa/common.js
+        additions: 156
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/fr/common.js
+        additions: 157
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/he/common.js
+        additions: 153
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/it/common.js
+        additions: 158
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ja/common.js
+        additions: 154
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ko/common.js
+        additions: 154
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/lt/common.js
+        additions: 156
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/lv/common.js
+        additions: 156
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/nl/common.js
+        additions: 157
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/pl/common.js
+        additions: 156
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/pt_BR/common.js
+        additions: 155
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ro/common.js
+        additions: 157
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ru/common.js
+        additions: 156
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/tr/common.js
+        additions: 155
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/vn/common.js
+        additions: 155
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/zh/common.js
+        additions: 153
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/zh_TW/common.js
+        additions: 153
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 5444
+    title: "Show agent skills, flows, and MCP tools in chat tools menu"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5444
+    mergedAt: 2026-04-23T00:41:09Z
+    baseRefName: master
+    headRefName: 5370-feat-show-agent-skills-in-tools-menu-in-main-chat
+    baseRefOid: 4f3f77119d342e5489d1ba7533ad6d51bdcd565f
+    headRefOid: 617c5f3e3976ea5370e948e1e720cbb47bdf3472
+    mergeCommitOid: 55567239b0ba48b60b20330736600e31dcbaf163
+    changedFiles: 35
+    additions: 987
+    deletions: 134
+    labels: 
+      - "PR: Yankee"
+    keywordHits: 
+      - bug
+      - fix
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: frontend/src/components/WorkspaceChat/ChatContainer/PromptInput/ToolsMenu/Tabs/AgentSkills/SkillRow/index.jsx
+        additions: 17
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/WorkspaceChat/ChatContainer/PromptInput/ToolsMenu/Tabs/AgentSkills/SkillSection/index.jsx
+        additions: 57
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/components/WorkspaceChat/ChatContainer/PromptInput/ToolsMenu/Tabs/AgentSkills/index.jsx
+        additions: 232
+        deletions: 121
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/WorkspaceChat/ChatContainer/PromptInput/ToolsMenu/Tabs/AgentSkills/skillRegistry.js
+        additions: 81
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/components/WorkspaceChat/ChatContainer/PromptInput/ToolsMenu/Tabs/AgentSkills/useAgentSkillsState.js
+        additions: 182
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/components/WorkspaceChat/ChatContainer/PromptInput/ToolsMenu/Tabs/AgentSkills/useSkillSections.js
+        additions: 187
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/components/WorkspaceChat/ChatContainer/PromptInput/ToolsMenu/Tabs/AgentSkills/useSubSkillPreferences.js
+        additions: 78
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/components/WorkspaceChat/ChatContainer/PromptInput/ToolsMenu/index.jsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ar/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ca/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/cs/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/da/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/de/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/en/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/es/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/et/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/fa/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/fr/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/he/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/it/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ja/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ko/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/lt/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/lv/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/nl/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/pl/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/pt_BR/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ro/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ru/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/tr/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/vn/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/zh/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/zh_TW/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/pages/Admin/Agents/CreateFileSkillPanel/index.jsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/pages/Admin/Agents/FileSystemSkillPanel/index.jsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 5448
+    title: "Translations for chat tools menu improvements"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5448
+    mergedAt: 2026-04-23T00:29:41Z
+    baseRefName: 5370-feat-show-agent-skills-in-tools-menu-in-main-chat
+    headRefName: 5370-translations
+    baseRefOid: 7f59a6fae9353ef032bb51a648c88e2f78eb70d8
+    headRefOid: be7a818d4be69b8524a81ece1fcd60c706ae903a
+    mergeCommitOid: d2275011e5f9d18a92a4d9595a6b976106208ed1
+    changedFiles: 24
+    additions: 144
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: frontend/src/locales/ar/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ca/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/cs/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/da/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/de/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/es/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/et/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/fa/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/fr/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/he/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/it/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ja/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ko/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/lt/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/lv/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/nl/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/pl/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/pt_BR/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ro/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ru/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/tr/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/vn/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/zh/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/zh_TW/common.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 5485
+    title: "Pg 1.12.1"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5485
+    mergedAt: 2026-04-22T22:41:27Z
+    baseRefName: pg
+    headRefName: pg-1.12.1
+    baseRefOid: 67feaf841dac0d6a61df90bfec7dc56d9c1afbac
+    headRefOid: 9d8c891f9f1f63a7232240ce45a8ef3db46ec27e
+    mergeCommitOid: 395442386c1641ec6885e20856258b9ae4262c63
+    changedFiles: 183
+    additions: 24258
+    deletions: 686
+    labels: 
+[]
+    keywordHits: 
+      - bug
+    hasTests: true
+    testFiles: 
+      - collector/__tests__/utils/extensions/Confluence/ConfluenceLoader.test.js
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+    files: 
+      - 
+        path: .github/ISSUE_TEMPLATE/01_bug.yml
+        additions: 18
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/build-and-push-pg-image.yaml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: cloud-deployments/helm/charts/anythingllm/README.md
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: cloud-deployments/helm/charts/anythingllm/README.md.gotmpl
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: cloud-deployments/helm/charts/anythingllm/templates/deployment.yaml
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: cloud-deployments/helm/charts/anythingllm/templates/httproute.yaml
+        additions: 38
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: cloud-deployments/helm/charts/anythingllm/values.yaml
+        additions: 39
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: collector/__tests__/utils/extensions/Confluence/ConfluenceLoader.test.js
+        additions: 125
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: collector/package.json
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: collector/utils/extensions/Confluence/index.js
+        additions: 25
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: collector/utils/files/index.js
+        additions: 13
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: docker/.env.example
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docker/Dockerfile
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/App.jsx
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/EmbeddingProgressContext.jsx
+        additions: 240
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/components/ImageLightbox/index.jsx
+        additions: 115
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/components/LLMSelection/LemonadeOptions/index.jsx
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/Modals/ManageWorkspace/Documents/WorkspaceDirectory/index.jsx
+        additions: 180
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/Modals/ManageWorkspace/Documents/index.jsx
+        additions: 53
+        deletions: 23
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/Modals/ManageWorkspace/index.jsx
+        additions: 6
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/WorkspaceChat/ChatContainer/ChatHistory/Chartable/index.jsx
+        additions: 3
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/WorkspaceChat/ChatContainer/ChatHistory/Citation/index.jsx
+        additions: 62
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/WorkspaceChat/ChatContainer/ChatHistory/HistoricalMessage/index.jsx
+        additions: 26
+        deletions: 9
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/WorkspaceChat/ChatContainer/PromptInput/Attachments/index.jsx
+        additions: 30
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/WorkspaceChat/ChatContainer/SourcesSidebar/SourceItem/index.jsx
+        additions: 8
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/WorkspaceChat/ChatContainer/TextSizeMenu/index.jsx
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/WorkspaceChat/ChatContainer/WorkspaceModelPicker/index.jsx
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ar/common.js
+        additions: 415
+        deletions: 13
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ca/common.js
+        additions: 1533
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/locales/cs/common.js
+        additions: 420
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/da/common.js
+        additions: 414
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/de/common.js
+        additions: 350
+        deletions: 26
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/en/common.js
+        additions: 408
+        deletions: 13
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/es/common.js
+        additions: 439
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/et/common.js
+        additions: 415
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/fa/common.js
+        additions: 412
+        deletions: 13
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/fr/common.js
+        additions: 439
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/he/common.js
+        additions: 400
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/it/common.js
+        additions: 434
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ja/common.js
+        additions: 407
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ko/common.js
+        additions: 403
+        deletions: 13
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/lt/common.js
+        additions: 333
+        deletions: 20
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/lv/common.js
+        additions: 427
+        deletions: 13
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/nl/common.js
+        additions: 425
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/pl/common.js
+        additions: 434
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/pt_BR/common.js
+        additions: 433
+        deletions: 16
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/resources.js
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ro/common.js
+        additions: 432
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ru/common.js
+        additions: 432
+        deletions: 13
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/tr/common.js
+        additions: 434
+        deletions: 15
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/vn/common.js
+        additions: 420
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/zh/common.js
+        additions: 388
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/zh_TW/common.js
+        additions: 390
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: frontend/src/models/admin.js
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/models/googleAgentSkills.js
+        additions: 45
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/models/outlookAgent.js
+        additions: 65
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/models/system.js
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/models/workspace.js
+        additions: 9
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/pages/Admin/Agents/AgentFlows/FlowPanel.jsx
+        additions: 10
+        deletions: 15
+        changeType: MODIFIED
+      - 
+        path: frontend/src/pages/Admin/Agents/AgentFlows/index.jsx
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 5484
+    title: "Render 1.12.1"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5484
+    mergedAt: 2026-04-22T22:41:23Z
+    baseRefName: render
+    headRefName: render-1.12.1
+    baseRefOid: aa0e08e20148f21ea5506ea3332e04a71deade5c
+    headRefOid: cb2b09b482626898eefb84e991b5c8ad2d215738
+    mergeCommitOid: 84fd7abce457cc47026dd5af999bd76bb7a669b4
+    changedFiles: 184
+    additions: 24260
+    deletions: 688
+    labels: 
+[]
+    keywordHits: 
+      - bug
+    hasTests: true
+    testFiles: 
+      - collector/__tests__/utils/extensions/Confluence/ConfluenceLoader.test.js
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+    files: 
+      - 
+        path: .github/ISSUE_TEMPLATE/01_bug.yml
+        additions: 18
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/build-and-push-render-deployment-image.yaml
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: cloud-deployments/helm/charts/anythingllm/README.md
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: cloud-deployments/helm/charts/anythingllm/README.md.gotmpl
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: cloud-deployments/helm/charts/anythingllm/templates/deployment.yaml
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: cloud-deployments/helm/charts/anythingllm/templates/httproute.yaml
+        additions: 38
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: cloud-deployments/helm/charts/anythingllm/values.yaml
+        additions: 39
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: collector/__tests__/utils/extensions/Confluence/ConfluenceLoader.test.js
+        additions: 125
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: collector/package.json
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: collector/utils/extensions/Confluence/index.js
+        additions: 25
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: collector/utils/files/index.js
+        additions: 13
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: docker/.env.example
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docker/Dockerfile
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docker/render.Dockerfile
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/App.jsx
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/EmbeddingProgressContext.jsx
+        additions: 240
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/components/ImageLightbox/index.jsx
+        additions: 115
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/components/LLMSelection/LemonadeOptions/index.jsx
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/Modals/ManageWorkspace/Documents/WorkspaceDirectory/index.jsx
+        additions: 180
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/Modals/ManageWorkspace/Documents/index.jsx
+        additions: 53
+        deletions: 23
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/Modals/ManageWorkspace/index.jsx
+        additions: 6
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/WorkspaceChat/ChatContainer/ChatHistory/Chartable/index.jsx
+        additions: 3
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/WorkspaceChat/ChatContainer/ChatHistory/Citation/index.jsx
+        additions: 62
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/WorkspaceChat/ChatContainer/ChatHistory/HistoricalMessage/index.jsx
+        additions: 26
+        deletions: 9
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/WorkspaceChat/ChatContainer/PromptInput/Attachments/index.jsx
+        additions: 30
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/WorkspaceChat/ChatContainer/SourcesSidebar/SourceItem/index.jsx
+        additions: 8
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/WorkspaceChat/ChatContainer/TextSizeMenu/index.jsx
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/WorkspaceChat/ChatContainer/WorkspaceModelPicker/index.jsx
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ar/common.js
+        additions: 415
+        deletions: 13
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ca/common.js
+        additions: 1533
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/locales/cs/common.js
+        additions: 420
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/da/common.js
+        additions: 414
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/de/common.js
+        additions: 350
+        deletions: 26
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/en/common.js
+        additions: 408
+        deletions: 13
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/es/common.js
+        additions: 439
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/et/common.js
+        additions: 415
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/fa/common.js
+        additions: 412
+        deletions: 13
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/fr/common.js
+        additions: 439
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/he/common.js
+        additions: 400
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/it/common.js
+        additions: 434
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ja/common.js
+        additions: 407
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ko/common.js
+        additions: 403
+        deletions: 13
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/lt/common.js
+        additions: 333
+        deletions: 20
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/lv/common.js
+        additions: 427
+        deletions: 13
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/nl/common.js
+        additions: 425
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/pl/common.js
+        additions: 434
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/pt_BR/common.js
+        additions: 433
+        deletions: 16
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/resources.js
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ro/common.js
+        additions: 432
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ru/common.js
+        additions: 432
+        deletions: 13
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/tr/common.js
+        additions: 434
+        deletions: 15
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/vn/common.js
+        additions: 420
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/zh/common.js
+        additions: 388
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/zh_TW/common.js
+        additions: 390
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: frontend/src/models/admin.js
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/models/googleAgentSkills.js
+        additions: 45
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/models/outlookAgent.js
+        additions: 65
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/models/system.js
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/models/workspace.js
+        additions: 9
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/pages/Admin/Agents/AgentFlows/FlowPanel.jsx
+        additions: 10
+        deletions: 15
+        changeType: MODIFIED
+  - 
+    number: 5483
+    title: "1.12.1 release tags"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5483
+    mergedAt: 2026-04-22T22:16:00Z
+    baseRefName: master
+    headRefName: 1.12.1-tags
+    baseRefOid: 010795d00bfe6a8fb6e764dda4b405c5348173b3
+    headRefOid: 582f040ad0ccdd8ea1c75b2d96b8c38714860686
+    mergeCommitOid: f144692903305b0dfa24efe30e5192b3eea81fed
+    changedFiles: 7
+    additions: 8
+    deletions: 8
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: cloud-deployments/helm/charts/anythingllm/README.md
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: cloud-deployments/helm/charts/anythingllm/README.md.gotmpl
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: cloud-deployments/helm/charts/anythingllm/values.yaml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: collector/package.json
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docker/Dockerfile
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: package.json
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: server/package.json
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 5478
+    title: "Model Router: Multi-condition rules, updated designs, and router edit support"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5478
+    mergedAt: 2026-04-21T23:52:10Z
+    baseRefName: 5313-feat-model-router
+    headRefName: 5313-model-router-designs-and-feature-expansion
+    baseRefOid: 45311579321bd9c91a613ca9005e9d20da738dc1
+    headRefOid: 95cca9e361662196231d4444a9bc56e3dce7360e
+    mergeCommitOid: db1eb3c3e222ab610d3911e12f1a80dddd377084
+    changedFiles: 15
+    additions: 1084
+    deletions: 730
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: frontend/src/locales/en/common.js
+        additions: 17
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: frontend/src/pages/GeneralSettings/ModelRouters/LLMProviderModelPicker/index.jsx
+        additions: 16
+        deletions: 16
+        changeType: MODIFIED
+      - 
+        path: frontend/src/pages/GeneralSettings/ModelRouters/NewRouterModal/index.jsx
+        additions: 132
+        deletions: 92
+        changeType: MODIFIED
+      - 
+        path: frontend/src/pages/GeneralSettings/ModelRouters/RouterForm/index.jsx
+        additions: 7
+        deletions: 121
+        changeType: MODIFIED
+      - 
+        path: frontend/src/pages/GeneralSettings/ModelRouters/RuleBuilder/RuleForm/CalculatedFields/index.jsx
+        additions: 239
+        deletions: 81
+        changeType: MODIFIED
+      - 
+        path: frontend/src/pages/GeneralSettings/ModelRouters/RuleBuilder/RuleForm/LLMDescriptionField/index.jsx
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: frontend/src/pages/GeneralSettings/ModelRouters/RuleBuilder/RuleForm/index.jsx
+        additions: 145
+        deletions: 127
+        changeType: MODIFIED
+      - 
+        path: frontend/src/pages/GeneralSettings/ModelRouters/RuleBuilder/RuleRow/index.jsx
+        additions: 96
+        deletions: 49
+        changeType: MODIFIED
+      - 
+        path: frontend/src/pages/GeneralSettings/ModelRouters/RuleBuilder/index.jsx
+        additions: 63
+        deletions: 52
+        changeType: MODIFIED
+      - 
+        path: frontend/src/pages/GeneralSettings/ModelRouters/index.jsx
+        additions: 127
+        deletions: 102
+        changeType: MODIFIED
+      - 
+        path: server/models/modelRouter.js
+        additions: 9
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: server/models/modelRouterRule.js
+        additions: 97
+        deletions: 53
+        changeType: MODIFIED
+      - 
+        path: server/prisma/migrations/20260417000000_router_rules_multi_condition/migration.sql
+        additions: 56
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/prisma/schema.prisma
+        additions: 22
+        deletions: 16
+        changeType: MODIFIED
+      - 
+        path: server/utils/router/deterministic.js
+        additions: 55
+        deletions: 13
+        changeType: MODIFIED
+  - 
+    number: 5476
+    title: "fix: surface readable error messages in web-scraping agent and ai-provider"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5476
+    mergedAt: 2026-04-21T22:00:12Z
+    baseRefName: master
+    headRefName: fix/agent-error-serialization
+    baseRefOid: f4cb1ead4e0a4ff1b161ec4826031dbe4b44b027
+    headRefOid: 076006f49650c5ab3557a9dd863cde9e17b8f211
+    mergeCommitOid: cb4a06ce5cf2f2fa1f88c799a46bb2bf6b089f2f
+    changedFiles: 2
+    additions: 7
+    deletions: 4
+    labels: 
+      - "PR:needs review"
+    keywordHits: 
+      - bug
+      - fix
+      - error
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: server/utils/agents/aibitat/plugins/web-scraping.js
+        additions: 4
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: server/utils/agents/aibitat/providers/ai-provider.js
+        additions: 3
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 5473
+    title: "fix: long-prompt bubble flicker & See More collapse on streaming/scroll"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5473
+    mergedAt: 2026-04-21T21:48:44Z
+    baseRefName: master
+    headRefName: 5455-bug-intense-ui-flickering-upon-sending-large-mesages
+    baseRefOid: 38206a14b324c01bc0ca69fa3e39929ee8fb3395
+    headRefOid: 42fd2d39f2c019f16f68f5f42437f104fd4a34df
+    mergeCommitOid: f4cb1ead4e0a4ff1b161ec4826031dbe4b44b027
+    changedFiles: 1
+    additions: 9
+    deletions: 3
+    labels: 
+      - "PR: Zulu"
+    keywordHits: 
+      - bug
+      - fix
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: frontend/src/components/WorkspaceChat/ChatContainer/ChatHistory/HistoricalMessage/index.jsx
+        additions: 9
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 5472
+    title: "fix: omit temperature param for Bedrock Claude Opus 4.7"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5472
+    mergedAt: 2026-04-21T21:39:43Z
+    baseRefName: master
+    headRefName: 5461-bug-temperature-deprecated-on-claude-opus-47
+    baseRefOid: faf2dd998e94a4a83bc427c28626ffcb13f4f91b
+    headRefOid: 70c5d868cc60286582a8ec7c389fdc61d412eb97
+    mergeCommitOid: 38206a14b324c01bc0ca69fa3e39929ee8fb3395
+    changedFiles: 1
+    additions: 26
+    deletions: 2
+    labels: 
+      - "PR: Yankee"
+    keywordHits: 
+      - bug
+      - fix
+      - validation
+      - fail
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: server/utils/AiProviders/bedrock/index.js
+        additions: 26
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 5477
+    title: "Add capability detection and streaming usage for Generic OpenAI provider"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5477
+    mergedAt: 2026-04-21T16:31:58Z
+    baseRefName: master
+    headRefName: generic-openai-tooling
+    baseRefOid: 649c94298c6a564d1e447c7eddd4cc5610684e42
+    headRefOid: 838dbb132feb3224116ac6992007eb1078de575f
+    mergeCommitOid: faf2dd998e94a4a83bc427c28626ffcb13f4f91b
+    changedFiles: 4
+    additions: 84
+    deletions: 11
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: server/utils/AiProviders/genericOpenAi/index.js
+        additions: 61
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/utils/agents/aibitat/providers/genericOpenAi.js
+        additions: 9
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: server/utils/agents/aibitat/providers/helpers/tooled.js
+        additions: 9
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: server/utils/helpers/updateENV.js
+        additions: 5
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 5441
+    title: "Image lightbox for chat attachments"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5441
+    mergedAt: 2026-04-15T02:47:48Z
+    baseRefName: master
+    headRefName: feat/image-lightbox
+    baseRefOid: 1cea4df8e62ec77b03e56e3cacebc7b450e0ae31
+    headRefOid: 41f63701a74eea18df75bcf133b8ed6b43ab38a1
+    mergeCommitOid: 6ca2d5235da5cd2f779bef3d59f14543d005588f
+    changedFiles: 4
+    additions: 164
+    deletions: 14
+    labels: 
+      - "PR: Yankee"
+    keywordHits: 
+      - bug
+      - fix
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: frontend/src/App.jsx
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/ImageLightbox/index.jsx
+        additions: 115
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/components/WorkspaceChat/ChatContainer/ChatHistory/HistoricalMessage/index.jsx
+        additions: 17
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/WorkspaceChat/ChatContainer/PromptInput/Attachments/index.jsx
+        additions: 30
+        deletions: 8
+        changeType: MODIFIED
+  - 
+    number: 5442
+    title: "Google calendar skill"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5442
+    mergedAt: 2026-04-14T23:39:36Z
+    baseRefName: master
+    headRefName: google-cal-skill
+    baseRefOid: 177049bd4aab2ecac7b2dc7cb392979b003cfa4a
+    headRefOid: bc54789d102ba5a988916bc69736e3ba26056154
+    mergeCommitOid: 1cea4df8e62ec77b03e56e3cacebc7b450e0ae31
+    changedFiles: 51
+    additions: 4618
+    deletions: 97
+    labels: 
+      - "PR: Ready for QA"
+    keywordHits: 
+      - bug
+      - fix
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: frontend/src/locales/ar/common.js
+        additions: 81
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ca/common.js
+        additions: 89
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/cs/common.js
+        additions: 84
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/da/common.js
+        additions: 83
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/de/common.js
+        additions: 89
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/en/common.js
+        additions: 84
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/es/common.js
+        additions: 89
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/et/common.js
+        additions: 86
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/fa/common.js
+        additions: 83
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/fr/common.js
+        additions: 91
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/he/common.js
+        additions: 80
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/it/common.js
+        additions: 89
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ja/common.js
+        additions: 83
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ko/common.js
+        additions: 81
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/lt/common.js
+        additions: 84
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/lv/common.js
+        additions: 85
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/nl/common.js
+        additions: 89
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/pl/common.js
+        additions: 88
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/pt_BR/common.js
+        additions: 89
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ro/common.js
+        additions: 89
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ru/common.js
+        additions: 89
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/tr/common.js
+        additions: 87
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/vn/common.js
+        additions: 87
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/zh/common.js
+        additions: 77
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/zh_TW/common.js
+        additions: 78
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/models/gmailAgent.js
+        additions: 0
+        deletions: 22
+        changeType: DELETED
+      - 
+        path: frontend/src/models/googleAgentSkills.js
+        additions: 45
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/pages/Admin/Agents/GMailSkillPanel/index.jsx
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: frontend/src/pages/Admin/Agents/GMailSkillPanel/utils.js
+        additions: 1
+        deletions: 33
+        changeType: MODIFIED
+      - 
+        path: frontend/src/pages/Admin/Agents/GoogleCalendarSkillPanel/google-calendar.png
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/pages/Admin/Agents/GoogleCalendarSkillPanel/index.jsx
+        additions: 457
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/pages/Admin/Agents/GoogleCalendarSkillPanel/utils.js
+        additions: 114
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/pages/Admin/Agents/OutlookSkillPanel/utils.js
+        additions: 1
+        deletions: 33
+        changeType: MODIFIED
+      - 
+        path: frontend/src/pages/Admin/Agents/skills.jsx
+        additions: 17
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/pages/Admin/Agents/utils.js
+        additions: 33
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/endpoints/utils/googleAgentSkillEndpoints.js
+        additions: 33
+        deletions: 2
+        changeType: RENAMED
+      - 
+        path: server/index.js
+        additions: 4
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: server/models/systemSettings.js
+        additions: 47
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/utils/agents/aibitat/plugins/google-calendar/calendars/gcal-get-calendar.js
+        additions: 79
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/google-calendar/calendars/gcal-list-calendars.js
+        additions: 82
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/google-calendar/events/gcal-create-event.js
+        additions: 233
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/google-calendar/events/gcal-get-event.js
+        additions: 108
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/google-calendar/events/gcal-get-events-for-day.js
+        additions: 109
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/google-calendar/events/gcal-get-events.js
+        additions: 137
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/google-calendar/events/gcal-get-upcoming-events.js
+        additions: 238
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/google-calendar/events/gcal-quick-add.js
+        additions: 114
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/google-calendar/events/gcal-set-my-status.js
+        additions: 125
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/google-calendar/events/gcal-update-event.js
+        additions: 173
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/google-calendar/index.js
+        additions: 40
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/google-calendar/lib.js
+        additions: 288
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/index.js
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 5443
+    title: Translations
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5443
+    mergedAt: 2026-04-14T23:28:25Z
+    baseRefName: google-cal-skill
+    headRefName: 5442-translations
+    baseRefOid: a4960306ffd71f12fe751100ab0e981dbabc8119
+    headRefOid: 50540b035b303e45eb2ce4d9a164ad58deaab4f7
+    mergeCommitOid: bc54789d102ba5a988916bc69736e3ba26056154
+    changedFiles: 25
+    additions: 2053
+    deletions: 3
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: frontend/src/locales/ar/common.js
+        additions: 81
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ca/common.js
+        additions: 89
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/cs/common.js
+        additions: 84
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/da/common.js
+        additions: 83
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/de/common.js
+        additions: 89
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/en/common.js
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/es/common.js
+        additions: 89
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/et/common.js
+        additions: 86
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/fa/common.js
+        additions: 83
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/fr/common.js
+        additions: 91
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/he/common.js
+        additions: 80
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/it/common.js
+        additions: 89
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ja/common.js
+        additions: 83
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ko/common.js
+        additions: 81
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/lt/common.js
+        additions: 84
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/lv/common.js
+        additions: 85
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/nl/common.js
+        additions: 89
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/pl/common.js
+        additions: 88
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/pt_BR/common.js
+        additions: 89
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ro/common.js
+        additions: 89
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ru/common.js
+        additions: 89
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/tr/common.js
+        additions: 87
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/vn/common.js
+        additions: 87
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/zh/common.js
+        additions: 77
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/zh_TW/common.js
+        additions: 78
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 5439
+    title: "Refactor Gmail Agent"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5439
+    mergedAt: 2026-04-14T21:46:54Z
+    baseRefName: master
+    headRefName: gmail-refactor
+    baseRefOid: f17337fb9774617d4caa7f186d865e782c31d935
+    headRefOid: a26165cd88a4916e53ed498e87e8448ae335a2fe
+    mergeCommitOid: 5aae72a5e5b73f92cf8a80d174aa55293e474979
+    changedFiles: 7
+    additions: 155
+    deletions: 68
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: frontend/src/models/gmailAgent.js
+        additions: 22
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/pages/Admin/Agents/GMailSkillPanel/index.jsx
+        additions: 28
+        deletions: 23
+        changeType: MODIFIED
+      - 
+        path: server/endpoints/admin.js
+        additions: 0
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: server/endpoints/utils/gmailAgentUtils.js
+        additions: 39
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/index.js
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/models/systemSettings.js
+        additions: 29
+        deletions: 17
+        changeType: MODIFIED
+      - 
+        path: server/utils/agents/aibitat/plugins/gmail/lib.js
+        additions: 35
+        deletions: 22
+        changeType: MODIFIED
+  - 
+    number: 5427
+    title: "Outlook agent via Entra Application"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5427
+    mergedAt: 2026-04-14T21:05:19Z
+    baseRefName: master
+    headRefName: outlook-agent
+    baseRefOid: b7b380ac51a21fa17e62714672f43aac01bd50a9
+    headRefOid: 9b2d255b5a55b03d2e8b754b8d9a0cbcc84fc9b6
+    mergeCommitOid: 1c0d0301b09ecbd742521f7ae7d46056fab126ac
+    changedFiles: 48
+    additions: 6336
+    deletions: 60
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: frontend/src/locales/ar/common.js
+        additions: 98
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ca/common.js
+        additions: 105
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/cs/common.js
+        additions: 100
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/da/common.js
+        additions: 97
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/de/common.js
+        additions: 104
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/en/common.js
+        additions: 95
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/es/common.js
+        additions: 105
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/et/common.js
+        additions: 97
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/fa/common.js
+        additions: 97
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/fr/common.js
+        additions: 104
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/he/common.js
+        additions: 92
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/it/common.js
+        additions: 103
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ja/common.js
+        additions: 96
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ko/common.js
+        additions: 93
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/lt/common.js
+        additions: 102
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/lv/common.js
+        additions: 103
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/nl/common.js
+        additions: 100
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/pl/common.js
+        additions: 104
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/pt_BR/common.js
+        additions: 102
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ro/common.js
+        additions: 104
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ru/common.js
+        additions: 103
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/tr/common.js
+        additions: 104
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/vn/common.js
+        additions: 98
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/zh/common.js
+        additions: 91
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/zh_TW/common.js
+        additions: 91
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/models/outlookAgent.js
+        additions: 65
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/pages/Admin/Agents/OutlookSkillPanel/index.jsx
+        additions: 667
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/pages/Admin/Agents/OutlookSkillPanel/outlook.png
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/pages/Admin/Agents/OutlookSkillPanel/utils.js
+        additions: 122
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/pages/Admin/Agents/skills.js
+        additions: 10
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/endpoints/admin.js
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/endpoints/utils/outlookAgentUtils.js
+        additions: 190
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/index.js
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/models/systemSettings.js
+        additions: 81
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/utils/agents/aibitat/plugins/index.js
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/utils/agents/aibitat/plugins/outlook/account/outlook-get-mailbox-stats.js
+        additions: 78
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/outlook/drafts/outlook-create-draft.js
+        additions: 232
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/outlook/drafts/outlook-delete-draft.js
+        additions: 86
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/outlook/drafts/outlook-list-drafts.js
+        additions: 80
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/outlook/drafts/outlook-send-draft.js
+        additions: 82
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/outlook/drafts/outlook-update-draft.js
+        additions: 132
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/outlook/index.js
+        additions: 45
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/outlook/lib.js
+        additions: 1409
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/outlook/search/outlook-get-inbox.js
+        additions: 75
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/outlook/search/outlook-read-thread.js
+        additions: 114
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/outlook/search/outlook-search.js
+        additions: 101
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/outlook/send/outlook-send-email.js
+        additions: 222
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/defaults.js
+        additions: 47
+        deletions: 60
+        changeType: MODIFIED
+  - 
+    number: 5437
+    title: translations
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5437
+    mergedAt: 2026-04-14T20:41:47Z
+    baseRefName: outlook-agent
+    headRefName: 5427-translations
+    baseRefOid: 1f23e957181581c26d690d3d1aafd53436de5217
+    headRefOid: 61bad01641e9e9f057346bb2e04b21174a0a5299
+    mergeCommitOid: c91c11d9d5c7769726dcaaeb1bf5600cbc3ada2f
+    changedFiles: 24
+    additions: 2393
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: frontend/src/locales/ar/common.js
+        additions: 98
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ca/common.js
+        additions: 105
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/cs/common.js
+        additions: 100
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/da/common.js
+        additions: 97
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/de/common.js
+        additions: 104
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/es/common.js
+        additions: 105
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/et/common.js
+        additions: 97
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/fa/common.js
+        additions: 97
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/fr/common.js
+        additions: 104
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/he/common.js
+        additions: 92
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/it/common.js
+        additions: 103
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ja/common.js
+        additions: 96
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ko/common.js
+        additions: 93
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/lt/common.js
+        additions: 102
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/lv/common.js
+        additions: 103
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/nl/common.js
+        additions: 100
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/pl/common.js
+        additions: 104
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/pt_BR/common.js
+        additions: 102
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ro/common.js
+        additions: 104
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ru/common.js
+        additions: 103
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/tr/common.js
+        additions: 104
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/vn/common.js
+        additions: 98
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/zh/common.js
+        additions: 91
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/zh_TW/common.js
+        additions: 91
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 5429
+    title: "5427 translations"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5429
+    mergedAt: 2026-04-14T20:38:03Z
+    baseRefName: master
+    headRefName: 5427-translations
+    baseRefOid: 3d9c210a3229d1cf272717024e5c934c280d0221
+    headRefOid: 61bad01641e9e9f057346bb2e04b21174a0a5299
+    mergeCommitOid: 41727518584491baabf50e10da35f6006be55dfd
+    changedFiles: 48
+    additions: 6336
+    deletions: 60
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: frontend/src/locales/ar/common.js
+        additions: 98
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ca/common.js
+        additions: 105
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/cs/common.js
+        additions: 100
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/da/common.js
+        additions: 97
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/de/common.js
+        additions: 104
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/en/common.js
+        additions: 95
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/es/common.js
+        additions: 105
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/et/common.js
+        additions: 97
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/fa/common.js
+        additions: 97
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/fr/common.js
+        additions: 104
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/he/common.js
+        additions: 92
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/it/common.js
+        additions: 103
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ja/common.js
+        additions: 96
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ko/common.js
+        additions: 93
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/lt/common.js
+        additions: 102
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/lv/common.js
+        additions: 103
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/nl/common.js
+        additions: 100
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/pl/common.js
+        additions: 104
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/pt_BR/common.js
+        additions: 102
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ro/common.js
+        additions: 104
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ru/common.js
+        additions: 103
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/tr/common.js
+        additions: 104
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/vn/common.js
+        additions: 98
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/zh/common.js
+        additions: 91
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/zh_TW/common.js
+        additions: 91
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/models/outlookAgent.js
+        additions: 65
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/pages/Admin/Agents/OutlookSkillPanel/index.jsx
+        additions: 667
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/pages/Admin/Agents/OutlookSkillPanel/outlook.png
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/pages/Admin/Agents/OutlookSkillPanel/utils.js
+        additions: 122
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/pages/Admin/Agents/skills.js
+        additions: 10
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/endpoints/admin.js
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/endpoints/utils/outlookAgentUtils.js
+        additions: 190
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/index.js
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/models/systemSettings.js
+        additions: 81
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/utils/agents/aibitat/plugins/index.js
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/utils/agents/aibitat/plugins/outlook/account/outlook-get-mailbox-stats.js
+        additions: 78
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/outlook/drafts/outlook-create-draft.js
+        additions: 232
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/outlook/drafts/outlook-delete-draft.js
+        additions: 86
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/outlook/drafts/outlook-list-drafts.js
+        additions: 80
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/outlook/drafts/outlook-send-draft.js
+        additions: 82
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/outlook/drafts/outlook-update-draft.js
+        additions: 132
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/outlook/index.js
+        additions: 45
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/outlook/lib.js
+        additions: 1409
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/outlook/search/outlook-get-inbox.js
+        additions: 75
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/outlook/search/outlook-read-thread.js
+        additions: 114
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/outlook/search/outlook-search.js
+        additions: 101
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/outlook/send/outlook-send-email.js
+        additions: 222
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/defaults.js
+        additions: 47
+        deletions: 60
+        changeType: MODIFIED
+  - 
+    number: 5382
+    title: "Fix streaming issue for LLM instruction blocks"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5382
+    mergedAt: 2026-04-07T19:03:07Z
+    baseRefName: master
+    headRefName: 5374-anthropic-llm-block
+    baseRefOid: b7dfa4c278a3732a6244b3ebe58eb02369b85051
+    headRefOid: 4222d039b540ad81ac00c84b490f1c8338227854
+    mergeCommitOid: b2404801d1fe5fed9818548182f686b740ab8ba2
+    changedFiles: 1
+    additions: 10
+    deletions: 6
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - validation
+      - fail
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: server/utils/agentFlows/executors/llm-instruction.js
+        additions: 10
+        deletions: 6
+        changeType: MODIFIED
+  - 
+    number: 5407
+    title: "Enable chatId reporting during agent sessions"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5407
+    mergedAt: 2026-04-13T20:24:09Z
+    baseRefName: master
+    headRefName: agent-chat-ids
+    baseRefOid: 91e75c27c2d70320f41ca6ab55988675d9745bc9
+    headRefOid: fa0afd226ac0884382e3efe580117ecc1855e2ce
+    mergeCommitOid: 3d9c210a3229d1cf272717024e5c934c280d0221
+    changedFiles: 4
+    additions: 139
+    deletions: 6
+    labels: 
+      - "PR: Ready for QA"
+    keywordHits: 
+      - bug
+      - fix
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: frontend/src/utils/chat/agent.js
+        additions: 7
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/models/workspaceChats.js
+        additions: 39
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/utils/agents/aibitat/index.js
+        additions: 42
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: server/utils/agents/aibitat/plugins/chat-history.js
+        additions: 51
+        deletions: 5
+        changeType: MODIFIED
+  - 
+    number: 5415
+    title: "fix: preserve Confluence context paths"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5415
+    mergedAt: 2026-04-13T20:10:40Z
+    baseRefName: master
+    headRefName: 4678-confluence-context-path
+    baseRefOid: 6ef114df1959ba124628690a12855508b326c06b
+    headRefOid: 6a6d31f0823c0d53754c51d41eb7fd64540649df
+    mergeCommitOid: 91e75c27c2d70320f41ca6ab55988675d9745bc9
+    changedFiles: 2
+    additions: 150
+    deletions: 7
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - validation
+    hasTests: true
+    testFiles: 
+      - collector/__tests__/utils/extensions/Confluence/ConfluenceLoader.test.js
+    debugScore: 5
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: collector/__tests__/utils/extensions/Confluence/ConfluenceLoader.test.js
+        additions: 125
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: collector/utils/extensions/Confluence/index.js
+        additions: 25
+        deletions: 7
+        changeType: MODIFIED
+  - 
+    number: 5410
+    title: "Helm chart updates"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5410
+    mergedAt: 2026-04-12T02:35:01Z
+    baseRefName: master
+    headRefName: helm-chart-updates
+    baseRefOid: cec67d77f2779b184be9cd74a468fcd7da1b6f70
+    headRefOid: 0e5cec65a222ba1d4d9fed68b3a6b151d69081b4
+    mergeCommitOid: c442ba85d84ab97369bd1e3b732be199bfdcb889
+    changedFiles: 3
+    additions: 80
+    deletions: 4
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - error
+      - validation
+      - fail
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 5
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: cloud-deployments/helm/charts/anythingllm/templates/deployment.yaml
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: cloud-deployments/helm/charts/anythingllm/templates/httproute.yaml
+        additions: 38
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: cloud-deployments/helm/charts/anythingllm/values.yaml
+        additions: 38
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 5411
+    title: "feat: add Catalan translation"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5411
+    mergedAt: 2026-04-12T02:36:54Z
+    baseRefName: master
+    headRefName: catalan
+    baseRefOid: c442ba85d84ab97369bd1e3b732be199bfdcb889
+    headRefOid: 49ed96045cac58ac5ff0c5a346313306e1437f29
+    mergeCommitOid: 6ef114df1959ba124628690a12855508b326c06b
+    changedFiles: 2
+    additions: 1343
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: frontend/src/locales/ca/common.js
+        additions: 1339
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/locales/resources.js
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 5400
+    title: "GMail Agent Skill"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5400
+    mergedAt: 2026-04-10T21:14:12Z
+    baseRefName: master
+    headRefName: gmail-skill
+    baseRefOid: 246edc38ceb54c00b73c45e3e14c2f5e59173a33
+    headRefOid: dd63a1a33ca9ade2565138366d2cfd6c78162a08
+    mergeCommitOid: cec67d77f2779b184be9cd74a468fcd7da1b6f70
+    changedFiles: 53
+    additions: 6578
+    deletions: 5
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: frontend/src/locales/ar/common.js
+        additions: 121
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/cs/common.js
+        additions: 120
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/da/common.js
+        additions: 119
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/de/common.js
+        additions: 125
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/en/common.js
+        additions: 116
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/es/common.js
+        additions: 127
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/et/common.js
+        additions: 117
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/fa/common.js
+        additions: 118
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/fr/common.js
+        additions: 126
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/he/common.js
+        additions: 117
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/it/common.js
+        additions: 126
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ja/common.js
+        additions: 115
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ko/common.js
+        additions: 114
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/lt/common.js
+        additions: 120
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/lv/common.js
+        additions: 122
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/nl/common.js
+        additions: 120
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/pl/common.js
+        additions: 125
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/pt_BR/common.js
+        additions: 124
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ro/common.js
+        additions: 123
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ru/common.js
+        additions: 124
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/tr/common.js
+        additions: 125
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/vn/common.js
+        additions: 119
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/zh/common.js
+        additions: 112
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/zh_TW/common.js
+        additions: 112
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: frontend/src/pages/Admin/Agents/GMailSkillPanel/gmail.png
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/pages/Admin/Agents/GMailSkillPanel/index.jsx
+        additions: 443
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/pages/Admin/Agents/GMailSkillPanel/utils.js
+        additions: 168
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/pages/Admin/Agents/index.jsx
+        additions: 16
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/pages/Admin/Agents/skills.js
+        additions: 10
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/endpoints/admin.js
+        additions: 9
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/models/systemSettings.js
+        additions: 33
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/utils/agents/aibitat/plugins/gmail/account/gmail-get-mailbox-stats.js
+        additions: 75
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/gmail/drafts/gmail-create-draft-reply.js
+        additions: 220
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/gmail/drafts/gmail-create-draft.js
+        additions: 217
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/gmail/drafts/gmail-delete-draft.js
+        additions: 87
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/gmail/drafts/gmail-get-draft.js
+        additions: 84
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/gmail/drafts/gmail-list-drafts.js
+        additions: 96
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/gmail/drafts/gmail-send-draft.js
+        additions: 94
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/gmail/drafts/gmail-update-draft.js
+        additions: 217
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/gmail/index.js
+        additions: 73
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/gmail/lib.js
+        additions: 555
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/gmail/search/gmail-get-inbox.js
+        additions: 104
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/gmail/search/gmail-read-thread.js
+        additions: 114
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/gmail/search/gmail-search.js
+        additions: 121
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/gmail/send/gmail-reply-to-thread.js
+        additions: 238
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/gmail/send/gmail-send-email.js
+        additions: 242
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/gmail/threads/gmail-mark-read.js
+        additions: 87
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/gmail/threads/gmail-mark-unread.js
+        additions: 87
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/gmail/threads/gmail-move-to-archive.js
+        additions: 89
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/gmail/threads/gmail-move-to-inbox.js
+        additions: 89
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/gmail/threads/gmail-move-to-trash.js
+        additions: 89
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/agents/aibitat/plugins/index.js
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/utils/agents/defaults.js
+        additions: 31
+        deletions: 4
+        changeType: MODIFIED
+  - 
+    number: 5405
+    title: "Add automatic agent skill aproval via ENV Flag"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5405
+    mergedAt: 2026-04-10T20:20:48Z
+    baseRefName: master
+    headRefName: 5404-skip-approval-flag
+    baseRefOid: 159376e2a1c6ef96139509d75d2d88459ba18766
+    headRefOid: d508db9d52e05eafbb1857568ffb846021ed692d
+    mergeCommitOid: 246edc38ceb54c00b73c45e3e14c2f5e59173a33
+    changedFiles: 6
+    additions: 63
+    deletions: 2
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docker/.env.example
+        additions: 5
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: server/.env.example
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/utils/agents/aibitat/plugins/http-socket.js
+        additions: 8
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: server/utils/agents/aibitat/plugins/websocket.js
+        additions: 8
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/utils/helpers/agents.js
+        additions: 35
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/helpers/updateENV.js
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 5366
+    title: "feat: adds name field to api keys"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5366
+    mergedAt: 2026-04-10T17:40:14Z
+    baseRefName: master
+    headRefName: master
+    baseRefOid: 0325598197f48918cc8cd789d815767e475d8074
+    headRefOid: 29987fe8e2c1a339b0ff4d86a6ff35736c276538
+    mergeCommitOid: 159376e2a1c6ef96139509d75d2d88459ba18766
+    changedFiles: 34
+    additions: 738
+    deletions: 379
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: frontend/src/locales/ar/common.js
+        additions: 27
+        deletions: 13
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/cs/common.js
+        additions: 27
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/da/common.js
+        additions: 27
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/de/common.js
+        additions: 27
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/en/common.js
+        additions: 27
+        deletions: 13
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/es/common.js
+        additions: 27
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/et/common.js
+        additions: 27
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/fa/common.js
+        additions: 27
+        deletions: 13
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/fr/common.js
+        additions: 27
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/he/common.js
+        additions: 26
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/it/common.js
+        additions: 27
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ja/common.js
+        additions: 26
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ko/common.js
+        additions: 27
+        deletions: 13
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/lt/common.js
+        additions: 27
+        deletions: 13
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/lv/common.js
+        additions: 27
+        deletions: 13
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/nl/common.js
+        additions: 27
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/pl/common.js
+        additions: 27
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/pt_BR/common.js
+        additions: 29
+        deletions: 16
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ro/common.js
+        additions: 27
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/ru/common.js
+        additions: 27
+        deletions: 13
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/tr/common.js
+        additions: 28
+        deletions: 15
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/vn/common.js
+        additions: 27
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/zh/common.js
+        additions: 25
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: frontend/src/locales/zh_TW/common.js
+        additions: 26
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: frontend/src/models/admin.js
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/models/system.js
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/pages/GeneralSettings/ApiKeys/ApiKeyRow/index.jsx
+        additions: 33
+        deletions: 28
+        changeType: MODIFIED
+      - 
+        path: frontend/src/pages/GeneralSettings/ApiKeys/NewApiKeyModal/index.jsx
+        additions: 33
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: frontend/src/pages/GeneralSettings/ApiKeys/index.jsx
+        additions: 7
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: server/endpoints/admin.js
+        additions: 3
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: server/endpoints/system.js
+        additions: 4
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: server/models/apiKeys.js
+        additions: 5
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: server/prisma/migrations/20260406120000_init/migration.sql
+        additions: 2
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/prisma/schema.prisma
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 5392
+    title: "Migrate to org-maintained mdpdf for lang support (Hangul, Simplified Chinese, Kanji)"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5392
+    mergedAt: 2026-04-09T05:00:09Z
+    baseRefName: master
+    headRefName: 5383-better-mdpdf
+    baseRefOid: 91c8319d8fc9b6bbb7008c67dd7629dc1c317162
+    headRefOid: 7101cf806fc4541a9d062db88f61deef8b2878c0
+    mergeCommitOid: 67d871bbe4605c5daf9d437a14b6ebb6c4869afe
+    changedFiles: 3
+    additions: 51
+    deletions: 45
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: server/package.json
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: server/utils/agents/aibitat/plugins/create-files/pdf/create-pdf-file.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: server/yarn.lock
+        additions: 48
+        deletions: 42
+        changeType: MODIFIED
+  - 
+    number: 5391
+    title: "Add retry handling to TG for transient failures"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5391
+    mergedAt: 2026-04-08T22:10:02Z
+    baseRefName: master
+    headRefName: tg-error-handling-backoff
+    baseRefOid: 82ef16431452cc271505cec11052308768fbbe63
+    headRefOid: 2a143041dde2b79218b670f1736e1d9a6de84071
+    mergeCommitOid: 91c8319d8fc9b6bbb7008c67dd7629dc1c317162
+    changedFiles: 1
+    additions: 103
+    deletions: 6
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - validation
+      - fail
+      - failure
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 5
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: server/utils/telegramBot/index.js
+        additions: 103
+        deletions: 6
+        changeType: MODIFIED
+  - 
+    number: 5381
+    title: "Enable final tool call in MAX_STACK to run"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5381
+    mergedAt: 2026-04-07T18:53:22Z
+    baseRefName: master
+    headRefName: 5376-orphaned-tc-cleanup
+    baseRefOid: e344109bcb6f5b08d4113f4ab611fd22c33df3c2
+    headRefOid: c0309441958e796c4f209d3602a945ed31232f56
+    mergeCommitOid: b7dfa4c278a3732a6244b3ebe58eb02369b85051
+    changedFiles: 1
+    additions: 18
+    deletions: 38
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: server/utils/agents/aibitat/index.js
+        additions: 18
+        deletions: 38
+        changeType: MODIFIED
+  - 
+    number: 5378
+    title: "Update Lemonade Integration to support v10.1.0 changes"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5378
+    mergedAt: 2026-04-07T18:21:28Z
+    baseRefName: master
+    headRefName: 5375-lemonade-server-changes
+    baseRefOid: 42a41201a80144f3a3b21f72b9d0fd76aa81bc82
+    headRefOid: b792cab863889bb3360c9f624ebd8485fb2b4e02
+    mergeCommitOid: e344109bcb6f5b08d4113f4ab611fd22c33df3c2
+    changedFiles: 6
+    additions: 71
+    deletions: 9
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: frontend/src/components/LLMSelection/LemonadeOptions/index.jsx
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: frontend/src/utils/constants.js
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/utils/AiProviders/lemonade/index.js
+        additions: 60
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: server/utils/EmbeddingEngines/lemonade/index.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: server/utils/agents/aibitat/providers/ai-provider.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: server/utils/agents/aibitat/providers/lemonade.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 5254
+    title: "feat: Document Embedding Status Events | Refactor Document Embedding to Job Queue and Forked Process"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5254
+    mergedAt: 2026-04-07T00:00:15Z
+    baseRefName: master
+    headRefName: refactor-standardize-background-job-system
+    baseRefOid: 0645f3c4bf18384d6ba66e576fe6cb2d0529b296
+    headRefOid: ee01a7ba2afd36ceb15418581bb10acb3faa25fc
+    mergeCommitOid: 42a41201a80144f3a3b21f72b9d0fd76aa81bc82
+    changedFiles: 23
+    additions: 1221
+    deletions: 90
+    labels: 
+      - "PR: Yankee"
+      - "PR: Ready for QA"
+    keywordHits: 
+      - bug
+      - fix
+      - crash
+      - error
+      - race
+      - validation
+      - fail
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: frontend/src/EmbeddingProgressContext.jsx
+        additions: 240
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: frontend/src/components/Modals/ManageWorkspace/Documents/WorkspaceDirectory/index.jsx
+        additions: 180
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/Modals/ManageWorkspace/Documents/index.jsx
+        additions: 53
+        deletions: 23
+        changeType: MODIFIED
+      - 
+        path: frontend/src/components/Modals/ManageWorkspace/index.jsx
+        additions: 4
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/models/workspace.js
+        additions: 9
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/endpoints/workspaces.js
+        additions: 82
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/jobs/embedding-worker.js
+        additions: 199
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/models/documents.js
+        additions: 59
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: server/utils/BackgroundWorkers/index.js
+        additions: 56
+        deletions: 33
+        changeType: MODIFIED
+      - 
+        path: server/utils/EmbeddingEngines/azureOpenAi/index.js
+        additions: 6
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: server/utils/EmbeddingEngines/cohere/index.js
+        additions: 6
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: server/utils/EmbeddingEngines/gemini/index.js
+        additions: 6
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: server/utils/EmbeddingEngines/genericOpenAi/index.js
+        additions: 6
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: server/utils/EmbeddingEngines/lemonade/index.js
+        additions: 26
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: server/utils/EmbeddingEngines/liteLLM/index.js
+        additions: 10
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: server/utils/EmbeddingEngines/lmstudio/index.js
+        additions: 7
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: server/utils/EmbeddingEngines/localAi/index.js
+        additions: 10
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: server/utils/EmbeddingEngines/native/index.js
+        additions: 7
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: server/utils/EmbeddingEngines/ollama/index.js
+        additions: 5
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: server/utils/EmbeddingEngines/openAi/index.js
+        additions: 6
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: server/utils/EmbeddingEngines/openRouter/index.js
+        additions: 6
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: server/utils/EmbeddingWorkerManager.js
+        additions: 202
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/utils/helpers/index.js
+        additions: 36
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 5364
+    title: "Remove illegal chars for Windows on files"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5364
+    mergedAt: 2026-04-06T18:12:13Z
+    baseRefName: master
+    headRefName: 5257-file-encoding-remove-illegal-chars
+    baseRefOid: 3444b9b0aa6764d72d53670ab4b1aaccdc6b7017
+    headRefOid: 5f01b3e27cd59b378bfc1bf21a83f7a288ff3ddf
+    mergeCommitOid: 8ed1d35ab3ea271e36efa7b4a42e6792c7ee4108
+    changedFiles: 4
+    additions: 44
+    deletions: 13
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: collector/utils/files/index.js
+        additions: 13
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: server/utils/chats/apiChatHandler.js
+        additions: 8
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: server/utils/files/index.js
+        additions: 16
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/utils/files/multer.js
+        additions: 7
+        deletions: 7
+        changeType: MODIFIED
+  - 
+    number: 5348
+    title: "Fix Agent Flow toggle state sync"
+    url: https://github.com/Mintplex-Labs/anything-llm/pull/5348
+    mergedAt: 2026-04-03T22:00:03Z
+    baseRefName: master
+    headRefName: 5335-flow-toggle-ui-bug
+    baseRefOid: a841486c5e33fef970431279557b77c7a9bab29b
+    headRefOid: 5e20d613e76e5bba5a28633136e6e0d57337ca64
+    mergeCommitOid: 3c2682eb5fea7e73adec3eb9fb0a31394052e3de
+    changedFiles: 3
+    additions: 12
+    deletions: 14
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: frontend/src/pages/Admin/Agents/AgentFlows/FlowPanel.jsx
+        additions: 7
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: frontend/src/pages/Admin/Agents/AgentFlows/index.jsx
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: frontend/src/pages/Admin/Agents/index.jsx
+        additions: 3
+        deletions: 1
+        changeType: MODIFIED

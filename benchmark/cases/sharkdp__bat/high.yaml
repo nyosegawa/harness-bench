@@ -1,0 +1,37 @@
+id: sharkdp-bat-high-fallback-syntax
+repo: sharkdp/bat
+repo_url: https://github.com/sharkdp/bat
+license: Apache-2.0
+stars_at_selection: 58657
+size_bucket: small
+language_tags: [rust, cli, syntax-highlighting]
+pr_number: 3617
+pr_url: https://github.com/sharkdp/bat/pull/3617
+pr_title: Add --fallback-syntax for undetected files
+merged_at: "2026-03-08T03:18:29Z"
+base_commit: ab80bd9717448d988445841fc9634e7d7c2f8cf6
+original_pr_head_commit: 939e582ddcedd2b9177c243b9a8bb38490dc68db
+fixed_commit: 844bfded506e99c06237472bd83a8af5af433538
+difficulty: high
+instruction: >
+  Users need a way to specify a syntax-highlighting fallback that applies
+  only when automatic syntax detection fails. Add support for such a fallback
+  without changing explicit language selection or normal file-name based
+  detection behavior.
+setup:
+  - cargo fetch
+public_tests:
+  - cargo test
+hidden_tests:
+  - benchmark/cases/sharkdp__bat/hidden-tests/high/run.sh
+test_strategy:
+  core_tests:
+    - benchmark/cases/sharkdp__bat/hidden-tests/high/run.sh
+  oracle_suites: []
+  regression_tests: []
+  success_rule: core_tests_pass
+selection_notes: >
+  Pilot-only high case. This is broader than a bug fix and behaves more like
+  a missing capability, so it is useful for validating runner mechanics but
+  may be replaced in the final benchmark by a high-difficulty bug-fix PR from
+  another repository.

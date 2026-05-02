@@ -1,0 +1,36 @@
+id: sharkdp-bat-mid-control-character-wrapping
+repo: sharkdp/bat
+repo_url: https://github.com/sharkdp/bat
+license: Apache-2.0
+stars_at_selection: 58657
+size_bucket: small
+language_tags: [rust, cli, terminal]
+pr_number: 3640
+pr_url: https://github.com/sharkdp/bat/pull/3640
+pr_title: Fix line wrapping for files with control characters
+merged_at: "2026-03-20T20:40:28Z"
+base_commit: 4a38eab3eaa191a6a19239bde42f7d5b79d7cb21
+original_pr_head_commit: 1f540752ef21f64aafa46007bb2bf7f328ad5230
+fixed_commit: f2daa1eb6e2bb21366d856ca9e160698a69fd8eb
+difficulty: mid
+instruction: >
+  When binary content is intentionally rendered as text, lines containing
+  control characters wrap incorrectly. Reproduce the wrapping problem with
+  a narrow terminal width and fix the displayed-width calculation so the
+  rendered output wraps at the expected column.
+setup:
+  - cargo fetch
+public_tests:
+  - cargo test --test integration_tests
+hidden_tests:
+  - benchmark/cases/sharkdp__bat/hidden-tests/mid/run.sh
+test_strategy:
+  core_tests:
+    - benchmark/cases/sharkdp__bat/hidden-tests/mid/run.sh
+  oracle_suites: []
+  regression_tests: []
+  success_rule: core_tests_pass
+selection_notes: >
+  Terminal rendering bug that requires understanding how non-printable
+  characters affect display width. The hidden test checks observable CLI
+  wrapping behavior instead of the internal helper used by the PR.

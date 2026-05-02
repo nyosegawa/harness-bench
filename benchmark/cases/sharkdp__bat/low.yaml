@@ -1,0 +1,36 @@
+id: sharkdp-bat-low-zip-binary-detection
+repo: sharkdp/bat
+repo_url: https://github.com/sharkdp/bat
+license: Apache-2.0
+stars_at_selection: 58657
+size_bucket: small
+language_tags: [rust, cli]
+pr_number: 3686
+pr_url: https://github.com/sharkdp/bat/pull/3686
+pr_title: Detect ZIP archives as binary content
+merged_at: "2026-04-10T17:30:27Z"
+base_commit: 111aa2e10e7a7f0dcf43c209e643593ac013d623
+original_pr_head_commit: b3aec318cf1fc16edefe8a90d78e3eb2f62100f8
+fixed_commit: a995764d230e49e089febd8e5487c1d61e5d3051
+difficulty: low
+instruction: >
+  ZIP archive files whose first bytes are a standard ZIP signature are being
+  treated like text in header-only output. Reproduce the behavior and make
+  bat classify ZIP archive content as binary, without changing the behavior
+  for ordinary text that merely starts with similar characters.
+setup:
+  - cargo fetch
+public_tests:
+  - cargo test --lib
+hidden_tests:
+  - benchmark/cases/sharkdp__bat/hidden-tests/low/run.sh
+test_strategy:
+  core_tests:
+    - benchmark/cases/sharkdp__bat/hidden-tests/low/run.sh
+  oracle_suites: []
+  regression_tests: []
+  success_rule: core_tests_pass
+selection_notes: >
+  Narrow CLI behavior bug with a small implementation surface and a simple
+  external hidden test. The original PR also added unit and integration
+  regressions.

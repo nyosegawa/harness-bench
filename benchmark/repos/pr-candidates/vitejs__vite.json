@@ -1,0 +1,2799 @@
+{
+  "generatedAt": "2026-05-02T10:12:09.024Z",
+  "repo": "vitejs/vite",
+  "since": "2026-01-01",
+  "limit": 50,
+  "debugKeywords": [
+    "bug",
+    "fix",
+    "regression",
+    "crash",
+    "incorrect",
+    "wrong",
+    "error",
+    "exception",
+    "edge",
+    "flaky",
+    "race",
+    "leak",
+    "validation",
+    "parser",
+    "parsing",
+    "timeout",
+    "fail",
+    "failure",
+    "broken"
+  ],
+  "prs": [
+    {
+      "number": 22347,
+      "title": "docs(create-vite): list react-compiler templates in README",
+      "url": "https://github.com/vitejs/vite/pull/22347",
+      "mergedAt": "2026-04-29T03:36:22Z",
+      "baseRefName": "main",
+      "headRefName": "docs-create-vite-react-compiler",
+      "baseRefOid": "2151f701dc98270c905c540b209fb6d23d53d3ad",
+      "headRefOid": "192d1232c1f76af8268a496ab8fcbbf2f97ab792",
+      "mergeCommitOid": "7c3a61f42da6445904e93f0e29e9a2a838fa684a",
+      "changedFiles": 1,
+      "additions": 2,
+      "deletions": 0,
+      "labels": [],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "docs-only",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/create-vite/README.md",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22348,
+      "title": "docs: mention native config loader in CLI options",
+      "url": "https://github.com/vitejs/vite/pull/22348",
+      "mergedAt": "2026-04-29T03:33:38Z",
+      "baseRefName": "main",
+      "headRefName": "docs-config-loader-native",
+      "baseRefOid": "2151f701dc98270c905c540b209fb6d23d53d3ad",
+      "headRefOid": "74310a3370f06ec210a93402454ccdd4ed192687",
+      "mergeCommitOid": "0420c5d37b6049476b6e6c16662be372575dd683",
+      "changedFiles": 1,
+      "additions": 52,
+      "deletions": 52,
+      "labels": [],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "docs-only",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "docs/guide/cli.md",
+          "additions": 52,
+          "deletions": 52,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22339,
+      "title": "refactor: show direct path type in bad character warning",
+      "url": "https://github.com/vitejs/vite/pull/22339",
+      "mergedAt": "2026-04-28T02:25:20Z",
+      "baseRefName": "main",
+      "headRefName": "improve-config-char-warn",
+      "baseRefOid": "672c96288fd5440bbecddc65551e713edeb8d403",
+      "headRefOid": "a69f3a9e9ede82bfb8b94267f197572d7b1f4a41",
+      "mergeCommitOid": "0c162e96a6545c93808e7338b9adeca2636596fa",
+      "changedFiles": 2,
+      "additions": 10,
+      "deletions": 4,
+      "labels": [
+        "p2-nice-to-have"
+      ],
+      "keywordHits": [],
+      "hasTests": true,
+      "testFiles": [
+        "packages/vite/src/node/__tests__/config.spec.ts"
+      ],
+      "debugScore": 2,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "packages/vite/src/node/__tests__/config.spec.ts",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/src/node/config.ts",
+          "additions": 9,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22325,
+      "title": "docs: explain mergeConfig skips null/undefined",
+      "url": "https://github.com/vitejs/vite/pull/22325",
+      "mergedAt": "2026-04-28T02:26:39Z",
+      "baseRefName": "main",
+      "headRefName": "docs/issue-18943-mergeconfig-skip-nil",
+      "baseRefOid": "640202a2167b0c19b94e4d3b8ff87309ae1f44d0",
+      "headRefOid": "b0b4d92aa8d5bd33a8d75fe91368509d4d215b61",
+      "mergeCommitOid": "2151f701dc98270c905c540b209fb6d23d53d3ad",
+      "changedFiles": 1,
+      "additions": 2,
+      "deletions": 0,
+      "labels": [],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "docs-only",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "docs/guide/api-javascript.md",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22334,
+      "title": "fix(deps): update all non-major dependencies",
+      "url": "https://github.com/vitejs/vite/pull/22334",
+      "mergedAt": "2026-04-27T07:13:52Z",
+      "baseRefName": "main",
+      "headRefName": "renovate/all-minor-patch",
+      "baseRefOid": "3b51e050214c5a817c163838ab8643fe34c7d0c3",
+      "headRefOid": "8df97ff678c826b554308d89095c8e676e0c15ed",
+      "mergeCommitOid": "672c96288fd5440bbecddc65551e713edeb8d403",
+      "changedFiles": 24,
+      "additions": 597,
+      "deletions": 597,
+      "labels": [
+        "dependencies"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "crash",
+        "error",
+        "leak",
+        "parsing",
+        "timeout",
+        "fail",
+        "failure"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "docs/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "package.json",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-react-ts/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-svelte-ts/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-svelte/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-vue-ts/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-vue/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/package.json",
+          "additions": 6,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/alias/package.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/backend-integration/package.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/devtools/package.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/extensions/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/external/dep-that-imports/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/external/dep-that-requires/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/external/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/json/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/legacy/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/optimize-deps-no-discovery/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/optimize-deps/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/preload/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/ssr-webworker/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/tailwind-sourcemap/package.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/tailwind/package.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pnpm-lock.yaml",
+          "additions": 561,
+          "deletions": 561,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22333,
+      "title": "chore(deps): update dependency tsdown to ^0.21.10",
+      "url": "https://github.com/vitejs/vite/pull/22333",
+      "mergedAt": "2026-04-27T05:24:23Z",
+      "baseRefName": "main",
+      "headRefName": "renovate/rolldown-related-dependencies",
+      "baseRefOid": "640202a2167b0c19b94e4d3b8ff87309ae1f44d0",
+      "headRefOid": "6adbf263fb7ea0b7af22f48e70f04ceb5938a425",
+      "mergeCommitOid": "3b51e050214c5a817c163838ab8643fe34c7d0c3",
+      "changedFiles": 3,
+      "additions": 19,
+      "deletions": 19,
+      "labels": [
+        "dependencies"
+      ],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/create-vite/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/plugin-legacy/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pnpm-lock.yaml",
+          "additions": 17,
+          "deletions": 17,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22292,
+      "title": "fix(css): show filename in CSS minification warnings for `.css?inline`",
+      "url": "https://github.com/vitejs/vite/pull/22292",
+      "mergedAt": "2026-04-23T03:58:24Z",
+      "baseRefName": "main",
+      "headRefName": "fix/css-minify-filename",
+      "baseRefOid": "04f974fbae1df6b7b6423d9083130579cdfa06ef",
+      "headRefOid": "857f7f9708e40317f91f40c3cabaea6e0826588b",
+      "mergeCommitOid": "83f0a785a2ae48d6761fb69f4b0523a24ae9342c",
+      "changedFiles": 1,
+      "additions": 4,
+      "deletions": 4,
+      "labels": [
+        "feat: css",
+        "p2-edge-case"
+      ],
+      "keywordHits": [
+        "fix",
+        "error",
+        "edge"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/vite/src/node/plugins/css.ts",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22316,
+      "title": "chore(deps): update transitive packages to fix npm audit alerts",
+      "url": "https://github.com/vitejs/vite/pull/22316",
+      "mergedAt": "2026-04-24T03:40:06Z",
+      "baseRefName": "main",
+      "headRefName": "chore/deps-update-transitive-packages-to-fix-npm-audit-alerts",
+      "baseRefOid": "30028f94516fa06dd0212567373169b3b3f6e393",
+      "headRefOid": "5010582341bbe4bfde6a1f1cf5f9f2841eedaa60",
+      "mergeCommitOid": "86aee6268aa879d74f68a890392c1dee973ebf05",
+      "changedFiles": 2,
+      "additions": 91,
+      "deletions": 151,
+      "labels": [
+        "dependencies",
+        "p1-chore"
+      ],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pnpm-lock.yaml",
+          "additions": 90,
+          "deletions": 150,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22306,
+      "title": "fix(glob): align hmr matcher options with glob enumeration",
+      "url": "https://github.com/vitejs/vite/pull/22306",
+      "mergedAt": "2026-04-23T12:34:14Z",
+      "baseRefName": "main",
+      "headRefName": "04-23-fix_glob-import_align_hmr_matcher_options_with_glob_enumeration",
+      "baseRefOid": "a19003516951a3710aab0f2646d78c48b2e5d2ad",
+      "headRefOid": "f332119838e98122df8f5a0e125eb907a499a4dc",
+      "mergeCommitOid": "30028f94516fa06dd0212567373169b3b3f6e393",
+      "changedFiles": 1,
+      "additions": 12,
+      "deletions": 5,
+      "labels": [
+        "p2-edge-case"
+      ],
+      "keywordHits": [
+        "fix",
+        "edge",
+        "validation"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/vite/src/node/plugins/importMetaGlob.ts",
+          "additions": 12,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22299,
+      "title": "feat: update rolldown to 1.0.0-rc.17",
+      "url": "https://github.com/vitejs/vite/pull/22299",
+      "mergedAt": "2026-04-23T05:05:23Z",
+      "baseRefName": "main",
+      "headRefName": "04-22-feat_update_rolldown_to_1.0.0-rc.17",
+      "baseRefOid": "b8a21cc821c1434ac9d2b85ec53005df9edc306b",
+      "headRefOid": "b42332d689315559c20ecca036db305aac5f1953",
+      "mergeCommitOid": "a4d06d9015167d30fe8ac63d1ce2edc146cdca31",
+      "changedFiles": 5,
+      "additions": 209,
+      "deletions": 180,
+      "labels": [
+        "p3-significant"
+      ],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "docs/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pnpm-lock.yaml",
+          "additions": 205,
+          "deletions": 176,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22142,
+      "title": "fix(create-vite): use `type=\"button\"` to counter button in templates consistently",
+      "url": "https://github.com/vitejs/vite/pull/22142",
+      "mergedAt": "2026-04-23T05:00:34Z",
+      "baseRefName": "main",
+      "headRefName": "temp-up",
+      "baseRefOid": "a4d828f2d5ed85440bc0774eab342e6f9a5e5f62",
+      "headRefOid": "3598784acc950dacac86dada6ab13e97c1cf7d80",
+      "mergeCommitOid": "1ac46d64b81e0ac12b4df1ed28fd91cee1fd5f0b",
+      "changedFiles": 14,
+      "additions": 44,
+      "deletions": 12,
+      "labels": [
+        "p2-edge-case",
+        "feat: create-vite"
+      ],
+      "keywordHits": [
+        "fix",
+        "edge"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/create-vite/template-lit-ts/src/my-element.ts",
+          "additions": 6,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-lit/src/my-element.js",
+          "additions": 6,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-preact-ts/src/app.tsx",
+          "additions": 5,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-preact/src/app.jsx",
+          "additions": 5,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-qwik-ts/src/app.tsx",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-qwik/src/app.jsx",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-react-ts/src/App.tsx",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-react/src/App.jsx",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-solid-ts/src/App.tsx",
+          "additions": 5,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-solid/src/App.jsx",
+          "additions": 5,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-svelte-ts/src/lib/Counter.svelte",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-svelte/src/lib/Counter.svelte",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-vue-ts/src/components/HelloWorld.vue",
+          "additions": 3,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-vue/src/components/HelloWorld.vue",
+          "additions": 3,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22147,
+      "title": "fix: `hmrClient.logger.debug` and `hmrClient.logger.error` looked different from other HMR logs",
+      "url": "https://github.com/vitejs/vite/pull/22147",
+      "mergedAt": "2026-04-23T04:29:24Z",
+      "baseRefName": "main",
+      "headRefName": "main",
+      "baseRefOid": "fd6ab02e1f051945383828cfc3936690d93550f5",
+      "headRefOid": "c8629c6f2f6bf0591a86bbacc7a61cfe816c1565",
+      "mergeCommitOid": "a4d828f2d5ed85440bc0774eab342e6f9a5e5f62",
+      "changedFiles": 1,
+      "additions": 14,
+      "deletions": 1,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "error"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/vite/src/node/ssr/runtime/serverModuleRunner.ts",
+          "additions": 14,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22222,
+      "title": "chore(deps): update pnpm/action-setup action to v6",
+      "url": "https://github.com/vitejs/vite/pull/22222",
+      "mergedAt": "2026-04-23T04:26:17Z",
+      "baseRefName": "main",
+      "headRefName": "renovate/pnpm-action-setup-6.x",
+      "baseRefOid": "04f974fbae1df6b7b6423d9083130579cdfa06ef",
+      "headRefOid": "9bc1c6cc67970262fc3a513752c0b302c86bb422",
+      "mergeCommitOid": "79d5a93a4f3f6cac81c52ed02fc86627696da677",
+      "changedFiles": 4,
+      "additions": 5,
+      "deletions": 5,
+      "labels": [],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".github/workflows/ci.yml",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": ".github/workflows/copilot-setup-steps.yml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": ".github/workflows/preview-release.yml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": ".github/workflows/publish.yml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22281,
+      "title": "test(glob-import): cover array patterns with sibling dirs sharing a prefix",
+      "url": "https://github.com/vitejs/vite/pull/22281",
+      "mergedAt": "2026-04-23T04:01:21Z",
+      "baseRefName": "main",
+      "headRefName": "04-21-test-glob-import-cover-array-patterns",
+      "baseRefOid": "3770a53064e8da27d4cb8d595a2b038413e6abdb",
+      "headRefOid": "6c1b939da9edcc0e9f998ed6e84a6ea002049261",
+      "mergeCommitOid": "adc995847f3c8f7af01b63b3dd00fb54b11c4d02",
+      "changedFiles": 4,
+      "additions": 32,
+      "deletions": 0,
+      "labels": [
+        "p1-chore",
+        "test"
+      ],
+      "keywordHits": [
+        "fix",
+        "regression"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "playground/glob-import/__tests__/glob-import.spec.ts"
+      ],
+      "debugScore": 4,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "playground/glob-import/__tests__/glob-import.spec.ts",
+          "additions": 12,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/glob-import/array-common-base/pattern1/a.js",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "playground/glob-import/array-common-base/pattern2/b.js",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "playground/glob-import/index.html",
+          "additions": 18,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22283,
+      "title": "test(glob-import): add backslash-escaped glob pattern test",
+      "url": "https://github.com/vitejs/vite/pull/22283",
+      "mergedAt": "2026-04-23T04:00:32Z",
+      "baseRefName": "main",
+      "headRefName": "04-21-test_glob-import_add_backslash-escaped_glob_pattern_test",
+      "baseRefOid": "04f974fbae1df6b7b6423d9083130579cdfa06ef",
+      "headRefOid": "2adbfaa8dbe33d245f103b2a1ef0b12eb31a2b09",
+      "mergeCommitOid": "ac36eb6907107734ff011413efea248b9f775373",
+      "changedFiles": 2,
+      "additions": 23,
+      "deletions": 0,
+      "labels": [
+        "p1-chore",
+        "test"
+      ],
+      "keywordHits": [
+        "fix",
+        "regression"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "playground/glob-import/__tests__/glob-import.spec.ts"
+      ],
+      "debugScore": 4,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "playground/glob-import/__tests__/glob-import.spec.ts",
+          "additions": 10,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/glob-import/index.html",
+          "additions": 13,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22297,
+      "title": "fix: remove format sniffing module resolution from JS resolver",
+      "url": "https://github.com/vitejs/vite/pull/22297",
+      "mergedAt": "2026-04-22T08:24:01Z",
+      "baseRefName": "main",
+      "headRefName": "refactor/remove-format-sniffing-module-resolution-from-js-resolver",
+      "baseRefOid": "5c7cec69b637544ab16009d8758df7dbbf7f2674",
+      "headRefOid": "d31d6f4b5cfd94959fad2f4ce53b8d1c10ba9d72",
+      "mergeCommitOid": "b8a21cc821c1434ac9d2b85ec53005df9edc306b",
+      "changedFiles": 1,
+      "additions": 7,
+      "deletions": 54,
+      "labels": [
+        "p2-edge-case"
+      ],
+      "keywordHits": [
+        "fix",
+        "edge"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/vite/src/node/plugins/resolve.ts",
+          "additions": 7,
+          "deletions": 54,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22284,
+      "title": "refactor: typecheck client directory",
+      "url": "https://github.com/vitejs/vite/pull/22284",
+      "mergedAt": "2026-04-22T02:48:31Z",
+      "baseRefName": "main",
+      "headRefName": "typecheck-client-dir",
+      "baseRefOid": "04f974fbae1df6b7b6423d9083130579cdfa06ef",
+      "headRefOid": "3a15204985fdfea0a47c9645101d03dc5d7a2da6",
+      "mergeCommitOid": "40a0847276502b33a3942b3cfab04b20218f3543",
+      "changedFiles": 2,
+      "additions": 5,
+      "deletions": 1,
+      "labels": [
+        "p1-chore"
+      ],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/vite/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/src/client/client.ts",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22273,
+      "title": "fix(optimizer): allow user transform.target to override default in optimizeDeps",
+      "url": "https://github.com/vitejs/vite/pull/22273",
+      "mergedAt": "2026-04-22T02:39:45Z",
+      "baseRefName": "main",
+      "headRefName": "fix/optimize-deps-transform-target-override",
+      "baseRefOid": "943751801f70057ae94f9092e349c8f3fd9ccdf2",
+      "headRefOid": "735a7668b71eb0d49308354964683db913df76da",
+      "mergeCommitOid": "5c7cec69b637544ab16009d8758df7dbbf7f2674",
+      "changedFiles": 1,
+      "additions": 1,
+      "deletions": 1,
+      "labels": [
+        "p3-minor-bug"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "regression"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/vite/src/node/optimizer/index.ts",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22278,
+      "title": "refactor: enable some typecheck rules",
+      "url": "https://github.com/vitejs/vite/pull/22278",
+      "mergedAt": "2026-04-22T01:40:00Z",
+      "baseRefName": "main",
+      "headRefName": "eslint-typecheck-rule-enable",
+      "baseRefOid": "3770a53064e8da27d4cb8d595a2b038413e6abdb",
+      "headRefOid": "84fe26581ddaf6dc1f3cf2febbf2b749835e2e11",
+      "mergeCommitOid": "943751801f70057ae94f9092e349c8f3fd9ccdf2",
+      "changedFiles": 18,
+      "additions": 56,
+      "deletions": 55,
+      "labels": [
+        "p1-chore"
+      ],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "eslint.config.js",
+          "additions": 15,
+          "deletions": 14,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/rolldown.config.ts",
+          "additions": 5,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/rollupLicensePlugin.ts",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/src/client/client.ts",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/src/module-runner/evaluatedModules.ts",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/src/module-runner/sourcemap/interceptor.ts",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/src/module-runner/utils.ts",
+          "additions": 7,
+          "deletions": 12,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/src/node/cli.ts",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/src/node/env.ts",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/src/node/plugins/asset.ts",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/src/node/plugins/css.ts",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/src/node/plugins/html.ts",
+          "additions": 10,
+          "deletions": 9,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/src/node/plugins/importAnalysisBuild.ts",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/src/node/server/hmr.ts",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/src/node/server/index.ts",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/src/node/server/middlewares/static.ts",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/src/node/server/pluginContainer.ts",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/src/node/utils.ts",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22279,
+      "title": "docs: update stat numbers",
+      "url": "https://github.com/vitejs/vite/pull/22279",
+      "mergedAt": "2026-04-21T07:28:10Z",
+      "baseRefName": "main",
+      "headRefName": "docs-update-numbers",
+      "baseRefOid": "3770a53064e8da27d4cb8d595a2b038413e6abdb",
+      "headRefOid": "b2d7fbb836331405c18aaf140be972318d9a0bb1",
+      "mergeCommitOid": "04f974fbae1df6b7b6423d9083130579cdfa06ef",
+      "changedFiles": 1,
+      "additions": 2,
+      "deletions": 2,
+      "labels": [
+        "documentation"
+      ],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "docs-only",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "docs/.vitepress/theme/landing/Community.vue",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22230,
+      "title": "build: improve typecheck and linting",
+      "url": "https://github.com/vitejs/vite/pull/22230",
+      "mergedAt": "2026-04-20T05:35:38Z",
+      "baseRefName": "main",
+      "headRefName": "improve-typechecking-and-lint",
+      "baseRefOid": "959fee53fdb8e647a62b11182ff05973d0815018",
+      "headRefOid": "e5ccbc3a7b645f5bffdeaa9c77699ce799d29d40",
+      "mergeCommitOid": "3770a53064e8da27d4cb8d595a2b038413e6abdb",
+      "changedFiles": 5,
+      "additions": 40,
+      "deletions": 18,
+      "labels": [
+        "p1-chore"
+      ],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "eslint.config.js",
+          "additions": 33,
+          "deletions": 11,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/plugin-legacy/package.json",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/plugin-legacy/src/index.ts",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/plugin-legacy/tsconfig.json",
+          "additions": 3,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/plugin-legacy/tsdown.config.ts",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22266,
+      "title": "feat(create-vite): use ESLint v10",
+      "url": "https://github.com/vitejs/vite/pull/22266",
+      "mergedAt": "2026-04-20T05:08:17Z",
+      "baseRefName": "main",
+      "headRefName": "arnaud/create-vite-eslint-10",
+      "baseRefOid": "c28e9c12a849f80e6fdc93f42283ad2863ab9dbc",
+      "headRefOid": "62daa11f838e56b7bacde2bee59440ab46bf7af5",
+      "mergeCommitOid": "959fee53fdb8e647a62b11182ff05973d0815018",
+      "changedFiles": 4,
+      "additions": 5,
+      "deletions": 14,
+      "labels": [
+        "feat: create-vite"
+      ],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/create-vite/template-react-ts/eslint.config.js",
+          "additions": 0,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-react-ts/package.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-react/eslint.config.js",
+          "additions": 1,
+          "deletions": 9,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-react/package.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22261,
+      "title": "docs: update build CLI defaults",
+      "url": "https://github.com/vitejs/vite/pull/22261",
+      "mergedAt": "2026-04-20T04:04:49Z",
+      "baseRefName": "main",
+      "headRefName": "docs/update-build-cli-defaults",
+      "baseRefOid": "e6e9fc9e4cbefc482e068d03a19401fb7d9226cc",
+      "headRefOid": "84753d34af190d870a6bfc1b44eb1c8518108ee3",
+      "mergeCommitOid": "605bb97994678a1bb70a8de9a85c29d5f5d48c5a",
+      "changedFiles": 2,
+      "additions": 26,
+      "deletions": 26,
+      "labels": [],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "docs/guide/cli.md",
+          "additions": 24,
+          "deletions": 24,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/src/node/cli.ts",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22262,
+      "title": "docs(create-vite): list overwrite flag in help",
+      "url": "https://github.com/vitejs/vite/pull/22262",
+      "mergedAt": "2026-04-20T04:04:25Z",
+      "baseRefName": "main",
+      "headRefName": "fix/create-vite-overwrite-help",
+      "baseRefOid": "e6e9fc9e4cbefc482e068d03a19401fb7d9226cc",
+      "headRefOid": "f00705017b6bd0bd4b92b1f44684e086f569941e",
+      "mergeCommitOid": "6b00462546931c135fb2e1e4be1daf57f59cf463",
+      "changedFiles": 2,
+      "additions": 2,
+      "deletions": 0,
+      "labels": [
+        "feat: create-vite"
+      ],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "packages/create-vite/__tests__/cli.spec.ts"
+      ],
+      "debugScore": 3,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "packages/create-vite/__tests__/cli.spec.ts",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/src/index.ts",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22268,
+      "title": "fix(deps): update all non-major dependencies",
+      "url": "https://github.com/vitejs/vite/pull/22268",
+      "mergedAt": "2026-04-20T04:03:06Z",
+      "baseRefName": "main",
+      "headRefName": "renovate/all-minor-patch",
+      "baseRefOid": "a0aef50f6b51120df95cc11a7354af2afabe6a4a",
+      "headRefOid": "d4c6c6babce7a53c20fcff9e969013aff197b175",
+      "mergeCommitOid": "c28e9c12a849f80e6fdc93f42283ad2863ab9dbc",
+      "changedFiles": 17,
+      "additions": 638,
+      "deletions": 394,
+      "labels": [
+        "dependencies"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "regression",
+        "crash",
+        "incorrect",
+        "error",
+        "race",
+        "validation",
+        "timeout",
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 5,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".github/workflows/ci.yml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/package.json",
+          "additions": 5,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "package.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/src/index.ts",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-react-ts/package.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-react/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-svelte-ts/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-svelte/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-vue-ts/package.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-vue/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/LICENSE.md",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/package.json",
+          "additions": 6,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/devtools/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/ssr-webworker/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/tailwind-v3/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pnpm-lock.yaml",
+          "additions": 610,
+          "deletions": 366,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22271,
+      "title": "chore(deps): update dependency dotenv-expand to v13",
+      "url": "https://github.com/vitejs/vite/pull/22271",
+      "mergedAt": "2026-04-20T03:43:34Z",
+      "baseRefName": "main",
+      "headRefName": "renovate/dotenv-expand-13.x",
+      "baseRefOid": "868f1411a6f474baa4417f2d6524692dd452f760",
+      "headRefOid": "2c8fe4c63b7d1cab53ba351cf7b4b0fdb54a139f",
+      "mergeCommitOid": "0a3887da18812cacb254c616e4dd35631e776fda",
+      "changedFiles": 4,
+      "additions": 13,
+      "deletions": 13,
+      "labels": [
+        "dependencies"
+      ],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/vite/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "patches/dotenv-expand@13.0.0.patch",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "RENAMED"
+        },
+        {
+          "path": "pnpm-lock.yaml",
+          "additions": 11,
+          "deletions": 11,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pnpm-workspace.yaml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22270,
+      "title": "chore(deps): update actions/upload-pages-artifact action to v5",
+      "url": "https://github.com/vitejs/vite/pull/22270",
+      "mergedAt": "2026-04-20T03:33:55Z",
+      "baseRefName": "main",
+      "headRefName": "renovate/actions-upload-pages-artifact-5.x",
+      "baseRefOid": "868f1411a6f474baa4417f2d6524692dd452f760",
+      "headRefOid": "d5fd5e5c14f81d00161195248d97a0def1cf084c",
+      "mergeCommitOid": "8b2b6adad16055c29c36a2b086915cbc1588f5e4",
+      "changedFiles": 1,
+      "additions": 1,
+      "deletions": 1,
+      "labels": [
+        "dependencies"
+      ],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -8,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "docs-only",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "docs/guide/static-deploy-github-pages.yaml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22267,
+      "title": "chore(deps): update dependency tsdown to ^0.21.9",
+      "url": "https://github.com/vitejs/vite/pull/22267",
+      "mergedAt": "2026-04-20T03:32:10Z",
+      "baseRefName": "main",
+      "headRefName": "renovate/rolldown-related-dependencies",
+      "baseRefOid": "e6e9fc9e4cbefc482e068d03a19401fb7d9226cc",
+      "headRefOid": "71aa06b10a1a245b062b4aa8fcec0e56072e6dfc",
+      "mergeCommitOid": "a0aef50f6b51120df95cc11a7354af2afabe6a4a",
+      "changedFiles": 3,
+      "additions": 38,
+      "deletions": 38,
+      "labels": [
+        "dependencies"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/create-vite/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/plugin-legacy/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pnpm-lock.yaml",
+          "additions": 36,
+          "deletions": 36,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22269,
+      "title": "fix(bundled-dev): reject requests to HMR patch files in non potentially trustworthy origins",
+      "url": "https://github.com/vitejs/vite/pull/22269",
+      "mergedAt": "2026-04-20T03:30:04Z",
+      "baseRefName": "main",
+      "headRefName": "fix/reject-requests-to-hmr-patch-files-from-non-potentially-trust-worthy-origins",
+      "baseRefOid": "3ec9cdaac7936ca32d0956c4cb1eb6e172945996",
+      "headRefOid": "bf4fa5374e38dcd44025d38eb8cdc77a955a9204",
+      "mergeCommitOid": "868f1411a6f474baa4417f2d6524692dd452f760",
+      "changedFiles": 5,
+      "additions": 23,
+      "deletions": 131,
+      "labels": [
+        "p2-edge-case",
+        "feat: bundled-dev"
+      ],
+      "keywordHits": [
+        "fix",
+        "edge"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "playground/fs-serve/__tests__/commonTests.ts",
+        "playground/hmr-full-bundle-mode/__tests__/hmr-full-bundle-mode.spec.ts"
+      ],
+      "debugScore": 4,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "packages/vite/src/node/server/environments/fullBundleEnvironment.ts",
+          "additions": 10,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/src/node/server/index.ts",
+          "additions": 0,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/src/node/server/middlewares/rejectNoCorsRequest.ts",
+          "additions": 0,
+          "deletions": 42,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "playground/fs-serve/__tests__/commonTests.ts",
+          "additions": 0,
+          "deletions": 81,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/hmr-full-bundle-mode/__tests__/hmr-full-bundle-mode.spec.ts",
+          "additions": 13,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22148,
+      "title": "fix: skip fallback sourcemap generation for `?raw` imports",
+      "url": "https://github.com/vitejs/vite/pull/22148",
+      "mergedAt": "2026-04-20T02:50:29Z",
+      "baseRefName": "main",
+      "headRefName": "fix/raw-fallback-sourcemap-oom",
+      "baseRefOid": "e6e9fc9e4cbefc482e068d03a19401fb7d9226cc",
+      "headRefOid": "b43feb988ada29c19cf0f7c9f8dc7edccc3a0e2b",
+      "mergeCommitOid": "3ec9cdaac7936ca32d0956c4cb1eb6e172945996",
+      "changedFiles": 1,
+      "additions": 1,
+      "deletions": 0,
+      "labels": [
+        "p2-edge-case"
+      ],
+      "keywordHits": [
+        "fix",
+        "regression",
+        "edge",
+        "validation"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/vite/src/node/plugins/asset.ts",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22255,
+      "title": "docs: mention minor comment differences in migration guide",
+      "url": "https://github.com/vitejs/vite/pull/22255",
+      "mergedAt": "2026-04-20T02:49:34Z",
+      "baseRefName": "main",
+      "headRefName": "docs/mention-minor-comment-differences-in-migration-guide",
+      "baseRefOid": "e6e9fc9e4cbefc482e068d03a19401fb7d9226cc",
+      "headRefOid": "212265fe6f8b252e4a823d97c206552aea1c0266",
+      "mergeCommitOid": "b168d0de143595e1f891785dc603148f7dfed61e",
+      "changedFiles": 1,
+      "additions": 2,
+      "deletions": 0,
+      "labels": [
+        "documentation"
+      ],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "docs-only",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "docs/guide/migration.md",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22208,
+      "title": "fix(optimizer): handle more chars that will be sanitized",
+      "url": "https://github.com/vitejs/vite/pull/22208",
+      "mergedAt": "2026-04-20T02:49:11Z",
+      "baseRefName": "main",
+      "headRefName": "fix/optimize-deps-handle-more-chars-that-will-be-sanitized",
+      "baseRefOid": "a07a4bd052ac75f916391c999c408ad5f2867e61",
+      "headRefOid": "9f9bc314bf69da896747f92ded5a0651f1b6176c",
+      "mergeCommitOid": "3f24533ac4845ed22547279d1721bd82a35345e3",
+      "changedFiles": 2,
+      "additions": 41,
+      "deletions": 10,
+      "labels": [
+        "p2-edge-case",
+        "feat: deps optimizer"
+      ],
+      "keywordHits": [
+        "fix",
+        "edge"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "packages/vite/src/node/__tests__/utils.spec.ts"
+      ],
+      "debugScore": 4,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "packages/vite/src/node/__tests__/utils.spec.ts",
+          "additions": 30,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/src/node/utils.ts",
+          "additions": 11,
+          "deletions": 9,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22216,
+      "title": "fix(create-vite): add missing quotes around viteLogo src attribute",
+      "url": "https://github.com/vitejs/vite/pull/22216",
+      "mergedAt": "2026-04-14T10:06:59Z",
+      "baseRefName": "main",
+      "headRefName": "patch-1",
+      "baseRefOid": "a07a4bd052ac75f916391c999c408ad5f2867e61",
+      "headRefOid": "488744ae12cd9656a52e6c60912d04b0c03bf600",
+      "mergeCommitOid": "bb5203d01c24cf89b4f497ee968ce6f63876b946",
+      "changedFiles": 2,
+      "additions": 4,
+      "deletions": 4,
+      "labels": [],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/create-vite/template-vanilla-ts/src/main.ts",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-vanilla/src/main.js",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22196,
+      "title": "test(glob-import): add follow symlinks test",
+      "url": "https://github.com/vitejs/vite/pull/22196",
+      "mergedAt": "2026-04-17T06:40:13Z",
+      "baseRefName": "main",
+      "headRefName": "04-08-test_glob-import_add_follow_symlinks_test",
+      "baseRefOid": "6e585dcb05a3b159fba7ae57f7faf0b1eca7a390",
+      "headRefOid": "2e5c24ef4a1c7352f6b176c3a32daecffdd6ba9a",
+      "mergeCommitOid": "e6e9fc9e4cbefc482e068d03a19401fb7d9226cc",
+      "changedFiles": 6,
+      "additions": 79,
+      "deletions": 0,
+      "labels": [
+        "p1-chore",
+        "test"
+      ],
+      "keywordHits": [],
+      "hasTests": true,
+      "testFiles": [
+        "playground/glob-import/__tests__/glob-import.spec.ts"
+      ],
+      "debugScore": 2,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "playground/glob-import/__tests__/glob-import.spec.ts",
+          "additions": 20,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/glob-import/follow-symlinks/linked/.gitkeep",
+          "additions": 0,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "playground/glob-import/follow-symlinks/packages/my-lib/components/a.js",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "playground/glob-import/follow-symlinks/packages/my-lib/components/b.js",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "playground/glob-import/index.html",
+          "additions": 45,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/glob-import/vite.config.ts",
+          "additions": 12,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22238,
+      "title": "fix: detect Deno workspace root (fix #22237)",
+      "url": "https://github.com/vitejs/vite/pull/22238",
+      "mergedAt": "2026-04-17T06:27:13Z",
+      "baseRefName": "main",
+      "headRefName": "fix-deno-workspace-root",
+      "baseRefOid": "bb5203d01c24cf89b4f497ee968ce6f63876b946",
+      "headRefOid": "2ea005e5ec4bf2e5c0f4ed5030d84d713f747fac",
+      "mergeCommitOid": "1b793c0e1726467fffd06ffad9bc81c61a840188",
+      "changedFiles": 5,
+      "additions": 39,
+      "deletions": 0,
+      "labels": [
+        "p2-edge-case"
+      ],
+      "keywordHits": [
+        "fix",
+        "edge",
+        "parser",
+        "parsing"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "packages/vite/src/node/server/__tests__/fixtures/deno/deno.json",
+        "packages/vite/src/node/server/__tests__/fixtures/deno/nested/package.json",
+        "packages/vite/src/node/server/__tests__/search-root.spec.ts"
+      ],
+      "debugScore": 6,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "packages/vite/src/node/server/__tests__/fixtures/deno/deno.json",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/vite/src/node/server/__tests__/fixtures/deno/nested/package.json",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/vite/src/node/server/__tests__/search-root.spec.ts",
+          "additions": 12,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/src/node/server/searchRoot.ts",
+          "additions": 19,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pnpm-lock.yaml",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22188,
+      "title": "fix(dev): handle errors in `watchChange` hook",
+      "url": "https://github.com/vitejs/vite/pull/22188",
+      "mergedAt": "2026-04-17T05:37:39Z",
+      "baseRefName": "main",
+      "headRefName": "fix/watcher-add-unlink-unhandled-promise",
+      "baseRefOid": "e616e786c0cefc5cf0beba4caa4b432911d8dfa3",
+      "headRefOid": "7dc262075565dff0ac191d24e2115fb8f38dd13a",
+      "mergeCommitOid": "fc08bdab9bba871b03689f2f6997c3a4ba4351da",
+      "changedFiles": 2,
+      "additions": 109,
+      "deletions": 5,
+      "labels": [
+        "p2-edge-case",
+        "feat: dev"
+      ],
+      "keywordHits": [
+        "fix",
+        "crash",
+        "error",
+        "edge",
+        "race",
+        "validation",
+        "fail",
+        "failure"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "packages/vite/src/node/__tests__/plugins/hooks.spec.ts"
+      ],
+      "debugScore": 10,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "packages/vite/src/node/__tests__/plugins/hooks.spec.ts",
+          "additions": 102,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/src/node/server/index.ts",
+          "additions": 7,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22039,
+      "title": "fix(css): use unique key for cssEntriesMap to prevent same-basename collision",
+      "url": "https://github.com/vitejs/vite/pull/22039",
+      "mergedAt": "2026-04-17T05:36:15Z",
+      "baseRefName": "main",
+      "headRefName": "fix/css-entries-same-basename",
+      "baseRefOid": "2947edd57ceb64a0b4dc43269743e8e44e68c09b",
+      "headRefOid": "e5c28ccb5cf10d80e3491874adc7da69d037858b",
+      "mergeCommitOid": "374bb5d597fcd0485e929565c698d8ed219136f8",
+      "changedFiles": 6,
+      "additions": 42,
+      "deletions": 5,
+      "labels": [
+        "p2-edge-case",
+        "feat: build"
+      ],
+      "keywordHits": [
+        "fix",
+        "regression",
+        "incorrect",
+        "wrong",
+        "edge",
+        "validation"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "packages/vite/src/node/__tests__/build.spec.ts",
+        "packages/vite/src/node/__tests__/fixtures/css-entry-same-basename/a/index.css",
+        "packages/vite/src/node/__tests__/fixtures/css-entry-same-basename/b/index.css"
+      ],
+      "debugScore": 8,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "packages/vite/src/node/__tests__/build.spec.ts",
+          "additions": 27,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/src/node/__tests__/fixtures/css-entry-same-basename/a/index.css",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/vite/src/node/__tests__/fixtures/css-entry-same-basename/b/index.css",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/vite/src/node/plugins/asset.ts",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/src/node/plugins/css.ts",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/src/node/plugins/manifest.ts",
+          "additions": 5,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22248,
+      "title": "feat: update rolldown to 1.0.0-rc.16",
+      "url": "https://github.com/vitejs/vite/pull/22248",
+      "mergedAt": "2026-04-17T05:30:03Z",
+      "baseRefName": "main",
+      "headRefName": "04-16-feat_update_rolldown_to_1.0.0-rc.16",
+      "baseRefOid": "44c42b97639bb6ad777e66d752b2829cccb9a27a",
+      "headRefOid": "4a094fe9e1371110a6ca2218332cc49e969e1f84",
+      "mergeCommitOid": "2947edd57ceb64a0b4dc43269743e8e44e68c09b",
+      "changedFiles": 5,
+      "additions": 187,
+      "deletions": 191,
+      "labels": [
+        "p3-significant"
+      ],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "docs/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pnpm-lock.yaml",
+          "additions": 183,
+          "deletions": 187,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22246,
+      "title": "docs: update patak links",
+      "url": "https://github.com/vitejs/vite/pull/22246",
+      "mergedAt": "2026-04-16T13:43:49Z",
+      "baseRefName": "main",
+      "headRefName": "update-patak-links",
+      "baseRefOid": "44c42b97639bb6ad777e66d752b2829cccb9a27a",
+      "headRefOid": "20c82f9c6bafd8fada8def33663f0ba84f43dcb1",
+      "mergeCommitOid": "e616e786c0cefc5cf0beba4caa4b432911d8dfa3",
+      "changedFiles": 2,
+      "additions": 7,
+      "deletions": 10,
+      "labels": [],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "docs-only",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "docs/_data/team.js",
+          "additions": 6,
+          "deletions": 9,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/blog/announcing-vite3.md",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22231,
+      "title": "docs: align the descriptions in READMEs",
+      "url": "https://github.com/vitejs/vite/pull/22231",
+      "mergedAt": "2026-04-15T02:14:43Z",
+      "baseRefName": "main",
+      "headRefName": "docs/align-the-descriptions-in-readmes",
+      "baseRefOid": "ee522672bb374c7ff95a347f14732491121b1cd6",
+      "headRefOid": "f15d819149493f2acb7b3ce3591c62416429ea37",
+      "mergeCommitOid": "44c42b97639bb6ad777e66d752b2829cccb9a27a",
+      "changedFiles": 3,
+      "additions": 9,
+      "deletions": 9,
+      "labels": [
+        "documentation"
+      ],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "docs-only",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/.vitepress/config.ts",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/README.md",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22232,
+      "title": "docs: add ambiguous default import from CJS section in troubleshooting",
+      "url": "https://github.com/vitejs/vite/pull/22232",
+      "mergedAt": "2026-04-15T02:14:35Z",
+      "baseRefName": "main",
+      "headRefName": "docs/add-ambiguous-default-import-from-cjs-section-to-troubleshooting",
+      "baseRefOid": "ee522672bb374c7ff95a347f14732491121b1cd6",
+      "headRefOid": "c80663fd471e079a84d19b8416af29f887aa254a",
+      "mergeCommitOid": "cc4cf03533d579d89aef68825581a7c967ecadff",
+      "changedFiles": 1,
+      "additions": 12,
+      "deletions": 0,
+      "labels": [
+        "documentation"
+      ],
+      "keywordHits": [
+        "error"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "docs-only",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "docs/guide/troubleshooting.md",
+          "additions": 12,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 21871,
+      "title": "fix(worker): make worker output consistent with client and SSR",
+      "url": "https://github.com/vitejs/vite/pull/21871",
+      "mergedAt": "2026-03-19T04:06:24Z",
+      "baseRefName": "main",
+      "headRefName": "fix/worker-url-regression",
+      "baseRefOid": "f8c8fd154fd32bb7ed17e35e31836648532a2128",
+      "headRefOid": "927d398e3ed4e3c2cf05b78304717a292a69d6ed",
+      "mergeCommitOid": "69454d7136f18334e9a58862741ec14a5edf6f98",
+      "changedFiles": 4,
+      "additions": 55,
+      "deletions": 3,
+      "labels": [
+        "p3-minor-bug",
+        "regression",
+        "feat: web workers"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "regression",
+        "parsing"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "packages/vite/src/node/__tests__/plugins/fixtures/worker-url/entry.js",
+        "packages/vite/src/node/__tests__/plugins/fixtures/worker-url/worker.js",
+        "packages/vite/src/node/__tests__/plugins/worker.spec.ts"
+      ],
+      "debugScore": 6,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "packages/vite/src/node/__tests__/plugins/fixtures/worker-url/entry.js",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/vite/src/node/__tests__/plugins/fixtures/worker-url/worker.js",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/vite/src/node/__tests__/plugins/worker.spec.ts",
+          "additions": 47,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "packages/vite/src/node/plugins/worker.ts",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22207,
+      "title": "fix(build): emptyOutDir should happen for watch rebuilds",
+      "url": "https://github.com/vitejs/vite/pull/22207",
+      "mergedAt": "2026-04-14T06:39:35Z",
+      "baseRefName": "main",
+      "headRefName": "fix/build-watch-mode-cleanup",
+      "baseRefOid": "a07a4bd052ac75f916391c999c408ad5f2867e61",
+      "headRefOid": "e61d8ce83376309e031960f3821855c2bd57c239",
+      "mergeCommitOid": "ee522672bb374c7ff95a347f14732491121b1cd6",
+      "changedFiles": 7,
+      "additions": 30,
+      "deletions": 3,
+      "labels": [
+        "p3-minor-bug",
+        "feat: build"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "playground/assets/__tests__/assets.spec.ts"
+      ],
+      "debugScore": 4,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "packages/vite/src/node/plugins/prepareOutDir.ts",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/assets/__tests__/assets.spec.ts",
+          "additions": 21,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/assets/asset/update.js",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "playground/assets/index.html",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/css/vite.config.js",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/legacy/vite.config.js",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/vitestSetup.ts",
+          "additions": 0,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22224,
+      "title": "docs: update sponsors source",
+      "url": "https://github.com/vitejs/vite/pull/22224",
+      "mergedAt": "2026-04-14T02:18:56Z",
+      "baseRefName": "main",
+      "headRefName": "update-sponsors-data",
+      "baseRefOid": "4cd0d6760edd5fb0841abe86538de3c225e880a1",
+      "headRefOid": "cd01cf2c8007ca1af9599a5f74b915ad43e08ea7",
+      "mergeCommitOid": "938dda2378af1398199f12ea53dc481ea8d8bfbb",
+      "changedFiles": 10,
+      "additions": 55,
+      "deletions": 155,
+      "labels": [
+        "documentation",
+        "p1-chore"
+      ],
+      "keywordHits": [
+        "edge"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "docs-only",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/.vitepress/theme/components/AsideSponsors.vue",
+          "additions": 12,
+          "deletions": 12,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/.vitepress/theme/composables/images/astro.svg",
+          "additions": 0,
+          "deletions": 1,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "docs/.vitepress/theme/composables/images/bolt.svg",
+          "additions": 0,
+          "deletions": 1,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "docs/.vitepress/theme/composables/images/nuxtlabs.svg",
+          "additions": 0,
+          "deletions": 1,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "docs/.vitepress/theme/composables/images/stackblitz.svg",
+          "additions": 0,
+          "deletions": 1,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "docs/.vitepress/theme/composables/images/voidzero.svg",
+          "additions": 0,
+          "deletions": 3,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "docs/.vitepress/theme/composables/sponsor.ts",
+          "additions": 32,
+          "deletions": 118,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/.vitepress/theme/landing/Layout.vue",
+          "additions": 6,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/acknowledgements.md",
+          "additions": 3,
+          "deletions": 15,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22206,
+      "title": "docs: fix Vite 5 migration blog links",
+      "url": "https://github.com/vitejs/vite/pull/22206",
+      "mergedAt": "2026-04-14T00:12:54Z",
+      "baseRefName": "main",
+      "headRefName": "docs/fix-cli-apptype-link-and-v5-migration-links",
+      "baseRefOid": "bc5c6a7a498845dff20dc410c395355b79a4b753",
+      "headRefOid": "4eed22166f081fd219150affd8c6352f11a9d9b9",
+      "mergeCommitOid": "f53f43dae14a74b4a418915865dc3c313ee7839b",
+      "changedFiles": 2,
+      "additions": 3,
+      "deletions": 3,
+      "labels": [],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "docs-only",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "docs/blog/announcing-vite5.md",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/guide/cli.md",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22214,
+      "title": "docs: fix wording in sass error comment",
+      "url": "https://github.com/vitejs/vite/pull/22214",
+      "mergedAt": "2026-04-13T09:30:28Z",
+      "baseRefName": "main",
+      "headRefName": "docs/fix-reuses-comment-20260412",
+      "baseRefOid": "a07a4bd052ac75f916391c999c408ad5f2867e61",
+      "headRefOid": "8f27fea9317910a9983e12a439feea69b0128c47",
+      "mergeCommitOid": "bc5c6a7a498845dff20dc410c395355b79a4b753",
+      "changedFiles": 1,
+      "additions": 1,
+      "deletions": 1,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "error",
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/vite/src/node/plugins/css.ts",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22219,
+      "title": "fix(deps): update all non-major dependencies",
+      "url": "https://github.com/vitejs/vite/pull/22219",
+      "mergedAt": "2026-04-13T04:52:57Z",
+      "baseRefName": "main",
+      "headRefName": "renovate/all-minor-patch",
+      "baseRefOid": "a07a4bd052ac75f916391c999c408ad5f2867e61",
+      "headRefOid": "6df3ac55ef2b437b37c2db5d9ed7c3cd9039c42c",
+      "mergeCommitOid": "4cd0d6760edd5fb0841abe86538de3c225e880a1",
+      "changedFiles": 26,
+      "additions": 404,
+      "deletions": 423,
+      "labels": [
+        "dependencies"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "error",
+        "race",
+        "leak",
+        "parser"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "package.json",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-lit-ts/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-lit/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-preact-ts/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-preact/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-qwik-ts/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-qwik/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-react-ts/package.json",
+          "additions": 5,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-react/package.json",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-solid-ts/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-solid/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-svelte-ts/package.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-svelte/package.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-vanilla-ts/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-vanilla/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-vue-ts/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/create-vite/template-vue/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/vite/package.json",
+          "additions": 6,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/backend-integration/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/css/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/environment-react-ssr/package.json",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/optimize-deps/dep-linked-include/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/optimize-deps/package.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "playground/ssr-webworker/package.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pnpm-lock.yaml",
+          "additions": 357,
+          "deletions": 376,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 22220,
+      "title": "chore(deps): update actions/github-script action to v9",
+      "url": "https://github.com/vitejs/vite/pull/22220",
+      "mergedAt": "2026-04-13T04:25:22Z",
+      "baseRefName": "main",
+      "headRefName": "renovate/actions-github-script-9.x",
+      "baseRefOid": "a07a4bd052ac75f916391c999c408ad5f2867e61",
+      "headRefOid": "bd2c8417a1b683832bba04bb8bd9a118a02b20e9",
+      "mergeCommitOid": "40b5cd2e6ba4d7181df7cda50312ad1c0b7d111b",
+      "changedFiles": 3,
+      "additions": 9,
+      "deletions": 9,
+      "labels": [
+        "dependencies"
+      ],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".github/workflows/ecosystem-ci-trigger.yml",
+          "additions": 6,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": ".github/workflows/issue-template-check.yml",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": ".github/workflows/pull-request-template-check.yml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    }
+  ]
+}

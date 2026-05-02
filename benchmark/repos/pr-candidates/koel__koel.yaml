@@ -1,0 +1,3774 @@
+generatedAt: 2026-05-02T10:20:54.188Z
+repo: koel/koel
+since: 2026-01-01
+limit: 50
+debugKeywords: 
+  - bug
+  - fix
+  - regression
+  - crash
+  - incorrect
+  - wrong
+  - error
+  - exception
+  - edge
+  - flaky
+  - race
+  - leak
+  - validation
+  - parser
+  - parsing
+  - timeout
+  - fail
+  - failure
+  - broken
+prs: 
+  - 
+    number: 2437
+    title: "chore: clarify radio-station public toggle label"
+    url: https://github.com/koel/koel/pull/2437
+    mergedAt: 2026-05-01T19:08:45Z
+    baseRefName: master
+    headRefName: chore/radio-station-public-label
+    baseRefOid: a67483faa8c06bbfdc0d6fd98dc06d3ab422f65c
+    headRefOid: 145eb9711deeb93b1e84212643404516a2cf6712
+    mergeCommitOid: 5d458d16127aa9eae10a59d08a08ec0c474e8fa7
+    changedFiles: 3
+    additions: 3
+    deletions: 3
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - resources/assets/js/components/radio/AddRadioStationForm.spec.ts
+    debugScore: 2
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: resources/assets/js/components/radio/AddRadioStationForm.spec.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/radio/AddRadioStationForm.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/radio/EditRadioStationForm.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 2436
+    title: "fix: properly move playlist between folders / out to root on update"
+    url: https://github.com/koel/koel/pull/2436
+    mergedAt: 2026-05-01T18:49:48Z
+    baseRefName: master
+    headRefName: fix/playlist-update-folder-membership
+    baseRefOid: 9829c407ea3e99fc9034905a9089ed1f76bef3dd
+    headRefOid: ac3f696484fe649b936feb0fb146fa2ea6a0ed1c
+    mergeCommitOid: a67483faa8c06bbfdc0d6fd98dc06d3ab422f65c
+    changedFiles: 2
+    additions: 64
+    deletions: 3
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - regression
+      - fail
+      - broken
+    hasTests: true
+    testFiles: 
+      - tests/Feature/PlaylistTest.php
+    debugScore: 6
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: app/Services/PlaylistService.php
+        additions: 20
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: tests/Feature/PlaylistTest.php
+        additions: 44
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 2424
+    title: "chore(deps-dev): bump postcss from 8.5.8 to 8.5.10"
+    url: https://github.com/koel/koel/pull/2424
+    mergedAt: 2026-05-01T12:28:49Z
+    baseRefName: master
+    headRefName: dependabot/npm_and_yarn/postcss-8.5.10
+    baseRefOid: 89ec5df2d63d00db02acb7d4476d42e464743c87
+    headRefOid: 55e98d1ab92661fc9546edf044b427888f1c488b
+    mergeCommitOid: c853c892a07c241619253eac95ac4a693138adf3
+    changedFiles: 2
+    additions: 53
+    deletions: 44
+    labels: 
+      - Dependencies
+      - JavaScript
+    keywordHits: 
+      - fix
+      - error
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: package.json
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: pnpm-lock.yaml
+        additions: 52
+        deletions: 43
+        changeType: MODIFIED
+  - 
+    number: 2435
+    title: "chore: upgrade factoria to v5"
+    url: https://github.com/koel/koel/pull/2435
+    mergedAt: 2026-05-01T12:21:01Z
+    baseRefName: master
+    headRefName: factoria-v5-dogfood
+    baseRefOid: 6f0596aed811c4f65b8062ef4398308e59e88db8
+    headRefOid: c6d454a9670e77084ef66b52b07290a471419e03
+    mergeCommitOid: 89ec5df2d63d00db02acb7d4476d42e464743c87
+    changedFiles: 170
+    additions: 791
+    deletions: 763
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - leak
+    hasTests: true
+    testFiles: 
+      - resources/assets/js/__tests__/TestHarness.ts
+      - resources/assets/js/__tests__/factory/albumInfoFactory.ts
+      - resources/assets/js/__tests__/factory/index.ts
+      - resources/assets/js/__tests__/factory/playlistFactory.ts
+      - resources/assets/js/__tests__/factory/smartPlaylistRuleGroupFactory.ts
+      - resources/assets/js/components/album/AlbumCard.spec.ts
+      - resources/assets/js/components/album/AlbumContextMenu.spec.ts
+      - resources/assets/js/components/album/AlbumInfo.spec.ts
+      - resources/assets/js/components/album/AlbumTrackList.spec.ts
+      - resources/assets/js/components/album/AlbumTrackListItem.spec.ts
+      - resources/assets/js/components/album/EditAlbumForm.spec.ts
+      - resources/assets/js/components/artist/ArtistCard.spec.ts
+      - resources/assets/js/components/artist/ArtistContextMenu.spec.ts
+      - resources/assets/js/components/artist/ArtistEventItem.spec.ts
+      - resources/assets/js/components/artist/ArtistEventList.spec.ts
+      - resources/assets/js/components/artist/ArtistInfo.spec.ts
+      - resources/assets/js/components/artist/EditArtistForm.spec.ts
+      - resources/assets/js/components/embed/CreateEmbedForm.spec.ts
+      - resources/assets/js/components/embed/ThemeSelectBox.spec.ts
+      - resources/assets/js/components/embed/widget/EmbedWidget.spec.ts
+      - resources/assets/js/components/embed/widget/EmbedWidgetBanner.spec.ts
+      - resources/assets/js/components/embed/widget/EmbedWidgetThumbnail.spec.ts
+      - resources/assets/js/components/embed/widget/EmbedWidgetTrackItem.spec.ts
+      - resources/assets/js/components/embed/widget/EmbedWidgetTrackList.spec.ts
+      - resources/assets/js/components/embed/widget/audio-player/EmbedAudioPlayerNextButton.spec.ts
+      - resources/assets/js/components/embed/widget/audio-player/EmbedAudioPlayerPlayButton.spec.ts
+      - resources/assets/js/components/embed/widget/audio-player/EmbedAudioPlayerProgressBar.spec.ts
+      - resources/assets/js/components/genre/GenreCard.spec.ts
+      - resources/assets/js/components/genre/GenreContextMenu.spec.ts
+      - resources/assets/js/components/invitation/AcceptInvitation.spec.ts
+      - resources/assets/js/components/layout/app-footer/FooterPlayableInfo.spec.ts
+      - resources/assets/js/components/layout/app-footer/FooterPlaybackControls.spec.ts
+      - resources/assets/js/components/layout/app-footer/FooterRadioStationInfo.spec.ts
+      - resources/assets/js/components/layout/app-footer/UpNext.spec.ts
+      - resources/assets/js/components/layout/main-wrapper/MainContent.spec.ts
+      - resources/assets/js/components/layout/main-wrapper/side-sheet/SideSheet.spec.ts
+      - resources/assets/js/components/layout/main-wrapper/sidebar/PlaylistFolderSidebarItem.spec.ts
+      - resources/assets/js/components/layout/main-wrapper/sidebar/PlaylistSidebarItem.spec.ts
+      - resources/assets/js/components/layout/main-wrapper/sidebar/SidebarPlaylistsSection.spec.ts
+      - resources/assets/js/components/media-browser/MediaBrowserContextMenu.spec.ts
+      - resources/assets/js/components/playable/AddToMenu.spec.ts
+      - resources/assets/js/components/playable/EditSongForm.spec.ts
+      - resources/assets/js/components/playable/PlayableContextMenu.spec.ts
+      - resources/assets/js/components/playable/PlayableThumbnail.spec.ts
+      - resources/assets/js/components/playable/media-browser/MediaListItem.spec.ts
+      - resources/assets/js/components/playable/playable-list/PlayableList.spec.ts
+      - resources/assets/js/components/playable/playable-list/PlayableListControls.spec.ts
+      - resources/assets/js/components/playable/playable-list/PlayableListItem.spec.ts
+      - resources/assets/js/components/playlist/CreatePlaylistFolderForm.spec.ts
+      - resources/assets/js/components/playlist/CreatePlaylistForm.spec.ts
+      - resources/assets/js/components/playlist/EditPlaylistFolderForm.spec.ts
+      - resources/assets/js/components/playlist/EditPlaylistForm.spec.ts
+      - resources/assets/js/components/playlist/InvitePlaylistCollaborators.spec.ts
+      - resources/assets/js/components/playlist/PlaylistCollaborationModal.spec.ts
+      - resources/assets/js/components/playlist/PlaylistCollaboratorList.spec.ts
+      - resources/assets/js/components/playlist/PlaylistCollaboratorListItem.spec.ts
+      - resources/assets/js/components/playlist/PlaylistCollaboratorsBadge.spec.ts
+    debugScore: 1
+    suggestedDifficulty: high
+    exclusionHints: 
+      - huge-diff
+    files: 
+      - 
+        path: package.json
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: pnpm-lock.yaml
+        additions: 9
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/__tests__/TestHarness.ts
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/__tests__/factory/albumInfoFactory.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/__tests__/factory/index.ts
+        additions: 37
+        deletions: 55
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/__tests__/factory/playlistFactory.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/__tests__/factory/smartPlaylistRuleGroupFactory.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/album/AlbumCard.spec.ts
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/album/AlbumContextMenu.spec.ts
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/album/AlbumInfo.spec.ts
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/album/AlbumTrackList.spec.ts
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/album/AlbumTrackListItem.spec.ts
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/album/EditAlbumForm.spec.ts
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/artist/ArtistCard.spec.ts
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/artist/ArtistContextMenu.spec.ts
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/artist/ArtistEventItem.spec.ts
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/artist/ArtistEventList.spec.ts
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/artist/ArtistInfo.spec.ts
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/artist/EditArtistForm.spec.ts
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/embed/CreateEmbedForm.spec.ts
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/embed/ThemeSelectBox.spec.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/embed/widget/EmbedWidget.spec.ts
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/embed/widget/EmbedWidgetBanner.spec.ts
+        additions: 15
+        deletions: 15
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/embed/widget/EmbedWidgetThumbnail.spec.ts
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/embed/widget/EmbedWidgetTrackItem.spec.ts
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/embed/widget/EmbedWidgetTrackList.spec.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/embed/widget/audio-player/EmbedAudioPlayerNextButton.spec.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/embed/widget/audio-player/EmbedAudioPlayerPlayButton.spec.ts
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/embed/widget/audio-player/EmbedAudioPlayerProgressBar.spec.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/genre/GenreCard.spec.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/genre/GenreContextMenu.spec.ts
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/invitation/AcceptInvitation.spec.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/layout/app-footer/FooterPlayableInfo.spec.ts
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/layout/app-footer/FooterPlaybackControls.spec.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/layout/app-footer/FooterRadioStationInfo.spec.ts
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/layout/app-footer/UpNext.spec.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/layout/main-wrapper/MainContent.spec.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/layout/main-wrapper/side-sheet/SideSheet.spec.ts
+        additions: 7
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/layout/main-wrapper/sidebar/PlaylistFolderSidebarItem.spec.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/layout/main-wrapper/sidebar/PlaylistSidebarItem.spec.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/layout/main-wrapper/sidebar/SidebarPlaylistsSection.spec.ts
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/media-browser/MediaBrowserContextMenu.spec.ts
+        additions: 7
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playable/AddToMenu.spec.ts
+        additions: 6
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playable/EditSongForm.spec.ts
+        additions: 11
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playable/PlayableContextMenu.spec.ts
+        additions: 68
+        deletions: 49
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playable/PlayableThumbnail.spec.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playable/media-browser/MediaListItem.spec.ts
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playable/media-browser/MediaListView.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playable/playable-list/PlayableList.spec.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playable/playable-list/PlayableListControls.spec.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playable/playable-list/PlayableListItem.spec.ts
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playlist/CreatePlaylistFolderForm.spec.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playlist/CreatePlaylistForm.spec.ts
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playlist/EditPlaylistFolderForm.spec.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playlist/EditPlaylistForm.spec.ts
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playlist/InvitePlaylistCollaborators.spec.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playlist/PlaylistCollaborationModal.spec.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playlist/PlaylistCollaboratorList.spec.ts
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playlist/PlaylistCollaboratorListItem.spec.ts
+        additions: 6
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playlist/PlaylistCollaboratorsBadge.spec.ts
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 2267
+    title: "feat: AI assistant with natural language music control"
+    url: https://github.com/koel/koel/pull/2267
+    mergedAt: 2026-03-11T07:30:33Z
+    baseRefName: master
+    headRefName: feat/ai-tools
+    baseRefOid: 26f85ab705cd163b13f6d044d0436c49a3912597
+    headRefOid: b4d55a39a99eca9da1acb9dc5a13de705b20a7a8
+    mergeCommitOid: 7775af69df915bbf01bbf7cacf2498aaf8d34099
+    changedFiles: 113
+    additions: 6085
+    deletions: 67
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .env.example
+        additions: 9
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/lint-backend.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/test-backend-mariadb.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/test-backend-pgsql.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/test-backend-sqlite.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: CLAUDE.md
+        additions: 19
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: app/Ai/Agents/KoelAssistant.php
+        additions: 88
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/AiAssistantResult.php
+        additions: 11
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/AiRequestContext.php
+        additions: 14
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/Services/PlaybackService.php
+        additions: 89
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/Tools/AddRadioStation.php
+        additions: 49
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/Tools/AddToFavorites.php
+        additions: 121
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/Tools/AddToPlaylist.php
+        additions: 109
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/Tools/CreateSmartPlaylist.php
+        additions: 138
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/Tools/DeletePlaylist.php
+        additions: 55
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/Tools/GetAlbumInfo.php
+        additions: 75
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/Tools/GetArtistInfo.php
+        additions: 63
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/Tools/GetCurrentSong.php
+        additions: 93
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/Tools/GetLyrics.php
+        additions: 77
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/Tools/PlayAlbum.php
+        additions: 44
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/Tools/PlayArtist.php
+        additions: 44
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/Tools/PlayFavorites.php
+        additions: 48
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/Tools/PlayLeastPlayed.php
+        additions: 52
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/Tools/PlayMostPlayed.php
+        additions: 51
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/Tools/PlayMostPlayedAlbum.php
+        additions: 44
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/Tools/PlayMostPlayedArtist.php
+        additions: 44
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/Tools/PlayPlaylist.php
+        additions: 59
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/Tools/PlayRadioStation.php
+        additions: 56
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/Tools/PlayRecentlyAdded.php
+        additions: 51
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/Tools/PlayRecentlyAddedAlbum.php
+        additions: 44
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/Tools/PlayRecentlyAddedArtist.php
+        additions: 44
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/Tools/PlayRecentlyPlayed.php
+        additions: 54
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/Tools/PlaySimilarSongs.php
+        additions: 117
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/Tools/PlaySongs.php
+        additions: 60
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/Tools/PlaySongsByGenre.php
+        additions: 62
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/Tools/PlaySongsByLyrics.php
+        additions: 55
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/Tools/RemoveFromFavorites.php
+        additions: 121
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/Tools/RemoveFromPlaylist.php
+        additions: 109
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/Tools/RenamePlaylist.php
+        additions: 63
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/Tools/UpdateAlbumDetails.php
+        additions: 85
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/Tools/UpdateArtistDetails.php
+        additions: 68
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Ai/Tools/UpdateSongLyrics.php
+        additions: 65
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Http/Controllers/API/AiController.php
+        additions: 128
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Http/Controllers/API/FetchInitialDataController.php
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: app/Http/Requests/API/AiRequest.php
+        additions: 17
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Models/Concerns/Songs/HasSongAttributes.php
+        additions: 6
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: app/Models/Song.php
+        additions: 3
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: app/Repositories/ArtistRepository.php
+        additions: 11
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: app/Repositories/GenreRepository.php
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: app/Repositories/PlaylistRepository.php
+        additions: 13
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: app/Repositories/SongRepository.php
+        additions: 48
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: app/Services/Scanners/Strategies/ParallelScanStrategy.php
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: composer.json
+        additions: 4
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: composer.lock
+        additions: 148
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: config/ai.php
+        additions: 127
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: config/koel.php
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: database/migrations/2026_01_11_000001_create_agent_conversations_table.php
+        additions: 49
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: database/migrations/2026_03_09_061438_add_fulltext_index_to_songs_lyrics.php
+        additions: 31
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/.vitepress/config.mts
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs/environment-variables.md
+        additions: 10
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 2433
+    title: "fix: harden ModelImageObserver edge cases ('0' filename + log noise)"
+    url: https://github.com/koel/koel/pull/2433
+    mergedAt: 2026-04-29T21:36:29Z
+    baseRefName: master
+    headRefName: fix/model-image-observer-edge-cases
+    baseRefOid: fed79599e53ae0bcd0f29502804082314797f4c2
+    headRefOid: 6fd2ca0efa28250cfc41f090929ea2a5a446eb57
+    mergeCommitOid: 6f0596aed811c4f65b8062ef4398308e59e88db8
+    changedFiles: 1
+    additions: 2
+    deletions: 2
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - error
+      - exception
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 5
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: app/Services/ModelImageObserver.php
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 2432
+    title: "refactor: extract model-image cleanup into a field-bound ModelImageObserver"
+    url: https://github.com/koel/koel/pull/2432
+    mergedAt: 2026-04-29T21:24:20Z
+    baseRefName: master
+    headRefName: refactor/image-lifecycle
+    baseRefOid: 56cf125ed23d328ed5ff18d2216a766fd7d2441a
+    headRefOid: 5c86ac7c27f3f4bd4012a130768032d947fb9d87
+    mergeCommitOid: fed79599e53ae0bcd0f29502804082314797f4c2
+    changedFiles: 7
+    additions: 233
+    deletions: 57
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - error
+      - fail
+    hasTests: true
+    testFiles: 
+      - tests/Unit/Services/ModelImageObserverTest.php
+    debugScore: 6
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: app/Observers/AlbumObserver.php
+        additions: 10
+        deletions: 18
+        changeType: MODIFIED
+      - 
+        path: app/Observers/ArtistObserver.php
+        additions: 10
+        deletions: 9
+        changeType: MODIFIED
+      - 
+        path: app/Observers/PlaylistObserver.php
+        additions: 10
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: app/Observers/RadioStationObserver.php
+        additions: 10
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: app/Observers/UserObserver.php
+        additions: 10
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: app/Services/ModelImageObserver.php
+        additions: 52
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/Unit/Services/ModelImageObserverTest.php
+        additions: 131
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 2431
+    title: "fix: shift tabindex from list/panel wrappers to media list items"
+    url: https://github.com/koel/koel/pull/2431
+    mergedAt: 2026-04-29T19:42:41Z
+    baseRefName: master
+    headRefName: fix/tabindex-placement
+    baseRefOid: b3f05cdfaca079ba130714ea429722d3449a10f7
+    headRefOid: fc761c162a9ef38218736a48ed8eef675e6e56b7
+    mergeCommitOid: 56cf125ed23d328ed5ff18d2216a766fd7d2441a
+    changedFiles: 4
+    additions: 4
+    deletions: 5
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - error
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: resources/assets/js/components/layout/main-wrapper/side-sheet/SideSheetPanelLazyWrapper.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playable/media-browser/MediaListItem.vue
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playable/playable-list/PlayableList.vue
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playable/playable-list/__snapshots__/PlayableList.spec.ts.snap
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 2430
+    title: "chore: round out builder generics on remaining custom builders"
+    url: https://github.com/koel/koel/pull/2430
+    mergedAt: 2026-04-28T22:43:40Z
+    baseRefName: master
+    headRefName: chore/builder-generics-followup
+    baseRefOid: fe9529c8752ea77f3afa4a59a93169e4e2f425d2
+    headRefOid: f4a049331fe58eb9249a817e27e1b26a7d0de6f1
+    mergeCommitOid: b3f05cdfaca079ba130714ea429722d3449a10f7
+    changedFiles: 3
+    additions: 9
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - exception
+      - fail
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: app/Builders/PodcastBuilder.php
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: app/Builders/RadioStationBuilder.php
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: app/Repositories/PlaylistRepository.php
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 2429
+    title: "chore: thread Eloquent generics through custom builders + repo docblock cleanup"
+    url: https://github.com/koel/koel/pull/2429
+    mergedAt: 2026-04-28T22:35:45Z
+    baseRefName: master
+    headRefName: chore/builder-generic-types
+    baseRefOid: e4ec62eee0b5b810d513693cc2ad70391cb069b6
+    headRefOid: 233b6cc555a9f1c8d26613d0b9861f6d30074ed9
+    mergeCommitOid: fe9529c8752ea77f3afa4a59a93169e4e2f425d2
+    changedFiles: 16
+    additions: 24
+    deletions: 52
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - fail
+      - broken
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: app/Builders/AlbumBuilder.php
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: app/Builders/ArtistBuilder.php
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: app/Builders/FavoriteableBuilder.php
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: app/Builders/SongBuilder.php
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: app/Repositories/AlbumRepository.php
+        additions: 0
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: app/Repositories/ArtistRepository.php
+        additions: 0
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: app/Repositories/Contracts/ScoutableRepository.php
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: app/Repositories/DuplicateUploadRepository.php
+        additions: 0
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: app/Repositories/FolderRepository.php
+        additions: 0
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: app/Repositories/GenreRepository.php
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: app/Repositories/PlaylistRepository.php
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: app/Repositories/PodcastRepository.php
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: app/Repositories/RadioStationRepository.php
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: app/Repositories/SongRepository.php
+        additions: 0
+        deletions: 25
+        changeType: MODIFIED
+      - 
+        path: app/Repositories/ThemeRepository.php
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: app/Repositories/TranscodeRepository.php
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 2428
+    title: "chore: align tsconfig with the typecheck override"
+    url: https://github.com/koel/koel/pull/2428
+    mergedAt: 2026-04-28T21:43:10Z
+    baseRefName: master
+    headRefName: chore/align-ts-module-resolution
+    baseRefOid: 83dd25fdd457d940b52478df65c02b84971526fe
+    headRefOid: 3c19667b35f71d174127f583c46257c6bf6bfc0c
+    mergeCommitOid: e4ec62eee0b5b810d513693cc2ad70391cb069b6
+    changedFiles: 1
+    additions: 2
+    deletions: 2
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - error
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: resources/assets/tsconfig.json
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 2427
+    title: "refactor: route paginated store URLs through flattenParams"
+    url: https://github.com/koel/koel/pull/2427
+    mergedAt: 2026-04-28T21:34:31Z
+    baseRefName: master
+    headRefName: refactor/url-params-flatten
+    baseRefOid: 671dd810c36567f66247a7c9e7b1e5337d2fcfad
+    headRefOid: 57690ca9e2bf3b5473dc9e5daa1acdac1cf3f8ca
+    mergeCommitOid: 83dd25fdd457d940b52478df65c02b84971526fe
+    changedFiles: 4
+    additions: 8
+    deletions: 6
+    labels: 
+[]
+    keywordHits: 
+      - bug
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: resources/assets/js/stores/albumStore.ts
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/stores/artistStore.ts
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/stores/playableStore.ts
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/utils/helpers.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 2426
+    title: "refactor: extract shared store vault into useVault composable"
+    url: https://github.com/koel/koel/pull/2426
+    mergedAt: 2026-04-28T21:20:20Z
+    baseRefName: master
+    headRefName: refactor/extract-store-vault
+    baseRefOid: 48998f913659808bf4420d97278c733a677dd5b0
+    headRefOid: 666f513c7f1dddf95dfba8ad63985337aad2753d
+    mergeCommitOid: 671dd810c36567f66247a7c9e7b1e5337d2fcfad
+    changedFiles: 7
+    additions: 165
+    deletions: 96
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: true
+    testFiles: 
+      - resources/assets/js/composables/useVault.spec.ts
+      - resources/assets/js/stores/playableStore.spec.ts
+    debugScore: 4
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: resources/assets/js/composables/useVault.spec.ts
+        additions: 90
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: resources/assets/js/composables/useVault.ts
+        additions: 35
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: resources/assets/js/stores/albumStore.ts
+        additions: 3
+        deletions: 17
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/stores/artistStore.ts
+        additions: 2
+        deletions: 16
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/stores/playableStore.spec.ts
+        additions: 16
+        deletions: 18
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/stores/playableStore.ts
+        additions: 16
+        deletions: 28
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/stores/userStore.ts
+        additions: 3
+        deletions: 17
+        changeType: MODIFIED
+  - 
+    number: 2425
+    title: "refactor: consolidate DownloadService storage dispatch via factory"
+    url: https://github.com/koel/koel/pull/2425
+    mergedAt: 2026-04-28T20:44:04Z
+    baseRefName: master
+    headRefName: refactor/song-storage-backend
+    baseRefOid: 99443d0f38d499b526618263ca4a20c43004378c
+    headRefOid: ab63c00d185316ff0304505edef83334f74c33fd
+    mergeCommitOid: 48998f913659808bf4420d97278c733a677dd5b0
+    changedFiles: 3
+    additions: 71
+    deletions: 25
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - exception
+      - fail
+    hasTests: true
+    testFiles: 
+      - tests/Unit/Services/SongStorages/SongStorageFactoryTest.php
+    debugScore: 5
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: app/Services/DownloadService.php
+        additions: 8
+        deletions: 25
+        changeType: MODIFIED
+      - 
+        path: app/Services/SongStorages/SongStorageFactory.php
+        additions: 19
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/Unit/Services/SongStorages/SongStorageFactoryTest.php
+        additions: 44
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 2423
+    title: "fix: increase album/artist thumbnail corner radius"
+    url: https://github.com/koel/koel/pull/2423
+    mergedAt: 2026-04-28T20:00:29Z
+    baseRefName: master
+    headRefName: fix/album-artist-thumbnail-rounding
+    baseRefOid: 06ce8903582bfb23770e8b96a22378f1458c41fa
+    headRefOid: 4f73bb89fb9bd773cb560bf410871a13c4f9cd22
+    mergeCommitOid: 99443d0f38d499b526618263ca4a20c43004378c
+    changedFiles: 4
+    additions: 8
+    deletions: 7
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: resources/assets/js/components/album/__snapshots__/AlbumCard.spec.ts.snap
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/artist/__snapshots__/ArtistCard.spec.ts.snap
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/ui/album-artist/AlbumOrArtistThumbnail.vue
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/ui/album-artist/__snapshots__/AlbumOrArtistThumbnail.spec.ts.snap
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 2401
+    title: "chore(deps): bump phpseclib/phpseclib from 3.0.50 to 3.0.51"
+    url: https://github.com/koel/koel/pull/2401
+    mergedAt: 2026-04-28T19:47:41Z
+    baseRefName: master
+    headRefName: dependabot/composer/phpseclib/phpseclib-3.0.51
+    baseRefOid: 0f1521ffd1d0ca43fa34c23947764dbad2b8eda5
+    headRefOid: 8b810090e1fcda0eff12d539887558cf3ea9a273
+    mergeCommitOid: 5567abd6d53eb5f526d1a6469caa0696d133433c
+    changedFiles: 1
+    additions: 7
+    deletions: 7
+    labels: 
+      - Dependencies
+      - PHP
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: composer.lock
+        additions: 7
+        deletions: 7
+        changeType: MODIFIED
+  - 
+    number: 2404
+    title: "chore(deps): bump dompurify from 3.3.2 to 3.4.0"
+    url: https://github.com/koel/koel/pull/2404
+    mergedAt: 2026-04-28T19:47:26Z
+    baseRefName: master
+    headRefName: dependabot/npm_and_yarn/dompurify-3.4.0
+    baseRefOid: 0f1521ffd1d0ca43fa34c23947764dbad2b8eda5
+    headRefOid: 704d8fc58368caecc56c47d04cae2a07e5f911c4
+    mergeCommitOid: 589134ad784f0dd764341c26ef562c1abf3d3b3a
+    changedFiles: 2
+    additions: 14
+    deletions: 15
+    labels: 
+      - Dependencies
+      - JavaScript
+    keywordHits: 
+      - fix
+      - race
+      - leak
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: package.json
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: pnpm-lock.yaml
+        additions: 13
+        deletions: 14
+        changeType: MODIFIED
+  - 
+    number: 2421
+    title: "refactor: migrate dropdowns and context menus to native popover API"
+    url: https://github.com/koel/koel/pull/2421
+    mergedAt: 2026-04-28T19:20:29Z
+    baseRefName: master
+    headRefName: refactor/popover-wrapper
+    baseRefOid: a349142be7f948a79dc31c1e7a37e633b75902e4
+    headRefOid: e61ee1b3f7a52276af42dd6a1bcfb608426a65d7
+    mergeCommitOid: 06ce8903582bfb23770e8b96a22378f1458c41fa
+    changedFiles: 13
+    additions: 501
+    deletions: 285
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - wrong
+      - race
+    hasTests: true
+    testFiles: 
+      - resources/assets/js/__tests__/setup.ts
+      - resources/assets/js/__tests__/shims/popover.ts
+      - resources/assets/js/components/ui/BasicListSorter.spec.ts
+      - resources/assets/js/components/ui/Popover.spec.ts
+      - resources/assets/js/components/ui/context-menu/ContextMenu.spec.ts
+    debugScore: 5
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: resources/assets/js/__tests__/setup.ts
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/__tests__/shims/popover.ts
+        additions: 103
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: resources/assets/js/components/playable/playable-list/PlayableListControls.vue
+        additions: 24
+        deletions: 41
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playable/playable-list/PlayableListHeaderActionMenu.vue
+        additions: 9
+        deletions: 18
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playable/playable-list/__snapshots__/PlayableListHeader.spec.ts.snap
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/__snapshots__/AllSongsScreen.spec.ts.snap
+        additions: 1
+        deletions: 13
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/ui/BasicListSorter.spec.ts
+        additions: 1
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/ui/BasicListSorter.vue
+        additions: 8
+        deletions: 23
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/ui/Popover.spec.ts
+        additions: 91
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: resources/assets/js/components/ui/Popover.vue
+        additions: 125
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: resources/assets/js/components/ui/context-menu/ContextMenu.spec.ts
+        additions: 35
+        deletions: 45
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/ui/context-menu/ContextMenu.vue
+        additions: 102
+        deletions: 35
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/composables/useFloatingUi.ts
+        additions: 0
+        deletions: 99
+        changeType: DELETED
+  - 
+    number: 2420
+    title: "fix: add hover state to BasicListSorter menu items"
+    url: https://github.com/koel/koel/pull/2420
+    mergedAt: 2026-04-27T22:03:17Z
+    baseRefName: master
+    headRefName: fix/basic-list-sorter-hover
+    baseRefOid: 735e316324efc842022c030073abfc1d8120baf3
+    headRefOid: a5e77fab3bf21b694cf28237181ad44b347c55af
+    mergeCommitOid: a349142be7f948a79dc31c1e7a37e633b75902e4
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: resources/assets/js/components/ui/BasicListSorter.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 2419
+    title: "refactor: replace Btn boolean attrs with variant and size props"
+    url: https://github.com/koel/koel/pull/2419
+    mergedAt: 2026-04-27T21:51:36Z
+    baseRefName: master
+    headRefName: refactor/btn-variant-prop
+    baseRefOid: e6bbc260d25c7be255008867947b63262dcf4a85
+    headRefOid: dcec6624947081560da9dc50d0129fb8e707311b
+    mergeCommitOid: 735e316324efc842022c030073abfc1d8120baf3
+    changedFiles: 58
+    additions: 128
+    deletions: 107
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: resources/assets/js/components/album/EditAlbumForm.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/artist/EditArtistForm.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/auth/ForgotPasswordForm.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/embed/CreateEmbedForm.vue
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/koel-plus/KoelPlusModal.vue
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/meta/AboutKoelModal.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/meta/__snapshots__/AboutKoelModal.spec.ts.snap
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playable/AddToMenu.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playable/EditSongForm.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playable/__snapshots__/AddToMenu.spec.ts.snap
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playable/__snapshots__/EditSongForm.spec.ts.snap
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playable/playable-list/PlayableListControls.vue
+        additions: 9
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playlist/CreatePlaylistFolderForm.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playlist/CreatePlaylistForm.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playlist/EditPlaylistFolderForm.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playlist/EditPlaylistForm.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playlist/InvitePlaylistCollaborators.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playlist/PlaylistCollaboratorListItem.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playlist/smart-playlist/CreateSmartPlaylistForm.vue
+        additions: 9
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playlist/smart-playlist/EditSmartPlaylistForm.vue
+        additions: 9
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playlist/smart-playlist/SmartPlaylistRule.vue
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playlist/smart-playlist/SmartPlaylistRuleGroup.vue
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/podcast/AddPodcastForm.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/profile-preferences/LastfmIntegration.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/profile-preferences/OfflineStorage.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/profile-preferences/theme/CreateThemeForm.vue
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/profile-preferences/theme/ThemePreferences.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/radio/AddRadioStationForm.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/radio/EditRadioStationForm.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/AlbumListScreen.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/AlbumScreen.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/ArtistListScreen.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/ArtistScreen.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/EpisodeScreen.vue
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/GenreScreen.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/MediaBrowserScreen.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/PlaylistScreen.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/PodcastListScreen.vue
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/PodcastScreen.vue
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/RadioStationListScreen.vue
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/UploadScreen.vue
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/UserListScreen.vue
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/__snapshots__/AllSongsScreen.spec.ts.snap
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/home/RandomSongs.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/home/ViewAllRecentlyPlayedPlayablesButton.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/search/PlayableExcerptResultsBlock.vue
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/ui/DialogBox.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/ui/DuplicateUploadList.vue
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/ui/album-artist/ExpandableContentBlock.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/ui/form/Btn.vue
+        additions: 18
+        deletions: 13
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/ui/upload/DuplicateUploadItem.vue
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/ui/upload/UploadItem.vue
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/ui/upload/__snapshots__/UploadItem.spec.ts.snap
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/user/AddUserForm.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/user/EditUserForm.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/user/InviteUserForm.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/user/UserCard.vue
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/utils/ImageCropper.vue
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 2418
+    title: "chore: announce loading regions to assistive technologies"
+    url: https://github.com/koel/koel/pull/2418
+    mergedAt: 2026-04-27T21:29:43Z
+    baseRefName: master
+    headRefName: chore/loading-aria-attributes
+    baseRefOid: e97d97a4dcdc78df216fe0c63d59d27baee753f1
+    headRefOid: bb0e596ab2eb39994023dd033fbbb312f45cab10
+    mergeCommitOid: e6bbc260d25c7be255008867947b63262dcf4a85
+    changedFiles: 35
+    additions: 108
+    deletions: 50
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: resources/assets/js/components/album/AlbumInfo.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/artist/ArtistInfo.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/layout/main-wrapper/side-sheet/SideSheet.vue
+        additions: 14
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playlist/PlaylistCollaboratorList.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/AlbumListScreen.vue
+        additions: 10
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/AlbumScreen.vue
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/AllSongsScreen.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/ArtistListScreen.vue
+        additions: 10
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/ArtistScreen.vue
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/EpisodeScreen.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/FavoritesScreen.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/GenreListScreen.vue
+        additions: 7
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/GenreScreen.vue
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/MediaBrowserScreen.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/PlaylistScreen.vue
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/PodcastListScreen.vue
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/PodcastScreen.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/QueueScreen.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/RadioStationListScreen.vue
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/RecentlyPlayedScreen.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/home/LeastPlayedSongs.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/home/MostPlayedSongs.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/home/NewAlbums.vue
+        additions: 7
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/home/NewArtists.vue
+        additions: 7
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/home/NewSongs.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/home/RandomSongs.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/home/RecentlyPlayedPlayables.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/home/SimilarSongs.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/home/TopAlbums.vue
+        additions: 7
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/home/TopArtists.vue
+        additions: 7
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/search/PlayableExcerptResultsBlock.vue
+        additions: 7
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/search/SearchPlayableResultsScreen.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/ui/Loading.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/ui/__snapshots__/Loading.spec.ts.snap
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/ui/youtube/YouTubeVideoList.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 2417
+    title: "fix: align user card with album/artist card affordances"
+    url: https://github.com/koel/koel/pull/2417
+    mergedAt: 2026-04-26T19:21:45Z
+    baseRefName: master
+    headRefName: fix/user-card-consistency
+    baseRefOid: 1eb707fb4fe83c79f244ecfb8eb88d32f3e77138
+    headRefOid: 0e52aecfed605322d29a475c1164309981bce10d
+    mergeCommitOid: e97d97a4dcdc78df216fe0c63d59d27baee753f1
+    changedFiles: 2
+    additions: 73
+    deletions: 37
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: true
+    testFiles: 
+      - resources/assets/js/components/user/UserCard.spec.ts
+    debugScore: 3
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: resources/assets/js/components/user/UserCard.spec.ts
+        additions: 29
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/user/UserCard.vue
+        additions: 44
+        deletions: 32
+        changeType: MODIFIED
+  - 
+    number: 2416
+    title: "test: strengthen User::getAssignableRoles tests with exact assertions"
+    url: https://github.com/koel/koel/pull/2416
+    mergedAt: 2026-04-26T16:00:10Z
+    baseRefName: master
+    headRefName: test/strengthen-user-assignable-roles
+    baseRefOid: 8ee39d64f295246b567ab4301e904d899fee97aa
+    headRefOid: 1ec4f91582123a907e9e58bb79602672c203f072
+    mergeCommitOid: 1eb707fb4fe83c79f244ecfb8eb88d32f3e77138
+    changedFiles: 2
+    additions: 60
+    deletions: 3
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - tests/Unit/KoelPlus/Models/UserTest.php
+      - tests/Unit/Models/UserTest.php
+    debugScore: 2
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: tests/Unit/KoelPlus/Models/UserTest.php
+        additions: 38
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/Unit/Models/UserTest.php
+        additions: 22
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 2415
+    title: "chore: remove the Acl namespace entirely; bundle assignable roles into initial data"
+    url: https://github.com/koel/koel/pull/2415
+    mergedAt: 2026-04-26T15:45:07Z
+    baseRefName: master
+    headRefName: chore/remove-acl-namespace-entirely
+    baseRefOid: d950397b1e0e09bcb9cafd666b6f086e7e28c9c1
+    headRefOid: c00c21762f5270237c8c7d7aa80da5d14ed676f5
+    mergeCommitOid: 8ee39d64f295246b567ab4301e904d899fee97aa
+    changedFiles: 12
+    additions: 55
+    deletions: 152
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - resources/assets/js/components/user/RolePicker.spec.ts
+      - resources/assets/js/services/acl.spec.ts
+      - tests/Unit/Models/UserTest.php
+      - tests/Unit/Services/AclTest.php
+    debugScore: 1
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: app/Http/Controllers/API/Acl/FetchAssignableRolesController.php
+        additions: 0
+        deletions: 26
+        changeType: DELETED
+      - 
+        path: app/Http/Controllers/API/FetchInitialDataController.php
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: app/Models/User.php
+        additions: 14
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: app/Services/Acl.php
+        additions: 0
+        deletions: 19
+        changeType: DELETED
+      - 
+        path: resources/assets/js/components/user/RolePicker.spec.ts
+        additions: 7
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/user/RolePicker.vue
+        additions: 3
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/services/acl.spec.ts
+        additions: 0
+        deletions: 40
+        changeType: DELETED
+      - 
+        path: resources/assets/js/services/acl.ts
+        additions: 0
+        deletions: 14
+        changeType: DELETED
+      - 
+        path: resources/assets/js/stores/commonStore.ts
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: routes/api.base.php
+        additions: 0
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: tests/Unit/Models/UserTest.php
+        additions: 29
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/Unit/Services/AclTest.php
+        additions: 0
+        deletions: 32
+        changeType: DELETED
+  - 
+    number: 2414
+    title: "chore: remove obsolete acl/permissions endpoint and Permissionable contract"
+    url: https://github.com/koel/koel/pull/2414
+    mergedAt: 2026-04-26T15:21:27Z
+    baseRefName: master
+    headRefName: chore/remove-acl-permission-endpoint
+    baseRefOid: 70935c761e0f0d90ec4d3fa2be69ac9eb2cf3a1f
+    headRefOid: feb1a38545cf052b66d2e3aed58dc4f57c0d5b43
+    mergeCommitOid: d950397b1e0e09bcb9cafd666b6f086e7e28c9c1
+    changedFiles: 15
+    additions: 6
+    deletions: 226
+    labels: 
+[]
+    keywordHits: 
+      - validation
+    hasTests: true
+    testFiles: 
+      - resources/assets/js/components/screens/AlbumScreen.spec.ts
+      - resources/assets/js/components/screens/ArtistScreen.spec.ts
+      - resources/assets/js/services/acl.spec.ts
+      - tests/Unit/Services/AclTest.php
+    debugScore: 2
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: app/Enums/PermissionableResourceType.php
+        additions: 0
+        deletions: 27
+        changeType: DELETED
+      - 
+        path: app/Http/Controllers/API/Acl/CheckResourcePermissionController.php
+        additions: 0
+        deletions: 21
+        changeType: DELETED
+      - 
+        path: app/Http/Resources/ResourcePermissionResource.php
+        additions: 0
+        deletions: 32
+        changeType: DELETED
+      - 
+        path: app/Models/Album.php
+        additions: 1
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: app/Models/Artist.php
+        additions: 1
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: app/Models/Contracts/Permissionable.php
+        additions: 0
+        deletions: 8
+        changeType: DELETED
+      - 
+        path: app/Models/RadioStation.php
+        additions: 1
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: app/Models/User.php
+        additions: 1
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: app/Services/Acl.php
+        additions: 0
+        deletions: 27
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/AlbumScreen.spec.ts
+        additions: 1
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/ArtistScreen.spec.ts
+        additions: 1
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/services/acl.spec.ts
+        additions: 0
+        deletions: 21
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/services/acl.ts
+        additions: 0
+        deletions: 11
+        changeType: MODIFIED
+      - 
+        path: routes/api.base.php
+        additions: 0
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: tests/Unit/Services/AclTest.php
+        additions: 0
+        deletions: 37
+        changeType: MODIFIED
+  - 
+    number: 2413
+    title: "feat: include viewer's edit and delete permissions on user resource"
+    url: https://github.com/koel/koel/pull/2413
+    mergedAt: 2026-04-26T15:05:46Z
+    baseRefName: master
+    headRefName: feat/user-resource-permissions
+    baseRefOid: 8e5d0f272eee30488bddc2ffe3e02b9ba22a6b53
+    headRefOid: 175ea4398433e7a6dfc68e5becfb5a7b4191547c
+    mergeCommitOid: 70935c761e0f0d90ec4d3fa2be69ac9eb2cf3a1f
+    changedFiles: 8
+    additions: 108
+    deletions: 58
+    labels: 
+[]
+    keywordHits: 
+      - regression
+    hasTests: true
+    testFiles: 
+      - resources/assets/js/__tests__/factory/userFactory.ts
+      - resources/assets/js/components/user/UserContextMenu.spec.ts
+      - resources/assets/js/composables/usePolicies.spec.ts
+      - tests/Feature/UserTest.php
+    debugScore: 3
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: app/Http/Resources/UserResource.php
+        additions: 12
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/__tests__/factory/userFactory.ts
+        additions: 6
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/user/UserContextMenu.spec.ts
+        additions: 7
+        deletions: 22
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/user/UserContextMenu.vue
+        additions: 5
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/composables/usePolicies.spec.ts
+        additions: 26
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/composables/usePolicies.ts
+        additions: 7
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/types.d.ts
+        additions: 19
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: tests/Feature/UserTest.php
+        additions: 26
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 2412
+    title: "feat: include user's edit and delete permissions on radio station resource"
+    url: https://github.com/koel/koel/pull/2412
+    mergedAt: 2026-04-26T14:23:52Z
+    baseRefName: master
+    headRefName: feat/radio-station-resource-permissions
+    baseRefOid: a6e9629b79baf35def9227a53b1bdd70ef913620
+    headRefOid: 7e956f1da306049cda8af2facea5f7de214fe49c
+    mergeCommitOid: 8e5d0f272eee30488bddc2ffe3e02b9ba22a6b53
+    changedFiles: 8
+    additions: 93
+    deletions: 21
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - resources/assets/js/__tests__/factory/radioStationFactory.ts
+      - resources/assets/js/components/radio/RadioStationContextMenu.spec.ts
+      - resources/assets/js/composables/usePolicies.spec.ts
+      - tests/Feature/RadioStationTest.php
+    debugScore: 2
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: app/Http/Resources/RadioStationResource.php
+        additions: 10
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/__tests__/factory/radioStationFactory.ts
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/radio/RadioStationContextMenu.spec.ts
+        additions: 15
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/radio/RadioStationContextMenu.vue
+        additions: 3
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/composables/usePolicies.spec.ts
+        additions: 18
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/composables/usePolicies.ts
+        additions: 2
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/types.d.ts
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/Feature/RadioStationTest.php
+        additions: 37
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 2411
+    title: "feat: include user's edit and delete permissions on playlist resource"
+    url: https://github.com/koel/koel/pull/2411
+    mergedAt: 2026-04-26T14:09:33Z
+    baseRefName: master
+    headRefName: feat/playlist-resource-permissions
+    baseRefOid: 5deb505e7006a848a777c45bfc9c1703b43a3758
+    headRefOid: 7a82190716cb51fb2c72301e5f1dc8cc9e2b5021
+    mergeCommitOid: a6e9629b79baf35def9227a53b1bdd70ef913620
+    changedFiles: 11
+    additions: 123
+    deletions: 25
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - exception
+    hasTests: true
+    testFiles: 
+      - resources/assets/js/__tests__/factory/playlistFactory.ts
+      - resources/assets/js/components/playlist/PlaylistContextMenu.spec.ts
+      - resources/assets/js/composables/usePolicies.spec.ts
+      - tests/Feature/KoelPlus/PlaylistTest.php
+      - tests/Feature/PlaylistTest.php
+    debugScore: 3
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: app/Http/Resources/PlaylistResource.php
+        additions: 8
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: app/Models/Playlist.php
+        additions: 6
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: app/Policies/PlaylistPolicy.php
+        additions: 10
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/__tests__/factory/playlistFactory.ts
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playlist/PlaylistContextMenu.spec.ts
+        additions: 26
+        deletions: 9
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playlist/PlaylistContextMenu.vue
+        additions: 4
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/composables/usePolicies.spec.ts
+        additions: 10
+        deletions: 11
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/composables/usePolicies.ts
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/types.d.ts
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/Feature/KoelPlus/PlaylistTest.php
+        additions: 14
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/Feature/PlaylistTest.php
+        additions: 35
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 2410
+    title: "feat: include user's edit permission in artist resource"
+    url: https://github.com/koel/koel/pull/2410
+    mergedAt: 2026-04-26T13:15:53Z
+    baseRefName: master
+    headRefName: feat/artist-resource-permissions
+    baseRefOid: a9108b59ed0116106959f6d6f3d34b170f840517
+    headRefOid: 4b9d4561ebedaff08efef576b47fdbf42faf21fe
+    mergeCommitOid: 5deb505e7006a848a777c45bfc9c1703b43a3758
+    changedFiles: 12
+    additions: 83
+    deletions: 27
+    labels: 
+[]
+    keywordHits: 
+      - regression
+    hasTests: true
+    testFiles: 
+      - resources/assets/js/__tests__/factory/artistFactory.ts
+      - resources/assets/js/components/artist/ArtistContextMenu.spec.ts
+      - resources/assets/js/composables/usePolicies.spec.ts
+      - tests/Feature/ArtistTest.php
+      - tests/Feature/KoelPlus/ArtistTest.php
+    debugScore: 2
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: app/Http/Resources/ArtistResource.php
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/__tests__/factory/artistFactory.ts
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/artist/ArtistContextMenu.spec.ts
+        additions: 1
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/artist/ArtistContextMenu.vue
+        additions: 2
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/artist/__snapshots__/ArtistContextMenu.spec.ts.snap
+        additions: 5
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/AlbumScreen.vue
+        additions: 0
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/ArtistScreen.vue
+        additions: 0
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/composables/usePolicies.spec.ts
+        additions: 5
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/composables/usePolicies.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/types.d.ts
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/Feature/ArtistTest.php
+        additions: 49
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/Feature/KoelPlus/ArtistTest.php
+        additions: 8
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 2409
+    title: "feat: include user's edit permission in album resource"
+    url: https://github.com/koel/koel/pull/2409
+    mergedAt: 2026-04-26T12:22:04Z
+    baseRefName: master
+    headRefName: feat/album-resource-permissions
+    baseRefOid: 372e78e445f6cc21ed902c22ed3a039d348fd287
+    headRefOid: ee09a0d5a03bafa267cbc839565bb92756c63358
+    mergeCommitOid: a9108b59ed0116106959f6d6f3d34b170f840517
+    changedFiles: 11
+    additions: 58
+    deletions: 16
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - regression
+    hasTests: true
+    testFiles: 
+      - resources/assets/js/__tests__/factory/albumFactory.ts
+      - resources/assets/js/components/album/AlbumContextMenu.spec.ts
+      - resources/assets/js/composables/usePolicies.spec.ts
+      - tests/Feature/AlbumTest.php
+      - tests/Feature/KoelPlus/AlbumTest.php
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+    files: 
+      - 
+        path: app/Http/Resources/AlbumResource.php
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/__tests__/factory/albumFactory.ts
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/album/AlbumContextMenu.spec.ts
+        additions: 1
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/album/AlbumContextMenu.vue
+        additions: 1
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/album/__snapshots__/AlbumContextMenu.spec.ts.snap
+        additions: 5
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/AlbumScreen.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/composables/usePolicies.spec.ts
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/composables/usePolicies.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/types.d.ts
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/Feature/AlbumTest.php
+        additions: 24
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/Feature/KoelPlus/AlbumTest.php
+        additions: 8
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 2408
+    title: "fix: use default cursor on context menu items instead of text cursor"
+    url: https://github.com/koel/koel/pull/2408
+    mergedAt: 2026-04-25T22:17:17Z
+    baseRefName: master
+    headRefName: fix/context-menu-cursor
+    baseRefOid: ce22dd350ce77db31d82d695c838e2fed32fb212
+    headRefOid: b704eab8ecc2814c517a3e20248dec70d5028ee8
+    mergeCommitOid: 372e78e445f6cc21ed902c22ed3a039d348fd287
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: resources/assets/css/partials/context-menu.pcss
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 2407
+    title: "fix: use most recent feed date for podcast sync freshness check"
+    url: https://github.com/koel/koel/pull/2407
+    mergedAt: 2026-04-20T20:06:09Z
+    baseRefName: master
+    headRefName: fix/podcast-sync-stale-pubdate
+    baseRefOid: 0f1521ffd1d0ca43fa34c23947764dbad2b8eda5
+    headRefOid: a7d405f68fd0bbcef7273470d67807a08545a060
+    mergeCommitOid: b714646fb8247c04cc7bf7f1c8fb4bde630255cc
+    changedFiles: 4
+    additions: 235
+    deletions: 9
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: true
+    testFiles: 
+      - tests/Integration/Services/PodcastServiceTest.php
+      - tests/fixtures/podcast-stale-pubdate.xml
+      - tests/fixtures/podcast.xml
+    debugScore: 4
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: app/Services/PodcastService.php
+        additions: 19
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: tests/Integration/Services/PodcastServiceTest.php
+        additions: 26
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/fixtures/podcast-stale-pubdate.xml
+        additions: 189
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/fixtures/podcast.xml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 2400
+    title: "feat: auto-hide visualizer controls in fullscreen mode"
+    url: https://github.com/koel/koel/pull/2400
+    mergedAt: 2026-04-10T10:42:52Z
+    baseRefName: master
+    headRefName: feat/visualizer-auto-hide-controls
+    baseRefOid: 19dd0fd5654c0c4b6b861d8ecbe2e45d78f59b57
+    headRefOid: 37c28770c0bee90c5f518dd8790c9fcace9ecabc
+    mergeCommitOid: 0f1521ffd1d0ca43fa34c23947764dbad2b8eda5
+    changedFiles: 1
+    additions: 50
+    deletions: 3
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: resources/assets/js/components/screens/VisualizerScreen.vue
+        additions: 50
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 2399
+    title: "fix: resolve Butterchurn visualizer ESM interop double-wrapping regression"
+    url: https://github.com/koel/koel/pull/2399
+    mergedAt: 2026-04-10T10:42:07Z
+    baseRefName: master
+    headRefName: butterfix
+    baseRefOid: 19dd0fd5654c0c4b6b861d8ecbe2e45d78f59b57
+    headRefOid: 5b5ca352251b4122e49c4b31ff3427db366cd1f7
+    mergeCommitOid: bfcbe175570454efb47394a01b1b9444173f7bed
+    changedFiles: 1
+    additions: 4
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - regression
+      - fail
+      - failure
+      - broken
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 6
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: resources/assets/js/visualizers/butterchurn/index.ts
+        additions: 4
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 2397
+    title: "fix: remove special colors from Favorites and Recently Played sidebar icons"
+    url: https://github.com/koel/koel/pull/2397
+    mergedAt: 2026-04-09T11:53:27Z
+    baseRefName: master
+    headRefName: fix/sidebar-icon-colors
+    baseRefOid: 92d4e49a8f30c3e48dd958ce0968a62a5acc72de
+    headRefOid: 228910cccdb41955512026c2def1a5844fb2e140
+    mergeCommitOid: 19dd0fd5654c0c4b6b861d8ecbe2e45d78f59b57
+    changedFiles: 6
+    additions: 12
+    deletions: 19
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: true
+    testFiles: 
+      - resources/assets/js/components/playable/playable-list/PlayableListItem.spec.ts
+    debugScore: 3
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: resources/assets/js/components/layout/app-footer/__snapshots__/FooterPlaybackControls.spec.ts.snap
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/layout/main-wrapper/sidebar/PlaylistSidebarItem.vue
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playable/playable-list/PlayableListItem.spec.ts
+        additions: 7
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playable/playable-list/__snapshots__/PlayableListItem.spec.ts.snap
+        additions: 0
+        deletions: 12
+        changeType: DELETED
+      - 
+        path: resources/assets/js/components/ui/FavoriteButton.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/remote/components/RemoteFooter.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 2396
+    title: "fix: preserve compilation album artist when editing songs"
+    url: https://github.com/koel/koel/pull/2396
+    mergedAt: 2026-04-09T11:36:20Z
+    baseRefName: master
+    headRefName: fix/compilation-album-edit
+    baseRefOid: 6a48bae90a5413bba9870853b889854eae2bfa7c
+    headRefOid: 579e7d24b4ebcc881ee69181f3b5ebc376934d9e
+    mergeCommitOid: 92d4e49a8f30c3e48dd958ce0968a62a5acc72de
+    changedFiles: 3
+    additions: 153
+    deletions: 5
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: true
+    testFiles: 
+      - tests/Integration/Services/SongServiceTest.php
+    debugScore: 4
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: app/Services/SongService.php
+        additions: 9
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: app/Values/Song/SongUpdateData.php
+        additions: 1
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: tests/Integration/Services/SongServiceTest.php
+        additions: 143
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 2395
+    title: "feat: allow dragging the progress bar to seek"
+    url: https://github.com/koel/koel/pull/2395
+    mergedAt: 2026-04-09T10:13:28Z
+    baseRefName: master
+    headRefName: feat/progress-bar-drag-seek
+    baseRefOid: 478a1ab8a6f6f232e7a63f659bc7b7f07bce7232
+    headRefOid: 4d0a22454be8abbc8182b7aaec59fda65e6e6d7e
+    mergeCommitOid: 6a48bae90a5413bba9870853b889854eae2bfa7c
+    changedFiles: 1
+    additions: 88
+    deletions: 14
+    labels: 
+[]
+    keywordHits: 
+      - incorrect
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: resources/assets/js/components/layout/app-footer/AudioPlayer.vue
+        additions: 88
+        deletions: 14
+        changeType: MODIFIED
+  - 
+    number: 2392
+    title: "fix: prevent list-view cards from stretching to tallest row item"
+    url: https://github.com/koel/koel/pull/2392
+    mergedAt: 2026-04-07T20:36:38Z
+    baseRefName: master
+    headRefName: fix/grid-list-card-stretch
+    baseRefOid: 8a9f1f52dcefe0b82baea38e1c79dbc7d8a2be06
+    headRefOid: 1e16009984dfe8c777f6dd5f287bc0571a7f4ce7
+    mergeCommitOid: 42058af6b7122fa7b79a2841853299e902fe0e37
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: resources/assets/js/components/ui/GridListView.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 2391
+    title: "fix: fall back to GET in SafeUrl when HEAD times out on streaming servers"
+    url: https://github.com/koel/koel/pull/2391
+    mergedAt: 2026-04-07T20:31:33Z
+    baseRefName: master
+    headRefName: fix/safe-url-head-fallback
+    baseRefOid: 6dabe5da69967b6322668112a935d4c42aea96b4
+    headRefOid: 26b0499a8d76e8054b7c2e8e1e78bcef082f4a4e
+    mergeCommitOid: 8a9f1f52dcefe0b82baea38e1c79dbc7d8a2be06
+    changedFiles: 1
+    additions: 7
+    deletions: 2
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - error
+      - validation
+      - fail
+      - failure
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 6
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: app/Rules/SafeUrl.php
+        additions: 7
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 2390
+    title: "fix: fall back to GET when HEAD fails for radio station URL validation"
+    url: https://github.com/koel/koel/pull/2390
+    mergedAt: 2026-04-07T20:13:27Z
+    baseRefName: master
+    headRefName: fix/radio-station-head-fallback
+    baseRefOid: 83681e95fb033374001c7f7947912f0b61acfe2b
+    headRefOid: fb2ab767c50ee6634582d7af3fab8478887a67e3
+    mergeCommitOid: aef7d304ec0c25fcddfa52051e22296d9c89d1d9
+    changedFiles: 1
+    additions: 22
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - validation
+      - fail
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: app/Rules/HasAudioContentType.php
+        additions: 22
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 2378
+    title: "feat: detect and flag duplicate file uploads"
+    url: https://github.com/koel/koel/pull/2378
+    mergedAt: 2026-04-06T21:57:20Z
+    baseRefName: master
+    headRefName: 1889-duplicate-upload-detection
+    baseRefOid: 250911b6f1ecbd60a6ac36114085b83e998f8f50
+    headRefOid: 0d47dcb23f6c7e5ebb8738001ae751848d6422aa
+    mergeCommitOid: 07af98a28f3f34b51747d0de8ad5d2a33221493b
+    changedFiles: 48
+    additions: 1413
+    deletions: 89
+    labels: 
+[]
+    keywordHits: 
+      - exception
+    hasTests: true
+    testFiles: 
+      - resources/assets/js/__tests__/factory/userFactory.ts
+      - resources/assets/js/components/screens/UploadScreen.spec.ts
+      - resources/assets/js/components/ui/DuplicateUploadList.spec.ts
+      - resources/assets/js/components/ui/upload/DuplicateUploadItem.spec.ts
+      - tests/Feature/Commands/CleanUpDuplicateUploadsCommandTest.php
+      - tests/Feature/DuplicateUploadActionTest.php
+      - tests/Feature/FetchDuplicateUploadsTest.php
+      - tests/Unit/Models/DuplicateUploadTest.php
+      - tests/Unit/Repositories/SongRepositoryTest.php
+      - tests/Unit/Services/DuplicateUploadServiceTest.php
+      - tests/Unit/Services/UploadServiceTest.php
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+    files: 
+      - 
+        path: AGENTS.md
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: app/Console/Commands/CleanUpDuplicateUploadsCommand.php
+        additions: 45
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Exceptions/DuplicateSongUploadException.php
+        additions: 21
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Http/Controllers/API/Upload/DiscardAllDuplicateUploadsController.php
+        additions: 23
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Http/Controllers/API/Upload/DiscardDuplicateUploadController.php
+        additions: 19
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Http/Controllers/API/Upload/FetchDuplicateUploadsController.php
+        additions: 18
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Http/Controllers/API/Upload/KeepAllDuplicateUploadsController.php
+        additions: 35
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Http/Controllers/API/Upload/KeepDuplicateUploadController.php
+        additions: 28
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Http/Controllers/API/Upload/UploadSongController.php
+        additions: 8
+        deletions: 4
+        changeType: RENAMED
+      - 
+        path: app/Http/Requests/API/Upload/UploadSongRequest.php
+        additions: 2
+        deletions: 2
+        changeType: RENAMED
+      - 
+        path: app/Http/Resources/DuplicateUploadResource.php
+        additions: 31
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Models/DuplicateUpload.php
+        additions: 51
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Policies/DuplicateUploadPolicy.php
+        additions: 14
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Repositories/DuplicateUploadRepository.php
+        additions: 26
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Repositories/SongRepository.php
+        additions: 8
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: app/Services/Concerns/ScansAndStoresSong.php
+        additions: 39
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Services/DuplicateUploadService.php
+        additions: 104
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: app/Services/SongStorages/DropboxStorage.php
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: app/Services/SongStorages/LocalStorage.php
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: app/Services/SongStorages/S3CompatibleStorage.php
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: app/Services/SongStorages/SftpStorage.php
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: app/Services/SongStorages/SongStorage.php
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: app/Services/UploadService.php
+        additions: 22
+        deletions: 33
+        changeType: MODIFIED
+      - 
+        path: app/Values/User/UserPreferences.php
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: database/factories/DuplicateUploadFactory.php
+        additions: 23
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: database/migrations/2026_03_18_171005_create_duplicate_uploads_table.php
+        additions: 22
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs/usage/music-discovery.md
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/__tests__/factory/userFactory.ts
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/profile-preferences/PreferencesForm.vue
+        additions: 9
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/UploadScreen.spec.ts
+        additions: 6
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/UploadScreen.vue
+        additions: 10
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/ui/DuplicateUploadList.spec.ts
+        additions: 81
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: resources/assets/js/components/ui/DuplicateUploadList.vue
+        additions: 47
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: resources/assets/js/components/ui/form/Btn.vue
+        additions: 13
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/ui/upload/DuplicateUploadItem.spec.ts
+        additions: 72
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: resources/assets/js/components/ui/upload/DuplicateUploadItem.vue
+        additions: 35
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: resources/assets/js/services/uploadService.ts
+        additions: 50
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/stores/preferenceStore.ts
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/types.d.ts
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: routes/api.base.php
+        additions: 12
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: routes/console.php
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/Feature/Commands/CleanUpDuplicateUploadsCommandTest.php
+        additions: 87
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/Feature/DuplicateUploadActionTest.php
+        additions: 136
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/Feature/FetchDuplicateUploadsTest.php
+        additions: 65
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/Unit/Models/DuplicateUploadTest.php
+        additions: 28
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/Unit/Repositories/SongRepositoryTest.php
+        additions: 46
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/Unit/Services/DuplicateUploadServiceTest.php
+        additions: 108
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/Unit/Services/UploadServiceTest.php
+        additions: 33
+        deletions: 42
+        changeType: MODIFIED
+  - 
+    number: 2389
+    title: "fix: handle Last.fm single-track album response and add --delay option to fetch-artwork"
+    url: https://github.com/koel/koel/pull/2389
+    mergedAt: 2026-04-06T11:33:09Z
+    baseRefName: master
+    headRefName: fix/lastfm-single-track-object
+    baseRefOid: 5526357137bb40dd8598e833f293bd66bb2a9241
+    headRefOid: c34445d1d2636e8e5c3c8630e372f984b7e7c9ab
+    mergeCommitOid: 250911b6f1ecbd60a6ac36114085b83e998f8f50
+    changedFiles: 8
+    additions: 92
+    deletions: 23
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - error
+    hasTests: true
+    testFiles: 
+      - tests/Integration/Services/LastfmServiceTest.php
+      - tests/fixtures/lastfm/album-single-track.json
+    debugScore: 4
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: app/Console/Commands/FetchArtworkCommand.php
+        additions: 7
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: app/Helpers.php
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: app/Http/Integrations/Lastfm/Requests/GetAlbumInfoRequest.php
+        additions: 6
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: app/Services/ImageWriter.php
+        additions: 14
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: docs/cli-commands.md
+        additions: 4
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: docs/service-integrations.md
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/Integration/Services/LastfmServiceTest.php
+        additions: 26
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/fixtures/lastfm/album-single-track.json
+        additions: 26
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 2387
+    title: "feat: keyboard navigation for context menus"
+    url: https://github.com/koel/koel/pull/2387
+    mergedAt: 2026-04-06T09:04:10Z
+    baseRefName: master
+    headRefName: feat/context-menu-keyboard-navigation
+    baseRefOid: beda5cd19390dada040a370a067154956c3bceec
+    headRefOid: 5ec971d8e7d0c76ea0c62d1e21a55fa691107bba
+    mergeCommitOid: 5526357137bb40dd8598e833f293bd66bb2a9241
+    changedFiles: 4
+    additions: 196
+    deletions: 30
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - resources/assets/js/components/ui/context-menu/ContextMenuItem.spec.ts
+    debugScore: 2
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: resources/assets/css/partials/context-menu.pcss
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/ui/context-menu/ContextMenu.vue
+        additions: 192
+        deletions: 18
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/ui/context-menu/ContextMenuItem.spec.ts
+        additions: 0
+        deletions: 11
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/ui/context-menu/ContextMenuItem.vue
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 2386
+    title: "fix: reduce vertical gap for artist/album list in list mode"
+    url: https://github.com/koel/koel/pull/2386
+    mergedAt: 2026-04-05T20:40:09Z
+    baseRefName: master
+    headRefName: fix/gap-y
+    baseRefOid: 057bced0b6ca53aca7f3606e26e4a14546cb8caf
+    headRefOid: 1c7cfcfd9db5edf87af35f050dac4aae9bfcffca
+    mergeCommitOid: beda5cd19390dada040a370a067154956c3bceec
+    changedFiles: 2
+    additions: 4
+    deletions: 2
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: resources/assets/js/components/screens/AlbumListScreen.vue
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/ArtistListScreen.vue
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 2385
+    title: "fix: sidesheet reopens after refresh when collapsed"
+    url: https://github.com/koel/koel/pull/2385
+    mergedAt: 2026-04-05T20:19:33Z
+    baseRefName: master
+    headRefName: fix/sidesheet-collapse-persistence
+    baseRefOid: 50f79ca445a57ac5cb37a5da9d8e7ed41e442528
+    headRefOid: de4431ed302afaf5bd51f13f1f2eeb4d1000d952
+    mergeCommitOid: 057bced0b6ca53aca7f3606e26e4a14546cb8caf
+    changedFiles: 2
+    additions: 14
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: true
+    testFiles: 
+      - resources/assets/js/components/layout/main-wrapper/side-sheet/SideSheet.spec.ts
+    debugScore: 4
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: resources/assets/js/components/layout/main-wrapper/side-sheet/SideSheet.spec.ts
+        additions: 13
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/layout/main-wrapper/side-sheet/SideSheet.vue
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 2384
+    title: "feat: support pasting image data in ArtworkField"
+    url: https://github.com/koel/koel/pull/2384
+    mergedAt: 2026-04-05T20:06:00Z
+    baseRefName: master
+    headRefName: feat/artwork-paste-support
+    baseRefOid: e7059c8f7ae4395a73f48ebe8a3612d0419026ee
+    headRefOid: 7f52456f57ba91dbd6fd046982eaad6e07a0069d
+    mergeCommitOid: 50f79ca445a57ac5cb37a5da9d8e7ed41e442528
+    changedFiles: 17
+    additions: 77
+    deletions: 22
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - resources/assets/js/components/album/EditAlbumForm.spec.ts
+      - resources/assets/js/components/artist/EditArtistForm.spec.ts
+      - resources/assets/js/components/playlist/CreatePlaylistForm.spec.ts
+      - resources/assets/js/components/playlist/EditPlaylistForm.spec.ts
+      - resources/assets/js/components/radio/AddRadioStationForm.spec.ts
+      - resources/assets/js/components/radio/EditRadioStationForm.spec.ts
+      - resources/assets/js/components/ui/form/ArtworkField.spec.ts
+    debugScore: 1
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: resources/assets/js/components/album/EditAlbumForm.spec.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/album/EditAlbumForm.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/artist/EditArtistForm.spec.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/artist/EditArtistForm.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playlist/CreatePlaylistForm.spec.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playlist/CreatePlaylistForm.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playlist/EditPlaylistForm.spec.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playlist/EditPlaylistForm.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playlist/smart-playlist/CreateSmartPlaylistForm.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/playlist/smart-playlist/EditSmartPlaylistForm.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/radio/AddRadioStationForm.spec.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/radio/AddRadioStationForm.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/radio/EditRadioStationForm.spec.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/radio/EditRadioStationForm.vue
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/ui/form/ArtworkField.spec.ts
+        additions: 33
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/ui/form/ArtworkField.vue
+        additions: 28
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/composables/useFileReader.ts
+        additions: 2
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 2383
+    title: "fix: throw on failed song file backup"
+    url: https://github.com/koel/koel/pull/2383
+    mergedAt: 2026-04-05T19:28:15Z
+    baseRefName: master
+    headRefName: fix/throw-on-failed-song-file-backup
+    baseRefOid: 232b89b4353706bbb72b88d8ad523d17caa7cb58
+    headRefOid: 40a66546a70c20b741947748c9dadbb80be0f8ac
+    mergeCommitOid: e7059c8f7ae4395a73f48ebe8a3612d0419026ee
+    changedFiles: 1
+    additions: 10
+    deletions: 4
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - error
+      - exception
+      - fail
+      - failure
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 6
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: app/Services/SongStorages/LocalStorage.php
+        additions: 10
+        deletions: 4
+        changeType: MODIFIED
+  - 
+    number: 2381
+    title: "feat: virtual grid scroller for album and artist lists"
+    url: https://github.com/koel/koel/pull/2381
+    mergedAt: 2026-04-05T11:50:44Z
+    baseRefName: master
+    headRefName: feat/virtual-grid-scroller
+    baseRefOid: 20f958458c958a23ae71fe2c16dd6554905babfa
+    headRefOid: f24e9b27f3e43c7638e082dc31e223761124a679
+    mergeCommitOid: 232b89b4353706bbb72b88d8ad523d17caa7cb58
+    changedFiles: 6
+    additions: 350
+    deletions: 69
+    labels: 
+[]
+    keywordHits: 
+      - crash
+    hasTests: true
+    testFiles: 
+      - resources/assets/js/components/screens/AlbumListScreen.spec.ts
+      - resources/assets/js/components/screens/ArtistListScreen.spec.ts
+      - resources/assets/js/components/ui/VirtualGridScroller.spec.ts
+    debugScore: 3
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: resources/assets/js/components/screens/AlbumListScreen.spec.ts
+        additions: 30
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/AlbumListScreen.vue
+        additions: 28
+        deletions: 27
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/ArtistListScreen.spec.ts
+        additions: 31
+        deletions: 11
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/screens/ArtistListScreen.vue
+        additions: 24
+        deletions: 21
+        changeType: MODIFIED
+      - 
+        path: resources/assets/js/components/ui/VirtualGridScroller.spec.ts
+        additions: 43
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: resources/assets/js/components/ui/VirtualGridScroller.vue
+        additions: 194
+        deletions: 0
+        changeType: ADDED

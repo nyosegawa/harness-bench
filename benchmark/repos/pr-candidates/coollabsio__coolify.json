@@ -1,0 +1,3398 @@
+{
+  "generatedAt": "2026-05-02T10:20:50.220Z",
+  "repo": "coollabsio/coolify",
+  "since": "2026-01-01",
+  "limit": 50,
+  "debugKeywords": [
+    "bug",
+    "fix",
+    "regression",
+    "crash",
+    "incorrect",
+    "wrong",
+    "error",
+    "exception",
+    "edge",
+    "flaky",
+    "race",
+    "leak",
+    "validation",
+    "parser",
+    "parsing",
+    "timeout",
+    "fail",
+    "failure",
+    "broken"
+  ],
+  "prs": [
+    {
+      "number": 8621,
+      "title": "feat: refresh repos on private github app",
+      "url": "https://github.com/coollabsio/coolify/pull/8621",
+      "mergedAt": "2026-03-31T10:51:19Z",
+      "baseRefName": "next",
+      "headRefName": "feat/refresh-repos",
+      "baseRefOid": "2692496726f59ae4535aa7c29abf4c9c2d91f5f2",
+      "headRefOid": "7638912fdc56e0ef92bfe13821ec6ee0ab07d548",
+      "mergeCommitOid": "047aff1c8202c7a61f1597b7f905d7109214c6cd",
+      "changedFiles": 3,
+      "additions": 177,
+      "deletions": 6,
+      "labels": [],
+      "keywordHits": [
+        "fail"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/Feature/GithubPrivateRepositoryTest.php"
+      ],
+      "debugScore": 3,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "app/Livewire/Project/New/GithubPrivateRepository.php",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "resources/views/livewire/project/new/github-private-repository.blade.php",
+          "additions": 11,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/Feature/GithubPrivateRepositoryTest.php",
+          "additions": 164,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 7764,
+      "title": "feat: Shared server environment variables",
+      "url": "https://github.com/coollabsio/coolify/pull/7764",
+      "mergedAt": "2026-03-31T13:03:49Z",
+      "baseRefName": "next",
+      "headRefName": "shadow/add-shared-server-env",
+      "baseRefOid": "f01953d361f05009134e5828728bdb242dad4ef6",
+      "headRefOid": "acb716cb900d86ad95d1a3dea76fb5bbf92939d8",
+      "mergeCommitOid": "47025c7815557d6bed1740f44e5edb3bb3851cbd",
+      "changedFiles": 28,
+      "additions": 906,
+      "deletions": 77,
+      "labels": [
+        "🛠️ Feature",
+        "🙋 Bounty claim"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/Feature/SharedVariableDevViewTest.php",
+        "tests/Unit/ServerBootstrapDestinationAttributesTest.php"
+      ],
+      "debugScore": 3,
+      "suggestedDifficulty": "high",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "app/Jobs/ApplicationDeploymentJob.php",
+          "additions": 29,
+          "deletions": 23,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/Shared/EnvironmentVariable/Add.php",
+          "additions": 61,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/Shared/EnvironmentVariable/Show.php",
+          "additions": 61,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/SharedVariables/Environment/Show.php",
+          "additions": 6,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/SharedVariables/Project/Show.php",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/SharedVariables/Server/Index.php",
+          "additions": 22,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "app/Livewire/SharedVariables/Server/Show.php",
+          "additions": 190,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "app/Models/Environment.php",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/EnvironmentVariable.php",
+          "additions": 102,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/Project.php",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/Server.php",
+          "additions": 44,
+          "deletions": 13,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/SharedEnvironmentVariable.php",
+          "additions": 6,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/Team.php",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/View/Components/Forms/EnvVarInput.php",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "bootstrap/helpers/constants.php",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "database/migrations/2025_12_24_095507_add_server_to_shared_environment_variables_table.php",
+          "additions": 47,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "database/migrations/2025_12_24_133707_add_predefined_server_variables_to_existing_servers.php",
+          "additions": 56,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "database/seeders/SharedEnvironmentVariableSeeder.php",
+          "additions": 25,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "resources/views/components/forms/env-var-input.blade.php",
+          "additions": 13,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "resources/views/components/navbar.blade.php",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "resources/views/livewire/project/shared/environment-variable/add.blade.php",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "resources/views/livewire/project/shared/environment-variable/show.blade.php",
+          "additions": 24,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "resources/views/livewire/shared-variables/index.blade.php",
+          "additions": 27,
+          "deletions": 21,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "resources/views/livewire/shared-variables/server/index.blade.php",
+          "additions": 25,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "resources/views/livewire/shared-variables/server/show.blade.php",
+          "additions": 36,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "routes/web.php",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/Feature/SharedVariableDevViewTest.php",
+          "additions": 95,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/Unit/ServerBootstrapDestinationAttributesTest.php",
+          "additions": 20,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 9222,
+      "title": "chore(deps): bump aws/aws-sdk-php from 3.371.3 to 3.374.2",
+      "url": "https://github.com/coollabsio/coolify/pull/9222",
+      "mergedAt": "2026-03-31T13:43:49Z",
+      "baseRefName": "next",
+      "headRefName": "dependabot/composer/aws/aws-sdk-php-3.374.2",
+      "baseRefOid": "3961077b900baea6d3aa4616ce88fd5c9f1b1cd2",
+      "headRefOid": "c6b00cdcc482bc5b38c9a2a0a815eab3b3dbf5e3",
+      "mergeCommitOid": "6fc58a0a457c9443a6863435c0e0aa75a3fd7df0",
+      "changedFiles": 1,
+      "additions": 9,
+      "deletions": 7,
+      "labels": [
+        "dependencies",
+        "php"
+      ],
+      "keywordHits": [
+        "fix",
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "composer.lock",
+          "additions": 9,
+          "deletions": 7,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 9178,
+      "title": "chore(deps): bump picomatch",
+      "url": "https://github.com/coollabsio/coolify/pull/9178",
+      "mergedAt": "2026-03-31T13:44:19Z",
+      "baseRefName": "next",
+      "headRefName": "dependabot/npm_and_yarn/multi-bf05dc1ecf",
+      "baseRefOid": "6fc58a0a457c9443a6863435c0e0aa75a3fd7df0",
+      "headRefOid": "b22e470877129ce4a787c0fa639a00999faac17c",
+      "mergeCommitOid": "7a814938a09e9236c3ad80586f4ad3b5bc9c7768",
+      "changedFiles": 1,
+      "additions": 6,
+      "deletions": 6,
+      "labels": [
+        "dependencies",
+        "javascript"
+      ],
+      "keywordHits": [
+        "fix",
+        "race"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "package-lock.json",
+          "additions": 6,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 9047,
+      "title": "build(deps): bump league/commonmark from 2.8.1 to 2.8.2",
+      "url": "https://github.com/coollabsio/coolify/pull/9047",
+      "mergedAt": "2026-03-31T13:44:43Z",
+      "baseRefName": "next",
+      "headRefName": "dependabot/composer/league/commonmark-2.8.2",
+      "baseRefOid": "7a814938a09e9236c3ad80586f4ad3b5bc9c7768",
+      "headRefOid": "a7f07f66e3adf808f95c4ab5eed320bd640df462",
+      "mergeCommitOid": "b7572528e7ca7233d71bb19922bec1b403b893f0",
+      "changedFiles": 1,
+      "additions": 5,
+      "deletions": 5,
+      "labels": [
+        "dependencies",
+        "php"
+      ],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "composer.lock",
+          "additions": 5,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 9044,
+      "title": "build(deps): bump phpseclib/phpseclib from 3.0.49 to 3.0.50",
+      "url": "https://github.com/coollabsio/coolify/pull/9044",
+      "mergedAt": "2026-03-31T13:45:01Z",
+      "baseRefName": "next",
+      "headRefName": "dependabot/composer/phpseclib/phpseclib-3.0.50",
+      "baseRefOid": "b7572528e7ca7233d71bb19922bec1b403b893f0",
+      "headRefOid": "0627dce4da77e6165d780cf61773243cfa9ad60c",
+      "mergeCommitOid": "bb981ed12d043b93fc52313017fe6a4cf7dcaddf",
+      "changedFiles": 1,
+      "additions": 6,
+      "deletions": 6,
+      "labels": [
+        "dependencies",
+        "php"
+      ],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "composer.lock",
+          "additions": 6,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 9184,
+      "title": "feat(jobs): implement exponential backoff for unreachable servers",
+      "url": "https://github.com/coollabsio/coolify/pull/9184",
+      "mergedAt": "2026-03-31T14:47:23Z",
+      "baseRefName": "next",
+      "headRefName": "unreachable-server-backoff",
+      "baseRefOid": "bb981ed12d043b93fc52313017fe6a4cf7dcaddf",
+      "headRefOid": "da5b00397165ac2abf659c4f028757211331c028",
+      "mergeCommitOid": "83caabac1749d12fde17c7633cbc20a21a5a489f",
+      "changedFiles": 4,
+      "additions": 245,
+      "deletions": 14,
+      "labels": [],
+      "keywordHits": [
+        "exception",
+        "timeout",
+        "fail",
+        "failure"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/Unit/ServerBackoffTest.php"
+      ],
+      "debugScore": 6,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "app/Jobs/ServerCheckJob.php",
+          "additions": 3,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Jobs/ServerConnectionCheckJob.php",
+          "additions": 26,
+          "deletions": 12,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Jobs/ServerManagerJob.php",
+          "additions": 41,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/Unit/ServerBackoffTest.php",
+          "additions": 175,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 9165,
+      "title": "fix(deployment): resolve intermittent pre-deployment command failures",
+      "url": "https://github.com/coollabsio/coolify/pull/9165",
+      "mergedAt": "2026-03-31T14:53:32Z",
+      "baseRefName": "next",
+      "headRefName": "9076-investigate-pre-deployment",
+      "baseRefOid": "83caabac1749d12fde17c7633cbc20a21a5a489f",
+      "headRefOid": "2abb073b527eb07b99ab9cec4a15986ae5af94d6",
+      "mergeCommitOid": "c1d670b1e597fdb768340c01084e155241f617b4",
+      "changedFiles": 2,
+      "additions": 223,
+      "deletions": 58,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "error",
+        "exception",
+        "edge",
+        "fail",
+        "failure"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/Feature/DeploymentCommandContainerResolutionTest.php"
+      ],
+      "debugScore": 9,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "app/Jobs/ApplicationDeploymentJob.php",
+          "additions": 107,
+          "deletions": 58,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/Feature/DeploymentCommandContainerResolutionTest.php",
+          "additions": 116,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 9871,
+      "title": "feat(horizon): suppress failed job entries for deployment/timeout errors on cloud",
+      "url": "https://github.com/coollabsio/coolify/pull/9871",
+      "mergedAt": "2026-04-30T09:45:52Z",
+      "baseRefName": "next",
+      "headRefName": "suppress-horizon-job-failures",
+      "baseRefOid": "ed4f0df4fd82859fe2ed33cce47d347c007349f8",
+      "headRefOid": "f9b3f89757c0bfb5ae96b5af2a7ac7c27c1af212",
+      "mergeCommitOid": "1fbc1a554081bcd7babffafe7ef8bcf44a23b4fd",
+      "changedFiles": 2,
+      "additions": 88,
+      "deletions": 0,
+      "labels": [],
+      "keywordHits": [
+        "error",
+        "exception",
+        "timeout",
+        "fail",
+        "failure"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/Feature/SuppressHorizonJobFailuresTest.php"
+      ],
+      "debugScore": 7,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "app/Providers/HorizonServiceProvider.php",
+          "additions": 23,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/Feature/SuppressHorizonJobFailuresTest.php",
+          "additions": 65,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 9874,
+      "title": "fix(sentinel): auto-regenerate invalid or undecryptable tokens",
+      "url": "https://github.com/coollabsio/coolify/pull/9874",
+      "mergedAt": "2026-04-30T06:38:25Z",
+      "baseRefName": "next",
+      "headRefName": "sentinel-token-recovery",
+      "baseRefOid": "22569da73825b633ecfddfef48d760f5ce421bd7",
+      "headRefOid": "4575106f539051aad9ab38bb380482344522e805",
+      "mergeCommitOid": "ed4f0df4fd82859fe2ed33cce47d347c007349f8",
+      "changedFiles": 4,
+      "additions": 126,
+      "deletions": 16,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "exception",
+        "validation",
+        "fail",
+        "failure"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/Feature/SentinelTokenValidationTest.php"
+      ],
+      "debugScore": 7,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "app/Actions/Server/StartSentinel.php",
+          "additions": 1,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/ServerSetting.php",
+          "additions": 41,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Traits/HasMetrics.php",
+          "additions": 14,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/Feature/SentinelTokenValidationTest.php",
+          "additions": 70,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 9884,
+      "title": "chore(templates): sync service-templates from next",
+      "url": "https://github.com/coollabsio/coolify/pull/9884",
+      "mergedAt": "2026-04-30T05:05:36Z",
+      "baseRefName": "v4.x",
+      "headRefName": "chore/sync-service-templates",
+      "baseRefOid": "96bfc14543c893f0b0156b12c40250d3f8cc96a2",
+      "headRefOid": "51d6795eeb529eeb98b17aab7a438abb2e201efd",
+      "mergeCommitOid": "922950de591bc34a09ce39648b8ebdeac72cb3d9",
+      "changedFiles": 2,
+      "additions": 120,
+      "deletions": 46,
+      "labels": [],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "templates/service-templates-latest.json",
+          "additions": 60,
+          "deletions": 23,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "templates/service-templates.json",
+          "additions": 60,
+          "deletions": 23,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 9290,
+      "title": "fix(clone): exclude uuid when replicating persistent volumes",
+      "url": "https://github.com/coollabsio/coolify/pull/9290",
+      "mergedAt": "2026-03-30T06:06:50Z",
+      "baseRefName": "next",
+      "headRefName": "9270-cloning-bug",
+      "baseRefOid": "9ccdbf66b0541af133e5e6188660b83d0c026f4f",
+      "headRefOid": "4ec9b7ef69d16231f80d021e5b712f665e8f60ef",
+      "mergeCommitOid": "53b32369e8456c85cff1519783ead00613adc3bd",
+      "changedFiles": 4,
+      "additions": 91,
+      "deletions": 0,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "error"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/Feature/ClonePersistentVolumeUuidTest.php"
+      ],
+      "debugScore": 4,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "app/Livewire/Project/CloneMe.php",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/Shared/ResourceOperations.php",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "bootstrap/helpers/applications.php",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/Feature/ClonePersistentVolumeUuidTest.php",
+          "additions": 84,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 9296,
+      "title": "fix(notification): updated cloud subscription links to valid url",
+      "url": "https://github.com/coollabsio/coolify/pull/9296",
+      "mergedAt": "2026-03-30T09:47:21Z",
+      "baseRefName": "next",
+      "headRefName": "shadow/fix-broken-cloud-sub-links",
+      "baseRefOid": "53b32369e8456c85cff1519783ead00613adc3bd",
+      "headRefOid": "31ae8dd9db14d7133f1498535d7d65d3847c0fe4",
+      "mergeCommitOid": "30c7ab7b7dd37001c4a3694af7e890ca30899d15",
+      "changedFiles": 2,
+      "additions": 5,
+      "deletions": 5,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "app/Notifications/Server/ForceDisabled.php",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "resources/views/emails/server-force-disabled.blade.php",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 9277,
+      "title": "feat(ui): add two step confirmation to enable self registration",
+      "url": "https://github.com/coollabsio/coolify/pull/9277",
+      "mergedAt": "2026-03-30T09:48:00Z",
+      "baseRefName": "next",
+      "headRefName": "jean/two-step-confirm-registartion-enabled",
+      "baseRefOid": "96ae9ade2356b68ae9c679fd343276176c6548e7",
+      "headRefOid": "3a0cfeeab64be3ea614564028ce5cd8bae9b9593",
+      "mergeCommitOid": "7a1999ce39b71266063113f6a7732159e63a9e6d",
+      "changedFiles": 2,
+      "additions": 39,
+      "deletions": 6,
+      "labels": [
+        "UI/UX"
+      ],
+      "keywordHits": [
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "app/Livewire/Settings/Advanced.php",
+          "additions": 13,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "resources/views/livewire/settings/advanced.blade.php",
+          "additions": 26,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 9236,
+      "title": "fix(service): pin clickhouse version on Langfuse service to avoid error during clickhouse init",
+      "url": "https://github.com/coollabsio/coolify/pull/9236",
+      "mergedAt": "2026-03-30T09:48:50Z",
+      "baseRefName": "next",
+      "headRefName": "fix/langfuse",
+      "baseRefOid": "3b2e6e11f1e5c9bb12c3db6610eaf6a0a01c705e",
+      "headRefOid": "4213bd5215ec56b385a079df71f4115f768fa5d0",
+      "mergeCommitOid": "915d2a05afa527dd1e5ad7b8ef8a777241c89817",
+      "changedFiles": 1,
+      "additions": 1,
+      "deletions": 1,
+      "labels": [
+        "⚙️ Service",
+        "✅ Ready to merge"
+      ],
+      "keywordHits": [
+        "fix",
+        "incorrect",
+        "error",
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "templates/compose/langfuse.yaml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 9080,
+      "title": "fix(service): use FQDN instead of URL for Grafana GF_SERVER_DOMAIN",
+      "url": "https://github.com/coollabsio/coolify/pull/9080",
+      "mergedAt": "2026-03-30T09:49:10Z",
+      "baseRefName": "next",
+      "headRefName": "fix/grafana-server-domain",
+      "baseRefOid": "8be226788e89c42839ee9cc15fee23cb73e5da88",
+      "headRefOid": "95351eba8939d321e26139fa0636693730fe1e69",
+      "mergeCommitOid": "47692be982f3aac964367f79c116b0a2b5f5e526",
+      "changedFiles": 2,
+      "additions": 2,
+      "deletions": 2,
+      "labels": [
+        "⚙️ Service",
+        "✅ Ready to merge"
+      ],
+      "keywordHits": [
+        "fix",
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "templates/compose/grafana-with-postgresql.yaml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "templates/compose/grafana.yaml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 8190,
+      "title": "feat(service): Add ElectricSQL",
+      "url": "https://github.com/coollabsio/coolify/pull/8190",
+      "mergedAt": "2026-03-30T09:49:39Z",
+      "baseRefName": "next",
+      "headRefName": "v4.x",
+      "baseRefOid": "eebb8609a7d65fc42da2d48c2226ba6315d53743",
+      "headRefOid": "9db06444f316d5ac4c33f489f3d32ebe01d8f975",
+      "mergeCommitOid": "eb3d88a9ea7133de087f897a0a0ccf90f6aa04f6",
+      "changedFiles": 3,
+      "additions": 478,
+      "deletions": 5,
+      "labels": [
+        "⚙️ Service",
+        "✅ Ready to merge"
+      ],
+      "keywordHits": [
+        "error",
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "CHANGELOG.md",
+          "additions": 447,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "public/svgs/electricsql.svg",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "templates/compose/electricsql.yaml",
+          "additions": 27,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 9250,
+      "title": "fix(service): listmonk db config env typo",
+      "url": "https://github.com/coollabsio/coolify/pull/9250",
+      "mergedAt": "2026-03-30T09:48:32Z",
+      "baseRefName": "next",
+      "headRefName": "patch-1",
+      "baseRefOid": "72118d61f936bf475f8a71530aa70cf3083e50d9",
+      "headRefOid": "ac47040fd1bff9f52b3b55d3e4fb51eceb4d563b",
+      "mergeCommitOid": "e944f80d9b0a30e4ceb59307647a66c8ae770a5c",
+      "changedFiles": 2,
+      "additions": 7,
+      "deletions": 4,
+      "labels": [
+        "⚙️ Service",
+        "✅ Ready to merge"
+      ],
+      "keywordHits": [
+        "fix",
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".github/workflows/pr-quality.yaml",
+          "additions": 5,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "templates/compose/listmonk.yaml",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 9282,
+      "title": "refactor: define explicit fillable attributes on all Eloquent models",
+      "url": "https://github.com/coollabsio/coolify/pull/9282",
+      "mergedAt": "2026-03-30T11:11:58Z",
+      "baseRefName": "next",
+      "headRefName": "refactor/sync-model-attributes",
+      "baseRefOid": "eb3d88a9ea7133de087f897a0a0ccf90f6aa04f6",
+      "headRefOid": "1da1f32f0e38b051480c13a265e6ce0a3dc35822",
+      "mergeCommitOid": "3fddc795f66f09b54cd2f45f3ee287236987e530",
+      "changedFiles": 81,
+      "additions": 726,
+      "deletions": 176,
+      "labels": [],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "app/Actions/Server/InstallDocker.php",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Console/Commands/Emails.php",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Http/Controllers/Api/ProjectController.php",
+          "additions": 5,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Http/Controllers/Api/ServicesController.php",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Http/Controllers/Webhook/Bitbucket.php",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Http/Controllers/Webhook/Gitea.php",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Http/Controllers/Webhook/Gitlab.php",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Jobs/ProcessGithubPullRequestWebhook.php",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Boarding/Index.php",
+          "additions": 8,
+          "deletions": 7,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Destination/New/Docker.php",
+          "additions": 2,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/AddEmpty.php",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/Application/Previews.php",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/CloneMe.php",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/New/DockerCompose.php",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/New/DockerImage.php",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/New/EmptyProject.php",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/New/GithubPrivateRepository.php",
+          "additions": 3,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/New/GithubPrivateRepositoryDeployKey.php",
+          "additions": 3,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/New/PublicGitRepository.php",
+          "additions": 5,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/New/SimpleDockerfile.php",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/Resource/Create.php",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/Show.php",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Server/Destinations.php",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/SettingsBackup.php",
+          "additions": 4,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/Application.php",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/ApplicationDeploymentQueue.php",
+          "additions": 26,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/ApplicationPreview.php",
+          "additions": 11,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/ApplicationSetting.php",
+          "additions": 36,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/CloudProviderToken.php",
+          "additions": 5,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/DiscordNotificationSettings.php",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/DockerCleanupExecution.php",
+          "additions": 6,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/EmailNotificationSettings.php",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/Environment.php",
+          "additions": 4,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/GithubApp.php",
+          "additions": 20,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/GitlabApp.php",
+          "additions": 18,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/InstanceSettings.php",
+          "additions": 37,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/LocalFileVolume.php",
+          "additions": 12,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/LocalPersistentVolume.php",
+          "additions": 9,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/Project.php",
+          "additions": 6,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/ProjectSetting.php",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/PushoverNotificationSettings.php",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/S3Storage.php",
+          "additions": 11,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/ScheduledDatabaseBackup.php",
+          "additions": 19,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/ScheduledDatabaseBackupExecution.php",
+          "additions": 11,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/ScheduledTask.php",
+          "additions": 8,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/ScheduledTaskExecution.php",
+          "additions": 9,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/Server.php",
+          "additions": 8,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/ServerSetting.php",
+          "additions": 44,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/Service.php",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/ServiceApplication.php",
+          "additions": 20,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/ServiceDatabase.php",
+          "additions": 21,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/SharedEnvironmentVariable.php",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/SlackNotificationSettings.php",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/StandaloneClickhouse.php",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/StandaloneDocker.php",
+          "additions": 4,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/StandaloneDragonfly.php",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/StandaloneKeydb.php",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/StandaloneMariadb.php",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/StandaloneMongodb.php",
+          "additions": 6,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/StandaloneMysql.php",
+          "additions": 6,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 9272,
+      "title": "fix(validation): add input validation for database public port and proxy timeout",
+      "url": "https://github.com/coollabsio/coolify/pull/9272",
+      "mergedAt": "2026-03-30T13:10:26Z",
+      "baseRefName": "next",
+      "headRefName": "jean/validate-public-port-timeout-input",
+      "baseRefOid": "72118d61f936bf475f8a71530aa70cf3083e50d9",
+      "headRefOid": "c9f20ba2a2cda142a676c980fcf2db376e75f962",
+      "mergeCommitOid": "9a0087ff69bd84cd07577831805d77d9514662a9",
+      "changedFiles": 18,
+      "additions": 78,
+      "deletions": 62,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "error",
+        "validation",
+        "timeout",
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 5,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "app/Livewire/Project/Database/Clickhouse/General.php",
+          "additions": 7,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/Database/Dragonfly/General.php",
+          "additions": 7,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/Database/Keydb/General.php",
+          "additions": 7,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/Database/Mariadb/General.php",
+          "additions": 7,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/Database/Mongodb/General.php",
+          "additions": 7,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/Database/Mysql/General.php",
+          "additions": 7,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/Database/Postgresql/General.php",
+          "additions": 7,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/Database/Redis/General.php",
+          "additions": 7,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/Service/Index.php",
+          "additions": 5,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "resources/views/livewire/project/database/clickhouse/general.blade.php",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "resources/views/livewire/project/database/dragonfly/general.blade.php",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "resources/views/livewire/project/database/keydb/general.blade.php",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "resources/views/livewire/project/database/mariadb/general.blade.php",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "resources/views/livewire/project/database/mongodb/general.blade.php",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "resources/views/livewire/project/database/mysql/general.blade.php",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "resources/views/livewire/project/database/postgresql/general.blade.php",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "resources/views/livewire/project/database/redis/general.blade.php",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "resources/views/livewire/project/service/index.blade.php",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 9266,
+      "title": "feat(ui): improve schedule task single view for better UX",
+      "url": "https://github.com/coollabsio/coolify/pull/9266",
+      "mergedAt": "2026-03-30T13:10:57Z",
+      "baseRefName": "next",
+      "headRefName": "jean/ui-add-backbtn-schedule-task-single-view",
+      "baseRefOid": "72118d61f936bf475f8a71530aa70cf3083e50d9",
+      "headRefOid": "a1e5357870a9c9652afdb2097b2c253c19dafa11",
+      "mergeCommitOid": "22b267db3714aac71544ee131ed55f490ae61c17",
+      "changedFiles": 5,
+      "additions": 38,
+      "deletions": 21,
+      "labels": [
+        "UI/UX"
+      ],
+      "keywordHits": [
+        "fix",
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "app/Livewire/Project/Shared/ScheduledTask/Show.php",
+          "additions": 20,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "resources/views/livewire/project/application/configuration.blade.php",
+          "additions": 3,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "resources/views/livewire/project/service/configuration.blade.php",
+          "additions": 3,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "resources/views/livewire/project/shared/scheduled-task/show.blade.php",
+          "additions": 10,
+          "deletions": 16,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "routes/web.php",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 9259,
+      "title": "fix(validation): add input validation for emails configuration",
+      "url": "https://github.com/coollabsio/coolify/pull/9259",
+      "mergedAt": "2026-03-30T18:57:46Z",
+      "baseRefName": "next",
+      "headRefName": "jean/validate-transaction-email-timeout-input",
+      "baseRefOid": "72118d61f936bf475f8a71530aa70cf3083e50d9",
+      "headRefOid": "1daff4e23ce9205241cc65459e2191f164404ebe",
+      "mergeCommitOid": "c52d50cc0a7102826b675aaa2dcd450329be1ca3",
+      "changedFiles": 4,
+      "additions": 7,
+      "deletions": 7,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "validation",
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "app/Livewire/Notifications/Email.php",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/SettingsEmail.php",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "resources/views/livewire/notifications/email.blade.php",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "resources/views/livewire/settings-email.blade.php",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 9245,
+      "title": "fix(validation): add input validation for database backup timeout",
+      "url": "https://github.com/coollabsio/coolify/pull/9245",
+      "mergedAt": "2026-03-30T18:59:38Z",
+      "baseRefName": "next",
+      "headRefName": "jean/validate-settings-backup-input",
+      "baseRefOid": "72118d61f936bf475f8a71530aa70cf3083e50d9",
+      "headRefOid": "b98346f3c3ffbc14868bf4b0e7b5f1c73da81dd4",
+      "mergeCommitOid": "b8fb29f9a88605fb9eadb9820cf336baa7a0ac2a",
+      "changedFiles": 3,
+      "additions": 28,
+      "deletions": 13,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "error",
+        "validation",
+        "timeout",
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 6,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "app/Http/Controllers/Api/DatabasesController.php",
+          "additions": 18,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/Database/BackupEdit.php",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "resources/views/livewire/project/database/backup-edit.blade.php",
+          "additions": 9,
+          "deletions": 9,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 9243,
+      "title": "fix(validation): add input validation for sentinel configuration",
+      "url": "https://github.com/coollabsio/coolify/pull/9243",
+      "mergedAt": "2026-03-30T19:00:18Z",
+      "baseRefName": "next",
+      "headRefName": "jean/validate-server-sentinelpage-input",
+      "baseRefOid": "72118d61f936bf475f8a71530aa70cf3083e50d9",
+      "headRefOid": "1ebba7da3acccf7e0cb1cf740ec531637895276b",
+      "mergeCommitOid": "0b9d2c9e11bb2f817f31dda5f6a243540231a478",
+      "changedFiles": 2,
+      "additions": 7,
+      "deletions": 6,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "error",
+        "validation",
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 5,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "app/Livewire/Server/Sentinel.php",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "resources/views/livewire/server/sentinel.blade.php",
+          "additions": 4,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 9242,
+      "title": "fix(validation): add input validation for server advanced settings page",
+      "url": "https://github.com/coollabsio/coolify/pull/9242",
+      "mergedAt": "2026-03-30T19:01:28Z",
+      "baseRefName": "next",
+      "headRefName": "jean/validate-server-advancedpage-input",
+      "baseRefOid": "72118d61f936bf475f8a71530aa70cf3083e50d9",
+      "headRefOid": "791aa10b3fed851df81192538f2aa15144eb179b",
+      "mergeCommitOid": "179770d83614dd4717e936e986820bee5f540343",
+      "changedFiles": 3,
+      "additions": 36,
+      "deletions": 9,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "validation",
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "app/Http/Controllers/Api/ServersController.php",
+          "additions": 24,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Server/Advanced.php",
+          "additions": 8,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "resources/views/livewire/server/advanced.blade.php",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 9241,
+      "title": "fix(validation): add URL validation for proxy redirect input",
+      "url": "https://github.com/coollabsio/coolify/pull/9241",
+      "mergedAt": "2026-03-30T19:02:07Z",
+      "baseRefName": "next",
+      "headRefName": "jean/validate-proxy-redirect-input",
+      "baseRefOid": "72118d61f936bf475f8a71530aa70cf3083e50d9",
+      "headRefOid": "73258c317e3d79aefb90924d5319ddc54209eebc",
+      "mergeCommitOid": "71bafa0d5486d57738a68454c2983cd5b4e24968",
+      "changedFiles": 1,
+      "additions": 9,
+      "deletions": 3,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "validation",
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "app/Livewire/Server/Proxy.php",
+          "additions": 9,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 9240,
+      "title": "fix(validation): add input validation for port exposes and port mappings fields",
+      "url": "https://github.com/coollabsio/coolify/pull/9240",
+      "mergedAt": "2026-03-30T19:02:50Z",
+      "baseRefName": "next",
+      "headRefName": "jean/validate-network-ports-input",
+      "baseRefOid": "72118d61f936bf475f8a71530aa70cf3083e50d9",
+      "headRefOid": "105b4a92674e94da070fe4c247f5112aa1a39e00",
+      "mergeCommitOid": "3b962152265ad14f3fce02601745ec935480fe8f",
+      "changedFiles": 10,
+      "additions": 74,
+      "deletions": 10,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "validation",
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "app/Livewire/Project/Application/General.php",
+          "additions": 10,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/Database/Clickhouse/General.php",
+          "additions": 5,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/Database/Dragonfly/General.php",
+          "additions": 5,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/Database/Keydb/General.php",
+          "additions": 5,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/Database/Mariadb/General.php",
+          "additions": 5,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/Database/Mongodb/General.php",
+          "additions": 5,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/Database/Mysql/General.php",
+          "additions": 5,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/Database/Postgresql/General.php",
+          "additions": 5,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/Database/Redis/General.php",
+          "additions": 5,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Support/ValidationPatterns.php",
+          "additions": 24,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 9239,
+      "title": "fix(validation): add IP validation for custom DNS servers input",
+      "url": "https://github.com/coollabsio/coolify/pull/9239",
+      "mergedAt": "2026-03-30T19:03:39Z",
+      "baseRefName": "next",
+      "headRefName": "jean/validate-custom-dns-input",
+      "baseRefOid": "72118d61f936bf475f8a71530aa70cf3083e50d9",
+      "headRefOid": "407b6df7440d90f324a578ee0b0ebd10cae1da6a",
+      "mergeCommitOid": "6be563afc8dd71953a46bf754aef47e1b19f25c1",
+      "changedFiles": 2,
+      "additions": 37,
+      "deletions": 2,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "validation",
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "app/Livewire/Settings/Advanced.php",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Rules/ValidDnsServers.php",
+          "additions": 35,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 9238,
+      "title": "fix(validation): add input validation for resource limit fields",
+      "url": "https://github.com/coollabsio/coolify/pull/9238",
+      "mergedAt": "2026-03-30T19:04:10Z",
+      "baseRefName": "next",
+      "headRefName": "jean/strict-input-validation-resource-limits",
+      "baseRefOid": "3b2e6e11f1e5c9bb12c3db6610eaf6a0a01c705e",
+      "headRefOid": "6197558a38f5afbb74f138be59b52e705c99bf1e",
+      "mergeCommitOid": "1efed141695e06abd89ecd3004c89865919c46ca",
+      "changedFiles": 1,
+      "additions": 32,
+      "deletions": 12,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "error",
+        "validation",
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 5,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "app/Livewire/Project/Shared/ResourceLimits.php",
+          "additions": 32,
+          "deletions": 12,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 9543,
+      "title": "fix(notifications): set default SMTP encryption value to prevent false validation error",
+      "url": "https://github.com/coollabsio/coolify/pull/9543",
+      "mergedAt": "2026-04-29T17:05:14Z",
+      "baseRefName": "next",
+      "headRefName": "jean/smtp-encryption-default-value",
+      "baseRefOid": "df5a9e9ba38979805a8c5c1ac5a547a1f974c2e5",
+      "headRefOid": "18356b7f9156e4055a02ecd70ab414938b6b8609",
+      "mergeCommitOid": "13a1f86b5b854706b38a8acc1dd10930821a58e6",
+      "changedFiles": 1,
+      "additions": 1,
+      "deletions": 1,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "error",
+        "validation",
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 5,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "app/Livewire/Notifications/Email.php",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 9869,
+      "title": "fix(backup): add .dmp to allowed extensions for database import",
+      "url": "https://github.com/coollabsio/coolify/pull/9869",
+      "mergedAt": "2026-04-29T16:57:51Z",
+      "baseRefName": "next",
+      "headRefName": "patch-2",
+      "baseRefOid": "3e76390194b4268818128e6b69b38c822202e298",
+      "headRefOid": "b1c4ccd8d9023a72cd39aa99382a9f0428251e77",
+      "mergeCommitOid": "e77e0761db9e63bfb347dbe6f48984bd64badbb4",
+      "changedFiles": 1,
+      "additions": 1,
+      "deletions": 0,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "app/Http/Controllers/UploadController.php",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 9865,
+      "title": "fix(deployments): use app git_commit_sha when commit not explicitly set",
+      "url": "https://github.com/coollabsio/coolify/pull/9865",
+      "mergedAt": "2026-04-29T09:02:50Z",
+      "baseRefName": "next",
+      "headRefName": "9204-loaded-github-issue",
+      "baseRefOid": "5f89f120a8b4a79e154916ac635f4b100097ed35",
+      "headRefOid": "6d1d699595a96f6771358af6389070fc5e646313",
+      "mergeCommitOid": "3e76390194b4268818128e6b69b38c822202e298",
+      "changedFiles": 2,
+      "additions": 109,
+      "deletions": 1,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/Feature/QueueApplicationDeploymentCommitTest.php"
+      ],
+      "debugScore": 4,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "bootstrap/helpers/applications.php",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/Feature/QueueApplicationDeploymentCommitTest.php",
+          "additions": 107,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 9863,
+      "title": "docs(design): migrate design system from .ai/ to DESIGN.md",
+      "url": "https://github.com/coollabsio/coolify/pull/9863",
+      "mergedAt": "2026-04-29T08:43:57Z",
+      "baseRefName": "next",
+      "headRefName": "update-design-system-docs",
+      "baseRefOid": "f8755261ba53bd5b34b3ad3773393b535fc78d8f",
+      "headRefOid": "ec6407a71f72dfa27fa29831df917aa15f4f67dc",
+      "mergeCommitOid": "5f89f120a8b4a79e154916ac635f4b100097ed35",
+      "changedFiles": 2,
+      "additions": 752,
+      "deletions": 1666,
+      "labels": [],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -6,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "docs-only",
+        "huge-diff",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".ai/design-system.md",
+          "additions": 0,
+          "deletions": 1666,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "DESIGN.md",
+          "additions": 752,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 9861,
+      "title": "feat(webhook): skip deployment on [skip ci]/[skip cd] commit markers",
+      "url": "https://github.com/coollabsio/coolify/pull/9861",
+      "mergedAt": "2026-04-29T07:16:12Z",
+      "baseRefName": "next",
+      "headRefName": "skip-deploy-multi-provider",
+      "baseRefOid": "33f5cbb7d7bf7bf37dfc98d1ddd79cb69753a30a",
+      "headRefOid": "46180dbbf9e2d55f8b6a57d417197210cf4f3671",
+      "mergeCommitOid": "f8755261ba53bd5b34b3ad3773393b535fc78d8f",
+      "changedFiles": 8,
+      "additions": 296,
+      "deletions": 1,
+      "labels": [],
+      "keywordHits": [],
+      "hasTests": true,
+      "testFiles": [
+        "tests/Unit/DetectsSkipDeployCommitsTest.php"
+      ],
+      "debugScore": 2,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "app/Http/Controllers/Webhook/Bitbucket.php",
+          "additions": 35,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Http/Controllers/Webhook/Concerns/DetectsSkipDeployCommits.php",
+          "additions": 55,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "app/Http/Controllers/Webhook/Gitea.php",
+          "additions": 26,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Http/Controllers/Webhook/Github.php",
+          "additions": 31,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Http/Controllers/Webhook/Gitlab.php",
+          "additions": 27,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Jobs/ProcessGithubPullRequestWebhook.php",
+          "additions": 7,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docker-compose.dev.yml",
+          "additions": 0,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/Unit/DetectsSkipDeployCommitsTest.php",
+          "additions": 115,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 9227,
+      "title": "fix: add input validation for install/build/start command fields",
+      "url": "https://github.com/coollabsio/coolify/pull/9227",
+      "mergedAt": "2026-03-29T13:48:30Z",
+      "baseRefName": "next",
+      "headRefName": "fix/validate-build-command-inputs",
+      "baseRefOid": "98569e4edbfc316877c9e0d27ea89fab3c49e3bd",
+      "headRefOid": "c9922c30c2a6bf922653a5f2d631aab4fea685c4",
+      "mergeCommitOid": "96ae9ade2356b68ae9c679fd343276176c6548e7",
+      "changedFiles": 3,
+      "additions": 191,
+      "deletions": 6,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "error",
+        "validation",
+        "fail"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/Feature/CommandInjectionSecurityTest.php"
+      ],
+      "debugScore": 6,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "app/Livewire/Project/Application/General.php",
+          "additions": 6,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "bootstrap/helpers/api.php",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/Feature/CommandInjectionSecurityTest.php",
+          "additions": 182,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 9230,
+      "title": "refactor: scope server and project queries to current team",
+      "url": "https://github.com/coollabsio/coolify/pull/9230",
+      "mergedAt": "2026-03-29T18:28:21Z",
+      "baseRefName": "next",
+      "headRefName": "fix/scope-entity-queries-to-team",
+      "baseRefOid": "98569e4edbfc316877c9e0d27ea89fab3c49e3bd",
+      "headRefOid": "3ba4553df5657582ad720a6572d83383fe89c078",
+      "mergeCommitOid": "1027c73d0f526e048bb0666c829d3969c7baa05b",
+      "changedFiles": 13,
+      "additions": 208,
+      "deletions": 23,
+      "labels": [],
+      "keywordHits": [],
+      "hasTests": true,
+      "testFiles": [
+        "tests/Feature/CrossTeamIdorServerProjectTest.php"
+      ],
+      "debugScore": 1,
+      "suggestedDifficulty": "high",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "app/Http/Controllers/Api/DeployController.php",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Boarding/Index.php",
+          "additions": 6,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/GlobalSearch.php",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/CloneMe.php",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/DeleteProject.php",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/New/DockerCompose.php",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/New/DockerImage.php",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/New/GithubPrivateRepository.php",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/New/GithubPrivateRepositoryDeployKey.php",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/New/PublicGitRepository.php",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/New/Select.php",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/New/SimpleDockerfile.php",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/Feature/CrossTeamIdorServerProjectTest.php",
+          "additions": 182,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 9228,
+      "title": "fix: add validation and escaping for Docker network names",
+      "url": "https://github.com/coollabsio/coolify/pull/9228",
+      "mergedAt": "2026-03-29T18:46:39Z",
+      "baseRefName": "next",
+      "headRefName": "andrasbacsai/validate-docker-network-inputs",
+      "baseRefOid": "98569e4edbfc316877c9e0d27ea89fab3c49e3bd",
+      "headRefOid": "3d1b9f53a0aec74468be75675bcaaaed0fd41d46",
+      "mergeCommitOid": "9e96a20a49f32e46d7a31e66e1aa6338b029f284",
+      "changedFiles": 12,
+      "additions": 211,
+      "deletions": 34,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "validation"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/Unit/DockerNetworkInjectionTest.php",
+        "tests/Unit/ValidationPatternsTest.php"
+      ],
+      "debugScore": 3,
+      "suggestedDifficulty": "high",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "app/Actions/Service/StartService.php",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Console/Commands/Init.php",
+          "additions": 6,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Jobs/ApplicationDeploymentJob.php",
+          "additions": 13,
+          "deletions": 9,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Jobs/DatabaseBackupJob.php",
+          "additions": 4,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Destination/New/Docker.php",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Destination/Show.php",
+          "additions": 4,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/StandaloneDocker.php",
+          "additions": 12,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/SwarmDocker.php",
+          "additions": 11,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Support/ValidationPatterns.php",
+          "additions": 45,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "bootstrap/helpers/proxy.php",
+          "additions": 14,
+          "deletions": 10,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/Unit/DockerNetworkInjectionTest.php",
+          "additions": 48,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "tests/Unit/ValidationPatternsTest.php",
+          "additions": 50,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 9279,
+      "title": "fix(application): persist redirect value in setRedirect",
+      "url": "https://github.com/coollabsio/coolify/pull/9279",
+      "mergedAt": "2026-03-29T19:03:15Z",
+      "baseRefName": "next",
+      "headRefName": "application-direction-not-saving",
+      "baseRefOid": "a5840501b41a90ff453b7f8fb28e872a659e2813",
+      "headRefOid": "3fde1e0f9f74f44dd5f0620e1f5db17d9ca0c35f",
+      "mergeCommitOid": "7b3b6fa6efcbe8047870de41b083d7b387281494",
+      "changedFiles": 2,
+      "additions": 61,
+      "deletions": 0,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "error",
+        "validation"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/Feature/ApplicationRedirectTest.php"
+      ],
+      "debugScore": 5,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "app/Livewire/Project/Application/General.php",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/Feature/ApplicationRedirectTest.php",
+          "additions": 60,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 9229,
+      "title": "fix: harden GetLogs Livewire component properties",
+      "url": "https://github.com/coollabsio/coolify/pull/9229",
+      "mergedAt": "2026-03-29T19:29:24Z",
+      "baseRefName": "next",
+      "headRefName": "fix/harden-getlogs-livewire-properties",
+      "baseRefOid": "98569e4edbfc316877c9e0d27ea89fab3c49e3bd",
+      "headRefOid": "b3256d4df14e21c6d8936d972f45cbc47e07cca4",
+      "mergeCommitOid": "f267a28cb2badc7e712c4592af4d79d090fe5063",
+      "changedFiles": 27,
+      "additions": 840,
+      "deletions": 115,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "regression",
+        "validation"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/Feature/GetLogsCommandInjectionTest.php",
+        "tests/Feature/MassAssignmentProtectionTest.php"
+      ],
+      "debugScore": 4,
+      "suggestedDifficulty": "high",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "app/Actions/Fortify/CreateNewUser.php",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Http/Controllers/Api/ApplicationsController.php",
+          "additions": 7,
+          "deletions": 7,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Http/Controllers/Api/DatabasesController.php",
+          "additions": 8,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Http/Controllers/Api/SecurityController.php",
+          "additions": 4,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Http/Controllers/Api/TeamController.php",
+          "additions": 0,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/CloneMe.php",
+          "additions": 17,
+          "deletions": 17,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/Shared/GetLogs.php",
+          "additions": 27,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/Shared/ResourceOperations.php",
+          "additions": 34,
+          "deletions": 25,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/Application.php",
+          "additions": 97,
+          "deletions": 12,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/Server.php",
+          "additions": 0,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/ServerSetting.php",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/Service.php",
+          "additions": 12,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/StandaloneClickhouse.php",
+          "additions": 26,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/StandaloneDragonfly.php",
+          "additions": 24,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/StandaloneKeydb.php",
+          "additions": 25,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/StandaloneMariadb.php",
+          "additions": 26,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/StandaloneMongodb.php",
+          "additions": 25,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/StandaloneMysql.php",
+          "additions": 26,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/StandalonePostgresql.php",
+          "additions": 28,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/StandaloneRedis.php",
+          "additions": 22,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/Team.php",
+          "additions": 7,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/User.php",
+          "additions": 16,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "bootstrap/helpers/applications.php",
+          "additions": 7,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "database/migrations/2026_03_29_000000_encrypt_existing_clickhouse_admin_passwords.php",
+          "additions": 39,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "database/seeders/RootUserSeeder.php",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/Feature/GetLogsCommandInjectionTest.php",
+          "additions": 162,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "tests/Feature/MassAssignmentProtectionTest.php",
+          "additions": 196,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 8371,
+      "title": "feat(api): Add support for Preserve Repository During Deployment in API",
+      "url": "https://github.com/coollabsio/coolify/pull/8371",
+      "mergedAt": "2026-03-29T21:54:48Z",
+      "baseRefName": "next",
+      "headRefName": "v4.x",
+      "baseRefOid": "f267a28cb2badc7e712c4592af4d79d090fe5063",
+      "headRefOid": "7b1e75f37d20aff759cb5c8c17e33df1429968ae",
+      "mergeCommitOid": "9ccdbf66b0541af133e5e6188660b83d0c026f4f",
+      "changedFiles": 4,
+      "additions": 62,
+      "deletions": 4,
+      "labels": [
+        "quality/exempt"
+      ],
+      "keywordHits": [
+        "fix",
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "app/Http/Controllers/Api/ApplicationsController.php",
+          "additions": 24,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "bootstrap/helpers/api.php",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "openapi.json",
+          "additions": 20,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "openapi.yaml",
+          "additions": 16,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 9851,
+      "title": "fix(storages): block UI editing of file volumes exceeding 5 MiB",
+      "url": "https://github.com/coollabsio/coolify/pull/9851",
+      "mergedAt": "2026-04-28T20:41:38Z",
+      "baseRefName": "next",
+      "headRefName": "4701-storages-page-unusable",
+      "baseRefOid": "6c54f331672ac76b32a64bb3c74960e587b24db2",
+      "headRefOid": "eaaf258f25ea1a793885e3027072b49543dd2ac3",
+      "mergeCommitOid": "9af0351144f5099198f68e3bfd7682a79c6fa662",
+      "changedFiles": 5,
+      "additions": 134,
+      "deletions": 13,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "crash",
+        "error"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/Unit/LocalFileVolumeContentSizeTest.php"
+      ],
+      "debugScore": 5,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "app/Livewire/Project/Service/FileStorage.php",
+          "additions": 15,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Project/Service/Storage.php",
+          "additions": 5,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/LocalFileVolume.php",
+          "additions": 40,
+          "deletions": 7,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "resources/views/livewire/project/service/file-storage.blade.php",
+          "additions": 8,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/Unit/LocalFileVolumeContentSizeTest.php",
+          "additions": 66,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 9844,
+      "title": "feat(server): add configurable SSH connection timeout per server",
+      "url": "https://github.com/coollabsio/coolify/pull/9844",
+      "mergedAt": "2026-04-28T20:25:37Z",
+      "baseRefName": "next",
+      "headRefName": "server-ssh-timeout",
+      "baseRefOid": "255c21ddc1071bbbc97844b8552e4768e96828ee",
+      "headRefOid": "19994a0a135ab06cd52e4869cfa5aeffd9455a8e",
+      "mergeCommitOid": "092ea3bb7fc2a20b8eca90a9f447db98a98cf445",
+      "changedFiles": 11,
+      "additions": 196,
+      "deletions": 10,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "validation",
+        "timeout"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/Feature/ServerConnectionTimeoutApiTest.php",
+        "tests/Feature/ServerConnectionTimeoutTest.php"
+      ],
+      "debugScore": 4,
+      "suggestedDifficulty": "high",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "app/Helpers/SshMultiplexingHelper.php",
+          "additions": 12,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Http/Controllers/Api/ServersController.php",
+          "additions": 4,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Server/Show.php",
+          "additions": 11,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/ServerSetting.php",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "database/migrations/2026_04_28_151408_add_connection_timeout_to_server_settings.php",
+          "additions": 22,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "openapi.json",
+          "additions": 8,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "openapi.yaml",
+          "additions": 6,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "resources/views/livewire/server/show.blade.php",
+          "additions": 6,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/Feature/ServerConnectionTimeoutApiTest.php",
+          "additions": 74,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "tests/Feature/ServerConnectionTimeoutTest.php",
+          "additions": 43,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "vite.config.js",
+          "additions": 7,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 9843,
+      "title": "fix(server): reliably dispatch reachability notifications via event",
+      "url": "https://github.com/coollabsio/coolify/pull/9843",
+      "mergedAt": "2026-04-28T13:34:23Z",
+      "baseRefName": "next",
+      "headRefName": "9830-server-unreachable-notification",
+      "baseRefOid": "cf13d4017888099ae969f5ee64ec662633f6118f",
+      "headRefOid": "b8226be774eb2fc5cc735d11bd85e250347a7ac4",
+      "mergeCommitOid": "255c21ddc1071bbbc97844b8552e4768e96828ee",
+      "changedFiles": 5,
+      "additions": 253,
+      "deletions": 24,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "exception",
+        "race",
+        "timeout",
+        "fail"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/Feature/ServerReachabilityNotificationTest.php",
+        "tests/Unit/IsReachableChangedTest.php",
+        "tests/Unit/ServerBackoffTest.php"
+      ],
+      "debugScore": 7,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "app/Jobs/ServerConnectionCheckJob.php",
+          "additions": 34,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/Server.php",
+          "additions": 2,
+          "deletions": 24,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/Feature/ServerReachabilityNotificationTest.php",
+          "additions": 105,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "tests/Unit/IsReachableChangedTest.php",
+          "additions": 61,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "tests/Unit/ServerBackoffTest.php",
+          "additions": 51,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 9842,
+      "title": "feat(observability): add structured audit log channel for API and webhook events",
+      "url": "https://github.com/coollabsio/coolify/pull/9842",
+      "mergedAt": "2026-04-28T12:52:48Z",
+      "baseRefName": "next",
+      "headRefName": "feat/audit-logging",
+      "baseRefOid": "81510e5f6bfae1a844a52e4e2ae78ffbbc4601e5",
+      "headRefOid": "a2096c6f680731247fd667550bde20df62a910b9",
+      "mergeCommitOid": "5c89a707cf6997cfa5dd013673bbb71a831ed1d2",
+      "changedFiles": 25,
+      "additions": 1438,
+      "deletions": 42,
+      "labels": [],
+      "keywordHits": [
+        "exception",
+        "leak",
+        "fail",
+        "failure"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/Feature/Security/AuditLogTest.php"
+      ],
+      "debugScore": 3,
+      "suggestedDifficulty": "high",
+      "exclusionHints": [
+        "huge-diff"
+      ],
+      "files": [
+        {
+          "path": "app/Exceptions/Handler.php",
+          "additions": 19,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Http/Controllers/Api/ApplicationsController.php",
+          "additions": 170,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Http/Controllers/Api/CloudProviderTokensController.php",
+          "additions": 28,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Http/Controllers/Api/DatabasesController.php",
+          "additions": 197,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Http/Controllers/Api/DeployController.php",
+          "additions": 25,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Http/Controllers/Api/GithubController.php",
+          "additions": 21,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Http/Controllers/Api/HetznerController.php",
+          "additions": 12,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Http/Controllers/Api/OtherController.php",
+          "additions": 8,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Http/Controllers/Api/ProjectController.php",
+          "additions": 37,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Http/Controllers/Api/ScheduledTasksController.php",
+          "additions": 49,
+          "deletions": 19,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Http/Controllers/Api/SecurityController.php",
+          "additions": 22,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Http/Controllers/Api/ServersController.php",
+          "additions": 35,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Http/Controllers/Api/ServicesController.php",
+          "additions": 106,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Http/Controllers/Webhook/Bitbucket.php",
+          "additions": 27,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Http/Controllers/Webhook/Gitea.php",
+          "additions": 21,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Http/Controllers/Webhook/Github.php",
+          "additions": 39,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Http/Controllers/Webhook/Gitlab.php",
+          "additions": 24,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Http/Controllers/Webhook/Stripe.php",
+          "additions": 9,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Http/Middleware/ApiAbility.php",
+          "additions": 13,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "bootstrap/helpers/audit.php",
+          "additions": 81,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "config/logging.php",
+          "additions": 8,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "openapi.json",
+          "additions": 6,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "openapi.yaml",
+          "additions": 6,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "routes/api.php",
+          "additions": 30,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/Feature/Security/AuditLogTest.php",
+          "additions": 445,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 9690,
+      "title": "build(deps): bump follow-redirects from 1.15.11 to 1.16.0 in /docker/coolify-realtime",
+      "url": "https://github.com/coollabsio/coolify/pull/9690",
+      "mergedAt": "2026-04-28T12:30:21Z",
+      "baseRefName": "next",
+      "headRefName": "dependabot/npm_and_yarn/docker/coolify-realtime/follow-redirects-1.16.0",
+      "baseRefOid": "923525a310c672d4bc16faacbc67e78892cce207",
+      "headRefOid": "f1f53a31ab94227bcac767ec0dac8f9cffca76d5",
+      "mergeCommitOid": "fbed9063d870e83d54e3321f1cc65f362b782f07",
+      "changedFiles": 1,
+      "additions": 3,
+      "deletions": 3,
+      "labels": [
+        "dependencies",
+        "javascript"
+      ],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "docker/coolify-realtime/package-lock.json",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 9811,
+      "title": "fix: use --network host for Dockerfile buildpack builds",
+      "url": "https://github.com/coollabsio/coolify/pull/9811",
+      "mergedAt": "2026-04-28T11:16:15Z",
+      "baseRefName": "next",
+      "headRefName": "fix/dockerfile-buildkit-network-mode",
+      "baseRefOid": "8ef238d19c9d6d9e4290a65e98aa7c27468ebb24",
+      "headRefOid": "36baf70637d864eb5680e4bb94b6fe10fce4b06d",
+      "mergeCommitOid": "923525a310c672d4bc16faacbc67e78892cce207",
+      "changedFiles": 1,
+      "additions": 6,
+      "deletions": 7,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "app/Jobs/ApplicationDeploymentJob.php",
+          "additions": 6,
+          "deletions": 7,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 9801,
+      "title": "fix(validation): allow decimals for database backups max storage",
+      "url": "https://github.com/coollabsio/coolify/pull/9801",
+      "mergedAt": "2026-04-28T10:33:00Z",
+      "baseRefName": "next",
+      "headRefName": "jean/loosen-backup-storage-max-validation",
+      "baseRefOid": "74cc85139f1cb6ea5dacfc602534cae6decb727e",
+      "headRefOid": "593006be88cefdf34bd3319f98e8ae541630e69f",
+      "mergeCommitOid": "268c97d18f5acdf127e7f571fc02adeda2e39fea",
+      "changedFiles": 2,
+      "additions": 10,
+      "deletions": 10,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "validation",
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "app/Http/Controllers/Api/DatabasesController.php",
+          "additions": 8,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "resources/views/livewire/project/database/backup-edit.blade.php",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 9197,
+      "title": "fix: sanitize error output in server validation logs",
+      "url": "https://github.com/coollabsio/coolify/pull/9197",
+      "mergedAt": "2026-03-28T11:13:50Z",
+      "baseRefName": "next",
+      "headRefName": "fix/sanitize-server-validation-logs",
+      "baseRefOid": "e39678aea584be533f89052d4e2939f2d8834449",
+      "headRefOid": "103d5b6c0634644b8e1bc01bf8540480aef65d0a",
+      "mergeCommitOid": "25dcde6a478ce367f49fbb769ce3c5c6bfd1e86e",
+      "changedFiles": 7,
+      "additions": 102,
+      "deletions": 5,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "error",
+        "validation"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/Feature/ServerValidationXssTest.php"
+      ],
+      "debugScore": 5,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "app/Actions/Server/ValidateServer.php",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Jobs/ValidateAndInstallServerJob.php",
+          "additions": 3,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Server/PrivateKey/Show.php",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Livewire/Server/ValidateAndInstall.php",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "app/Models/Server.php",
+          "additions": 7,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "config/purify.php",
+          "additions": 11,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/Feature/ServerValidationXssTest.php",
+          "additions": 75,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 9193,
+      "title": "fix: use server-side config for password reset URL generation",
+      "url": "https://github.com/coollabsio/coolify/pull/9193",
+      "mergedAt": "2026-03-28T11:20:43Z",
+      "baseRefName": "next",
+      "headRefName": "fix/trust-hosts-url-generation",
+      "baseRefOid": "e39678aea584be533f89052d4e2939f2d8834449",
+      "headRefOid": "e396c70903f0f99d40ad78dd91c1fc591367b6fc",
+      "mergeCommitOid": "98569e4edbfc316877c9e0d27ea89fab3c49e3bd",
+      "changedFiles": 4,
+      "additions": 250,
+      "deletions": 413,
+      "labels": [],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/Feature/ResetPasswordUrlTest.php",
+        "tests/Feature/TrustHostsMiddlewareTest.php"
+      ],
+      "debugScore": 3,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "app/Notifications/TransactionalEmails/ResetPassword.php",
+          "additions": 5,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "bootstrap/helpers/shared.php",
+          "additions": 58,
+          "deletions": 51,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/Feature/ResetPasswordUrlTest.php",
+          "additions": 187,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "tests/Feature/TrustHostsMiddlewareTest.php",
+          "additions": 0,
+          "deletions": 360,
+          "changeType": "DELETED"
+        }
+      ]
+    },
+    {
+      "number": 9225,
+      "title": "refactor: move admin route into middleware group",
+      "url": "https://github.com/coollabsio/coolify/pull/9225",
+      "mergedAt": "2026-03-28T13:18:16Z",
+      "baseRefName": "next",
+      "headRefName": "refactor/admin-panel-middleware",
+      "baseRefOid": "98569e4edbfc316877c9e0d27ea89fab3c49e3bd",
+      "headRefOid": "aea201fcba0cc89f09f1ef8555ab00de275752ab",
+      "mergeCommitOid": "91ab0b38d66f84967adf7680d00bdcb8ae83883e",
+      "changedFiles": 3,
+      "additions": 141,
+      "deletions": 11,
+      "labels": [],
+      "keywordHits": [],
+      "hasTests": true,
+      "testFiles": [
+        "tests/Feature/AdminAccessAuthorizationTest.php"
+      ],
+      "debugScore": 2,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "app/Livewire/Admin/Index.php",
+          "additions": 22,
+          "deletions": 9,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "routes/web.php",
+          "additions": 1,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/Feature/AdminAccessAuthorizationTest.php",
+          "additions": 118,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    }
+  ]
+}

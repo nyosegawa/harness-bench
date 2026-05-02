@@ -1,0 +1,38 @@
+{
+  "id": "example-2026-05-03",
+  "currency": "USD",
+  "unit": "per_1m_tokens",
+  "notes": [
+    "Fill in real prices before using estimated costs in published comparisons.",
+    "Cursor estimates should be treated as API-equivalent estimates, not Cursor billing truth."
+  ],
+  "aliases": {
+    "GPT-5.5 272K Medium": "gpt-5.5",
+    "GPT-5.5 1M Medium": "gpt-5.5",
+    "gpt-5.5-medium": "gpt-5.5",
+    "claude-opus-4-7-medium": "claude-opus-4-7",
+    "Opus 4.7 (Thinking) 300K Extra High": "claude-opus-4-7",
+    "Opus 4.7 (Thinking) 1M Extra High": "claude-opus-4-7"
+  },
+  "models": {
+    "gpt-5.5": {
+      "input": null,
+      "cached_input": null,
+      "output": null,
+      "reasoning_output": null,
+      "cache_write": null
+    },
+    "claude-opus-4-7": {
+      "input": null,
+      "cached_input": null,
+      "output": null,
+      "cache_write": null
+    },
+    "composer-2": {
+      "input": null,
+      "cached_input": null,
+      "output": null,
+      "cache_write": null
+    }
+  }
+}

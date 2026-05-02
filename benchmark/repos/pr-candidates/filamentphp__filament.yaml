@@ -1,0 +1,3183 @@
+generatedAt: 2026-05-02T10:21:21.148Z
+repo: filamentphp/filament
+since: 2026-01-01
+limit: 50
+debugKeywords: 
+  - bug
+  - fix
+  - regression
+  - crash
+  - incorrect
+  - wrong
+  - error
+  - exception
+  - edge
+  - flaky
+  - race
+  - leak
+  - validation
+  - parser
+  - parsing
+  - timeout
+  - fail
+  - failure
+  - broken
+prs: 
+  - 
+    number: 19790
+    title: "fix broken Cropper.js documentation link"
+    url: https://github.com/filamentphp/filament/pull/19790
+    mergedAt: 2026-05-01T12:39:20Z
+    baseRefName: 4.x
+    headRefName: patch-1
+    baseRefOid: 124e17966a3741aedc3e98d5e6287df3e80e27f5
+    headRefOid: 5bcd991fbc6ed53489a4f0a351b6eefe5267be9f
+    mergeCommitOid: 3f457910baf5c47278e1027640214185b22724e9
+    changedFiles: 2
+    additions: 2
+    deletions: 2
+    labels: 
+      - documentation
+    keywordHits: 
+      - fix
+      - broken
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: packages/forms/docs/09-file-upload.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/forms/src/Components/FileUpload.php
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 19800
+    title: "Fix Chart Centering in RTL Layouts"
+    url: https://github.com/filamentphp/filament/pull/19800
+    mergedAt: 2026-05-02T08:02:18Z
+    baseRefName: 4.x
+    headRefName: fix-chart-widgets-centering-in-rtl
+    baseRefOid: ea91a5c60cce505f3336a8a8bd9a7e94eeb4f3a5
+    headRefOid: 08e88a0bc57f8800a5ecb2b890f1ea8421aa1c2b
+    mergeCommitOid: a7304d8eb3021632b545a06428f3e3177c4da439
+    changedFiles: 2
+    additions: 2
+    deletions: 2
+    labels: 
+      - bug
+    keywordHits: 
+      - bug
+      - fix
+      - incorrect
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: packages/panels/dist/theme.css
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/widgets/resources/css/chart-widget.css
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 19681
+    title: "refactor: Chart.js implementation in chart widgets"
+    url: https://github.com/filamentphp/filament/pull/19681
+    mergedAt: 2026-05-01T11:23:14Z
+    baseRefName: 4.x
+    headRefName: refactor/chartjs-implementation-in-chart-widget
+    baseRefOid: 6b2e56641eaf3d0eac9cee084a2ab5d74b399365
+    headRefOid: 255d508c11eca6769da700c625b0d6a82d16d2ba
+    mergeCommitOid: 758054a77269f841f3cebf131a98c51a96c5e63e
+    changedFiles: 5
+    additions: 200
+    deletions: 136
+    labels: 
+      - task
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: packages/widgets/dist/components/chart.js
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: packages/widgets/dist/components/stats-overview/stat/chart.js
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: packages/widgets/resources/js/components/chart.js
+        additions: 127
+        deletions: 97
+        changeType: MODIFIED
+      - 
+        path: packages/widgets/resources/js/components/stats-overview/stat/chart.js
+        additions: 61
+        deletions: 30
+        changeType: MODIFIED
+      - 
+        path: packages/widgets/resources/views/chart-widget.blade.php
+        additions: 8
+        deletions: 5
+        changeType: MODIFIED
+  - 
+    number: 19787
+    title: "fix: remount table header and toolbar to refresh x-show after state changes"
+    url: https://github.com/filamentphp/filament/pull/19787
+    mergedAt: 2026-05-01T12:32:48Z
+    baseRefName: 4.x
+    headRefName: fix/remount-table-header-after-state-changes
+    baseRefOid: 6b2e56641eaf3d0eac9cee084a2ab5d74b399365
+    headRefOid: f103e791b6500c2bd7911e7246662fd685a56acd
+    mergeCommitOid: 124e17966a3741aedc3e98d5e6287df3e80e27f5
+    changedFiles: 1
+    additions: 10
+    deletions: 0
+    labels: 
+      - bug
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: packages/tables/resources/views/index.blade.php
+        additions: 10
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 19791
+    title: "Fix: tooltip disable option in stats overview chart"
+    url: https://github.com/filamentphp/filament/pull/19791
+    mergedAt: 2026-05-01T13:23:10Z
+    baseRefName: 4.x
+    headRefName: fix-stats-overview-chart-tooltip-disable
+    baseRefOid: 3f457910baf5c47278e1027640214185b22724e9
+    headRefOid: aaf4bb58167be150f227e7ace6d93e5cf6c7119f
+    mergeCommitOid: ea91a5c60cce505f3336a8a8bd9a7e94eeb4f3a5
+    changedFiles: 2
+    additions: 4
+    deletions: 4
+    labels: 
+      - bug
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: packages/widgets/dist/components/stats-overview/stat/chart.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/widgets/resources/js/components/stats-overview/stat/chart.js
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 19801
+    title: "chore(deps): bump postcss from 8.5.6 to 8.5.13"
+    url: https://github.com/filamentphp/filament/pull/19801
+    mergedAt: 2026-05-01T13:20:44Z
+    baseRefName: 4.x
+    headRefName: dependabot/npm_and_yarn/postcss-8.5.13
+    baseRefOid: 46a2cd12211404a80490dd5eee53980c062f7965
+    headRefOid: 21a43eb897a3774689179068c7eb83710dd8cc5f
+    mergeCommitOid: af5ee353262add46ccbbcaa963aee9b3770fa96d
+    changedFiles: 1
+    additions: 3
+    deletions: 3
+    labels: 
+      - javascript
+      - dependencies
+    keywordHits: 
+      - fix
+      - regression
+      - error
+      - parsing
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: package-lock.json
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 19780
+    title: "fix: prevent tenant root routes from taking precedence over application routes"
+    url: https://github.com/filamentphp/filament/pull/19780
+    mergedAt: 2026-05-01T13:17:21Z
+    baseRefName: 4.x
+    headRefName: fix/issues/19770
+    baseRefOid: 124e17966a3741aedc3e98d5e6287df3e80e27f5
+    headRefOid: 405b1f2c8829699c5c5d2af5f76f367c13dedc1d
+    mergeCommitOid: 46a2cd12211404a80490dd5eee53980c062f7965
+    changedFiles: 5
+    additions: 294
+    deletions: 192
+    labels: 
+      - bug
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: true
+    testFiles: 
+      - tests/src/Panels/Routes/TenantSlugAttributeTest.php
+    debugScore: 4
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: composer.lock
+        additions: 264
+        deletions: 183
+        changeType: MODIFIED
+      - 
+        path: packages/actions/src/Concerns/InteractsWithRecord.php
+        additions: 4
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: packages/panels/routes/web.php
+        additions: 11
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: packages/panels/src/Pages/Concerns/HasRoutes.php
+        additions: 6
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: tests/src/Panels/Routes/TenantSlugAttributeTest.php
+        additions: 9
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 19786
+    title: "docs(forms): document visibility handling in relationship condition with saveRelationshipsWhenHidden"
+    url: https://github.com/filamentphp/filament/pull/19786
+    mergedAt: 2026-05-01T12:13:26Z
+    baseRefName: 4.x
+    headRefName: patch-1
+    baseRefOid: ab0886bed49368e743bf84d0b46aa88e9e2c05b8
+    headRefOid: d3152519532d612df4b3878b225b5aadca7a914d
+    mergeCommitOid: d3152519532d612df4b3878b225b5aadca7a914d
+    changedFiles: 1
+    additions: 29
+    deletions: 0
+    labels: 
+      - documentation
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: packages/forms/docs/01-overview.md
+        additions: 29
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 19776
+    title: "Fix: Equal height for slideOver header and TopBar"
+    url: https://github.com/filamentphp/filament/pull/19776
+    mergedAt: 2026-05-01T11:59:34Z
+    baseRefName: 4.x
+    headRefName: feature/slideover-header-equal-to-htopbar
+    baseRefOid: f6fe7a160cd18659f8bd708163b099636fa63aea
+    headRefOid: 426bcc2cd65ce0d4fe65aaf04cc78e7548af0e7b
+    mergeCommitOid: ab0886bed49368e743bf84d0b46aa88e9e2c05b8
+    changedFiles: 11
+    additions: 17
+    deletions: 4
+    labels: 
+      - bug
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docs-assets/screenshots/images/dark/actions/modal/overlaying-child.jpg
+        additions: 0
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs-assets/screenshots/images/dark/actions/modal/slide-over-start.jpg
+        additions: 0
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs-assets/screenshots/images/dark/actions/modal/slide-over.jpg
+        additions: 0
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs-assets/screenshots/images/dark/components/modal/slide-over.jpg
+        additions: 0
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs-assets/screenshots/images/light/actions/modal/overlaying-child.jpg
+        additions: 0
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs-assets/screenshots/images/light/actions/modal/slide-over-start.jpg
+        additions: 0
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs-assets/screenshots/images/light/actions/modal/slide-over.jpg
+        additions: 0
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs-assets/screenshots/images/light/components/modal/slide-over.jpg
+        additions: 0
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs-assets/screenshots/schema.js
+        additions: 8
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/panels/dist/theme.css
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/support/resources/css/components/modal.css
+        additions: 8
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 19775
+    title: "Fix: Adds support for extraModalOverlayAttributes and extraModalWindowAttributes to Column Manager and Filters modals"
+    url: https://github.com/filamentphp/filament/pull/19775
+    mergedAt: 2026-05-01T11:24:24Z
+    baseRefName: 4.x
+    headRefName: fix/modal-overlay-extra-attributes
+    baseRefOid: 6b2e56641eaf3d0eac9cee084a2ab5d74b399365
+    headRefOid: b6040444d57b74641e2b32269cc1a0d646b26274
+    mergeCommitOid: f6fe7a160cd18659f8bd708163b099636fa63aea
+    changedFiles: 1
+    additions: 8
+    deletions: 0
+    labels: 
+      - bug
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: packages/tables/resources/views/index.blade.php
+        additions: 8
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 19774
+    title: "task: Refactor color contrast resolution"
+    url: https://github.com/filamentphp/filament/pull/19774
+    mergedAt: 2026-05-01T09:28:10Z
+    baseRefName: 4.x
+    headRefName: task/refactor-contrast-resolution
+    baseRefOid: 6b2e56641eaf3d0eac9cee084a2ab5d74b399365
+    headRefOid: 9078e85c1fba63fb3a9195afc46d2a9bd9c4cbb5
+    mergeCommitOid: 926db5727cc79eac162f0f7d4a7b95363ecba40f
+    changedFiles: 23
+    additions: 1098
+    deletions: 668
+    labels: 
+      - task
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - tests/src/Support/ColorTest.php
+      - tests/src/Support/View/Components/ColorMaps/ButtonComponentColorMapTest.php
+      - tests/src/Support/View/Components/ColorMaps/ComponentColorMapTest.php
+      - tests/src/Support/View/Components/ColorMaps/IconButtonComponentColorMapTest.php
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+    files: 
+      - 
+        path: docs/08-styling/03-colors.md
+        additions: 209
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/infolists/src/View/Components/IconEntryComponent/IconComponent.php
+        additions: 10
+        deletions: 40
+        changeType: MODIFIED
+      - 
+        path: packages/infolists/src/View/Components/TextEntryComponent/ItemComponent.php
+        additions: 5
+        deletions: 35
+        changeType: MODIFIED
+      - 
+        path: packages/schemas/src/View/Components/TextComponent.php
+        additions: 5
+        deletions: 37
+        changeType: MODIFIED
+      - 
+        path: packages/support/src/Colors/Color.php
+        additions: 77
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: packages/support/src/View/Components/BadgeComponent.php
+        additions: 5
+        deletions: 34
+        changeType: MODIFIED
+      - 
+        path: packages/support/src/View/Components/ButtonComponent.php
+        additions: 13
+        deletions: 117
+        changeType: MODIFIED
+      - 
+        path: packages/support/src/View/Components/ColorMaps/ButtonComponentColorMap.php
+        additions: 225
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/support/src/View/Components/ColorMaps/ComponentColorMap.php
+        additions: 68
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/support/src/View/Components/ColorMaps/IconButtonComponentColorMap.php
+        additions: 126
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/support/src/View/Components/DropdownComponent/HeaderComponent.php
+        additions: 5
+        deletions: 37
+        changeType: MODIFIED
+      - 
+        path: packages/support/src/View/Components/DropdownComponent/ItemComponent.php
+        additions: 7
+        deletions: 67
+        changeType: MODIFIED
+      - 
+        path: packages/support/src/View/Components/IconButtonComponent.php
+        additions: 13
+        deletions: 56
+        changeType: MODIFIED
+      - 
+        path: packages/support/src/View/Components/LinkComponent.php
+        additions: 5
+        deletions: 37
+        changeType: MODIFIED
+      - 
+        path: packages/support/src/View/Components/ToggleComponent.php
+        additions: 12
+        deletions: 57
+        changeType: MODIFIED
+      - 
+        path: packages/tables/src/View/Components/Columns/IconColumnComponent/IconComponent.php
+        additions: 10
+        deletions: 40
+        changeType: MODIFIED
+      - 
+        path: packages/tables/src/View/Components/Columns/Summarizers/CountComponent/IconComponent.php
+        additions: 11
+        deletions: 37
+        changeType: MODIFIED
+      - 
+        path: packages/tables/src/View/Components/Columns/TextColumnComponent/ItemComponent.php
+        additions: 5
+        deletions: 35
+        changeType: MODIFIED
+      - 
+        path: packages/widgets/src/View/Components/StatsOverviewWidgetComponent/StatComponent/DescriptionComponent.php
+        additions: 5
+        deletions: 37
+        changeType: MODIFIED
+      - 
+        path: tests/src/Support/ColorTest.php
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/src/Support/View/Components/ColorMaps/ButtonComponentColorMapTest.php
+        additions: 135
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/src/Support/View/Components/ColorMaps/ComponentColorMapTest.php
+        additions: 66
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/src/Support/View/Components/ColorMaps/IconButtonComponentColorMapTest.php
+        additions: 77
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 19769
+    title: "Fix: slideover position in filters and column manager"
+    url: https://github.com/filamentphp/filament/pull/19769
+    mergedAt: 2026-04-26T09:54:24Z
+    baseRefName: 4.x
+    headRefName: fix/slideover-position
+    baseRefOid: 4283ffcb2ef5ff438e0e57d4e868dfda5ed1afab
+    headRefOid: f4d62e4eeb376c74789adffa1730c9fc41d4e7d1
+    mergeCommitOid: 6b2e56641eaf3d0eac9cee084a2ab5d74b399365
+    changedFiles: 3
+    additions: 10
+    deletions: 6
+    labels: 
+      - bug
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: packages/actions/resources/views/action-modal.blade.php
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: packages/actions/src/Concerns/CanOpenModal.php
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: packages/tables/resources/views/index.blade.php
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 19766
+    title: "SK,CZ,PL,ES translations"
+    url: https://github.com/filamentphp/filament/pull/19766
+    mergedAt: 2026-04-26T09:43:27Z
+    baseRefName: 4.x
+    headRefName: 4.x
+    baseRefOid: 4283ffcb2ef5ff438e0e57d4e868dfda5ed1afab
+    headRefOid: 0913e14c458ce400ca2e64b0dd6f6a37ee4cc4e5
+    mergeCommitOid: ae1b63b5466cd541cd987ad67cb7527757040a85
+    changedFiles: 18
+    additions: 106
+    deletions: 4
+    labels: 
+      - i18n
+    keywordHits: 
+      - fix
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: packages/forms/resources/lang/cs/components.php
+        additions: 34
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/forms/resources/lang/cs/validation.php
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/forms/resources/lang/es/validation.php
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/forms/resources/lang/pl/validation.php
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/forms/resources/lang/sk/components.php
+        additions: 36
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: packages/forms/resources/lang/sk/validation.php
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/panels/resources/lang/cs/auth/multi-factor/app/actions/disable.php
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/panels/resources/lang/cs/auth/multi-factor/app/actions/regenerate-recovery-codes.php
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/panels/resources/lang/cs/auth/multi-factor/app/actions/set-up.php
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/panels/resources/lang/cs/auth/multi-factor/email/actions/disable.php
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/panels/resources/lang/cs/auth/multi-factor/email/actions/set-up.php
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/panels/resources/lang/cs/auth/pages/edit-profile.php
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/panels/resources/lang/sk/auth/multi-factor/app/actions/disable.php
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/panels/resources/lang/sk/auth/multi-factor/app/actions/regenerate-recovery-codes.php
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/panels/resources/lang/sk/auth/multi-factor/app/actions/set-up.php
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/panels/resources/lang/sk/auth/multi-factor/email/actions/disable.php
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/panels/resources/lang/sk/auth/multi-factor/email/actions/set-up.php
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/panels/resources/lang/sk/auth/pages/edit-profile.php
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 19765
+    title: "Chore/et translations imrovements"
+    url: https://github.com/filamentphp/filament/pull/19765
+    mergedAt: 2026-04-24T13:17:03Z
+    baseRefName: 4.x
+    headRefName: chore/et-translations-imrovements
+    baseRefOid: 8f341895a92560b2ab8ed96ec960e32c721ff69f
+    headRefOid: 635e4c93e33d32b8539bf2b014fff99454b371bb
+    mergeCommitOid: 4283ffcb2ef5ff438e0e57d4e868dfda5ed1afab
+    changedFiles: 8
+    additions: 42
+    deletions: 30
+    labels: 
+      - i18n
+    keywordHits: 
+      - fix
+      - incorrect
+    hasTests: true
+    testFiles: 
+      - tests/src/Forms/Components/RichEditor/RichContentRendererTest.php
+      - tests/src/Forms/Components/RichEditorTest.php
+      - tests/src/SpatieMediaLibraryPlugin/SpatieMediaLibraryFileUploadTest.php
+    debugScore: 4
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: packages/panels/resources/lang/et/auth/pages/email-verification/email-verification-prompt.php
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: packages/panels/resources/lang/et/auth/pages/login.php
+        additions: 7
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: packages/panels/resources/lang/et/auth/pages/password-reset/request-password-reset.php
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/panels/resources/lang/et/auth/pages/register.php
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: packages/panels/resources/lang/et/pages/dashboard.php
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: tests/src/Forms/Components/RichEditor/RichContentRendererTest.php
+        additions: 3
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: tests/src/Forms/Components/RichEditorTest.php
+        additions: 9
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: tests/src/SpatieMediaLibraryPlugin/SpatieMediaLibraryFileUploadTest.php
+        additions: 14
+        deletions: 6
+        changeType: MODIFIED
+  - 
+    number: 19754
+    title: "[4.x] fix(actions): batch cancel, failed() handler, explicit retry defaults"
+    url: https://github.com/filamentphp/filament/pull/19754
+    mergedAt: 2026-04-24T07:49:45Z
+    baseRefName: 4.x
+    headRefName: queue-safety-2026-04-22
+    baseRefOid: d2a690d274def4940f138d3a261c4dcd5e344d38
+    headRefOid: 74a648eb13b6c8a317514265b72419d8e66d7966
+    mergeCommitOid: 8f341895a92560b2ab8ed96ec960e32c721ff69f
+    changedFiles: 5
+    additions: 27
+    deletions: 0
+    labels: 
+      - bug
+    keywordHits: 
+      - bug
+      - fix
+      - error
+      - exception
+      - timeout
+      - fail
+      - failure
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 7
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: packages/actions/src/Exports/Jobs/CreateXlsxFile.php
+        additions: 7
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/actions/src/Exports/Jobs/ExportCompletion.php
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/actions/src/Exports/Jobs/ExportCsv.php
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/actions/src/Exports/Jobs/PrepareCsvExport.php
+        additions: 8
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/actions/src/Imports/Jobs/ImportCsv.php
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 19752
+    title: "fix: ignore invalid notification IDs in database notification actions"
+    url: https://github.com/filamentphp/filament/pull/19752
+    mergedAt: 2026-04-24T07:31:08Z
+    baseRefName: 4.x
+    headRefName: fix/issues/19705
+    baseRefOid: d2a690d274def4940f138d3a261c4dcd5e344d38
+    headRefOid: 01bd50d9729fa0ab8c996e389b39918c004f2de1
+    mergeCommitOid: aff36d754092fd43c091547c098f69c49877c8d8
+    changedFiles: 3
+    additions: 120
+    deletions: 0
+    labels: 
+      - bug
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: true
+    testFiles: 
+      - tests/database/migrations/0022_create_notifications_table.php
+      - tests/src/Notifications/DatabaseNotificationsTest.php
+    debugScore: 4
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: packages/notifications/src/Livewire/DatabaseNotifications.php
+        additions: 13
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/database/migrations/0022_create_notifications_table.php
+        additions: 25
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/src/Notifications/DatabaseNotificationsTest.php
+        additions: 82
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 19759
+    title: "fix: Invalid file path validation"
+    url: https://github.com/filamentphp/filament/pull/19759
+    mergedAt: 2026-04-23T10:43:23Z
+    baseRefName: 4.x
+    headRefName: bug/invalid-file-path-validation
+    baseRefOid: d2a690d274def4940f138d3a261c4dcd5e344d38
+    headRefOid: dc8bca4ded90fcad4731e6dd99c3428a0f7e2db7
+    mergeCommitOid: 61853ee76b2dad9e15ae22cedae7d2119a35e04a
+    changedFiles: 8
+    additions: 224
+    deletions: 68
+    labels: 
+      - bug
+    keywordHits: 
+      - bug
+      - fix
+      - validation
+    hasTests: true
+    testFiles: 
+      - tests/src/Forms/Components/FileUploadTest.php
+      - tests/src/Forms/Components/RichEditorTest.php
+    debugScore: 5
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: docs/09-advanced/06-security.md
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: packages/forms/docs/09-file-upload.md
+        additions: 15
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: packages/forms/docs/10-rich-editor.md
+        additions: 15
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: packages/forms/resources/lang/en/validation.php
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/forms/src/Components/BaseFileUpload.php
+        additions: 24
+        deletions: 25
+        changeType: MODIFIED
+      - 
+        path: packages/forms/src/Components/RichEditor.php
+        additions: 42
+        deletions: 11
+        changeType: MODIFIED
+      - 
+        path: tests/src/Forms/Components/FileUploadTest.php
+        additions: 58
+        deletions: 13
+        changeType: MODIFIED
+      - 
+        path: tests/src/Forms/Components/RichEditorTest.php
+        additions: 65
+        deletions: 10
+        changeType: MODIFIED
+  - 
+    number: 19731
+    title: "feature: `FileUpload`/`RichEditor` file path protection"
+    url: https://github.com/filamentphp/filament/pull/19731
+    mergedAt: 2026-04-20T12:45:14Z
+    baseRefName: 4.x
+    headRefName: file-upload-rich-editor-file-path-protection
+    baseRefOid: 49bfa189e90323f2af3381feede8f6b3ad014585
+    headRefOid: b806eee396347c4de3e06c291bcfdbcef51eb3c1
+    mergeCommitOid: d4c0e0c3859fb670c4dee5d1a09b6bade5f7d1cc
+    changedFiles: 14
+    additions: 1561
+    deletions: 4
+    labels: 
+      - enhancement
+      - "awaiting next minor version"
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - tests/src/Forms/Components/FileUploadTest.php
+      - tests/src/Forms/Components/RichEditor/RichContentRendererTest.php
+      - tests/src/Forms/Components/RichEditor/StateCasts/RichEditorStateCastTest.php
+      - tests/src/Forms/Components/RichEditorTest.php
+      - tests/src/Panels/Navigation/NavigationBuilderTest.php
+      - tests/src/SpatieMediaLibraryPlugin/SpatieMediaLibraryFileUploadTest.php
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+    files: 
+      - 
+        path: packages/forms/docs/09-file-upload.md
+        additions: 38
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/forms/docs/10-rich-editor.md
+        additions: 36
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/forms/src/Components/BaseFileUpload.php
+        additions: 98
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/forms/src/Components/RichEditor.php
+        additions: 84
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/forms/src/Components/RichEditor/RichContentRenderer.php
+        additions: 8
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/forms/src/Components/RichEditor/StateCasts/RichEditorStateCast.php
+        additions: 10
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/panels/dist/theme.css
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/spatie-laravel-media-library-plugin/src/Forms/Components/SpatieMediaLibraryFileUpload.php
+        additions: 11
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/src/Forms/Components/FileUploadTest.php
+        additions: 271
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/src/Forms/Components/RichEditor/RichContentRendererTest.php
+        additions: 190
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/src/Forms/Components/RichEditor/StateCasts/RichEditorStateCastTest.php
+        additions: 384
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/src/Forms/Components/RichEditorTest.php
+        additions: 357
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/src/Panels/Navigation/NavigationBuilderTest.php
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: tests/src/SpatieMediaLibraryPlugin/SpatieMediaLibraryFileUploadTest.php
+        additions: 73
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 19740
+    title: "Chore: colors PL translations"
+    url: https://github.com/filamentphp/filament/pull/19740
+    mergedAt: 2026-04-21T10:02:38Z
+    baseRefName: 4.x
+    headRefName: chore/pl-translations
+    baseRefOid: 77ac2913da1a34c02357fe442b87bbbe28c52a85
+    headRefOid: d34cd8cdbdb64e2d1fd29a2bd3977d2660c03444
+    mergeCommitOid: 366e415e2085a9acab29f648d2cf40ba61ac5b25
+    changedFiles: 1
+    additions: 29
+    deletions: 0
+    labels: 
+      - i18n
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: packages/forms/resources/lang/pl/components.php
+        additions: 29
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 19737
+    title: "Add `Width` enum cases to add missing tailwind options."
+    url: https://github.com/filamentphp/filament/pull/19737
+    mergedAt: 2026-04-21T10:02:16Z
+    baseRefName: 4.x
+    headRefName: copilot/add-width-enum-cases
+    baseRefOid: 2da8e3ca1b37bbdd73f628839d8ba3e10bb5d1b4
+    headRefOid: b37b822d6f45ae79d4bb50d8018ee8dd2359cc77
+    mergeCommitOid: 7dac7d1c83f8ee9c9b46e31350440dc96b8ac8da
+    changedFiles: 7
+    additions: 89
+    deletions: 1
+    labels: 
+      - enhancement
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: packages/panels/dist/theme.css
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/panels/resources/css/components/layout.css
+        additions: 16
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/schemas/resources/css/schema.css
+        additions: 16
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/support/resources/css/components/dropdown/index.css
+        additions: 16
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/support/resources/css/components/modal.css
+        additions: 16
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/support/src/Enums/Width.php
+        additions: 8
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/tables/resources/css/container.css
+        additions: 16
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 19742
+    title: "fix: Grouping by soft deleted relationship with trashed records"
+    url: https://github.com/filamentphp/filament/pull/19742
+    mergedAt: 2026-04-21T10:01:43Z
+    baseRefName: 4.x
+    headRefName: fix/grouping-by-soft-deleted-relationship-with-trashed
+    baseRefOid: 2da8e3ca1b37bbdd73f628839d8ba3e10bb5d1b4
+    headRefOid: 06d407c70e568d08a9fd6972f81fa10830956f56
+    mergeCommitOid: d887941b48b9f1eacb70750ecff4a1efb9801ca6
+    changedFiles: 16
+    additions: 838
+    deletions: 91
+    labels: 
+      - bug
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: true
+    testFiles: 
+      - tests/database/factories/LanguageFactory.php
+      - tests/database/factories/TicketMessageFactory.php
+      - tests/database/migrations/0015_add_ticket_id_to_ticket_messages_table.php
+      - tests/database/migrations/0020_create_languages_table.php
+      - tests/database/migrations/0021_add_language_id_to_settings_table.php
+      - tests/src/Fixtures/Livewire/PostsTable.php
+      - tests/src/Fixtures/Livewire/PostsTableWithoutSummarizers.php
+      - tests/src/Fixtures/Livewire/TicketMessagesTable.php
+      - tests/src/Fixtures/Livewire/UsersTable.php
+      - tests/src/Fixtures/Models/Language.php
+      - tests/src/Fixtures/Models/Setting.php
+      - tests/src/Fixtures/Models/TicketMessage.php
+      - tests/src/Fixtures/Models/User.php
+      - tests/src/Tables/ColumnTest.php
+      - tests/src/Tables/GroupingTest.php
+    debugScore: 3
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: packages/support/src/Services/RelationshipOrderer.php
+        additions: 66
+        deletions: 90
+        changeType: MODIFIED
+      - 
+        path: tests/database/factories/LanguageFactory.php
+        additions: 18
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/database/factories/TicketMessageFactory.php
+        additions: 4
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: tests/database/migrations/0015_add_ticket_id_to_ticket_messages_table.php
+        additions: 22
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/database/migrations/0020_create_languages_table.php
+        additions: 23
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/database/migrations/0021_add_language_id_to_settings_table.php
+        additions: 22
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/src/Fixtures/Livewire/PostsTable.php
+        additions: 7
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/src/Fixtures/Livewire/PostsTableWithoutSummarizers.php
+        additions: 43
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/src/Fixtures/Livewire/TicketMessagesTable.php
+        additions: 44
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/src/Fixtures/Livewire/UsersTable.php
+        additions: 21
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/src/Fixtures/Models/Language.php
+        additions: 21
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/src/Fixtures/Models/Setting.php
+        additions: 10
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/src/Fixtures/Models/TicketMessage.php
+        additions: 8
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/src/Fixtures/Models/User.php
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/src/Tables/ColumnTest.php
+        additions: 226
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/src/Tables/GroupingTest.php
+        additions: 298
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 19739
+    title: "Add Hebrew translations for select/deselect actions in export"
+    url: https://github.com/filamentphp/filament/pull/19739
+    mergedAt: 2026-04-21T09:00:35Z
+    baseRefName: 4.x
+    headRefName: 4.x
+    baseRefOid: 77ac2913da1a34c02357fe442b87bbbe28c52a85
+    headRefOid: fa32a91a69d38cdb310096e9bd09360def35cf45
+    mergeCommitOid: 2da8e3ca1b37bbdd73f628839d8ba3e10bb5d1b4
+    changedFiles: 1
+    additions: 18
+    deletions: 1
+    labels: 
+      - i18n
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: packages/actions/resources/lang/he/export.php
+        additions: 18
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 19741
+    title: "feature: Styling custom block previews with prose"
+    url: https://github.com/filamentphp/filament/pull/19741
+    mergedAt: 2026-04-21T08:33:52Z
+    baseRefName: 4.x
+    headRefName: feature/styling-custom-block-previews-with-prose
+    baseRefOid: 77ac2913da1a34c02357fe442b87bbbe28c52a85
+    headRefOid: 4d6f6ef8f5147316197bbab0ea8197b66cf3937c
+    mergeCommitOid: 3b521d2ee71b962112dc8063748ba62ce5564056
+    changedFiles: 8
+    additions: 251
+    deletions: 3
+    labels: 
+      - enhancement
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - tests/src/Forms/Components/RichEditor/RichContentCustomBlockTest.php
+      - tests/src/Forms/Components/RichEditor/StateCasts/RichEditorStateCastTest.php
+    debugScore: 2
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: packages/forms/dist/components/rich-editor.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/forms/docs/10-rich-editor.md
+        additions: 32
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/forms/resources/js/components/rich-editor/extension-custom-block.js
+        additions: 14
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: packages/forms/src/Components/RichEditor/Actions/CustomBlockAction.php
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/forms/src/Components/RichEditor/RichContentCustomBlock.php
+        additions: 8
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/forms/src/Components/RichEditor/StateCasts/RichEditorStateCast.php
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/src/Forms/Components/RichEditor/RichContentCustomBlockTest.php
+        additions: 33
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/src/Forms/Components/RichEditor/StateCasts/RichEditorStateCastTest.php
+        additions: 160
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 19701
+    title: "Support dynamic navigation visibility"
+    url: https://github.com/filamentphp/filament/pull/19701
+    mergedAt: 2026-04-20T12:26:23Z
+    baseRefName: 4.x
+    headRefName: feat/dynamic-navigation-visibility
+    baseRefOid: 7c072ce174b9125c796c9c7c77c3193b260b0936
+    headRefOid: 970e74ac304d8380daa25b3b2fe25274bdcbdfa4
+    mergeCommitOid: b8c80cdee860589d5e6bc290380d4f643a89166c
+    changedFiles: 3
+    additions: 61
+    deletions: 5
+    labels: 
+      - enhancement
+      - "awaiting next minor version"
+    keywordHits: 
+      - fix
+    hasTests: true
+    testFiles: 
+      - tests/src/Panels/Navigation/NavigationBuilderTest.php
+    debugScore: 3
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: docs/06-navigation/01-overview.md
+        additions: 13
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/panels/src/Panel/Concerns/HasNavigation.php
+        additions: 19
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: tests/src/Panels/Navigation/NavigationBuilderTest.php
+        additions: 29
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 19706
+    title: "Evaluate badge color with badge state"
+    url: https://github.com/filamentphp/filament/pull/19706
+    mergedAt: 2026-04-20T12:36:26Z
+    baseRefName: 4.x
+    headRefName: feat/badge-color-with-state
+    baseRefOid: 822f107798970bd7aa1e6ff50562903e4ca8a800
+    headRefOid: 7bcbb62ab7046a57aa51be9552e1a3109d3f4de1
+    mergeCommitOid: 49bfa189e90323f2af3381feede8f6b3ad014585
+    changedFiles: 22
+    additions: 105
+    deletions: 77
+    labels: 
+      - enhancement
+      - "awaiting next minor version"
+    keywordHits: 
+      - fix
+    hasTests: true
+    testFiles: 
+      - tests/src/Actions/ActionTest.php
+      - tests/src/Schemas/Components/Tabs/TabTest.php
+      - tests/src/Schemas/Components/TabsTest.php
+    debugScore: 2
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: docs/03-resources/02-listing-records.md
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs/03-resources/07-managing-relationships.md
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/actions/docs/01-overview.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/actions/src/Action.php
+        additions: 10
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: packages/actions/src/ActionGroup.php
+        additions: 10
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: packages/forms/docs/03-select.md
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/panels/resources/views/components/page/sub-navigation/mobile-menu.blade.php
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/panels/resources/views/components/page/sub-navigation/tabs.blade.php
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: packages/panels/resources/views/components/sidebar/group.blade.php
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: packages/panels/resources/views/components/sidebar/item.blade.php
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: packages/panels/resources/views/livewire/topbar.blade.php
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: packages/panels/src/Navigation/NavigationItem.php
+        additions: 4
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: packages/panels/src/Resources/RelationManagers/RelationGroup.php
+        additions: 7
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: packages/schemas/docs/04-tabs.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/schemas/resources/views/components/tabs.blade.php
+        additions: 12
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: packages/schemas/src/Components/Tabs.php
+        additions: 8
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: packages/schemas/src/Components/Tabs/Tab.php
+        additions: 8
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: packages/support/src/Concerns/HasBadge.php
+        additions: 10
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: packages/support/src/Concerns/HasBadgeTooltip.php
+        additions: 4
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: tests/src/Actions/ActionTest.php
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: tests/src/Schemas/Components/Tabs/TabTest.php
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: tests/src/Schemas/Components/TabsTest.php
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 19725
+    title: "feat: Add Estonian (et) translations"
+    url: https://github.com/filamentphp/filament/pull/19725
+    mergedAt: 2026-04-20T12:47:32Z
+    baseRefName: 4.x
+    headRefName: estonian-translations-4x
+    baseRefOid: d4c0e0c3859fb670c4dee5d1a09b6bade5f7d1cc
+    headRefOid: 1540286860e5519eaf177f8d3989a6e2ee18355f
+    mergeCommitOid: 77ac2913da1a34c02357fe442b87bbbe28c52a85
+    changedFiles: 63
+    additions: 3863
+    deletions: 5
+    labels: 
+      - enhancement
+      - i18n
+      - "awaiting next minor version"
+    keywordHits: 
+      - error
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: packages/actions/resources/lang/et/associate.php
+        additions: 28
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/actions/resources/lang/et/attach.php
+        additions: 45
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/actions/resources/lang/et/create.php
+        additions: 37
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/actions/resources/lang/et/delete.php
+        additions: 73
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/actions/resources/lang/et/detach.php
+        additions: 61
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/actions/resources/lang/et/dissociate.php
+        additions: 61
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/actions/resources/lang/et/edit.php
+        additions: 33
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/actions/resources/lang/et/export.php
+        additions: 94
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/actions/resources/lang/et/force-delete.php
+        additions: 73
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/actions/resources/lang/et/group.php
+        additions: 9
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/actions/resources/lang/et/import.php
+        additions: 85
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/actions/resources/lang/et/modal.php
+        additions: 23
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/actions/resources/lang/et/notifications.php
+        additions: 10
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/actions/resources/lang/et/replicate.php
+        additions: 33
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/actions/resources/lang/et/restore.php
+        additions: 73
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/actions/resources/lang/et/view.php
+        additions: 25
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/forms/dist/components/file-upload.js
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: packages/forms/resources/js/components/file-upload.js
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/forms/resources/lang/et/components.php
+        additions: 778
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/forms/resources/lang/et/validation.php
+        additions: 10
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/infolists/resources/lang/et/components.php
+        additions: 38
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/notifications/resources/lang/et/database.php
+        additions: 28
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/panels/resources/lang/et/auth/http/controllers/block-email-change-verification-controller.php
+        additions: 19
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/panels/resources/lang/et/auth/http/controllers/email-change-verification-controller.php
+        additions: 14
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/panels/resources/lang/et/auth/multi-factor/app/actions/disable.php
+        additions: 75
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/panels/resources/lang/et/auth/multi-factor/app/actions/regenerate-recovery-codes.php
+        additions: 79
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/panels/resources/lang/et/auth/multi-factor/app/actions/set-up.php
+        additions: 83
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/panels/resources/lang/et/auth/multi-factor/app/provider.php
+        additions: 64
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/panels/resources/lang/et/auth/multi-factor/email/actions/disable.php
+        additions: 73
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/panels/resources/lang/et/auth/multi-factor/email/actions/set-up.php
+        additions: 73
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/panels/resources/lang/et/auth/multi-factor/email/notifications/verify-email-authentication.php
+        additions: 12
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/panels/resources/lang/et/auth/multi-factor/email/provider.php
+        additions: 64
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/panels/resources/lang/et/auth/multi-factor/pages/set-up-required-multi-factor-authentication.php
+        additions: 19
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/panels/resources/lang/et/auth/multi-factor/recovery-codes-modal-content.php
+        additions: 27
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/panels/resources/lang/et/auth/notifications/notice-of-email-change-request.php
+        additions: 16
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/panels/resources/lang/et/auth/pages/edit-profile.php
+        additions: 73
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/panels/resources/lang/et/auth/pages/email-verification/email-verification-prompt.php
+        additions: 35
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/panels/resources/lang/et/auth/pages/login.php
+        additions: 85
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/panels/resources/lang/et/auth/pages/password-reset/request-password-reset.php
+        additions: 46
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/panels/resources/lang/et/auth/pages/password-reset/reset-password.php
+        additions: 43
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/panels/resources/lang/et/auth/pages/register.php
+        additions: 56
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/panels/resources/lang/et/error-notifications.php
+        additions: 9
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/panels/resources/lang/et/global-search.php
+        additions: 12
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/panels/resources/lang/et/layout.php
+        additions: 72
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/panels/resources/lang/et/pages/dashboard.php
+        additions: 33
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/panels/resources/lang/et/pages/tenancy/edit-tenant-profile.php
+        additions: 25
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/panels/resources/lang/et/resources/pages/create-record.php
+        additions: 37
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/panels/resources/lang/et/resources/pages/edit-record.php
+        additions: 43
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/panels/resources/lang/et/resources/pages/list-records.php
+        additions: 7
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/panels/resources/lang/et/resources/pages/manage-related-records.php
+        additions: 7
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/panels/resources/lang/et/resources/pages/view-record.php
+        additions: 19
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/panels/resources/lang/et/unsaved-changes-alert.php
+        additions: 7
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/panels/resources/lang/et/widgets/account-widget.php
+        additions: 15
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/panels/resources/lang/et/widgets/filament-info-widget.php
+        additions: 17
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/query-builder/resources/lang/et/query-builder.php
+        additions: 560
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/schemas/resources/lang/et/components.php
+        additions: 21
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/spatie-laravel-settings-plugin/resources/lang/et/pages/settings-page.php
+        additions: 25
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/support/resources/lang/et/components/button.php
+        additions: 9
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/support/resources/lang/et/components/copyable.php
+        additions: 9
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/support/resources/lang/et/components/modal.php
+        additions: 13
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 19733
+    title: "Add configurable temporary URL expiry duration"
+    url: https://github.com/filamentphp/filament/pull/19733
+    mergedAt: 2026-04-20T12:27:46Z
+    baseRefName: 4.x
+    headRefName: feature/configurable-temporary-url-expiry
+    baseRefOid: 37c3a6d7555a51648f618fce09bb18aa68c6655c
+    headRefOid: 6efdbe51e7420401d4d9c381c937b9f6eb5cc71a
+    mergeCommitOid: 822f107798970bd7aa1e6ff50562903e4ca8a800
+    changedFiles: 10
+    additions: 26
+    deletions: 9
+    labels: 
+      - enhancement
+      - "awaiting next minor version"
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: packages/forms/src/Components/BaseFileUpload.php
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/forms/src/Components/Concerns/HasFileAttachments.php
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/forms/src/Components/RichEditor/RichContentRenderer.php
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/infolists/src/Components/ImageEntry.php
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/spatie-laravel-media-library-plugin/src/Forms/Components/RichEditor/FileAttachmentProviders/SpatieMediaLibraryFileAttachmentProvider.php
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/spatie-laravel-media-library-plugin/src/Forms/Components/SpatieMediaLibraryFileUpload.php
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/spatie-laravel-media-library-plugin/src/Infolists/Components/SpatieMediaLibraryImageEntry.php
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/spatie-laravel-media-library-plugin/src/Tables/Columns/SpatieMediaLibraryImageColumn.php
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/support/config/filament.php
+        additions: 17
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/tables/src/Columns/ImageColumn.php
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 19730
+    title: "Feature: Add configurable filters remove-all action"
+    url: https://github.com/filamentphp/filament/pull/19730
+    mergedAt: 2026-04-20T12:27:34Z
+    baseRefName: 4.x
+    headRefName: filters-remove-all-action
+    baseRefOid: 58a7529666775d53f7586fc40d92f8f6311255f2
+    headRefOid: 94465ad1d905281f963b867438b1a51251a3b2b4
+    mergeCommitOid: 22841f5ffc21e5e09f8dd7a14c9b0c7f98d92534
+    changedFiles: 13
+    additions: 193
+    deletions: 13
+    labels: 
+      - enhancement
+      - "awaiting next minor version"
+    keywordHits: 
+      - fix
+      - validation
+    hasTests: true
+    testFiles: 
+      - tests/src/Fixtures/Livewire/PostsTableWithCustomFiltersApplyAction.php
+      - tests/src/Fixtures/Livewire/PostsTableWithCustomFiltersRemoveAllAction.php
+      - tests/src/Fixtures/Livewire/PostsTableWithCustomFiltersTriggerAction.php
+      - tests/src/Fixtures/Resources/Posts/Pages/ListPostsWithCustomFiltersRemoveAllAction.php
+      - tests/src/Panels/Resources/Pages/ListRecordsTest.php
+      - tests/src/Tables/Filters/FilterTest.php
+    debugScore: 3
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: docs-assets/app/app/Livewire/TablesDemo.php
+        additions: 14
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs-assets/screenshots/images/dark/tables/filters/custom-remove-all-action.jpg
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs-assets/screenshots/images/light/tables/filters/custom-remove-all-action.jpg
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs-assets/screenshots/schema.js
+        additions: 14
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/tables/docs/03-filters/01-overview.md
+        additions: 23
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/tables/resources/views/index.blade.php
+        additions: 1
+        deletions: 13
+        changeType: MODIFIED
+      - 
+        path: packages/tables/src/Table/Concerns/HasFilters.php
+        additions: 32
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/src/Fixtures/Livewire/PostsTableWithCustomFiltersApplyAction.php
+        additions: 18
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/src/Fixtures/Livewire/PostsTableWithCustomFiltersRemoveAllAction.php
+        additions: 19
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/src/Fixtures/Livewire/PostsTableWithCustomFiltersTriggerAction.php
+        additions: 19
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/src/Fixtures/Resources/Posts/Pages/ListPostsWithCustomFiltersRemoveAllAction.php
+        additions: 19
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/src/Panels/Resources/Pages/ListRecordsTest.php
+        additions: 11
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/src/Tables/Filters/FilterTest.php
+        additions: 23
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 19726
+    title: "feat: add ->size() support to Filament\\Schemas\\Components\\Icon"
+    url: https://github.com/filamentphp/filament/pull/19726
+    mergedAt: 2026-04-20T12:27:18Z
+    baseRefName: 4.x
+    headRefName: feat/icon-size-schema-component
+    baseRefOid: 58a7529666775d53f7586fc40d92f8f6311255f2
+    headRefOid: 5986151c92f8bdc5946fc8fe229dc4e95a67b4df
+    mergeCommitOid: 26919fa894efc3bd389247dd0b91284c87b3894d
+    changedFiles: 7
+    additions: 132
+    deletions: 1
+    labels: 
+      - enhancement
+      - "awaiting next minor version"
+    keywordHits: 
+      - fix
+    hasTests: true
+    testFiles: 
+      - tests/src/Schemas/Components/IconTest.php
+    debugScore: 3
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: docs-assets/app/app/Livewire/PrimesDemo.php
+        additions: 25
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs-assets/screenshots/images/dark/primes/icon/sizes.jpg
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs-assets/screenshots/images/light/primes/icon/sizes.jpg
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs-assets/screenshots/schema.js
+        additions: 9
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/schemas/docs/08-primes.md
+        additions: 17
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/schemas/src/Components/Icon.php
+        additions: 32
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: tests/src/Schemas/Components/IconTest.php
+        additions: 49
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 19721
+    title: "Loading indicator refactor"
+    url: https://github.com/filamentphp/filament/pull/19721
+    mergedAt: 2026-04-20T12:27:00Z
+    baseRefName: 4.x
+    headRefName: loading-indicator-refactor
+    baseRefOid: 58a7529666775d53f7586fc40d92f8f6311255f2
+    headRefOid: 8a26bda1ed389764f23ebfd09f0b43ee8dbc811d
+    mergeCommitOid: 630af63d01de324dd67ff554c8e13896ec8d844d
+    changedFiles: 6
+    additions: 135
+    deletions: 20
+    labels: 
+      - enhancement
+      - "awaiting next minor version"
+    keywordHits: 
+      - fix
+    hasTests: true
+    testFiles: 
+      - tests/src/Support/LoadingIndicatorTest.php
+    debugScore: 3
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: docs/12-components/03-loading-indicator.md
+        additions: 42
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/support/src/Contracts/LoadingIndicator.php
+        additions: 10
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/support/src/SupportServiceProvider.php
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/support/src/View/DefaultLoadingIndicator.php
+        additions: 33
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/support/src/helpers.php
+        additions: 6
+        deletions: 20
+        changeType: MODIFIED
+      - 
+        path: tests/src/Support/LoadingIndicatorTest.php
+        additions: 41
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 19714
+    title: "Modify import completed notification"
+    url: https://github.com/filamentphp/filament/pull/19714
+    mergedAt: 2026-04-20T12:26:50Z
+    baseRefName: 4.x
+    headRefName: feature/modify-notification
+    baseRefOid: bd7991998ce7952cbaac776b0d06ca2c984b9c15
+    headRefOid: bbaf546900d1c8ff6d2599347a2d45381451b2a7
+    mergeCommitOid: 6bc46098af2a94685698ccf33b27cbd4aabc65bd
+    changedFiles: 8
+    additions: 228
+    deletions: 14
+    labels: 
+      - enhancement
+      - "awaiting next minor version"
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: packages/actions/docs/11-import.md
+        additions: 43
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/actions/docs/12-export.md
+        additions: 43
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/actions/src/Exports/Exporter.php
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/actions/src/Exports/Jobs/ExportCompletion.php
+        additions: 16
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: packages/actions/src/Exports/Models/Export.php
+        additions: 49
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/actions/src/ImportAction.php
+        additions: 16
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: packages/actions/src/Imports/Importer.php
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/actions/src/Imports/Models/Import.php
+        additions: 49
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 19702
+    title: "Add page header heading render hook"
+    url: https://github.com/filamentphp/filament/pull/19702
+    mergedAt: 2026-04-20T12:26:35Z
+    baseRefName: 4.x
+    headRefName: 4.x
+    baseRefOid: 7c072ce174b9125c796c9c7c77c3193b260b0936
+    headRefOid: c78c52c831ecd10c5c67931e6232c53061f61e47
+    mergeCommitOid: a4f07a54c433b4492f2665305a8e24b036992990
+    changedFiles: 3
+    additions: 10
+    deletions: 0
+    labels: 
+      - enhancement
+      - "awaiting next minor version"
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docs/09-advanced/01-render-hooks.md
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/panels/resources/views/components/header/index.blade.php
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/panels/src/View/PanelsRenderHook.php
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 19684
+    title: "feat: add support for backed enum locale"
+    url: https://github.com/filamentphp/filament/pull/19684
+    mergedAt: 2026-04-20T12:26:17Z
+    baseRefName: 4.x
+    headRefName: feat/backed-enum-locale-support
+    baseRefOid: 58a7529666775d53f7586fc40d92f8f6311255f2
+    headRefOid: 7b2f31755fb45536b875543046af24637d0ab185
+    mergeCommitOid: ecae6fcf8b5a701658408e713a537ea98d449e53
+    changedFiles: 3
+    additions: 15
+    deletions: 3
+    labels: 
+      - enhancement
+      - "awaiting next minor version"
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: packages/infolists/src/Components/Concerns/CanFormatState.php
+        additions: 5
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/tables/src/Columns/Concerns/CanFormatState.php
+        additions: 5
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/tables/src/Columns/Summarizers/Concerns/CanFormatState.php
+        additions: 5
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 19636
+    title: "Feature: SlideOver position"
+    url: https://github.com/filamentphp/filament/pull/19636
+    mergedAt: 2026-04-20T12:25:22Z
+    baseRefName: 4.x
+    headRefName: feature/slideover-position
+    baseRefOid: 58a7529666775d53f7586fc40d92f8f6311255f2
+    headRefOid: fc842439730c90d4952d3df0010e0fd59baa9f7d
+    mergeCommitOid: 8df2c3563b7d70d837b39f9278d20917add259bd
+    changedFiles: 12
+    additions: 113
+    deletions: 3
+    labels: 
+      - enhancement
+      - "awaiting next minor version"
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: CLAUDE.md
+        additions: 6
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs-assets/app/app/Livewire/ActionsDemo.php
+        additions: 15
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs-assets/app/resources/views/livewire/actions.blade.php
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs-assets/screenshots/images/dark/actions/modal/slide-over-start.jpg
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs-assets/screenshots/images/light/actions/modal/slide-over-start.jpg
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: docs-assets/screenshots/schema.js
+        additions: 15
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/actions/docs/02-modals.md
+        additions: 23
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/actions/resources/views/action-modal.blade.php
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/actions/src/Concerns/CanOpenModal.php
+        additions: 15
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/support/resources/css/components/modal.css
+        additions: 19
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: packages/support/resources/views/components/modal/index.blade.php
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/support/src/Enums/SlideOverPosition.php
+        additions: 10
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 19634
+    title: "Add hiddenLabel() support to table column summarizers"
+    url: https://github.com/filamentphp/filament/pull/19634
+    mergedAt: 2026-04-20T12:25:11Z
+    baseRefName: 4.x
+    headRefName: add-summarizer-hidden-label-method
+    baseRefOid: d2c3f18a1150dd1197af2095a9e9c0d0ba42c466
+    headRefOid: 700e8ca0c4e09a2479831b0e809c0ab393cb16fc
+    mergeCommitOid: 8ac9d46a61f7b5ee5024220b7f8a29d6d66b889d
+    changedFiles: 3
+    additions: 41
+    deletions: 2
+    labels: 
+      - enhancement
+      - "awaiting next minor version"
+    keywordHits: 
+      - fix
+      - error
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: packages/tables/docs/06-summaries.md
+        additions: 22
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/tables/src/Columns/Summarizers/Concerns/HasLabel.php
+        additions: 14
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/tables/src/Columns/Summarizers/Summarizer.php
+        additions: 5
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 19607
+    title: "Feature: enhanced translation tool"
+    url: https://github.com/filamentphp/filament/pull/19607
+    mergedAt: 2026-04-20T12:25:00Z
+    baseRefName: 4.x
+    headRefName: feature/enhanced-translation-tool
+    baseRefOid: c9b6ecd0fba648c7ab1997d83e688d309d3dc689
+    headRefOid: ee823cdb4aa97210cc4f2f895fa7c6d857635b98
+    mergeCommitOid: 8afdcc59cf174a9d65766442434b6407065cb7ae
+    changedFiles: 4
+    additions: 167
+    deletions: 15
+    labels: 
+      - enhancement
+      - i18n
+      - "awaiting next minor version"
+    keywordHits: 
+      - parser
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: bin/TranslationTool/src/Commands/ListOutdatedTranslationKeys.php
+        additions: 17
+        deletions: 11
+        changeType: MODIFIED
+      - 
+        path: bin/TranslationTool/src/DataObjects/Results/FileResult.php
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: bin/TranslationTool/src/DataObjects/TranslationFile.php
+        additions: 54
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: bin/TranslationTool/src/DataObjects/TranslationFileLineParser.php
+        additions: 91
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 19603
+    title: "Feature: Extra modal overlay attributes"
+    url: https://github.com/filamentphp/filament/pull/19603
+    mergedAt: 2026-04-20T12:24:50Z
+    baseRefName: 4.x
+    headRefName: feature/extra-modal-overlay-attributes
+    baseRefOid: 58a7529666775d53f7586fc40d92f8f6311255f2
+    headRefOid: 730c32a2661f58c913bf2d25abded39d7b070445
+    mergeCommitOid: e06e1c7854e8eff9f11c8ebe4aed36252dfb36cf
+    changedFiles: 5
+    additions: 74
+    deletions: 1
+    labels: 
+      - enhancement
+      - "awaiting next minor version"
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: packages/actions/docs/02-modals.md
+        additions: 18
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/actions/resources/views/action-modal.blade.php
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/actions/src/Action.php
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/actions/src/Concerns/HasExtraModalOverlayAttributes.php
+        additions: 47
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/support/resources/views/components/modal/index.blade.php
+        additions: 6
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 19559
+    title: "feat: expose TipTap/ProseMirror globals for custom rich editor extensions"
+    url: https://github.com/filamentphp/filament/pull/19559
+    mergedAt: 2026-04-20T12:24:34Z
+    baseRefName: 4.x
+    headRefName: feat/expose-tiptap-globals
+    baseRefOid: 58a7529666775d53f7586fc40d92f8f6311255f2
+    headRefOid: d0c163999fd6d8e7a26c07522e879b152e834ad6
+    mergeCommitOid: 7bf516d8aff93cbaa6c5ea493fa8203e8e338c7b
+    changedFiles: 4
+    additions: 157
+    deletions: 40
+    labels: 
+      - enhancement
+      - "awaiting next minor version"
+    keywordHits: 
+      - fail
+      - failure
+    hasTests: true
+    testFiles: 
+      - tests/src/Forms/Components/RichEditorTest.php
+    debugScore: 4
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: packages/forms/dist/components/rich-editor.js
+        additions: 40
+        deletions: 38
+        changeType: MODIFIED
+      - 
+        path: packages/forms/docs/10-rich-editor.md
+        additions: 86
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/forms/resources/js/components/rich-editor.js
+        additions: 18
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: tests/src/Forms/Components/RichEditorTest.php
+        additions: 13
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 19481
+    title: "Feat: Add custom openable/downloadable URLs support for file uploads"
+    url: https://github.com/filamentphp/filament/pull/19481
+    mergedAt: 2026-04-20T12:24:24Z
+    baseRefName: 4.x
+    headRefName: feat/custom-openable-url
+    baseRefOid: 58a7529666775d53f7586fc40d92f8f6311255f2
+    headRefOid: 81c75b659441ec3031e9ccd0778fca51c683f99f
+    mergeCommitOid: d35bc5460eeb257fdf633b0172b5d3b84d69703b
+    changedFiles: 5
+    additions: 204
+    deletions: 11
+    labels: 
+      - enhancement
+      - "awaiting next minor version"
+    keywordHits: 
+      - fix
+    hasTests: true
+    testFiles: 
+      - tests/src/Forms/Components/FileUploadTest.php
+    debugScore: 3
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: packages/forms/dist/components/file-upload.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/forms/docs/09-file-upload.md
+        additions: 34
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/forms/resources/js/components/file-upload.js
+        additions: 11
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: packages/forms/src/Components/BaseFileUpload.php
+        additions: 51
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: tests/src/Forms/Components/FileUploadTest.php
+        additions: 107
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 19464
+    title: "Add deferred badge loading for relation manager tabs"
+    url: https://github.com/filamentphp/filament/pull/19464
+    mergedAt: 2026-04-20T12:24:09Z
+    baseRefName: 4.x
+    headRefName: feat/defer-badge-relation-managers
+    baseRefOid: 58a7529666775d53f7586fc40d92f8f6311255f2
+    headRefOid: ae86e2900a26362efdaf24824fd4adf8a4b0a0c5
+    mergeCommitOid: 11ef6c6a88fe448d3524c3d66b45c19e54f58f74
+    changedFiles: 6
+    additions: 141
+    deletions: 7
+    labels: 
+      - enhancement
+      - "awaiting next minor version"
+    keywordHits: 
+      - fix
+    hasTests: true
+    testFiles: 
+      - tests/src/Fixtures/Resources/Tickets/RelationManagers/DepartmentsWithDeferredBadgeRelationManager.php
+      - tests/src/Panels/Resources/RelationManagerTest.php
+    debugScore: 3
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: docs/03-resources/07-managing-relationships.md
+        additions: 40
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/panels/src/Resources/Pages/Concerns/HasRelationManagers.php
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/panels/src/Resources/RelationManagers/RelationGroup.php
+        additions: 20
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/panels/src/Resources/RelationManagers/RelationManager.php
+        additions: 18
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: tests/src/Fixtures/Resources/Tickets/RelationManagers/DepartmentsWithDeferredBadgeRelationManager.php
+        additions: 34
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/src/Panels/Resources/RelationManagerTest.php
+        additions: 28
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 19431
+    title: "feat: `ActionGroup` in `headerActions()` and `footerActions()` of schema components"
+    url: https://github.com/filamentphp/filament/pull/19431
+    mergedAt: 2026-04-20T12:23:56Z
+    baseRefName: 4.x
+    headRefName: feat-actiongroup-in-headeractions-x4
+    baseRefOid: 58a7529666775d53f7586fc40d92f8f6311255f2
+    headRefOid: 44fc2abcfa5e7d014f5ec2c3f340f1c809b8abd9
+    mergeCommitOid: 1d9fe463b9e1dc1940fa2800071b1a8276de7df8
+    changedFiles: 4
+    additions: 404
+    deletions: 8
+    labels: 
+      - enhancement
+      - "awaiting next minor version"
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - tests/src/Schemas/Components/SectionTest.php
+    debugScore: 2
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: packages/schemas/src/Components/Concerns/HasActions.php
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/schemas/src/Components/Concerns/HasFooterActions.php
+        additions: 7
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: packages/schemas/src/Components/Concerns/HasHeaderActions.php
+        additions: 7
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: tests/src/Schemas/Components/SectionTest.php
+        additions: 384
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 19430
+    title: "feat: get item index in itemLabel on Repeater"
+    url: https://github.com/filamentphp/filament/pull/19430
+    mergedAt: 2026-04-20T12:23:42Z
+    baseRefName: 4.x
+    headRefName: feat-repeater-itemlabel-index-x4
+    baseRefOid: 58a7529666775d53f7586fc40d92f8f6311255f2
+    headRefOid: 870000c5e85bd57b9cd3cd5562423cd345c08b72
+    mergeCommitOid: f61831466228005278ea64c1a2a7aa67a128a30c
+    changedFiles: 8
+    additions: 42
+    deletions: 7
+    labels: 
+      - enhancement
+      - "awaiting next minor version"
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - tests/src/Forms/Components/BuilderTest.php
+      - tests/src/Forms/Components/RepeaterTest.php
+    debugScore: 2
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: packages/forms/docs/12-repeater.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/forms/docs/13-builder.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/forms/resources/views/components/builder.blade.php
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/forms/resources/views/components/repeater/index.blade.php
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/forms/src/Components/Builder/Block.php
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: packages/forms/src/Components/Repeater.php
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: tests/src/Forms/Components/BuilderTest.php
+        additions: 10
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/src/Forms/Components/RepeaterTest.php
+        additions: 24
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 19736
+    title: "add missing Persian translations for export column selection actions"
+    url: https://github.com/filamentphp/filament/pull/19736
+    mergedAt: 2026-04-20T10:45:11Z
+    baseRefName: 4.x
+    headRefName: patch-1
+    baseRefOid: 37c3a6d7555a51648f618fce09bb18aa68c6655c
+    headRefOid: 30f6650f9abcb486900ee72f88ee664953961333
+    mergeCommitOid: 4bda006b2bd914edbe97b2c052b3de03b3fb32fb
+    changedFiles: 1
+    additions: 12
+    deletions: 0
+    labels: 
+      - i18n
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: packages/actions/resources/lang/fa/export.php
+        additions: 12
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 19734
+    title: "Improve/boost guidelines v4"
+    url: https://github.com/filamentphp/filament/pull/19734
+    mergedAt: 2026-04-20T10:44:45Z
+    baseRefName: 4.x
+    headRefName: improve/boost-guidelines-v4
+    baseRefOid: 58a7529666775d53f7586fc40d92f8f6311255f2
+    headRefOid: 293cd57d7ae22633758233b89ebae7edac09ee53
+    mergeCommitOid: d8350fe6a59a30e77f33ba98ae8407886a794774
+    changedFiles: 1
+    additions: 118
+    deletions: 26
+    labels: 
+      - documentation
+    keywordHits: 
+      - fix
+      - incorrect
+      - wrong
+      - error
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: packages/panels/resources/boost/guidelines/core.blade.php
+        additions: 118
+        deletions: 26
+        changeType: MODIFIED
+  - 
+    number: 19735
+    title: "fix: Deferred badge loading on each Livewire component update"
+    url: https://github.com/filamentphp/filament/pull/19735
+    mergedAt: 2026-04-20T08:32:25Z
+    baseRefName: 4.x
+    headRefName: fix/deferred-badge-loading-on-each-component-update
+    baseRefOid: 58a7529666775d53f7586fc40d92f8f6311255f2
+    headRefOid: fcb3b5623cf215c0202beba748e71e92500602cb
+    mergeCommitOid: 37c3a6d7555a51648f618fce09bb18aa68c6655c
+    changedFiles: 2
+    additions: 3
+    deletions: 62
+    labels: 
+      - bug
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: packages/schemas/resources/views/components/tabs.blade.php
+        additions: 2
+        deletions: 61
+        changeType: MODIFIED
+      - 
+        path: packages/schemas/src/Concerns/InteractsWithSchemas.php
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 19682
+    title: "fix: rich content merge tag `toHtml()` test expectations"
+    url: https://github.com/filamentphp/filament/pull/19682
+    mergedAt: 2026-04-12T13:03:37Z
+    baseRefName: 4.x
+    headRefName: fix/tests/rich-content-renderer
+    baseRefOid: 8932b8fc823fb6d63fd07448045623072285fe22
+    headRefOid: c4a97a92f0d2c351c8c1a277dfbe17002d492598
+    mergeCommitOid: 802fc5729a8263989ba3725c08eb10136267eb4e
+    changedFiles: 1
+    additions: 7
+    deletions: 7
+    labels: 
+      - bug
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: true
+    testFiles: 
+      - tests/src/Forms/Components/RichEditor/RichContentRendererTest.php
+    debugScore: 4
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: tests/src/Forms/Components/RichEditor/RichContentRendererTest.php
+        additions: 7
+        deletions: 7
+        changeType: MODIFIED
+  - 
+    number: 19451
+    title: "i18n: update Chinese Simplified (zh_CN) translations"
+    url: https://github.com/filamentphp/filament/pull/19451
+    mergedAt: 2026-03-08T20:13:18Z
+    baseRefName: 4.x
+    headRefName: i18n/zh-cn
+    baseRefOid: 6cbe6959e58e922d7e8aabe03be4e29f616c6b4f
+    headRefOid: e2a5d3d54774b97218dc85309bb4153d84aa15ca
+    mergeCommitOid: dbefddc8b1d096af9165bc626f2d93f8309b8104
+    changedFiles: 14
+    additions: 289
+    deletions: 26
+    labels: 
+      - i18n
+    keywordHits: 
+      - fix
+      - error
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: packages/actions/resources/lang/zh_CN/delete.php
+        additions: 13
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/actions/resources/lang/zh_CN/export.php
+        additions: 29
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: packages/actions/resources/lang/zh_CN/force-delete.php
+        additions: 12
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/actions/resources/lang/zh_CN/import.php
+        additions: 19
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: packages/actions/resources/lang/zh_CN/notifications.php
+        additions: 10
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/actions/resources/lang/zh_CN/restore.php
+        additions: 12
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/forms/resources/lang/zh_CN/components.php
+        additions: 21
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/infolists/resources/lang/zh_CN/components.php
+        additions: 31
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: packages/panels/resources/lang/zh_CN/error-notifications.php
+        additions: 9
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/panels/resources/lang/zh_CN/layout.php
+        additions: 17
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/panels/resources/lang/zh_CN/unsaved-changes-alert.php
+        additions: 7
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: packages/query-builder/resources/lang/zh_CN/query-builder.php
+        additions: 78
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/tables/resources/lang/zh_CN/table.php
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/widgets/resources/lang/zh_CN/chart.php
+        additions: 29
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 19697
+    title: "fix: rich editor file attachment test temporary uploads"
+    url: https://github.com/filamentphp/filament/pull/19697
+    mergedAt: 2026-04-14T08:32:34Z
+    baseRefName: 4.x
+    headRefName: fix/tests/rich-editor-file-attachments
+    baseRefOid: e5f4a8965ac79032ce67135f8b1228c8297ad424
+    headRefOid: 2b0c8b356c1d7ea50bfd5ba018360f0de07987cb
+    mergeCommitOid: 7c072ce174b9125c796c9c7c77c3193b260b0936
+    changedFiles: 1
+    additions: 9
+    deletions: 3
+    labels: 
+      - bug
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: true
+    testFiles: 
+      - tests/src/Fixtures/Livewire/RichEditorFileAttachmentForm.php
+    debugScore: 4
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: tests/src/Fixtures/Livewire/RichEditorFileAttachmentForm.php
+        additions: 9
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 19696
+    title: "Update finnish translation"
+    url: https://github.com/filamentphp/filament/pull/19696
+    mergedAt: 2026-04-13T21:24:08Z
+    baseRefName: 4.x
+    headRefName: vareja
+    baseRefOid: 413e9a953bb5a6b21ac64ebdeeba4de4ef57bf70
+    headRefOid: 161410e04adeb8cf5d67ef4ba489878f016d2c2b
+    mergeCommitOid: 2132c3daae56b2d06aaac953f81bd74d9d09f8f3
+    changedFiles: 8
+    additions: 133
+    deletions: 4
+    labels: 
+      - i18n
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: packages/forms/resources/lang/fi/components.php
+        additions: 37
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: packages/panels/resources/lang/fi/auth/multi-factor/app/actions/disable.php
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/panels/resources/lang/fi/auth/multi-factor/app/actions/regenerate-recovery-codes.php
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/panels/resources/lang/fi/auth/multi-factor/app/actions/set-up.php
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/panels/resources/lang/fi/auth/multi-factor/email/actions/disable.php
+        additions: 3
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: packages/panels/resources/lang/fi/auth/multi-factor/email/actions/set-up.php
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/panels/resources/lang/fi/auth/pages/edit-profile.php
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/query-builder/resources/lang/fi/query-builder.php
+        additions: 78
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 19718
+    title: "fix: Hide resize handles on disabled rich editor"
+    url: https://github.com/filamentphp/filament/pull/19718
+    mergedAt: 2026-04-17T09:50:18Z
+    baseRefName: 4.x
+    headRefName: fix/resize-handles-on-disabled-rich-editor
+    baseRefOid: 2dc3c6e9e836f911b273db02245554a15266ef55
+    headRefOid: d636895d76f6528495399388be488e9cf0c0a8db
+    mergeCommitOid: 9c30ac93d6f06a614157a7e4bb93caa46c0a751b
+    changedFiles: 2
+    additions: 11
+    deletions: 1
+    labels: 
+      - bug
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: packages/forms/resources/css/components/rich-editor.css
+        additions: 10
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: packages/panels/dist/theme.css
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED

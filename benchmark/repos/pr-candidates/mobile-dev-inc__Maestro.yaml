@@ -1,0 +1,2818 @@
+generatedAt: 2026-05-02T10:21:14.087Z
+repo: mobile-dev-inc/Maestro
+since: 2026-01-01
+limit: 50
+debugKeywords: 
+  - bug
+  - fix
+  - regression
+  - crash
+  - incorrect
+  - wrong
+  - error
+  - exception
+  - edge
+  - flaky
+  - race
+  - leak
+  - validation
+  - parser
+  - parsing
+  - timeout
+  - fail
+  - failure
+  - broken
+prs: 
+  - 
+    number: 3225
+    title: "chore(claude): add bump-android-version skill + diagnose-maestro-failure agent"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3225
+    mergedAt: 2026-04-30T18:33:23Z
+    baseRefName: main
+    headRefName: bump-android-version-skills
+    baseRefOid: d0236f19e4ea0f69e1b86514b15d408ea55e2e90
+    headRefOid: 38033d9f107d6407101b50518d545f333e583660
+    mergeCommitOid: 03d0c79a106b06b9d8aa1fe21b4f3e143e206f7f
+    changedFiles: 14
+    additions: 784
+    deletions: 82
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - exception
+      - fail
+      - failure
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .claude/agents/diagnose-maestro-failure.md
+        additions: 117
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: .claude/skills/bump-android-version/SKILL.md
+        additions: 151
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: .github/scripts/setup_android_device.sh
+        additions: 51
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: .github/workflows/test-e2e.yaml
+        additions: 149
+        deletions: 17
+        changeType: MODIFIED
+      - 
+        path: AGENTS.md
+        additions: 126
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: e2e/demo_app/.maestro/all_files_permission.yaml
+        additions: 14
+        deletions: 33
+        changeType: MODIFIED
+      - 
+        path: e2e/demo_app/CLAUDE.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: e2e/demo_app/lib/all_files_access_screen.dart
+        additions: 58
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: e2e/demo_app/lib/main.dart
+        additions: 9
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: e2e/run_tests
+        additions: 105
+        deletions: 28
+        changeType: MODIFIED
+      - 
+        path: maestro-android/build.gradle.kts
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: maestro-client/src/main/resources/maestro-android-source.sha256
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: maestro-client/src/main/resources/maestro-app.apk
+        additions: 0
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: maestro-client/src/main/resources/maestro-server.apk
+        additions: 0
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3226
+    title: "ci(test-e2e): simplify Android E2E to launch new android versions"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3226
+    mergedAt: 2026-04-30T16:45:23Z
+    baseRefName: bump-android-version-skills
+    headRefName: simplify-test-e2e-android-version-input
+    baseRefOid: 2b61701c986a887a186bc2094cada277b52c8945
+    headRefOid: caf5dfd7e6625beecbb45725eef84e8490aa4a26
+    mergeCommitOid: 0e98c8a3217440e6892b8a78245a2a538d38f416
+    changedFiles: 11
+    additions: 390
+    deletions: 82
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - validation
+      - fail
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/scripts/setup_android_device.sh
+        additions: 51
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: .github/workflows/test-e2e.yaml
+        additions: 149
+        deletions: 17
+        changeType: MODIFIED
+      - 
+        path: e2e/demo_app/.maestro/all_files_permission.yaml
+        additions: 14
+        deletions: 33
+        changeType: MODIFIED
+      - 
+        path: e2e/demo_app/CLAUDE.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: e2e/demo_app/lib/all_files_access_screen.dart
+        additions: 58
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: e2e/demo_app/lib/main.dart
+        additions: 9
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: e2e/run_tests
+        additions: 105
+        deletions: 28
+        changeType: MODIFIED
+      - 
+        path: maestro-android/build.gradle.kts
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: maestro-client/src/main/resources/maestro-android-source.sha256
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: maestro-client/src/main/resources/maestro-app.apk
+        additions: 0
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: maestro-client/src/main/resources/maestro-server.apk
+        additions: 0
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3245
+    title: "Bump dependencies in GitHub Actions"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3245
+    mergedAt: 2026-04-30T15:48:55Z
+    baseRefName: main
+    headRefName: gha-deps
+    baseRefOid: eecd5528e1cab3e88d49a2e2df89039cc8285b75
+    headRefOid: 69ee4e23b77f2926b1b51a8b585d8e2b126b6516
+    mergeCommitOid: d0236f19e4ea0f69e1b86514b15d408ea55e2e90
+    changedFiles: 9
+    additions: 43
+    deletions: 43
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -5
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/workflows/check-drivers.yaml
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/lock-closed-issues.yaml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/publish-cli.yaml
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/publish-release.yaml
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/publish-snapshot.yaml
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/test-e2e-ios-intel.yaml
+        additions: 6
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/test-e2e.yaml
+        additions: 15
+        deletions: 15
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/test.yaml
+        additions: 7
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/update-samples.yaml
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 3224
+    title: "chore(android): bump compile/target SDK to 36"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3224
+    mergedAt: 2026-04-30T11:23:09Z
+    baseRefName: simplify-test-e2e-android-version-input
+    headRefName: bump-android-api-34-36
+    baseRefOid: 00e50db0c1b03e3317ae30354faa6db2a3ef0800
+    headRefOid: 1cc9eb88118138d414654bba9e6fa9d96af5ac2a
+    mergeCommitOid: ca75a5557bdc49c5ec2c85d66fdfaaace581313f
+    changedFiles: 11
+    additions: 151
+    deletions: 52
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - fail
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/scripts/setup_android_device.sh
+        additions: 51
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: .github/workflows/test-e2e.yaml
+        additions: 3
+        deletions: 11
+        changeType: MODIFIED
+      - 
+        path: e2e/demo_app/.maestro/all_files_permission.yaml
+        additions: 14
+        deletions: 33
+        changeType: MODIFIED
+      - 
+        path: e2e/demo_app/CLAUDE.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: e2e/demo_app/lib/all_files_access_screen.dart
+        additions: 58
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: e2e/demo_app/lib/main.dart
+        additions: 9
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: e2e/run_tests
+        additions: 12
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: maestro-android/build.gradle.kts
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: maestro-client/src/main/resources/maestro-android-source.sha256
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: maestro-client/src/main/resources/maestro-app.apk
+        additions: 0
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: maestro-client/src/main/resources/maestro-server.apk
+        additions: 0
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3246
+    title: "Fix release instructions"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3246
+    mergedAt: 2026-04-30T10:53:01Z
+    baseRefName: main
+    headRefName: release-instructions
+    baseRefOid: a4c7c95f5ba1884858f7e35efa6b8e0165db9448
+    headRefOid: 0b58e05ad579b435e6ca5ada619c0945d3abc9a6
+    mergeCommitOid: eecd5528e1cab3e88d49a2e2df89039cc8285b75
+    changedFiles: 1
+    additions: 4
+    deletions: 8
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: RELEASING.md
+        additions: 4
+        deletions: 8
+        changeType: MODIFIED
+  - 
+    number: 3244
+    title: "Prepare for release v2.5.1, and add prepare-release skill"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3244
+    mergedAt: 2026-04-30T09:45:29Z
+    baseRefName: main
+    headRefName: v251
+    baseRefOid: 36414a864f88a574f75afe97b2e647e6e8ce0094
+    headRefOid: ac8b1e8c4980335a34ba82f24cd2889da0ea9f72
+    mergeCommitOid: a4c7c95f5ba1884858f7e35efa6b8e0165db9448
+    changedFiles: 4
+    additions: 90
+    deletions: 2
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .claude/skills/prepare-release/SKILL.md
+        additions: 78
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: CHANGELOG.md
+        additions: 10
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: gradle.properties
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/gradle.properties
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3240
+    title: "Fix NoSuchMethodError on Ktor server startup (login/studio/cloud)"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3240
+    mergedAt: 2026-04-30T00:48:48Z
+    baseRefName: main
+    headRefName: fix/3227-ktor-coroutines-compat
+    baseRefOid: 1d8257911a38346f2c9a1d8b1ccc654ec98c3eca
+    headRefOid: 9e0fb93cf4e62b12874e0c0fb4d45c922983dbb1
+    mergeCommitOid: 36414a864f88a574f75afe97b2e647e6e8ce0094
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - crash
+      - error
+      - broken
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: gradle/libs.versions.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3238
+    title: "Fix emulator discovery on Windows, fixes start-device"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3238
+    mergedAt: 2026-04-29T13:51:12Z
+    baseRefName: main
+    headRefName: windows-start-device
+    baseRefOid: 164d1155523b2d818d4c83c5a0df5bfb796da61f
+    headRefOid: e7c5e280973d96fe21e3e69ceb63d3375b7a25dd
+    mergeCommitOid: 1d8257911a38346f2c9a1d8b1ccc654ec98c3eca
+    changedFiles: 1
+    additions: 4
+    deletions: 3
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - fail
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: maestro-client/src/main/java/maestro/device/util/AndroidEnvUtils.kt
+        additions: 4
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 3236
+    title: "Improve Windows developer experience"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3236
+    mergedAt: 2026-04-29T13:11:39Z
+    baseRefName: main
+    headRefName: windows-devex
+    baseRefOid: 772cedd9a9e3ede9350712e151d7d024af584a21
+    headRefOid: 1752e15ebdc0339aefb6ee0b0f9d5c6d4c750990
+    mergeCommitOid: 164d1155523b2d818d4c83c5a0df5bfb796da61f
+    changedFiles: 2
+    additions: 22
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: installLocally.ps1
+        additions: 20
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: maestro-cli/build.gradle.kts
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3230
+    title: "Improve device info help in maestro cloud --help"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3230
+    mergedAt: 2026-04-28T14:03:28Z
+    baseRefName: main
+    headRefName: cloud-command-help
+    baseRefOid: d046e54ce7a13a0cb9d9720e38a44c787379d62f
+    headRefOid: a9a3e8dc85b080698c410e2cdc4e395c90c9465c
+    mergeCommitOid: 772cedd9a9e3ede9350712e151d7d024af584a21
+    changedFiles: 1
+    additions: 6
+    deletions: 6
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/command/CloudCommand.kt
+        additions: 6
+        deletions: 6
+        changeType: MODIFIED
+  - 
+    number: 3229
+    title: "Fix detection of successful emulator installation in start-device"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3229
+    mergedAt: 2026-04-28T13:36:50Z
+    baseRefName: main
+    headRefName: fix-install-sdk
+    baseRefOid: c139f0ff1501b1f48e476eb4ebde7f7cf4315308
+    headRefOid: ddefd7436523e14ef3a6d6fb3609938b88ed434e
+    mergeCommitOid: d046e54ce7a13a0cb9d9720e38a44c787379d62f
+    changedFiles: 1
+    additions: 1
+    deletions: 5
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - fail
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: maestro-client/src/main/java/maestro/device/DeviceService.kt
+        additions: 1
+        deletions: 5
+        changeType: MODIFIED
+  - 
+    number: 3228
+    title: "Improve CLI help for start-device command"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3228
+    mergedAt: 2026-04-28T13:22:42Z
+    baseRefName: main
+    headRefName: start-device-help
+    baseRefOid: e5da624024903469abbc0160d09790ea3f4ba81f
+    headRefOid: eecd479e4935357ab8b9885b8628d51a97efa76a
+    mergeCommitOid: c139f0ff1501b1f48e476eb4ebde7f7cf4315308
+    changedFiles: 1
+    additions: 6
+    deletions: 7
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/command/StartDeviceCommand.kt
+        additions: 6
+        deletions: 7
+        changeType: MODIFIED
+  - 
+    number: 3212
+    title: "fix(ios-driver): fail-fast on transport failure instead of rethrowing raw SocketTimeoutException"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3212
+    mergedAt: 2026-04-27T07:25:51Z
+    baseRefName: main
+    headRefName: fix/ios-driver-fail-fast-on-transport-failure
+    baseRefOid: 34890c429b9d144fbe5e51d3895f7c92b7ffd908
+    headRefOid: 1d1e026553b67ef189b00c77a57c28098f2907ef
+    mergeCommitOid: e5da624024903469abbc0160d09790ea3f4ba81f
+    changedFiles: 11
+    additions: 403
+    deletions: 52
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - error
+      - exception
+      - leak
+      - timeout
+      - fail
+      - failure
+    hasTests: true
+    testFiles: 
+      - maestro-client/src/test/java/maestro/drivers/IOSDriverTest.kt
+      - maestro-client/src/test/java/maestro/ios/MockXCTestInstaller.kt
+      - maestro-client/src/test/java/maestro/xctestdriver/XCTestDriverClientTest.kt
+      - maestro-ios/src/test/kotlin/ios/xctest/XCTestIOSDeviceTest.kt
+    debugScore: 8
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: maestro-client/build.gradle.kts
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: maestro-client/src/main/java/maestro/DeviceUnreachableException.kt
+        additions: 15
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: maestro-client/src/main/java/maestro/drivers/IOSDriver.kt
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: maestro-client/src/test/java/maestro/drivers/IOSDriverTest.kt
+        additions: 79
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: maestro-client/src/test/java/maestro/ios/MockXCTestInstaller.kt
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: maestro-client/src/test/java/maestro/xctestdriver/XCTestDriverClientTest.kt
+        additions: 129
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: maestro-ios-driver/src/main/kotlin/xcuitest/XCTestDriverClient.kt
+        additions: 84
+        deletions: 47
+        changeType: MODIFIED
+      - 
+        path: maestro-ios/src/main/java/ios/IOSDeviceErrors.kt
+        additions: 8
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: maestro-ios/src/main/java/ios/xctest/XCTestIOSDevice.kt
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: maestro-ios/src/test/kotlin/ios/xctest/XCTestIOSDeviceTest.kt
+        additions: 71
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: maestro-utils/src/main/kotlin/network/Errors.kt
+        additions: 8
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3222
+    title: "fix(maestro-client): remove redundant proto srcDirs to unblock sourcesJar"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3222
+    mergedAt: 2026-04-27T06:41:49Z
+    baseRefName: main
+    headRefName: fix/maestro-client-sources-jar-duplicate
+    baseRefOid: 1135651d417d0b10c6f2fed84839dfff04c51130
+    headRefOid: 17d563bcf229a3b53df6b57e68b26e911f228afd
+    mergeCommitOid: 34890c429b9d144fbe5e51d3895f7c92b7ffd908
+    changedFiles: 1
+    additions: 0
+    deletions: 12
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - fail
+      - failure
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: maestro-client/build.gradle.kts
+        additions: 0
+        deletions: 12
+        changeType: MODIFIED
+  - 
+    number: 3210
+    title: "prepare for release 2.5.0"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3210
+    mergedAt: 2026-04-27T05:54:01Z
+    baseRefName: main
+    headRefName: prepare-for-release-2.5.0
+    baseRefOid: 3c93e5b2035630ddc5dfaefa47aadc005e704ccc
+    headRefOid: ee12d8684afb09848c0d0e19cec4d8a99ffd66f6
+    mergeCommitOid: 1135651d417d0b10c6f2fed84839dfff04c51130
+    changedFiles: 3
+    additions: 37
+    deletions: 2
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 35
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: gradle.properties
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/gradle.properties
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3217
+    title: "Add support for MANAGE_EXTERNAL_STORAGE permission on Android"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3217
+    mergedAt: 2026-04-24T22:36:59Z
+    baseRefName: main
+    headRefName: androidManageAllFiles
+    baseRefOid: 8c99cae57ca766c82b49244c34ea2480a9ec188f
+    headRefOid: 30f8a1dd4b7e5350cb5376044b4db389edf3bd97
+    mergeCommitOid: 3c93e5b2035630ddc5dfaefa47aadc005e704ccc
+    changedFiles: 3
+    additions: 111
+    deletions: 32
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: e2e/demo_app/.maestro/all_files_permission.yaml
+        additions: 57
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: e2e/demo_app/android/app/src/main/AndroidManifest.xml
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: maestro-client/src/main/java/maestro/drivers/AndroidDriver.kt
+        additions: 53
+        deletions: 32
+        changeType: MODIFIED
+  - 
+    number: 3216
+    title: "feat(mcp): rename inspect_view_hierarchy to inspect_screen, ship compact JSON"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3216
+    mergedAt: 2026-04-23T21:45:19Z
+    baseRefName: main
+    headRefName: chore/rename-inspect-view-hierarchy
+    baseRefOid: f05c930ce3b5da9cda4d885a2208354000a72474
+    headRefOid: 17ad8e73ef54a8193bca83ff430f11ac100a8492
+    mergeCommitOid: 8c99cae57ca766c82b49244c34ea2480a9ec188f
+    changedFiles: 9
+    additions: 141
+    deletions: 35
+    labels: 
+[]
+    keywordHits: 
+      - error
+    hasTests: true
+    testFiles: 
+      - maestro-cli/src/test/kotlin/maestro/cli/mcp/McpServerTest.kt
+      - maestro-cli/src/test/kotlin/maestro/cli/mcp/tools/ViewHierarchyFormattersTest.kt
+      - maestro-cli/src/test/mcp/full-evals.yaml
+      - maestro-cli/src/test/mcp/inspect-screen-evals.yaml
+      - maestro-cli/src/test/mcp/tool-tests-with-device.yaml
+      - maestro-cli/src/test/mcp/tool-tests-without-device.yaml
+    debugScore: 2
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/McpServer.kt
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/InspectScreenTool.kt
+        additions: 25
+        deletions: 20
+        changeType: RENAMED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/RunTool.kt
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/test/kotlin/maestro/cli/mcp/McpServerTest.kt
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/test/kotlin/maestro/cli/mcp/tools/ViewHierarchyFormattersTest.kt
+        additions: 101
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: maestro-cli/src/test/mcp/full-evals.yaml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/test/mcp/inspect-screen-evals.yaml
+        additions: 4
+        deletions: 4
+        changeType: RENAMED
+      - 
+        path: maestro-cli/src/test/mcp/tool-tests-with-device.yaml
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/test/mcp/tool-tests-without-device.yaml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3206
+    title: "fix(ios-runner): suppress XCTest UI-interruption preflight hang"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3206
+    mergedAt: 2026-04-23T20:00:31Z
+    baseRefName: main
+    headRefName: fix/ios-ui-interruption-preflight
+    baseRefOid: b108ab9239466bbf5efae4a8026716010b29ab3d
+    headRefOid: fa64be9178b1877709b20ffdee8914c3d5dbde31
+    mergeCommitOid: f05c930ce3b5da9cda4d885a2208354000a72474
+    changedFiles: 12
+    additions: 338
+    deletions: 13
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - regression
+      - timeout
+      - fail
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/scripts/boot_simulator.sh
+        additions: 7
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/check-drivers.yaml
+        additions: 49
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/test-e2e.yaml
+        additions: 14
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: e2e/alert-repro-swiftui/.gitignore
+        additions: 2
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: e2e/alert-repro-swiftui/AlertRepro/AlertReproApp.swift
+        additions: 44
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: e2e/alert-repro-swiftui/AlertRepro/Info.plist
+        additions: 44
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: e2e/alert-repro-swiftui/flows/ui_interruption_preflight.yaml
+        additions: 24
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: e2e/alert-repro-swiftui/project.yml
+        additions: 35
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: e2e/alert-repro-swiftui/verify_preflight_suppressed.sh
+        additions: 89
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: maestro-ios-driver/src/main/resources/driver-iPhoneSimulator/Debug-iphonesimulator/maestro-driver-ios.zip
+        additions: 0
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: maestro-ios-driver/src/main/resources/driver-iPhoneSimulator/Debug-iphonesimulator/maestro-driver-iosUITests-Runner.zip
+        additions: 0
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: "maestro-ios-xctest-runner/maestro-driver-iosUITests/Categories/XCUIApplication+Helper.m"
+        additions: 30
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3215
+    title: "fix(orchestra): retryCommand only retries on MaestroException, propagates others"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3215
+    mergedAt: 2026-04-23T18:19:10Z
+    baseRefName: main
+    headRefName: fix/retry-only-on-maestro-exception
+    baseRefOid: c21d85b18c716d81cbb4057ea0793d2c7f091477
+    headRefOid: 65d56df3eadcf7638f87ae87d544e39c67e65208
+    mergeCommitOid: b108ab9239466bbf5efae4a8026716010b29ab3d
+    changedFiles: 2
+    additions: 113
+    deletions: 6
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - error
+      - exception
+      - fail
+      - failure
+    hasTests: true
+    testFiles: 
+      - maestro-test/src/test/kotlin/maestro/test/IntegrationTest.kt
+    debugScore: 8
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: maestro-orchestra/src/main/java/maestro/orchestra/Orchestra.kt
+        additions: 4
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: maestro-test/src/test/kotlin/maestro/test/IntegrationTest.kt
+        additions: 109
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 3208
+    title: "Adds a soft CLI warning when the workspace zip produced by maestro cloud exceeds 20 MB"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3208
+    mergedAt: 2026-04-22T23:44:10Z
+    baseRefName: main
+    headRefName: fix/add-warning-for-larger-workspace-upload
+    baseRefOid: b5cf9a0429665c88b9b2e372e376dbd4fff611d0
+    headRefOid: 689254396aaf5a49bfb64a732a1b0e5d11bf713a
+    mergeCommitOid: c21d85b18c716d81cbb4057ea0793d2c7f091477
+    changedFiles: 1
+    additions: 13
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/cloud/CloudInteractor.kt
+        additions: 13
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3209
+    title: "feat(mcp): nudge on assertScreenshot + broaden cheat_sheet guidance"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3209
+    mergedAt: 2026-04-22T19:44:51Z
+    baseRefName: main
+    headRefName: mcp-assert-screenshot-nudge
+    baseRefOid: aba3e86a0a6b0e0db13dc81eb7cbda92637c0dbd
+    headRefOid: 25208a43fee3a86fa2adb6be7ed66f6b8ba594dc
+    mergeCommitOid: b5cf9a0429665c88b9b2e372e376dbd4fff611d0
+    changedFiles: 2
+    additions: 5
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - error
+      - parser
+      - fail
+      - failure
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 5
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/McpServer.kt
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/RunTool.kt
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3207
+    title: "feat(mcp): ground text selectors in the hierarchy, not screenshots"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3207
+    mergedAt: 2026-04-22T17:22:59Z
+    baseRefName: main
+    headRefName: mcp-selector-grounding-nudges
+    baseRefOid: b5b28eba3192a35840690262603ff8f3c45b37a4
+    headRefOid: 67cfaa058f19afef6f20c570f91c2920486a8313
+    mergeCommitOid: aba3e86a0a6b0e0db13dc81eb7cbda92637c0dbd
+    changedFiles: 1
+    additions: 8
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - regression
+      - validation
+      - fail
+      - failure
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 5
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/InspectViewHierarchyTool.kt
+        additions: 8
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 2864
+    title: "Allow evaluation of JS expressions in waitForAnimationToEnd timeout"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/2864
+    mergedAt: 2026-04-22T10:10:14Z
+    baseRefName: main
+    headRefName: waitForAnimation_timeout
+    baseRefOid: 65f417564f8fc6639a6025aff398f9b7e0c98cab
+    headRefOid: 8192c260c568212022e98d1158f738afa6d43907
+    mergeCommitOid: b5b28eba3192a35840690262603ff8f3c45b37a4
+    changedFiles: 6
+    additions: 33
+    deletions: 9
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - timeout
+    hasTests: true
+    testFiles: 
+      - maestro-orchestra/src/test/java/maestro/orchestra/MaestroCommandSerializationTest.kt
+      - maestro-orchestra/src/test/java/maestro/orchestra/yaml/YamlCommandReaderTest.kt
+    debugScore: 4
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: e2e/demo_app/.maestro/commands/waitForAnimationToEnd.yaml
+        additions: 11
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: maestro-client/src/main/java/maestro/Maestro.kt
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: maestro-orchestra-models/src/main/java/maestro/orchestra/Commands.kt
+        additions: 16
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: maestro-orchestra/src/main/java/maestro/orchestra/yaml/YamlWaitForAnimationToEndCommand.kt
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: maestro-orchestra/src/test/java/maestro/orchestra/MaestroCommandSerializationTest.kt
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: maestro-orchestra/src/test/java/maestro/orchestra/yaml/YamlCommandReaderTest.kt
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3199
+    title: "included workspace in progress bar"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3199
+    mergedAt: 2026-04-21T23:33:20Z
+    baseRefName: main
+    headRefName: fix/workspace_upload_progress
+    baseRefOid: 6a1cf8701967c1e99769d91f2fe139a0c5b06bec
+    headRefOid: 7de0736a38b576a2340124e3633c4b9e7e7ac0f0
+    mergeCommitOid: 65f417564f8fc6639a6025aff398f9b7e0c98cab
+    changedFiles: 1
+    additions: 24
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/api/ApiClient.kt
+        additions: 24
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3197
+    title: "Fix `--config` on `maestro cloud` and unify workspace-config handling"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3197
+    mergedAt: 2026-04-21T22:38:50Z
+    baseRefName: main
+    headRefName: fix/config-injection
+    baseRefOid: 86c0ec0bb346687babb1f237f6b5f713760737c9
+    headRefOid: 50749ac3f6db472f235c31c48dc0810ceb698305
+    mergeCommitOid: 6a1cf8701967c1e99769d91f2fe139a0c5b06bec
+    changedFiles: 7
+    additions: 242
+    deletions: 19
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - regression
+      - validation
+      - broken
+    hasTests: true
+    testFiles: 
+      - maestro-orchestra/src/test/java/maestro/orchestra/workspace/WorkspaceUtilsTest.kt
+    debugScore: 6
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/cloud/CloudInteractor.kt
+        additions: 6
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/command/CloudCommand.kt
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/util/FileUtils.kt
+        additions: 2
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: maestro-orchestra/src/main/java/maestro/orchestra/workspace/Filters.kt
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: maestro-orchestra/src/main/java/maestro/orchestra/workspace/WorkspaceUtils.kt
+        additions: 65
+        deletions: 11
+        changeType: MODIFIED
+      - 
+        path: maestro-orchestra/src/main/java/maestro/orchestra/workspace/WorkspaceValidator.kt
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: maestro-orchestra/src/test/java/maestro/orchestra/workspace/WorkspaceUtilsTest.kt
+        additions: 163
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3204
+    title: "feat(mcp): tighten instructions and inspect_view_hierarchy description"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3204
+    mergedAt: 2026-04-21T20:34:34Z
+    baseRefName: main
+    headRefName: mcp-feedback-batch
+    baseRefOid: 72a1a802406ffd22b441fdd8d9166b23dec2faa7
+    headRefOid: 5576fe4fdd78246dcf4fe17f9656a60766046911
+    mergeCommitOid: 86c0ec0bb346687babb1f237f6b5f713760737c9
+    changedFiles: 2
+    additions: 7
+    deletions: 4
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - wrong
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/McpServer.kt
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/InspectViewHierarchyTool.kt
+        additions: 5
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 3203
+    title: "feat(mcp): add list_cloud_devices + device_model param on run_on_cloud"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3203
+    mergedAt: 2026-04-21T18:43:27Z
+    baseRefName: main
+    headRefName: mcp-cloud-device-discovery
+    baseRefOid: 5926ac1462e1f00d5842b7ffd8b8d987fce9aa5e
+    headRefOid: 8f94708caca8bed315312449e7e248a6f19047c2
+    mergeCommitOid: 72a1a802406ffd22b441fdd8d9166b23dec2faa7
+    changedFiles: 6
+    additions: 103
+    deletions: 10
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - wrong
+      - validation
+      - fail
+    hasTests: true
+    testFiles: 
+      - maestro-cli/src/test/kotlin/maestro/cli/mcp/McpServerTest.kt
+      - maestro-cli/src/test/mcp/full-evals.yaml
+      - maestro-cli/src/test/mcp/tool-tests-without-device.yaml
+    debugScore: 6
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/McpServer.kt
+        additions: 9
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/ListCloudDevicesTool.kt
+        additions: 73
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/RunOnCloudTool.kt
+        additions: 7
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/test/kotlin/maestro/cli/mcp/McpServerTest.kt
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/test/mcp/full-evals.yaml
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/test/mcp/tool-tests-without-device.yaml
+        additions: 9
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3202
+    title: "Add missing string command config for random inputs, and add e2e tests"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3202
+    mergedAt: 2026-04-21T16:21:23Z
+    baseRefName: main
+    headRefName: input-random-commands
+    baseRefOid: c9a2f2d5335a82ca8d55b1f5cacf3d4c2884d392
+    headRefOid: 8bf39b64c4dd5e97da33d3da4ae0c481673606a4
+    mergeCommitOid: 5926ac1462e1f00d5842b7ffd8b8d987fce9aa5e
+    changedFiles: 6
+    additions: 67
+    deletions: 3
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - error
+      - parser
+      - parsing
+      - fail
+    hasTests: true
+    testFiles: 
+      - maestro-orchestra/src/test/resources/workspaces/e016_config_invalid_command_in_onFlowStart/error.txt
+    debugScore: 3
+    suggestedDifficulty: mid
+    exclusionHints: 
+      - dependency-update
+    files: 
+      - 
+        path: e2e/demo_app/.maestro/commands/inputRandomCityName.yaml
+        additions: 16
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: e2e/demo_app/.maestro/commands/inputRandomColorName.yaml
+        additions: 16
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: e2e/demo_app/.maestro/commands/inputRandomCountryName.yaml
+        additions: 16
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: e2e/demo_app/.maestro/commands/inputRandomEmail.yaml
+        additions: 5
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: maestro-orchestra/src/main/java/maestro/orchestra/yaml/MaestroFlowParser.kt
+        additions: 12
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: maestro-orchestra/src/test/resources/workspaces/e016_config_invalid_command_in_onFlowStart/error.txt
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 3201
+    title: "feat(mcp): server instructions + clean stdout handshake"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3201
+    mergedAt: 2026-04-21T14:48:30Z
+    baseRefName: main
+    headRefName: ma-4026-server-instructions
+    baseRefOid: c60939f406df15547debce2efdb022a10a2bf12d
+    headRefOid: a93e4fec5d29b0a7d415a29620fee1e4f652d1c4
+    mergeCommitOid: c9a2f2d5335a82ca8d55b1f5cacf3d4c2884d392
+    changedFiles: 4
+    additions: 82
+    deletions: 10
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - error
+      - parser
+      - parsing
+      - fail
+      - failure
+    hasTests: true
+    testFiles: 
+      - maestro-cli/src/test/kotlin/maestro/cli/mcp/McpServerTest.kt
+    debugScore: 8
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/App.kt
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/command/McpCommand.kt
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/McpServer.kt
+        additions: 47
+        deletions: 9
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/test/kotlin/maestro/cli/mcp/McpServerTest.kt
+        additions: 28
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 3188
+    title: "refactor: extract maestro debug artifact generation from CLI to core module orchestra"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3188
+    mergedAt: 2026-04-21T06:01:25Z
+    baseRefName: main
+    headRefName: feat/test-output-shared
+    baseRefOid: b54bdfa88b3b9deb54b1a5d0df535ccd41cc96d2
+    headRefOid: 62493115c148d26f44a265428b1f85113d39e46f
+    mergeCommitOid: c60939f406df15547debce2efdb022a10a2bf12d
+    changedFiles: 14
+    additions: 303
+    deletions: 82
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - regression
+      - fail
+      - failure
+    hasTests: true
+    testFiles: 
+      - maestro-cli/src/test/kotlin/maestro/cli/report/TestDebugReporterTest.kt
+      - maestro-cli/src/test/kotlin/maestro/cli/runner/resultview/PlainTextResultViewTest.kt
+      - maestro-orchestra/src/test/kotlin/maestro/orchestra/debug/TestOutputWriterTest.kt
+    debugScore: 5
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/report/TestDebugReporter.kt
+        additions: 21
+        deletions: 71
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/runner/CommandState.kt
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/runner/MaestroCommandRunner.kt
+        additions: 3
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/runner/TestRunner.kt
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/runner/TestSuiteInteractor.kt
+        additions: 3
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/runner/resultview/AnsiResultView.kt
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/runner/resultview/PlainTextResultView.kt
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/util/ScreenshotUtils.kt
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/test/kotlin/maestro/cli/report/TestDebugReporterTest.kt
+        additions: 33
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/test/kotlin/maestro/cli/runner/resultview/PlainTextResultViewTest.kt
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: maestro-orchestra/src/main/kotlin/maestro/orchestra/debug/CommandStatus.kt
+        additions: 1
+        deletions: 1
+        changeType: RENAMED
+      - 
+        path: maestro-orchestra/src/main/kotlin/maestro/orchestra/debug/FlowDebugOutput.kt
+        additions: 35
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: maestro-orchestra/src/main/kotlin/maestro/orchestra/debug/TestOutputWriter.kt
+        additions: 88
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: maestro-orchestra/src/test/kotlin/maestro/orchestra/debug/TestOutputWriterTest.kt
+        additions: 112
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 3195
+    title: "feat(mcp): drop 8 redundant MCP tools"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3195
+    mergedAt: 2026-04-21T00:19:24Z
+    baseRefName: main
+    headRefName: ma-4023-drop-imperative-mcp-tools
+    baseRefOid: 5beeb16b3312b78d8b2673e18a93daeea88dc8ea
+    headRefOid: 96b5f0fea29d56ef560395232fe9461d07de36b3
+    mergeCommitOid: b54bdfa88b3b9deb54b1a5d0df535ccd41cc96d2
+    changedFiles: 14
+    additions: 4
+    deletions: 839
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - regression
+      - error
+      - fail
+      - failure
+    hasTests: true
+    testFiles: 
+      - maestro-cli/src/test/mcp/full-evals.yaml
+      - maestro-cli/src/test/mcp/inspect-view-hierarchy-evals.yaml
+      - maestro-cli/src/test/mcp/tool-tests-with-device.yaml
+      - maestro-cli/src/test/mcp/tool-tests-without-device.yaml
+    debugScore: 6
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/McpServer.kt
+        additions: 0
+        deletions: 16
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/README.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/BackTool.kt
+        additions: 0
+        deletions: 72
+        changeType: DELETED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/CheckFlowSyntaxTool.kt
+        additions: 0
+        deletions: 58
+        changeType: DELETED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/InputTextTool.kt
+        additions: 0
+        deletions: 79
+        changeType: DELETED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/LaunchAppTool.kt
+        additions: 0
+        deletions: 84
+        changeType: DELETED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/QueryDocsTool.kt
+        additions: 0
+        deletions: 101
+        changeType: DELETED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/StartDeviceTool.kt
+        additions: 0
+        deletions: 101
+        changeType: DELETED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/StopAppTool.kt
+        additions: 0
+        deletions: 79
+        changeType: DELETED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/TapOnTool.kt
+        additions: 0
+        deletions: 127
+        changeType: DELETED
+      - 
+        path: maestro-cli/src/test/mcp/full-evals.yaml
+        additions: 2
+        deletions: 39
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/test/mcp/inspect-view-hierarchy-evals.yaml
+        additions: 1
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/test/mcp/tool-tests-with-device.yaml
+        additions: 0
+        deletions: 32
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/test/mcp/tool-tests-without-device.yaml
+        additions: 0
+        deletions: 48
+        changeType: MODIFIED
+  - 
+    number: 3193
+    title: "feat(mcp): consolidate run_flow + run_flow_files into single `run` tool"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3193
+    mergedAt: 2026-04-20T21:47:16Z
+    baseRefName: main
+    headRefName: ma-4022-mcp-consolidate-run-tool
+    baseRefOid: 96013b06c80092371799db44a0ca076750514c2d
+    headRefOid: d063231f8a6e5675a5e25cd0188290f900c97a68
+    mergeCommitOid: 5beeb16b3312b78d8b2673e18a93daeea88dc8ea
+    changedFiles: 10
+    additions: 617
+    deletions: 339
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - error
+      - validation
+      - fail
+      - failure
+    hasTests: true
+    testFiles: 
+      - maestro-cli/src/test/kotlin/maestro/cli/mcp/tools/RunToolTest.kt
+      - maestro-cli/src/test/mcp/flows_dir/excluded_flow.yaml
+      - maestro-cli/src/test/mcp/flows_dir/launch_safari.yaml
+      - maestro-cli/src/test/mcp/full-evals.yaml
+      - maestro-cli/src/test/mcp/tool-tests-with-device.yaml
+      - maestro-cli/src/test/mcp/tool-tests-without-device.yaml
+    debugScore: 6
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/McpServer.kt
+        additions: 2
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/RunFlowFilesTool.kt
+        additions: 0
+        deletions: 170
+        changeType: DELETED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/RunFlowTool.kt
+        additions: 0
+        deletions: 147
+        changeType: DELETED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/RunTool.kt
+        additions: 378
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: maestro-cli/src/test/kotlin/maestro/cli/mcp/tools/RunToolTest.kt
+        additions: 188
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: maestro-cli/src/test/mcp/flows_dir/excluded_flow.yaml
+        additions: 5
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: maestro-cli/src/test/mcp/flows_dir/launch_safari.yaml
+        additions: 5
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: maestro-cli/src/test/mcp/full-evals.yaml
+        additions: 6
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/test/mcp/tool-tests-with-device.yaml
+        additions: 32
+        deletions: 11
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/test/mcp/tool-tests-without-device.yaml
+        additions: 1
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 2825
+    title: "Added the missing node text for the textarea in the view hierarchy"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/2825
+    mergedAt: 2026-04-20T08:22:09Z
+    baseRefName: main
+    headRefName: textarea-text-in-web-hierarchy
+    baseRefOid: 946ed9f0521cdd169d30a33b5c6aad1b2a4250b2
+    headRefOid: 94ef13470ba0528bd46d3162c17b5dbcdf374415
+    mergeCommitOid: 96013b06c80092371799db44a0ca076750514c2d
+    changedFiles: 2
+    additions: 17
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: e2e/demo_app/.maestro/web_flows/textarea.yaml
+        additions: 14
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: maestro-client/src/main/resources/maestro-web.js
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3184
+    title: "feat: native Maestro Cloud tools in the MCP server"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3184
+    mergedAt: 2026-04-17T18:43:52Z
+    baseRefName: main
+    headRefName: MA-4010-mcp-cloud-tools
+    baseRefOid: fe579f26fb77fc4c8dd757e081bbd80c00b3f9d8
+    headRefOid: 5a87164065b10ee70173203e5630cb9c8d719019
+    mergeCommitOid: 946ed9f0521cdd169d30a33b5c6aad1b2a4250b2
+    changedFiles: 6
+    additions: 393
+    deletions: 5
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - regression
+      - wrong
+      - error
+      - exception
+      - validation
+      - fail
+      - failure
+    hasTests: true
+    testFiles: 
+      - maestro-cli/src/test/mcp/tool-tests-without-device.yaml
+    debugScore: 10
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/McpServer.kt
+        additions: 5
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/CheatSheetTool.kt
+        additions: 6
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/GetCloudRunStatusTool.kt
+        additions: 115
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/QueryDocsTool.kt
+        additions: 6
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/RunOnCloudTool.kt
+        additions: 239
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: maestro-cli/src/test/mcp/tool-tests-without-device.yaml
+        additions: 22
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3182
+    title: "chore: upgrade MCP Kotlin SDK to official 0.11.1"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3182
+    mergedAt: 2026-04-16T18:54:20Z
+    baseRefName: main
+    headRefName: update-mcp
+    baseRefOid: 2316457df6e35e7ac7febc5c2aaff4dc26ca4f77
+    headRefOid: a22963882f7277b8711927d9f7dac3c9a5cd9bdf
+    mergeCommitOid: fe579f26fb77fc4c8dd757e081bbd80c00b3f9d8
+    changedFiles: 18
+    additions: 67
+    deletions: 75
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - regression
+      - timeout
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: gradle/libs.versions.toml
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/build.gradle.kts
+        additions: 1
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/McpServer.kt
+        additions: 9
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/BackTool.kt
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/CheatSheetTool.kt
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/CheckFlowSyntaxTool.kt
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/InputTextTool.kt
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/InspectViewHierarchyTool.kt
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/LaunchAppTool.kt
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/ListDevicesTool.kt
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/QueryDocsTool.kt
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/RunFlowFilesTool.kt
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/RunFlowTool.kt
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/StartDeviceTool.kt
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/StopAppTool.kt
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/TakeScreenshotTool.kt
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/TapOnTool.kt
+        additions: 10
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: settings.gradle.kts
+        additions: 0
+        deletions: 6
+        changeType: MODIFIED
+  - 
+    number: 3181
+    title: "fix: drop use_fuzzy_matching from tap_on MCP schema"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3181
+    mergedAt: 2026-04-16T15:14:05Z
+    baseRefName: main
+    headRefName: MA-4007-remove-use-fuzzy-matching-from-tap-on
+    baseRefOid: f3fad237d94ff77c90031d1a3e4797fc7e5b242f
+    headRefOid: 66c5aab5bedd0a2973191fe301a56b82bebf29cc
+    mergeCommitOid: 2316457df6e35e7ac7febc5c2aaff4dc26ca4f77
+    changedFiles: 1
+    additions: 4
+    deletions: 14
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - leak
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/TapOnTool.kt
+        additions: 4
+        deletions: 14
+        changeType: MODIFIED
+  - 
+    number: 3180
+    title: "fix: guard WorkingDirectory.resolve(String) against absolute paths"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3180
+    mergedAt: 2026-04-15T19:52:01Z
+    baseRefName: main
+    headRefName: MA-4005-fix-working-directory-absolute-path
+    baseRefOid: b4c88bfe971cdc2c18a244be41cb050b5e13c368
+    headRefOid: e59394a0e1886742dbe07ff752c30c5a1e7eed7d
+    mergeCommitOid: f3fad237d94ff77c90031d1a3e4797fc7e5b242f
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - error
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/util/WorkingDirectory.kt
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3170
+    title: "refactor: slim DeviceSpec to required fields + sparse serialization"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3170
+    mergedAt: 2026-04-15T17:46:57Z
+    baseRefName: main
+    headRefName: slimmer-device-spec
+    baseRefOid: d727ed040285dfb512159a4c077e770098042db9
+    headRefOid: b9c537f0fab2752bc9479310fb0bde3932f0021d
+    mergeCommitOid: b4c88bfe971cdc2c18a244be41cb050b5e13c368
+    changedFiles: 13
+    additions: 484
+    deletions: 238
+    labels: 
+[]
+    keywordHits: 
+      - validation
+      - fail
+    hasTests: true
+    testFiles: 
+      - maestro-client/src/test/java/maestro/device/DeviceSpecTest.kt
+      - maestro-client/src/test/java/maestro/device/serialization/DeviceSpecSerializationTest.kt
+      - maestro-orchestra/src/test/java/maestro/orchestra/validation/AppValidatorTest.kt
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+    files: 
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/cloud/CloudInteractor.kt
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/command/StartDeviceCommand.kt
+        additions: 29
+        deletions: 17
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/device/PickDeviceView.kt
+        additions: 5
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/runner/resultview/AnsiResultView.kt
+        additions: 1
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: maestro-client/src/main/java/maestro/device/DeviceService.kt
+        additions: 33
+        deletions: 34
+        changeType: MODIFIED
+      - 
+        path: maestro-client/src/main/java/maestro/device/DeviceSpec.kt
+        additions: 50
+        deletions: 87
+        changeType: MODIFIED
+      - 
+        path: maestro-client/src/main/java/maestro/device/serialization/DeviceLocaleSerializer.kt
+        additions: 27
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: maestro-client/src/main/java/maestro/device/serialization/DeviceSpecModule.kt
+        additions: 8
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: maestro-client/src/main/java/maestro/device/serialization/DeviceSpecSparseSerializer.kt
+        additions: 109
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: maestro-client/src/test/java/maestro/device/DeviceSpecTest.kt
+        additions: 60
+        deletions: 41
+        changeType: MODIFIED
+      - 
+        path: maestro-client/src/test/java/maestro/device/serialization/DeviceSpecSerializationTest.kt
+        additions: 156
+        deletions: 37
+        changeType: MODIFIED
+      - 
+        path: maestro-orchestra/src/main/java/maestro/orchestra/validation/AppValidator.kt
+        additions: 3
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: maestro-orchestra/src/test/java/maestro/orchestra/validation/AppValidatorTest.kt
+        additions: 3
+        deletions: 4
+        changeType: MODIFIED
+  - 
+    number: 3171
+    title: "feat: use direct ADB socket for gRPC instead of TCP port forwarding"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3171
+    mergedAt: 2026-04-14T18:10:41Z
+    baseRefName: main
+    headRefName: socket
+    baseRefOid: 121b6ea1347fe22d81b4c469117da7b54aff3dc2
+    headRefOid: bc6219f431d6403e4553d4abfe7f88488571cedb
+    mergeCommitOid: d727ed040285dfb512159a4c077e770098042db9
+    changedFiles: 7
+    additions: 289
+    deletions: 261
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - maestro-client/src/test/java/maestro/android/AdbSocketFactoryTest.kt
+    debugScore: 2
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: e2e/demo_app/.maestro/webView_chromeDevTools.yaml
+        additions: 13
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: e2e/demo_app/lib/webview.dart
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: maestro-client/src/main/java/maestro/android/AdbSocketFactory.kt
+        additions: 113
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: maestro-client/src/main/java/maestro/android/chromedevtools/DadbChromeDevToolsClient.kt
+        additions: 10
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: maestro-client/src/main/java/maestro/android/chromedevtools/DadbSocket.kt
+        additions: 0
+        deletions: 241
+        changeType: DELETED
+      - 
+        path: maestro-client/src/main/java/maestro/drivers/AndroidDriver.kt
+        additions: 4
+        deletions: 17
+        changeType: MODIFIED
+      - 
+        path: maestro-client/src/test/java/maestro/android/AdbSocketFactoryTest.kt
+        additions: 143
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 3175
+    title: "fix: stabilize :maestro-orchestra:test against cyclic-flow SOE"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3175
+    mergedAt: 2026-04-14T15:06:59Z
+    baseRefName: main
+    headRefName: fix/stabilize-orchestra-tests-cycle-soe
+    baseRefOid: cefe17cbf61ebfa7951de261faf808ccd13980f9
+    headRefOid: 881e367a6513febdc8a1fdd771e0f245552649c7
+    mergeCommitOid: 121b6ea1347fe22d81b4c469117da7b54aff3dc2
+    changedFiles: 2
+    additions: 7
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - crash
+      - error
+      - edge
+      - parser
+      - parsing
+      - fail
+      - failure
+    hasTests: true
+    testFiles: 
+      - maestro-orchestra/src/test/java/maestro/orchestra/workspace/DependencyResolverTest.kt
+    debugScore: 11
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: maestro-orchestra/src/main/java/maestro/orchestra/yaml/YamlCommandReader.kt
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: maestro-orchestra/src/test/java/maestro/orchestra/workspace/DependencyResolverTest.kt
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3174
+    title: "rebuild driver on 26.2"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3174
+    mergedAt: 2026-04-13T23:02:05Z
+    baseRefName: main
+    headRefName: rebuild-drivers
+    baseRefOid: 77f082e7a461f00a5dc78ba0a2a5d61c9e6a1132
+    headRefOid: db7f8730013ebb27377d44c89acefbaff175afb9
+    mergeCommitOid: cefe17cbf61ebfa7951de261faf808ccd13980f9
+    changedFiles: 3
+    additions: 1
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: maestro-ios-driver/src/main/resources/driver-iPhoneSimulator/Debug-iphonesimulator/maestro-driver-ios.zip
+        additions: 0
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: maestro-ios-driver/src/main/resources/driver-iPhoneSimulator/Debug-iphonesimulator/maestro-driver-iosUITests-Runner.zip
+        additions: 0
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: maestro-orchestra/src/main/java/maestro/orchestra/workspace/DependencyResolver.kt
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3154
+    title: "Fix workspace ZIP path traversal for single-flow cloud uploads"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3154
+    mergedAt: 2026-04-13T21:11:11Z
+    baseRefName: main
+    headRefName: feat/better_resolve_dependencies_in_workspace
+    baseRefOid: b3b0867e5cfbeecbf51289b5790f3d50c7c02408
+    headRefOid: a363b1de6df95904652a2be1d92b9b0435fee204
+    mergeCommitOid: 77f082e7a461f00a5dc78ba0a2a5d61c9e6a1132
+    changedFiles: 7
+    additions: 404
+    deletions: 424
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - fail
+      - failure
+      - broken
+    hasTests: true
+    testFiles: 
+      - maestro-cli/src/test/kotlin/maestro/cli/util/WorkspaceUtilsTest.kt
+      - maestro-orchestra/src/test/java/maestro/orchestra/workspace/DependencyResolverTest.kt
+      - maestro-orchestra/src/test/java/maestro/orchestra/workspace/WorkspaceUtilsTest.kt
+    debugScore: 6
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/cloud/CloudInteractor.kt
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/util/WorkspaceUtils.kt
+        additions: 0
+        deletions: 43
+        changeType: DELETED
+      - 
+        path: maestro-cli/src/test/kotlin/maestro/cli/util/WorkspaceUtilsTest.kt
+        additions: 0
+        deletions: 198
+        changeType: DELETED
+      - 
+        path: maestro-orchestra/src/main/java/maestro/orchestra/workspace/DependencyResolver.kt
+        additions: 22
+        deletions: 25
+        changeType: RENAMED
+      - 
+        path: maestro-orchestra/src/main/java/maestro/orchestra/workspace/WorkspaceUtils.kt
+        additions: 100
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: maestro-orchestra/src/test/java/maestro/orchestra/workspace/DependencyResolverTest.kt
+        additions: 86
+        deletions: 157
+        changeType: RENAMED
+      - 
+        path: maestro-orchestra/src/test/java/maestro/orchestra/workspace/WorkspaceUtilsTest.kt
+        additions: 195
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 3173
+    title: "Fix download app script, to fix update samples"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3173
+    mergedAt: 2026-04-13T16:06:56Z
+    baseRefName: main
+    headRefName: update-order
+    baseRefOid: fb078c4bfbf628a5e8fccadd8d60149346e00301
+    headRefOid: e7f354a2138702f8047f0ffe0fccdb28d8670ae5
+    mergeCommitOid: b3b0867e5cfbeecbf51289b5790f3d50c7c02408
+    changedFiles: 2
+    additions: 2
+    deletions: 2
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - fail
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: e2e/download_apps
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: e2e/manifest.txt
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3172
+    title: "build: replace processResources->maestro-android dependsOn with sha25…"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3172
+    mergedAt: 2026-04-13T13:32:18Z
+    baseRefName: main
+    headRefName: maestro-android-source-sentinel
+    baseRefOid: 92c9aaa0d505eb5c67effe47acb91a684d2b62ce
+    headRefOid: c9546fdb5036710f673ed73de5d1c31130ab173f
+    mergeCommitOid: fb078c4bfbf628a5e8fccadd8d60149346e00301
+    changedFiles: 7
+    additions: 148
+    deletions: 21
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - error
+      - fail
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/workflows/check-drivers.yaml
+        additions: 2
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: e2e/manifest.txt
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: maestro-android/build.gradle.kts
+        additions: 67
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: maestro-client/build.gradle.kts
+        additions: 77
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: maestro-client/src/main/resources/maestro-android-source.sha256
+        additions: 1
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: maestro-client/src/main/resources/maestro-app.apk
+        additions: 0
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: maestro-client/src/main/resources/maestro-server.apk
+        additions: 0
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3147
+    title: "Improvements on android E2E job"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3147
+    mergedAt: 2026-04-12T22:22:01Z
+    baseRefName: main
+    headRefName: final-touches
+    baseRefOid: fdbf66e46915efd408487226a5e86b439fafc316
+    headRefOid: 8342918d3db882c85ad10bfa23a8d979f3e7ba60
+    mergeCommitOid: 92c9aaa0d505eb5c67effe47acb91a684d2b62ce
+    changedFiles: 8
+    additions: 707
+    deletions: 153
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/PULL_REQUEST_TEMPLATE.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/test-e2e-prod.yaml
+        additions: 0
+        deletions: 85
+        changeType: DELETED
+      - 
+        path: .github/workflows/test-e2e.yaml
+        additions: 30
+        deletions: 35
+        changeType: MODIFIED
+      - 
+        path: e2e/demo_app/.gitignore
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: e2e/demo_app/pubspec.lock
+        additions: 673
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: e2e/manifest.txt
+        additions: 0
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: e2e/run_tests
+        additions: 3
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: e2e/workspaces/setOrientation/test-set-orientation-flow.yaml
+        additions: 0
+        deletions: 27
+        changeType: DELETED
+  - 
+    number: 3162
+    title: "feat: make Maestro natively suspend-aware"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3162
+    mergedAt: 2026-04-09T20:21:13Z
+    baseRefName: main
+    headRefName: suspend-native-maestro
+    baseRefOid: 3532f772fbe055895b929bc008e9e03d44b8c200
+    headRefOid: 73b12ba36abf259b77afef9229881618d8547617
+    mergeCommitOid: 6337008c4a80cbb4ce4df70d9098130a5c933697
+    changedFiles: 17
+    additions: 296
+    deletions: 197
+    labels: 
+[]
+    keywordHits: 
+      - error
+      - edge
+      - race
+      - timeout
+    hasTests: true
+    testFiles: 
+      - maestro-test/src/main/kotlin/maestro/test/drivers/FakeDriver.kt
+      - maestro-test/src/test/kotlin/maestro/test/IntegrationTest.kt
+    debugScore: 5
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/command/PrintHierarchyCommand.kt
+        additions: 3
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/command/QueryCommand.kt
+        additions: 6
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/command/RecordCommand.kt
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/command/StudioCommand.kt
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/InspectViewHierarchyTool.kt
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/mcp/tools/TakeScreenshotTool.kt
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/runner/TestRunner.kt
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/util/ScreenshotUtils.kt
+        additions: 3
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: maestro-client/src/main/java/maestro/Filters.kt
+        additions: 3
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: maestro-client/src/main/java/maestro/Maestro.kt
+        additions: 143
+        deletions: 126
+        changeType: MODIFIED
+      - 
+        path: maestro-orchestra/src/main/java/maestro/orchestra/Orchestra.kt
+        additions: 42
+        deletions: 45
+        changeType: MODIFIED
+      - 
+        path: maestro-orchestra/src/main/java/maestro/orchestra/geo/Traveller.kt
+        additions: 4
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: maestro-studio/server/src/main/java/maestro/studio/DeviceService.kt
+        additions: 4
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: maestro-test/src/main/kotlin/maestro/test/drivers/FakeDriver.kt
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: maestro-test/src/test/kotlin/maestro/test/IntegrationTest.kt
+        additions: 56
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: maestro-utils/build.gradle.kts
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: maestro-utils/src/main/kotlin/MaestroTimer.kt
+        additions: 22
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3163
+    title: "Detect Azure as CI provider"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3163
+    mergedAt: 2026-04-10T06:27:29Z
+    baseRefName: main
+    headRefName: azure-ci-detection
+    baseRefOid: 6337008c4a80cbb4ce4df70d9098130a5c933697
+    headRefOid: 8aabe56ec221431b772dd2388d1ada8ffdad78df
+    mergeCommitOid: fdbf66e46915efd408487226a5e86b439fafc316
+    changedFiles: 1
+    additions: 1
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: maestro-cli/src/main/java/maestro/cli/util/CiUtils.kt
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3157
+    title: "fix: Orchestra properly respects coroutine cancellation"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3157
+    mergedAt: 2026-04-09T16:54:49Z
+    baseRefName: main
+    headRefName: better-timeouts
+    baseRefOid: ba849f32026707336dc6b48c87d27da0c4d66dc3
+    headRefOid: 266105b7d5c716257761a15b851be923bc54951d
+    mergeCommitOid: 3532f772fbe055895b929bc008e9e03d44b8c200
+    changedFiles: 2
+    additions: 242
+    deletions: 108
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - exception
+      - timeout
+    hasTests: true
+    testFiles: 
+      - maestro-test/src/test/kotlin/maestro/test/IntegrationTest.kt
+    debugScore: 6
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: maestro-orchestra/src/main/java/maestro/orchestra/Orchestra.kt
+        additions: 38
+        deletions: 26
+        changeType: MODIFIED
+      - 
+        path: maestro-test/src/test/kotlin/maestro/test/IntegrationTest.kt
+        additions: 204
+        deletions: 82
+        changeType: MODIFIED
+  - 
+    number: 3150
+    title: "Skip additional config files in workspace execution planner"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3150
+    mergedAt: 2026-04-09T05:44:06Z
+    baseRefName: main
+    headRefName: fix/config_file_checks
+    baseRefOid: 8e39fe5283d5344130c5cc934130cefdf136e7b4
+    headRefOid: 074e66400660c63b38bec4e0a344794aee2c67d7
+    mergeCommitOid: ba849f32026707336dc6b48c87d27da0c4d66dc3
+    changedFiles: 11
+    additions: 138
+    deletions: 8
+    labels: 
+[]
+    keywordHits: 
+      - regression
+      - incorrect
+      - fail
+    hasTests: true
+    testFiles: 
+      - maestro-orchestra/src/test/java/maestro/orchestra/workspace/WorkspaceExecutionPlannerTest.kt
+      - maestro-orchestra/src/test/java/maestro/orchestra/yaml/YamlCommandReaderTest.kt
+      - maestro-orchestra/src/test/resources/workspaces/018_additional_config_files/config.yaml
+      - maestro-orchestra/src/test/resources/workspaces/018_additional_config_files/flowA.yaml
+      - maestro-orchestra/src/test/resources/workspaces/018_additional_config_files/flowB.yaml
+      - maestro-orchestra/src/test/resources/workspaces/018_additional_config_files/platform_settings.yaml
+      - maestro-orchestra/src/test/resources/workspaces/018_additional_config_files/regression_config.yaml
+    debugScore: 4
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: maestro-orchestra-models/src/main/java/maestro/orchestra/WorkspaceConfig.kt
+        additions: 7
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: maestro-orchestra/src/main/java/maestro/orchestra/workspace/Filters.kt
+        additions: 15
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: maestro-orchestra/src/main/java/maestro/orchestra/workspace/WorkspaceExecutionPlanner.kt
+        additions: 8
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: maestro-orchestra/src/main/java/maestro/orchestra/yaml/YamlCommandReader.kt
+        additions: 33
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: maestro-orchestra/src/test/java/maestro/orchestra/workspace/WorkspaceExecutionPlannerTest.kt
+        additions: 18
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: maestro-orchestra/src/test/java/maestro/orchestra/yaml/YamlCommandReaderTest.kt
+        additions: 35
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: maestro-orchestra/src/test/resources/workspaces/018_additional_config_files/config.yaml
+        additions: 2
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: maestro-orchestra/src/test/resources/workspaces/018_additional_config_files/flowA.yaml
+        additions: 5
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: maestro-orchestra/src/test/resources/workspaces/018_additional_config_files/flowB.yaml
+        additions: 5
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: maestro-orchestra/src/test/resources/workspaces/018_additional_config_files/platform_settings.yaml
+        additions: 5
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: maestro-orchestra/src/test/resources/workspaces/018_additional_config_files/regression_config.yaml
+        additions: 5
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 3159
+    title: "fix: resolve config path before filtering flow files"
+    url: https://github.com/mobile-dev-inc/Maestro/pull/3159
+    mergedAt: 2026-04-09T01:03:13Z
+    baseRefName: main
+    headRefName: chore/resolve_config_path_before_filtering_flow_files
+    baseRefOid: 8e39fe5283d5344130c5cc934130cefdf136e7b4
+    headRefOid: 406f73c3c27213d1e910f85c41ac0bdb5d0a0eb3
+    mergeCommitOid: b979e6cf2bfa52f76a092badb0adb6a0068adc6e
+    changedFiles: 1
+    additions: 8
+    deletions: 6
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: maestro-orchestra/src/main/java/maestro/orchestra/workspace/WorkspaceExecutionPlanner.kt
+        additions: 8
+        deletions: 6
+        changeType: MODIFIED

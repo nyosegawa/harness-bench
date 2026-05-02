@@ -1,0 +1,2241 @@
+generatedAt: 2026-05-02T10:21:05.837Z
+repo: starship/starship
+since: 2026-01-01
+limit: 50
+debugKeywords: 
+  - bug
+  - fix
+  - regression
+  - crash
+  - incorrect
+  - wrong
+  - error
+  - exception
+  - edge
+  - flaky
+  - race
+  - leak
+  - validation
+  - parser
+  - parsing
+  - timeout
+  - fail
+  - failure
+  - broken
+prs: 
+  - 
+    number: 7415
+    title: "fix(python): align `python_binary` schema with argument support"
+    url: https://github.com/starship/starship/pull/7415
+    mergedAt: 2026-04-30T19:08:00Z
+    baseRefName: master
+    headRefName: chore/python-binary-schema-context
+    baseRefOid: c97455d9debe8d2b655753e570af7c466c71e413
+    headRefOid: fc3e281fde22c3764b2826f535cc8f004982e504
+    mergeCommitOid: 3ec9b5c54caa828164c710500a25ccd43ef26a64
+    changedFiles: 3
+    additions: 65
+    deletions: 14
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - regression
+      - validation
+      - parser
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/config-schema.json
+        additions: 20
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: docs/config/README.md
+        additions: 26
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: src/config.rs
+        additions: 19
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 7446
+    title: "chore: rename master branch to main (#7410)"
+    url: https://github.com/starship/starship/pull/7446
+    mergedAt: 2026-04-30T19:54:57Z
+    baseRefName: main
+    headRefName: master
+    baseRefOid: 387c2f6e28bdaff867e687190730f0b3ae42c62c
+    headRefOid: 93f5410db91d96e3866db7336aa3b09dfbae44dd
+    mergeCommitOid: 6a2096608ecafe76a0b87a6f876e4f786b2157f5
+    changedFiles: 3
+    additions: 47
+    deletions: 36
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/workflows/release.yml
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: CONTRIBUTING.md
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: README.md
+        additions: 43
+        deletions: 32
+        changeType: MODIFIED
+  - 
+    number: 7410
+    title: "chore: rename master branch to main"
+    url: https://github.com/starship/starship/pull/7410
+    mergedAt: 2026-04-30T19:51:03Z
+    baseRefName: main
+    headRefName: main-branch
+    baseRefOid: 37ac6b1d48b0a0cb4d716568e9bfa29b94371755
+    headRefOid: 6ebec66f5e9e2417cb96f4d4dc8f676d368b4391
+    mergeCommitOid: 93f5410db91d96e3866db7336aa3b09dfbae44dd
+    changedFiles: 3
+    additions: 47
+    deletions: 36
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/workflows/release.yml
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: CONTRIBUTING.md
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: README.md
+        additions: 43
+        deletions: 32
+        changeType: MODIFIED
+  - 
+    number: 7404
+    title: "docs(i18n): new Crowdin updates"
+    url: https://github.com/starship/starship/pull/7404
+    mergedAt: 2026-04-30T19:33:54Z
+    baseRefName: master
+    headRefName: i18n_master
+    baseRefOid: 5fd735f05d6fff26bd2ee650f71337a8697fbc97
+    headRefOid: a2d3619071eb1172386cde69fe2acf126237ea6b
+    mergeCommitOid: 387c2f6e28bdaff867e687190730f0b3ae42c62c
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docs/es-ES/config/README.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7445
+    title: "chore(master): release 1.25.1"
+    url: https://github.com/starship/starship/pull/7445
+    mergedAt: 2026-04-30T19:33:08Z
+    baseRefName: master
+    headRefName: release-please--branches--master--components--starship
+    baseRefOid: 27079d7669b3072a944d3610f5dd5fec65321841
+    headRefOid: 6146b2bdeebb9aff8f3e55d6326f30e8b27142f5
+    mergeCommitOid: 8758daa7767d4e73874330b1e262fca66a7ffd30
+    changedFiles: 3
+    additions: 11
+    deletions: 2
+    labels: 
+      - "autorelease: tagged"
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 9
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Cargo.lock
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7421
+    title: "fix(git): improve bare repository detection"
+    url: https://github.com/starship/starship/pull/7421
+    mergedAt: 2026-04-30T19:13:09Z
+    baseRefName: master
+    headRefName: bare-repo-handling
+    baseRefOid: ef2c594a4c725676d689b389b8efd2ab97d5749a
+    headRefOid: 038f37d5711e00a38a684191167c81b479d40bb0
+    mergeCommitOid: 27079d7669b3072a944d3610f5dd5fec65321841
+    changedFiles: 3
+    additions: 104
+    deletions: 5
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: src/modules/git_branch.rs
+        additions: 42
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/modules/git_metrics.rs
+        additions: 29
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: src/modules/git_status.rs
+        additions: 33
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7440
+    title: "fix(presets): Update no-nerd-font to be up-to-date"
+    url: https://github.com/starship/starship/pull/7440
+    mergedAt: 2026-04-30T19:10:56Z
+    baseRefName: master
+    headRefName: no-nerd-font-update
+    baseRefOid: b426db92a19da2ee5b457f06b96d1f01334545a4
+    headRefOid: bebbf53d2f3c59514b2a764264d339154c7ecd5a
+    mergeCommitOid: 65fb647bc38da09fe5d140f055c9f67d740bfa67
+    changedFiles: 1
+    additions: 3
+    deletions: 9
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docs/public/presets/toml/no-nerd-font.toml
+        additions: 3
+        deletions: 9
+        changeType: MODIFIED
+  - 
+    number: 7444
+    title: "build(config): migrate Renovate config"
+    url: https://github.com/starship/starship/pull/7444
+    mergedAt: 2026-04-30T18:48:11Z
+    baseRefName: master
+    headRefName: renovate/migrate-config
+    baseRefOid: c22100a678604a88ad07478d100ae03ce3c95ac9
+    headRefOid: 5581ef95124249c256d3b14fe8a70ee5d2e9f583
+    mergeCommitOid: 53270fb3f641691f9be2ffe2641bbd11c7696b3b
+    changedFiles: 1
+    additions: 108
+    deletions: 57
+    labels: 
+      - "📦 dependencies"
+    keywordHits: 
+      - wrong
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/renovate.json5
+        additions: 108
+        deletions: 57
+        changeType: MODIFIED
+  - 
+    number: 7390
+    title: "ci: Pin actions digests, remove unnecessary actions and add minimumReleaseAge"
+    url: https://github.com/starship/starship/pull/7390
+    mergedAt: 2026-04-30T18:39:15Z
+    baseRefName: master
+    headRefName: action-pin
+    baseRefOid: aac03c7e3edb8eef005739fde6b2e0967d911a13
+    headRefOid: 2b9afc7ca8a9173a6f87629646cc16433eacc016
+    mergeCommitOid: c22100a678604a88ad07478d100ae03ce3c95ac9
+    changedFiles: 9
+    additions: 99
+    deletions: 93
+    labels: 
+[]
+    keywordHits: 
+      - error
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/renovate.json5
+        additions: 18
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/crowdin-pretranslate.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/format-workflow.yml
+        additions: 10
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/install-script.yml
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/publish-docs.yml
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/release.yml
+        additions: 27
+        deletions: 29
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/security-audit.yml
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/spell-check.yml
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/workflow.yml
+        additions: 34
+        deletions: 39
+        changeType: MODIFIED
+  - 
+    number: 7432
+    title: "chore(deps): update gix to 0.83 as 0.82 was yanked"
+    url: https://github.com/starship/starship/pull/7432
+    mergedAt: 2026-04-28T09:44:15Z
+    baseRefName: master
+    headRefName: update-gix
+    baseRefOid: 0cfd6af20f7231f88c9c90079f979d0a1ce029d5
+    headRefOid: a518dd37c61d1cfbabc3475bbc543cbd106c40a7
+    mergeCommitOid: b426db92a19da2ee5b457f06b96d1f01334545a4
+    changedFiles: 2
+    additions: 95
+    deletions: 102
+    labels: 
+[]
+    keywordHits: 
+      - error
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.lock
+        additions: 94
+        deletions: 101
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7430
+    title: "build(deps): update rust crate clap_complete to 4.6.3"
+    url: https://github.com/starship/starship/pull/7430
+    mergedAt: 2026-04-27T20:56:01Z
+    baseRefName: master
+    headRefName: renovate/clap-crates
+    baseRefOid: a84ad4f4aada276f43ea00331a9abe4c103f52ed
+    headRefOid: f3b8a1e27895b3a0d948502822e958f1a63805b2
+    mergeCommitOid: 0cfd6af20f7231f88c9c90079f979d0a1ce029d5
+    changedFiles: 2
+    additions: 3
+    deletions: 3
+    labels: 
+      - "📦 dependencies"
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.lock
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7229
+    title: "docs(preset): enhance nerd-font-symbols with additional icons"
+    url: https://github.com/starship/starship/pull/7229
+    mergedAt: 2026-04-14T17:55:17Z
+    baseRefName: master
+    headRefName: feat/nerd-font-symbols-preset
+    baseRefOid: b26545e6abc4d79ea7f410bafe31901bed0a1968
+    headRefOid: a9104190329aa6e877d918a464340ad616663b38
+    mergeCommitOid: 18cc9f3ef9a077f9b3757765b5670643e1b298d3
+    changedFiles: 1
+    additions: 117
+    deletions: 17
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docs/public/presets/toml/nerd-font-symbols.toml
+        additions: 117
+        deletions: 17
+        changeType: MODIFIED
+  - 
+    number: 7429
+    title: "build(deps): update rust crate whoami to 2.1.2"
+    url: https://github.com/starship/starship/pull/7429
+    mergedAt: 2026-04-27T10:05:50Z
+    baseRefName: master
+    headRefName: renovate/whoami-2.x
+    baseRefOid: ef2c594a4c725676d689b389b8efd2ab97d5749a
+    headRefOid: a5ebf95403e2a1d9dfa343627013a9ee57cfe7ed
+    mergeCommitOid: 02622a1b4abc7e58de3e08c29de9fc03a86adfb4
+    changedFiles: 2
+    additions: 5
+    deletions: 5
+    labels: 
+      - "📦 dependencies"
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.lock
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7422
+    title: "build(deps): update rust crate gix to 0.82.0"
+    url: https://github.com/starship/starship/pull/7422
+    mergedAt: 2026-04-26T19:51:21Z
+    baseRefName: master
+    headRefName: renovate/gitoxide-crates
+    baseRefOid: c97455d9debe8d2b655753e570af7c466c71e413
+    headRefOid: e2c9b12ac5cc23e509b9430dfd5c0fd80281b0c9
+    mergeCommitOid: 37fb6af201b50e0c75291ae4be568f1a14a31885
+    changedFiles: 3
+    additions: 140
+    deletions: 165
+    labels: 
+      - "📦 dependencies"
+    keywordHits: 
+      - bug
+      - fix
+      - fail
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.lock
+        additions: 125
+        deletions: 134
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/modules/git_metrics.rs
+        additions: 14
+        deletions: 30
+        changeType: MODIFIED
+  - 
+    number: 7392
+    title: "docs(presets): add bun module to presets missing it"
+    url: https://github.com/starship/starship/pull/7392
+    mergedAt: 2026-04-26T10:47:16Z
+    baseRefName: master
+    headRefName: fix/add-bun-to-preset
+    baseRefOid: b26545e6abc4d79ea7f410bafe31901bed0a1968
+    headRefOid: 91b7455a83d7ec53e95b501c2b1f9826f875c8c6
+    mergeCommitOid: 9d6247a1c94c098968449088e8fd5b26a5f2afa7
+    changedFiles: 6
+    additions: 32
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+      - regression
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docs/public/presets/toml/catppuccin-powerline.toml
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs/public/presets/toml/gruvbox-rainbow.toml
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs/public/presets/toml/jetpack.toml
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs/public/presets/toml/no-nerd-font.toml
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs/public/presets/toml/pastel-powerline.toml
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs/public/presets/toml/tokyo-night.toml
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 7417
+    title: "build(deps): update googleapis/release-please-action action to v5 - autoclosed"
+    url: https://github.com/starship/starship/pull/7417
+    mergedAt: 2026-04-26T10:39:07Z
+    baseRefName: master
+    headRefName: renovate/googleapis-release-please-action-5.x
+    baseRefOid: c97455d9debe8d2b655753e570af7c466c71e413
+    headRefOid: ca34fe295855c66eb47c396f144a47d684f88ab0
+    mergeCommitOid: 53a0e6c3f24c7cf6f9ffdb6a7f81ca990b46a8de
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+      - "📦 dependencies"
+    keywordHits: 
+      - bug
+      - fix
+      - race
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/workflows/release.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7419
+    title: "build(deps): update rust crate shadow-rs to v2"
+    url: https://github.com/starship/starship/pull/7419
+    mergedAt: 2026-04-26T10:38:50Z
+    baseRefName: master
+    headRefName: renovate/shadow-rs-2.x
+    baseRefOid: c97455d9debe8d2b655753e570af7c466c71e413
+    headRefOid: f9274df8ba60d5a368e36528d1b0c906f4deb5db
+    mergeCommitOid: fcfff6808951d87b2ee51759c1e8b596ff83319d
+    changedFiles: 2
+    additions: 5
+    deletions: 43
+    labels: 
+      - "📦 dependencies"
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.lock
+        additions: 3
+        deletions: 41
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 7409
+    title: "build(deps): update rust crate notify-rust to 4.16.0"
+    url: https://github.com/starship/starship/pull/7409
+    mergedAt: 2026-04-19T12:27:36Z
+    baseRefName: master
+    headRefName: renovate/notify-rust-4.x
+    baseRefOid: 37ac6b1d48b0a0cb4d716568e9bfa29b94371755
+    headRefOid: 32e342dcc4bbdfda2a4696de10065651e8bcf1df
+    mergeCommitOid: c8a48cdd9718ec939e5a2db4a6447e3f9e0dfc3f
+    changedFiles: 2
+    additions: 3
+    deletions: 3
+    labels: 
+      - "📦 dependencies"
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.lock
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7408
+    title: "build(deps): update rust crate open to 5.3.4"
+    url: https://github.com/starship/starship/pull/7408
+    mergedAt: 2026-04-19T12:07:40Z
+    baseRefName: master
+    headRefName: renovate/open-5.x
+    baseRefOid: e24aae7751f6885b14c363aca592618ab64c1114
+    headRefOid: 1948d47d05560355bf2160e55f06fc70e76f6d60
+    mergeCommitOid: 37ac6b1d48b0a0cb4d716568e9bfa29b94371755
+    changedFiles: 2
+    additions: 3
+    deletions: 3
+    labels: 
+      - "📦 dependencies"
+    keywordHits: 
+      - bug
+      - fix
+      - fail
+      - failure
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.lock
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7406
+    title: "chore(docs): fix markdown syntax of translated files"
+    url: https://github.com/starship/starship/pull/7406
+    mergedAt: 2026-04-19T11:33:29Z
+    baseRefName: master
+    headRefName: fix-docs
+    baseRefOid: 5fd735f05d6fff26bd2ee650f71337a8697fbc97
+    headRefOid: fd8ce0fc78793fe352a0daa496e6d760a27f59d4
+    mergeCommitOid: e24aae7751f6885b14c363aca592618ab64c1114
+    changedFiles: 9
+    additions: 131
+    deletions: 122
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docs/es-ES/config/README.md
+        additions: 16
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: docs/ja-JP/config/README.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/ko-KR/config/README.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/pl-PL/README.md
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: docs/pl-PL/guide/README.md
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: docs/ru-RU/advanced-config/README.md
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: docs/ru-RU/installing/README.md
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: docs/zh-TW/advanced-config/README.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/zh-TW/config/README.md
+        additions: 102
+        deletions: 102
+        changeType: MODIFIED
+  - 
+    number: 7030
+    title: "fish(init/elvish): improve starship path encoding"
+    url: https://github.com/starship/starship/pull/7030
+    mergedAt: 2026-04-18T10:56:27Z
+    baseRefName: master
+    headRefName: fix-elvish-win-e
+    baseRefOid: 32b58831a6dcd47b6a39598f553fbea6b8ec9736
+    headRefOid: ed98e4dee23eaabb54729e562e994446aaa44d17
+    mergeCommitOid: ba990c111145f291b618d4b483d55b12cde1e230
+    changedFiles: 1
+    additions: 12
+    deletions: 2
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: src/init/mod.rs
+        additions: 12
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 7206
+    title: "docs(i18n): new Crowdin updates"
+    url: https://github.com/starship/starship/pull/7206
+    mergedAt: 2026-04-18T11:11:46Z
+    baseRefName: master
+    headRefName: i18n_master
+    baseRefOid: 0110bf59c86f6f0f33f95dc614c231acc19547b8
+    headRefOid: 2681e56d495db21bae3b830a67dfc6c9c49a4631
+    mergeCommitOid: 5fd735f05d6fff26bd2ee650f71337a8697fbc97
+    changedFiles: 115
+    additions: 12682
+    deletions: 2156
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -7
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - huge-diff
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docs/ar-SA/README.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/ar-SA/advanced-config/README.md
+        additions: 310
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs/ar-SA/config/README.md
+        additions: 189
+        deletions: 70
+        changeType: MODIFIED
+      - 
+        path: docs/ar-SA/guide/README.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/bn-BD/README.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/bn-BD/advanced-config/README.md
+        additions: 310
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs/bn-BD/config/README.md
+        additions: 189
+        deletions: 70
+        changeType: MODIFIED
+      - 
+        path: docs/bn-BD/guide/README.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/ckb-IR/README.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/ckb-IR/advanced-config/README.md
+        additions: 310
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs/ckb-IR/config/README.md
+        additions: 189
+        deletions: 70
+        changeType: MODIFIED
+      - 
+        path: docs/ckb-IR/guide/README.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/de-DE/README.md
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: docs/de-DE/advanced-config/README.md
+        additions: 317
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: docs/de-DE/config/README.md
+        additions: 325
+        deletions: 206
+        changeType: MODIFIED
+      - 
+        path: docs/de-DE/faq/README.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/de-DE/guide/README.md
+        additions: 9
+        deletions: 9
+        changeType: MODIFIED
+      - 
+        path: docs/de-DE/installing/README.md
+        additions: 9
+        deletions: 9
+        changeType: MODIFIED
+      - 
+        path: docs/de-DE/migrating-to-0.45.0/README.md
+        additions: 46
+        deletions: 46
+        changeType: MODIFIED
+      - 
+        path: docs/de-DE/presets/README.md
+        additions: 33
+        deletions: 33
+        changeType: MODIFIED
+      - 
+        path: docs/de-DE/presets/bracketed-segments.md
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: docs/de-DE/presets/catppuccin-powerline.md
+        additions: 7
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: docs/de-DE/presets/gruvbox-rainbow.md
+        additions: 6
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: docs/de-DE/presets/jetpack.md
+        additions: 9
+        deletions: 9
+        changeType: MODIFIED
+      - 
+        path: docs/de-DE/presets/nerd-font.md
+        additions: 6
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: docs/de-DE/presets/no-empty-icons.md
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: docs/de-DE/presets/no-nerd-font.md
+        additions: 6
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: docs/de-DE/presets/no-runtimes.md
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: docs/de-DE/presets/pastel-powerline.md
+        additions: 6
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: docs/de-DE/presets/plain-text.md
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: docs/de-DE/presets/pure-preset.md
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: docs/de-DE/presets/tokyo-night.md
+        additions: 6
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: docs/es-ES/README.md
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: docs/es-ES/advanced-config/README.md
+        additions: 310
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs/es-ES/config/README.md
+        additions: 1795
+        deletions: 160
+        changeType: MODIFIED
+      - 
+        path: docs/es-ES/guide/README.md
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: docs/fr-FR/README.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/fr-FR/advanced-config/README.md
+        additions: 310
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs/fr-FR/config/README.md
+        additions: 189
+        deletions: 70
+        changeType: MODIFIED
+      - 
+        path: docs/fr-FR/guide/README.md
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: docs/fr-FR/installing/README.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/fr-FR/presets/bracketed-segments.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/fr-FR/presets/gruvbox-rainbow.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/fr-FR/presets/jetpack.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/fr-FR/presets/nerd-font.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/fr-FR/presets/no-empty-icons.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/fr-FR/presets/no-nerd-font.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/fr-FR/presets/no-runtimes.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/fr-FR/presets/pastel-powerline.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/fr-FR/presets/plain-text.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/fr-FR/presets/pure-preset.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/fr-FR/presets/tokyo-night.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/id-ID/README.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/id-ID/advanced-config/README.md
+        additions: 310
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs/id-ID/config/README.md
+        additions: 176
+        deletions: 57
+        changeType: MODIFIED
+      - 
+        path: docs/id-ID/guide/README.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/it-IT/README.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/it-IT/advanced-config/README.md
+        additions: 310
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs/it-IT/config/README.md
+        additions: 189
+        deletions: 70
+        changeType: MODIFIED
+      - 
+        path: docs/it-IT/guide/README.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7199
+    title: "chore(master): release 1.25.0"
+    url: https://github.com/starship/starship/pull/7199
+    mergedAt: 2026-04-18T11:10:42Z
+    baseRefName: master
+    headRefName: release-please--branches--master--components--starship
+    baseRefOid: ba990c111145f291b618d4b483d55b12cde1e230
+    headRefOid: 9b4464b123bae7cc92d583c88d6c271287c0e104
+    mergeCommitOid: 457f16069b666d76e202708e0e3464122b57a6d5
+    changedFiles: 3
+    additions: 29
+    deletions: 2
+    labels: 
+      - "autorelease: tagged"
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 27
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Cargo.lock
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7393
+    title: "build(deps): update softprops/action-gh-release action to v3"
+    url: https://github.com/starship/starship/pull/7393
+    mergedAt: 2026-04-14T17:56:16Z
+    baseRefName: master
+    headRefName: renovate/softprops-action-gh-release-3.x
+    baseRefOid: b26545e6abc4d79ea7f410bafe31901bed0a1968
+    headRefOid: f199c41be0fc2abf86b999123f7c34e7c9b6ed44
+    mergeCommitOid: ba5fecb625203236b1a0c97ba9e036a0cf483d7e
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+      - "📦 dependencies"
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/workflows/release.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7396
+    title: "build(deps): update rust crate clap_complete to 4.6.2"
+    url: https://github.com/starship/starship/pull/7396
+    mergedAt: 2026-04-13T21:29:50Z
+    baseRefName: master
+    headRefName: renovate/clap-crates
+    baseRefOid: 0b6b417534c6f9f270533b7ab81b91a4a5c55269
+    headRefOid: 48b634eb27e8c6ace45764dedb65ba9567e03960
+    mergeCommitOid: 59cc115f7568a44a18d6d44efb55952c91b3bc84
+    changedFiles: 2
+    additions: 3
+    deletions: 3
+    labels: 
+      - "📦 dependencies"
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.lock
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7391
+    title: "chore: fix workflow and bump config schema"
+    url: https://github.com/starship/starship/pull/7391
+    mergedAt: 2026-04-11T11:18:14Z
+    baseRefName: master
+    headRefName: fix-ci
+    baseRefOid: 58b45cc927a82e9b0683f66d9586778b88b51726
+    headRefOid: 4f7ce7af81e0f620c5b2d1975984bb4bb199449f
+    mergeCommitOid: 727fbe191461e5e80465b59e56d8ab02ff78d31d
+    changedFiles: 2
+    additions: 16
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/config-schema.json
+        additions: 15
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/format-workflow.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7387
+    title: "build(deps): update actions/github-script action to v9"
+    url: https://github.com/starship/starship/pull/7387
+    mergedAt: 2026-04-11T10:52:00Z
+    baseRefName: master
+    headRefName: renovate/actions-github-script-9.x
+    baseRefOid: 0e825d4f1d7e4076eb94cfd3494627800e2c7edc
+    headRefOid: ff05bb55505da247370570bb0c7b31d056ec9d8a
+    mergeCommitOid: 58b45cc927a82e9b0683f66d9586778b88b51726
+    changedFiles: 1
+    additions: 2
+    deletions: 2
+    labels: 
+      - "📦 dependencies"
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/workflows/format-workflow.yml
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 7385
+    title: "build(deps): update rust crate notify-rust to 4.14.0"
+    url: https://github.com/starship/starship/pull/7385
+    mergedAt: 2026-04-08T23:44:16Z
+    baseRefName: master
+    headRefName: renovate/notify-rust-4.x
+    baseRefOid: 6b6bbd76739b37507035b94db51ba7fa184c5e41
+    headRefOid: 6749abe20d92ca04ef1a8af9174a09abe7dfcfd1
+    mergeCommitOid: 01e5ebe57c3d9ffd645e301d6005624b1e50b009
+    changedFiles: 2
+    additions: 3
+    deletions: 3
+    labels: 
+      - "📦 dependencies"
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.lock
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7384
+    title: "build(deps): update rust crate jsonc-parser to 0.32.3"
+    url: https://github.com/starship/starship/pull/7384
+    mergedAt: 2026-04-08T23:44:01Z
+    baseRefName: master
+    headRefName: renovate/jsonc-parser-0.x
+    baseRefOid: 6b6bbd76739b37507035b94db51ba7fa184c5e41
+    headRefOid: 0b20f6ae0c0dc6f9599f7af0f70f989156b67b2a
+    mergeCommitOid: 05b8f2e0024a2c6f15459f1d108c5e626df55eb4
+    changedFiles: 2
+    additions: 3
+    deletions: 3
+    labels: 
+      - "📦 dependencies"
+    keywordHits: 
+      - parser
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.lock
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7329
+    title: "fix(hg_state): avoid false-positive MERGING state"
+    url: https://github.com/starship/starship/pull/7329
+    mergedAt: 2026-04-03T16:05:23Z
+    baseRefName: master
+    headRefName: fix/hg-state-merge-detection
+    baseRefOid: f0c75042d3dd194bbf6010828ae4504c67dbbe8a
+    headRefOid: eb9390c546cac6a8c446f586bdb249190c42976a
+    mergeCommitOid: 7a274752d0803960ae25259c8641f6e676f9c7b2
+    changedFiles: 1
+    additions: 31
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: src/modules/hg_state.rs
+        additions: 31
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7339
+    title: "build(deps): update dependency dprint/dprint-plugin-json to v0.21.3"
+    url: https://github.com/starship/starship/pull/7339
+    mergedAt: 2026-04-06T12:27:51Z
+    baseRefName: master
+    headRefName: renovate/dprint-plugins
+    baseRefOid: b84ffd6dfbe9a8149b72b5709762cc2836b4413b
+    headRefOid: 9d90b78adc2708323db89df0cfba62a784f137df
+    mergeCommitOid: cab65a4696a9f616989fe9094a1d79c26cd2ee0e
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+      - "📦 dependencies"
+    keywordHits: 
+      - parser
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .dprint.json
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7337
+    title: "ci: add riscv64 to release build matrix"
+    url: https://github.com/starship/starship/pull/7337
+    mergedAt: 2026-04-03T16:03:47Z
+    baseRefName: master
+    headRefName: feat/release-riscv64
+    baseRefOid: 6d0a1263fcc74381791805cee57fc466f6e6359c
+    headRefOid: 6f80522f3412b525b3d209852daec10ad997fe06
+    mergeCommitOid: 9c0416a3a76a10cfe3b22248b315966cbf69f4c4
+    changedFiles: 2
+    additions: 7
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/workflows/release.yml
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: install/install.sh
+        additions: 3
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7378
+    title: "build(deps): update rust crate notify-rust to 4.13.1"
+    url: https://github.com/starship/starship/pull/7378
+    mergedAt: 2026-04-05T00:26:34Z
+    baseRefName: master
+    headRefName: renovate/notify-rust-4.x
+    baseRefOid: f19d847cec4d8504c668ce5ef74e63f4680e2c5e
+    headRefOid: beb160dd4d14cd082c26e0740cedfc41d9bd6eb7
+    mergeCommitOid: 85f664b4b657a1add4c73cb931db701b36d8eb3d
+    changedFiles: 2
+    additions: 3
+    deletions: 3
+    labels: 
+      - "📦 dependencies"
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.lock
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7362
+    title: "build(deps): update rust crate sha1 to 0.11.0"
+    url: https://github.com/starship/starship/pull/7362
+    mergedAt: 2026-04-04T20:55:12Z
+    baseRefName: master
+    headRefName: renovate/sha1-0.x
+    baseRefOid: 402e9cac5789d7ca98f630ba8d3009f6f0859db3
+    headRefOid: 7f82238dccb5b27c34233e3e9b33e4c64d61525c
+    mergeCommitOid: f19d847cec4d8504c668ce5ef74e63f4680e2c5e
+    changedFiles: 2
+    additions: 59
+    deletions: 4
+    labels: 
+      - "📦 dependencies"
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.lock
+        additions: 58
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7376
+    title: "build(deps): update rust crate notify-rust to 4.13.0"
+    url: https://github.com/starship/starship/pull/7376
+    mergedAt: 2026-04-04T05:16:42Z
+    baseRefName: master
+    headRefName: renovate/notify-rust-4.x
+    baseRefOid: 52d4a1494d72774ea4b5cdef92fc471c5be54890
+    headRefOid: 1b696c037b57d2ff43afae10f08e0d934fe6b52a
+    mergeCommitOid: 9345072a38a39b4bd2e657278df4678137661a3d
+    changedFiles: 2
+    additions: 3
+    deletions: 3
+    labels: 
+      - "📦 dependencies"
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.lock
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7374
+    title: "build(deps): update rust crate starship-battery to 0.11.0"
+    url: https://github.com/starship/starship/pull/7374
+    mergedAt: 2026-04-03T21:27:35Z
+    baseRefName: master
+    headRefName: renovate/starship-battery-0.x
+    baseRefOid: 402e9cac5789d7ca98f630ba8d3009f6f0859db3
+    headRefOid: 3e157d92187c7e06deb8ca917aa9f83842990b7a
+    mergeCommitOid: 3df5dd254e930f4828e31c035626f6565cb1158c
+    changedFiles: 2
+    additions: 29
+    deletions: 24
+    labels: 
+      - "📦 dependencies"
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.lock
+        additions: 28
+        deletions: 23
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7358
+    title: "build(deps): update rust crate unicode-segmentation to 1.13.2"
+    url: https://github.com/starship/starship/pull/7358
+    mergedAt: 2026-04-03T21:27:17Z
+    baseRefName: master
+    headRefName: renovate/unicode-crates
+    baseRefOid: 402e9cac5789d7ca98f630ba8d3009f6f0859db3
+    headRefOid: 103aacfda1c7744749fa51237fdd51ed68448c47
+    mergeCommitOid: 7104d79920aa52912ff9b4e1dd23e5e8105c1a6b
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+      - "📦 dependencies"
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7234
+    title: "feat: add statusline subcommand for Claude Code integration"
+    url: https://github.com/starship/starship/pull/7234
+    mergedAt: 2026-04-03T16:02:39Z
+    baseRefName: master
+    headRefName: claude-code-status
+    baseRefOid: 6d0a1263fcc74381791805cee57fc466f6e6359c
+    headRefOid: 26bb73dbe35e97fdee483de5fcc1fc194b7321ba
+    mergeCommitOid: b8ee82167c5b49c7e9fd70e5542fad0e56810b39
+    changedFiles: 25
+    additions: 1760
+    deletions: 29
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - src/test/mod.rs
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+    files: 
+      - 
+        path: .github/config-schema.json
+        additions: 211
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/advanced-config/README.md
+        additions: 310
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs/config/README.md
+        additions: 13
+        deletions: 13
+        changeType: MODIFIED
+      - 
+        path: src/config.rs
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/configs/claude_context.rs
+        additions: 79
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/configs/claude_cost.rs
+        additions: 45
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/configs/claude_model.rs
+        additions: 29
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/configs/mod.rs
+        additions: 9
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/configs/starship_root.rs
+        additions: 14
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/configure.rs
+        additions: 1
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: src/context.rs
+        additions: 15
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lib.rs
+        additions: 0
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/main.rs
+        additions: 27
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/module.rs
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/modules/claude_context.rs
+        additions: 419
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/modules/claude_cost.rs
+        additions: 262
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/modules/claude_model.rs
+        additions: 171
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/modules/mod.rs
+        additions: 9
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/modules/rust.rs
+        additions: 1
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/print.rs
+        additions: 33
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/test/mod.rs
+        additions: 6
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/utils/env.rs
+        additions: 0
+        deletions: 0
+        changeType: RENAMED
+      - 
+        path: src/utils/mod.rs
+        additions: 44
+        deletions: 0
+        changeType: RENAMED
+      - 
+        path: src/utils/serde.rs
+        additions: 0
+        deletions: 0
+        changeType: RENAMED
+      - 
+        path: src/utils/statusline.rs
+        additions: 58
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 7352
+    title: "chore: fix clippy warnings for rust 1.94 & resolve typo check"
+    url: https://github.com/starship/starship/pull/7352
+    mergedAt: 2026-04-03T17:49:11Z
+    baseRefName: master
+    headRefName: clippy194
+    baseRefOid: 8f9012b277f1beda4d04f79ee63effed3658749c
+    headRefOid: d8eed142d99dbaaea4b5daba467bd83c5754bdca
+    mergeCommitOid: 402e9cac5789d7ca98f630ba8d3009f6f0859db3
+    changedFiles: 4
+    additions: 7
+    deletions: 9
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: install/install.sh
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: src/context.rs
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/modules/dotnet.rs
+        additions: 2
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: src/print.rs
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7371
+    title: "build(deps): update toml crates"
+    url: https://github.com/starship/starship/pull/7371
+    mergedAt: 2026-04-03T17:36:21Z
+    baseRefName: master
+    headRefName: renovate/toml-crates
+    baseRefOid: a1fe09e9563ec51e130d767dba4e211019484d89
+    headRefOid: 30db9bc0b8cfc63ee35bb68a5791496bf7ee2fdb
+    mergeCommitOid: 8f9012b277f1beda4d04f79ee63effed3658749c
+    changedFiles: 2
+    additions: 15
+    deletions: 15
+    labels: 
+      - "📦 dependencies"
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.lock
+        additions: 13
+        deletions: 13
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 7259
+    title: "docs(config): Default Prompt Format"
+    url: https://github.com/starship/starship/pull/7259
+    mergedAt: 2026-04-03T16:09:07Z
+    baseRefName: master
+    headRefName: docs-default-prompt-format
+    baseRefOid: f72a79dc21e010e26586e26661d85e5aca781614
+    headRefOid: c359b71185b0849473b63fda09f87b855a0096ed
+    mergeCommitOid: 533479e99a5519e8a2c83535be1668e932ce5e67
+    changedFiles: 1
+    additions: 10
+    deletions: 4
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docs/config/README.md
+        additions: 10
+        deletions: 4
+        changeType: MODIFIED
+  - 
+    number: 7317
+    title: "fix(direnv): accept null loadedRC state"
+    url: https://github.com/starship/starship/pull/7317
+    mergedAt: 2026-04-03T16:06:31Z
+    baseRefName: master
+    headRefName: master
+    baseRefOid: b9694629a36c99b07b5c5d9e49815cea67395de0
+    headRefOid: 0b38a965c60e068822e290fe9fed25b03660475f
+    mergeCommitOid: 56b8901f6feaa841de1f38054db7b3ae495a457b
+    changedFiles: 1
+    additions: 160
+    deletions: 34
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - parser
+      - parsing
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: src/modules/direnv.rs
+        additions: 160
+        deletions: 34
+        changeType: MODIFIED
+  - 
+    number: 7356
+    title: "build(deps): update codecov/codecov-action action to v6"
+    url: https://github.com/starship/starship/pull/7356
+    mergedAt: 2026-03-29T17:57:01Z
+    baseRefName: master
+    headRefName: renovate/codecov-codecov-action-6.x
+    baseRefOid: 09b9d1f91e43dabbff98ecf80f0edc799a9d6125
+    headRefOid: 21080a275c0c58b23cde77998e195816639b3629
+    mergeCommitOid: a071a73cd89f7ba8a99fa577f3a9a1e9800cc1a3
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+      - "📦 dependencies"
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/workflows/workflow.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7344
+    title: "build(deps): update toml crates"
+    url: https://github.com/starship/starship/pull/7344
+    mergedAt: 2026-03-25T22:18:59Z
+    baseRefName: master
+    headRefName: renovate/toml-crates
+    baseRefOid: fce0ed741b96c4f25d91eae72171caff2dbc04aa
+    headRefOid: 275ecda73190a9cb0882560c375d90dfb01ff417
+    mergeCommitOid: 09b9d1f91e43dabbff98ecf80f0edc799a9d6125
+    changedFiles: 1
+    additions: 2
+    deletions: 2
+    labels: 
+      - "📦 dependencies"
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.toml
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 7350
+    title: "build(deps): update dependency node to v24.14.1"
+    url: https://github.com/starship/starship/pull/7350
+    mergedAt: 2026-03-25T22:18:47Z
+    baseRefName: master
+    headRefName: renovate/node-24.x
+    baseRefOid: 6d0a1263fcc74381791805cee57fc466f6e6359c
+    headRefOid: 5ed57dff4fd957562e5f529732bf5b59520178f0
+    mergeCommitOid: 355f09e6237cb7ea8d3dfa975b031f6771dff18e
+    changedFiles: 3
+    additions: 3
+    deletions: 3
+    labels: 
+      - "📦 dependencies"
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/workflows/format-workflow.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/publish-docs.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/release.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7311
+    title: "build(deps): lock file maintenance"
+    url: https://github.com/starship/starship/pull/7311
+    mergedAt: 2026-03-25T19:30:27Z
+    baseRefName: master
+    headRefName: renovate/lock-file-maintenance-lockfile-maintenance
+    baseRefOid: ed3cc5399390933554ddb02422ee9cadd1751744
+    headRefOid: 4acac81627d22fdb9cd3ede61b4b731f75242926
+    mergeCommitOid: 32e3105e5d319848acb19ddabf36d9b7df459b09
+    changedFiles: 1
+    additions: 315
+    deletions: 276
+    labels: 
+      - "📦 dependencies"
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -8
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docs/package-lock.json
+        additions: 315
+        deletions: 276
+        changeType: MODIFIED
+  - 
+    number: 7349
+    title: "docs: fix duplicate word in custom module comment"
+    url: https://github.com/starship/starship/pull/7349
+    mergedAt: 2026-03-25T19:25:27Z
+    baseRefName: master
+    headRefName: docs/fix-custom-shell-comment
+    baseRefOid: 6d0a1263fcc74381791805cee57fc466f6e6359c
+    headRefOid: 1bd14070eb9d0002b38b8fa6b0ccefcfc3fca968
+    mergeCommitOid: e5c1c7c4a9c3b67a0de72fe06e561198bcc1262c
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: src/modules/custom.rs
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7338
+    title: "build(deps): update mislav/bump-homebrew-formula-action action to v4"
+    url: https://github.com/starship/starship/pull/7338
+    mergedAt: 2026-03-25T19:20:08Z
+    baseRefName: master
+    headRefName: renovate/mislav-bump-homebrew-formula-action-4.x
+    baseRefOid: 6d0a1263fcc74381791805cee57fc466f6e6359c
+    headRefOid: 8279a0baeb58e1827b5988471349cd5a42fffa71
+    mergeCommitOid: fce0ed741b96c4f25d91eae72171caff2dbc04aa
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+      - "📦 dependencies"
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/workflows/release.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7348
+    title: "build(deps): update rust crate unicode-segmentation to 1.13.1"
+    url: https://github.com/starship/starship/pull/7348
+    mergedAt: 2026-03-25T19:18:57Z
+    baseRefName: master
+    headRefName: renovate/unicode-crates
+    baseRefOid: ed3cc5399390933554ddb02422ee9cadd1751744
+    headRefOid: 4d115dbfaf529b63e94c665980b8bef4239d2864
+    mergeCommitOid: 70bee7894212de1666ceef39ca69b29abb9a60ae
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+      - "📦 dependencies"
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED

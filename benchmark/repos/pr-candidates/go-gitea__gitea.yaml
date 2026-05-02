@@ -1,0 +1,3571 @@
+generatedAt: 2026-05-02T10:20:42.483Z
+repo: go-gitea/gitea
+since: 2026-01-01
+limit: 50
+debugKeywords: 
+  - bug
+  - fix
+  - regression
+  - crash
+  - incorrect
+  - wrong
+  - error
+  - exception
+  - edge
+  - flaky
+  - race
+  - leak
+  - validation
+  - parser
+  - parsing
+  - timeout
+  - fail
+  - failure
+  - broken
+prs: 
+  - 
+    number: 37411
+    title: "Replace `olivere/elastic` with REST API client, add OpenSearch support"
+    url: https://github.com/go-gitea/gitea/pull/37411
+    mergedAt: 2026-05-01T22:12:55Z
+    baseRefName: main
+    headRefName: elasticsearch-refactor
+    baseRefOid: 31cee60cc76e7fc9e46170a3a06946f412ba4826
+    headRefOid: 7bbfab6c7db922338b7d6ac9a040c400cf998c72
+    mergeCommitOid: abcfa53040ad59fcbbcabbed48ecd7608ad05ac7
+    changedFiles: 15
+    additions: 823
+    deletions: 359
+    labels: 
+      - type/enhancement
+      - lgtm/done
+    keywordHits: 
+      - fix
+      - race
+      - fail
+    hasTests: true
+    testFiles: 
+      - modules/indexer/code/indexer_test.go
+      - modules/indexer/internal/elasticsearch/indexer_test.go
+      - modules/indexer/issues/elasticsearch/elasticsearch_test.go
+      - modules/indexer/issues/internal/tests/tests.go
+    debugScore: 4
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: .github/workflows/pull-db-tests.yml
+        additions: 4
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: assets/go-licenses.json
+        additions: 0
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: custom/conf/app.example.ini
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: go.mod
+        additions: 1
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: go.sum
+        additions: 2
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: modules/indexer/code/elasticsearch/elasticsearch.go
+        additions: 107
+        deletions: 145
+        changeType: MODIFIED
+      - 
+        path: modules/indexer/code/indexer_test.go
+        additions: 11
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: modules/indexer/internal/elasticsearch/indexer.go
+        additions: 350
+        deletions: 35
+        changeType: MODIFIED
+      - 
+        path: modules/indexer/internal/elasticsearch/indexer_test.go
+        additions: 44
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: modules/indexer/internal/elasticsearch/query.go
+        additions: 132
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: modules/indexer/internal/elasticsearch/types.go
+        additions: 76
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: modules/indexer/internal/elasticsearch/util.go
+        additions: 3
+        deletions: 37
+        changeType: MODIFIED
+      - 
+        path: modules/indexer/issues/elasticsearch/elasticsearch.go
+        additions: 58
+        deletions: 113
+        changeType: MODIFIED
+      - 
+        path: modules/indexer/issues/elasticsearch/elasticsearch_test.go
+        additions: 23
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: modules/indexer/issues/internal/tests/tests.go
+        additions: 10
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 37474
+    title: "Improve code editor text selection and clean up lint enablement"
+    url: https://github.com/go-gitea/gitea/pull/37474
+    mergedAt: 2026-05-01T17:41:31Z
+    baseRefName: main
+    headRefName: code-editor-selection-and-lint
+    baseRefOid: deb31d3f3030d2a6aad2f966a9efc365f49daf67
+    headRefOid: b6f7f19fadd9267f9f57a07012dc571e29d7fc67
+    mergeCommitOid: 31cee60cc76e7fc9e46170a3a06946f412ba4826
+    changedFiles: 2
+    additions: 22
+    deletions: 17
+    labels: 
+      - type/enhancement
+      - lgtm/done
+    keywordHits: 
+      - error
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: web_src/css/modules/codeeditor.css
+        additions: 11
+        deletions: 9
+        changeType: MODIFIED
+      - 
+        path: web_src/js/modules/codeeditor/main.ts
+        additions: 11
+        deletions: 8
+        changeType: MODIFIED
+  - 
+    number: 37496
+    title: "Refactor database connection"
+    url: https://github.com/go-gitea/gitea/pull/37496
+    mergedAt: 2026-05-01T15:38:39Z
+    baseRefName: main
+    headRefName: refactor-db-conn
+    baseRefOid: 02b1b8a5497cc32f85a0106c66c8658a5b826c2b
+    headRefOid: a69d8218891d5351615b1925fbea1da29e970377
+    mergeCommitOid: deb31d3f3030d2a6aad2f966a9efc365f49daf67
+    changedFiles: 67
+    additions: 609
+    deletions: 863
+    labels: 
+      - lgtm/done
+      - type/refactoring
+      - skip-changelog
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - models/db/conn_test.go
+      - models/db/engine_test.go
+      - models/migrations/base/db_test.go
+      - models/migrations/v1_14/main_test.go
+      - models/migrations/v1_14/v176_test.go
+      - models/migrations/v1_14/v177_test.go
+      - models/migrations/v1_15/main_test.go
+      - models/migrations/v1_15/v181_test.go
+      - models/migrations/v1_15/v182_test.go
+      - models/migrations/v1_16/main_test.go
+      - models/migrations/v1_16/v189_test.go
+      - models/migrations/v1_16/v193_test.go
+      - models/migrations/v1_16/v195_test.go
+      - models/migrations/v1_16/v210_test.go
+      - models/migrations/v1_17/main_test.go
+      - models/migrations/v1_17/v221_test.go
+      - models/migrations/v1_18/main_test.go
+      - models/migrations/v1_18/v229_test.go
+      - models/migrations/v1_18/v230_test.go
+      - models/migrations/v1_19/main_test.go
+      - models/migrations/v1_19/v233_test.go
+      - models/migrations/v1_20/main_test.go
+      - models/migrations/v1_20/v259_test.go
+      - models/migrations/v1_21/main_test.go
+      - models/migrations/v1_22/main_test.go
+      - models/migrations/v1_22/v283_test.go
+      - models/migrations/v1_22/v286_test.go
+      - models/migrations/v1_22/v287_test.go
+      - models/migrations/v1_22/v293_test.go
+      - models/migrations/v1_22/v294_test.go
+      - models/migrations/v1_23/main_test.go
+      - models/migrations/v1_23/v302_test.go
+      - models/migrations/v1_23/v304_test.go
+      - models/migrations/v1_25/main_test.go
+      - models/migrations/v1_25/v321_test.go
+      - models/migrations/v1_25/v322_test.go
+      - models/migrations/v1_26/main_test.go
+      - models/migrations/v1_26/v325_test.go
+      - models/migrations/v1_26/v326_test.go
+      - models/migrations/v1_26/v327_test.go
+      - models/migrations/v1_26/v329_test.go
+      - models/migrations/v1_27/main_test.go
+      - models/migrations/v1_27/v331_test.go
+      - routers/web/admin/admin_test.go
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+    files: 
+      - 
+        path: Makefile
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: cmd/dump.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/db/conn.go
+        additions: 173
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: models/db/conn_test.go
+        additions: 5
+        deletions: 5
+        changeType: RENAMED
+      - 
+        path: models/db/driver_postgresschema.go
+        additions: 2
+        deletions: 2
+        changeType: RENAMED
+      - 
+        path: models/db/driver_sqlite_mattn.go
+        additions: 34
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: models/db/engine_dump.go
+        additions: 6
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/db/engine_init.go
+        additions: 8
+        deletions: 20
+        changeType: MODIFIED
+      - 
+        path: models/db/engine_test.go
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: models/migrations/base/db_test.go
+        additions: 3
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/base/tests.go
+        additions: 0
+        deletions: 223
+        changeType: DELETED
+      - 
+        path: models/migrations/migrationtest/tests.go
+        additions: 120
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: models/migrations/v1_14/main_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_14/v176_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_14/v177_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_15/main_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_15/v181_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_15/v182_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_16/main_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_16/v189_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_16/v193_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_16/v195_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_16/v210_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_17/main_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_17/v221_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_18/main_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_18/v229_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_18/v230_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_19/main_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_19/v233_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_20/main_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_20/v259_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_21/main_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_22/main_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_22/v283_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_22/v286_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_22/v287_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_22/v293_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_22/v294_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_23/main_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_23/v302_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_23/v304_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_25/main_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_25/v321_test.go
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_25/v322_test.go
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_26/main_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_26/v325_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_26/v326_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_26/v327_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_26/v329_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_27/main_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/migrations/v1_27/v331_test.go
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: models/unittest/testdb.go
+        additions: 102
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: modules/setting/database.go
+        additions: 17
+        deletions: 140
+        changeType: MODIFIED
+      - 
+        path: modules/setting/database_sqlite.go
+        additions: 0
+        deletions: 15
+        changeType: DELETED
+      - 
+        path: options/locale/locale_en-US.json
+        additions: 0
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: routers/init.go
+        additions: 0
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: routers/install/install.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: routers/web/admin/admin_test.go
+        additions: 0
+        deletions: 58
+        changeType: MODIFIED
+      - 
+        path: routers/web/admin/config.go
+        additions: 1
+        deletions: 62
+        changeType: MODIFIED
+  - 
+    number: 36499
+    title: "Update JS deps, remove `knip`, misc tweaks"
+    url: https://github.com/go-gitea/gitea/pull/36499
+    mergedAt: 2026-01-31T12:58:23Z
+    baseRefName: main
+    headRefName: deps-109
+    baseRefOid: 8c9247e7171a71ff2f45a215d4e0b2307658d4bf
+    headRefOid: 54913fc2bdc5eb47baf5e7b104f7bf49c3129d4e
+    mergeCommitOid: 7292ae1ed592c1f8f20f243082b3b80bf1c1da50
+    changedFiles: 8
+    additions: 371
+    deletions: 667
+    labels: 
+      - lgtm/done
+      - topic/code-linting
+      - skip-changelog
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/labeler.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Makefile
+        additions: 2
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: knip.config.ts
+        additions: 0
+        deletions: 18
+        changeType: DELETED
+      - 
+        path: package.json
+        additions: 15
+        deletions: 16
+        changeType: MODIFIED
+      - 
+        path: pnpm-lock.yaml
+        additions: 346
+        deletions: 624
+        changeType: MODIFIED
+      - 
+        path: stylelint.config.js
+        additions: 5
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: updates.config.ts
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: web_src/css/repo/wiki.css
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 37486
+    title: "Fix basic auth bug"
+    url: https://github.com/go-gitea/gitea/pull/37486
+    mergedAt: 2026-05-01T03:34:43Z
+    baseRefName: main
+    headRefName: lunny/fix_basic_oauth
+    baseRefOid: 1721c235a7bda18547f0462136d51da5a5febdd4
+    headRefOid: 65067dbef33194abb00f818613d65c0c1ac4b71b
+    mergeCommitOid: 48cea1fb79d8804627cbe828f5f67f0e3204840a
+    changedFiles: 2
+    additions: 68
+    deletions: 35
+    labels: 
+      - type/bug
+      - lgtm/done
+      - backport/manual
+      - backport/v1.26
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: true
+    testFiles: 
+      - tests/integration/oauth_test.go
+    debugScore: 4
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: services/auth/basic.go
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: tests/integration/oauth_test.go
+        additions: 66
+        deletions: 34
+        changeType: MODIFIED
+  - 
+    number: 37468
+    title: "Add mirror auth updates to repo edit API and settings"
+    url: https://github.com/go-gitea/gitea/pull/37468
+    mergedAt: 2026-05-01T11:00:04Z
+    baseRefName: main
+    headRefName: patch_auth
+    baseRefOid: 48cea1fb79d8804627cbe828f5f67f0e3204840a
+    headRefOid: da169830ccda8988c492d04708beeeffd3125bc7
+    mergeCommitOid: 02b1b8a5497cc32f85a0106c66c8658a5b826c2b
+    changedFiles: 8
+    additions: 202
+    deletions: 4
+    labels: 
+      - type/enhancement
+      - lgtm/done
+    keywordHits: 
+      - fix
+    hasTests: true
+    testFiles: 
+      - routers/web/repo/setting/settings_test.go
+      - tests/integration/api_repo_edit_test.go
+    debugScore: 3
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: modules/structs/repo.go
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: routers/api/v1/repo/migrate.go
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: routers/api/v1/repo/repo.go
+        additions: 59
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: routers/web/repo/setting/setting.go
+        additions: 7
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: routers/web/repo/setting/settings_test.go
+        additions: 45
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: templates/swagger/v1_json.tmpl
+        additions: 15
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: templates/swagger/v1_openapi3_json.tmpl
+        additions: 15
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/integration/api_repo_edit_test.go
+        additions: 54
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 36490
+    title: "Don't create self-references in merged PRs"
+    url: https://github.com/go-gitea/gitea/pull/36490
+    mergedAt: 2026-01-30T20:12:24Z
+    baseRefName: main
+    headRefName: copilot/fix-issue-36488
+    baseRefOid: 2d1306291b63a95725c281118340ce2dabd71c8c
+    headRefOid: 197346193dd215bebf7172e55d10c2d46fa0cab6
+    mergeCommitOid: a16ca3c57cc1fc05a1839bb604a82abcc62052c5
+    changedFiles: 2
+    additions: 79
+    deletions: 0
+    labels: 
+      - lgtm/done
+    keywordHits: 
+      - fix
+    hasTests: true
+    testFiles: 
+      - services/issue/commit_test.go
+    debugScore: 3
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: services/issue/commit.go
+        additions: 23
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: services/issue/commit_test.go
+        additions: 56
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 36498
+    title: "Use reserved .test TLD for unit tests"
+    url: https://github.com/go-gitea/gitea/pull/36498
+    mergedAt: 2026-01-30T19:42:32Z
+    baseRefName: main
+    headRefName: smtpdomain
+    baseRefOid: 208cbd5a6f9be60bc79105c6223f759d42902f52
+    headRefOid: de999dbba6bf4ad855935ef1222a5e76f919e087
+    mergeCommitOid: 2d1306291b63a95725c281118340ce2dabd71c8c
+    changedFiles: 1
+    additions: 4
+    deletions: 4
+    labels: 
+      - lgtm/done
+      - type/testing
+      - skip-changelog
+    keywordHits: 
+      - error
+      - fail
+    hasTests: true
+    testFiles: 
+      - modules/setting/mailer_test.go
+    debugScore: 4
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: modules/setting/mailer_test.go
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+  - 
+    number: 36496
+    title: "Add FOLDER_ICON_THEME configuration option"
+    url: https://github.com/go-gitea/gitea/pull/36496
+    mergedAt: 2026-01-30T20:48:57Z
+    baseRefName: main
+    headRefName: copilot/fix-gitea-issue-35182
+    baseRefOid: a16ca3c57cc1fc05a1839bb604a82abcc62052c5
+    headRefOid: 65c7d86cc1787df86b1520537c94a562e0388356
+    mergeCommitOid: 8feabe4160ff9bd93e015f94e41dde26ab9955cc
+    changedFiles: 6
+    additions: 106
+    deletions: 10
+    labels: 
+      - type/enhancement
+      - lgtm/done
+      - docs-update-needed
+    keywordHits: 
+      - fix
+    hasTests: true
+    testFiles: 
+      - modules/fileicon/render_test.go
+      - services/repository/files/tree_test.go
+    debugScore: 3
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: AGENTS.md
+        additions: 7
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: custom/conf/app.example.ini
+        additions: 4
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: modules/fileicon/render.go
+        additions: 7
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: modules/fileicon/render_test.go
+        additions: 75
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: modules/setting/ui.go
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: services/repository/files/tree_test.go
+        additions: 11
+        deletions: 8
+        changeType: MODIFIED
+  - 
+    number: 36492
+    title: "Fix editorconfig not respected in PR Conversation view"
+    url: https://github.com/go-gitea/gitea/pull/36492
+    mergedAt: 2026-01-30T21:41:44Z
+    baseRefName: main
+    headRefName: copilot/fix-issue-24991
+    baseRefOid: 8feabe4160ff9bd93e015f94e41dde26ab9955cc
+    headRefOid: f1dd712b584ea02326f111c67816d9c3ce40e4da
+    mergeCommitOid: 0acaad191924fffed6c38ed2ec65df7a663e64ac
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+      - lgtm/done
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: routers/web/web.go
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 36485
+    title: "Fix bug when list pull request commits"
+    url: https://github.com/go-gitea/gitea/pull/36485
+    mergedAt: 2026-01-30T18:46:35Z
+    baseRefName: main
+    headRefName: lunny/fix_commits_list_bug
+    baseRefOid: de829c7821b4f7cba3fb60de47eef347b2751492
+    headRefOid: 8577649f4d0ea9d7a60cb7bef21b742631a59a85
+    mergeCommitOid: 208cbd5a6f9be60bc79105c6223f759d42902f52
+    changedFiles: 1
+    additions: 5
+    deletions: 1
+    labels: 
+      - type/bug
+      - lgtm/done
+    keywordHits: 
+      - bug
+      - fix
+      - incorrect
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: services/git/compare.go
+        additions: 5
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 37487
+    title: "Refactor CI workflows"
+    url: https://github.com/go-gitea/gitea/pull/37487
+    mergedAt: 2026-04-30T18:15:01Z
+    baseRefName: main
+    headRefName: refactor-github-actions-workflows
+    baseRefOid: 81692ceafaa6540f9ea80f86642b255dcb7efc36
+    headRefOid: fd77200d5bbbdcfe0452f100677890d71efb1d3c
+    mergeCommitOid: 1721c235a7bda18547f0462136d51da5a5febdd4
+    changedFiles: 10
+    additions: 98
+    deletions: 192
+    labels: 
+      - lgtm/done
+      - skip-changelog
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -5
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/actions/docker-dryrun/action.yml
+        additions: 29
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: .github/workflows/cache-seeder.yml
+        additions: 3
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/cron-renovate.yml
+        additions: 3
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/files-changed.yml
+        additions: 10
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/part-docker-dryrun.yml
+        additions: 0
+        deletions: 35
+        changeType: DELETED
+      - 
+        path: .github/workflows/pull-compliance.yml
+        additions: 24
+        deletions: 118
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/pull-db-tests.yml
+        additions: 3
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/pull-docker-dryrun.yml
+        additions: 22
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/pull-e2e-tests.yml
+        additions: 3
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: Makefile
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 36784
+    title: "Allow multiple projects per issue and pull requests"
+    url: https://github.com/go-gitea/gitea/pull/36784
+    mergedAt: 2026-04-30T14:38:05Z
+    baseRefName: main
+    headRefName: issue-12974-multiple-projects-per-issue
+    baseRefOid: 52d6baf5a816b294662a6b2da26b82425d320930
+    headRefOid: 187c376de5835e9251a195205238a9bc75703eac
+    mergeCommitOid: 81692ceafaa6540f9ea80f86642b255dcb7efc36
+    changedFiles: 58
+    additions: 1590
+    deletions: 423
+    labels: 
+      - type/feature
+      - lgtm/done
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - models/issues/issue_list_test.go
+      - models/issues/issue_project_multi_test.go
+      - models/issues/issue_test.go
+      - modules/indexer/issues/indexer_test.go
+      - modules/indexer/issues/internal/tests/tests.go
+      - modules/templates/util_test.go
+      - modules/util/diff_slice_test.go
+      - services/projects/issue_test.go
+      - tests/e2e/events.test.ts
+      - tests/e2e/issue-project.test.ts
+      - tests/e2e/reactions.test.ts
+      - tests/e2e/utils.ts
+      - tests/integration/api_issue_test.go
+      - tests/integration/project_test.go
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+    files: 
+      - 
+        path: .gitignore
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Makefile
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: models/issues/issue.go
+        additions: 14
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: models/issues/issue_list.go
+        additions: 5
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: models/issues/issue_list_test.go
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: models/issues/issue_project.go
+        additions: 93
+        deletions: 71
+        changeType: MODIFIED
+      - 
+        path: models/issues/issue_project_multi_test.go
+        additions: 149
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: models/issues/issue_search.go
+        additions: 12
+        deletions: 21
+        changeType: MODIFIED
+      - 
+        path: models/issues/issue_test.go
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: models/project/project.go
+        additions: 9
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: modules/indexer/issues/bleve/bleve.go
+        additions: 12
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: modules/indexer/issues/db/options.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: modules/indexer/issues/dboptions.go
+        additions: 4
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: modules/indexer/issues/elasticsearch/elasticsearch.go
+        additions: 8
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: modules/indexer/issues/indexer_test.go
+        additions: 27
+        deletions: 13
+        changeType: MODIFIED
+      - 
+        path: modules/indexer/issues/internal/model.go
+        additions: 5
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: modules/indexer/issues/internal/tests/tests.go
+        additions: 20
+        deletions: 50
+        changeType: MODIFIED
+      - 
+        path: modules/indexer/issues/meilisearch/meilisearch.go
+        additions: 8
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: modules/indexer/issues/util.go
+        additions: 5
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: modules/structs/issue.go
+        additions: 7
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: modules/structs/project.go
+        additions: 33
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: modules/templates/page.go
+        additions: 6
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: modules/templates/util_slice.go
+        additions: 31
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: modules/templates/util_test.go
+        additions: 10
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: modules/util/diff_slice_test.go
+        additions: 74
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: modules/util/util.go
+        additions: 20
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: options/locale/locale_en-US.json
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: routers/api/v1/repo/issue.go
+        additions: 16
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: routers/web/repo/issue_list.go
+        additions: 31
+        deletions: 21
+        changeType: MODIFIED
+      - 
+        path: routers/web/repo/issue_new.go
+        additions: 18
+        deletions: 27
+        changeType: MODIFIED
+      - 
+        path: routers/web/repo/issue_page_meta.go
+        additions: 59
+        deletions: 20
+        changeType: MODIFIED
+      - 
+        path: routers/web/repo/milestone.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: routers/web/repo/projects.go
+        additions: 12
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: routers/web/repo/pull.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: services/context/base_form.go
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: services/convert/issue.go
+        additions: 7
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: services/convert/project.go
+        additions: 37
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: services/forms/repo_form.go
+        additions: 0
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: services/issue/issue.go
+        additions: 4
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: services/projects/issue.go
+        additions: 18
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: services/projects/issue_test.go
+        additions: 8
+        deletions: 18
+        changeType: MODIFIED
+      - 
+        path: services/pull/pull.go
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: templates/repo/issue/filter_list.tmpl
+        additions: 19
+        deletions: 11
+        changeType: MODIFIED
+      - 
+        path: templates/repo/issue/openclose.tmpl
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: templates/repo/issue/search.tmpl
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: templates/repo/issue/sidebar/project_list.tmpl
+        additions: 17
+        deletions: 24
+        changeType: MODIFIED
+      - 
+        path: templates/shared/issuelist.tmpl
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: templates/swagger/v1_json.tmpl
+        additions: 86
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: templates/swagger/v1_openapi3_json.tmpl
+        additions: 86
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/e2e/events.test.ts
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: tests/e2e/issue-project.test.ts
+        additions: 423
+        deletions: 9
+        changeType: MODIFIED
+      - 
+        path: tests/e2e/reactions.test.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: tests/e2e/utils.ts
+        additions: 57
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: tests/integration/api_issue_test.go
+        additions: 64
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/integration/project_test.go
+        additions: 27
+        deletions: 15
+        changeType: MODIFIED
+      - 
+        path: web_src/css/base.css
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: web_src/css/repo.css
+        additions: 9
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: web_src/js/features/repo-issue-sidebar-combolist.ts
+        additions: 5
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 36489
+    title: "Update some go dependencies"
+    url: https://github.com/go-gitea/gitea/pull/36489
+    mergedAt: 2026-01-30T10:25:30Z
+    baseRefName: main
+    headRefName: godeps-2
+    baseRefOid: 07ada3666b19396eaba3575e6157845255bb15ef
+    headRefOid: c8df1ec26858a17f71e9117bd871700c1c79e1a2
+    mergeCommitOid: de829c7821b4f7cba3fb60de47eef347b2751492
+    changedFiles: 2
+    additions: 9
+    deletions: 9
+    labels: 
+      - lgtm/done
+      - skip-changelog
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: go.mod
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: go.sum
+        additions: 6
+        deletions: 6
+        changeType: MODIFIED
+  - 
+    number: 36487
+    title: "[SECURITY] Toolchain Update to Go 1.25.6 (#36480)"
+    url: https://github.com/go-gitea/gitea/pull/36487
+    mergedAt: 2026-01-30T05:18:22Z
+    baseRefName: release/v1.25
+    headRefName: backport-36480-v1.25
+    baseRefOid: 750649c1ef092c95f95b206b9d5fa17471a0b1f5
+    headRefOid: f664c4449072561250f8050720dc790f80c75b27
+    mergeCommitOid: ff3d11034df819530fa89f1a3dba0bb9b03440ad
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+      - lgtm/done
+    keywordHits: 
+      - fix
+      - incorrect
+      - race
+      - parsing
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: go.mod
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 36484
+    title: "Correct spacing between username and bot label (#36473)"
+    url: https://github.com/go-gitea/gitea/pull/36484
+    mergedAt: 2026-01-30T05:47:47Z
+    baseRefName: release/v1.25
+    headRefName: backport-36473-v1.25
+    baseRefOid: ff3d11034df819530fa89f1a3dba0bb9b03440ad
+    headRefOid: f74d739aca582743f7c16859025444709b9fb6d1
+    mergeCommitOid: 25785041e7308760c9836f7d614968caef281a33
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+      - lgtm/done
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: templates/shared/user/authorlink.tmpl
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 36481
+    title: "chore: add comments for \"api/healthz\", clean up test env"
+    url: https://github.com/go-gitea/gitea/pull/36481
+    mergedAt: 2026-01-30T02:23:39Z
+    baseRefName: main
+    headRefName: fix-trivail
+    baseRefOid: 1adf8b3773aba0ce51bd6cdbe95f9bdd27132a6a
+    headRefOid: ecb7ed193012dddc8133c2c669601f1419717ffe
+    mergeCommitOid: 07ada3666b19396eaba3575e6157845255bb15ef
+    changedFiles: 24
+    additions: 256
+    deletions: 323
+    labels: 
+      - lgtm/done
+      - skip-changelog
+    keywordHits: 
+      - fix
+    hasTests: true
+    testFiles: 
+      - cmd/main_test.go
+      - models/migrations/base/db_test.go
+      - models/migrations/base/main_test.go
+      - models/unittest/fixtures_test.go
+      - modules/gitrepo/main_test.go
+      - modules/test/utils.go
+      - modules/test/utils_test.go
+      - services/migrations/gitea_downloader_test.go
+      - tests/e2e/e2e_test.go
+      - tests/integration/migration-test/migration_test.go
+      - tests/test_utils.go
+    debugScore: 2
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: Dockerfile
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Dockerfile.rootless
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Makefile
+        additions: 35
+        deletions: 35
+        changeType: MODIFIED
+      - 
+        path: cmd/main.go
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: cmd/main_test.go
+        additions: 5
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: models/db/engine_init.go
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: models/migrations/base/db.go
+        additions: 0
+        deletions: 118
+        changeType: MODIFIED
+      - 
+        path: models/migrations/base/db_test.go
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: models/migrations/base/main_test.go
+        additions: 0
+        deletions: 12
+        changeType: DELETED
+      - 
+        path: models/migrations/base/tests.go
+        additions: 118
+        deletions: 26
+        changeType: MODIFIED
+      - 
+        path: models/unittest/fixtures_test.go
+        additions: 3
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/unittest/testdb.go
+        additions: 4
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: modules/gitrepo/main_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: modules/setting/config_env.go
+        additions: 3
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: modules/setting/testenv.go
+        additions: 61
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: modules/test/utils.go
+        additions: 0
+        deletions: 20
+        changeType: MODIFIED
+      - 
+        path: modules/test/utils_test.go
+        additions: 0
+        deletions: 17
+        changeType: DELETED
+      - 
+        path: modules/testlogger/testlogger.go
+        additions: 1
+        deletions: 11
+        changeType: MODIFIED
+      - 
+        path: playwright.config.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: routers/web/healthcheck/check.go
+        additions: 9
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: services/migrations/gitea_downloader_test.go
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: tests/e2e/e2e_test.go
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: tests/integration/migration-test/migration_test.go
+        additions: 1
+        deletions: 15
+        changeType: MODIFIED
+      - 
+        path: tests/test_utils.go
+        additions: 1
+        deletions: 36
+        changeType: MODIFIED
+  - 
+    number: 37462
+    title: "Refactor integration tests infrastructure"
+    url: https://github.com/go-gitea/gitea/pull/37462
+    mergedAt: 2026-04-29T16:37:39Z
+    baseRefName: main
+    headRefName: cacheable-integration-tests
+    baseRefOid: 92628036217256f860fff2cc2fee59d2a1b4b977
+    headRefOid: 54243d723e5c3fe329bbab4560d8371665ab5c8f
+    mergeCommitOid: d57d06335d85ae6525d98129961d156954087f6e
+    changedFiles: 26
+    additions: 311
+    deletions: 524
+    labels: 
+      - lgtm/done
+      - type/testing
+      - type/refactoring
+      - skip-changelog
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - models/migrations/base/db_test.go
+      - tests/integration/README.md
+      - tests/integration/README_ZH.md
+      - tests/integration/api_org_avatar_test.go
+      - tests/integration/api_repo_avatar_test.go
+      - tests/integration/api_repo_file_create_test.go
+      - tests/integration/api_user_avatar_test.go
+      - tests/integration/gpg_ssh_git_test.go
+      - tests/integration/integration_test.go
+      - tests/integration/migration-test/migration_test.go
+      - tests/mssql.ini.tmpl
+      - tests/mysql.ini.tmpl
+      - tests/pgsql.ini.tmpl
+      - tests/sqlite.ini.tmpl
+      - tests/test_utils.go
+    debugScore: 1
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: .dockerignore
+        additions: 0
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/cache-seeder.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/part-docker-dryrun.yml
+        additions: 35
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: .github/workflows/pull-db-tests.yml
+        additions: 21
+        deletions: 21
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/pull-docker-dryrun.yml
+        additions: 23
+        deletions: 24
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/pull-e2e-tests.yml
+        additions: 4
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: .gitignore
+        additions: 0
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: CONTRIBUTING.md
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: Makefile
+        additions: 71
+        deletions: 240
+        changeType: MODIFIED
+      - 
+        path: models/migrations/base/db_test.go
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: models/migrations/base/tests.go
+        additions: 4
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: modules/setting/testenv.go
+        additions: 62
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: tests/integration/README.md
+        additions: 44
+        deletions: 56
+        changeType: MODIFIED
+      - 
+        path: tests/integration/README_ZH.md
+        additions: 0
+        deletions: 91
+        changeType: DELETED
+      - 
+        path: tests/integration/api_org_avatar_test.go
+        additions: 4
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: tests/integration/api_repo_avatar_test.go
+        additions: 4
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: tests/integration/api_repo_file_create_test.go
+        additions: 0
+        deletions: 29
+        changeType: MODIFIED
+      - 
+        path: tests/integration/api_user_avatar_test.go
+        additions: 4
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: tests/integration/gpg_ssh_git_test.go
+        additions: 4
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: tests/integration/integration_test.go
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: tests/integration/migration-test/migration_test.go
+        additions: 7
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: tests/mssql.ini.tmpl
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: tests/mysql.ini.tmpl
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: tests/pgsql.ini.tmpl
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: tests/sqlite.ini.tmpl
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: tests/test_utils.go
+        additions: 8
+        deletions: 9
+        changeType: MODIFIED
+  - 
+    number: 37481
+    title: "Refactor compare diff/pull page (1)"
+    url: https://github.com/go-gitea/gitea/pull/37481
+    mergedAt: 2026-04-29T18:32:46Z
+    baseRefName: main
+    headRefName: refactor-compare-pull
+    baseRefOid: 184ce17167a77747576ec4c6577536579892915e
+    headRefOid: a8bf1d1faeab9bd6bccc6188c678ba95c077a2f1
+    mergeCommitOid: 2b2ec6af85be931d99b8783e1b2db50c0f511cb4
+    changedFiles: 9
+    additions: 115
+    deletions: 116
+    labels: 
+      - lgtm/done
+      - type/refactoring
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: routers/api/v1/repo/pull.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: routers/web/repo/commit.go
+        additions: 1
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: routers/web/repo/compare.go
+        additions: 61
+        deletions: 66
+        changeType: MODIFIED
+      - 
+        path: routers/web/repo/middlewares.go
+        additions: 17
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: routers/web/repo/pull.go
+        additions: 12
+        deletions: 17
+        changeType: MODIFIED
+      - 
+        path: routers/web/repo/pull_review.go
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: routers/web/repo/wiki.go
+        additions: 0
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: services/git/compare.go
+        additions: 20
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: templates/repo/diff/box.tmpl
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 37485
+    title: "Fix review submission from single-commit PR view (#37475)"
+    url: https://github.com/go-gitea/gitea/pull/37485
+    mergedAt: 2026-04-29T19:34:38Z
+    baseRefName: release/v1.26
+    headRefName: backport-37475-v1.26
+    baseRefOid: 74e515623bcf283ba0e803f14b2a9f67ddb963c8
+    headRefOid: 8664b3aa97fc21a3bcfa7bc8483e8528ecde5442
+    mergeCommitOid: 5632abff9e70d4b3604b2d62d98b089710cde8a8
+    changedFiles: 2
+    additions: 26
+    deletions: 13
+    labels: 
+      - type/bug
+      - lgtm/done
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: true
+    testFiles: 
+      - tests/integration/pull_diff_test.go
+    debugScore: 4
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: templates/repo/diff/new_review.tmpl
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: tests/integration/pull_diff_test.go
+        additions: 25
+        deletions: 12
+        changeType: MODIFIED
+  - 
+    number: 37475
+    title: "Fix review submission from single-commit PR view"
+    url: https://github.com/go-gitea/gitea/pull/37475
+    mergedAt: 2026-04-29T17:03:26Z
+    baseRefName: main
+    headRefName: fix-pr-review-submit-single-commit
+    baseRefOid: d57d06335d85ae6525d98129961d156954087f6e
+    headRefOid: 30bae5fcac22463432e3ab2d19fadd5405cddc2a
+    mergeCommitOid: 184ce17167a77747576ec4c6577536579892915e
+    changedFiles: 2
+    additions: 26
+    deletions: 13
+    labels: 
+      - type/bug
+      - lgtm/done
+      - backport/done
+      - backport/v1.26
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: true
+    testFiles: 
+      - tests/integration/pull_diff_test.go
+    debugScore: 4
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: templates/repo/diff/new_review.tmpl
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: tests/integration/pull_diff_test.go
+        additions: 25
+        deletions: 12
+        changeType: MODIFIED
+  - 
+    number: 37484
+    title: "Fix allow maintainer edit permission check (#37479)"
+    url: https://github.com/go-gitea/gitea/pull/37484
+    mergedAt: 2026-04-29T17:07:09Z
+    baseRefName: release/v1.26
+    headRefName: backport-37479-v1.26
+    baseRefOid: 4ee74d76993b86f1e010daeba107d0cfcddde594
+    headRefOid: 605357d499b694e87f805f5b5315b6220c9e48ce
+    mergeCommitOid: 74e515623bcf283ba0e803f14b2a9f67ddb963c8
+    changedFiles: 3
+    additions: 141
+    deletions: 31
+    labels: 
+      - type/bug
+      - lgtm/done
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: true
+    testFiles: 
+      - models/issues/pull_list_test.go
+    debugScore: 4
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: models/issues/pull_list.go
+        additions: 52
+        deletions: 21
+        changeType: MODIFIED
+      - 
+        path: models/issues/pull_list_test.go
+        additions: 87
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: routers/web/repo/pull.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 37479
+    title: "Fix allow maintainer edit permission check"
+    url: https://github.com/go-gitea/gitea/pull/37479
+    mergedAt: 2026-04-29T15:37:33Z
+    baseRefName: main
+    headRefName: fix-maintainner-edit
+    baseRefOid: 9e031eb3df8ee857c0048205d583eab9d3b0d611
+    headRefOid: b2c6dce324e99f7fb218faf3827215cb8857625b
+    mergeCommitOid: 92628036217256f860fff2cc2fee59d2a1b4b977
+    changedFiles: 3
+    additions: 141
+    deletions: 31
+    labels: 
+      - type/bug
+      - lgtm/done
+      - backport/done
+      - backport/v1.26
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: true
+    testFiles: 
+      - models/issues/pull_list_test.go
+    debugScore: 4
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: models/issues/pull_list.go
+        additions: 52
+        deletions: 21
+        changeType: MODIFIED
+      - 
+        path: models/issues/pull_list_test.go
+        additions: 87
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: routers/web/repo/pull.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 37038
+    title: "Serve OpenAPI 3.0 spec at /openapi.v1.json"
+    url: https://github.com/go-gitea/gitea/pull/37038
+    mergedAt: 2026-04-29T12:47:52Z
+    baseRefName: main
+    headRefName: feat/openapi3-conversion
+    baseRefOid: 18762c7748b15fceed619c822942c6b3546e3d48
+    headRefOid: 82808e72327b16a91150ec929b2611497f8f8cce
+    mergeCommitOid: 9e031eb3df8ee857c0048205d583eab9d3b0d611
+    changedFiles: 39
+    additions: 34700
+    deletions: 99
+    labels: 
+      - type/feature
+      - lgtm/done
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - build/openapi3gen/convert_test.go
+      - build/openapi3gen/enumscan_test.go
+      - services/convert/user_test.go
+      - tests/integration/api_helper_for_declarative_test.go
+      - tests/integration/api_org_test.go
+      - tests/integration/api_repo_collaborator_test.go
+      - tests/integration/api_repo_teams_test.go
+      - tests/integration/api_team_test.go
+      - tests/integration/api_user_search_test.go
+      - tests/integration/user_test.go
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+    files: 
+      - 
+        path: .editorconfig
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: Makefile
+        additions: 18
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: assets/go-licenses.json
+        additions: 40
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: build/generate-openapi.go
+        additions: 97
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: build/openapi3gen/convert.go
+        additions: 281
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: build/openapi3gen/convert_test.go
+        additions: 170
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: build/openapi3gen/enumscan.go
+        additions: 188
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: build/openapi3gen/enumscan_test.go
+        additions: 239
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: go.mod
+        additions: 8
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: go.sum
+        additions: 18
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: models/user/user.go
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: modules/structs/admin_user.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: modules/structs/org.go
+        additions: 3
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: modules/structs/org_team.go
+        additions: 6
+        deletions: 9
+        changeType: MODIFIED
+      - 
+        path: modules/structs/repo.go
+        additions: 11
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: modules/structs/repo_collaborator.go
+        additions: 27
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: modules/structs/user.go
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: modules/structs/visible_type.go
+        additions: 11
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: routers/api/v1/admin/org.go
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: routers/api/v1/admin/user.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: routers/api/v1/org/org.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: routers/api/v1/org/team.go
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: routers/api/v1/repo/collaborators.go
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: routers/api/v1/repo/repo.go
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: routers/web/swagger_json.go
+        additions: 7
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: routers/web/web.go
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: services/convert/convert.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: services/convert/repository.go
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: services/convert/user.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: services/convert/user_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: templates/swagger/v1_json.tmpl
+        additions: 50
+        deletions: 9
+        changeType: MODIFIED
+      - 
+        path: templates/swagger/v1_openapi3_json.tmpl
+        additions: 33451
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/integration/api_helper_for_declarative_test.go
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: tests/integration/api_org_test.go
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: tests/integration/api_repo_collaborator_test.go
+        additions: 8
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: tests/integration/api_repo_teams_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: tests/integration/api_team_test.go
+        additions: 16
+        deletions: 16
+        changeType: MODIFIED
+      - 
+        path: tests/integration/api_user_search_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: tests/integration/user_test.go
+        additions: 16
+        deletions: 10
+        changeType: MODIFIED
+  - 
+    number: 37032
+    title: "Batch-load related data in actions run, job, and task API endpoints"
+    url: https://github.com/go-gitea/gitea/pull/37032
+    mergedAt: 2026-04-29T08:39:44Z
+    baseRefName: main
+    headRefName: fix/actions-api-n-plus-1
+    baseRefOid: 0ba862cb9779a6c720f5031c4838427ddf90f86f
+    headRefOid: bebf60a867f719f04bc14ccf65cad36742ed1850
+    mergeCommitOid: 18762c7748b15fceed619c822942c6b3546e3d48
+    changedFiles: 15
+    additions: 213
+    deletions: 134
+    labels: 
+      - lgtm/done
+      - type/refactoring
+      - performance/speed
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - services/convert/action_test.go
+      - tests/integration/api_actions_run_test.go
+    debugScore: 1
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: models/actions/run.go
+        additions: 12
+        deletions: 15
+        changeType: MODIFIED
+      - 
+        path: models/actions/run_attempt.go
+        additions: 0
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: models/actions/run_job.go
+        additions: 0
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: models/actions/run_job_list.go
+        additions: 3
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: models/actions/run_list.go
+        additions: 28
+        deletions: 15
+        changeType: MODIFIED
+      - 
+        path: models/actions/task.go
+        additions: 0
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: models/repo/repo.go
+        additions: 3
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: routers/api/v1/api.go
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: routers/api/v1/repo/action.go
+        additions: 11
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: routers/api/v1/shared/action.go
+        additions: 30
+        deletions: 16
+        changeType: MODIFIED
+      - 
+        path: services/actions/notifier.go
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: services/convert/action_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: services/convert/convert.go
+        additions: 26
+        deletions: 19
+        changeType: MODIFIED
+      - 
+        path: services/webhook/notifier.go
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: tests/integration/api_actions_run_test.go
+        additions: 93
+        deletions: 46
+        changeType: MODIFIED
+  - 
+    number: 36461
+    title: "Forbid localStorage access in eslint"
+    url: https://github.com/go-gitea/gitea/pull/36461
+    mergedAt: 2026-01-27T19:59:51Z
+    baseRefName: main
+    headRefName: ls
+    baseRefOid: 1463426a2720bb5ed8aeb477f526751cae1b0d76
+    headRefOid: f6e6a32767c44ebc1b286de2e02f20d0a2cf04c7
+    mergeCommitOid: 224b7881d9fe348f01d97601a8fc09c06d36023f
+    changedFiles: 5
+    additions: 21
+    deletions: 13
+    labels: 
+      - lgtm/done
+      - skip-changelog
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - web_src/js/utils/image.test.ts
+    debugScore: 2
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: eslint.config.ts
+        additions: 16
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: web_src/js/modules/fetch.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: web_src/js/modules/user-settings.ts
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: web_src/js/standalone/swagger.ts
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: web_src/js/utils/image.test.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 37470
+    title: "Fix compare dropdown for branches without common history"
+    url: https://github.com/go-gitea/gitea/pull/37470
+    mergedAt: 2026-04-28T21:03:50Z
+    baseRefName: main
+    headRefName: bugfix-37469
+    baseRefOid: fedc9dc993f0f14866fa4dcbe57c6ba8d90a180e
+    headRefOid: 109fef5dcf43e984584e3e8e728e1e12c3bd9057
+    mergeCommitOid: deec2b0929c5a7badd74df8bcb767a8cce51e33f
+    changedFiles: 8
+    additions: 160
+    deletions: 154
+    labels: 
+      - lgtm/done
+      - backport/manual
+      - backport/v1.26
+    keywordHits: 
+      - fix
+      - regression
+      - incorrect
+      - error
+    hasTests: true
+    testFiles: 
+      - modules/gitrepo/compare_test.go
+      - tests/integration/compare_test.go
+    debugScore: 6
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: modules/gitrepo/compare_test.go
+        additions: 32
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: modules/gitrepo/merge.go
+        additions: 5
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: options/locale/locale_en-US.json
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: routers/web/repo/compare.go
+        additions: 62
+        deletions: 135
+        changeType: MODIFIED
+      - 
+        path: routers/web/repo/pull.go
+        additions: 17
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: services/git/compare.go
+        additions: 7
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: templates/repo/diff/compare.tmpl
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/integration/compare_test.go
+        additions: 35
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 37465
+    title: "Add DEFAULT_TITLE_SOURCE setting for pull request title default behavior"
+    url: https://github.com/go-gitea/gitea/pull/37465
+    mergedAt: 2026-04-28T21:33:21Z
+    baseRefName: main
+    headRefName: feature/default-pr-title-source
+    baseRefOid: deec2b0929c5a7badd74df8bcb767a8cce51e33f
+    headRefOid: 678da34fd3e91687280109748138257ec9328342
+    mergeCommitOid: 0ba862cb9779a6c720f5031c4838427ddf90f86f
+    changedFiles: 4
+    additions: 106
+    deletions: 19
+    labels: 
+      - type/enhancement
+      - lgtm/done
+      - docs-update-needed
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - routers/web/repo/compare_test.go
+    debugScore: 2
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: custom/conf/app.example.ini
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: modules/setting/repository.go
+        additions: 9
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: routers/web/repo/compare.go
+        additions: 41
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: routers/web/repo/compare_test.go
+        additions: 51
+        deletions: 15
+        changeType: MODIFIED
+  - 
+    number: 36480
+    title: "[SECURITY] Toolchain Update to Go 1.25.6"
+    url: https://github.com/go-gitea/gitea/pull/36480
+    mergedAt: 2026-01-29T06:23:11Z
+    baseRefName: main
+    headRefName: fix-security-Vulnerabilities
+    baseRefOid: 67b457dd00a874eff751caeb7caeec6aa4b2e714
+    headRefOid: d7228fc347b05b8e4c54aa7c78e597fe78439374
+    mergeCommitOid: 1adf8b3773aba0ce51bd6cdbe95f9bdd27132a6a
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+      - lgtm/done
+      - backport/done
+      - backport/v1.25
+    keywordHits: 
+      - fix
+      - incorrect
+      - race
+      - parsing
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: go.mod
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 36479
+    title: "Render merged pull request title as such in dashboard feed"
+    url: https://github.com/go-gitea/gitea/pull/36479
+    mergedAt: 2026-01-29T00:40:07Z
+    baseRefName: main
+    headRefName: prmerge
+    baseRefOid: b500b7cfed837dbee2ee7f393c6c6fb9912f7ca7
+    headRefOid: 195786ba5b9fdd650233faba3754163364940652
+    mergeCommitOid: d7dff61cbcc2753960cd70474cd88a45c0bbd575
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+      - lgtm/done
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: templates/user/dashboard/feeds.tmpl
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 37471
+    title: "FIX: URL sanitization to handle schemeless credentials (#37440)"
+    url: https://github.com/go-gitea/gitea/pull/37471
+    mergedAt: 2026-04-28T21:35:18Z
+    baseRefName: release/v1.26
+    headRefName: backport-37440-v1.26
+    baseRefOid: c4a1ff7d1665a8eecc488b8edec6aebc946ed062
+    headRefOid: 80de4b862e2b2a4ea13bfe8c32b81abf86610e2f
+    mergeCommitOid: 4ee74d76993b86f1e010daeba107d0cfcddde594
+    changedFiles: 5
+    additions: 139
+    deletions: 49
+    labels: 
+      - type/bug
+      - lgtm/done
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: true
+    testFiles: 
+      - modules/git/gitcmd/command_test.go
+      - modules/util/sanitize_test.go
+    debugScore: 4
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: modules/git/gitcmd/command.go
+        additions: 2
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: modules/git/gitcmd/command_test.go
+        additions: 4
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: modules/util/sanitize.go
+        additions: 89
+        deletions: 33
+        changeType: MODIFIED
+      - 
+        path: modules/util/sanitize_test.go
+        additions: 43
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: services/migrations/migrate.go
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 37440
+    title: "FIX: URL sanitization to handle schemeless credentials"
+    url: https://github.com/go-gitea/gitea/pull/37440
+    mergedAt: 2026-04-28T15:26:08Z
+    baseRefName: main
+    headRefName: fix/sanitization
+    baseRefOid: 8bf51da65fe1167802678c02639ee11c20c2a815
+    headRefOid: 080b0e565fa802d32b48a2a145779404bc186ce5
+    mergeCommitOid: fedc9dc993f0f14866fa4dcbe57c6ba8d90a180e
+    changedFiles: 5
+    additions: 139
+    deletions: 49
+    labels: 
+      - type/bug
+      - lgtm/done
+      - backport/done
+      - backport/v1.26
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: true
+    testFiles: 
+      - modules/git/gitcmd/command_test.go
+      - modules/util/sanitize_test.go
+    debugScore: 4
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: modules/git/gitcmd/command.go
+        additions: 2
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: modules/git/gitcmd/command_test.go
+        additions: 4
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: modules/util/sanitize.go
+        additions: 89
+        deletions: 33
+        changeType: MODIFIED
+      - 
+        path: modules/util/sanitize_test.go
+        additions: 43
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: services/migrations/migrate.go
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 36477
+    title: "Fix oauth2 s256 (#36462)"
+    url: https://github.com/go-gitea/gitea/pull/36477
+    mergedAt: 2026-01-28T20:37:39Z
+    baseRefName: release/v1.25
+    headRefName: backport-36462-v1.25
+    baseRefOid: eb95bbc1fdd427a32fc41acb751c91c2451b59d3
+    headRefOid: 046393d47c64b6d6149826255af3c5a5883b201c
+    mergeCommitOid: 750649c1ef092c95f95b206b9d5fa17471a0b1f5
+    changedFiles: 2
+    additions: 41
+    deletions: 2
+    labels: 
+      - type/bug
+      - lgtm/done
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: true
+    testFiles: 
+      - tests/integration/oauth_test.go
+    debugScore: 4
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: routers/web/auth/oauth2_provider.go
+        additions: 1
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: tests/integration/oauth_test.go
+        additions: 40
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 36473
+    title: "Correct spacing between username and bot label"
+    url: https://github.com/go-gitea/gitea/pull/36473
+    mergedAt: 2026-01-28T15:22:38Z
+    baseRefName: main
+    headRefName: correct_spacing_bot_label
+    baseRefOid: bf8d11bb212ba2a76596d8a90e74e7d664571324
+    headRefOid: 2d63055b6f35f41873f6e281f90685498a6f01e2
+    mergeCommitOid: b500b7cfed837dbee2ee7f393c6c6fb9912f7ca7
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+      - type/bug
+      - topic/ui
+      - skip-changelog
+      - backport/manual
+      - backport/v1.25
+    keywordHits: 
+      - bug
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: templates/shared/user/authorlink.tmpl
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 36462
+    title: "Fix oauth2 s256"
+    url: https://github.com/go-gitea/gitea/pull/36462
+    mergedAt: 2026-01-28T05:42:08Z
+    baseRefName: main
+    headRefName: lunny/fix_oauth2_s256
+    baseRefOid: 224b7881d9fe348f01d97601a8fc09c06d36023f
+    headRefOid: df45e770578b1a175cca886e28a5a5e1d9a68e51
+    mergeCommitOid: bf8d11bb212ba2a76596d8a90e74e7d664571324
+    changedFiles: 2
+    additions: 40
+    deletions: 2
+    labels: 
+      - type/bug
+      - lgtm/done
+      - backport/done
+      - backport/v1.25
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: true
+    testFiles: 
+      - tests/integration/oauth_test.go
+    debugScore: 4
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: routers/web/auth/oauth2_provider.go
+        additions: 1
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: tests/integration/oauth_test.go
+        additions: 39
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 37466
+    title: "Fix scheduled action panic with null event payload (#37459)"
+    url: https://github.com/go-gitea/gitea/pull/37466
+    mergedAt: 2026-04-28T05:07:26Z
+    baseRefName: release/v1.26
+    headRefName: backport-37459-v1.26
+    baseRefOid: 78899832eb806bb3ee2e536115af2e5ef0094706
+    headRefOid: d2213d59405ec3d4bbcb56d0a0ebcf13928d26b2
+    mergeCommitOid: c4a1ff7d1665a8eecc488b8edec6aebc946ed062
+    changedFiles: 2
+    additions: 26
+    deletions: 7
+    labels: 
+      - type/bug
+      - lgtm/done
+      - topic/gitea-actions
+    keywordHits: 
+      - bug
+      - fix
+      - regression
+    hasTests: true
+    testFiles: 
+      - services/actions/schedule_tasks_test.go
+    debugScore: 5
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: services/actions/schedule_tasks.go
+        additions: 13
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: services/actions/schedule_tasks_test.go
+        additions: 13
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 37451
+    title: "Refactor pull request view (4)"
+    url: https://github.com/go-gitea/gitea/pull/37451
+    mergedAt: 2026-04-28T04:36:40Z
+    baseRefName: main
+    headRefName: refactor-pr-view-4
+    baseRefOid: c8e67799b2fa6eb3fa0a087608a0241f6265a5e4
+    headRefOid: 4a144247c1b865d1fc07bdc96417ef01b9002c40
+    mergeCommitOid: 8bf51da65fe1167802678c02639ee11c20c2a815
+    changedFiles: 7
+    additions: 194
+    deletions: 197
+    labels: 
+      - lgtm/done
+      - type/refactoring
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: routers/web/repo/issue_view.go
+        additions: 8
+        deletions: 62
+        changeType: MODIFIED
+      - 
+        path: routers/web/repo/pull.go
+        additions: 10
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: routers/web/repo/pull_merge_form.go
+        additions: 147
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: templates/repo/issue/view_content/pull_merge_box.tmpl
+        additions: 4
+        deletions: 93
+        changeType: MODIFIED
+      - 
+        path: templates/repo/issue/view_content/pull_merge_instruction.tmpl
+        additions: 18
+        deletions: 16
+        changeType: MODIFIED
+      - 
+        path: web_src/js/components/PullRequestMergeForm.vue
+        additions: 4
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: web_src/js/features/repo-issue-pull.ts
+        additions: 3
+        deletions: 21
+        changeType: MODIFIED
+  - 
+    number: 37459
+    title: "Fix scheduled action panic with null event payload"
+    url: https://github.com/go-gitea/gitea/pull/37459
+    mergedAt: 2026-04-28T01:58:04Z
+    baseRefName: main
+    headRefName: fix/actions-schedule-null-payload
+    baseRefOid: 15b23f037d8e7bf8d945a7fecb0ebb9cc4ab43c8
+    headRefOid: b447af6a47d61c71d66f5c5b54f49201df278cfb
+    mergeCommitOid: c8e67799b2fa6eb3fa0a087608a0241f6265a5e4
+    changedFiles: 2
+    additions: 26
+    deletions: 7
+    labels: 
+      - type/bug
+      - lgtm/done
+      - backport/done
+      - topic/gitea-actions
+      - backport/v1.26
+    keywordHits: 
+      - bug
+      - fix
+      - regression
+    hasTests: true
+    testFiles: 
+      - services/actions/schedule_tasks_test.go
+    debugScore: 5
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: services/actions/schedule_tasks.go
+        additions: 13
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: services/actions/schedule_tasks_test.go
+        additions: 13
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 37464
+    title: "Fix attachment Content-Security-Policy (#37455)"
+    url: https://github.com/go-gitea/gitea/pull/37464
+    mergedAt: 2026-04-28T04:08:44Z
+    baseRefName: release/v1.26
+    headRefName: backport-37455-v1.26
+    baseRefOid: fb3c1b031dd9db0beb750ba16adee735e37ecaba
+    headRefOid: 7bd53622c428730e15057e2e5c08484e0fad9765
+    mergeCommitOid: 78899832eb806bb3ee2e536115af2e5ef0094706
+    changedFiles: 2
+    additions: 64
+    deletions: 14
+    labels: 
+      - lgtm/done
+    keywordHits: 
+      - fix
+    hasTests: true
+    testFiles: 
+      - modules/httplib/serve_test.go
+    debugScore: 3
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: modules/httplib/serve.go
+        additions: 37
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: modules/httplib/serve_test.go
+        additions: 27
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 37455
+    title: "Fix attachment Content-Security-Policy"
+    url: https://github.com/go-gitea/gitea/pull/37455
+    mergedAt: 2026-04-28T01:29:10Z
+    baseRefName: main
+    headRefName: fix-attachment-csp
+    baseRefOid: 596a8868d741da01ee0520d1196459b444dc4699
+    headRefOid: c705371105c3b16ef70ad2506e1087388210e43b
+    mergeCommitOid: 15b23f037d8e7bf8d945a7fecb0ebb9cc4ab43c8
+    changedFiles: 2
+    additions: 64
+    deletions: 14
+    labels: 
+      - lgtm/done
+      - backport/done
+      - backport/v1.26
+    keywordHits: 
+      - fix
+    hasTests: true
+    testFiles: 
+      - modules/httplib/serve_test.go
+    debugScore: 3
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: modules/httplib/serve.go
+        additions: 37
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: modules/httplib/serve_test.go
+        additions: 27
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 37453
+    title: "Rename CurrentRefPath to CurrentRefSubURL"
+    url: https://github.com/go-gitea/gitea/pull/37453
+    mergedAt: 2026-04-28T00:34:17Z
+    baseRefName: main
+    headRefName: fix-markup-ref-path
+    baseRefOid: 4952a48b4eb1b1e2394908a8fca811ed3e187455
+    headRefOid: c3df35526c038b2543fd283590a795d2f147345e
+    mergeCommitOid: c6ffbfe0d2aabadfd27ec1de984a52f571e270c7
+    changedFiles: 12
+    additions: 34
+    deletions: 36
+    labels: 
+      - lgtm/done
+      - type/refactoring
+      - skip-changelog
+    keywordHits: 
+      - fix
+    hasTests: true
+    testFiles: 
+      - models/renderhelper/repo_comment_test.go
+      - models/renderhelper/repo_file_test.go
+    debugScore: 2
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: models/renderhelper/repo_comment.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/renderhelper/repo_comment_test.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: models/renderhelper/repo_file.go
+        additions: 7
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: models/renderhelper/repo_file_test.go
+        additions: 8
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: models/renderhelper/repo_wiki.go
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: routers/common/markup.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: routers/web/org/home.go
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: routers/web/repo/commit.go
+        additions: 1
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: routers/web/repo/render.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: routers/web/repo/view_file.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: routers/web/repo/view_readme.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: routers/web/user/profile.go
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 37445
+    title: "Clean up org pages layout"
+    url: https://github.com/go-gitea/gitea/pull/37445
+    mergedAt: 2026-04-27T23:30:28Z
+    baseRefName: main
+    headRefName: fix-teams-layout
+    baseRefOid: 89d358d8a7b386f4b8a4acbdec04523d17d59b5f
+    headRefOid: 5ee96d1c0d916b2b53c8894a4dd981a86362ee36
+    mergeCommitOid: 4952a48b4eb1b1e2394908a8fca811ed3e187455
+    changedFiles: 8
+    additions: 52
+    deletions: 101
+    labels: 
+      - lgtm/done
+      - skip-changelog
+    keywordHits: 
+      - fix
+      - regression
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: routers/web/org/teams.go
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: templates/org/header.tmpl
+        additions: 21
+        deletions: 15
+        changeType: MODIFIED
+      - 
+        path: templates/org/home.tmpl
+        additions: 11
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: templates/org/team/invite.tmpl
+        additions: 8
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: templates/org/team/sidebar.tmpl
+        additions: 10
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: web_src/css/index.css
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: web_src/css/org.css
+        additions: 0
+        deletions: 37
+        changeType: MODIFIED
+      - 
+        path: web_src/css/shared/repoorg.css
+        additions: 0
+        deletions: 18
+        changeType: DELETED
+  - 
+    number: 37458
+    title: "Fix script error alert"
+    url: https://github.com/go-gitea/gitea/pull/37458
+    mergedAt: 2026-04-27T23:08:50Z
+    baseRefName: main
+    headRefName: fix-script-onerror
+    baseRefOid: 6da802744630e98d341a4b958103464de28a7152
+    headRefOid: 1ecd05466f3d4bacda3a7936b87ab8b31d1ac6eb
+    mergeCommitOid: 89d358d8a7b386f4b8a4acbdec04523d17d59b5f
+    changedFiles: 5
+    additions: 9
+    deletions: 21
+    labels: 
+      - lgtm/done
+      - skip-changelog
+    keywordHits: 
+      - fix
+      - error
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: services/context/context_template.go
+        additions: 2
+        deletions: 21
+        changeType: MODIFIED
+      - 
+        path: templates/base/footer.tmpl
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: web_src/js/globals.d.ts
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: web_src/js/index.ts
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: web_src/js/vitest.setup.ts
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 36400
+    title: "Use merge tree to detect conflicts when possible"
+    url: https://github.com/go-gitea/gitea/pull/36400
+    mergedAt: 2026-01-27T19:57:20Z
+    baseRefName: main
+    headRefName: lunny/merge_tree2
+    baseRefOid: 125257eacffa42a01ac27b9ab2db3a5446ec4b3b
+    headRefOid: 572101c62a4a5ec1d4a7b9b188c20f70308feb37
+    mergeCommitOid: 1463426a2720bb5ed8aeb477f526751cae1b0d76
+    changedFiles: 29
+    additions: 607
+    deletions: 126
+    labels: 
+      - type/enhancement
+      - lgtm/done
+      - performance/speed
+    keywordHits: 
+      - fix
+      - error
+    hasTests: true
+    testFiles: 
+      - modules/gitrepo/main_test.go
+      - modules/gitrepo/merge_tree_test.go
+      - services/pull/merge_tree_test.go
+    debugScore: 3
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: models/issues/pull.go
+        additions: 3
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: modules/git/git.go
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: modules/git/gitcmd/command.go
+        additions: 37
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: modules/git/gitcmd/context.go
+        additions: 9
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: modules/git/gitcmd/error.go
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: modules/git/grep.go
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: modules/git/repo_branch_nogogit.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: modules/gitrepo/main_test.go
+        additions: 6
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: modules/gitrepo/merge_tree.go
+        additions: 59
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: modules/gitrepo/merge_tree_test.go
+        additions: 82
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: modules/util/buffer.go
+        additions: 22
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: options/locale/locale_en-US.json
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: routers/private/hook_verification.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: services/pull/check.go
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: services/pull/merge.go
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: services/pull/merge_ff_only.go
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: services/pull/merge_merge.go
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: services/pull/merge_prepare.go
+        additions: 7
+        deletions: 20
+        changeType: MODIFIED
+      - 
+        path: services/pull/merge_rebase.go
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: services/pull/merge_squash.go
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: services/pull/merge_tree.go
+        additions: 144
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: services/pull/merge_tree_test.go
+        additions: 154
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: services/pull/patch.go
+        additions: 35
+        deletions: 27
+        changeType: MODIFIED
+      - 
+        path: services/pull/patch_unmerged.go
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: services/pull/pull.go
+        additions: 6
+        deletions: 11
+        changeType: MODIFIED
+      - 
+        path: services/pull/temp_repo.go
+        additions: 6
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: services/pull/update_rebase.go
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: services/repository/gitgraph/graph.go
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: templates/repo/issue/view_content/pull_merge_box.tmpl
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 37406
+    title: "Fix inconsistent disabled styling on logged-out repo header buttons"
+    url: https://github.com/go-gitea/gitea/pull/37406
+    mergedAt: 2026-04-27T17:33:10Z
+    baseRefName: main
+    headRefName: repo-header-disabled-consistency
+    baseRefOid: 331450b17a025ce78b5bf9405ca8d684607680ef
+    headRefOid: c3f6acf5f76238152399c8c1e25bd3a66eb7cb40
+    mergeCommitOid: 6da802744630e98d341a4b958103464de28a7152
+    changedFiles: 6
+    additions: 59
+    deletions: 59
+    labels: 
+      - type/enhancement
+      - lgtm/done
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: routers/web/repo/star.go
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: routers/web/repo/watch.go
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: templates/repo/header.tmpl
+        additions: 3
+        deletions: 50
+        changeType: MODIFIED
+      - 
+        path: templates/repo/header/fork.tmpl
+        additions: 47
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: templates/repo/header/star.tmpl
+        additions: 3
+        deletions: 3
+        changeType: RENAMED
+      - 
+        path: templates/repo/header/watch.tmpl
+        additions: 4
+        deletions: 4
+        changeType: RENAMED
+  - 
+    number: 37449
+    title: "Add CurrentURL template variable back (#37444)"
+    url: https://github.com/go-gitea/gitea/pull/37449
+    mergedAt: 2026-04-27T13:05:25Z
+    baseRefName: release/v1.26
+    headRefName: backport-current-url
+    baseRefOid: cff6eb56616f4d79bd2fd74f94895849f0544a12
+    headRefOid: b6e899b8bbd98b9d4206baa4f286d61705f1ffdd
+    mergeCommitOid: fb3c1b031dd9db0beb750ba16adee735e37ecaba
+    changedFiles: 2
+    additions: 17
+    deletions: 0
+    labels: 
+      - lgtm/done
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - tests/integration/view_test.go
+    debugScore: 2
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: services/context/context.go
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/integration/view_test.go
+        additions: 16
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 36683
+    title: "Add API endpoint to reply to pull request review comments"
+    url: https://github.com/go-gitea/gitea/pull/36683
+    mergedAt: 2026-04-27T08:46:00Z
+    baseRefName: main
+    headRefName: reply
+    baseRefOid: b45be5b20d747ec6861e65a79fd9511f0a4d3ef8
+    headRefOid: 9409a616dcefffec645ef97a11a8050d9dfbae7b
+    mergeCommitOid: 331450b17a025ce78b5bf9405ca8d684607680ef
+    changedFiles: 6
+    additions: 225
+    deletions: 0
+    labels: 
+      - type/enhancement
+      - lgtm/done
+      - topic/api
+    keywordHits: 
+      - fix
+    hasTests: true
+    testFiles: 
+      - tests/integration/api_pull_review_test.go
+    debugScore: 3
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: modules/structs/pull_review.go
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: routers/api/v1/api.go
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: routers/api/v1/repo/pull_review.go
+        additions: 82
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: routers/api/v1/swagger/options.go
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: templates/swagger/v1_json.tmpl
+        additions: 80
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/integration/api_pull_review_test.go
+        additions: 54
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 37444
+    title: "Add CurrentURL template variable back"
+    url: https://github.com/go-gitea/gitea/pull/37444
+    mergedAt: 2026-04-27T06:19:47Z
+    baseRefName: main
+    headRefName: fix-current-url
+    baseRefOid: 45b4fffae402464a2b371e89075019ab869d0637
+    headRefOid: e35a474d91903ee16f41df4c01521b97242592a5
+    mergeCommitOid: b45be5b20d747ec6861e65a79fd9511f0a4d3ef8
+    changedFiles: 2
+    additions: 17
+    deletions: 0
+    labels: 
+      - lgtm/done
+      - backport/manual
+      - backport/v1.26
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - tests/integration/view_test.go
+    debugScore: 2
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: services/context/context.go
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/integration/view_test.go
+        additions: 16
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 37320
+    title: "Add event.schedule context for schedule actions task"
+    url: https://github.com/go-gitea/gitea/pull/37320
+    mergedAt: 2026-04-21T20:30:21Z
+    baseRefName: main
+    headRefName: lunny/add_schedule_actions
+    baseRefOid: 732e23258e845de361a110402ef2609f433cd32e
+    headRefOid: d01be45fb0784e092e9120ec119c0fd9dde33388
+    mergeCommitOid: f1644fc5e2dbf10c543dd9989d9be592519b9dcf
+    changedFiles: 2
+    additions: 70
+    deletions: 4
+    labels: 
+      - type/bug
+      - lgtm/done
+      - backport/done
+      - backport/v1.26
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: true
+    testFiles: 
+      - services/actions/schedule_tasks_test.go
+    debugScore: 4
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: services/actions/schedule_tasks.go
+        additions: 29
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: services/actions/schedule_tasks_test.go
+        additions: 41
+        deletions: 0
+        changeType: ADDED

@@ -1,0 +1,3864 @@
+generatedAt: 2026-05-02T10:20:09.862Z
+repo: langflow-ai/langflow
+since: 2026-01-01
+limit: 50
+debugKeywords: 
+  - bug
+  - fix
+  - regression
+  - crash
+  - incorrect
+  - wrong
+  - error
+  - exception
+  - edge
+  - flaky
+  - race
+  - leak
+  - validation
+  - parser
+  - parsing
+  - timeout
+  - fail
+  - failure
+  - broken
+prs: 
+  - 
+    number: 12951
+    title: "chore: update deps"
+    url: https://github.com/langflow-ai/langflow/pull/12951
+    mergedAt: 2026-05-01T16:43:32Z
+    baseRefName: release-1.9.2
+    headRefName: update-deps
+    baseRefOid: 9d94f9b7d0c9a77deeae8f27497f358e710ebdec
+    headRefOid: de34e5bec91e0976fe7f01104fa2f66fe00681fd
+    mergeCommitOid: ea3eae8b9e011ff85d7f92f00cf07916dccf755e
+    changedFiles: 4
+    additions: 1225
+    deletions: 1218
+    labels: 
+      - lgtm
+      - ignore-for-release
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: src/backend/base/pyproject.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/uv.lock
+        additions: 822
+        deletions: 842
+        changeType: MODIFIED
+      - 
+        path: src/frontend/package-lock.json
+        additions: 142
+        deletions: 136
+        changeType: MODIFIED
+      - 
+        path: uv.lock
+        additions: 260
+        deletions: 239
+        changeType: MODIFIED
+  - 
+    number: 12953
+    title: "chore: Remove the diskcache dependency"
+    url: https://github.com/langflow-ai/langflow/pull/12953
+    mergedAt: 2026-05-01T16:04:30Z
+    baseRefName: release-1.10.0
+    headRefName: chore/remove-diskcache-dep
+    baseRefOid: 61c1d18245488fd0908f7046f7a378872e4cd780
+    headRefOid: f9b7cc747d444691861ccabacd82aafdabf988fc
+    mergeCommitOid: 5bf73714e3c57e1185773c40af68e06efdf00337
+    changedFiles: 11
+    additions: 148
+    deletions: 286
+    labels: 
+      - lgtm
+      - ignore-for-release
+    keywordHits: 
+      - regression
+      - error
+      - validation
+      - timeout
+    hasTests: true
+    testFiles: 
+      - src/backend/tests/unit/services/test_cache_factory.py
+      - src/backend/tests/unit/test_flow_events_service.py
+    debugScore: 5
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: docs/docs/Develop/memory.mdx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: pyproject.toml
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/services/cache/disk.py
+        additions: 0
+        deletions: 95
+        changeType: DELETED
+      - 
+        path: src/backend/base/langflow/services/cache/factory.py
+        additions: 0
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/services/flow_events/factory.py
+        additions: 9
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/services/flow_events/service.py
+        additions: 89
+        deletions: 27
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/pyproject.toml
+        additions: 0
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/services/test_cache_factory.py
+        additions: 13
+        deletions: 33
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/test_flow_events_service.py
+        additions: 32
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/services/settings/base.py
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: uv.lock
+        additions: 1
+        deletions: 110
+        changeType: MODIFIED
+  - 
+    number: 12921
+    title: "feat(kb): user metadata on ingestion + retrieval"
+    url: https://github.com/langflow-ai/langflow/pull/12921
+    mergedAt: 2026-05-01T04:12:17Z
+    baseRefName: feat/kb-v1-db-connectors
+    headRefName: feat/kb-ingest-metadata
+    baseRefOid: 7b8f76a6efc4392869cc5c49c4775636f0c169ba
+    headRefOid: 34229e06945cc8853770eb739f6d9382b70f30a6
+    mergeCommitOid: fbd336d2b48f076507b9665aa583e702637ca305
+    changedFiles: 65
+    additions: 2240
+    deletions: 176
+    labels: 
+      - enhancement
+      - lgtm
+    keywordHits: 
+      - fix
+      - wrong
+      - error
+      - edge
+      - validation
+      - fail
+      - broken
+    hasTests: true
+    testFiles: 
+      - src/backend/tests/unit/api/utils/test_kb_metadata.py
+      - src/backend/tests/unit/base/knowledge_bases/ingestion_sources/test_ingestion_sources.py
+      - src/backend/tests/unit/components/files_and_knowledge/test_retrieval.py
+      - src/backend/tests/unit/test_knowledge_bases_api.py
+      - src/frontend/src/modals/knowledgeBaseUploadModal/__tests__/KnowledgeBaseUploadModal.test.tsx
+      - src/frontend/src/modals/knowledgeBaseUploadModal/components/__tests__/MetadataEditor.test.tsx
+      - src/frontend/tests/core/unit/fileUploadComponent.spec.ts
+      - src/frontend/tests/fixtures.ts
+    debugScore: 6
+    suggestedDifficulty: high
+    exclusionHints: 
+      - huge-diff
+    files: 
+      - 
+        path: src/backend/base/langflow/alembic/versions/16a290ab1332_add_user_metadata_to_ingestion_run.py
+        additions: 62
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/base/langflow/alembic/versions/5238aab36810_merge_ingestion_run_metadata_and_job_metadata_heads.py
+        additions: 43
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/base/langflow/alembic/versions/72df732be86b_add_ingestion_run_table.py
+        additions: 104
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/base/langflow/alembic/versions/e728126476a8_add_kb_id_to_ingestion_run.py
+        additions: 88
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/base/langflow/api/utils/ingestion_run_service.py
+        additions: 12
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/api/utils/kb_helpers.py
+        additions: 17
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/api/utils/kb_metadata.py
+        additions: 134
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/base/langflow/api/v1/knowledge_bases.py
+        additions: 126
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Knowledge Retrieval.json"
+        additions: 29
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Vector Store RAG.json"
+        additions: 29
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/locales/en.json
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/schema/knowledge_base.py
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/services/database/models/__init__.py
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/services/database/models/ingestion_run/__init__.py
+        additions: 3
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/base/langflow/services/database/models/ingestion_run/model.py
+        additions: 142
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/base/langflow/utils/kb_constants.py
+        additions: 24
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/api/utils/test_kb_metadata.py
+        additions: 137
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/tests/unit/base/knowledge_bases/ingestion_sources/test_ingestion_sources.py
+        additions: 65
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/components/files_and_knowledge/test_retrieval.py
+        additions: 71
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/test_knowledge_bases_api.py
+        additions: 79
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/components/core/GlobalVariableModal/GlobalVariableModal.tsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/components/core/dropdownComponent/index.tsx
+        additions: 3
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/components/core/flowToolbarComponent/components/deploy-dropdown.tsx
+        additions: 1
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/components/core/parameterRenderComponent/components/modelInputComponent/components/ModelList.tsx
+        additions: 11
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/components/core/parameterRenderComponent/components/modelInputComponent/index.tsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/components/ui/simple-sidebar.tsx
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/controllers/API/queries/flows/use-get-basic-examples.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/controllers/API/queries/knowledge-bases/use-get-knowledge-base-chunks.ts
+        additions: 14
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/i18n.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/modals/knowledgeBaseUploadModal/KnowledgeBaseUploadModal.tsx
+        additions: 16
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/modals/knowledgeBaseUploadModal/__tests__/KnowledgeBaseUploadModal.test.tsx
+        additions: 77
+        deletions: 22
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/modals/knowledgeBaseUploadModal/components/FilesPanel.tsx
+        additions: 110
+        deletions: 22
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/modals/knowledgeBaseUploadModal/components/MetadataEditor.tsx
+        additions: 209
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/frontend/src/modals/knowledgeBaseUploadModal/components/StepConfiguration.tsx
+        additions: 35
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/modals/knowledgeBaseUploadModal/components/StepReview.tsx
+        additions: 46
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/modals/knowledgeBaseUploadModal/components/__tests__/MetadataEditor.test.tsx
+        additions: 72
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/frontend/src/modals/knowledgeBaseUploadModal/hooks/useKnowledgeBaseForm.ts
+        additions: 56
+        deletions: 31
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/modals/modelProviderModal/components/ModelSelection.tsx
+        additions: 10
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/modals/modelProviderModal/components/ProviderList.tsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/modals/modelProviderModal/hooks/useProviderConfiguration.ts
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/modals/stepperModal/components/StepperModalFooter.tsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/FlowPage/index.tsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/LoginPage/index.tsx
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/MainPage/components/dropdown/index.tsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/MainPage/components/list/index.tsx
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/MainPage/pages/empty-page.tsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/MainPage/pages/filesPage/components/FilesTab.tsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/MainPage/pages/homePage/hooks/useMcpServer.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/MainPage/pages/knowledgePage/sourceChunksPage/SourceChunksPage.tsx
+        additions: 54
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/MainPage/pages/knowledgePage/sourceChunksPage/components/ChunksMetadataFilter.tsx
+        additions: 96
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/frontend/src/pages/MainPage/pages/main-page.tsx
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/SettingsPage/pages/GeneralPage/index.tsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/SettingsPage/pages/ModelProvidersPage/index.tsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/stores/flowStore.ts
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/utils/reactflowUtils.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/frontend/tests/core/unit/fileUploadComponent.spec.ts
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/frontend/tests/fixtures.ts
+        additions: 3
+        deletions: 19
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/_assets/component_index.json
+        additions: 30
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/base/knowledge_bases/ingestion_sources/base.py
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/base/knowledge_bases/ingestion_sources/file_upload.py
+        additions: 22
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 12925
+    title: "feat: Add draft version CTA in deployment modal"
+    url: https://github.com/langflow-ai/langflow/pull/12925
+    mergedAt: 2026-04-30T22:13:13Z
+    baseRefName: release-1.10.0
+    headRefName: feat/LE-940
+    baseRefOid: d68b312421fc9bd6b24670ffe6da6e83ecd241b3
+    headRefOid: eb5b07c9d9fca14d9c8da33f44b116b3217ca9f1
+    mergeCommitOid: 61c1d18245488fd0908f7046f7a378872e4cd780
+    changedFiles: 6
+    additions: 141
+    deletions: 17
+    labels: 
+      - enhancement
+      - lgtm
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - src/frontend/src/pages/MainPage/pages/deploymentsPage/__tests__/step-attach-flows-version-panel.test.tsx
+      - src/frontend/src/pages/MainPage/pages/deploymentsPage/__tests__/step-attach-flows.test.tsx
+      - src/frontend/src/pages/MainPage/pages/deploymentsPage/__tests__/step-type.test.tsx
+    debugScore: 2
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: src/frontend/src/pages/MainPage/pages/deploymentsPage/__tests__/step-attach-flows-version-panel.test.tsx
+        additions: 17
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/MainPage/pages/deploymentsPage/__tests__/step-attach-flows.test.tsx
+        additions: 42
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/MainPage/pages/deploymentsPage/__tests__/step-type.test.tsx
+        additions: 14
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/MainPage/pages/deploymentsPage/components/step-attach-flows-version-panel.tsx
+        additions: 18
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/MainPage/pages/deploymentsPage/components/step-attach-flows.tsx
+        additions: 49
+        deletions: 13
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/MainPage/pages/deploymentsPage/components/step-type.tsx
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 12940
+    title: "[backend] fix: add cache_dir setting to avoid multi-instance conflicts"
+    url: https://github.com/langflow-ai/langflow/pull/12940
+    mergedAt: 2026-04-29T23:29:39Z
+    baseRefName: release-1.10.0
+    headRefName: feat/cache-dir-setting
+    baseRefOid: 9df2a2287642e13681bd08d3936249029de3441d
+    headRefOid: 0b8a2d18eea94db083d21f33449bbf9ec7475fde
+    mergeCommitOid: fab079c40039f444d1482c0f8f09076a3f14bbd5
+    changedFiles: 27
+    additions: 161
+    deletions: 97
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - edge
+      - parser
+    hasTests: true
+    testFiles: 
+      - src/backend/tests/unit/services/test_cache_factory.py
+    debugScore: 4
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Document Q&A.json"
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Financial Report Parser.json"
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Hybrid Search RAG.json"
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Image Sentiment Analysis.json"
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Instagram Copywriter.json"
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Invoice Summarizer.json"
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Knowledge Retrieval.json"
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Market Research.json"
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/News Aggregator.json"
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Nvidia Remix.json"
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Pokédex Agent.json"
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Portfolio Website Code Generator.json"
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Price Deal Finder.json"
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Research Agent.json"
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/SaaS Pricing.json"
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Search agent.json"
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Sequential Tasks Agents.json"
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Simple Agent.json"
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Social Media Agent.json"
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Text Sentiment Analysis.json"
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Travel Planning Agents.json"
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Vector Store RAG.json"
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Youtube Analysis.json"
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/services/cache/factory.py
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/services/test_cache_factory.py
+        additions: 41
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/lfx/src/lfx/_assets/component_index.json
+        additions: 56
+        deletions: 56
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/services/settings/base.py
+        additions: 22
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 12926
+    title: "fix: route custom Loguru logs through Langflow logger"
+    url: https://github.com/langflow-ai/langflow/pull/12926
+    mergedAt: 2026-04-30T19:10:29Z
+    baseRefName: release-1.10.0
+    headRefName: fix/custom-log-info
+    baseRefOid: 9b11f5a383c77847f3d200b171f1bd76cd548326
+    headRefOid: 93a754b80e28c0a726bfb8424cbfe7150129cabf
+    mergeCommitOid: d68b312421fc9bd6b24670ffe6da6e83ecd241b3
+    changedFiles: 2
+    additions: 79
+    deletions: 10
+    labels: 
+      - bug
+      - lgtm
+    keywordHits: 
+      - bug
+      - fix
+      - regression
+      - validation
+    hasTests: true
+    testFiles: 
+      - src/backend/tests/unit/test_logger.py
+    debugScore: 6
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: src/backend/tests/unit/test_logger.py
+        additions: 24
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/log/logger.py
+        additions: 55
+        deletions: 10
+        changeType: MODIFIED
+  - 
+    number: 12945
+    title: "fix(security): reject symlinks/hardlinks in BaseFileComponent TAR extraction (GHSA-ccv6-r384-xp75)"
+    url: https://github.com/langflow-ai/langflow/pull/12945
+    mergedAt: 2026-04-30T17:45:54Z
+    baseRefName: release-1.9.2
+    headRefName: security/ghsa-ccv6-r384-xp75-tar-symlink
+    baseRefOid: bc16a400d6e6b1d6b43f46c4f7aad54a169f0bf8
+    headRefOid: 107e405e0adccc807390e8ac72d5e4cac4f608c5
+    mergeCommitOid: cb06a666d0f00a86d40599a91713fc615d7ea313
+    changedFiles: 2
+    additions: 260
+    deletions: 4
+    labels: 
+      - bug
+      - lgtm
+    keywordHits: 
+      - bug
+      - fix
+      - error
+      - edge
+      - leak
+      - validation
+    hasTests: true
+    testFiles: 
+      - src/lfx/tests/unit/base/data/test_base_file_unpack.py
+    debugScore: 8
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: src/lfx/src/lfx/base/data/base_file.py
+        additions: 24
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: src/lfx/tests/unit/base/data/test_base_file_unpack.py
+        additions: 236
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 12947
+    title: "fix: update playwright to 1.59.0"
+    url: https://github.com/langflow-ai/langflow/pull/12947
+    mergedAt: 2026-04-30T17:45:54Z
+    baseRefName: release-1.9.2
+    headRefName: pvr-fix
+    baseRefOid: bc16a400d6e6b1d6b43f46c4f7aad54a169f0bf8
+    headRefOid: 7abde260126e091f856434d3fe2a26a5443e69f4
+    mergeCommitOid: 9d94f9b7d0c9a77deeae8f27497f358e710ebdec
+    changedFiles: 2
+    additions: 48
+    deletions: 48
+    labels: 
+      - bug
+      - lgtm
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: pyproject.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: uv.lock
+        additions: 47
+        deletions: 47
+        changeType: MODIFIED
+  - 
+    number: 12924
+    title: "ref: flip wxo ff"
+    url: https://github.com/langflow-ai/langflow/pull/12924
+    mergedAt: 2026-04-30T16:31:02Z
+    baseRefName: release-1.9.2
+    headRefName: flip-wxo-ff
+    baseRefOid: bc16a400d6e6b1d6b43f46c4f7aad54a169f0bf8
+    headRefOid: 8d49072aefabf7d22393c17d36065fa92e1400f4
+    mergeCommitOid: dce21ff925b9a53fd729171fcb0dd4d2b2ae2a30
+    changedFiles: 3
+    additions: 8
+    deletions: 2
+    labels: 
+      - lgtm
+      - fix-index
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: true
+    testFiles: 
+      - src/backend/tests/unit/api/v1/test_deployments_telemetry.py
+      - src/backend/tests/unit/api/v1/test_endpoints.py
+    debugScore: 4
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: src/backend/tests/unit/api/v1/test_deployments_telemetry.py
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/api/v1/test_endpoints.py
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/services/settings/feature_flags.py
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 12942
+    title: "fix(tests): Stabilize Windows-only Playwright e2e failures"
+    url: https://github.com/langflow-ai/langflow/pull/12942
+    mergedAt: 2026-04-30T14:55:42Z
+    baseRefName: release-1.10.0
+    headRefName: cz/fix-teardown-win
+    baseRefOid: fab079c40039f444d1482c0f8f09076a3f14bbd5
+    headRefOid: 01bbb6fe8256b3d82e47b1207c0d587675a5b25f
+    mergeCommitOid: 9c6839c0f07fdfce1cccc026bff2fbe6778b5922
+    changedFiles: 7
+    additions: 128
+    deletions: 39
+    labels: 
+      - bug
+    keywordHits: 
+      - bug
+      - fix
+      - edge
+      - race
+      - fail
+      - failure
+    hasTests: true
+    testFiles: 
+      - src/frontend/tests/core/features/tweaksTest.spec.ts
+      - src/frontend/tests/core/features/user-flow-state-cleanup.spec.ts
+      - src/frontend/tests/core/unit/customEdgesComponent.spec.ts
+      - src/frontend/tests/core/unit/fileUploadComponent.spec.ts
+      - src/frontend/tests/fixtures.ts
+      - src/frontend/tests/globalTeardown.ts
+      - src/frontend/tests/utils/add-new-user-and-loggin.ts
+    debugScore: 8
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: src/frontend/tests/core/features/tweaksTest.spec.ts
+        additions: 10
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/frontend/tests/core/features/user-flow-state-cleanup.spec.ts
+        additions: 13
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: src/frontend/tests/core/unit/customEdgesComponent.spec.ts
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: src/frontend/tests/core/unit/fileUploadComponent.spec.ts
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: src/frontend/tests/fixtures.ts
+        additions: 20
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/frontend/tests/globalTeardown.ts
+        additions: 68
+        deletions: 22
+        changeType: MODIFIED
+      - 
+        path: src/frontend/tests/utils/add-new-user-and-loggin.ts
+        additions: 8
+        deletions: 5
+        changeType: MODIFIED
+  - 
+    number: 12922
+    title: "docs: add telemetry for deployments endpoints"
+    url: https://github.com/langflow-ai/langflow/pull/12922
+    mergedAt: 2026-04-30T14:10:53Z
+    baseRefName: release-1.9.2
+    headRefName: docs-deployments-endpoints-add-telemetry
+    baseRefOid: d965a3ae6cd641dd5bbdc2de4f73999deca27335
+    headRefOid: afd4e7d60f063b2555a6735054c2339d49045a58
+    mergeCommitOid: bc16a400d6e6b1d6b43f46c4f7aad54a169f0bf8
+    changedFiles: 2
+    additions: 46
+    deletions: 2
+    labels: 
+      - documentation
+      - lgtm
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docs/docs/Develop/contributing-telemetry.mdx
+        additions: 23
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: docs/versioned_docs/version-1.9.0/Develop/contributing-telemetry.mdx
+        additions: 23
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 12903
+    title: "feat: MemoryBases GUI Component"
+    url: https://github.com/langflow-ai/langflow/pull/12903
+    mergedAt: 2026-04-29T22:43:10Z
+    baseRefName: release-1.10.0
+    headRefName: mb-component
+    baseRefOid: 6b7703c067f0f3928bdfb92024a0f59b1f18717f
+    headRefOid: d8d344cabf0d8935a5b9c524493d69618c755a8e
+    mergeCommitOid: 9df2a2287642e13681bd08d3936249029de3441d
+    changedFiles: 12
+    additions: 1103
+    deletions: 91
+    labels: 
+      - enhancement
+      - lgtm
+    keywordHits: 
+      - edge
+      - fail
+    hasTests: true
+    testFiles: 
+      - src/backend/tests/unit/components/files_and_knowledge/test_ingestion.py
+      - src/backend/tests/unit/components/files_and_knowledge/test_memory_retrieval.py
+      - src/backend/tests/unit/components/files_and_knowledge/test_retrieval.py
+    debugScore: 3
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Knowledge Retrieval.json"
+        additions: 3
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Vector Store RAG.json"
+        additions: 5
+        deletions: 9
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/locales/en.json
+        additions: 13
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/components/files_and_knowledge/test_ingestion.py
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/components/files_and_knowledge/test_memory_retrieval.py
+        additions: 509
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/tests/unit/components/files_and_knowledge/test_retrieval.py
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/_assets/component_index.json
+        additions: 210
+        deletions: 11
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/components/files_and_knowledge/__init__.py
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/components/files_and_knowledge/_kb_paths.py
+        additions: 75
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/lfx/src/lfx/components/files_and_knowledge/ingestion.py
+        additions: 5
+        deletions: 16
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/components/files_and_knowledge/memory_retrieval.py
+        additions: 268
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/lfx/src/lfx/components/files_and_knowledge/retrieval.py
+        additions: 8
+        deletions: 44
+        changeType: MODIFIED
+  - 
+    number: 12938
+    title: "fix(LE-602): Update Pydantic to >=2.13.0 for fastapi-pagination v0.16.0 compatibility"
+    url: https://github.com/langflow-ai/langflow/pull/12938
+    mergedAt: 2026-04-29T21:40:19Z
+    baseRefName: release-1.10.0
+    headRefName: fix/LE-602-update-pydantic-version
+    baseRefOid: 6b7703c067f0f3928bdfb92024a0f59b1f18717f
+    headRefOid: 9a5cf4634166fef01a3710f926b59d13903bffff
+    mergeCommitOid: 2652d7a52e6c0ca0f448559a69e6be89370deb8d
+    changedFiles: 2
+    additions: 103
+    deletions: 107
+    labels: 
+      - bug
+      - lgtm
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: src/backend/base/pyproject.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: uv.lock
+        additions: 102
+        deletions: 106
+        changeType: MODIFIED
+  - 
+    number: 12930
+    title: "fix: Don't show empty category for MCP search in sidebar"
+    url: https://github.com/langflow-ai/langflow/pull/12930
+    mergedAt: 2026-04-29T21:40:19Z
+    baseRefName: release-1.10.0
+    headRefName: fix/mcp-empty-search
+    baseRefOid: 9b11f5a383c77847f3d200b171f1bd76cd548326
+    headRefOid: fde4249b063757c8d76d39174d22f56b879b0f9c
+    mergeCommitOid: 79872f1c9d6036cf38881582e13dd0fcdf65cb84
+    changedFiles: 1
+    additions: 34
+    deletions: 20
+    labels: 
+      - bug
+      - lgtm
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: src/frontend/src/pages/FlowPage/components/flowSidebarComponent/index.tsx
+        additions: 34
+        deletions: 20
+        changeType: MODIFIED
+  - 
+    number: 12937
+    title: "docs: wxo deployment is behind feature flag"
+    url: https://github.com/langflow-ai/langflow/pull/12937
+    mergedAt: 2026-04-29T21:15:21Z
+    baseRefName: release-1.9.2
+    headRefName: docs-ff-wxo-feature
+    baseRefOid: 784169cee7adb6ea20c062f5ac2dc735cdd26527
+    headRefOid: ea1cd73868e7771ec01196c01c14b523cab14236
+    mergeCommitOid: d965a3ae6cd641dd5bbdc2de4f73999deca27335
+    changedFiles: 2
+    additions: 10
+    deletions: 0
+    labels: 
+      - documentation
+      - lgtm
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docs/versioned_docs/version-1.9.0/Deployment/deployment-wxo.mdx
+        additions: 8
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs/versioned_docs/version-1.9.0/Support/release-notes.mdx
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 12934
+    title: "fix: namespace inputs.session on build_public_tmp"
+    url: https://github.com/langflow-ai/langflow/pull/12934
+    mergedAt: 2026-04-29T19:45:41Z
+    baseRefName: release-1.9.2
+    headRefName: fix/cve-2026-33017-session-namespacing
+    baseRefOid: 784169cee7adb6ea20c062f5ac2dc735cdd26527
+    headRefOid: 0efcf03a4440b27111db78a7e9d299df2e3956f8
+    mergeCommitOid: 8735f065d7aaab0a037e4cb3261a0b42d0406db8
+    changedFiles: 5
+    additions: 344
+    deletions: 1
+    labels: 
+      - bug
+      - lgtm
+    keywordHits: 
+      - bug
+      - fix
+      - regression
+    hasTests: true
+    testFiles: 
+      - src/backend/tests/unit/test_chat_endpoint.py
+    debugScore: 5
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: src/backend/base/langflow/api/utils/__init__.py
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/api/utils/flow_utils.py
+        additions: 20
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/api/v1/chat.py
+        additions: 10
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/test_chat_endpoint.py
+        additions: 310
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/cli/_running_commands.py
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 12936
+    title: "chore: enable CodeRabbit auto-review on release-* branches"
+    url: https://github.com/langflow-ai/langflow/pull/12936
+    mergedAt: 2026-04-29T19:40:53Z
+    baseRefName: main
+    headRefName: chore/coderabbit-review-release-branches
+    baseRefOid: b09d942ba30a4ef419d5c1675920d5ed7777ad26
+    headRefOid: ff1bfd5ff4dab958de1d2379d2bb83a57edb3cf5
+    mergeCommitOid: 7640ce6978005580eea3080325a207f771e11d56
+    changedFiles: 1
+    additions: 2
+    deletions: 1
+    labels: 
+      - lgtm
+      - ignore-for-release
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .coderabbit.yaml
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 12928
+    title: "feat(i18n): translate default node titles on language change, preserve user-customized names"
+    url: https://github.com/langflow-ai/langflow/pull/12928
+    mergedAt: 2026-04-29T19:13:49Z
+    baseRefName: release-1.10.0
+    headRefName: feat/gp-node-title-i18n-clean
+    baseRefOid: 9b11f5a383c77847f3d200b171f1bd76cd548326
+    headRefOid: 8c5c907ed4a7e13a4052623c110c4cbecd0b105d
+    mergeCommitOid: 6b7703c067f0f3928bdfb92024a0f59b1f18717f
+    changedFiles: 8
+    additions: 108
+    deletions: 10
+    labels: 
+      - enhancement
+      - lgtm
+    keywordHits: 
+      - fix
+      - error
+    hasTests: true
+    testFiles: 
+      - src/backend/tests/unit/test_endpoints.py
+    debugScore: 4
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: src/backend/base/langflow/api/v1/endpoints.py
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/utils/i18n.py
+        additions: 45
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/test_endpoints.py
+        additions: 6
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/controllers/API/queries/flows/use-get-types.ts
+        additions: 14
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/stores/flowStore.ts
+        additions: 21
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/stores/typesStore.ts
+        additions: 5
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/types/api/index.ts
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/types/zustand/types/index.ts
+        additions: 7
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 12354
+    title: "feat: Clear all traces for flow "
+    url: https://github.com/langflow-ai/langflow/pull/12354
+    mergedAt: 2026-04-29T13:49:31Z
+    baseRefName: release-1.10.0
+    headRefName: feat_clear_all_traces_for_flow
+    baseRefOid: 9514c9dc06020726595f926d1190045e4222087d
+    headRefOid: 8acc0aac165c334456d50d0cdc84ad23fedd5a84
+    mergeCommitOid: 760da3889bebd07a141a6034aa74510ce1e1dd14
+    changedFiles: 3
+    additions: 110
+    deletions: 8
+    labels: 
+      - enhancement
+      - community
+    keywordHits: 
+      - race
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: src/frontend/src/controllers/API/queries/traces/index.ts
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/controllers/API/queries/traces/use-delete-traces.ts
+        additions: 20
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/frontend/src/pages/FlowPage/components/TraceComponent/FlowInsightsContent.tsx
+        additions: 89
+        deletions: 8
+        changeType: MODIFIED
+  - 
+    number: 12906
+    title: "fix: fallback to sync call in lfx run when stream=true"
+    url: https://github.com/langflow-ai/langflow/pull/12906
+    mergedAt: 2026-04-29T15:44:47Z
+    baseRefName: release-1.9.2
+    headRefName: fix-lfx-stream-true-bug
+    baseRefOid: 3f2d2fc39920149fd5552b8903a49734f3ea9c59
+    headRefOid: 7b68a5ad1b040a04bf5f12daa4404ac4c480b63c
+    mergeCommitOid: 784169cee7adb6ea20c062f5ac2dc735cdd26527
+    changedFiles: 44
+    additions: 1392
+    deletions: 205
+    labels: 
+      - bug
+      - lgtm
+    keywordHits: 
+      - bug
+      - fix
+      - crash
+      - error
+      - edge
+      - validation
+      - fail
+    hasTests: true
+    testFiles: 
+      - src/lfx/tests/unit/base/models/test_handle_stream.py
+      - src/lfx/tests/unit/cli/test_common.py
+      - src/lfx/tests/unit/cli/test_run_command.py
+      - src/lfx/tests/unit/cli/test_serve_app.py
+      - src/lfx/tests/unit/cli/test_serve_components.py
+      - src/lfx/tests/unit/components/cuga/__init__.py
+      - src/lfx/tests/unit/components/cuga/test_cuga_session_id_fallback.py
+      - src/lfx/tests/unit/run/test_base.py
+      - src/lfx/tests/unit/services/test_integration.py
+      - src/lfx/tests/unit/services/test_minimal_services.py
+      - src/lfx/tests/unit/services/test_service_manager.py
+    debugScore: 6
+    suggestedDifficulty: high
+    exclusionHints: 
+      - huge-diff
+    files: 
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Document Q&A.json"
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Hybrid Search RAG.json"
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Instagram Copywriter.json"
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Invoice Summarizer.json"
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Knowledge Retrieval.json"
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Market Research.json"
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/News Aggregator.json"
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Nvidia Remix.json"
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Pokédex Agent.json"
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Portfolio Website Code Generator.json"
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Price Deal Finder.json"
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Research Agent.json"
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/SaaS Pricing.json"
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Search agent.json"
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Sequential Tasks Agents.json"
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Simple Agent.json"
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Social Media Agent.json"
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Text Sentiment Analysis.json"
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Travel Planning Agents.json"
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Vector Store RAG.json"
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Youtube Analysis.json"
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/_assets/component_index.json
+        additions: 76
+        deletions: 76
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/base/models/model.py
+        additions: 35
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/cli/_running_commands.py
+        additions: 8
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/cli/common.py
+        additions: 14
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/cli/run.py
+        additions: 9
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/cli/serve_app.py
+        additions: 7
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/components/cuga/cuga_agent.py
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/graph/graph/base.py
+        additions: 7
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/memory/stubs.py
+        additions: 12
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/run/_defaults.py
+        additions: 132
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/lfx/src/lfx/run/base.py
+        additions: 29
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/services/variable/service.py
+        additions: 11
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/lfx/tests/unit/base/models/test_handle_stream.py
+        additions: 120
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/lfx/tests/unit/cli/test_common.py
+        additions: 157
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: src/lfx/tests/unit/cli/test_run_command.py
+        additions: 62
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/lfx/tests/unit/cli/test_serve_app.py
+        additions: 99
+        deletions: 38
+        changeType: MODIFIED
+      - 
+        path: src/lfx/tests/unit/cli/test_serve_components.py
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lfx/tests/unit/components/cuga/__init__.py
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/lfx/tests/unit/components/cuga/test_cuga_session_id_fallback.py
+        additions: 97
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/lfx/tests/unit/run/test_base.py
+        additions: 431
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/lfx/tests/unit/services/test_integration.py
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: src/lfx/tests/unit/services/test_minimal_services.py
+        additions: 43
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: src/lfx/tests/unit/services/test_service_manager.py
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 12517
+    title: "feat: backend i18n — serve translated component metadata via Accept-Language"
+    url: https://github.com/langflow-ai/langflow/pull/12517
+    mergedAt: 2026-04-29T14:05:54Z
+    baseRefName: release-1.10.0
+    headRefName: feat/gp-backend-i18n-clean
+    baseRefOid: 9514c9dc06020726595f926d1190045e4222087d
+    headRefOid: 3479c69d337acdb5c09b265e69ff89d85d9c71ae
+    mergeCommitOid: 9b11f5a383c77847f3d200b171f1bd76cd548326
+    changedFiles: 162
+    additions: 53649
+    deletions: 1125
+    labels: 
+      - enhancement
+      - lgtm
+      - community
+    keywordHits: 
+      - edge
+      - validation
+      - parser
+    hasTests: true
+    testFiles: 
+      - scripts/gp/tests/test_download.py
+      - scripts/gp/tests/test_download_translations.py
+      - scripts/gp/tests/test_extract_backend_strings.py
+      - scripts/gp/tests/test_upload.py
+      - scripts/gp/tests/test_upload_strings.py
+    debugScore: 2
+    suggestedDifficulty: high
+    exclusionHints: 
+      - huge-diff
+    files: 
+      - 
+        path: .github/workflows/gp-backend-check.yml
+        additions: 49
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: .github/workflows/gp-download.yml
+        additions: 102
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/gp-upload.yml
+        additions: 58
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: scripts/gp/bake_note_keys.py
+        additions: 101
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: scripts/gp/check_backend_status.py
+        additions: 127
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: scripts/gp/download.py
+        additions: 98
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: scripts/gp/download_translations.py
+        additions: 0
+        deletions: 59
+        changeType: DELETED
+      - 
+        path: scripts/gp/extract_backend_strings.py
+        additions: 216
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: scripts/gp/tests/test_download.py
+        additions: 197
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: scripts/gp/tests/test_download_translations.py
+        additions: 0
+        deletions: 92
+        changeType: DELETED
+      - 
+        path: scripts/gp/tests/test_extract_backend_strings.py
+        additions: 168
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: scripts/gp/tests/test_upload.py
+        additions: 148
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: scripts/gp/tests/test_upload_strings.py
+        additions: 0
+        deletions: 69
+        changeType: DELETED
+      - 
+        path: scripts/gp/upload.py
+        additions: 116
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: scripts/gp/upload_strings.py
+        additions: 0
+        deletions: 39
+        changeType: DELETED
+      - 
+        path: src/backend/base/langflow/api/v1/endpoints.py
+        additions: 9
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/api/v1/flows.py
+        additions: 92
+        deletions: 29
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/api/v1/starter_projects.py
+        additions: 9
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Basic Prompt Chaining.json"
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Basic Prompting.json"
+        additions: 4
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Blog Writer.json"
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Custom Component Generator.json"
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Document Q&A.json"
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Financial Report Parser.json"
+        additions: 4
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Hybrid Search RAG.json"
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Image Sentiment Analysis.json"
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Instagram Copywriter.json"
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Invoice Summarizer.json"
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Knowledge Retrieval.json"
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Market Research.json"
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Meeting Summary.json"
+        additions: 10
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Memory Chatbot.json"
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/News Aggregator.json"
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Nvidia Remix.json"
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Pokédex Agent.json"
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Portfolio Website Code Generator.json"
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Price Deal Finder.json"
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Research Agent.json"
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Research Translation Loop.json"
+        additions: 3
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/SEO Keyword Generator.json"
+        additions: 4
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/SaaS Pricing.json"
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Search agent.json"
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Sequential Tasks Agents.json"
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Simple Agent.json"
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Social Media Agent.json"
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Text Sentiment Analysis.json"
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Travel Planning Agents.json"
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Twitter Thread Generator.json"
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Vector Store RAG.json"
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Youtube Analysis.json"
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/locales/de.json
+        additions: 6701
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/base/langflow/locales/en.json
+        additions: 6750
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/base/langflow/locales/es.json
+        additions: 6701
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/base/langflow/locales/fr.json
+        additions: 6701
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/base/langflow/locales/ja.json
+        additions: 6701
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/base/langflow/locales/pt.json
+        additions: 6701
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/base/langflow/locales/zh-Hans.json
+        additions: 6701
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/base/langflow/main.py
+        additions: 26
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/services/database/models/flow/model.py
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/utils/i18n.py
+        additions: 238
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 12876
+    title: "fix: pass Google embedding dimensions"
+    url: https://github.com/langflow-ai/langflow/pull/12876
+    mergedAt: 2026-04-28T23:24:52Z
+    baseRefName: release-1.9.2
+    headRefName: fix/google-embedding-dimensions
+    baseRefOid: e77b48a9efbd9648d04ff3672db79f5164498537
+    headRefOid: 109772da9a6d82d95a13a8bb7fe7275e829154ae
+    mergeCommitOid: af8cd0219e16c60cf2fc004b23215a0d918e4faf
+    changedFiles: 3
+    additions: 30
+    deletions: 5
+    labels: 
+      - bug
+      - lgtm
+    keywordHits: 
+      - bug
+      - fix
+      - regression
+      - validation
+    hasTests: true
+    testFiles: 
+      - src/backend/tests/unit/test_unified_models.py
+    debugScore: 6
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: .secrets.baseline
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/test_unified_models.py
+        additions: 27
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/base/models/unified_models/model_catalog.py
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 12858
+    title: "feat(deployments): add agent name validation during deployment creation"
+    url: https://github.com/langflow-ai/langflow/pull/12858
+    mergedAt: 2026-04-28T22:41:20Z
+    baseRefName: release-1.10.0
+    headRefName: wxo-name-filter
+    baseRefOid: f7d63d081d9e89bb131dbc84c2adae1d790139a5
+    headRefOid: 014e95921d7c4d88cb1c26919359e843429d899b
+    mergeCommitOid: 9514c9dc06020726595f926d1190045e4222087d
+    changedFiles: 23
+    additions: 1461
+    deletions: 92
+    labels: 
+      - enhancement
+      - lgtm
+    keywordHits: 
+      - validation
+    hasTests: true
+    testFiles: 
+      - src/backend/tests/integration/test_deployments_integration.py
+      - src/backend/tests/unit/api/v1/test_deployment_mapper_base.py
+      - src/backend/tests/unit/api/v1/test_deployment_mapper_watsonx.py
+      - src/backend/tests/unit/api/v1/test_deployment_route_handlers.py
+      - src/backend/tests/unit/services/database/test_deployment_crud_names_filter.py
+      - src/backend/tests/unit/services/deployment/test_watsonx_orchestrate.py
+      - src/frontend/src/pages/MainPage/pages/deploymentsPage/__tests__/create-mode.test.tsx
+      - src/frontend/src/pages/MainPage/pages/deploymentsPage/__tests__/step-type.test.tsx
+      - src/frontend/tests/core/features/deployments-page.spec.ts
+      - src/lfx/tests/unit/services/deployment/test_deployment_schema.py
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+    files: 
+      - 
+        path: src/backend/base/langflow/api/v1/deployments.py
+        additions: 21
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/api/v1/mappers/deployments/base.py
+        additions: 19
+        deletions: 17
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/api/v1/mappers/deployments/helpers.py
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/api/v1/mappers/deployments/watsonx_orchestrate/mapper.py
+        additions: 47
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/services/adapters/deployment/watsonx_orchestrate/service.py
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/services/database/models/deployment/crud.py
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/integration/test_deployments_integration.py
+        additions: 321
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/tests/unit/api/v1/test_deployment_mapper_base.py
+        additions: 84
+        deletions: 21
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/api/v1/test_deployment_mapper_watsonx.py
+        additions: 136
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/api/v1/test_deployment_route_handlers.py
+        additions: 165
+        deletions: 11
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/services/database/test_deployment_crud_names_filter.py
+        additions: 191
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/tests/unit/services/deployment/test_watsonx_orchestrate.py
+        additions: 32
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/components/core/folderSidebarComponent/components/sideBarFolderButtons/index.tsx
+        additions: 5
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/controllers/API/queries/deployments/index.ts
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/controllers/API/queries/deployments/use-check-agent-names.ts
+        additions: 85
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/frontend/src/controllers/API/queries/deployments/use-get-deployments.ts
+        additions: 17
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/MainPage/pages/deploymentsPage/__tests__/create-mode.test.tsx
+        additions: 27
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/MainPage/pages/deploymentsPage/__tests__/step-type.test.tsx
+        additions: 78
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/MainPage/pages/deploymentsPage/components/step-type.tsx
+        additions: 138
+        deletions: 15
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/MainPage/pages/deploymentsPage/contexts/deployment-stepper-context.tsx
+        additions: 23
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/frontend/tests/core/features/deployments-page.spec.ts
+        additions: 44
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/services/adapters/deployment/schema.py
+        additions: 7
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: src/lfx/tests/unit/services/deployment/test_deployment_schema.py
+        additions: 8
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 12782
+    title: "fix(mcp): render connection handles for non-string MCP tool inputs"
+    url: https://github.com/langflow-ai/langflow/pull/12782
+    mergedAt: 2026-04-28T22:23:55Z
+    baseRefName: release-1.10.0
+    headRefName: fix/mcp-tool-node-input-handles
+    baseRefOid: 1a9ffa05c0b9d38eb866ff81c9470c545ecc6d13
+    headRefOid: e9da4b252e7a0bbb269148fde384654644fdcf18
+    mergeCommitOid: d1b73e9f18549c76e27bda1b6daf1627ec701049
+    changedFiles: 6
+    additions: 178
+    deletions: 18
+    labels: 
+      - bug
+      - lgtm
+    keywordHits: 
+      - bug
+      - fix
+      - regression
+    hasTests: true
+    testFiles: 
+      - src/backend/tests/unit/base/mcp/test_mcp_util.py
+      - src/backend/tests/unit/inputs/test_inputs.py
+      - src/lfx/tests/unit/inputs/test_inputs_schema.py
+    debugScore: 5
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: src/backend/tests/unit/base/mcp/test_mcp_util.py
+        additions: 13
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/inputs/test_inputs.py
+        additions: 23
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/base/mcp/util.py
+        additions: 30
+        deletions: 18
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/inputs/inputs.py
+        additions: 46
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/io/schema.py
+        additions: 18
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/lfx/tests/unit/inputs/test_inputs_schema.py
+        additions: 48
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 9941
+    title: "fix: Add microseconds support for PostgreSQL data store"
+    url: https://github.com/langflow-ai/langflow/pull/9941
+    mergedAt: 2026-04-28T21:24:35Z
+    baseRefName: release-1.10.0
+    headRefName: feature/support-microseconds
+    baseRefOid: c8abc0ed7fed5fa6afb0f026930977d7656c7b6e
+    headRefOid: 23655fa42039e42285c0a8bf30e3b560a5ca3b55
+    mergeCommitOid: f7d63d081d9e89bb131dbc84c2adae1d790139a5
+    changedFiles: 11
+    additions: 272
+    deletions: 135
+    labels: 
+      - bug
+      - lgtm
+    keywordHits: 
+      - bug
+      - fix
+      - error
+      - validation
+      - parsing
+    hasTests: true
+    testFiles: 
+      - src/backend/tests/unit/schema/test_timestamp_validators.py
+      - src/backend/tests/unit/test_messages.py
+      - src/backend/tests/unit/test_messages_endpoints.py
+      - src/lfx/tests/unit/schema/test_schema_message.py
+    debugScore: 6
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: src/backend/base/langflow/schema/encoders.py
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/schema/playground_events.py
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/schema/validators.py
+        additions: 35
+        deletions: 60
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/services/database/models/message/model.py
+        additions: 11
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/schema/test_timestamp_validators.py
+        additions: 157
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/tests/unit/test_messages.py
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/test_messages_endpoints.py
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/schema/encoders.py
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/schema/message.py
+        additions: 2
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/schema/validators.py
+        additions: 39
+        deletions: 47
+        changeType: MODIFIED
+      - 
+        path: src/lfx/tests/unit/schema/test_schema_message.py
+        additions: 19
+        deletions: 6
+        changeType: MODIFIED
+  - 
+    number: 12871
+    title: "fix(kb): allow clearing persisted separator"
+    url: https://github.com/langflow-ai/langflow/pull/12871
+    mergedAt: 2026-04-28T21:21:25Z
+    baseRefName: feat/kb-v1-db-connectors
+    headRefName: codex/kb-crud-separator-clear
+    baseRefOid: bfc576c716b7cce06de19b82004a7e7254381a4e
+    headRefOid: aa8ff2010fa3a0006212e76af4129c012fb1c9e0
+    mergeCommitOid: 5416b48b14cbf98a9910c6e1b7c6ba621b9369fb
+    changedFiles: 4
+    additions: 200
+    deletions: 4
+    labels: 
+      - bug
+    keywordHits: 
+      - bug
+      - fix
+      - regression
+      - edge
+      - validation
+    hasTests: true
+    testFiles: 
+      - src/backend/tests/unit/base/knowledge_bases/test_knowledge_base_service.py
+      - src/backend/tests/unit/test_knowledge_bases_api.py
+    debugScore: 7
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: src/backend/base/langflow/api/utils/knowledge_base_service.py
+        additions: 43
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/api/v1/knowledge_bases.py
+        additions: 5
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/base/knowledge_bases/test_knowledge_base_service.py
+        additions: 76
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/test_knowledge_bases_api.py
+        additions: 76
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 12911
+    title: "docs: change upgrade reinstall order"
+    url: https://github.com/langflow-ai/langflow/pull/12911
+    mergedAt: 2026-04-28T20:44:40Z
+    baseRefName: release-1.10.0
+    headRefName: docs-switch-install-wording
+    baseRefOid: 4dfe24ab208f87c2be04eb2103815eb66b164c1d
+    headRefOid: 7e3713759ec50b26008435ba433299ef6c5679d9
+    mergeCommitOid: 9dcdc704ec8247cee4a669f61b8d7a01acbd32f5
+    changedFiles: 3
+    additions: 24
+    deletions: 45
+    labels: 
+      - documentation
+      - lgtm
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docs/docs/Get-Started/get-started-installation.mdx
+        additions: 8
+        deletions: 15
+        changeType: MODIFIED
+      - 
+        path: docs/versioned_docs/version-1.8.0/Get-Started/get-started-installation.mdx
+        additions: 8
+        deletions: 15
+        changeType: MODIFIED
+      - 
+        path: docs/versioned_docs/version-1.9.0/Get-Started/get-started-installation.mdx
+        additions: 8
+        deletions: 15
+        changeType: MODIFIED
+  - 
+    number: 12905
+    title: "fix(composio): prevent KeyError('type') on Gmail/Calendar tool execution"
+    url: https://github.com/langflow-ai/langflow/pull/12905
+    mergedAt: 2026-04-28T20:18:57Z
+    baseRefName: release-1.10.0
+    headRefName: fix/composio-keyerror-type-on-tool-execution
+    baseRefOid: a46ae46f9f10c8c87a2bdad10e7260fc3c820b90
+    headRefOid: 45257d483d9012c818cb7be045bbcdcb55eebe3f
+    mergeCommitOid: c8abc0ed7fed5fa6afb0f026930977d7656c7b6e
+    changedFiles: 5
+    additions: 415
+    deletions: 12
+    labels: 
+      - bug
+    keywordHits: 
+      - bug
+      - fix
+      - error
+    hasTests: true
+    testFiles: 
+      - src/backend/tests/unit/components/bundles/composio/test_safe_provider.py
+    debugScore: 5
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: src/backend/tests/unit/components/bundles/composio/test_safe_provider.py
+        additions: 209
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/lfx/src/lfx/_assets/component_index.json
+        additions: 4
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/base/composio/composio_base.py
+        additions: 10
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/base/composio/safe_provider.py
+        additions: 189
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/lfx/src/lfx/components/composio/composio_api.py
+        additions: 3
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 12916
+    title: "ci: unblock community PRs from spurious CI failures"
+    url: https://github.com/langflow-ai/langflow/pull/12916
+    mergedAt: 2026-04-28T20:16:33Z
+    baseRefName: release-1.10.0
+    headRefName: fix/community-pr-ci
+    baseRefOid: a46ae46f9f10c8c87a2bdad10e7260fc3c820b90
+    headRefOid: 32b4f785b67e1adfc22a023b19bdd4a4377178b1
+    mergeCommitOid: 4dfe24ab208f87c2be04eb2103815eb66b164c1d
+    changedFiles: 2
+    additions: 7
+    deletions: 3
+    labels: 
+      - lgtm
+    keywordHits: 
+      - fix
+      - error
+      - race
+      - fail
+      - failure
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 5
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/workflows/ci.yml
+        additions: 5
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/py_autofix.yml
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 12881
+    title: "feat: add envs to deployment list response for wxo agents"
+    url: https://github.com/langflow-ai/langflow/pull/12881
+    mergedAt: 2026-04-28T19:48:58Z
+    baseRefName: release-1.10.0
+    headRefName: dply-list-envs
+    baseRefOid: a46ae46f9f10c8c87a2bdad10e7260fc3c820b90
+    headRefOid: e9120d080038bb122b6e5c766ca2f5269a0f490e
+    mergeCommitOid: 3aaee0f8a61cb266fe9dc9566764b04bd7a78b15
+    changedFiles: 12
+    additions: 404
+    deletions: 59
+    labels: 
+      - enhancement
+      - lgtm
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - src/backend/base/langflow/tests/api/v1/test_deployment_guard_delete_endpoints.py
+      - src/backend/tests/unit/api/v1/test_deployment_mapper_base.py
+      - src/backend/tests/unit/api/v1/test_deployment_mapper_watsonx.py
+      - src/backend/tests/unit/api/v1/test_deployment_route_handlers.py
+      - src/backend/tests/unit/api/v1/test_deployment_sync.py
+      - src/backend/tests/unit/api/v1/test_deployments_response_mapping.py
+    debugScore: 1
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: src/backend/base/langflow/api/v1/deployments.py
+        additions: 3
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/api/v1/mappers/deployments/base.py
+        additions: 46
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/api/v1/mappers/deployments/helpers.py
+        additions: 4
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/api/v1/mappers/deployments/watsonx_orchestrate/mapper.py
+        additions: 68
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/api/v1/mappers/deployments/watsonx_orchestrate/payloads.py
+        additions: 7
+        deletions: 16
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/api/v1/schemas/deployments.py
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/tests/api/v1/test_deployment_guard_delete_endpoints.py
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/api/v1/test_deployment_mapper_base.py
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/api/v1/test_deployment_mapper_watsonx.py
+        additions: 109
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/api/v1/test_deployment_route_handlers.py
+        additions: 7
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/api/v1/test_deployment_sync.py
+        additions: 146
+        deletions: 19
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/api/v1/test_deployments_response_mapping.py
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 12869
+    title: "test(kb): cover folder ingest allow-list wiring"
+    url: https://github.com/langflow-ai/langflow/pull/12869
+    mergedAt: 2026-04-28T18:14:17Z
+    baseRefName: feat/kb-v1-db-connectors
+    headRefName: codex/kb-folder-source-allowlist-tests
+    baseRefOid: bfc576c716b7cce06de19b82004a7e7254381a4e
+    headRefOid: d52fa2bf767f257cf14246855f73c49e8ee018dd
+    mergeCommitOid: 7b05e713990448732f97fae613fc183786ad51f1
+    changedFiles: 1
+    additions: 102
+    deletions: 1
+    labels: 
+      - test
+    keywordHits: 
+      - edge
+      - validation
+    hasTests: true
+    testFiles: 
+      - src/backend/tests/unit/base/knowledge_bases/test_connector_endpoints.py
+    debugScore: 4
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: src/backend/tests/unit/base/knowledge_bases/test_connector_endpoints.py
+        additions: 102
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 12872
+    title: "test(kb): tighten ingestion run auth assertion"
+    url: https://github.com/langflow-ai/langflow/pull/12872
+    mergedAt: 2026-04-28T17:05:49Z
+    baseRefName: feat/kb-v1-db-connectors
+    headRefName: codex/kb-ingestion-run-auth-test
+    baseRefOid: bfc576c716b7cce06de19b82004a7e7254381a4e
+    headRefOid: 7e115a735e8a9e2fe8e2913c30c0775af244ed21
+    mergeCommitOid: c8d08c4cf20f245bebdcc5e7da054d6da00d5424
+    changedFiles: 6
+    additions: 245
+    deletions: 24
+    labels: 
+      - test
+    keywordHits: 
+      - fix
+      - edge
+      - validation
+    hasTests: true
+    testFiles: 
+      - src/backend/tests/unit/base/knowledge_bases/test_ingestion_run_endpoints.py
+      - src/backend/tests/unit/test_knowledge_bases_api.py
+      - src/frontend/src/pages/MainPage/pages/knowledgePage/components/__tests__/KnowledgeBasesTab.test.tsx
+    debugScore: 5
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: src/backend/base/langflow/api/utils/kb_helpers.py
+        additions: 9
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/base/knowledge_bases/test_ingestion_run_endpoints.py
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/test_knowledge_bases_api.py
+        additions: 74
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/MainPage/pages/knowledgePage/components/IngestionRunDetailModal.tsx
+        additions: 27
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/MainPage/pages/knowledgePage/components/KnowledgeBasesTab.tsx
+        additions: 98
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/MainPage/pages/knowledgePage/components/__tests__/KnowledgeBasesTab.test.tsx
+        additions: 35
+        deletions: 12
+        changeType: MODIFIED
+  - 
+    number: 12907
+    title: "fix: lfx env var resolution when value is empty"
+    url: https://github.com/langflow-ai/langflow/pull/12907
+    mergedAt: 2026-04-28T15:20:44Z
+    baseRefName: release-1.9.2
+    headRefName: fix-lfx-env-var-resolution
+    baseRefOid: e77b48a9efbd9648d04ff3672db79f5164498537
+    headRefOid: 9363dabc459fec61a1b756c2e8a788c830368610
+    mergeCommitOid: 3f2d2fc39920149fd5552b8903a49734f3ea9c59
+    changedFiles: 2
+    additions: 54
+    deletions: 23
+    labels: 
+      - bug
+      - lgtm
+    keywordHits: 
+      - bug
+      - fix
+      - error
+    hasTests: true
+    testFiles: 
+      - src/backend/tests/unit/test_credential_resolution.py
+    debugScore: 5
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: src/backend/tests/unit/test_credential_resolution.py
+        additions: 29
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/base/models/unified_models/credentials.py
+        additions: 25
+        deletions: 23
+        changeType: MODIFIED
+  - 
+    number: 12898
+    title: "chore: bump versions to 1.9.2"
+    url: https://github.com/langflow-ai/langflow/pull/12898
+    mergedAt: 2026-04-28T15:15:18Z
+    baseRefName: release-1.9.2
+    headRefName: upgrade-1.9.2
+    baseRefOid: dc26d19c1ed5b2779a3a759f78a747f47089c534
+    headRefOid: 1a23d53738335bc294920d809ebe5094235d9cb1
+    mergeCommitOid: 7d4d3e13a38f0aa1698e263793a6f3529053dc44
+    changedFiles: 7
+    additions: 554
+    deletions: 494
+    labels: 
+      - lgtm
+      - ignore-for-release
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: pyproject.toml
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/pyproject.toml
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/frontend/package-lock.json
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/frontend/package.json
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lfx/pyproject.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/sdk/pyproject.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: uv.lock
+        additions: 545
+        deletions: 485
+        changeType: MODIFIED
+  - 
+    number: 12766
+    title: "feat: Add an Astra DB Data API Component"
+    url: https://github.com/langflow-ai/langflow/pull/12766
+    mergedAt: 2026-04-28T02:02:41Z
+    baseRefName: release-1.10.0
+    headRefName: feat/astra-db-data-api-component
+    baseRefOid: 7a84f8b254519816a2b3e271ac47972299ff0f95
+    headRefOid: 99a756a8f00ba0d7ec6539fb5794b7e62c36f378
+    mergeCommitOid: a46ae46f9f10c8c87a2bdad10e7260fc3c820b90
+    changedFiles: 6
+    additions: 2239
+    deletions: 3
+    labels: 
+      - enhancement
+    keywordHits: 
+      - regression
+      - error
+    hasTests: true
+    testFiles: 
+      - src/backend/tests/unit/base/datastax/test_astradb_data_api_component.py
+    debugScore: 2
+    suggestedDifficulty: high
+    exclusionHints: 
+      - huge-diff
+    files: 
+      - 
+        path: docs/docs/Components/bundles-datastax.mdx
+        additions: 99
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/base/datastax/test_astradb_data_api_component.py
+        additions: 714
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/frontend/src/components/core/folderSidebarComponent/components/sideBarFolderButtons/index.tsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/_assets/component_index.json
+        additions: 808
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/components/datastax/__init__.py
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/components/datastax/astradb_data_api.py
+        additions: 614
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 12756
+    title: "fix(mcp): enforce auth on /streamable for auth_type=oauth projects"
+    url: https://github.com/langflow-ai/langflow/pull/12756
+    mergedAt: 2026-04-28T00:29:59Z
+    baseRefName: release-1.10.0
+    headRefName: fix/mcp-oauth-streamable-auth
+    baseRefOid: 2860e0e59188dc33161170c0e434a69d6580c64d
+    headRefOid: 8f5da1aa107bafa294924867c56d4c3f2cc54181
+    mergeCommitOid: 7a84f8b254519816a2b3e271ac47972299ff0f95
+    changedFiles: 5
+    additions: 521
+    deletions: 153
+    labels: 
+      - bug
+      - lgtm
+    keywordHits: 
+      - bug
+      - fix
+      - error
+      - fail
+      - failure
+    hasTests: true
+    testFiles: 
+      - src/backend/tests/unit/api/v1/test_mcp_projects.py
+      - src/lfx/tests/unit/services/settings/test_mcp_composer.py
+    debugScore: 7
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: .secrets.baseline
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/api/v1/mcp_projects.py
+        additions: 54
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/api/v1/test_mcp_projects.py
+        additions: 143
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/services/mcp_composer/service.py
+        additions: 244
+        deletions: 135
+        changeType: MODIFIED
+      - 
+        path: src/lfx/tests/unit/services/settings/test_mcp_composer.py
+        additions: 75
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 12909
+    title: "[codex] Add Knowledge Backends settings"
+    url: https://github.com/langflow-ai/langflow/pull/12909
+    mergedAt: 2026-04-27T23:15:18Z
+    baseRefName: feat/kb-v1-db-connectors
+    headRefName: codex/knowledge-backend-settings
+    baseRefOid: a123e9521639a8883657ae7b26170a9e88dfc0bb
+    headRefOid: a47bd5c47d0af11c6f7e6aae1f3103ba95b8311a
+    mergeCommitOid: af03f5b0d793064f5e8a6d8c77d40bad07ae446e
+    changedFiles: 7
+    additions: 788
+    deletions: 3
+    labels: 
+[]
+    keywordHits: 
+      - error
+      - edge
+      - validation
+    hasTests: true
+    testFiles: 
+      - src/frontend/src/constants/__tests__/knowledgeBackendConstants.test.ts
+    debugScore: 5
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: src/frontend/src/constants/__tests__/knowledgeBackendConstants.test.ts
+        additions: 53
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/frontend/src/constants/knowledgeBackendConstants.ts
+        additions: 178
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/frontend/src/modals/knowledgeBaseUploadModal/components/BackendPicker.tsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/modals/knowledgeBaseUploadModal/hooks/useKnowledgeBaseForm.ts
+        additions: 35
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/SettingsPage/index.tsx
+        additions: 11
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/SettingsPage/pages/KnowledgeBackendsPage/index.tsx
+        additions: 505
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/frontend/src/routes.tsx
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 12870
+    title: "test(kb): cover backend registry ingestion routing"
+    url: https://github.com/langflow-ai/langflow/pull/12870
+    mergedAt: 2026-04-27T22:51:12Z
+    baseRefName: feat/kb-v1-db-connectors
+    headRefName: codex/kb-backend-registry-routing-tests
+    baseRefOid: 33b2ae87cf7ea954ff7dad49c950c27fbdb36cc7
+    headRefOid: e94f7975fdbe784ef3e5a3794596db549c760729
+    mergeCommitOid: a123e9521639a8883657ae7b26170a9e88dfc0bb
+    changedFiles: 7
+    additions: 93
+    deletions: 22
+    labels: 
+      - test
+    keywordHits: 
+      - edge
+      - validation
+    hasTests: true
+    testFiles: 
+      - src/backend/tests/unit/components/files_and_knowledge/test_retrieval.py
+      - src/backend/tests/unit/test_knowledge_bases_api.py
+    debugScore: 4
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: .secrets.baseline
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Knowledge Retrieval.json"
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Vector Store RAG.json"
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/components/files_and_knowledge/test_retrieval.py
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/test_knowledge_bases_api.py
+        additions: 72
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/_assets/component_index.json
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/components/files_and_knowledge/retrieval.py
+        additions: 7
+        deletions: 8
+        changeType: MODIFIED
+  - 
+    number: 12717
+    title: "fix(ui): Hide native Edge/WebView2 password reveal icon on login                                                                        "
+    url: https://github.com/langflow-ai/langflow/pull/12717
+    mergedAt: 2026-04-27T19:43:03Z
+    baseRefName: release-1.9.1
+    headRefName: cz/fix-applies
+    baseRefOid: dc26d19c1ed5b2779a3a759f78a747f47089c534
+    headRefOid: 916c30aec396dd55fa6867775ac326ae99f6661a
+    mergeCommitOid: ae4003c5107466c962e928cd5e214f10482dbf6b
+    changedFiles: 2
+    additions: 57
+    deletions: 0
+    labels: 
+      - bug
+      - lgtm
+    keywordHits: 
+      - bug
+      - fix
+      - regression
+      - edge
+    hasTests: true
+    testFiles: 
+      - src/frontend/src/style/__tests__/password-native-reveal-hidden.test.ts
+    debugScore: 6
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: src/frontend/src/style/__tests__/password-native-reveal-hidden.test.ts
+        additions: 49
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/frontend/src/style/applies.css
+        additions: 8
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 12896
+    title: "fix(frontend): validate deployment agent name"
+    url: https://github.com/langflow-ai/langflow/pull/12896
+    mergedAt: 2026-04-27T19:41:37Z
+    baseRefName: release-1.10.0
+    headRefName: fix/deployment-agent-name-validation
+    baseRefOid: 50e594eb1e6bd57eda8d3085267f708d12b5bd72
+    headRefOid: 2a2bc4393adab5b40c7e512df98305ca763919aa
+    mergeCommitOid: 2860e0e59188dc33161170c0e434a69d6580c64d
+    changedFiles: 6
+    additions: 140
+    deletions: 4
+    labels: 
+      - bug
+      - lgtm
+    keywordHits: 
+      - bug
+      - fix
+      - regression
+      - validation
+    hasTests: true
+    testFiles: 
+      - src/frontend/src/pages/MainPage/pages/deploymentsPage/__tests__/create-mode.test.tsx
+      - src/frontend/src/pages/MainPage/pages/deploymentsPage/__tests__/custom-tool-naming.test.tsx
+      - src/frontend/src/pages/MainPage/pages/deploymentsPage/__tests__/edit-mode.test.tsx
+      - src/frontend/src/pages/MainPage/pages/deploymentsPage/__tests__/step-type.test.tsx
+    debugScore: 6
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: src/frontend/src/pages/MainPage/pages/deploymentsPage/__tests__/create-mode.test.tsx
+        additions: 36
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/MainPage/pages/deploymentsPage/__tests__/custom-tool-naming.test.tsx
+        additions: 14
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/MainPage/pages/deploymentsPage/__tests__/edit-mode.test.tsx
+        additions: 25
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/MainPage/pages/deploymentsPage/__tests__/step-type.test.tsx
+        additions: 30
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/MainPage/pages/deploymentsPage/components/step-type.tsx
+        additions: 12
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/MainPage/pages/deploymentsPage/contexts/deployment-stepper-context.tsx
+        additions: 23
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 12873
+    title: "fix(kb): delete opensearch metadata matches"
+    url: https://github.com/langflow-ai/langflow/pull/12873
+    mergedAt: 2026-04-27T19:18:41Z
+    baseRefName: feat/kb-v1-db-connectors
+    headRefName: codex/kb-opensearch-metadata-delete
+    baseRefOid: 87b2dc6814184b3ee6d134f47462a24cdb646980
+    headRefOid: 71bc33c46968696b5c0d1f9c09f89dbd45c45b21
+    mergeCommitOid: e603c05ec322dd46d36da65b78bcd02a475cbbd2
+    changedFiles: 2
+    additions: 104
+    deletions: 5
+    labels: 
+      - bug
+    keywordHits: 
+      - bug
+      - fix
+      - regression
+      - edge
+      - validation
+    hasTests: true
+    testFiles: 
+      - src/backend/tests/unit/base/knowledge_bases/test_vector_store_backends.py
+    debugScore: 7
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: src/backend/tests/unit/base/knowledge_bases/test_vector_store_backends.py
+        additions: 88
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/base/knowledge_bases/backends/opensearch.py
+        additions: 16
+        deletions: 5
+        changeType: MODIFIED
+  - 
+    number: 12795
+    title: "chore(frontend): remove stale Dockerfile and start-nginx script"
+    url: https://github.com/langflow-ai/langflow/pull/12795
+    mergedAt: 2026-04-27T19:29:23Z
+    baseRefName: main
+    headRefName: chore/remove-stale-frontend-dockerfile
+    baseRefOid: 5d6a7a0f31109843c5750dfffdf3e4f017c1573b
+    headRefOid: 6662d6a63d602c750594f6253038579906061d58
+    mergeCommitOid: b09d942ba30a4ef419d5c1675920d5ed7777ad26
+    changedFiles: 3
+    additions: 0
+    deletions: 44
+    labels: 
+      - lgtm
+      - ignore-for-release
+    keywordHits: 
+      - fail
+      - broken
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: src/frontend/Dockerfile
+        additions: 0
+        deletions: 16
+        changeType: DELETED
+      - 
+        path: src/frontend/nginx.conf
+        additions: 0
+        deletions: 20
+        changeType: DELETED
+      - 
+        path: src/frontend/start-nginx.sh
+        additions: 0
+        deletions: 8
+        changeType: DELETED
+  - 
+    number: 12417
+    title: "feat: Add Memory Base APIs models migrations service endpoints and tests"
+    url: https://github.com/langflow-ai/langflow/pull/12417
+    mergedAt: 2026-04-27T18:30:19Z
+    baseRefName: release-1.10.0
+    headRefName: memory-system-apis
+    baseRefOid: e277b4b1cbd01f0eb1085e12201d91a42cf8a8a8
+    headRefOid: c88ea7084b6aaec28c39d966e3141bee492864d7
+    mergeCommitOid: 5d947b11c72120a034b985b3e3f62052ae4ff3f0
+    changedFiles: 32
+    additions: 5457
+    deletions: 94
+    labels: 
+      - enhancement
+      - size:XXL
+      - lgtm
+      - migration
+    keywordHits: 
+      - error
+      - exception
+      - edge
+      - race
+      - leak
+      - validation
+      - parsing
+      - timeout
+      - fail
+      - failure
+    hasTests: true
+    testFiles: 
+      - src/backend/tests/unit/test_knowledge_bases_api.py
+      - src/backend/tests/unit/test_memory_base_task.py
+      - src/backend/tests/unit/test_memory_bases.py
+      - src/backend/tests/unit/test_session_metadata.py
+    debugScore: 9
+    suggestedDifficulty: high
+    exclusionHints: 
+      - huge-diff
+    files: 
+      - 
+        path: src/backend/base/langflow/alembic/versions/mb00a1b2c3d4_add_memory_base_schema.py
+        additions: 235
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/base/langflow/api/build.py
+        additions: 76
+        deletions: 22
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/api/router.py
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/api/utils/kb_helpers.py
+        additions: 83
+        deletions: 37
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/api/v1/__init__.py
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/api/v1/endpoints.py
+        additions: 76
+        deletions: 13
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/api/v1/knowledge_bases.py
+        additions: 31
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/api/v1/memories.py
+        additions: 345
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/base/langflow/api/v2/workflow.py
+        additions: 45
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/services/database/models/__init__.py
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/services/database/models/jobs/model.py
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/services/database/models/memory_base/__init__.py
+        additions: 21
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/base/langflow/services/database/models/memory_base/model.py
+        additions: 199
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/base/langflow/services/database/models/message/model.py
+        additions: 17
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/services/deps.py
+        additions: 7
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/services/jobs/__init__.py
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/services/jobs/exceptions.py
+        additions: 16
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/base/langflow/services/jobs/service.py
+        additions: 54
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/services/memory_base/__init__.py
+        additions: 3
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/base/langflow/services/memory_base/document_builders.py
+        additions: 139
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/base/langflow/services/memory_base/embedding_helpers.py
+        additions: 26
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/base/langflow/services/memory_base/factory.py
+        additions: 14
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/base/langflow/services/memory_base/ingestion.py
+        additions: 421
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/base/langflow/services/memory_base/kb_path_helpers.py
+        additions: 149
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/base/langflow/services/memory_base/service.py
+        additions: 288
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/base/langflow/services/memory_base/task.py
+        additions: 444
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/base/langflow/services/schema.py
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/test_knowledge_bases_api.py
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/test_memory_base_task.py
+        additions: 1018
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/tests/unit/test_memory_bases.py
+        additions: 1719
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/tests/unit/test_session_metadata.py
+        additions: 12
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/services/settings/base.py
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 12904
+    title: "fix(tests): Restore Windows-compatible slider Playwright test                                                                                            "
+    url: https://github.com/langflow-ai/langflow/pull/12904
+    mergedAt: 2026-04-27T18:20:52Z
+    baseRefName: release-1.10.0
+    headRefName: cz/fix-slider-win
+    baseRefOid: e277b4b1cbd01f0eb1085e12201d91a42cf8a8a8
+    headRefOid: 298fa96860bda10eabf8702f455728440d482968
+    mergeCommitOid: 2f51b7eccdf510d16b3e42d6d421810ab9c9fad0
+    changedFiles: 1
+    additions: 67
+    deletions: 12
+    labels: 
+      - bug
+      - lgtm
+    keywordHits: 
+      - bug
+      - fix
+      - fail
+    hasTests: true
+    testFiles: 
+      - src/frontend/tests/core/unit/sliderComponent.spec.ts
+    debugScore: 5
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: src/frontend/tests/core/unit/sliderComponent.spec.ts
+        additions: 67
+        deletions: 12
+        changeType: MODIFIED
+  - 
+    number: 12899
+    title: "docs: include host field for external db in Helm chart"
+    url: https://github.com/langflow-ai/langflow/pull/12899
+    mergedAt: 2026-04-27T17:39:25Z
+    baseRefName: release-1.10.0
+    headRefName: docs-include-host-field-for-external-db
+    baseRefOid: 1629a45bd55f0f91329426397b0338975838eb2d
+    headRefOid: 44a1356b9cade621adeea046901e4ca3a873050f
+    mergeCommitOid: 1e9a96f5b92aabbb120986c6464a4c9a2ba32cd7
+    changedFiles: 3
+    additions: 6
+    deletions: 0
+    labels: 
+      - documentation
+      - lgtm
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docs/docs/Deployment/deployment-kubernetes-dev.mdx
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs/versioned_docs/version-1.8.0/Deployment/deployment-kubernetes-dev.mdx
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: docs/versioned_docs/version-1.9.0/Deployment/deployment-kubernetes-dev.mdx
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 12762
+    title: "fix: migrate orphaned MCP servers config across DB resets"
+    url: https://github.com/langflow-ai/langflow/pull/12762
+    mergedAt: 2026-04-27T16:58:09Z
+    baseRefName: release-1.10.0
+    headRefName: fix/mcp-servers-persist-across-db-reset
+    baseRefOid: b9e81f6edd3fd2e4045539c96bbc959e5540c068
+    headRefOid: de7dee5ffba4b9cd13a0900485e906d6534829c1
+    mergeCommitOid: e277b4b1cbd01f0eb1085e12201d91a42cf8a8a8
+    changedFiles: 2
+    additions: 396
+    deletions: 0
+    labels: 
+      - bug
+      - lgtm
+    keywordHits: 
+      - bug
+      - fix
+      - fail
+      - failure
+    hasTests: true
+    testFiles: 
+      - src/backend/tests/unit/test_mcp_servers_orphan_migration.py
+    debugScore: 6
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: src/backend/base/langflow/services/utils.py
+        additions: 149
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/test_mcp_servers_orphan_migration.py
+        additions: 247
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 12900
+    title: "fix(chroma): replace deprecated Client(settings=) with HttpClient for chromadb >=1.0"
+    url: https://github.com/langflow-ai/langflow/pull/12900
+    mergedAt: 2026-04-27T16:29:23Z
+    baseRefName: release-1.10.0
+    headRefName: fix/issue-12665-chroma-httpclient
+    baseRefOid: 7860e2a1d885d95c27d3812928de92ffcc7f9ba2
+    headRefOid: 17987a15dccb19846c7b4b3c5913c5c6ee3cb694
+    mergeCommitOid: d8bad2c1db5a67dcedf8af6aa397d762902ab7cf
+    changedFiles: 18
+    additions: 525
+    deletions: 96
+    labels: 
+      - bug
+    keywordHits: 
+      - bug
+      - fix
+      - error
+    hasTests: true
+    testFiles: 
+      - src/backend/tests/unit/components/vectorstores/test_chroma_vector_store_component.py
+    debugScore: 4
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Instagram Copywriter.json"
+        additions: 25
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Invoice Summarizer.json"
+        additions: 25
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Market Research.json"
+        additions: 25
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/News Aggregator.json"
+        additions: 25
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Nvidia Remix.json"
+        additions: 25
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Pokédex Agent.json"
+        additions: 25
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Price Deal Finder.json"
+        additions: 25
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Research Agent.json"
+        additions: 25
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/SaaS Pricing.json"
+        additions: 25
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Search agent.json"
+        additions: 25
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Sequential Tasks Agents.json"
+        additions: 75
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Simple Agent.json"
+        additions: 25
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Social Media Agent.json"
+        additions: 25
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Travel Planning Agents.json"
+        additions: 75
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: "src/backend/base/langflow/initial_setup/starter_projects/Youtube Analysis.json"
+        additions: 25
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/components/vectorstores/test_chroma_vector_store_component.py
+        additions: 32
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/_assets/component_index.json
+        additions: 9
+        deletions: 9
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/components/chroma/chroma.py
+        additions: 9
+        deletions: 11
+        changeType: MODIFIED
+  - 
+    number: 12853
+    title: "feat: refresh deployed success step"
+    url: https://github.com/langflow-ai/langflow/pull/12853
+    mergedAt: 2026-04-27T15:08:58Z
+    baseRefName: release-1.10.0
+    headRefName: feat/deploy-success-step
+    baseRefOid: 50e594eb1e6bd57eda8d3085267f708d12b5bd72
+    headRefOid: 3d94e91d424292066843974c031b728ef2342cef
+    mergeCommitOid: 7860e2a1d885d95c27d3812928de92ffcc7f9ba2
+    changedFiles: 12
+    additions: 480
+    deletions: 116
+    labels: 
+      - enhancement
+      - lgtm
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - src/frontend/src/pages/MainPage/pages/deploymentsPage/__tests__/deployment-stepper-footer.test.tsx
+      - src/frontend/src/pages/MainPage/pages/deploymentsPage/__tests__/deployment-stepper-modal.test.tsx
+      - src/frontend/src/pages/MainPage/pages/deploymentsPage/__tests__/deployment-success-content.test.tsx
+      - src/frontend/src/pages/MainPage/pages/deploymentsPage/__tests__/step-attach-flows.test.tsx
+      - src/frontend/tests/core/features/deployment-create.spec.ts
+      - src/frontend/tests/core/features/deployment-edit.spec.ts
+    debugScore: 1
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: src/frontend/src/pages/MainPage/pages/deploymentsPage/__tests__/deployment-stepper-footer.test.tsx
+        additions: 75
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/frontend/src/pages/MainPage/pages/deploymentsPage/__tests__/deployment-stepper-modal.test.tsx
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/MainPage/pages/deploymentsPage/__tests__/deployment-success-content.test.tsx
+        additions: 86
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/frontend/src/pages/MainPage/pages/deploymentsPage/__tests__/step-attach-flows.test.tsx
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/MainPage/pages/deploymentsPage/components/deployment-stepper-footer.tsx
+        additions: 89
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/frontend/src/pages/MainPage/pages/deploymentsPage/components/deployment-stepper-modal.tsx
+        additions: 50
+        deletions: 64
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/MainPage/pages/deploymentsPage/components/deployment-stepper.tsx
+        additions: 24
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/MainPage/pages/deploymentsPage/components/deployment-success-content.tsx
+        additions: 63
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/frontend/src/pages/MainPage/pages/deploymentsPage/components/step-attach-flows-flow-list-panel.tsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/pages/MainPage/pages/deploymentsPage/components/step-attach-flows.tsx
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/frontend/tests/core/features/deployment-create.spec.ts
+        additions: 41
+        deletions: 18
+        changeType: MODIFIED
+      - 
+        path: src/frontend/tests/core/features/deployment-edit.spec.ts
+        additions: 44
+        deletions: 18
+        changeType: MODIFIED
+  - 
+    number: 12890
+    title: "feat: disable frontend retries for client errors"
+    url: https://github.com/langflow-ai/langflow/pull/12890
+    mergedAt: 2026-04-27T14:55:22Z
+    baseRefName: release-1.10.0
+    headRefName: fe-retry
+    baseRefOid: 1629a45bd55f0f91329426397b0338975838eb2d
+    headRefOid: 00f815b8d8015c8e152b1830dd6fe67150df576c
+    mergeCommitOid: 8b83cf686c66a652dc053c12cc686b032c0f0176
+    changedFiles: 8
+    additions: 216
+    deletions: 16
+    labels: 
+      - enhancement
+      - lgtm
+    keywordHits: 
+      - error
+    hasTests: true
+    testFiles: 
+      - src/frontend/src/controllers/API/services/__tests__/request-processor.test.ts
+    debugScore: 3
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: src/frontend/src/controllers/API/queries/deployment-provider-accounts/use-delete-provider-account.ts
+        additions: 0
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/controllers/API/queries/deployments/use-delete-deployment.ts
+        additions: 0
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/controllers/API/queries/deployments/use-patch-deployment.ts
+        additions: 0
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/controllers/API/queries/deployments/use-patch-snapshot.ts
+        additions: 0
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/controllers/API/queries/deployments/use-post-deployment-run.ts
+        additions: 1
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/controllers/API/queries/deployments/use-post-deployment.ts
+        additions: 0
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/frontend/src/controllers/API/services/__tests__/request-processor.test.ts
+        additions: 189
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/frontend/src/controllers/API/services/request-processor.ts
+        additions: 26
+        deletions: 4
+        changeType: MODIFIED
+  - 
+    number: 12874
+    title: "feat: add telemetry to deployments APIs"
+    url: https://github.com/langflow-ai/langflow/pull/12874
+    mergedAt: 2026-04-27T14:28:30Z
+    baseRefName: release-1.9.2
+    headRefName: deployments-telemetry
+    baseRefOid: dc26d19c1ed5b2779a3a759f78a747f47089c534
+    headRefOid: c3d982942ab9ac0fba57b8b014f11e50d9d317dd
+    mergeCommitOid: e77b48a9efbd9648d04ff3672db79f5164498537
+    changedFiles: 11
+    additions: 746
+    deletions: 55
+    labels: 
+      - enhancement
+      - lgtm
+    keywordHits: 
+      - error
+      - exception
+    hasTests: true
+    testFiles: 
+      - src/backend/tests/unit/api/v1/test_deployment_route_handlers.py
+      - src/backend/tests/unit/api/v1/test_deployments_telemetry.py
+      - src/backend/tests/unit/api/v1/test_endpoints.py
+      - src/backend/tests/unit/services/telemetry/test_telemetry_schema.py
+      - src/backend/tests/unit/test_telemetry.py
+    debugScore: 3
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: src/backend/base/langflow/api/v1/deployments.py
+        additions: 115
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/api/v1/mappers/deployments/helpers.py
+        additions: 12
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/services/telemetry/schema.py
+        additions: 9
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/base/langflow/services/telemetry/service.py
+        additions: 10
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/api/v1/test_deployment_route_handlers.py
+        additions: 107
+        deletions: 40
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/api/v1/test_deployments_telemetry.py
+        additions: 325
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/backend/tests/unit/api/v1/test_endpoints.py
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/services/telemetry/test_telemetry_schema.py
+        additions: 88
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/backend/tests/unit/test_telemetry.py
+        additions: 77
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/frontend/package-lock.json
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/lfx/src/lfx/services/adapters/deployment/exceptions.py
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED

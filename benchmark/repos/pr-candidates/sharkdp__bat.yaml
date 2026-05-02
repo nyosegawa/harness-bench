@@ -1,0 +1,3108 @@
+generatedAt: 2026-05-02T10:23:26.740Z
+repo: sharkdp/bat
+since: 2026-01-01
+limit: 100
+debugKeywords: 
+  - bug
+  - fix
+  - regression
+  - crash
+  - incorrect
+  - wrong
+  - error
+  - exception
+  - edge
+  - flaky
+  - race
+  - leak
+  - validation
+  - parser
+  - parsing
+  - timeout
+  - fail
+  - failure
+  - broken
+prs: 
+  - 
+    number: 3716
+    title: "build(deps): bump assets/syntaxes/02_Extra/typst-syntax-highlight from `363f0e7` to `5f71d12`"
+    url: https://github.com/sharkdp/bat/pull/3716
+    mergedAt: 2026-05-01T03:03:58Z
+    baseRefName: master
+    headRefName: dependabot/submodules/assets/syntaxes/02_Extra/typst-syntax-highlight-5f71d12
+    baseRefOid: e2174379edb4ff49875c060174a67d3dae6a1667
+    headRefOid: 6edad56b00cb2137d5c0424c0aaa803b0848b072
+    mergeCommitOid: b483f90612756f1a4b966358d938b57677f07b02
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+      - dependencies
+      - submodules
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: assets/syntaxes/02_Extra/typst-syntax-highlight
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3713
+    title: "build(deps): bump assets/syntaxes/02_Extra/PureScript from `5acebc1` to `1773f4f`"
+    url: https://github.com/sharkdp/bat/pull/3713
+    mergedAt: 2026-05-01T02:38:42Z
+    baseRefName: master
+    headRefName: dependabot/submodules/assets/syntaxes/02_Extra/PureScript-1773f4f
+    baseRefOid: 7fcab0616a98b07604935e34a21379cc82c78732
+    headRefOid: 816aea06253659123bacb9f76bca4174cc45f1df
+    mergeCommitOid: e2174379edb4ff49875c060174a67d3dae6a1667
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+      - dependencies
+      - submodules
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: assets/syntaxes/02_Extra/PureScript
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3709
+    title: "docs(README): list available --style components in Output style section"
+    url: https://github.com/sharkdp/bat/pull/3709
+    mergedAt: 2026-04-30T11:15:26Z
+    baseRefName: master
+    headRefName: osc/3228-readme-style-list
+    baseRefOid: 10b4f07a87bb6bccd9d962bf9e7bb3f04b338128
+    headRefOid: cbe791945138acffd8a21b40b04f201bef02f8b6
+    mergeCommitOid: b29e1d55c4901770e36460ee094a49fdc514f793
+    changedFiles: 1
+    additions: 24
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: README.md
+        additions: 24
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3700
+    title: "Fixed hardcoded terminal probing when `--list-themes` is called"
+    url: https://github.com/sharkdp/bat/pull/3700
+    mergedAt: 2026-04-30T15:09:33Z
+    baseRefName: master
+    headRefName: list-themes-term-probe-fix
+    baseRefOid: b29e1d55c4901770e36460ee094a49fdc514f793
+    headRefOid: e157ac911b4b7a8e368a0b7069cb6f8c8dcedde9
+    mergeCommitOid: 7fcab0616a98b07604935e34a21379cc82c78732
+    changedFiles: 3
+    additions: 6
+    deletions: 6
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - regression
+      - edge
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/bin/bat/app.rs
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/bin/bat/main.rs
+        additions: 4
+        deletions: 5
+        changeType: MODIFIED
+  - 
+    number: 3654
+    title: "fix: correct $LESSCLOSE exit-status warning"
+    url: https://github.com/sharkdp/bat/pull/3654
+    mergedAt: 2026-04-30T05:19:42Z
+    baseRefName: master
+    headRefName: fix/lessclose-nonzero-warning
+    baseRefOid: 91aac95db2f7f8f59e894a0d68820c0f173c3437
+    headRefOid: 54bfc332484039921e0ed42d4a620695bf16d857
+    mergeCommitOid: 8fbc96a5f28e39421d1d409543640040e512eb4d
+    changedFiles: 2
+    additions: 2
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - fail
+      - failure
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/lessopen.rs
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3691
+    title: "sanitize filenames"
+    url: https://github.com/sharkdp/bat/pull/3691
+    mergedAt: 2026-04-28T20:24:00Z
+    baseRefName: master
+    headRefName: master
+    baseRefOid: 78963986e012bb13c794eae4b668a892d69373e1
+    headRefOid: 3f98e6f10f1fbc9de526c3cb3417c91d9a71e02e
+    mergeCommitOid: 91aac95db2f7f8f59e894a0d68820c0f173c3437
+    changedFiles: 7
+    additions: 98
+    deletions: 18
+    labels: 
+[]
+    keywordHits: 
+      - error
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/assets.rs
+        additions: 11
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: src/bin/bat/main.rs
+        additions: 3
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/input.rs
+        additions: 8
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: src/lib.rs
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/preprocessor.rs
+        additions: 66
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/printer.rs
+        additions: 8
+        deletions: 4
+        changeType: MODIFIED
+  - 
+    number: 3666
+    title: "build(deps): bump assets/syntaxes/02_Extra/Idris2 from `bbfe50e` to `4d8eb35`"
+    url: https://github.com/sharkdp/bat/pull/3666
+    mergedAt: 2026-04-27T19:41:31Z
+    baseRefName: master
+    headRefName: dependabot/submodules/assets/syntaxes/02_Extra/Idris2-4d8eb35
+    baseRefOid: 78cb14af054e879f1ac4c49ea3eba7ec418022a9
+    headRefOid: de64d3a0ebe6f70637d215d6042e7eb9239755e8
+    mergeCommitOid: 78963986e012bb13c794eae4b668a892d69373e1
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+      - dependencies
+      - submodules
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: assets/syntaxes/02_Extra/Idris2
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3699
+    title: "Improve Kotlin syntax"
+    url: https://github.com/sharkdp/bat/pull/3699
+    mergedAt: 2026-04-27T19:26:11Z
+    baseRefName: master
+    headRefName: master
+    baseRefOid: 8cadefb5cbe123180538c885db4f28265fcad9fb
+    headRefOid: 492c387ce7fdc02ea7c0aceabef3c2e1b15f09c4
+    mergeCommitOid: 78cb14af054e879f1ac4c49ea3eba7ec418022a9
+    changedFiles: 5
+    additions: 62
+    deletions: 459
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - tests/syntax-tests/highlighted/Kotlin/test.kt
+    debugScore: 2
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: .gitmodules
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: assets/syntaxes/02_Extra/Kotlin
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: assets/syntaxes/02_Extra/Kotlin.sublime-syntax
+        additions: 0
+        deletions: 398
+        changeType: DELETED
+      - 
+        path: tests/syntax-tests/highlighted/Kotlin/test.kt
+        additions: 57
+        deletions: 57
+        changeType: MODIFIED
+  - 
+    number: 3706
+    title: "Propagate initial input read errors"
+    url: https://github.com/sharkdp/bat/pull/3706
+    mergedAt: 2026-04-27T18:46:10Z
+    baseRefName: master
+    headRefName: fix/initial-read-errors
+    baseRefOid: de2f21562a3f197cad98a6538d1886a86f67e02c
+    headRefOid: 64567c4819ff76cec66a74e87c9e47b1f6f9b609
+    mergeCommitOid: 8cadefb5cbe123180538c885db4f28265fcad9fb
+    changedFiles: 3
+    additions: 38
+    deletions: 11
+    labels: 
+[]
+    keywordHits: 
+      - regression
+      - error
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/input.rs
+        additions: 35
+        deletions: 9
+        changeType: MODIFIED
+      - 
+        path: src/lessopen.rs
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 3704
+    title: "Fix/zsh completion language word split"
+    url: https://github.com/sharkdp/bat/pull/3704
+    mergedAt: 2026-04-27T03:07:37Z
+    baseRefName: master
+    headRefName: fix/zsh-completion-language-word-split
+    baseRefOid: 93c52a4f88c55955d809ffd3af85eaa6887fbfd5
+    headRefOid: 5722311b2e96f6c6751e848a99c265e386ab43f3
+    mergeCommitOid: de2f21562a3f197cad98a6538d1886a86f67e02c
+    changedFiles: 2
+    additions: 2
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: assets/completions/bat.zsh.in
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3692
+    title: "windows: statically link the CRT to remove vcruntime dependency"
+    url: https://github.com/sharkdp/bat/pull/3692
+    mergedAt: 2026-04-20T02:09:54Z
+    baseRefName: master
+    headRefName: fix/remove-crt-windows
+    baseRefOid: e782ec125c26c462a3d121bb4a59534f006f0bde
+    headRefOid: ea7fafca1e6191dbfc4c55f039930e350b4412b2
+    mergeCommitOid: 93c52a4f88c55955d809ffd3af85eaa6887fbfd5
+    changedFiles: 2
+    additions: 12
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .cargo/config.toml
+        additions: 11
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3647
+    title: "feat: add tclsh, wish, and expect shebang detection for Tcl syntax"
+    url: https://github.com/sharkdp/bat/pull/3647
+    mergedAt: 2026-04-19T02:52:52Z
+    baseRefName: master
+    headRefName: osc/3513-tcl-shebang
+    baseRefOid: f822bd05cefc34e9eda943122c94880b0a600693
+    headRefOid: 0ecdeb28d43c7a259c59cc35dd5e1f0c2a266d3e
+    mergeCommitOid: e782ec125c26c462a3d121bb4a59534f006f0bde
+    changedFiles: 12
+    additions: 90
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - regression
+    hasTests: true
+    testFiles: 
+      - tests/examples/regression_tests/issue_3647_expect
+      - tests/examples/regression_tests/issue_3647_tclsh
+      - tests/examples/regression_tests/issue_3647_wish
+      - tests/integration_tests.rs
+      - tests/syntax-tests/highlighted/Tcl/expect_shebang
+      - tests/syntax-tests/highlighted/Tcl/tclsh_shebang
+      - tests/syntax-tests/highlighted/Tcl/wish_shebang
+      - tests/syntax-tests/source/Tcl/expect_shebang
+      - tests/syntax-tests/source/Tcl/tclsh_shebang
+      - tests/syntax-tests/source/Tcl/wish_shebang
+    debugScore: 3
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: assets/patches/Tcl.sublime-syntax.patch
+        additions: 12
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/examples/regression_tests/issue_3647_expect
+        additions: 2
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/examples/regression_tests/issue_3647_tclsh
+        additions: 2
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/examples/regression_tests/issue_3647_wish
+        additions: 2
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/integration_tests.rs
+        additions: 33
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/syntax-tests/highlighted/Tcl/expect_shebang
+        additions: 7
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/syntax-tests/highlighted/Tcl/tclsh_shebang
+        additions: 7
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/syntax-tests/highlighted/Tcl/wish_shebang
+        additions: 5
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/syntax-tests/source/Tcl/expect_shebang
+        additions: 7
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/syntax-tests/source/Tcl/tclsh_shebang
+        additions: 7
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/syntax-tests/source/Tcl/wish_shebang
+        additions: 5
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 3689
+    title: "[Python] Support uv as script runner in shebang"
+    url: https://github.com/sharkdp/bat/pull/3689
+    mergedAt: 2026-04-13T17:28:03Z
+    baseRefName: master
+    headRefName: python-uv
+    baseRefOid: a36b02d90f18a02d8dd100cfcd8bffd6de4edbb8
+    headRefOid: e89c515e9af81cb1058f3074cf01c08b952e69ed
+    mergeCommitOid: f822bd05cefc34e9eda943122c94880b0a600693
+    changedFiles: 2
+    additions: 10
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: assets/patches/Python.sublime-syntax.patch
+        additions: 9
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3687
+    title: "Support BAT_WIDTH for terminal width"
+    url: https://github.com/sharkdp/bat/pull/3687
+    mergedAt: 2026-04-12T01:59:03Z
+    baseRefName: master
+    headRefName: support-bat-width-env
+    baseRefOid: a995764d230e49e089febd8e5487c1d61e5d3051
+    headRefOid: 01174b31f5276d5142fdcb4f74a8815ff6c4ea4f
+    mergeCommitOid: 33045c35582cc20f3a0c27dd092884c6eec42373
+    changedFiles: 6
+    additions: 63
+    deletions: 3
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - tests/integration_tests.rs
+    debugScore: 2
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: doc/long-help.txt
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/bin/bat/clap_app.rs
+        additions: 6
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/bin/bat/config.rs
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/bin/bat/main.rs
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/integration_tests.rs
+        additions: 52
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3688
+    title: "fix: sanitize subprocess call in generate_snapshots.py"
+    url: https://github.com/sharkdp/bat/pull/3688
+    mergedAt: 2026-04-12T13:04:47Z
+    baseRefName: master
+    headRefName: fix-fix-shell-injection-subprocess-call
+    baseRefOid: 33045c35582cc20f3a0c27dd092884c6eec42373
+    headRefOid: 6876a782daf2055b3ab743885b3868e3c268b66e
+    mergeCommitOid: a36b02d90f18a02d8dd100cfcd8bffd6de4edbb8
+    changedFiles: 1
+    additions: 12
+    deletions: 10
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: true
+    testFiles: 
+      - tests/snapshots/generate_snapshots.py
+    debugScore: 3
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: tests/snapshots/generate_snapshots.py
+        additions: 12
+        deletions: 10
+        changeType: MODIFIED
+  - 
+    number: 3686
+    title: "Detect ZIP archives as binary content"
+    url: https://github.com/sharkdp/bat/pull/3686
+    mergedAt: 2026-04-10T17:30:27Z
+    baseRefName: master
+    headRefName: fix-zip-binary-detection
+    baseRefOid: 111aa2e10e7a7f0dcf43c209e643593ac013d623
+    headRefOid: b3aec318cf1fc16edefe8a90d78e3eb2f62100f8
+    mergeCommitOid: a995764d230e49e089febd8e5487c1d61e5d3051
+    changedFiles: 3
+    additions: 55
+    deletions: 5
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - regression
+    hasTests: true
+    testFiles: 
+      - tests/integration_tests.rs
+    debugScore: 4
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/input.rs
+        additions: 36
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: tests/integration_tests.rs
+        additions: 18
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3682
+    title: "Add .NET `slnx` extension"
+    url: https://github.com/sharkdp/bat/pull/3682
+    mergedAt: 2026-04-08T02:20:55Z
+    baseRefName: master
+    headRefName: slnx
+    baseRefOid: 11efacbe64564080e9918a16474cf259095af0b8
+    headRefOid: c64b6761feded76d519c91dda256e0779a4842b4
+    mergeCommitOid: 111aa2e10e7a7f0dcf43c209e643593ac013d623
+    changedFiles: 4
+    additions: 16
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - tests/syntax-tests/highlighted/XML/solution.slnx
+      - tests/syntax-tests/source/XML/solution.slnx
+    debugScore: 2
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/syntax_mapping/builtins/common/50-dotnet-xml.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: tests/syntax-tests/highlighted/XML/solution.slnx
+        additions: 7
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/syntax-tests/source/XML/solution.slnx
+        additions: 7
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 3661
+    title: "Update --diagnostic output with BAT_THEME_LIGHT/DARK env vars and detected theme type"
+    url: https://github.com/sharkdp/bat/pull/3661
+    mergedAt: 2026-04-02T18:44:29Z
+    baseRefName: master
+    headRefName: diagnostic_themes
+    baseRefOid: a158f121069548e46db3bebd7b40811ad66724bf
+    headRefOid: 204ca18d710fcfd174894d09bb9d6c978ffb355e
+    mergeCommitOid: 11efacbe64564080e9918a16474cf259095af0b8
+    changedFiles: 1
+    additions: 25
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: src/bin/bat/main.rs
+        additions: 25
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3669
+    title: "build(deps): bump quote from 1.0.40 to 1.0.45"
+    url: https://github.com/sharkdp/bat/pull/3669
+    mergedAt: 2026-04-01T04:07:41Z
+    baseRefName: master
+    headRefName: dependabot/cargo/quote-1.0.45
+    baseRefOid: 1a6073d2e88ccb3c837b39ed6e89a1b692935e30
+    headRefOid: 956f0aeb08f8e4cefa59279e15eeb5be1ed41721
+    mergeCommitOid: a158f121069548e46db3bebd7b40811ad66724bf
+    changedFiles: 2
+    additions: 3
+    deletions: 3
+    labels: 
+      - dependencies
+      - rust
+    keywordHits: 
+      - error
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.lock
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3668
+    title: "build(deps): bump tempfile from 3.23.0 to 3.27.0"
+    url: https://github.com/sharkdp/bat/pull/3668
+    mergedAt: 2026-04-01T03:51:21Z
+    baseRefName: master
+    headRefName: dependabot/cargo/tempfile-3.27.0
+    baseRefOid: 68eaa96e06a6d55d660cb23fc3a868f76251ccaf
+    headRefOid: 57e99e9bcdcd4d58946c687d8b7d3684d5072890
+    mergeCommitOid: 1a6073d2e88ccb3c837b39ed6e89a1b692935e30
+    changedFiles: 2
+    additions: 9
+    deletions: 9
+    labels: 
+      - dependencies
+      - rust
+    keywordHits: 
+      - fix
+      - wrong
+      - error
+      - fail
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.lock
+        additions: 8
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3664
+    title: "build(deps): bump toml from 0.9.8 to 1.1.1+spec-1.1.0"
+    url: https://github.com/sharkdp/bat/pull/3664
+    mergedAt: 2026-04-01T03:34:35Z
+    baseRefName: master
+    headRefName: dependabot/cargo/toml-1.1.1spec-1.1.0
+    baseRefOid: 7bb905436b9ec5ddb0c83640d32618d65e79c69c
+    headRefOid: de9ca4ef7b5e4a9b949684c2e0cc6872ec41a8eb
+    mergeCommitOid: 68eaa96e06a6d55d660cb23fc3a868f76251ccaf
+    changedFiles: 2
+    additions: 13
+    deletions: 13
+    labels: 
+      - dependencies
+      - rust
+    keywordHits: 
+      - fix
+      - parser
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.lock
+        additions: 12
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3667
+    title: "build(deps): bump unicode-width from 0.2.1 to 0.2.2"
+    url: https://github.com/sharkdp/bat/pull/3667
+    mergedAt: 2026-04-01T03:11:34Z
+    baseRefName: master
+    headRefName: dependabot/cargo/unicode-width-0.2.2
+    baseRefOid: 259e1266a8e2255e2df34f0c58b12818349e097a
+    headRefOid: f820ad1050654b36d1244f06c534dc9f73665087
+    mergeCommitOid: 7bb905436b9ec5ddb0c83640d32618d65e79c69c
+    changedFiles: 2
+    additions: 3
+    deletions: 3
+    labels: 
+      - dependencies
+      - rust
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.lock
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3665
+    title: "build(deps): bump unicode-segmentation from 1.12.0 to 1.13.2"
+    url: https://github.com/sharkdp/bat/pull/3665
+    mergedAt: 2026-04-01T02:37:51Z
+    baseRefName: master
+    headRefName: dependabot/cargo/unicode-segmentation-1.13.2
+    baseRefOid: 7d9884d6d2877571491d6d7e83d689df9213993a
+    headRefOid: 31b0a357190eec0b9df23b5f6ee2115402ab3f78
+    mergeCommitOid: 259e1266a8e2255e2df34f0c58b12818349e097a
+    changedFiles: 2
+    additions: 3
+    deletions: 3
+    labels: 
+      - dependencies
+      - rust
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.lock
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3533
+    title: "ci: Use git version of cross for better target support"
+    url: https://github.com/sharkdp/bat/pull/3533
+    mergedAt: 2026-03-24T05:09:32Z
+    baseRefName: master
+    headRefName: use-cross-git
+    baseRefOid: 780fdeb88845644b7e8b890416e7c6fa0a4292dc
+    headRefOid: 7205dc2047bbc2ef0d2bb221b792625baa7ea856
+    mergeCommitOid: 0b4c886efc31d0adf8a99303006620f289146375
+    changedFiles: 2
+    additions: 2
+    deletions: 3
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/workflows/CICD.yml
+        additions: 1
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3655
+    title: "docs: add instructions for removing fish help abbreviations"
+    url: https://github.com/sharkdp/bat/pull/3655
+    mergedAt: 2026-03-28T20:44:07Z
+    baseRefName: master
+    headRefName: docs/fish-abbr-removal
+    baseRefOid: 3ee9ea9a8d7ab97c99424766cb0eba18f05aa660
+    headRefOid: 652489251b5e8eeefea0c339adf293e5f8341db7
+    mergeCommitOid: 7d9884d6d2877571491d6d7e83d689df9213993a
+    changedFiles: 2
+    additions: 12
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: README.md
+        additions: 8
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3652
+    title: "Builtin syntax mapping: cleanup matcher glob parsing logic"
+    url: https://github.com/sharkdp/bat/pull/3652
+    mergedAt: 2026-03-25T20:01:52Z
+    baseRefName: master
+    headRefName: syntax-mapping-glob-parse-cleanup
+    baseRefOid: a500fb236ae1a265494c63cc852a7b1ed710f872
+    headRefOid: b511b928f440ed1f5fcba305a47d93bd68f379a0
+    mergeCommitOid: 3ee9ea9a8d7ab97c99424766cb0eba18f05aa660
+    changedFiles: 2
+    additions: 75
+    deletions: 77
+    labels: 
+[]
+    keywordHits: 
+      - parser
+      - parsing
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: build/syntax_mapping.rs
+        additions: 74
+        deletions: 77
+        changeType: MODIFIED
+  - 
+    number: 3576
+    title: "feat: Map BUILD to Python (Starlark) for Bazel (fixes #3575)"
+    url: https://github.com/sharkdp/bat/pull/3576
+    mergedAt: 2026-03-22T18:14:06Z
+    baseRefName: master
+    headRefName: patch-2
+    baseRefOid: a1e7c0ab4ae87d388e2f2922a25f15b4ca5f62de
+    headRefOid: 7a9c6e0de5462033388ccde710ae48a02d20ef18
+    mergeCommitOid: 780fdeb88845644b7e8b890416e7c6fa0a4292dc
+    changedFiles: 6
+    additions: 148
+    deletions: 19
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: build/syntax_mapping.rs
+        additions: 74
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: src/syntax_mapping.rs
+        additions: 54
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: src/syntax_mapping/builtin.rs
+        additions: 5
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: src/syntax_mapping/builtins/README.md
+        additions: 12
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: src/syntax_mapping/builtins/common/50-bazel.toml
+        additions: 2
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 3650
+    title: "fix: use correct Debian architecture name for i686 .deb"
+    url: https://github.com/sharkdp/bat/pull/3650
+    mergedAt: 2026-03-24T20:37:48Z
+    baseRefName: master
+    headRefName: fix/i686-deb-architecture
+    baseRefOid: 62907b1da57dd41ec872fe006c10ed546bc82310
+    headRefOid: 515b9d62dbb218d1f2b97388c253ee90299a6425
+    mergeCommitOid: a500fb236ae1a265494c63cc852a7b1ed710f872
+    changedFiles: 2
+    additions: 2
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - fail
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/workflows/CICD.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3651
+    title: "Add Home/End key bindings to builtin minus pager"
+    url: https://github.com/sharkdp/bat/pull/3651
+    mergedAt: 2026-03-24T20:22:53Z
+    baseRefName: master
+    headRefName: minus_home_end_keys
+    baseRefOid: 0b4c886efc31d0adf8a99303006620f289146375
+    headRefOid: eef71074070adebb33cc3144db0bbf154c669927
+    mergeCommitOid: 62907b1da57dd41ec872fe006c10ed546bc82310
+    changedFiles: 2
+    additions: 15
+    deletions: 3
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: src/output.rs
+        additions: 12
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3643
+    title: "feat: preserve change markers when combining --diff with --plain"
+    url: https://github.com/sharkdp/bat/pull/3643
+    mergedAt: 2026-03-21T14:30:43Z
+    baseRefName: master
+    headRefName: feat/diff-plain-compatibility
+    baseRefOid: 1932d1da39b445ae56db4081c9d3ead3260fa5ed
+    headRefOid: 1e3687370463808e5154690f879832d5f1f2dd06
+    mergeCommitOid: a1e7c0ab4ae87d388e2f2922a25f15b4ca5f62de
+    changedFiles: 3
+    additions: 160
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - fail
+    hasTests: true
+    testFiles: 
+      - tests/integration_tests.rs
+    debugScore: 4
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/bin/bat/app.rs
+        additions: 11
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: tests/integration_tests.rs
+        additions: 148
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3642
+    title: "fix: consistent .deb MUSL package names"
+    url: https://github.com/sharkdp/bat/pull/3642
+    mergedAt: 2026-03-20T20:57:41Z
+    baseRefName: master
+    headRefName: fix/deb-musl-package-names
+    baseRefOid: f2daa1eb6e2bb21366d856ca9e160698a69fd8eb
+    headRefOid: b0e559086462b7fa2c94843fd769c31a2cda9a4b
+    mergeCommitOid: 1932d1da39b445ae56db4081c9d3ead3260fa5ed
+    changedFiles: 2
+    additions: 3
+    deletions: 2
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/workflows/CICD.yml
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3640
+    title: "Fix line wrapping for files with control characters"
+    url: https://github.com/sharkdp/bat/pull/3640
+    mergedAt: 2026-03-20T20:40:28Z
+    baseRefName: master
+    headRefName: fix/binary-as-text-width-3631
+    baseRefOid: 4a38eab3eaa191a6a19239bde42f7d5b79d7cb21
+    headRefOid: 1f540752ef21f64aafa46007bb2bf7f328ad5230
+    mergeCommitOid: f2daa1eb6e2bb21366d856ca9e160698a69fd8eb
+    changedFiles: 4
+    additions: 33
+    deletions: 5
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - regression
+    hasTests: true
+    testFiles: 
+      - tests/examples/regression_tests/issue_3631.txt
+      - tests/integration_tests.rs
+    debugScore: 4
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/printer.rs
+        additions: 13
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: tests/examples/regression_tests/issue_3631.txt
+        additions: 0
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/integration_tests.rs
+        additions: 19
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3628
+    title: "docs: clarify Ubuntu and Debian executable name"
+    url: https://github.com/sharkdp/bat/pull/3628
+    mergedAt: 2026-03-19T21:00:59Z
+    baseRefName: master
+    headRefName: codex/clarify-bat-vs-batcat
+    baseRefOid: 31e30a2e9700ba4b9a6dafbb32e82cdda9b5f37e
+    headRefOid: 9fccdbc48420b1bb9de852c275969e838cfbc6ef
+    mergeCommitOid: 4a38eab3eaa191a6a19239bde42f7d5b79d7cb21
+    changedFiles: 1
+    additions: 3
+    deletions: 3
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: README.md
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 3636
+    title: "Add mapping for ignore files"
+    url: https://github.com/sharkdp/bat/pull/3636
+    mergedAt: 2026-03-18T20:08:02Z
+    baseRefName: master
+    headRefName: add-mapping-for-ignore-files
+    baseRefOid: f11374535d0ae86e6f49a4641107d9a3aa4f9ee2
+    headRefOid: ffed52f6ebc449b6dc74041829168541ef46b767
+    mergeCommitOid: 31e30a2e9700ba4b9a6dafbb32e82cdda9b5f37e
+    changedFiles: 3
+    additions: 5
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: CONTRIBUTING.md
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/syntax_mapping/builtins/common/90-ignore-files.toml
+        additions: 2
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 3629
+    title: "docs: fix README sidebar wording"
+    url: https://github.com/sharkdp/bat/pull/3629
+    mergedAt: 2026-03-18T18:37:04Z
+    baseRefName: master
+    headRefName: docs/fix-readme-wording
+    baseRefOid: 63d5796f8f1822edc90370ec9a081827bb5ce197
+    headRefOid: de209f8a23ad418040da14b882c4a0ce6194ee87
+    mergeCommitOid: f11374535d0ae86e6f49a4641107d9a3aa4f9ee2
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - validation
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: README.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3635
+    title: "Add syntax mappings for GCloud CLI config files"
+    url: https://github.com/sharkdp/bat/pull/3635
+    mergedAt: 2026-03-17T20:45:12Z
+    baseRefName: master
+    headRefName: add-mappings-for-gcloud-cli
+    baseRefOid: d9adfe90fc45fe5fc1298a692375ea3aaf2955e5
+    headRefOid: a1917275cdf4df5a1a744681651cb64db6e0f559
+    mergeCommitOid: 63d5796f8f1822edc90370ec9a081827bb5ce197
+    changedFiles: 2
+    additions: 4
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/syntax_mapping/builtins/common/50-gcloud-cli-config.toml
+        additions: 3
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 3627
+    title: "docs: clarify supported custom theme format"
+    url: https://github.com/sharkdp/bat/pull/3627
+    mergedAt: 2026-03-14T07:08:31Z
+    baseRefName: master
+    headRefName: codex/clarify-theme-format
+    baseRefOid: ea6d2ac911831bd8587a9b378ea3f06a5b4a1fca
+    headRefOid: b1f04995a64e3359d4519c04f31efa56ac282292
+    mergeCommitOid: d9adfe90fc45fe5fc1298a692375ea3aaf2955e5
+    changedFiles: 1
+    additions: 2
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: README.md
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3584
+    title: "Add COBOL syntax highlighting"
+    url: https://github.com/sharkdp/bat/pull/3584
+    mergedAt: 2026-03-11T16:51:14Z
+    baseRefName: master
+    headRefName: add-cobol-syntax
+    baseRefOid: 0dcdcb678a25f9fded8c3bb74fe75fee43a054a9
+    headRefOid: 927873392b87e50b349c2ec11a0d07d5f400d3de
+    mergeCommitOid: 23abbdcea9d0e34b304aa82ddad9fda83e425585
+    changedFiles: 7
+    additions: 249
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - tests/syntax-tests/highlighted/COBOL/payroll.cbl
+      - tests/syntax-tests/highlighted/COBOL/test.cbl
+      - tests/syntax-tests/source/COBOL/payroll.cbl
+      - tests/syntax-tests/source/COBOL/test.cbl
+    debugScore: 2
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: .gitmodules
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: assets/syntaxes/02_Extra/COBOL
+        additions: 1
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/syntax-tests/highlighted/COBOL/payroll.cbl
+        additions: 61
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/syntax-tests/highlighted/COBOL/test.cbl
+        additions: 61
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/syntax-tests/source/COBOL/payroll.cbl
+        additions: 61
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/syntax-tests/source/COBOL/test.cbl
+        additions: 61
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 3605
+    title: "build(deps): bump assets/syntaxes/02_Extra/cmd-help from `273cb98` to `db0a616`"
+    url: https://github.com/sharkdp/bat/pull/3605
+    mergedAt: 2026-03-11T17:06:16Z
+    baseRefName: master
+    headRefName: dependabot/submodules/assets/syntaxes/02_Extra/cmd-help-db0a616
+    baseRefOid: 23abbdcea9d0e34b304aa82ddad9fda83e425585
+    headRefOid: ac97356930695dd33b3ff664758406b2384b7440
+    mergeCommitOid: ea6d2ac911831bd8587a9b378ea3f06a5b4a1fca
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+      - dependencies
+      - submodules
+    keywordHits: 
+      - fix
+      - regression
+      - broken
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: assets/syntaxes/02_Extra/cmd-help
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3621
+    title: "Fix syntax highlighting for symlinked files by resolving target path"
+    url: https://github.com/sharkdp/bat/pull/3621
+    mergedAt: 2026-03-08T18:01:25Z
+    baseRefName: master
+    headRefName: fix-symlink-syntax-detection
+    baseRefOid: fc4f12b390f4c69b5cfdc0891b3d0782b6c0f186
+    headRefOid: f49641a6c320a8fafa72f200d39432d5158fa04b
+    mergeCommitOid: 0dcdcb678a25f9fded8c3bb74fe75fee43a054a9
+    changedFiles: 2
+    additions: 57
+    deletions: 7
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - error
+      - fail
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/assets.rs
+        additions: 56
+        deletions: 7
+        changeType: MODIFIED
+  - 
+    number: 3617
+    title: "Add --fallback-syntax for undetected files"
+    url: https://github.com/sharkdp/bat/pull/3617
+    mergedAt: 2026-03-08T03:18:29Z
+    baseRefName: master
+    headRefName: feat/fallback-syntax-1341
+    baseRefOid: ab80bd9717448d988445841fc9634e7d7c2f8cf6
+    headRefOid: 939e582ddcedd2b9177c243b9a8bb38490dc68db
+    mergeCommitOid: 844bfded506e99c06237472bd83a8af5af433538
+    changedFiles: 9
+    additions: 166
+    deletions: 9
+    labels: 
+[]
+    keywordHits: 
+      - validation
+      - parsing
+      - fail
+    hasTests: true
+    testFiles: 
+      - tests/integration_tests.rs
+    debugScore: 4
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: doc/long-help.txt
+        additions: 7
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: doc/short-help.txt
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/assets.rs
+        additions: 17
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: src/bin/bat/app.rs
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/bin/bat/clap_app.rs
+        additions: 11
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/config.rs
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/printer.rs
+        additions: 6
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: tests/integration_tests.rs
+        additions: 115
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3620
+    title: "Fix BAT_CONFIG_DIR pointing at system config directory causing duplicate flag errors"
+    url: https://github.com/sharkdp/bat/pull/3620
+    mergedAt: 2026-03-08T06:23:14Z
+    baseRefName: master
+    headRefName: fix-bat-config-dir-duplicate
+    baseRefOid: 844bfded506e99c06237472bd83a8af5af433538
+    headRefOid: 9cce9e04d2a5754d8cfae9d1595bece8999b3ce3
+    mergeCommitOid: fc4f12b390f4c69b5cfdc0891b3d0782b6c0f186
+    changedFiles: 2
+    additions: 56
+    deletions: 4
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - error
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/bin/bat/config.rs
+        additions: 55
+        deletions: 4
+        changeType: MODIFIED
+  - 
+    number: 3613
+    title: "feat(syntax): add support for hidden_file_extensions"
+    url: https://github.com/sharkdp/bat/pull/3613
+    mergedAt: 2026-03-06T18:14:20Z
+    baseRefName: master
+    headRefName: feat-hidden-extensions
+    baseRefOid: a1a10c777f8389d2a6997556bf96f0673de35d40
+    headRefOid: db9cad59dcbf5f7b8810d8baa88d484cd319726f
+    mergeCommitOid: ab80bd9717448d988445841fc9634e7d7c2f8cf6
+    changedFiles: 2
+    additions: 71
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/assets.rs
+        additions: 70
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3610
+    title: "Docs: clarify PATH requirement and explain highlighted outputs (Fixes…"
+    url: https://github.com/sharkdp/bat/pull/3610
+    mergedAt: 2026-03-05T05:55:06Z
+    baseRefName: master
+    headRefName: issue-2376-syntax-tests-path
+    baseRefOid: cc5f782d28a8e6156b8ebd3346b0a7f7c49256e2
+    headRefOid: 426c19e46d922bbb0bf35284f91e42f93ca5cd39
+    mergeCommitOid: a1a10c777f8389d2a6997556bf96f0673de35d40
+    changedFiles: 2
+    additions: 27
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - error
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: CONTRIBUTING.md
+        additions: 26
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3597
+    title: "Add word wrapping mode"
+    url: https://github.com/sharkdp/bat/pull/3597
+    mergedAt: 2026-03-03T03:18:50Z
+    baseRefName: master
+    headRefName: feat/issue-2751-word-wrap
+    baseRefOid: 1424f9d6bf0244e7b579ee9c782cef0406aa1ae1
+    headRefOid: a8041f0646054a5bd24d436390f8746960a6b702
+    mergeCommitOid: cc5f782d28a8e6156b8ebd3346b0a7f7c49256e2
+    changedFiles: 14
+    additions: 130
+    deletions: 15
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - tests/examples/word-wrap.txt
+      - tests/integration_tests.rs
+    debugScore: 1
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: assets/completions/_bat.ps1.in
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: assets/completions/bat.bash.in
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: assets/completions/bat.fish.in
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: assets/completions/bat.zsh.in
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: assets/manual/bat.1.in
+        additions: 4
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: doc/long-help.txt
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: doc/short-help.txt
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/bin/bat/app.rs
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/bin/bat/clap_app.rs
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: src/printer.rs
+        additions: 50
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: src/wrapping.rs
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/examples/word-wrap.txt
+        additions: 3
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/integration_tests.rs
+        additions: 59
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3609
+    title: "Fix panic in BuiltinPager Drop when pager thread fails (#3449)"
+    url: https://github.com/sharkdp/bat/pull/3609
+    mergedAt: 2026-03-02T02:57:37Z
+    baseRefName: master
+    headRefName: fix/builtin-pager-drop-panic
+    baseRefOid: 908b1f22d1a45f93ac5400b3017df11e459d3013
+    headRefOid: fd67095cff7f96b4a82ee157e09e3b3792cee680
+    mergeCommitOid: 1424f9d6bf0244e7b579ee9c782cef0406aa1ae1
+    changedFiles: 1
+    additions: 2
+    deletions: 2
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - fail
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: src/output.rs
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 3608
+    title: "build(deps): bump bytesize from 1.3.0 to 2.3.1"
+    url: https://github.com/sharkdp/bat/pull/3608
+    mergedAt: 2026-03-01T04:47:12Z
+    baseRefName: master
+    headRefName: dependabot/cargo/bytesize-2.3.1
+    baseRefOid: 49d77a469acebefd37920344eb2828c367df6113
+    headRefOid: 17a70d9b8cc956b23a488fa71483e7d10bb19203
+    mergeCommitOid: 908b1f22d1a45f93ac5400b3017df11e459d3013
+    changedFiles: 2
+    additions: 3
+    deletions: 3
+    labels: 
+      - dependencies
+      - rust
+    keywordHits: 
+      - fix
+      - error
+      - parsing
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.lock
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3607
+    title: "build(deps): bump clap from 4.5.56 to 4.5.60"
+    url: https://github.com/sharkdp/bat/pull/3607
+    mergedAt: 2026-03-01T04:33:43Z
+    baseRefName: master
+    headRefName: dependabot/cargo/clap-4.5.60
+    baseRefOid: 8a858b19dcfd693b8d2661c1b628584242937827
+    headRefOid: fa354958886e1c416e4b67f020d964e451379da1
+    mergeCommitOid: 49d77a469acebefd37920344eb2828c367df6113
+    changedFiles: 2
+    additions: 8
+    deletions: 8
+    labels: 
+      - dependencies
+      - rust
+    keywordHits: 
+      - fix
+      - regression
+      - error
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.lock
+        additions: 6
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 3606
+    title: "build(deps): bump git2 from 0.20.3 to 0.20.4"
+    url: https://github.com/sharkdp/bat/pull/3606
+    mergedAt: 2026-03-01T04:16:23Z
+    baseRefName: master
+    headRefName: dependabot/cargo/git2-0.20.4
+    baseRefOid: 5e59957349b3527d716bce9c061d38a2dbbd7c85
+    headRefOid: 397252d2ccada6b40aed166052c40a0385f412b3
+    mergeCommitOid: 8a858b19dcfd693b8d2661c1b628584242937827
+    changedFiles: 1
+    additions: 2
+    deletions: 2
+    labels: 
+      - dependencies
+      - rust
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.lock
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 3603
+    title: "build(deps): bump nix from 0.30.1 to 0.31.2"
+    url: https://github.com/sharkdp/bat/pull/3603
+    mergedAt: 2026-03-01T03:58:09Z
+    baseRefName: master
+    headRefName: dependabot/cargo/nix-0.31.2
+    baseRefOid: 673929c189dc4a1393623a2fdb6a6ff75e648739
+    headRefOid: 90f8e00e0c2b16a9ef1ed965001804c0d934da78
+    mergeCommitOid: 5e59957349b3527d716bce9c061d38a2dbbd7c85
+    changedFiles: 2
+    additions: 5
+    deletions: 5
+    labels: 
+      - dependencies
+      - rust
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.lock
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3604
+    title: "build(deps): bump serde_with from 3.16.1 to 3.17.0"
+    url: https://github.com/sharkdp/bat/pull/3604
+    mergedAt: 2026-03-01T03:32:28Z
+    baseRefName: master
+    headRefName: dependabot/cargo/serde_with-3.17.0
+    baseRefOid: 7d7e202bd56818ac81a7ed892f165b546993dd86
+    headRefOid: e36bb8cc66089b73109a65d8702d07b971d0cf8b
+    mergeCommitOid: 673929c189dc4a1393623a2fdb6a6ff75e648739
+    changedFiles: 2
+    additions: 5
+    deletions: 5
+    labels: 
+      - dependencies
+      - rust
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.lock
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3588
+    title: "warn when pager is missing instead of silently falling back"
+    url: https://github.com/sharkdp/bat/pull/3588
+    mergedAt: 2026-02-20T18:46:38Z
+    baseRefName: master
+    headRefName: fix/warn-missing-pager
+    baseRefOid: 594069581de331f15329129538ba4967ea469f81
+    headRefOid: 74de0757486294963ff7998ad636c4340220bee9
+    mergeCommitOid: 7d7e202bd56818ac81a7ed892f165b546993dd86
+    changedFiles: 3
+    additions: 28
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: true
+    testFiles: 
+      - tests/integration_tests.rs
+    debugScore: 3
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/output.rs
+        additions: 11
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: tests/integration_tests.rs
+        additions: 16
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3592
+    title: "respect --wrap=never flag when piping to pager"
+    url: https://github.com/sharkdp/bat/pull/3592
+    mergedAt: 2026-02-20T18:26:23Z
+    baseRefName: master
+    headRefName: fix/wrap-never-clean
+    baseRefOid: fbc05da785ec5e728d60762a282b5d96a578bfd2
+    headRefOid: 62b0388236ad36a05315d1c6fb78f132d165e0c8
+    mergeCommitOid: 594069581de331f15329129538ba4967ea469f81
+    changedFiles: 3
+    additions: 52
+    deletions: 11
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - regression
+    hasTests: true
+    testFiles: 
+      - tests/integration_tests.rs
+    debugScore: 4
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/bin/bat/app.rs
+        additions: 13
+        deletions: 11
+        changeType: MODIFIED
+      - 
+        path: tests/integration_tests.rs
+        additions: 38
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3586
+    title: "Fixed manpage syntax to remove ANSI artifacts"
+    url: https://github.com/sharkdp/bat/pull/3586
+    mergedAt: 2026-02-19T16:56:15Z
+    baseRefName: master
+    headRefName: master
+    baseRefOid: 990b2fc06f6d5458df1ff222e7ed59c371ce1c46
+    headRefOid: a71d16fa1b9f8b2b0790e728e3934dc34f76593d
+    mergeCommitOid: fbc05da785ec5e728d60762a282b5d96a578bfd2
+    changedFiles: 4
+    additions: 801
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - incorrect
+    hasTests: true
+    testFiles: 
+      - tests/syntax-tests/highlighted/Manpage/uwsm-0.26.3.man
+      - tests/syntax-tests/source/Manpage/uwsm-0.26.3.man
+    debugScore: 4
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: assets/syntaxes/02_Extra/Manpage.sublime-syntax
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: tests/syntax-tests/highlighted/Manpage/uwsm-0.26.3.man
+        additions: 399
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: tests/syntax-tests/source/Manpage/uwsm-0.26.3.man
+        additions: 399
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 3583
+    title: "feat: implement --unbuffered mode for streaming input"
+    url: https://github.com/sharkdp/bat/pull/3583
+    mergedAt: 2026-02-12T06:40:44Z
+    baseRefName: master
+    headRefName: steward/sharkdp-bat-3555-2de8ac3c
+    baseRefOid: cb8b6375747241e45ac129278b0fc8f8e0979699
+    headRefOid: 0c883d6f28859922dddbd2064a40a8d621490754
+    mergeCommitOid: 990b2fc06f6d5458df1ff222e7ed59c371ce1c46
+    changedFiles: 15
+    additions: 184
+    deletions: 12
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - tests/integration_tests.rs
+    debugScore: 1
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: assets/completions/_bat.ps1.in
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: assets/completions/bat.bash.in
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: assets/completions/bat.fish.in
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: assets/completions/bat.zsh.in
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: assets/manual/bat.1.in
+        additions: 4
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: doc/long-help.txt
+        additions: 5
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: doc/short-help.txt
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/bin/bat/app.rs
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/bin/bat/clap_app.rs
+        additions: 7
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: src/config.rs
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/controller.rs
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/input.rs
+        additions: 105
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/output.rs
+        additions: 7
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/integration_tests.rs
+        additions: 36
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3580
+    title: "fix(cache): allow --help flag for cache subcommand"
+    url: https://github.com/sharkdp/bat/pull/3580
+    mergedAt: 2026-02-09T03:06:41Z
+    baseRefName: master
+    headRefName: fix/cache-help
+    baseRefOid: 391e7ff072e9349dd7d2f695d84f0650e895a183
+    headRefOid: 87209ca440cbde99c1344d74aab5f88456984fd8
+    mergeCommitOid: cb8b6375747241e45ac129278b0fc8f8e0979699
+    changedFiles: 3
+    additions: 29
+    deletions: 8
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - error
+      - fail
+    hasTests: true
+    testFiles: 
+      - tests/integration_tests.rs
+    debugScore: 5
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/bin/bat/clap_app.rs
+        additions: 11
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: tests/integration_tests.rs
+        additions: 17
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3581
+    title: "chore(deps): update time crate to 0.3.47 (RUSTSEC-2026-0009)"
+    url: https://github.com/sharkdp/bat/pull/3581
+    mergedAt: 2026-02-07T11:37:17Z
+    baseRefName: master
+    headRefName: chore/update-time-crate
+    baseRefOid: 3df9d581b77c34fdab323000c7f3f65bc4415d6c
+    headRefOid: 2b517199a28eb276c1cea7ef9d2cf68892054a10
+    mergeCommitOid: 391e7ff072e9349dd7d2f695d84f0650e895a183
+    changedFiles: 3
+    additions: 14
+    deletions: 12
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - parsing
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Cargo.lock
+        additions: 11
+        deletions: 11
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3578
+    title: "Add initial flake.nix; just for develop, for now (fixes#3577)"
+    url: https://github.com/sharkdp/bat/pull/3578
+    mergedAt: 2026-02-03T20:25:49Z
+    baseRefName: master
+    headRefName: nix
+    baseRefOid: 8664cc9df9ace1d3813fd4fd87f42e2327232936
+    headRefOid: 3f12b1c1ab247b18ec3778f34eca4fd636bf4944
+    mergeCommitOid: c49148814082b6de28737af526d5496a1eb7627c
+    changedFiles: 5
+    additions: 72
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .envrc
+        additions: 1
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: .gitignore
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: flake.lock
+        additions: 27
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: flake.nix
+        additions: 40
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 3527
+    title: "Fix bat crash with BusyBox less on Windows"
+    url: https://github.com/sharkdp/bat/pull/3527
+    mergedAt: 2026-02-03T20:40:04Z
+    baseRefName: master
+    headRefName: master
+    baseRefOid: c49148814082b6de28737af526d5496a1eb7627c
+    headRefOid: eb724f2dc4f13e6f20cf4880719bf4c947cb523c
+    mergeCommitOid: 3df9d581b77c34fdab323000c7f3f65bc4415d6c
+    changedFiles: 2
+    additions: 8
+    deletions: 2
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - crash
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/output.rs
+        additions: 7
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 3563
+    title: "feat: add --quiet-empty flag to suppress output on empty input"
+    url: https://github.com/sharkdp/bat/pull/3563
+    mergedAt: 2026-02-01T09:15:45Z
+    baseRefName: master
+    headRefName: feat/quiet-empty
+    baseRefOid: 3d0a7ed0a0e5252f2bd43099ffb39514e60d775f
+    headRefOid: 3b34b47d5555e52189abd77b508e4b29d3b84a08
+    mergeCommitOid: 8664cc9df9ace1d3813fd4fd87f42e2327232936
+    changedFiles: 13
+    additions: 73
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - tests/integration_tests.rs
+    debugScore: 1
+    suggestedDifficulty: high
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: assets/completions/_bat.ps1.in
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: assets/completions/bat.bash.in
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: assets/completions/bat.fish.in
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: assets/completions/bat.zsh.in
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: assets/manual/bat.1.in
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: doc/long-help.txt
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: doc/short-help.txt
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/bin/bat/app.rs
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/bin/bat/clap_app.rs
+        additions: 12
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/config.rs
+        additions: 3
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/printer.rs
+        additions: 10
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: tests/integration_tests.rs
+        additions: 30
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 3568
+    title: "build(deps): bump indexmap from 2.12.1 to 2.13.0"
+    url: https://github.com/sharkdp/bat/pull/3568
+    mergedAt: 2026-02-01T05:30:27Z
+    baseRefName: master
+    headRefName: dependabot/cargo/indexmap-2.13.0
+    baseRefOid: 43ab174d420c75c39066f25bfd9aa60c050aa322
+    headRefOid: 8f6f5dfbd207de9f79461e73d8de4f668bfc2f9e
+    mergeCommitOid: 3d0a7ed0a0e5252f2bd43099ffb39514e60d775f
+    changedFiles: 2
+    additions: 3
+    deletions: 3
+    labels: 
+      - dependencies
+      - rust
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.lock
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3567
+    title: "build(deps): bump proc-macro2 from 1.0.103 to 1.0.106"
+    url: https://github.com/sharkdp/bat/pull/3567
+    mergedAt: 2026-02-01T05:16:54Z
+    baseRefName: master
+    headRefName: dependabot/cargo/proc-macro2-1.0.106
+    baseRefOid: 8a828471217606461156565bc5dff5d0abe3bfbd
+    headRefOid: b396ab865f4890db32e024457f742c36f3228457
+    mergeCommitOid: 43ab174d420c75c39066f25bfd9aa60c050aa322
+    changedFiles: 2
+    additions: 3
+    deletions: 3
+    labels: 
+      - dependencies
+      - rust
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.lock
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3571
+    title: "build(deps): bump serde_with from 3.15.1 to 3.16.1"
+    url: https://github.com/sharkdp/bat/pull/3571
+    mergedAt: 2026-02-01T04:48:10Z
+    baseRefName: master
+    headRefName: dependabot/cargo/serde_with-3.16.1
+    baseRefOid: 0d2078b32ba4f0947b5dee4f469353c46ce3ec75
+    headRefOid: c3c19c801804590b363a307fd94285af8fe9e082
+    mergeCommitOid: 8a828471217606461156565bc5dff5d0abe3bfbd
+    changedFiles: 2
+    additions: 5
+    deletions: 5
+    labels: 
+      - dependencies
+      - rust
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.lock
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3569
+    title: "build(deps): bump clap from 4.5.46 to 4.5.56"
+    url: https://github.com/sharkdp/bat/pull/3569
+    mergedAt: 2026-02-01T04:15:26Z
+    baseRefName: master
+    headRefName: dependabot/cargo/clap-4.5.56
+    baseRefOid: adfdcf4c6df8012d480cf92eba9a70cb9cbff912
+    headRefOid: cddfad83e4b593fe630c4874394cda3d98c1c804
+    mergeCommitOid: 0d2078b32ba4f0947b5dee4f469353c46ce3ec75
+    changedFiles: 2
+    additions: 6
+    deletions: 6
+    labels: 
+      - dependencies
+      - rust
+    keywordHits: 
+      - fix
+      - error
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.lock
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 3564
+    title: "build(deps): bump git2 from 0.20.2 to 0.20.3"
+    url: https://github.com/sharkdp/bat/pull/3564
+    mergedAt: 2026-02-01T03:39:57Z
+    baseRefName: master
+    headRefName: dependabot/cargo/git2-0.20.3
+    baseRefOid: 885ae1dc81eedd588f1a84cec6179b9aaac5e8c5
+    headRefOid: 593cf768110cf51cc47b8126883156342ffb31ab
+    mergeCommitOid: adfdcf4c6df8012d480cf92eba9a70cb9cbff912
+    changedFiles: 1
+    additions: 4
+    deletions: 4
+    labels: 
+      - dependencies
+      - rust
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.lock
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+  - 
+    number: 3561
+    title: "Small typo fixes"
+    url: https://github.com/sharkdp/bat/pull/3561
+    mergedAt: 2026-01-28T20:03:09Z
+    baseRefName: master
+    headRefName: small_typo_fix
+    baseRefOid: cd06fe46e001483115273e1a03f448720b945948
+    headRefOid: f6f1f18e9cb0d6aaaf51d9fd96911a07d211bfe2
+    mergeCommitOid: 885ae1dc81eedd588f1a84cec6179b9aaac5e8c5
+    changedFiles: 1
+    additions: 2
+    deletions: 2
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: src/config.rs
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 3552
+    title: "Remove Visual Studio Dark+ theme"
+    url: https://github.com/sharkdp/bat/pull/3552
+    mergedAt: 2026-01-15T20:13:42Z
+    baseRefName: master
+    headRefName: "remove-vs-dark+"
+    baseRefOid: 298e1f532146afb98c9620662d9be403e3002d75
+    headRefOid: 099d71645592433958a702e3fd0f31a42cbf1bf2
+    mergeCommitOid: cd06fe46e001483115273e1a03f448720b945948
+    changedFiles: 4
+    additions: 2
+    deletions: 5
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: true
+    testFiles: 
+      - tests/assets.rs
+    debugScore: 2
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: .gitmodules
+        additions: 0
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: CHANGELOG.md
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: assets/themes/visual-studio-dark-plus
+        additions: 0
+        deletions: 1
+        changeType: DELETED
+      - 
+        path: tests/assets.rs
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3506
+    title: "build(deps): bump actions/checkout from 5 to 6"
+    url: https://github.com/sharkdp/bat/pull/3506
+    mergedAt: 2026-01-12T05:14:44Z
+    baseRefName: master
+    headRefName: dependabot/github_actions/actions/checkout-6
+    baseRefOid: 981f25989a4955accc5c40d033c9ccd2b623a4b3
+    headRefOid: 3cb55e85d028c01c75797e2f18cbd5329ca17df9
+    mergeCommitOid: 298e1f532146afb98c9620662d9be403e3002d75
+    changedFiles: 2
+    additions: 10
+    deletions: 10
+    labels: 
+      - dependencies
+      - github_actions
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/workflows/CICD.yml
+        additions: 9
+        deletions: 9
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/require-changelog-for-PRs.yml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3550
+    title: "Use cargo_bin! macro to fix tests for future Cargo versions"
+    url: https://github.com/sharkdp/bat/pull/3550
+    mergedAt: 2026-01-10T11:53:09Z
+    baseRefName: master
+    headRefName: master
+    baseRefOid: 4e84e838a32e3b326a3d1f9e2cd4c879597ad74d
+    headRefOid: 57bf8ff7dac2f2830dda9bbe4d1225bc60e01509
+    mergeCommitOid: 981f25989a4955accc5c40d033c9ccd2b623a4b3
+    changedFiles: 5
+    additions: 6
+    deletions: 21
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - fail
+      - failure
+    hasTests: true
+    testFiles: 
+      - tests/tester/mod.rs
+      - tests/utils/command.rs
+    debugScore: 5
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: CHANGELOG.md
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: Cargo.lock
+        additions: 2
+        deletions: 9
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: tests/tester/mod.rs
+        additions: 1
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: tests/utils/command.rs
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3544
+    title: "build(deps): bump shell-words from 1.1.0 to 1.1.1"
+    url: https://github.com/sharkdp/bat/pull/3544
+    mergedAt: 2026-01-01T04:33:26Z
+    baseRefName: master
+    headRefName: dependabot/cargo/shell-words-1.1.1
+    baseRefOid: 7dc180eefb223ded1d9df3c22ae3d94fdbdcffa8
+    headRefOid: d48bf240a79036f8307e94382c2770350b889a88
+    mergeCommitOid: 4e84e838a32e3b326a3d1f9e2cd4c879597ad74d
+    changedFiles: 2
+    additions: 3
+    deletions: 3
+    labels: 
+      - dependencies
+      - rust
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.lock
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3542
+    title: "build(deps): bump console from 0.16.1 to 0.16.2"
+    url: https://github.com/sharkdp/bat/pull/3542
+    mergedAt: 2026-01-01T04:18:01Z
+    baseRefName: master
+    headRefName: dependabot/cargo/console-0.16.2
+    baseRefOid: 60902c796fee1346cce66153782f6bb74de05898
+    headRefOid: 3276e9469ac37711aeebacc007371a842efebada
+    mergeCommitOid: 7dc180eefb223ded1d9df3c22ae3d94fdbdcffa8
+    changedFiles: 2
+    additions: 3
+    deletions: 3
+    labels: 
+      - dependencies
+      - rust
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.lock
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3541
+    title: "build(deps): bump nu-ansi-term from 0.50.1 to 0.50.3"
+    url: https://github.com/sharkdp/bat/pull/3541
+    mergedAt: 2026-01-01T04:00:33Z
+    baseRefName: master
+    headRefName: dependabot/cargo/nu-ansi-term-0.50.3
+    baseRefOid: 823fd9f5c6c1b98d1f3a850566c77de900e27acc
+    headRefOid: c12cdcace3166291b43e2873b10321c0096e6897
+    mergeCommitOid: 60902c796fee1346cce66153782f6bb74de05898
+    changedFiles: 2
+    additions: 4
+    deletions: 13
+    labels: 
+      - dependencies
+      - rust
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.lock
+        additions: 3
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 3539
+    title: "build(deps): bump tempfile from 3.16.0 to 3.23.0"
+    url: https://github.com/sharkdp/bat/pull/3539
+    mergedAt: 2026-01-01T03:15:20Z
+    baseRefName: master
+    headRefName: dependabot/cargo/tempfile-3.23.0
+    baseRefOid: 32047346e319c38bc4e7247f9ef53b3392f405c9
+    headRefOid: 88d6fd0248e8aa3f6ae5f906402fdcf56ba04a4d
+    mergeCommitOid: 823fd9f5c6c1b98d1f3a850566c77de900e27acc
+    changedFiles: 2
+    additions: 26
+    deletions: 8
+    labels: 
+      - dependencies
+      - rust
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: Cargo.lock
+        additions: 25
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: Cargo.toml
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED

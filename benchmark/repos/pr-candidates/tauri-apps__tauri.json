@@ -1,0 +1,3211 @@
+{
+  "generatedAt": "2026-05-02T10:21:09.866Z",
+  "repo": "tauri-apps/tauri",
+  "since": "2026-01-01",
+  "limit": 50,
+  "debugKeywords": [
+    "bug",
+    "fix",
+    "regression",
+    "crash",
+    "incorrect",
+    "wrong",
+    "error",
+    "exception",
+    "edge",
+    "flaky",
+    "race",
+    "leak",
+    "validation",
+    "parser",
+    "parsing",
+    "timeout",
+    "fail",
+    "failure",
+    "broken"
+  ],
+  "prs": [
+    {
+      "number": 15310,
+      "title": "fix: pin napi for msrv and Node.js on CI",
+      "url": "https://github.com/tauri-apps/tauri/pull/15310",
+      "mergedAt": "2026-05-01T02:33:38Z",
+      "baseRefName": "dev",
+      "headRefName": "fix/msrv",
+      "baseRefOid": "a04d907b73e83e538792c7442af39c18561279eb",
+      "headRefOid": "b16237fa92c418ee0a6c4949fe5c9b264724ace7",
+      "mergeCommitOid": "4ca427de5e1f657cc1609f76748f5ef960fd5a9f",
+      "changedFiles": 4,
+      "additions": 248,
+      "deletions": 168,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "regression"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "Cargo.lock",
+          "additions": 45,
+          "deletions": 25,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/cli/Cargo.toml",
+          "additions": 5,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/cli/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pnpm-lock.yaml",
+          "additions": 197,
+          "deletions": 138,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15309,
+      "title": "fix(ci): publish-cli-rs script for Powershell",
+      "url": "https://github.com/tauri-apps/tauri/pull/15309",
+      "mergedAt": "2026-04-30T16:35:01Z",
+      "baseRefName": "dev",
+      "headRefName": "fix/rust-publish-ci",
+      "baseRefOid": "e60834fc67d87c10e2f44b2568052295cb61c325",
+      "headRefOid": "1dc29662d931090485ff00b77d8cb7948a0e6e8f",
+      "mergeCommitOid": "a04d907b73e83e538792c7442af39c18561279eb",
+      "changedFiles": 1,
+      "additions": 10,
+      "deletions": 10,
+      "labels": [],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".github/workflows/publish-cli-rs.yml",
+          "additions": 10,
+          "deletions": 10,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15041,
+      "title": "Apply Version Updates From Current Changes",
+      "url": "https://github.com/tauri-apps/tauri/pull/15041",
+      "mergedAt": "2026-04-30T15:21:07Z",
+      "baseRefName": "dev",
+      "headRefName": "release/version-updates",
+      "baseRefOid": "df05c00563a91fc936bd15c6b10dd2825472f96b",
+      "headRefOid": "ea5019103fe512861ce14d5886a6b99150beb084",
+      "mergeCommitOid": "e60834fc67d87c10e2f44b2568052295cb61c325",
+      "changedFiles": 70,
+      "additions": 346,
+      "deletions": 318,
+      "labels": [
+        "version updates"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "error",
+        "parsing",
+        "fail",
+        "failure"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".changes/add-bring-all-to-front-predefined-menu-item-type.md",
+          "additions": 0,
+          "deletions": 6,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/add-macros-allow-rename-command.md",
+          "additions": 0,
+          "deletions": 6,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/append-rc-content-support.md",
+          "additions": 0,
+          "deletions": 5,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/base64.md",
+          "additions": 0,
+          "deletions": 5,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/change-pr-15117.md",
+          "additions": 0,
+          "deletions": 6,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/change-pr-15175.md",
+          "additions": 0,
+          "deletions": 7,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/change-pr-15177.md",
+          "additions": 0,
+          "deletions": 6,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/change-pr-15218.md",
+          "additions": 0,
+          "deletions": 7,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/change-pr-15262.md",
+          "additions": 0,
+          "deletions": 5,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/changed.md",
+          "additions": 0,
+          "deletions": 6,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/data-tauri-drag-region-deep.md",
+          "additions": 0,
+          "deletions": 5,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/disable-autofill.md",
+          "additions": 0,
+          "deletions": 9,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/eval-with-callback.md",
+          "additions": 0,
+          "deletions": 7,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/feat-async_runtime-track.md",
+          "additions": 0,
+          "deletions": 5,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/feat-uninstaller-icon-image.md",
+          "additions": 0,
+          "deletions": 13,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/file-association.md",
+          "additions": 0,
+          "deletions": 9,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/fix-build-bundles-arg.md",
+          "additions": 0,
+          "deletions": 7,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/fix-ios-metal-toolchain.md",
+          "additions": 0,
+          "deletions": 6,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/fix-macos-initial-window-position.md",
+          "additions": 0,
+          "deletions": 6,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/ios-skip-codesign.md",
+          "additions": 0,
+          "deletions": 5,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/linux-deploy-link.md",
+          "additions": 0,
+          "deletions": 5,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/liquid-glass-icon.md",
+          "additions": 0,
+          "deletions": 5,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/mobile-file-associations.md",
+          "additions": 0,
+          "deletions": 7,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/mobile_tao_events.md",
+          "additions": 0,
+          "deletions": 8,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/multi-window-mobile.md",
+          "additions": 0,
+          "deletions": 8,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/new-window-main-thread.md",
+          "additions": 0,
+          "deletions": 6,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/prompt-signing-key-password-context.md",
+          "additions": 0,
+          "deletions": 6,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/restart-emulator.md",
+          "additions": 0,
+          "deletions": 6,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/safepathbuf_into_pathbuf.md",
+          "additions": 0,
+          "deletions": 5,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/supersede-kuchikiki.md",
+          "additions": 0,
+          "deletions": 6,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/tauri-dbus.md",
+          "additions": 0,
+          "deletions": 5,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/toml-ver.md",
+          "additions": 0,
+          "deletions": 5,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/tray-icon-0.22.md",
+          "additions": 0,
+          "deletions": 5,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/utils-bump.md",
+          "additions": 0,
+          "deletions": 5,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/web-content-process-termination.md",
+          "additions": 0,
+          "deletions": 7,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/windows-fileversion-build-metadata.md",
+          "additions": 0,
+          "deletions": 5,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/windows-versioninfo-strings.md",
+          "additions": 0,
+          "deletions": 5,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/windows_arm_signtool_detect.md",
+          "additions": 0,
+          "deletions": 17,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/wix-minimum-webview2-version.md",
+          "additions": 0,
+          "deletions": 12,
+          "changeType": "DELETED"
+        },
+        {
+          "path": ".changes/work-area.md",
+          "additions": 0,
+          "deletions": 6,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "Cargo.lock",
+          "additions": 14,
+          "deletions": 14,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-build/CHANGELOG.md",
+          "additions": 21,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-build/Cargo.toml",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-bundler/CHANGELOG.md",
+          "additions": 51,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-bundler/Cargo.toml",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-cli/CHANGELOG.md",
+          "additions": 40,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-cli/Cargo.toml",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-cli/config.schema.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-cli/metadata-v2.json",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-codegen/CHANGELOG.md",
+          "additions": 7,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-codegen/Cargo.toml",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-macos-sign/CHANGELOG.md",
+          "additions": 6,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-macos-sign/Cargo.toml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-macros/CHANGELOG.md",
+          "additions": 11,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-macros/Cargo.toml",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-plugin/CHANGELOG.md",
+          "additions": 10,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-plugin/Cargo.toml",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-runtime-wry/CHANGELOG.md",
+          "additions": 25,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-runtime-wry/Cargo.toml",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-runtime/CHANGELOG.md",
+          "additions": 15,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 14655,
+      "title": "fix(macOS): correct value for work_area.position.y",
+      "url": "https://github.com/tauri-apps/tauri/pull/14655",
+      "mergedAt": "2026-04-30T14:37:34Z",
+      "baseRefName": "dev",
+      "headRefName": "work_area_y",
+      "baseRefOid": "ff5d76ca214b94a7b6e88aa4f0f797bbf747824d",
+      "headRefOid": "99defe0f8559955f9caa9aef4f9e8dcfbdd9ec13",
+      "mergeCommitOid": "9808236ebf7755d498d674b614f3fc75eeac1ec4",
+      "changedFiles": 2,
+      "additions": 8,
+      "deletions": 0,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "incorrect"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".changes/work-area.md",
+          "additions": 6,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "crates/tauri-runtime-wry/src/monitor/macos.rs",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15199,
+      "title": "feat(mobile): Propagate tao::Event::Suspended and tao::Event::Resumed to the window (feat #15181)",
+      "url": "https://github.com/tauri-apps/tauri/pull/15199",
+      "mergedAt": "2026-04-30T13:56:26Z",
+      "baseRefName": "dev",
+      "headRefName": "feat/mobile-tao-events",
+      "baseRefOid": "110336c88a8c0a04476619db0a5c8f7694d969a5",
+      "headRefOid": "c4ecfb16cee9922f630bb421d1ba2b86ad72f10a",
+      "mergeCommitOid": "eb0312ea9e493954298ac0b3fdaae7eafb52750e",
+      "changedFiles": 8,
+      "additions": 144,
+      "deletions": 55,
+      "labels": [],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".changes/mobile_tao_events.md",
+          "additions": 8,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "crates/tauri-runtime-wry/src/lib.rs",
+          "additions": 25,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-runtime/src/window.rs",
+          "additions": 20,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri/scripts/bundle.global.js",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri/src/app.rs",
+          "additions": 22,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri/src/manager/window.rs",
+          "additions": 8,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/api/src/event.ts",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/cli/index.js",
+          "additions": 58,
+          "deletions": 54,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15061,
+      "title": "feat(ios): add --no-sign and --archive-only flags to ios build",
+      "url": "https://github.com/tauri-apps/tauri/pull/15061",
+      "mergedAt": "2026-04-30T13:34:18Z",
+      "baseRefName": "dev",
+      "headRefName": "feat/ios-skip-codesign",
+      "baseRefOid": "e55492df6e518475886ef04897fb0c4b55e1eab8",
+      "headRefOid": "c61c32db580b11a6d687384e02baacde772ff065",
+      "mergeCommitOid": "4ef5797f0fb27fa2df3f39f4a54e48ef319560ec",
+      "changedFiles": 3,
+      "additions": 114,
+      "deletions": 13,
+      "labels": [],
+      "keywordHits": [
+        "regression",
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".changes/ios-skip-codesign.md",
+          "additions": 5,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "crates/tauri-cli/src/mobile/ios/build.rs",
+          "additions": 107,
+          "deletions": 13,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-cli/src/mobile/ios/run.rs",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15250,
+      "title": "fix(macOS): fix incorrect window position on multi-monitor setups",
+      "url": "https://github.com/tauri-apps/tauri/pull/15250",
+      "mergedAt": "2026-04-30T13:25:41Z",
+      "baseRefName": "dev",
+      "headRefName": "fix/macos-window-position",
+      "baseRefOid": "c00a3dbffccd6e051d3b7332f706b6c63759865d",
+      "headRefOid": "94963f661c02b4095a636a2bef8b675db8e8397d",
+      "mergeCommitOid": "110336c88a8c0a04476619db0a5c8f7694d969a5",
+      "changedFiles": 2,
+      "additions": 52,
+      "deletions": 12,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "incorrect"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".changes/fix-macos-initial-window-position.md",
+          "additions": 6,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "crates/tauri-runtime-wry/src/lib.rs",
+          "additions": 46,
+          "deletions": 12,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 14473,
+      "title": "feat(macros): add support for rename command macro in tauri-macros #14173",
+      "url": "https://github.com/tauri-apps/tauri/pull/14473",
+      "mergedAt": "2026-04-30T13:11:59Z",
+      "baseRefName": "dev",
+      "headRefName": "feat-alias-command",
+      "baseRefOid": "764b9139a32de149d8a914a6b5ec6cd1937c64eb",
+      "headRefOid": "6d8d05b87e712f037a165c695665222b82c51c6e",
+      "mergeCommitOid": "c00a3dbffccd6e051d3b7332f706b6c63759865d",
+      "changedFiles": 6,
+      "additions": 101,
+      "deletions": 13,
+      "labels": [],
+      "keywordHits": [
+        "error"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".changes/add-macros-allow-rename-command.md",
+          "additions": 6,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "crates/tauri-macros/src/command/handler.rs",
+          "additions": 22,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-macros/src/command/wrapper.rs",
+          "additions": 55,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "examples/commands/commands.rs",
+          "additions": 5,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "examples/commands/index.html",
+          "additions": 5,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "examples/commands/main.rs",
+          "additions": 8,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 14923,
+      "title": "fix(windows): tauri-bundler detect arm system",
+      "url": "https://github.com/tauri-apps/tauri/pull/14923",
+      "mergedAt": "2026-04-30T12:20:25Z",
+      "baseRefName": "dev",
+      "headRefName": "tauri-bundler-arm-windows-signtool-detect",
+      "baseRefOid": "e55492df6e518475886ef04897fb0c4b55e1eab8",
+      "headRefOid": "1e1ced2648dedb9df506ba2ccbfa267f441b3bec",
+      "mergeCommitOid": "1035f12eeb8b23d9780881606d442d11c786e39e",
+      "changedFiles": 3,
+      "additions": 23,
+      "deletions": 3,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "fail",
+        "failure"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".changes/windows_arm_signtool_detect.md",
+          "additions": 17,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "crates/tauri-bundler/src/bundle/windows/sign.rs",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-bundler/src/bundle/windows/util.rs",
+          "additions": 5,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 14313,
+      "title": "feat(cli): restart Android emulator if it is disconnected from adb",
+      "url": "https://github.com/tauri-apps/tauri/pull/14313",
+      "mergedAt": "2026-04-30T12:20:45Z",
+      "baseRefName": "dev",
+      "headRefName": "feat/restart-android-emulator",
+      "baseRefOid": "e55492df6e518475886ef04897fb0c4b55e1eab8",
+      "headRefOid": "51b46e9557de48fcc1e6f15be159f98084727ced",
+      "mergeCommitOid": "764b9139a32de149d8a914a6b5ec6cd1937c64eb",
+      "changedFiles": 5,
+      "additions": 179,
+      "deletions": 18,
+      "labels": [],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".changes/restart-emulator.md",
+          "additions": 6,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "crates/tauri-bundler/src/bundle/macos/icon.rs",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-bundler/src/bundle/macos/ios.rs",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-cli/src/mobile/android/android_studio_script.rs",
+          "additions": 11,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-cli/src/mobile/android/mod.rs",
+          "additions": 160,
+          "deletions": 13,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15305,
+      "title": "Revert \"fix(deps): update specta in lockfile\"",
+      "url": "https://github.com/tauri-apps/tauri/pull/15305",
+      "mergedAt": "2026-04-30T12:09:28Z",
+      "baseRefName": "dev",
+      "headRefName": "revert-15303-update-specta-to-fix-docs",
+      "baseRefOid": "e55492df6e518475886ef04897fb0c4b55e1eab8",
+      "headRefOid": "f18192534d40d825e7d0faa94fa5e1893f752c2c",
+      "mergeCommitOid": "04f704800be041ea207575e53be3ac314baab888",
+      "changedFiles": 4,
+      "additions": 11,
+      "deletions": 5,
+      "labels": [],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".github/workflows/lint-rust.yml",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": ".github/workflows/test-cli-rs.yml",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": ".github/workflows/test-core.yml",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "Cargo.lock",
+          "additions": 5,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15194,
+      "title": "fix(ci): x86_64-apple-darwin CLI build",
+      "url": "https://github.com/tauri-apps/tauri/pull/15194",
+      "mergedAt": "2026-04-30T12:08:19Z",
+      "baseRefName": "dev",
+      "headRefName": "dima/fix-cli-rs-cross-compile/dev",
+      "baseRefOid": "e55492df6e518475886ef04897fb0c4b55e1eab8",
+      "headRefOid": "ad91bd5bd4e312c9028f786fc65e5b447a7d4990",
+      "mergeCommitOid": "173dd45ecd83c6cb3a5cb03433095b74f998b8a8",
+      "changedFiles": 1,
+      "additions": 10,
+      "deletions": 11,
+      "labels": [],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".github/workflows/publish-cli-rs.yml",
+          "additions": 10,
+          "deletions": 11,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 14523,
+      "title": "Fix(macos/ios): Add handler for web content process termination (fix #14371)",
+      "url": "https://github.com/tauri-apps/tauri/pull/14523",
+      "mergedAt": "2026-04-14T11:14:23Z",
+      "baseRefName": "dev",
+      "headRefName": "fix/web-content-process-termination",
+      "baseRefOid": "15b311155fd5f721b9d220986aae27c9a5b39d92",
+      "headRefOid": "e8991c20ea10861de2a0d7b660df67b1a7730bc0",
+      "mergeCommitOid": "1063c48c5e7d099ad74d28a937edf42e3f5c9f03",
+      "changedFiles": 7,
+      "additions": 115,
+      "deletions": 0,
+      "labels": [],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".changes/web-content-process-termination.md",
+          "additions": 7,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "crates/tauri-runtime-wry/src/lib.rs",
+          "additions": 29,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-runtime/src/webview.rs",
+          "additions": 8,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri/src/app.rs",
+          "additions": 28,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri/src/ipc/protocol.rs",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri/src/manager/mod.rs",
+          "additions": 10,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri/src/manager/webview.rs",
+          "additions": 29,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15303,
+      "title": "fix(deps): update specta in lockfile",
+      "url": "https://github.com/tauri-apps/tauri/pull/15303",
+      "mergedAt": "2026-04-30T09:06:18Z",
+      "baseRefName": "dev",
+      "headRefName": "update-specta-to-fix-docs",
+      "baseRefOid": "1ca61fd74759aa61f661c502ec3e94e2c4eca20d",
+      "headRefOid": "03198469d398edf9433dc785ac655e9225799461",
+      "mergeCommitOid": "b240341b1c8074cf6caf020472b3a41866677376",
+      "changedFiles": 1,
+      "additions": 5,
+      "deletions": 5,
+      "labels": [],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "Cargo.lock",
+          "additions": 5,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 14886,
+      "title": "feat: Add support for Android build variants (feat #14777)",
+      "url": "https://github.com/tauri-apps/tauri/pull/14886",
+      "mergedAt": "2026-04-30T09:55:06Z",
+      "baseRefName": "dev",
+      "headRefName": "onehumandev/android-build-variants",
+      "baseRefOid": "9d2a1403fcfe225e19df9f03a1c293c578231577",
+      "headRefOid": "2d71e8039aabb70c35f13db7058ced68c21e07ab",
+      "mergeCommitOid": "e55492df6e518475886ef04897fb0c4b55e1eab8",
+      "changedFiles": 14,
+      "additions": 464,
+      "deletions": 14,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "crash",
+        "error",
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "Cargo.lock",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-cli/Cargo.toml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-cli/config.schema.json",
+          "additions": 7,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-cli/schema.json",
+          "additions": 7,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-cli/src/mobile/android/build.rs",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-cli/src/mobile/android/dev.rs",
+          "additions": 25,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-cli/src/mobile/android/mod.rs",
+          "additions": 366,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-cli/src/mobile/android/run.rs",
+          "additions": 18,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-cli/src/mobile/init.rs",
+          "additions": 7,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-cli/tauri.config.schema.json",
+          "additions": 8,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-cli/templates/mobile/android/app/build.gradle.kts",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-cli/templates/tauri.conf.json",
+          "additions": 4,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-schema-generator/schemas/config.schema.json",
+          "additions": 7,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-utils/src/config.rs",
+          "additions": 7,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15304,
+      "title": "fix(deps): update worker-build to 0.8",
+      "url": "https://github.com/tauri-apps/tauri/pull/15304",
+      "mergedAt": "2026-04-30T02:35:44Z",
+      "baseRefName": "dev",
+      "headRefName": "worker-build-0.8",
+      "baseRefOid": "687413ea78bd1734a2e329b9f799302a4a24902d",
+      "headRefOid": "bcc80e9530672de31e51e51aea33d7f554938676",
+      "mergeCommitOid": "a622d90654830d3d65e217452082c375ef27ee90",
+      "changedFiles": 1,
+      "additions": 1,
+      "deletions": 1,
+      "labels": [],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "crates/tauri-schema-worker/wrangler.toml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15233,
+      "title": "chore(deps): update worker-rs crates to 0.8",
+      "url": "https://github.com/tauri-apps/tauri/pull/15233",
+      "mergedAt": "2026-04-30T02:19:14Z",
+      "baseRefName": "dev",
+      "headRefName": "renovate/worker-rs-crates",
+      "baseRefOid": "1ca61fd74759aa61f661c502ec3e94e2c4eca20d",
+      "headRefOid": "d0af24fa8f0150c80f5075d03d224135a16b76f2",
+      "mergeCommitOid": "687413ea78bd1734a2e329b9f799302a4a24902d",
+      "changedFiles": 2,
+      "additions": 51,
+      "deletions": 30,
+      "labels": [
+        "type: chore"
+      ],
+      "keywordHits": [
+        "fix",
+        "regression",
+        "error",
+        "validation"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "Cargo.lock",
+          "additions": 49,
+          "deletions": 28,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-schema-worker/Cargo.toml",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15301,
+      "title": "fix(schema-worker): return content type json",
+      "url": "https://github.com/tauri-apps/tauri/pull/15301",
+      "mergedAt": "2026-04-29T16:27:44Z",
+      "baseRefName": "dev",
+      "headRefName": "schema-worker-json",
+      "baseRefOid": "373b7e677ec498899759de9fcd35941fe792b58b",
+      "headRefOid": "def58fd8f8b8f18415e97ae6db86f5a6da1141e2",
+      "mergeCommitOid": "9d2a1403fcfe225e19df9f03a1c293c578231577",
+      "changedFiles": 1,
+      "additions": 23,
+      "deletions": 5,
+      "labels": [],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "crates/tauri-schema-worker/src/config.rs",
+          "additions": 23,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15177,
+      "title": "Update Specta in lockfile to fix documentation",
+      "url": "https://github.com/tauri-apps/tauri/pull/15177",
+      "mergedAt": "2026-04-29T14:43:57Z",
+      "baseRefName": "dev",
+      "headRefName": "update-specta-to-fix-docs",
+      "baseRefOid": "a12142a481f7a19b69e88ee36a438b1db71b36f5",
+      "headRefOid": "be7aabd906872d44fd10e2f8dd203cc595a16b71",
+      "mergeCommitOid": "373b7e677ec498899759de9fcd35941fe792b58b",
+      "changedFiles": 2,
+      "additions": 11,
+      "deletions": 5,
+      "labels": [
+        "status: waiting"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".changes/change-pr-15177.md",
+          "additions": 6,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "Cargo.lock",
+          "additions": 5,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15259,
+      "title": "chore(deps): update rust crate muda to 0.19",
+      "url": "https://github.com/tauri-apps/tauri/pull/15259",
+      "mergedAt": "2026-04-29T17:51:25Z",
+      "baseRefName": "dev",
+      "headRefName": "renovate/muda-0.x",
+      "baseRefOid": "9d2a1403fcfe225e19df9f03a1c293c578231577",
+      "headRefOid": "36ef9d649080c892e6aa939e85a2c305caeef25a",
+      "mergeCommitOid": "1ca61fd74759aa61f661c502ec3e94e2c4eca20d",
+      "changedFiles": 2,
+      "additions": 7,
+      "deletions": 7,
+      "labels": [
+        "type: chore",
+        "stop-updating"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "Cargo.lock",
+          "additions": 5,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri/Cargo.toml",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15300,
+      "title": "fix: doc links",
+      "url": "https://github.com/tauri-apps/tauri/pull/15300",
+      "mergedAt": "2026-04-29T16:24:28Z",
+      "baseRefName": "dev",
+      "headRefName": "fix/doc-links",
+      "baseRefOid": "373b7e677ec498899759de9fcd35941fe792b58b",
+      "headRefOid": "14c28a6c3cded658e14aa6b9614678831e7fbbeb",
+      "mergeCommitOid": "046189b5b59d405d73d6e6982e6061ecb255eeef",
+      "changedFiles": 13,
+      "additions": 33,
+      "deletions": 26,
+      "labels": [],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "crates/tauri-cli/config.schema.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-plugin/src/lib.rs",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-runtime/src/webview.rs",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-schema-generator/schemas/config.schema.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-utils/src/config.rs",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri/Cargo.toml",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri/src/app.rs",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri/src/image/mod.rs",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri/src/lib.rs",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri/src/resources/mod.rs",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri/src/webview/mod.rs",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri/src/webview/webview_window.rs",
+          "additions": 9,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri/src/window/mod.rs",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 14905,
+      "title": "feat(async_runtime): enable track_caller attribute for async_runtime",
+      "url": "https://github.com/tauri-apps/tauri/pull/14905",
+      "mergedAt": "2026-04-29T12:57:58Z",
+      "baseRefName": "dev",
+      "headRefName": "feat/async_runtime-track",
+      "baseRefOid": "be0e4bd2da02eb6cc75a8dc7c81663277e64c590",
+      "headRefOid": "753874524311bbc80c3cac76336934eb9b518c09",
+      "mergeCommitOid": "d83d2d92b4327da3dbac60f83cada36c8ec194dc",
+      "changedFiles": 2,
+      "additions": 18,
+      "deletions": 0,
+      "labels": [],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".changes/feat-async_runtime-track.md",
+          "additions": 5,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "crates/tauri/src/async_runtime.rs",
+          "additions": 13,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 14357,
+      "title": "feat: Add support for setting icon & template at same time",
+      "url": "https://github.com/tauri-apps/tauri/pull/14357",
+      "mergedAt": "2026-04-29T12:58:32Z",
+      "baseRefName": "dev",
+      "headRefName": "yonatron/set-icon-and-template-at-same-time",
+      "baseRefOid": "1063c48c5e7d099ad74d28a937edf42e3f5c9f03",
+      "headRefOid": "6255b92ba973703c71e7f3a93e4a35fe46ada5cc",
+      "mergeCommitOid": "a12142a481f7a19b69e88ee36a438b1db71b36f5",
+      "changedFiles": 7,
+      "additions": 111,
+      "deletions": 1,
+      "labels": [],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".changes/changed.md",
+          "additions": 6,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "crates/tauri/build.rs",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri/permissions/tray/autogenerated/reference.md",
+          "additions": 27,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri/scripts/bundle.global.js",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri/src/tray/mod.rs",
+          "additions": 32,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri/src/tray/plugin.rs",
+          "additions": 19,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/api/src/tray.ts",
+          "additions": 25,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15218,
+      "title": "feat(nsis): add Vietnamese language support for installer.",
+      "url": "https://github.com/tauri-apps/tauri/pull/15218",
+      "mergedAt": "2026-04-29T09:58:38Z",
+      "baseRefName": "dev",
+      "headRefName": "patch-1",
+      "baseRefOid": "8010ae519d6ab6ed4b920aa80560a68673c17087",
+      "headRefOid": "91432b0ec13c578d7da29be78b5ea6c9c6f8afc1",
+      "mergeCommitOid": "be0e4bd2da02eb6cc75a8dc7c81663277e64c590",
+      "changedFiles": 3,
+      "additions": 35,
+      "deletions": 0,
+      "labels": [],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".changes/change-pr-15218.md",
+          "additions": 7,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "crates/tauri-bundler/src/bundle/windows/nsis/languages/Vietnamese.nsh",
+          "additions": 27,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "crates/tauri-bundler/src/bundle/windows/nsis/mod.rs",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15192,
+      "title": "chore(deps): update dependency rollup to v4.60.2",
+      "url": "https://github.com/tauri-apps/tauri/pull/15192",
+      "mergedAt": "2026-04-29T04:28:02Z",
+      "baseRefName": "dev",
+      "headRefName": "renovate/rollup-4.x",
+      "baseRefOid": "b3f2d12b89daefe528e562b93871db62f77973b9",
+      "headRefOid": "032637ebd3935fe2c578e5ea8bb2b65e69df9a82",
+      "mergeCommitOid": "8010ae519d6ab6ed4b920aa80560a68673c17087",
+      "changedFiles": 2,
+      "additions": 121,
+      "deletions": 121,
+      "labels": [
+        "type: chore"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "packages/api/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pnpm-lock.yaml",
+          "additions": 120,
+          "deletions": 120,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15279,
+      "title": "fix(cef): implement re-entrancy guard for user event callbacks",
+      "url": "https://github.com/tauri-apps/tauri/pull/15279",
+      "mergedAt": "2026-04-28T13:22:20Z",
+      "baseRefName": "feat/cef",
+      "headRefName": "amr/fix/cef-reentrancy",
+      "baseRefOid": "562bc592b337de417aa48e72034c7816cfb4c142",
+      "headRefOid": "e907fc4040cef89ce757218d01e41587d2efaa88",
+      "mergeCommitOid": "7815deda7cec511c2623c0e62d89ad02c026ba58",
+      "changedFiles": 2,
+      "additions": 44,
+      "deletions": 13,
+      "labels": [],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "crates/tauri-runtime-cef/src/cef_impl.rs",
+          "additions": 39,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-runtime-cef/src/lib.rs",
+          "additions": 5,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15289,
+      "title": "fix(tauri-build): preserve numeric semver build metadata in Windows FILEVERSION",
+      "url": "https://github.com/tauri-apps/tauri/pull/15289",
+      "mergedAt": "2026-04-27T07:20:48Z",
+      "baseRefName": "dev",
+      "headRefName": "fix/windows-fileversion-build-metadata-pr2",
+      "baseRefOid": "a30dca4820d0ad681f04737a1819e6a6fab9fe84",
+      "headRefOid": "7b81ffba0822d424f0612a9f77f2890772352216",
+      "mergeCommitOid": "b3f2d12b89daefe528e562b93871db62f77973b9",
+      "changedFiles": 2,
+      "additions": 57,
+      "deletions": 1,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "parsing"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".changes/windows-fileversion-build-metadata.md",
+          "additions": 5,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "crates/tauri-build/src/lib.rs",
+          "additions": 52,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15288,
+      "title": "fix(tauri-build): set Windows FileVersion/ProductVersion strings from tauri config",
+      "url": "https://github.com/tauri-apps/tauri/pull/15288",
+      "mergedAt": "2026-04-23T16:41:00Z",
+      "baseRefName": "dev",
+      "headRefName": "fix/windows-versioninfo-strings",
+      "baseRefOid": "a219ede0003bb8073d8002be42bcf343538c42f8",
+      "headRefOid": "84dd19bfd5ae6f8dc0aa6e53af3ffaa2c5a8a292",
+      "mergeCommitOid": "a30dca4820d0ad681f04737a1819e6a6fab9fe84",
+      "changedFiles": 2,
+      "additions": 7,
+      "deletions": 0,
+      "labels": [],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".changes/windows-versioninfo-strings.md",
+          "additions": 5,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "crates/tauri-build/src/lib.rs",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15203,
+      "title": "chore(deps): update rust crate tray-icon to 0.22",
+      "url": "https://github.com/tauri-apps/tauri/pull/15203",
+      "mergedAt": "2026-04-23T15:34:30Z",
+      "baseRefName": "dev",
+      "headRefName": "renovate/tray-icon-0.x",
+      "baseRefOid": "001c8fe3d288802de9a8c29cfd2f46f9220d97c5",
+      "headRefOid": "fb46f56942416756eb028963950001e19ea553bf",
+      "mergeCommitOid": "a219ede0003bb8073d8002be42bcf343538c42f8",
+      "changedFiles": 3,
+      "additions": 34,
+      "deletions": 16,
+      "labels": [
+        "type: chore"
+      ],
+      "keywordHits": [
+        "fix",
+        "error",
+        "fail"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".changes/tray-icon-0.22.md",
+          "additions": 5,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "Cargo.lock",
+          "additions": 28,
+          "deletions": 15,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri/Cargo.toml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 14722,
+      "title": "feat(webview2): add option to disable browser-level autofill on Windows",
+      "url": "https://github.com/tauri-apps/tauri/pull/14722",
+      "mergedAt": "2026-04-23T06:11:22Z",
+      "baseRefName": "dev",
+      "headRefName": "disable-autofill",
+      "baseRefOid": "6da2badc907f3d3dc4c5bf949eee0867684904ac",
+      "headRefOid": "6c8556af745345a5d88a207de35a69abe90b1fcd",
+      "mergeCommitOid": "001c8fe3d288802de9a8c29cfd2f46f9220d97c5",
+      "changedFiles": 9,
+      "additions": 153,
+      "deletions": 3,
+      "labels": [],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".changes/disable-autofill.md",
+          "additions": 9,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "crates/tauri-cli/config.schema.json",
+          "additions": 5,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-runtime-wry/src/lib.rs",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-runtime/src/webview.rs",
+          "additions": 44,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-schema-generator/schemas/config.schema.json",
+          "additions": 5,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-utils/src/config.rs",
+          "additions": 23,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri/src/webview/mod.rs",
+          "additions": 23,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri/src/webview/webview_window.rs",
+          "additions": 23,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/api/src/webview.ts",
+          "additions": 19,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15284,
+      "title": "chore(deps): bump openssl from 0.10.72 to 0.10.78",
+      "url": "https://github.com/tauri-apps/tauri/pull/15284",
+      "mergedAt": "2026-04-23T03:52:45Z",
+      "baseRefName": "dev",
+      "headRefName": "dependabot/cargo/openssl-0.10.78",
+      "baseRefOid": "f1d8912729fd56cd78bed5da7adbb0941253275f",
+      "headRefOid": "c4cd415e1672872cae12e21c00461a18e1409771",
+      "mergeCommitOid": "6da2badc907f3d3dc4c5bf949eee0867684904ac",
+      "changedFiles": 1,
+      "additions": 4,
+      "deletions": 4,
+      "labels": [
+        "dependencies",
+        "rust"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "error",
+        "parsing",
+        "timeout"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "Cargo.lock",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15282,
+      "title": "Audit CI fix, RUSTSEC advisories",
+      "url": "https://github.com/tauri-apps/tauri/pull/15282",
+      "mergedAt": "2026-04-23T03:34:13Z",
+      "baseRefName": "dev",
+      "headRefName": "audit-fix",
+      "baseRefOid": "f1d8912729fd56cd78bed5da7adbb0941253275f",
+      "headRefOid": "ab4f32dab291f7006874598335b67412a84de82b",
+      "mergeCommitOid": "fc1b52ce79abd09f097990c298e1716e3c319e25",
+      "changedFiles": 2,
+      "additions": 41,
+      "deletions": 28,
+      "labels": [],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".cargo/audit.toml",
+          "additions": 13,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "Cargo.lock",
+          "additions": 28,
+          "deletions": 28,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15253,
+      "title": "chore(tauri-utils): update mime_type documentation",
+      "url": "https://github.com/tauri-apps/tauri/pull/15253",
+      "mergedAt": "2026-04-20T13:50:00Z",
+      "baseRefName": "dev",
+      "headRefName": "chore/update-mime-type-doc",
+      "baseRefOid": "df3fb97cbacfd821ca91bbc053d7bad08c87ac0b",
+      "headRefOid": "84c1893a6320fe4e140f7012858dd432ce8fe0de",
+      "mergeCommitOid": "f1d8912729fd56cd78bed5da7adbb0941253275f",
+      "changedFiles": 3,
+      "additions": 9,
+      "deletions": 3,
+      "labels": [],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "crates/tauri-cli/config.schema.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-schema-generator/schemas/config.schema.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-utils/src/config.rs",
+          "additions": 7,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15263,
+      "title": "feat(windows): append .rc content support.",
+      "url": "https://github.com/tauri-apps/tauri/pull/15263",
+      "mergedAt": "2026-04-20T09:18:03Z",
+      "baseRefName": "dev",
+      "headRefName": "feat/extend-rc",
+      "baseRefOid": "b536dce356c7e071e4688609fc1da68642870ceb",
+      "headRefOid": "080599859875165c2734026998d382a14a41e8aa",
+      "mergeCommitOid": "b7a0ff03087a73fce6888361562faf9738afc829",
+      "changedFiles": 2,
+      "additions": 21,
+      "deletions": 0,
+      "labels": [],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".changes/append-rc-content-support.md",
+          "additions": 5,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "crates/tauri-build/src/lib.rs",
+          "additions": 16,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15260,
+      "title": "docs: nsis default languages",
+      "url": "https://github.com/tauri-apps/tauri/pull/15260",
+      "mergedAt": "2026-04-19T16:32:55Z",
+      "baseRefName": "dev",
+      "headRefName": "docs-nsis-default-languages",
+      "baseRefOid": "b536dce356c7e071e4688609fc1da68642870ceb",
+      "headRefOid": "93a590827dcc33993b4c718f9daa5bb1f04e8a3b",
+      "mergeCommitOid": "5ec1d5a88256f60d01c6370e089549f697e16d0c",
+      "changedFiles": 6,
+      "additions": 13,
+      "deletions": 11,
+      "labels": [],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "crates/tauri-bundler/src/bundle/settings.rs",
+          "additions": 4,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-cli/config.schema.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-runtime-wry/src/lib.rs",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-schema-generator/schemas/config.schema.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-utils/src/config.rs",
+          "additions": 3,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri/src/scope/fs.rs",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15262,
+      "title": "Non-breaking version of PR 15127",
+      "url": "https://github.com/tauri-apps/tauri/pull/15262",
+      "mergedAt": "2026-04-19T13:33:22Z",
+      "baseRefName": "dev",
+      "headRefName": "pr-15127",
+      "baseRefOid": "b536dce356c7e071e4688609fc1da68642870ceb",
+      "headRefOid": "e41fe9c9b0349edd201d40cb9cecd779d927a341",
+      "mergeCommitOid": "c69d5ca4b1a646843c3f250a0d1b13414c5e8223",
+      "changedFiles": 2,
+      "additions": 10,
+      "deletions": 9,
+      "labels": [],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".changes/change-pr-15262.md",
+          "additions": 5,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "crates/tauri/src/ipc/protocol.rs",
+          "additions": 5,
+          "deletions": 9,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15158,
+      "title": "chore(deps): update dependency typescript to v6",
+      "url": "https://github.com/tauri-apps/tauri/pull/15158",
+      "mergedAt": "2026-04-18T04:20:42Z",
+      "baseRefName": "dev",
+      "headRefName": "renovate/typescript-6.x",
+      "baseRefOid": "df3fb97cbacfd821ca91bbc053d7bad08c87ac0b",
+      "headRefOid": "0fe97947b17a626f6fc15b76fd45f41906226515",
+      "mergeCommitOid": "b536dce356c7e071e4688609fc1da68642870ceb",
+      "changedFiles": 3,
+      "additions": 113,
+      "deletions": 113,
+      "labels": [
+        "type: chore"
+      ],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "crates/tauri-cli/templates/plugin/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/api/package.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pnpm-lock.yaml",
+          "additions": 110,
+          "deletions": 110,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15252,
+      "title": "fix(cef): close all browsers before shutdown to fix null pointer dereference on macOS",
+      "url": "https://github.com/tauri-apps/tauri/pull/15252",
+      "mergedAt": "2026-04-16T15:26:16Z",
+      "baseRefName": "feat/cef",
+      "headRefName": "amr/fix/cef-null-pointer-on-quit",
+      "baseRefOid": "415bdc23d30323674696a450f5e7989a14326ad3",
+      "headRefOid": "683555be03b86eeb1a7f5ffc6fd23af23c5ff892",
+      "mergeCommitOid": "5bb3fb219147eaa973e6175f9f4954ab798cb252",
+      "changedFiles": 2,
+      "additions": 43,
+      "deletions": 10,
+      "labels": [],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "crates/tauri-runtime-cef/src/cef_impl.rs",
+          "additions": 25,
+          "deletions": 9,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-runtime-cef/src/lib.rs",
+          "additions": 18,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15175,
+      "title": "changes(nsis): update Italian translations",
+      "url": "https://github.com/tauri-apps/tauri/pull/15175",
+      "mergedAt": "2026-04-15T04:54:13Z",
+      "baseRefName": "dev",
+      "headRefName": "dev",
+      "baseRefOid": "1063c48c5e7d099ad74d28a937edf42e3f5c9f03",
+      "headRefOid": "a08ff3de929cab0662cbf2565afcf6105fe9c7e3",
+      "mergeCommitOid": "9979cde1c5534dafb1a07cc4dc2bc280d15d2f66",
+      "changedFiles": 2,
+      "additions": 26,
+      "deletions": 19,
+      "labels": [],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".changes/change-pr-15175.md",
+          "additions": 7,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "crates/tauri-bundler/src/bundle/windows/nsis/languages/Italian.nsh",
+          "additions": 19,
+          "deletions": 19,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15237,
+      "title": "fix(cli): bump @ohos-rs/ability to resolve white screen issue",
+      "url": "https://github.com/tauri-apps/tauri/pull/15237",
+      "mergedAt": "2026-04-14T17:38:09Z",
+      "baseRefName": "feat/open-harmony",
+      "headRefName": "feat/open-harmony",
+      "baseRefOid": "df0eee8cebaa12120eb65eae46fc8ef947b3b40e",
+      "headRefOid": "5bd238e9924cdb7c523abd4a8101400ad9cc54a7",
+      "mergeCommitOid": "380d4e5239200d7729821ba709d55d73dc7d6682",
+      "changedFiles": 1,
+      "additions": 1,
+      "deletions": 1,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "fail",
+        "failure"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "crates/tauri-cli/templates/mobile/open-harmony/entry/oh-package.json5",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15234,
+      "title": "chore(deps): bump rand from 0.9.1 to 0.9.3",
+      "url": "https://github.com/tauri-apps/tauri/pull/15234",
+      "mergedAt": "2026-04-14T04:12:13Z",
+      "baseRefName": "dev",
+      "headRefName": "dependabot/cargo/rand-0.9.3",
+      "baseRefOid": "cc5c976027b0ab2431c13ec5b2e201d4414a8a6e",
+      "headRefOid": "eb946304cade16d5bad889462567ebb5d0c4a4ef",
+      "mergeCommitOid": "25e1f519ba5a594c22554f7203acc3c9be1d0992",
+      "changedFiles": 1,
+      "additions": 5,
+      "deletions": 5,
+      "labels": [
+        "dependencies",
+        "rust"
+      ],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "Cargo.lock",
+          "additions": 5,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 14486,
+      "title": "feat(mobile): add file association support",
+      "url": "https://github.com/tauri-apps/tauri/pull/14486",
+      "mergedAt": "2026-04-13T17:41:27Z",
+      "baseRefName": "dev",
+      "headRefName": "feat/mobile-file-association",
+      "baseRefOid": "926a57bb0851e45d47ad1ee68fc96a9c25754c7c",
+      "headRefOid": "22e50d91554f74a6fae6f2654328367f1a985556",
+      "mergeCommitOid": "cc5c976027b0ab2431c13ec5b2e201d4414a8a6e",
+      "changedFiles": 20,
+      "additions": 635,
+      "deletions": 187,
+      "labels": [],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".changes/file-association.md",
+          "additions": 9,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": ".changes/mobile-file-associations.md",
+          "additions": 7,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "Cargo.lock",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-build/src/lib.rs",
+          "additions": 5,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-build/src/mobile.rs",
+          "additions": 139,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-bundler/src/bundle/macos/app.rs",
+          "additions": 8,
+          "deletions": 95,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-cli/config.schema.json",
+          "additions": 36,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-cli/src/mobile/ios/build.rs",
+          "additions": 9,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-cli/src/mobile/ios/dev.rs",
+          "additions": 9,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-plugin/src/build/mobile.rs",
+          "additions": 13,
+          "deletions": 79,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-runtime-wry/src/lib.rs",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-runtime/src/lib.rs",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-schema-generator/schemas/config.schema.json",
+          "additions": 36,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-utils/Cargo.toml",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-utils/src/build.rs",
+          "additions": 71,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-utils/src/config.rs",
+          "additions": 247,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri/src/app.rs",
+          "additions": 6,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "examples/api/src-tauri/src/lib.rs",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "examples/api/src-tauri/tauri.conf.json",
+          "additions": 31,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "examples/file-associations/src-tauri/src/main.rs",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15064,
+      "title": "fix: ohos build error",
+      "url": "https://github.com/tauri-apps/tauri/pull/15064",
+      "mergedAt": "2026-04-13T16:13:29Z",
+      "baseRefName": "feat/open-harmony",
+      "headRefName": "feat/open-harmony",
+      "baseRefOid": "10e37dd9078c8c9b1b75ce5c0e8a0cfc454670cb",
+      "headRefOid": "dee5e9caac8ff56e463eb5775138b9813a6a3774",
+      "mergeCommitOid": "df0eee8cebaa12120eb65eae46fc8ef947b3b40e",
+      "changedFiles": 4,
+      "additions": 12,
+      "deletions": 8,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "crash",
+        "error"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "crates/tauri-runtime-wry/Cargo.toml",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-runtime/Cargo.toml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri/Cargo.toml",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri/src/manager/webview.rs",
+          "additions": 6,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15002,
+      "title": "Add AI tool policy to contributing guide",
+      "url": "https://github.com/tauri-apps/tauri/pull/15002",
+      "mergedAt": "2026-03-03T09:45:42Z",
+      "baseRefName": "dev",
+      "headRefName": "ai-tool-policy",
+      "baseRefOid": "33932a72b27c970dde242da5241f7a340277507d",
+      "headRefOid": "4c0e521c12cbdc3b30121ebe808747a6c73ac356",
+      "mergeCommitOid": "3935dee121e1dcb4f377c9933233c0ace186b0bb",
+      "changedFiles": 1,
+      "additions": 11,
+      "deletions": 0,
+      "labels": [],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "docs-only",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".github/CONTRIBUTING.md",
+          "additions": 11,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15211,
+      "title": "fix(cef): copy CEF runtime files to target dir",
+      "url": "https://github.com/tauri-apps/tauri/pull/15211",
+      "mergedAt": "2026-04-09T14:07:54Z",
+      "baseRefName": "feat/cef",
+      "headRefName": "amr/fix/cef-copy-to-target",
+      "baseRefOid": "ccd978c9843555bb9d1efefdc1a300cfe7220657",
+      "headRefOid": "1e21d3e9a52856ca4eab0af37abb7cd769228905",
+      "mergeCommitOid": "a94e1b8595d9bb49328451dfe151d8499c712d44",
+      "changedFiles": 4,
+      "additions": 42,
+      "deletions": 3,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "regression"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "Cargo.lock",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-build/Cargo.toml",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-build/src/lib.rs",
+          "additions": 38,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri/Cargo.toml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15207,
+      "title": "chore(deps): upgrade cargo-toml in tauri-build. increase msrv to 1.85",
+      "url": "https://github.com/tauri-apps/tauri/pull/15207",
+      "mergedAt": "2026-04-08T21:25:34Z",
+      "baseRefName": "1.x-edition2024",
+      "headRefName": "v1-edition2024/msrv-check",
+      "baseRefOid": "8318ff19a75d660c7807432fbc0f782d4316d953",
+      "headRefOid": "cb26a918758daeeab0dc41f38615011e620da543",
+      "mergeCommitOid": "e6854da4f757975ea835df6b8ef5451ae1809ad3",
+      "changedFiles": 50,
+      "additions": 5782,
+      "deletions": 3142,
+      "labels": [],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tooling/bench/tests/cpu_intensive/src-tauri/Cargo.toml",
+        "tooling/bench/tests/files_transfer/src-tauri/Cargo.toml",
+        "tooling/bench/tests/helloworld/src-tauri/Cargo.toml",
+        "tooling/cli/node/test/jest/fixtures/app/src-tauri/Cargo.toml"
+      ],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "huge-diff"
+      ],
+      "files": [
+        {
+          "path": ".changes/edition2024.md",
+          "additions": 5,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": ".changes/pre.json",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": ".github/workflows/covector-version-or-publish-v1.yml",
+          "additions": 7,
+          "deletions": 36,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": ".github/workflows/test-cli-js.yml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": ".github/workflows/test-cli-rs.yml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": ".github/workflows/test-core.yml",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "Cargo.lock",
+          "additions": 2376,
+          "deletions": 1216,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "core/tauri-build/Cargo.toml",
+          "additions": 14,
+          "deletions": 11,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "core/tauri-build/src/lib.rs",
+          "additions": 4,
+          "deletions": 16,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "core/tauri-codegen/Cargo.toml",
+          "additions": 15,
+          "deletions": 13,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "core/tauri-codegen/src/context.rs",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "core/tauri-config-schema/schema.json",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "core/tauri-macros/Cargo.toml",
+          "additions": 13,
+          "deletions": 13,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "core/tauri-runtime-wry/Cargo.toml",
+          "additions": 23,
+          "deletions": 20,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "core/tauri-runtime/Cargo.toml",
+          "additions": 17,
+          "deletions": 17,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "core/tauri-runtime/src/lib.rs",
+          "additions": 2,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "core/tauri-runtime/src/window.rs",
+          "additions": 2,
+          "deletions": 7,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "core/tauri-utils/Cargo.toml",
+          "additions": 18,
+          "deletions": 16,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "core/tauri-utils/src/config.rs",
+          "additions": 8,
+          "deletions": 25,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "core/tauri-utils/src/html.rs",
+          "additions": 2,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "core/tauri-utils/src/lib.rs",
+          "additions": 2,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "core/tauri/Cargo.toml",
+          "additions": 173,
+          "deletions": 149,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "core/tauri/build.rs",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "core/tauri/src/api/file/file_move.rs",
+          "additions": 8,
+          "deletions": 12,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "core/tauri/src/endpoints/window.rs",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "core/tauri/src/pattern.rs",
+          "additions": 3,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "core/tauri/src/updater/core.rs",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "examples/api/src-tauri/Cargo.toml",
+          "additions": 9,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "examples/commands/main.rs",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "examples/resources/src-tauri/Cargo.toml",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "examples/sidecar/src-tauri/Cargo.toml",
+          "additions": 7,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "examples/tauri-dynamic-lib/src-app1/Cargo.toml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "examples/tauri-dynamic-lib/src-tauri/Cargo.toml",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "examples/updater/src-tauri/Cargo.toml",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "examples/web/core/tauri/Cargo.toml",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "examples/workspace/src-tauri/Cargo.toml",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tooling/bench/Cargo.toml",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tooling/bench/tests/cpu_intensive/src-tauri/Cargo.toml",
+          "additions": 6,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tooling/bench/tests/files_transfer/src-tauri/Cargo.toml",
+          "additions": 6,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tooling/bench/tests/helloworld/src-tauri/Cargo.toml",
+          "additions": 6,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tooling/bundler/Cargo.lock",
+          "additions": 1303,
+          "deletions": 606,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tooling/bundler/Cargo.toml",
+          "additions": 23,
+          "deletions": 22,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tooling/cli/Cargo.lock",
+          "additions": 1635,
+          "deletions": 850,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tooling/cli/Cargo.toml",
+          "additions": 30,
+          "deletions": 19,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tooling/cli/node/test/jest/fixtures/app/src-tauri/Cargo.toml",
+          "additions": 8,
+          "deletions": 7,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tooling/cli/schema.json",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tooling/cli/src/build.rs",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tooling/cli/src/interface/rust.rs",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tooling/cli/src/interface/rust/desktop.rs",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tooling/webdriver/Cargo.toml",
+          "additions": 15,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15117,
+      "title": "Refactors",
+      "url": "https://github.com/tauri-apps/tauri/pull/15117",
+      "mergedAt": "2026-03-20T10:18:29Z",
+      "baseRefName": "dev",
+      "headRefName": "refactors",
+      "baseRefOid": "1ef6a119b1571d1da0acc08bdb7fd5521a4c6d52",
+      "headRefOid": "f483655fac7b623b32163443a8bb67693547b1fd",
+      "mergeCommitOid": "d730770bb93d77358cfc6f1286f10187cef37362",
+      "changedFiles": 4,
+      "additions": 59,
+      "deletions": 82,
+      "labels": [],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".changes/change-pr-15117.md",
+          "additions": 6,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "crates/tauri-build/src/lib.rs",
+          "additions": 6,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-build/src/manifest.rs",
+          "additions": 13,
+          "deletions": 25,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri/src/protocol/asset.rs",
+          "additions": 34,
+          "deletions": 52,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15201,
+      "title": "feat(windows): NSIS uninstaller icon and header image support",
+      "url": "https://github.com/tauri-apps/tauri/pull/15201",
+      "mergedAt": "2026-04-08T08:10:55Z",
+      "baseRefName": "dev",
+      "headRefName": "feat/nsis-uninstaller-icon",
+      "baseRefOid": "074299c08dd99d2e1c57796f55ab24bc1d3976cc",
+      "headRefOid": "a1a466e9a5ac8c9d34d4f2cfe197afa6c907d475",
+      "mergeCommitOid": "926a57bb0851e45d47ad1ee68fc96a9c25754c7c",
+      "changedFiles": 8,
+      "additions": 94,
+      "deletions": 2,
+      "labels": [],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".changes/feat-uninstaller-icon-image.md",
+          "additions": 13,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "crates/tauri-bundler/src/bundle/settings.rs",
+          "additions": 7,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-bundler/src/bundle/windows/nsis/installer.nsi",
+          "additions": 20,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-bundler/src/bundle/windows/nsis/mod.rs",
+          "additions": 14,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-cli/config.schema.json",
+          "additions": 14,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-cli/src/helpers/config.rs",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-schema-generator/schemas/config.schema.json",
+          "additions": 14,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri-utils/src/config.rs",
+          "additions": 10,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 14307,
+      "title": "feat: add Bring All to Front predefined menu item type",
+      "url": "https://github.com/tauri-apps/tauri/pull/14307",
+      "mergedAt": "2026-04-07T15:34:01Z",
+      "baseRefName": "dev",
+      "headRefName": "signadou/add-bring-all-to-front-predefined-menu-item-type",
+      "baseRefOid": "ec5381e9510b7c29ac39bc1ba1a61a4ca6ec7300",
+      "headRefOid": "08ead8c9b25f9bd62b1028058da043ea4ff17c0b",
+      "mergeCommitOid": "074299c08dd99d2e1c57796f55ab24bc1d3976cc",
+      "changedFiles": 6,
+      "additions": 61,
+      "deletions": 1,
+      "labels": [],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".changes/add-bring-all-to-front-predefined-menu-item-type.md",
+          "additions": 6,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "crates/tauri/src/menu/builders/menu.rs",
+          "additions": 25,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri/src/menu/plugin.rs",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "crates/tauri/src/menu/predefined.rs",
+          "additions": 23,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "examples/api/src/components/MenuItemBuilder.svelte",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "packages/api/src/menu/predefinedMenuItem.ts",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 15204,
+      "title": "chore(deps-dev): bump vite from 8.0.0 to 8.0.5",
+      "url": "https://github.com/tauri-apps/tauri/pull/15204",
+      "mergedAt": "2026-04-07T04:52:05Z",
+      "baseRefName": "dev",
+      "headRefName": "dependabot/npm_and_yarn/vite-8.0.5",
+      "baseRefOid": "b27be063ff3052cb1071ac3ec719cfa104460fa4",
+      "headRefOid": "3fefbcd6a5204aec17f4c5df67aa1d527cef2688",
+      "mergeCommitOid": "ec5381e9510b7c29ac39bc1ba1a61a4ca6ec7300",
+      "changedFiles": 2,
+      "additions": 207,
+      "deletions": 165,
+      "labels": [
+        "dependencies",
+        "javascript"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "incorrect"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "examples/api/package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "pnpm-lock.yaml",
+          "additions": 206,
+          "deletions": 164,
+          "changeType": "MODIFIED"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2924 @@
+generatedAt: 2026-05-02T10:20:29.878Z
+repo: louislam/uptime-kuma
+since: 2026-01-01
+limit: 50
+debugKeywords: 
+  - bug
+  - fix
+  - regression
+  - crash
+  - incorrect
+  - wrong
+  - error
+  - exception
+  - edge
+  - flaky
+  - race
+  - leak
+  - validation
+  - parser
+  - parsing
+  - timeout
+  - fail
+  - failure
+  - broken
+prs: 
+  - 
+    number: 7336
+    title: "chore: update to 2.3.0"
+    url: https://github.com/louislam/uptime-kuma/pull/7336
+    mergedAt: 2026-05-01T03:51:48Z
+    baseRefName: master
+    headRefName: release-2.3.0
+    baseRefOid: f15015f551a812350b9bd0249bbb1d37a0c522de
+    headRefOid: d89f5ea993c7cbca14d0aeb2d4fda7b038fcadab
+    mergeCommitOid: 9e84e3cbc0837705875045299302dd642bc649e3
+    changedFiles: 2
+    additions: 4
+    deletions: 4
+    labels: 
+      - "pr:needs review"
+    keywordHits: 
+      - bug
+      - fix
+      - error
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: package-lock.json
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: package.json
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 7292
+    title: "chore: Translations Update from Weblate"
+    url: https://github.com/louislam/uptime-kuma/pull/7292
+    mergedAt: 2026-05-01T03:27:34Z
+    baseRefName: master
+    headRefName: weblate-uptime-kuma-uptime-kuma
+    baseRefOid: 27ac191f5aa6d8034a61be864f01955abfd12317
+    headRefOid: 13de229dabddaffccfc258a274fc8446fd35ce52
+    mergeCommitOid: f15015f551a812350b9bd0249bbb1d37a0c522de
+    changedFiles: 13
+    additions: 1308
+    deletions: 41
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: src/lang/bg-BG.json
+        additions: 6
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: src/lang/cs-CZ.json
+        additions: 6
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: src/lang/en_GB.json
+        additions: 1222
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lang/fa.json
+        additions: 6
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: src/lang/fr-FR.json
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: src/lang/ga.json
+        additions: 5
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: src/lang/it-IT.json
+        additions: 5
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: src/lang/pt-BR.json
+        additions: 5
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: src/lang/pt.json
+        additions: 5
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: src/lang/ru-RU.json
+        additions: 5
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: src/lang/sk.json
+        additions: 15
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: src/lang/zh-CN.json
+        additions: 3
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lang/zh-TW.json
+        additions: 22
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7317
+    title: "chore: Update dependencies"
+    url: https://github.com/louislam/uptime-kuma/pull/7317
+    mergedAt: 2026-05-01T03:26:53Z
+    baseRefName: master
+    headRefName: npm-update
+    baseRefOid: 27ac191f5aa6d8034a61be864f01955abfd12317
+    headRefOid: ff570711c36743416c457c07f08d191c10513c57
+    mergeCommitOid: 3d19b6d3b5f4d9c85a114db4164b27b10dec7c1a
+    changedFiles: 1
+    additions: 202
+    deletions: 209
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: package-lock.json
+        additions: 202
+        deletions: 209
+        changeType: MODIFIED
+  - 
+    number: 7303
+    title: "feat(ui): add a helptext that RTT for the ping monitor is not avaliable on linux"
+    url: https://github.com/louislam/uptime-kuma/pull/7303
+    mergedAt: 2026-04-28T14:42:30Z
+    baseRefName: master
+    headRefName: ping-packetsize-fix
+    baseRefOid: 398482d590daaac0d44e288c9be3bc6f6667f8b8
+    headRefOid: 74b654be9be8619909d12f569fe8f4a19816819e
+    mergeCommitOid: 27ac191f5aa6d8034a61be864f01955abfd12317
+    changedFiles: 2
+    additions: 7
+    deletions: 0
+    labels: 
+      - "pr:needs review"
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: src/lang/en.json
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/pages/EditMonitor.vue
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 7195
+    title: "chore: Update dependencies"
+    url: https://github.com/louislam/uptime-kuma/pull/7195
+    mergedAt: 2026-04-26T15:51:55Z
+    baseRefName: master
+    headRefName: npm-update
+    baseRefOid: 2f45b46315bf8dae4e906dec41a341765c59a3f0
+    headRefOid: 4422ae3658e4eaab23fca50de908296f262243a2
+    mergeCommitOid: 398482d590daaac0d44e288c9be3bc6f6667f8b8
+    changedFiles: 1
+    additions: 916
+    deletions: 821
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: package-lock.json
+        additions: 916
+        deletions: 821
+        changeType: MODIFIED
+  - 
+    number: 7312
+    title: "fix(database): add `UPTIME_KUMA_SQLITE_SINGLE_CONNECTION`"
+    url: https://github.com/louislam/uptime-kuma/pull/7312
+    mergedAt: 2026-04-26T15:49:53Z
+    baseRefName: master
+    headRefName: dev-sqlite
+    baseRefOid: 2f45b46315bf8dae4e906dec41a341765c59a3f0
+    headRefOid: 53de69f1cf35d0fe17a7715f849af2dce1d97936
+    mergeCommitOid: ba85804c23d67f5c051a3d797e21a7b0bcf0eb86
+    changedFiles: 1
+    additions: 19
+    deletions: 4
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: server/database.js
+        additions: 19
+        deletions: 4
+        changeType: MODIFIED
+  - 
+    number: 7304
+    title: "feat: websocket improve to fix issue #7268 including support authentication"
+    url: https://github.com/louislam/uptime-kuma/pull/7304
+    mergedAt: 2026-04-21T11:15:07Z
+    baseRefName: master
+    headRefName: issue/7268
+    baseRefOid: 7d7f12b5b18274e385d3b6416b6dd7f6aa212fe4
+    headRefOid: 3686febc791def3075388bdb5c5d942e93ff7cef
+    mergeCommitOid: 2f45b46315bf8dae4e906dec41a341765c59a3f0
+    changedFiles: 4
+    additions: 314
+    deletions: 25
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: true
+    testFiles: 
+      - test/backend-test/monitors/test-websocket.js
+    debugScore: 3
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: server/monitor-types/websocket-upgrade.js
+        additions: 63
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: src/lang/en.json
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/pages/EditMonitor.vue
+        additions: 207
+        deletions: 22
+        changeType: MODIFIED
+      - 
+        path: test/backend-test/monitors/test-websocket.js
+        additions: 43
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 7300
+    title: "feat(ux): changed warning msg"
+    url: https://github.com/louislam/uptime-kuma/pull/7300
+    mergedAt: 2026-04-20T06:19:13Z
+    baseRefName: master
+    headRefName: feat/uptime-7293
+    baseRefOid: 5551f2fd79e7e390630de756b13f81369bf42dee
+    headRefOid: 6433f73c73805a48daa2a72755c1a1f0f2c46443
+    mergeCommitOid: 7d7f12b5b18274e385d3b6416b6dd7f6aa212fe4
+    changedFiles: 1
+    additions: 3
+    deletions: 3
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: src/lang/en.json
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 7088
+    title: "feat(proxy): allow socks proxy for the notifications"
+    url: https://github.com/louislam/uptime-kuma/pull/7088
+    mergedAt: 2026-03-04T14:08:32Z
+    baseRefName: master
+    headRefName: allow_socks_proxy
+    baseRefOid: 10180dbd88a2d9e6915c82193b1d9eff19c7e784
+    headRefOid: 60661a6cd3f396f51408339bf29d195ae717c137
+    mergeCommitOid: 6f74cd3ce86bd41149bfdd7987892b28967da06f
+    changedFiles: 1
+    additions: 5
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - parsing
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: server/notification-providers/notification-provider.js
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 7108
+    title: "feat: Add English (United Kingdom) language support"
+    url: https://github.com/louislam/uptime-kuma/pull/7108
+    mergedAt: 2026-04-18T12:37:09Z
+    baseRefName: master
+    headRefName: patch-2
+    baseRefOid: 43b143c2dcab58856ba9bb56ec31f4f9cbd77a26
+    headRefOid: cc5fd92c3f8bdc8466f3f76cb55679e0b7c8337f
+    mergeCommitOid: 5551f2fd79e7e390630de756b13f81369bf42dee
+    changedFiles: 1
+    additions: 1
+    deletions: 0
+    labels: 
+      - "pr:needs review"
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: src/i18n.js
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 7197
+    title: "chore: Translations Update from Weblate"
+    url: https://github.com/louislam/uptime-kuma/pull/7197
+    mergedAt: 2026-04-18T12:36:07Z
+    baseRefName: master
+    headRefName: weblate-uptime-kuma-uptime-kuma
+    baseRefOid: 43b143c2dcab58856ba9bb56ec31f4f9cbd77a26
+    headRefOid: f843691e9ab4a7c4a8efb2f2b02c2ee5629429b4
+    mergeCommitOid: fc759f73f79c7d4c1f369284b387a52e2cd56ecc
+    changedFiles: 19
+    additions: 527
+    deletions: 128
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: src/lang/ar.json
+        additions: 90
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: src/lang/bg-BG.json
+        additions: 26
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: src/lang/cs-CZ.json
+        additions: 17
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lang/en_GB.json
+        additions: 67
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lang/es-ES.json
+        additions: 3
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lang/fa.json
+        additions: 88
+        deletions: 83
+        changeType: MODIFIED
+      - 
+        path: src/lang/fr-FR.json
+        additions: 11
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lang/ga.json
+        additions: 25
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lang/hi.json
+        additions: 13
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lang/hr-HR.json
+        additions: 11
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lang/it-IT.json
+        additions: 26
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/lang/lv.json
+        additions: 28
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lang/pl.json
+        additions: 17
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/lang/pt-BR.json
+        additions: 11
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lang/pt.json
+        additions: 17
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/lang/ru-RU.json
+        additions: 34
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: src/lang/sk.json
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lang/tr-TR.json
+        additions: 22
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: src/lang/zh-CN.json
+        additions: 19
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 7285
+    title: "build: Push go-builder image out of EOL"
+    url: https://github.com/louislam/uptime-kuma/pull/7285
+    mergedAt: 2026-04-17T00:13:03Z
+    baseRefName: master
+    headRefName: patch-3
+    baseRefOid: 07d28d818180796123b7876c161c2712d80cd0d1
+    headRefOid: ef8f7b49f79727be669f3a0f62bfca181526e7ba
+    mergeCommitOid: 266e9f299fbca866b08230bb8ec98e01c5a37760
+    changedFiles: 1
+    additions: 2
+    deletions: 8
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docker/builder-go.dockerfile
+        additions: 2
+        deletions: 8
+        changeType: MODIFIED
+  - 
+    number: 7287
+    title: "Revert \"build: Push go-builder image out of EOL\""
+    url: https://github.com/louislam/uptime-kuma/pull/7287
+    mergedAt: 2026-04-17T05:27:52Z
+    baseRefName: master
+    headRefName: revert-7285-patch-3
+    baseRefOid: 266e9f299fbca866b08230bb8ec98e01c5a37760
+    headRefOid: 17a4c415f5008650aa91aa390d2356236ac50f80
+    mergeCommitOid: 43b143c2dcab58856ba9bb56ec31f4f9cbd77a26
+    changedFiles: 1
+    additions: 8
+    deletions: 2
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: docker/builder-go.dockerfile
+        additions: 8
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 7235
+    title: "fix(uptime): ensure correct handling of missing time buckets in uptime calculations"
+    url: https://github.com/louislam/uptime-kuma/pull/7235
+    mergedAt: 2026-04-10T14:22:02Z
+    baseRefName: master
+    headRefName: fix/24h-view-shows-12h-data
+    baseRefOid: 7136dd7832971beb5691d09e86b28a0fcb5fa0fb
+    headRefOid: 08ca92ee1c7fae24c744ef9bb0a9cf461568a360
+    mergeCommitOid: 07d28d818180796123b7876c161c2712d80cd0d1
+    changedFiles: 2
+    additions: 84
+    deletions: 8
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: true
+    testFiles: 
+      - test/backend-test/test-uptime-calculator.js
+    debugScore: 3
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: server/uptime-calculator.js
+        additions: 11
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: test/backend-test/test-uptime-calculator.js
+        additions: 73
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 7248
+    title: "fix(notification): check for monitorJSON in Stackfield provider"
+    url: https://github.com/louislam/uptime-kuma/pull/7248
+    mergedAt: 2026-04-07T10:50:38Z
+    baseRefName: master
+    headRefName: stackfield-notification-issue
+    baseRefOid: a5f30d4cc8edd5da76964a41e8148f2f45c53b15
+    headRefOid: cda1357516a322c737472726e190192d61e8affa
+    mergeCommitOid: 7136dd7832971beb5691d09e86b28a0fcb5fa0fb
+    changedFiles: 1
+    additions: 2
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: server/notification-providers/stackfield.js
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7221
+    title: "fix(notification): ensure applyExisting is not saved to database"
+    url: https://github.com/louislam/uptime-kuma/pull/7221
+    mergedAt: 2026-03-29T15:12:44Z
+    baseRefName: master
+    headRefName: dev-fix2
+    baseRefOid: 7188e054d8a95f10d8f06cd4068d1d517cf98f8d
+    headRefOid: fc0572c1f4141b5b3b6fc95040f682d6423ef27b
+    mergeCommitOid: a5f30d4cc8edd5da76964a41e8148f2f45c53b15
+    changedFiles: 2
+    additions: 9
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: server/notification.js
+        additions: 5
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/components/NotificationDialog.vue
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 7207
+    title: "feat(notification): add custom message template support for Evolution provider"
+    url: https://github.com/louislam/uptime-kuma/pull/7207
+    mergedAt: 2026-03-27T19:57:18Z
+    baseRefName: master
+    headRefName: feat/evolution-custom-message
+    baseRefOid: 42e8b8fbbb1557c114a9d3b26f73e3420d0efcf0
+    headRefOid: ba63e00bf9b85a8fe6eebd99a128a96ad13e9fc8
+    mergeCommitOid: 7188e054d8a95f10d8f06cd4068d1d517cf98f8d
+    changedFiles: 3
+    additions: 36
+    deletions: 2
+    labels: 
+      - "pr:needs review"
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: server/notification-providers/evolution.js
+        additions: 7
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/components/notifications/Evolution.vue
+        additions: 27
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lang/en.json
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 6894
+    title: "fix: discord notification timestamp & update notification message"
+    url: https://github.com/louislam/uptime-kuma/pull/6894
+    mergedAt: 2026-02-13T02:38:50Z
+    baseRefName: master
+    headRefName: fix/discord-notification-timestamp
+    baseRefOid: 5561842dea4d9ea6cceafd8d90b782bcdc0f1479
+    headRefOid: 22daf9ae06c779f16adc4ee5b502570c1458194b
+    mergeCommitOid: f2048261b20f556d7607edea8fe8a2c91daf9b1a
+    changedFiles: 3
+    additions: 11
+    deletions: 2
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: server/model/monitor.js
+        additions: 3
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: server/model/rdap-dns.json
+        additions: 3
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: server/notification-providers/discord.js
+        additions: 5
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 7201
+    title: "feat: add Telnyx messaging provider"
+    url: https://github.com/louislam/uptime-kuma/pull/7201
+    mergedAt: 2026-03-26T20:06:16Z
+    baseRefName: master
+    headRefName: master
+    baseRefOid: 50c522f1ff5916218c7f50503d7887a646db20fc
+    headRefOid: b1f46216e029151ab4d9ea84416a2d1620ade163
+    mergeCommitOid: 42e8b8fbbb1557c114a9d3b26f73e3420d0efcf0
+    changedFiles: 6
+    additions: 121
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: server/notification-providers/telnyx.js
+        additions: 41
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/notification.js
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/components/NotificationDialog.vue
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/components/notifications/Telnyx.vue
+        additions: 67
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/components/notifications/index.js
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/lang/en.json
+        additions: 8
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 7198
+    title: "fix: Domain expiry doesn't seem to update #7189"
+    url: https://github.com/louislam/uptime-kuma/pull/7198
+    mergedAt: 2026-03-26T16:48:13Z
+    baseRefName: master
+    headRefName: domain-expiry
+    baseRefOid: 8c2873f04bf496c2a53fefd7589c9ffc11ae5743
+    headRefOid: 93438a0ed61f693b17107daf259123714bea6266
+    mergeCommitOid: 50c522f1ff5916218c7f50503d7887a646db20fc
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: server/model/domain_expiry.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7204
+    title: "chore: Add agents.md - anti AI slop"
+    url: https://github.com/louislam/uptime-kuma/pull/7204
+    mergedAt: 2026-03-26T04:31:35Z
+    baseRefName: master
+    headRefName: dev-agents
+    baseRefOid: 8c2873f04bf496c2a53fefd7589c9ffc11ae5743
+    headRefOid: afcf6d69e172f982022803156828d845d2a0e261
+    mergeCommitOid: 71386379ca17c1c58ba6088d940e2d6f169b2ba7
+    changedFiles: 1
+    additions: 41
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - docs-only
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: AGENTS.md
+        additions: 41
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 7133
+    title: "chore: Update dependencies"
+    url: https://github.com/louislam/uptime-kuma/pull/7133
+    mergedAt: 2026-03-24T18:40:41Z
+    baseRefName: master
+    headRefName: npm-update
+    baseRefOid: 4a6161c5790d79d99fd259dc3ef50d6b37096df0
+    headRefOid: 12ac4c068da6b76aab9e896cfacca4d4fcca7264
+    mergeCommitOid: 8c2873f04bf496c2a53fefd7589c9ffc11ae5743
+    changedFiles: 1
+    additions: 687
+    deletions: 658
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: package-lock.json
+        additions: 687
+        deletions: 658
+        changeType: MODIFIED
+  - 
+    number: 7132
+    title: "chore: Translations Update from Weblate"
+    url: https://github.com/louislam/uptime-kuma/pull/7132
+    mergedAt: 2026-03-24T18:40:17Z
+    baseRefName: master
+    headRefName: weblate-uptime-kuma-uptime-kuma
+    baseRefOid: c4b73ce1cea6169e43ec9e8476a7dd4bf78277df
+    headRefOid: 08b6ec790ae8be0c1b2e98acd002d8fe5b48b2bd
+    mergeCommitOid: 14148b54a624b00b703df7be6b2e8bbe95973b0e
+    changedFiles: 14
+    additions: 1147
+    deletions: 61
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: src/lang/bg-BG.json
+        additions: 11
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lang/cs-CZ.json
+        additions: 20
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lang/de-DE.json
+        additions: 14
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lang/en_GB.json
+        additions: 247
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lang/fr-FR.json
+        additions: 17
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lang/ga.json
+        additions: 12
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lang/hr-HR.json
+        additions: 50
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/lang/it-IT.json
+        additions: 325
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: src/lang/lt.json
+        additions: 328
+        deletions: 40
+        changeType: MODIFIED
+      - 
+        path: src/lang/pt-BR.json
+        additions: 17
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lang/ru-RU.json
+        additions: 7
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lang/sk.json
+        additions: 26
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lang/zh-CN.json
+        additions: 20
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lang/zh-TW.json
+        additions: 53
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7166
+    title: "fix: Handle SSL in setup database temp server"
+    url: https://github.com/louislam/uptime-kuma/pull/7166
+    mergedAt: 2026-03-24T18:37:19Z
+    baseRefName: master
+    headRefName: dev
+    baseRefOid: a53158af98dbdd11850ba34dc0066af1c5a259ba
+    headRefOid: b0c5fdc05933fb4b010cd6e5b9df7f2396860304
+    mergeCommitOid: c4b73ce1cea6169e43ec9e8476a7dd4bf78277df
+    changedFiles: 3
+    additions: 76
+    deletions: 17
+    labels: 
+      - "pr:needs review"
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: server/server.js
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: server/setup-database.js
+        additions: 19
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: server/util-server.js
+        additions: 55
+        deletions: 14
+        changeType: MODIFIED
+  - 
+    number: 7194
+    title: "fix: Revert \"add sorting to status pages\""
+    url: https://github.com/louislam/uptime-kuma/pull/7194
+    mergedAt: 2026-03-24T18:10:30Z
+    baseRefName: master
+    headRefName: revert-5766
+    baseRefOid: 4a6161c5790d79d99fd259dc3ef50d6b37096df0
+    headRefOid: 3d3f5cc68a79ff4f3854096b5e30a31daae173f8
+    mergeCommitOid: a53158af98dbdd11850ba34dc0066af1c5a259ba
+    changedFiles: 3
+    additions: 19
+    deletions: 561
+    labels: 
+      - "pr:needs review"
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: src/components/GroupSortDropdown.vue
+        additions: 0
+        deletions: 493
+        changeType: DELETED
+      - 
+        path: src/components/PublicGroupList.vue
+        additions: 19
+        deletions: 64
+        changeType: MODIFIED
+      - 
+        path: src/icon.js
+        additions: 0
+        deletions: 4
+        changeType: MODIFIED
+  - 
+    number: 6713
+    title: "fix: final fix of beta workflow"
+    url: https://github.com/louislam/uptime-kuma/pull/6713
+    mergedAt: 2026-01-14T02:28:34Z
+    baseRefName: master
+    headRefName: beta-workflow
+    baseRefOid: 2f82ff3787d15a8bc04439e4926d23c7abdd74f9
+    headRefOid: ad7b80ca891520de611ec281c5268183d4673192
+    mergeCommitOid: b2d7031522121991ed9ea8fac02010010b915f80
+    changedFiles: 3
+    additions: 13
+    deletions: 4
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/workflows/beta-release.yml
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: extra/beta/update-version.mjs
+        additions: 10
+        deletions: 2
+        changeType: RENAMED
+      - 
+        path: extra/release/beta.mjs
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 6634
+    title: "[3.0.0] Merge changes from master"
+    url: https://github.com/louislam/uptime-kuma/pull/6634
+    mergedAt: 2026-01-07T08:02:20Z
+    baseRefName: 3.0.X
+    headRefName: 3.0.X-merge
+    baseRefOid: ac5781d71196f2debf7239b07cfbc98dad672143
+    headRefOid: 0b174ef25a5445ffb18a1acb08ef050c25ffd84a
+    mergeCommitOid: 57f5414d79cfe05053dbc122b6b1e53b2bf9a223
+    changedFiles: 210
+    additions: 18601
+    deletions: 3628
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - incorrect
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -4
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - dependency-update
+      - huge-diff
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .eslintrc.js
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: .github/ISSUE_TEMPLATE/ask_for_help.yml
+        additions: 10
+        deletions: 7
+        changeType: MODIFIED
+      - 
+        path: .github/ISSUE_TEMPLATE/bug_report.yml
+        additions: 0
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: .github/ISSUE_TEMPLATE/feature_request.yml
+        additions: 0
+        deletions: 23
+        changeType: MODIFIED
+      - 
+        path: .github/ISSUE_TEMPLATE/security_issue.yml
+        additions: 11
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: .github/PULL_REQUEST_TEMPLATE.md
+        additions: 16
+        deletions: 46
+        changeType: MODIFIED
+      - 
+        path: .github/dependabot.yml
+        additions: 22
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: .github/workflows/auto-test.yml
+        additions: 58
+        deletions: 20
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/autofix.yml
+        additions: 41
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: .github/workflows/close-incorrect-issue.yml
+        additions: 10
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/codeql-analysis.yml
+        additions: 17
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/conflict_labeler.yml
+        additions: 7
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/prevent-file-change.yml
+        additions: 4
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/stale-bot.yml
+        additions: 7
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/validate.yml
+        additions: 9
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: CONTRIBUTING.md
+        additions: 68
+        deletions: 279
+        changeType: MODIFIED
+      - 
+        path: README.md
+        additions: 8
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: SECURITY.md
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: config/jest-backend.config.js
+        additions: 0
+        deletions: 5
+        changeType: DELETED
+      - 
+        path: config/vite.config.js
+        additions: 7
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/2025-02-15-2312-add-wstest.js
+        additions: 15
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: db/knex_migrations/2025-02-17-2142-generalize-analytics.js
+        additions: 23
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: db/knex_migrations/2025-09-02-0000-add-domain-expiry.js
+        additions: 23
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: db/knex_migrations/2025-10-24-0000-show-only-last-heartbeat.js
+        additions: 15
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: db/knex_migrations/2025-12-09-0000-add-system-service-monitor.js
+        additions: 19
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: db/knex_migrations/2025-12-22-0121-optimize-important-indexes.js
+        additions: 37
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: db/knex_migrations/2025-12-29-0000-remove-line-notify.js
+        additions: 30
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: db/knex_migrations/2026-01-02-0551-dns-last-result-to-text.js
+        additions: 14
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: db/knex_migrations/2026-01-02-0713-gamedig-v4-to-v5.js
+        additions: 198
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: db/knex_migrations/2026-01-05-0000-add-rss-title.js
+        additions: 11
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: db/knex_migrations/2026-01-05-0000-add-tls-monitor.js
+        additions: 11
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: db/knex_migrations/2026-01-06-0000-fix-domain-expiry-column-type.js
+        additions: 14
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: extra/beta/update-version.js
+        additions: 12
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: package-lock.json
+        additions: 3914
+        deletions: 580
+        changeType: MODIFIED
+      - 
+        path: package.json
+        additions: 16
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: public/manifest.json
+        additions: 69
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/analytics/analytics.js
+        additions: 48
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/analytics/google-analytics.js
+        additions: 0
+        deletions: 0
+        changeType: RENAMED
+      - 
+        path: server/analytics/matomo-analytics.js
+        additions: 47
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/analytics/plausible-analytics.js
+        additions: 36
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/analytics/umami-analytics.js
+        additions: 36
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/client.js
+        additions: 14
+        deletions: 18
+        changeType: MODIFIED
+      - 
+        path: server/database.js
+        additions: 21
+        deletions: 9
+        changeType: MODIFIED
+      - 
+        path: server/model/domain_expiry.js
+        additions: 274
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/model/maintenance.js
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: server/model/monitor.js
+        additions: 136
+        deletions: 92
+        changeType: MODIFIED
+      - 
+        path: server/model/status_page.js
+        additions: 72
+        deletions: 19
+        changeType: MODIFIED
+      - 
+        path: server/modules/axios-ntlm/lib/hash.js
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: server/monitor-types/dns.js
+        additions: 10
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: server/monitor-types/gamedig.js
+        additions: 53
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/monitor-types/group.js
+        additions: 56
+        deletions: 23
+        changeType: MODIFIED
+      - 
+        path: server/monitor-types/grpc.js
+        additions: 89
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/monitor-types/manual.js
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/monitor-types/monitor-type.js
+        additions: 9
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/monitor-types/mqtt.js
+        additions: 95
+        deletions: 17
+        changeType: MODIFIED
+      - 
+        path: server/monitor-types/mssql.js
+        additions: 157
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/monitor-types/mysql.js
+        additions: 165
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/monitor-types/postgres.js
+        additions: 83
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/monitor-types/rabbitmq.js
+        additions: 5
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: server/monitor-types/redis.js
+        additions: 57
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 6655
+    title: "chore: enable formatting over the entire codebase in CI"
+    url: https://github.com/louislam/uptime-kuma/pull/6655
+    mergedAt: 2026-01-09T01:10:37Z
+    baseRefName: master
+    headRefName: formatting-fix2
+    baseRefOid: 6658f2ce41df184d7c6483004bfb8c531b8cd28f
+    headRefOid: b01001f167b066f1a4aad533288054ddb5810f71
+    mergeCommitOid: 0f61d7ee1b6d6fb76b5dbf5d2e71e73dddbf1d16
+    changedFiles: 422
+    additions: 30910
+    deletions: 27390
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - incorrect
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .eslintrc.js
+        additions: 54
+        deletions: 59
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/autofix.yml
+        additions: 3
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: .prettierignore
+        additions: 2
+        deletions: 38
+        changeType: MODIFIED
+      - 
+        path: CONTRIBUTING.md
+        additions: 14
+        deletions: 30
+        changeType: MODIFIED
+      - 
+        path: README.md
+        additions: 4
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: SECURITY.md
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: config/playwright.config.js
+        additions: 4
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: config/vite.config.js
+        additions: 10
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: db/knex_init_db.js
+        additions: 112
+        deletions: 66
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/2023-08-16-0000-create-uptime.js
+        additions: 17
+        deletions: 15
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/2023-08-18-0301-heartbeat.js
+        additions: 6
+        deletions: 9
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/2023-09-29-0000-heartbeat-retires.js
+        additions: 6
+        deletions: 9
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/2023-10-08-0000-mqtt-query.js
+        additions: 6
+        deletions: 9
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/2023-10-11-1915-push-token-to-32.js
+        additions: 6
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/2023-10-16-0000-create-remote-browsers.js
+        additions: 7
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/2023-12-20-0000-alter-status-page.js
+        additions: 3
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/2023-12-21-0000-stat-ping-min-max.js
+        additions: 20
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/2023-12-22-0000-hourly-uptime.js
+        additions: 20
+        deletions: 20
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/2024-01-22-0000-stats-extras.js
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/2024-04-26-0000-snmp-monitor.js
+        additions: 5
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/2024-08-24-000-add-cache-bust.js
+        additions: 6
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/2024-08-24-0000-conditions.js
+        additions: 3
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/2024-10-1315-rabbitmq-monitor.js
+        additions: 0
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/2024-11-27-1927-fix-info-json-data-type.js
+        additions: 3
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/2025-01-01-0000-add-smtp.js
+        additions: 3
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/2025-02-15-2312-add-wstest.js
+        additions: 4
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/2025-02-17-2142-generalize-analytics.js
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/2025-03-04-0000-ping-advanced-options.js
+        additions: 10
+        deletions: 13
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/2025-03-25-0127-fix-5721.js
+        additions: 3
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/2025-05-09-0000-add-custom-url.js
+        additions: 3
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/2025-06-03-0000-add-ip-family.js
+        additions: 6
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/2025-06-11-0000-add-manual-monitor.js
+        additions: 3
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/2025-06-13-0000-maintenance-add-last-start.js
+        additions: 11
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/2025-06-15-0001-manual-monitor-fix.js
+        additions: 3
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/2025-06-24-0000-add-audience-to-oauth.js
+        additions: 3
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/2025-07-17-0000-mqtt-websocket-path.js
+        additions: 6
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/2025-10-14-0000-add-ip-family-fix.js
+        additions: 9
+        deletions: 11
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/2025-10-24-0000-show-only-last-heartbeat.js
+        additions: 6
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/2025-12-22-0121-optimize-important-indexes.js
+        additions: 6
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/2026-01-02-0551-dns-last-result-to-text.js
+        additions: 6
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/2026-01-02-0713-gamedig-v4-to-v5.js
+        additions: 137
+        deletions: 149
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/README.md
+        additions: 19
+        deletions: 24
+        changeType: MODIFIED
+      - 
+        path: docker/docker-compose-dev.yml
+        additions: 2
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: ecosystem.config.js
+        additions: 6
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: extra/beta/update-version.js
+        additions: 7
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: extra/build-healthcheck.js
+        additions: 3
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: extra/close-incorrect-issue.js
+        additions: 4
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: extra/deploy-demo-server.js
+        additions: 2
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: extra/download-dist.js
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: extra/kuma-pr/package.json
+        additions: 6
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: extra/push-examples/javascript-fetch/package.json
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: extra/push-examples/typescript-fetch/index.ts
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: extra/push-examples/typescript-fetch/package.json
+        additions: 11
+        deletions: 11
+        changeType: MODIFIED
+      - 
+        path: extra/rebase-pr.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: extra/remove-2fa.js
+        additions: 2
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: extra/reset-migrate-aggregate-table-state.js
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: extra/reset-password.js
+        additions: 22
+        deletions: 16
+        changeType: MODIFIED
+      - 
+        path: extra/simple-dns-server.js
+        additions: 4
+        deletions: 6
+        changeType: MODIFIED
+      - 
+        path: extra/simple-mqtt-server.js
+        additions: 10
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: extra/sort-contributors.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7182
+    title: "feat: Add VK notification provider"
+    url: https://github.com/louislam/uptime-kuma/pull/7182
+    mergedAt: 2026-03-21T20:07:45Z
+    baseRefName: master
+    headRefName: feat/vk-notification-provider
+    baseRefOid: cdfca84664841c91f58619bee2b46dc57c8a8860
+    headRefOid: d1f04d6f9406e664cdf3200e17cdcd8c5c1353f9
+    mergeCommitOid: 4a6161c5790d79d99fd259dc3ef50d6b37096df0
+    changedFiles: 6
+    additions: 112
+    deletions: 0
+    labels: 
+      - "pr:needs review"
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: server/notification-providers/vk.js
+        additions: 44
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/notification.js
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/components/NotificationDialog.vue
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/components/notifications/VK.vue
+        additions: 57
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/components/notifications/index.js
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/lang/en.json
+        additions: 6
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 7154
+    title: "feat: add collapsible groups to status page"
+    url: https://github.com/louislam/uptime-kuma/pull/7154
+    mergedAt: 2026-03-18T17:41:57Z
+    baseRefName: master
+    headRefName: status-page-collapsible-groups
+    baseRefOid: 45868969782cd725144fae1091b5832917f0882a
+    headRefOid: fcec846caf5c1c7986b1177a085bb67cdc717194
+    mergeCommitOid: cdfca84664841c91f58619bee2b46dc57c8a8860
+    changedFiles: 1
+    additions: 168
+    deletions: 91
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: src/components/PublicGroupList.vue
+        additions: 168
+        deletions: 91
+        changeType: MODIFIED
+  - 
+    number: 7160
+    title: "feat: Add MAX messenger notification provider"
+    url: https://github.com/louislam/uptime-kuma/pull/7160
+    mergedAt: 2026-03-18T16:33:02Z
+    baseRefName: master
+    headRefName: feature-max-messenger
+    baseRefOid: 77425f7a71c2a90cf738e9c43599c4c5c88bd4f8
+    headRefOid: 023531d3a054817991f321e5dbee7bd5659c7979
+    mergeCommitOid: 45868969782cd725144fae1091b5832917f0882a
+    changedFiles: 6
+    additions: 141
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: server/notification-providers/max.js
+        additions: 47
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/notification.js
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/components/NotificationDialog.vue
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/components/notifications/Max.vue
+        additions: 82
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/components/notifications/index.js
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/lang/en.json
+        additions: 7
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 7156
+    title: "feat: add OracleDB monitor"
+    url: https://github.com/louislam/uptime-kuma/pull/7156
+    mergedAt: 2026-03-18T11:04:13Z
+    baseRefName: master
+    headRefName: oracledb
+    baseRefOid: 9b28ddd92358c0f85af5dbbd70e2c726fd851fd7
+    headRefOid: 40d671b2048a468e59e99c7d9636c37a20bfdb20
+    mergeCommitOid: 77425f7a71c2a90cf738e9c43599c4c5c88bd4f8
+    changedFiles: 8
+    additions: 484
+    deletions: 16
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: true
+    testFiles: 
+      - test/backend-test/monitors/test-oracledb.js
+    debugScore: 3
+    suggestedDifficulty: mid
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: package-lock.json
+        additions: 34
+        deletions: 12
+        changeType: MODIFIED
+      - 
+        path: package.json
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/monitor-types/oracledb.js
+        additions: 155
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/uptime-kuma-server.js
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/lang/en.json
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/pages/Details.vue
+        additions: 7
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/pages/EditMonitor.vue
+        additions: 51
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: test/backend-test/monitors/test-oracledb.js
+        additions: 232
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 7159
+    title: "fix: monitor graph gaps for sub-millisecond TCP pings"
+    url: https://github.com/louislam/uptime-kuma/pull/7159
+    mergedAt: 2026-03-16T22:57:04Z
+    baseRefName: master
+    headRefName: fix/issue-7143-monitors-graph-intermittent
+    baseRefOid: aa40ffdf2348cda83ce0e5b9e9c8ad051de52bdf
+    headRefOid: 530e5497ec3d0a3fa85838a84112f524d1789ef4
+    mergeCommitOid: 9b28ddd92358c0f85af5dbbd70e2c726fd851fd7
+    changedFiles: 2
+    additions: 53
+    deletions: 3
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: true
+    testFiles: 
+      - test/backend-test/test-ping-chart.js
+    debugScore: 3
+    suggestedDifficulty: low
+    exclusionHints: 
+[]
+    files: 
+      - 
+        path: src/components/PingChart.vue
+        additions: 3
+        deletions: 3
+        changeType: MODIFIED
+      - 
+        path: test/backend-test/test-ping-chart.js
+        additions: 50
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 7155
+    title: "fix: propagate create errors"
+    url: https://github.com/louislam/uptime-kuma/pull/7155
+    mergedAt: 2026-03-16T15:18:05Z
+    baseRefName: master
+    headRefName: patch-1
+    baseRefOid: 59345444e507574846abf48459edc7907fe02900
+    headRefOid: 1f56a56d5c88ce812636aaa91cd0d9bebb71d233
+    mergeCommitOid: aa40ffdf2348cda83ce0e5b9e9c8ad051de52bdf
+    changedFiles: 1
+    additions: 0
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - error
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: server/database.js
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7146
+    title: "chore: Add monthly workflow to build `push` Docker image"
+    url: https://github.com/louislam/uptime-kuma/pull/7146
+    mergedAt: 2026-03-14T11:34:25Z
+    baseRefName: master
+    headRefName: copilot/create-monthly-docker-build
+    baseRefOid: 448643fcf06df6b4f5a66d5f292738b790c74a7c
+    headRefOid: 986a283e7c1680eaec70ddb6c87501cfd5db0c05
+    mergeCommitOid: 59345444e507574846abf48459edc7907fe02900
+    changedFiles: 1
+    additions: 49
+    deletions: 0
+    labels: 
+      - "pr:needs review"
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .github/workflows/build-docker-push.yml
+        additions: 49
+        deletions: 0
+        changeType: ADDED
+  - 
+    number: 7125
+    title: "fix: prometheus metrics have two series for a single monitor when that monitor has tags"
+    url: https://github.com/louislam/uptime-kuma/pull/7125
+    mergedAt: 2026-03-10T16:29:35Z
+    baseRefName: master
+    headRefName: prometheus-push-metrics
+    baseRefOid: 0462b6f87b76872482c52f8259a12d0fe6fa1b9d
+    headRefOid: ea561271e552ce629ca5e514b914ae806f5f6df5
+    mergeCommitOid: 448643fcf06df6b4f5a66d5f292738b790c74a7c
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+      - timeout
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 3
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: server/routers/api-router.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7128
+    title: "fix: Update Home Assistant notification help text for HA 2024 Services→Actions rename"
+    url: https://github.com/louislam/uptime-kuma/pull/7128
+    mergedAt: 2026-03-10T12:15:13Z
+    baseRefName: master
+    headRefName: copilot/update-home-assistant-notification-text
+    baseRefOid: 3752a59f72a4e1b89f5bd1d835918d13f6aa8140
+    headRefOid: 78c827932260c0d64c42c109ab62e6a953e64a26
+    mergeCommitOid: 0462b6f87b76872482c52f8259a12d0fe6fa1b9d
+    changedFiles: 2
+    additions: 4
+    deletions: 10
+    labels: 
+      - "pr:needs review"
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: src/components/notifications/HomeAssistant.vue
+        additions: 2
+        deletions: 8
+        changeType: MODIFIED
+      - 
+        path: src/lang/en.json
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 6939
+    title: "feat: add tags to teams notifications"
+    url: https://github.com/louislam/uptime-kuma/pull/6939
+    mergedAt: 2026-02-15T13:58:56Z
+    baseRefName: master
+    headRefName: teams-notification-tags
+    baseRefOid: 223dd92cc222735ca784fe3bde487b9d989b9b4d
+    headRefOid: d825e87c0690719e3c5391450236203c8652e045
+    mergeCommitOid: bc90af1833bf2e09910b019fa0d925ddb5cc1456
+    changedFiles: 4
+    additions: 111
+    deletions: 60
+    labels: 
+      - "pr:needs review"
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: server/model/rdap-dns.json
+        additions: 1
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: server/notification-providers/teams.js
+        additions: 97
+        deletions: 58
+        changeType: MODIFIED
+      - 
+        path: src/components/notifications/Teams.vue
+        additions: 11
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/lang/en.json
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 7126
+    title: "chore: update to 2.2.1"
+    url: https://github.com/louislam/uptime-kuma/pull/7126
+    mergedAt: 2026-03-10T02:24:08Z
+    baseRefName: master
+    headRefName: release-2.2.1
+    baseRefOid: 4364699f12461f49ec7c0e78a7b0495499c70aa2
+    headRefOid: 418b9a6cbbbd43a52b10f697f9ac4f0931dcc999
+    mergeCommitOid: 3752a59f72a4e1b89f5bd1d835918d13f6aa8140
+    changedFiles: 2
+    additions: 4
+    deletions: 4
+    labels: 
+      - "pr:needs review"
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: package-lock.json
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: package.json
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 7120
+    title: "chore: Update dependencies"
+    url: https://github.com/louislam/uptime-kuma/pull/7120
+    mergedAt: 2026-03-10T02:14:22Z
+    baseRefName: master
+    headRefName: npm-update
+    baseRefOid: aedac237d0049b0821d2c82406b62e823088541a
+    headRefOid: 76b0a63392d4fa19768c6ddd062528dd8131aa4e
+    mergeCommitOid: 4364699f12461f49ec7c0e78a7b0495499c70aa2
+    changedFiles: 1
+    additions: 647
+    deletions: 370
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: package-lock.json
+        additions: 647
+        deletions: 370
+        changeType: MODIFIED
+  - 
+    number: 7119
+    title: "chore: Translations Update from Weblate"
+    url: https://github.com/louislam/uptime-kuma/pull/7119
+    mergedAt: 2026-03-10T02:13:32Z
+    baseRefName: master
+    headRefName: weblate-uptime-kuma-uptime-kuma
+    baseRefOid: aedac237d0049b0821d2c82406b62e823088541a
+    headRefOid: 48a2efa38d28e5bb225ea79c06f452ec3f2a3af8
+    mergeCommitOid: 8a46aafa89b0f3b95f26402f15accc8f655a964a
+    changedFiles: 3
+    additions: 45
+    deletions: 5
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: src/lang/bg-BG.json
+        additions: 10
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lang/fr-FR.json
+        additions: 10
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lang/nl-NL.json
+        additions: 25
+        deletions: 3
+        changeType: MODIFIED
+  - 
+    number: 7101
+    title: "fix: revert: remove @aws-sdk, @azure packages"
+    url: https://github.com/louislam/uptime-kuma/pull/7101
+    mergedAt: 2026-03-06T14:21:03Z
+    baseRefName: master
+    headRefName: louislam-patch-1
+    baseRefOid: 165c5c113457e025c6c6bb0907be7219a38d20b7
+    headRefOid: c50246c4bad5ea0e516fc4db7bfa10fb342e7317
+    mergeCommitOid: c80e3cfb9df080949ff8a47275fe9e580bc7a0c2
+    changedFiles: 2
+    additions: 3259
+    deletions: 1584
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: package-lock.json
+        additions: 3259
+        deletions: 1577
+        changeType: MODIFIED
+      - 
+        path: package.json
+        additions: 0
+        deletions: 7
+        changeType: MODIFIED
+  - 
+    number: 7096
+    title: "feat: set process.title to uptime-kuma"
+    url: https://github.com/louislam/uptime-kuma/pull/7096
+    mergedAt: 2026-03-05T10:17:31Z
+    baseRefName: master
+    headRefName: master
+    baseRefOid: e63b2034de313e826c32522dc03e6bd2094dcfc6
+    headRefOid: e5590a6d99a3a6fd8feccb3be474913a2e92cbcc
+    mergeCommitOid: b00f72152901ed41b2d13f916093cf4639d0cf16
+    changedFiles: 1
+    additions: 2
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: server/server.js
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 7121
+    title: "fix: isParentActive return type to boolean"
+    url: https://github.com/louislam/uptime-kuma/pull/7121
+    mergedAt: 2026-03-09T10:46:34Z
+    baseRefName: master
+    headRefName: fix/isParentActive-boolean-type
+    baseRefOid: 1b76499fd35457211295b0c62882d6b2120d859a
+    headRefOid: 016b33cd742eef973b6ff38688f8825a1ab987e0
+    mergeCommitOid: aedac237d0049b0821d2c82406b62e823088541a
+    changedFiles: 1
+    additions: 1
+    deletions: 1
+    labels: 
+[]
+    keywordHits: 
+      - bug
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: server/model/monitor.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7099
+    title: "chore: Translations Update from Weblate"
+    url: https://github.com/louislam/uptime-kuma/pull/7099
+    mergedAt: 2026-03-08T06:40:15Z
+    baseRefName: master
+    headRefName: weblate-uptime-kuma-uptime-kuma
+    baseRefOid: 62bfc38c27fd1bc51de6dd5db6ba0887821f152b
+    headRefOid: 64b32ff133f25b58dcdede6c60ad6daee5bb3861
+    mergeCommitOid: 1b76499fd35457211295b0c62882d6b2120d859a
+    changedFiles: 7
+    additions: 201
+    deletions: 30
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: src/lang/en_GB.json
+        additions: 1
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/lang/es-ES.json
+        additions: 66
+        deletions: 23
+        changeType: MODIFIED
+      - 
+        path: src/lang/ga.json
+        additions: 27
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/lang/it-IT.json
+        additions: 4
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lang/lv.json
+        additions: 68
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lang/pt-BR.json
+        additions: 10
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: src/lang/sk.json
+        additions: 25
+        deletions: 2
+        changeType: MODIFIED
+  - 
+    number: 7100
+    title: "chore: Update dependencies"
+    url: https://github.com/louislam/uptime-kuma/pull/7100
+    mergedAt: 2026-03-08T03:28:19Z
+    baseRefName: master
+    headRefName: npm-update
+    baseRefOid: c60210124ae270dbae67db124119ef13ae8d5fcd
+    headRefOid: 8c15025f59309c3d3892b58dc09c6a3033f3a926
+    mergeCommitOid: 62bfc38c27fd1bc51de6dd5db6ba0887821f152b
+    changedFiles: 2
+    additions: 401
+    deletions: 343
+    labels: 
+[]
+    keywordHits: 
+[]
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 0
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: package-lock.json
+        additions: 398
+        deletions: 338
+        changeType: MODIFIED
+      - 
+        path: package.json
+        additions: 3
+        deletions: 5
+        changeType: MODIFIED
+  - 
+    number: 7110
+    title: "fix(ui): fix fluxer input styling; make discord input hidden"
+    url: https://github.com/louislam/uptime-kuma/pull/7110
+    mergedAt: 2026-03-08T02:43:59Z
+    baseRefName: master
+    headRefName: master
+    baseRefOid: c60210124ae270dbae67db124119ef13ae8d5fcd
+    headRefOid: b345fec9db72e9033532a150612c6c35b4843aaf
+    mergeCommitOid: f45467bd7b69514bfc80bd7f261cd3764257575c
+    changedFiles: 2
+    additions: 3
+    deletions: 3
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 1
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: src/components/notifications/Discord.vue
+        additions: 3
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: src/components/notifications/Fluxer.vue
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+  - 
+    number: 7109
+    title: "feat: fluxer notification provider"
+    url: https://github.com/louislam/uptime-kuma/pull/7109
+    mergedAt: 2026-03-07T18:55:47Z
+    baseRefName: master
+    headRefName: master
+    baseRefOid: c80e3cfb9df080949ff8a47275fe9e580bc7a0c2
+    headRefOid: 0f48570e6db1c0bc7df40a7c8ab72804c12f2ec7
+    mergeCommitOid: c60210124ae270dbae67db124119ef13ae8d5fcd
+    changedFiles: 6
+    additions: 351
+    deletions: 0
+    labels: 
+[]
+    keywordHits: 
+      - fix
+      - fail
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: 2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: server/notification-providers/fluxer.js
+        additions: 249
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/notification.js
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/components/NotificationDialog.vue
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/components/notifications/Fluxer.vue
+        additions: 88
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: src/components/notifications/index.js
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: src/lang/en.json
+        additions: 9
+        deletions: 0
+        changeType: MODIFIED
+  - 
+    number: 7104
+    title: "chore: merge changes to 3.0.X"
+    url: https://github.com/louislam/uptime-kuma/pull/7104
+    mergedAt: 2026-03-06T14:30:08Z
+    baseRefName: 3.0.X
+    headRefName: 3.0.X-merge
+    baseRefOid: 9df8a957c7cba8cb198ba220e3001b5efdfb1beb
+    headRefOid: 7a16d803d349795f5582f75617ae60331ce869d0
+    mergeCommitOid: f154fcf8daeb6f02d7fe64c0d7ca9ff7be89e65a
+    changedFiles: 132
+    additions: 14122
+    deletions: 5411
+    labels: 
+[]
+    keywordHits: 
+      - fix
+    hasTests: false
+    testFiles: 
+[]
+    debugScore: -2
+    suggestedDifficulty: reject
+    exclusionHints: 
+      - huge-diff
+      - no-test-files-in-first-60-files
+    files: 
+      - 
+        path: .eslintrc.js
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: .github/PULL_REQUEST_TEMPLATE.md
+        additions: 8
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/autofix.yml
+        additions: 0
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/codeql-analysis.yml
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/npm-update.yml
+        additions: 86
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: .github/workflows/pr-description-check.yml
+        additions: 54
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: .github/workflows/release-beta.yml
+        additions: 0
+        deletions: 0
+        changeType: RENAMED
+      - 
+        path: .github/workflows/release-final.yml
+        additions: 93
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: .github/workflows/release-nightly.yml
+        additions: 2
+        deletions: 0
+        changeType: RENAMED
+      - 
+        path: .github/workflows/stale-bot.yml
+        additions: 2
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: .github/workflows/validate.yml
+        additions: 8
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: SECURITY.md
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: config/vite.config.js
+        additions: 0
+        deletions: 10
+        changeType: MODIFIED
+      - 
+        path: db/knex_migrations/2025-12-17-0000-add-globalping-monitor.js
+        additions: 17
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: db/knex_migrations/2026-02-07-0000-disable-domain-expiry-unsupported-tlds.js
+        additions: 93
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: extra/check-package-json.mjs
+        additions: 17
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: extra/generate-changelog.mjs
+        additions: 132
+        deletions: 37
+        changeType: MODIFIED
+      - 
+        path: extra/rdap-dns.json
+        additions: 4
+        deletions: 2
+        changeType: RENAMED
+      - 
+        path: extra/release/beta.mjs
+        additions: 0
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: extra/release/final.mjs
+        additions: 55
+        deletions: 27
+        changeType: MODIFIED
+      - 
+        path: extra/release/lib.mjs
+        additions: 23
+        deletions: 5
+        changeType: MODIFIED
+      - 
+        path: extra/update-language-files/.gitignore
+        additions: 0
+        deletions: 3
+        changeType: DELETED
+      - 
+        path: extra/update-language-files/index.js
+        additions: 0
+        deletions: 105
+        changeType: DELETED
+      - 
+        path: extra/update-language-files/package.json
+        additions: 0
+        deletions: 12
+        changeType: DELETED
+      - 
+        path: extra/update-version.mjs
+        additions: 21
+        deletions: 9
+        changeType: RENAMED
+      - 
+        path: extra/update-wiki-version.js
+        additions: 0
+        deletions: 58
+        changeType: DELETED
+      - 
+        path: extra/upload-github-release-asset.sh
+        additions: 0
+        deletions: 64
+        changeType: DELETED
+      - 
+        path: package-lock.json
+        additions: 622
+        deletions: 3351
+        changeType: MODIFIED
+      - 
+        path: package.json
+        additions: 75
+        deletions: 75
+        changeType: MODIFIED
+      - 
+        path: public/serviceWorker.js
+        additions: 16
+        deletions: 4
+        changeType: RENAMED
+      - 
+        path: server/auth.js
+        additions: 1
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: server/database.js
+        additions: 35
+        deletions: 24
+        changeType: MODIFIED
+      - 
+        path: server/model/domain_expiry.js
+        additions: 81
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: server/model/monitor.js
+        additions: 14
+        deletions: 79
+        changeType: MODIFIED
+      - 
+        path: server/model/status_page.js
+        additions: 2
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: server/monitor-types/dns.js
+        additions: 1
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: server/monitor-types/gamedig.js
+        additions: 1
+        deletions: 23
+        changeType: MODIFIED
+      - 
+        path: server/monitor-types/globalping.js
+        additions: 615
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/monitor-types/group.js
+        additions: 0
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: server/monitor-types/postgres.js
+        additions: 6
+        deletions: 110
+        changeType: MODIFIED
+      - 
+        path: server/notification-providers/360messenger.js
+        additions: 161
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/notification-providers/HaloPSA.js
+        additions: 1
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/notification-providers/Webpush.js
+        additions: 2
+        deletions: 18
+        changeType: MODIFIED
+      - 
+        path: server/notification-providers/alertnow.js
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: server/notification-providers/discord.js
+        additions: 69
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: server/notification-providers/flashduty.js
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: server/notification-providers/google-chat.js
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: server/notification-providers/jira-service-management.js
+        additions: 105
+        deletions: 0
+        changeType: ADDED
+      - 
+        path: server/notification-providers/matrix.js
+        additions: 4
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/notification-providers/notification-provider.js
+        additions: 15
+        deletions: 0
+        changeType: MODIFIED
+      - 
+        path: server/notification-providers/ntfy.js
+        additions: 38
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: server/notification-providers/pagerduty.js
+        additions: 4
+        deletions: 4
+        changeType: MODIFIED
+      - 
+        path: server/notification-providers/pagertree.js
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: server/notification-providers/rocket-chat.js
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: server/notification-providers/signal.js
+        additions: 7
+        deletions: 1
+        changeType: MODIFIED
+      - 
+        path: server/notification-providers/slack.js
+        additions: 47
+        deletions: 14
+        changeType: MODIFIED
+      - 
+        path: server/notification-providers/splunk.js
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: server/notification-providers/stackfield.js
+        additions: 2
+        deletions: 2
+        changeType: MODIFIED
+      - 
+        path: server/notification-providers/teams.js
+        additions: 97
+        deletions: 58
+        changeType: MODIFIED
+      - 
+        path: server/notification-providers/teltonika.js
+        additions: 95
+        deletions: 0
+        changeType: ADDED
