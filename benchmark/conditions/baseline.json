@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "id": "baseline-2026-05-03",
+  "description": "Baseline no-memory debugging conditions for Codex, Claude Code, and Cursor Agent.",
+  "prompt_policy": {
+    "hide_original_pr": true,
+    "hide_fixed_commit": true,
+    "hide_hidden_tests": true,
+    "disable_memory": true,
+    "custom_rules": false,
+    "agent_skills": false
+  },
+  "conditions": [
+    {
+      "id": "codex:gpt-5.5:medium:baseline",
+      "harness": "codex",
+      "model": "gpt-5.5",
+      "effort": "medium"
+    },
+    {
+      "id": "claude:claude-opus-4-7:medium:baseline",
+      "harness": "claude",
+      "model": "claude-opus-4-7",
+      "effort": "medium"
+    },
+    {
+      "id": "cursor:gpt-5.5-medium:baseline",
+      "harness": "cursor",
+      "model": "gpt-5.5-medium",
+      "effort": null
+    }
+  ]
+}

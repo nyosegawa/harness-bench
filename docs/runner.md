@@ -91,6 +91,37 @@ node scripts/run-case.mjs ... \
   --rateCard benchmark/rate-cards/example-2026-05-03.json
 ```
 
+Run the baseline matrix sequentially:
+
+```bash
+node scripts/run-matrix.mjs
+```
+
+Preview the pilot matrix without starting agents:
+
+```bash
+node scripts/run-matrix.mjs \
+  --case benchmark/cases/sharkdp__bat/low.yaml \
+  --case benchmark/cases/sharkdp__bat/mid.yaml \
+  --case benchmark/cases/sharkdp__bat/high.yaml \
+  --dryRun true
+```
+
+Run a subset and verify base/fixed behavior before agent runs:
+
+```bash
+node scripts/run-matrix.mjs \
+  --case benchmark/cases/sharkdp__bat/low.yaml \
+  --harness codex,cursor \
+  --includeVerify true \
+  --agentTimeoutMs 900000
+```
+
+`run-matrix.mjs` intentionally runs jobs sequentially. Agent failures are valid
+benchmark outcomes and do not stop the matrix; runner errors, unexpected
+`verify-base` passes, and `verify-fixed` failures are treated as matrix
+failures. Pass `--stopOnFailure true` to stop on the first matrix failure.
+
 ## Result Layout
 
 Each run writes:

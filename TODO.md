@@ -17,6 +17,7 @@
 - Report generator implemented: `scripts/render-results.mjs`.
 - Raw-log metric refresher implemented: `scripts/refresh-result-metrics.mjs`.
 - Rate-card application script implemented: `scripts/apply-rate-card.mjs`.
+- Batch matrix runner implemented: `scripts/run-matrix.mjs`.
 - Candidate repository scans and PR candidate metadata saved under `benchmark/repos/`.
 - Pilot cases for `sharkdp/bat` created:
   - `low`: ZIP binary detection
@@ -71,13 +72,12 @@ sudo apt-get update && sudo apt-get install -y ripgrep
    - write hidden tests
    - verify base fail / fixed pass
    - run at least one smoke agent condition before scaling
-6. Add batch matrix execution to avoid manual per-condition commands.
-7. Improve report UX:
+6. Improve report UX:
    - filter by case/harness
    - show invalid runs separately
    - add per-case summary and cost totals by source
-8. Add real rate cards for Codex/Cursor/Claude if current pricing should be estimated. Keep reported and estimated cost clearly separated.
-9. Consider Cursor Max Mode as a separate experimental axis once CLI config switching is made safe and serialized.
+7. Add real rate cards for Codex/Cursor/Claude if current pricing should be estimated. Keep reported and estimated cost clearly separated.
+8. Consider Cursor Max Mode as a separate experimental axis once CLI config switching is made safe and serialized.
 
 ## Useful Commands
 
@@ -96,6 +96,7 @@ node --check scripts/run-case.mjs
 node --check scripts/render-results.mjs
 node --check scripts/apply-rate-card.mjs
 node --check scripts/refresh-result-metrics.mjs
+node --check scripts/run-matrix.mjs
 ```
 
 Regenerate report:
@@ -126,6 +127,13 @@ node scripts/run-case.mjs \
   --model gpt-5.5 \
   --effort medium \
   --agentTimeoutMs 900000
+```
+
+Preview or run the baseline matrix:
+
+```bash
+node scripts/run-matrix.mjs --dryRun true
+node scripts/run-matrix.mjs --includeVerify true --agentTimeoutMs 900000
 ```
 
 ## Notes For Future Agents

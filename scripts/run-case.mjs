@@ -17,6 +17,9 @@ const rateCard = rateCardPath ? loadRateCard(rateCardPath) : null;
 const workRoot = resolve(args.workRoot ?? "benchmark/workspaces");
 const runsRoot = resolve(args.runsRoot ?? "benchmark/runs");
 const repoOverride = args.repoDir ? resolve(args.repoDir) : null;
+const conditionId = args.conditionId ?? defaultConditionId({ harness, model, effort });
+const matrixId = args.matrixId ?? null;
+const attempt = Number(args.attempt ?? 1);
 
 if (!["verify-base", "verify-fixed", "verify-current", "agent"].includes(mode)) {
   fatal(`unsupported --mode ${mode}`);
@@ -47,10 +50,14 @@ const result = {
   harness,
   model,
   effort,
+  condition_id: conditionId,
+  matrix_id: matrixId,
+  attempt,
   run_id: runId,
   run_dir: runDir,
   started_at: startedAt.toISOString(),
   checkout_commit: null,
+  case_metadata: caseMetadata(caseData),
   test_strategy: caseData.test_strategy ?? null,
   metrics: {
     wall_time_ms: null,
@@ -75,7 +82,18 @@ try {
     ensureRepo(repoUrl, activeRepoDir);
     checkout(activeRepoDir, required(caseData.base_commit, "base_commit is required"));
     result.checkout_commit = caseData.base_commit;
-    const agentResult = runAgent({ harness, model, effort, caseData, repoDir: activeRepoDir, runDir, timeoutMs: agentTimeoutMs });
+    const agentResult = runAgent({
+      harness,
+      model,
+      effort,
+      conditionId,
+      matrixId,
+      attempt,
+      caseData,
+      repoDir: activeRepoDir,
+      runDir,
+      timeoutMs: agentTimeoutMs,
+    });
     result.agent_result = agentResult;
     result.metrics.harness = agentResult.metrics;
     result.metrics.usage = agentResult.metrics.usage;
@@ -109,6 +127,7 @@ try {
   result.finished_at = new Date().toISOString();
   result.duration_ms = new Date(result.finished_at).getTime() - startedAt.getTime();
   result.metrics.wall_time_ms = result.duration_ms;
+  applyInvalidRunClassification(result);
   const resultPath = resolve(runDir, "result.json");
   writeFileSync(resultPath, `${JSON.stringify(result, null, 2)}\n`);
   console.log(JSON.stringify({ success: result.success, runDir, resultPath }, null, 2));
@@ -250,10 +269,11 @@ function emptyUsageMetrics() {
   };
 }
 
-function runAgent({ harness, model, effort, caseData, repoDir, runDir, timeoutMs }) {
+function runAgent({ harness, model, effort, conditionId, matrixId, attempt, caseData, repoDir, runDir, timeoutMs }) {
   const prompt = buildPrompt(caseData);
   const promptPath = resolve(runDir, "prompt.txt");
   writeFileSync(promptPath, prompt);
+  writePromptBundle({ caseData, harness, model, effort, conditionId, matrixId, attempt, prompt, runDir });
 
   if (harness === "codex") {
     return runCodexAgent({ model, effort, prompt, repoDir, runDir, timeoutMs });
@@ -265,6 +285,44 @@ function runAgent({ harness, model, effort, caseData, repoDir, runDir, timeoutMs
     return runCursorAgent({ model, prompt, repoDir, runDir, timeoutMs });
   }
   fatal(`unsupported harness ${harness}`);
+}
+
+function writePromptBundle({ caseData, harness, model, effort, conditionId, matrixId, attempt, prompt, runDir }) {
+  const bundle = {
+    schema_version: 1,
+    created_at: new Date().toISOString(),
+    matrix_id: matrixId,
+    condition_id: conditionId,
+    attempt,
+    harness,
+    model,
+    effort,
+    case: {
+      id: caseData.id ?? null,
+      repo: caseData.repo ?? null,
+      repo_url: caseData.repo_url ?? null,
+      license: caseData.license ?? null,
+      size_bucket: caseData.size_bucket ?? null,
+      language_tags: caseData.language_tags ?? [],
+      difficulty: caseData.difficulty ?? null,
+      instruction: caseData.instruction ?? null,
+      base_commit: caseData.base_commit ?? null,
+      fixed_commit: caseData.fixed_commit ?? null,
+      pr_number: caseData.pr_number ?? null,
+      pr_url: caseData.pr_url ?? null,
+      pr_title: caseData.pr_title ?? null,
+      merged_at: caseData.merged_at ?? null,
+    },
+    prompt,
+    hidden_tests_visible_to_agent: false,
+    prompt_policy: {
+      hide_original_pr: true,
+      hide_fixed_commit: true,
+      hide_hidden_tests: true,
+      disable_memory_for_baseline: true,
+    },
+  };
+  writeFileSync(resolve(runDir, "prompt-bundle.json"), `${JSON.stringify(bundle, null, 2)}\n`);
 }
 
 function buildPrompt(caseData) {
@@ -284,6 +342,22 @@ function buildPrompt(caseData) {
     "- Briefly summarize the root cause and fix.",
     "- Mention tests you ran.",
   ].join("\n");
+}
+
+function caseMetadata(caseData) {
+  return {
+    difficulty: caseData.difficulty ?? null,
+    size_bucket: caseData.size_bucket ?? null,
+    language_tags: caseData.language_tags ?? [],
+    license: caseData.license ?? null,
+    stars_at_selection: caseData.stars_at_selection ?? null,
+    pr_number: caseData.pr_number ?? null,
+    pr_url: caseData.pr_url ?? null,
+    pr_title: caseData.pr_title ?? null,
+    merged_at: caseData.merged_at ?? null,
+    base_commit: caseData.base_commit ?? null,
+    fixed_commit: caseData.fixed_commit ?? null,
+  };
 }
 
 function runCodexAgent({ model, effort, prompt, repoDir, runDir, timeoutMs }) {
@@ -325,6 +399,9 @@ function runCodexAgent({ model, effort, prompt, repoDir, runDir, timeoutMs }) {
     stderr_path: stderrPath,
     exit_code: execution.status,
     signal: execution.signal,
+    error: execution.error,
+    timed_out: execution.timed_out,
+    duration_ms: execution.duration_ms,
     metrics: normalizeCodexMetrics(events, execution, model ?? "gpt-5.5"),
   };
 }
@@ -367,6 +444,9 @@ function runClaudeAgent({ model, effort, prompt, repoDir, runDir, timeoutMs }) {
     stderr_path: stderrPath,
     exit_code: execution.status,
     signal: execution.signal,
+    error: execution.error,
+    timed_out: execution.timed_out,
+    duration_ms: execution.duration_ms,
     metrics: normalizeClaudeMetrics(raw, execution, model ?? "claude-opus-4-7"),
   };
 }
@@ -396,6 +476,9 @@ function runCursorAgent({ model, prompt, repoDir, runDir, timeoutMs }) {
     stderr_path: stderrPath,
     exit_code: execution.status,
     signal: execution.signal,
+    error: execution.error,
+    timed_out: execution.timed_out,
+    duration_ms: execution.duration_ms,
     metrics: normalizeCursorMetrics(events, execution),
   };
 }
@@ -700,6 +783,56 @@ function rateCardMetadata(card, canonicalModel) {
   };
 }
 
+function applyInvalidRunClassification(result) {
+  const reason = invalidRunReason(result);
+  if (!reason) return;
+  result.invalid_run = true;
+  result.invalid_reason = reason;
+}
+
+function invalidRunReason(result) {
+  if (result.error?.message) {
+    return `infrastructure failure: runner error: ${result.error.message}`;
+  }
+
+  const agent = result.agent_result;
+  if (agent?.error?.code === "ENOENT") {
+    return `infrastructure failure: missing harness command: ${agent.command?.[0] ?? "unknown"}`;
+  }
+  if (agent?.error?.code && agent.error.code !== "ETIMEDOUT") {
+    return `infrastructure failure: harness process error ${agent.error.code}`;
+  }
+
+  const infraText = [
+    agent?.stderr_path ? readText(agent.stderr_path) : "",
+    ...(result.test_result?.core ?? []).flatMap((test) => [readText(test.stdout_path), readText(test.stderr_path)]),
+    ...(result.test_result?.regressions ?? []).flatMap((test) => [readText(test.stdout_path), readText(test.stderr_path)]),
+    ...(result.test_result?.oracle_suites ?? []).flatMap((suite) =>
+      suite.tests.flatMap((test) => [readText(test.stdout_path), readText(test.stderr_path)]),
+    ),
+  ].join("\n");
+
+  if (/no space left on device/i.test(infraText)) {
+    return "infrastructure failure: no space left on device";
+  }
+  if (/ENOSPC/i.test(infraText)) {
+    return "infrastructure failure: ENOSPC";
+  }
+  if (/authentication failed|not authenticated|permission denied \(publickey\)|401 unauthorized/i.test(infraText)) {
+    return "infrastructure failure: authentication failure";
+  }
+  if (/could not resolve host|temporary failure in name resolution|network is unreachable|connection timed out/i.test(infraText)) {
+    return "infrastructure failure: network failure";
+  }
+
+  return null;
+}
+
+function readText(path) {
+  if (!path || !existsSync(path)) return "";
+  return readFileSync(path, "utf8");
+}
+
 function ensureRepo(repoUrl, repoDir) {
   if (existsSync(resolve(repoDir, ".git"))) {
     git(repoDir, ["fetch", "origin", "--tags"]);
@@ -846,6 +979,11 @@ function shellQuote(value) {
 function required(value, message) {
   if (value === undefined || value === null || value === "") fatal(message);
   return value;
+}
+
+function defaultConditionId({ harness, model, effort }) {
+  if (!harness) return null;
+  return [harness, model, effort].filter(Boolean).join(":");
 }
 
 function fatal(message) {

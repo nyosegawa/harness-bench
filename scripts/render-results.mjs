@@ -28,17 +28,35 @@ function loadResults(root) {
 
 function renderHtml(results) {
   const agentResults = results.filter((result) => result.mode === "agent" && !result.invalid_run);
+  const invalidResults = results.filter((result) => result.mode === "agent" && result.invalid_run);
   const summary = summarize(agentResults);
+  const caseSummaryRows = renderSummaryRows(groupSummary(agentResults, (result) => result.case_id));
+  const harnessSummaryRows = renderSummaryRows(groupSummary(agentResults, (result) => result.harness));
+  const difficultySummaryRows = renderSummaryRows(groupSummary(agentResults, (result) => caseMeta(result).difficulty ?? "unknown"));
+  const sizeSummaryRows = renderSummaryRows(groupSummary(agentResults, (result) => caseMeta(result).size_bucket ?? "unknown"));
+  const invalidRows = invalidResults.map((result) => `
+      <tr>
+        <td>${esc(result.case_id)}</td>
+        <td>${esc(result.harness ?? "")}</td>
+        <td>${esc(result.condition_id ?? "")}</td>
+        <td>${esc(result.invalid_reason ?? "")}</td>
+        <td><code>${esc(result.run_id)}</code></td>
+      </tr>
+    `).join("\n");
   const rows = agentResults.map((result) => {
     const metrics = result.metrics ?? {};
     const harnessMetrics = metrics.harness ?? {};
     const usage = metrics.usage ?? {};
     const effort = result.effort ?? inferEffort(result.model, harnessMetrics.model);
     const cost = formatCost(usage);
+    const meta = caseMeta(result);
     return `
-      <tr>
+      <tr data-case="${escAttr(result.case_id)}" data-harness="${escAttr(result.harness ?? "")}" data-result="${result.success ? "pass" : "fail"}">
         <td>${esc(result.case_id)}</td>
+        <td>${esc(meta.difficulty ?? "")}</td>
+        <td>${esc(meta.size_bucket ?? "")}</td>
         <td>${esc(result.harness ?? "")}</td>
+        <td>${esc(result.condition_id ?? "")}</td>
         <td>${esc(result.model ?? harnessMetrics.model ?? "")}</td>
         <td>${esc(effort)}</td>
         <td class="${result.success ? "pass" : "fail"}">${result.success ? "pass" : "fail"}</td>
@@ -82,12 +100,20 @@ function renderHtml(results) {
     .metric .label { font-size: 12px; color: #6b6f76; margin-bottom: 6px; }
     .metric .value { font-size: 22px; font-weight: 650; }
     .table-wrap { overflow-x: auto; background: #ffffff; border: 1px solid #dededb; border-radius: 8px; }
+    .controls { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 16px; align-items: end; }
+    label { display: grid; gap: 4px; font-size: 12px; color: #5f6368; }
+    select { min-width: 150px; border: 1px solid #c9c9c5; border-radius: 6px; background: #fff; padding: 7px 8px; font: inherit; }
+    .summaries { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin: 0 0 18px; }
+    .summary-table { overflow-x: auto; background: #ffffff; border: 1px solid #dededb; border-radius: 8px; }
+    h2 { font-size: 15px; margin: 0; padding: 12px 12px 0; }
     table { border-collapse: collapse; width: 100%; font-size: 13px; }
     th, td { padding: 9px 10px; border-bottom: 1px solid #ededeb; text-align: left; white-space: nowrap; }
     th { position: sticky; top: 0; background: #fafaf8; color: #4b4f56; font-weight: 650; }
     tr:last-child td { border-bottom: 0; }
     .pass { color: #137333; font-weight: 700; }
     .fail { color: #b3261e; font-weight: 700; }
+    .muted { color: #6b6f76; }
+    .section { margin-top: 18px; }
     code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; }
   </style>
 </head>
@@ -101,13 +127,26 @@ function renderHtml(results) {
       <div class="metric"><div class="label">Agent Runs</div><div class="value">${summary.count}</div></div>
       <div class="metric"><div class="label">Pass Rate</div><div class="value">${summary.passRate}</div></div>
       <div class="metric"><div class="label">Median Wall Time</div><div class="value">${fmtMs(summary.medianWallMs)}</div></div>
-      <div class="metric"><div class="label">Total Reported Cost</div><div class="value">${summary.totalCost == null ? "n/a" : `$${summary.totalCost.toFixed(4)}`}</div></div>
+      <div class="metric"><div class="label">Invalid Runs</div><div class="value">${invalidResults.length}</div></div>
+      <div class="metric"><div class="label">Reported Cost</div><div class="value">${summary.reportedCost == null ? "n/a" : `$${summary.reportedCost.toFixed(4)}`}</div></div>
+      <div class="metric"><div class="label">Estimated Cost</div><div class="value">${summary.estimatedCost == null ? "n/a" : `$${summary.estimatedCost.toFixed(4)}`}</div></div>
+    </section>
+    <section class="summaries">
+      ${renderSummaryTable("By Case", caseSummaryRows)}
+      ${renderSummaryTable("By Harness", harnessSummaryRows)}
+      ${renderSummaryTable("By Difficulty", difficultySummaryRows)}
+      ${renderSummaryTable("By Repo Size", sizeSummaryRows)}
+    </section>
+    <section class="controls">
+      ${renderSelect("case-filter", "Case", ["", ...unique(agentResults.map((result) => result.case_id))])}
+      ${renderSelect("harness-filter", "Harness", ["", ...unique(agentResults.map((result) => result.harness))])}
+      ${renderSelect("result-filter", "Result", ["", "pass", "fail"])}
     </section>
     <div class="table-wrap">
       <table>
         <thead>
           <tr>
-            <th>Case</th><th>Harness</th><th>Model</th><th>Effort</th><th>Result</th>
+            <th>Case</th><th>Difficulty</th><th>Size</th><th>Harness</th><th>Condition</th><th>Model</th><th>Effort</th><th>Result</th>
             <th>Wall</th><th>Harness</th><th>Tests</th><th>Conv Turns</th><th>Assistant</th><th>Tools</th>
             <th>Commands</th><th>File Edits</th><th>Fresh Input</th><th>Cache Read</th><th>Cache Write</th><th>Effective Input</th>
             <th>Output</th><th>Reasoning</th><th>Effective Total</th>
@@ -117,7 +156,32 @@ function renderHtml(results) {
         <tbody>${rows}</tbody>
       </table>
     </div>
+    <section class="section">
+      <h2>Invalid Runs</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Case</th><th>Harness</th><th>Condition</th><th>Reason</th><th>Run</th></tr></thead>
+          <tbody>${invalidRows || `<tr><td colspan="5" class="muted">No invalid runs</td></tr>`}</tbody>
+        </table>
+      </div>
+    </section>
   </main>
+  <script>
+    const filters = {
+      case: document.getElementById("case-filter"),
+      harness: document.getElementById("harness-filter"),
+      result: document.getElementById("result-filter")
+    };
+    for (const filter of Object.values(filters)) filter.addEventListener("change", applyFilters);
+    function applyFilters() {
+      for (const row of document.querySelectorAll("tbody tr[data-case]")) {
+        const visible = (!filters.case.value || row.dataset.case === filters.case.value)
+          && (!filters.harness.value || row.dataset.harness === filters.harness.value)
+          && (!filters.result.value || row.dataset.result === filters.result.value);
+        row.hidden = !visible;
+      }
+    }
+  </script>
 </body>
 </html>`;
 }
@@ -263,16 +327,98 @@ function summarize(results) {
   const count = results.length;
   const passed = results.filter((result) => result.success).length;
   const wall = results.map((result) => result.metrics?.wall_time_ms).filter((value) => typeof value === "number").sort((a, b) => a - b);
-  const reportedCosts = results
-    .map((result) => result.metrics?.usage)
-    .filter((usage) => ["reported", "estimated"].includes(usage?.cost_source) && typeof usage.cost_usd === "number")
-    .map((usage) => usage.cost_usd);
+  const reportedCosts = costsBySource(results, "reported");
+  const estimatedCosts = costsBySource(results, "estimated");
   return {
     count,
     passRate: count ? `${Math.round((passed / count) * 100)}%` : "n/a",
     medianWallMs: wall.length ? wall[Math.floor(wall.length / 2)] : null,
-    totalCost: reportedCosts.length ? reportedCosts.reduce((sum, value) => sum + value, 0) : null,
+    reportedCost: reportedCosts.length ? reportedCosts.reduce((sum, value) => sum + value, 0) : null,
+    estimatedCost: estimatedCosts.length ? estimatedCosts.reduce((sum, value) => sum + value, 0) : null,
   };
+}
+
+function groupSummary(results, keyFn) {
+  const groups = new Map();
+  for (const result of results) {
+    const key = keyFn(result) ?? "unknown";
+    const group = groups.get(key) ?? [];
+    group.push(result);
+    groups.set(key, group);
+  }
+  return [...groups.entries()]
+    .sort((a, b) => String(a[0]).localeCompare(String(b[0])))
+    .map(([key, group]) => {
+      const passed = group.filter((result) => result.success).length;
+      const wall = median(group.map((result) => result.metrics?.wall_time_ms).filter((value) => typeof value === "number"));
+      const reported = costsBySource(group, "reported");
+      const estimated = costsBySource(group, "estimated");
+      return {
+        key,
+        count: group.length,
+        passed,
+        passRate: group.length ? `${Math.round((passed / group.length) * 100)}%` : "n/a",
+        medianWallMs: wall,
+        reportedCost: reported.length ? reported.reduce((sum, value) => sum + value, 0) : null,
+        estimatedCost: estimated.length ? estimated.reduce((sum, value) => sum + value, 0) : null,
+      };
+    });
+}
+
+function renderSummaryTable(title, rows) {
+  return `
+      <div class="summary-table">
+        <h2>${esc(title)}</h2>
+        <table>
+          <thead><tr><th>Name</th><th>Runs</th><th>Pass</th><th>Rate</th><th>Median Wall</th><th>Reported $</th><th>Estimated $</th></tr></thead>
+          <tbody>${rows || `<tr><td colspan="7" class="muted">No runs</td></tr>`}</tbody>
+        </table>
+      </div>
+    `;
+}
+
+function renderSummaryRows(rows) {
+  return rows.map((row) => `
+    <tr>
+      <td>${esc(row.key)}</td>
+      <td>${fmt(row.count)}</td>
+      <td>${fmt(row.passed)}</td>
+      <td>${esc(row.passRate)}</td>
+      <td>${fmtMs(row.medianWallMs)}</td>
+      <td>${row.reportedCost == null ? "" : `$${row.reportedCost.toFixed(4)}`}</td>
+      <td>${row.estimatedCost == null ? "" : `$${row.estimatedCost.toFixed(4)}`}</td>
+    </tr>
+  `).join("\n");
+}
+
+function renderSelect(id, label, values) {
+  return `
+    <label>${esc(label)}
+      <select id="${escAttr(id)}">
+        ${values.map((value) => `<option value="${escAttr(value ?? "")}">${esc(value || "All")}</option>`).join("\n")}
+      </select>
+    </label>
+  `;
+}
+
+function costsBySource(results, source) {
+  return results
+    .map((result) => result.metrics?.usage)
+    .filter((usage) => usage?.cost_source === source && typeof usage.cost_usd === "number")
+    .map((usage) => usage.cost_usd);
+}
+
+function median(values) {
+  const sorted = values.toSorted((a, b) => a - b);
+  return sorted.length ? sorted[Math.floor(sorted.length / 2)] : null;
+}
+
+function unique(values) {
+  return [...new Set(values.filter(Boolean))].sort();
+}
+
+function caseMeta(result) {
+  return result.case_metadata ?? {};
 }
 
 function readJsonl(path) {
@@ -351,4 +497,8 @@ function esc(value) {
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;");
+}
+
+function escAttr(value) {
+  return esc(value).replaceAll("'", "&#39;");
 }

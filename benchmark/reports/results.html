@@ -16,32 +16,195 @@
     .metric .label { font-size: 12px; color: #6b6f76; margin-bottom: 6px; }
     .metric .value { font-size: 22px; font-weight: 650; }
     .table-wrap { overflow-x: auto; background: #ffffff; border: 1px solid #dededb; border-radius: 8px; }
+    .controls { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 16px; align-items: end; }
+    label { display: grid; gap: 4px; font-size: 12px; color: #5f6368; }
+    select { min-width: 150px; border: 1px solid #c9c9c5; border-radius: 6px; background: #fff; padding: 7px 8px; font: inherit; }
+    .summaries { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin: 0 0 18px; }
+    .summary-table { overflow-x: auto; background: #ffffff; border: 1px solid #dededb; border-radius: 8px; }
+    h2 { font-size: 15px; margin: 0; padding: 12px 12px 0; }
     table { border-collapse: collapse; width: 100%; font-size: 13px; }
     th, td { padding: 9px 10px; border-bottom: 1px solid #ededeb; text-align: left; white-space: nowrap; }
     th { position: sticky; top: 0; background: #fafaf8; color: #4b4f56; font-weight: 650; }
     tr:last-child td { border-bottom: 0; }
     .pass { color: #137333; font-weight: 700; }
     .fail { color: #b3261e; font-weight: 700; }
+    .muted { color: #6b6f76; }
+    .section { margin-top: 18px; }
     code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; }
   </style>
 </head>
 <body>
   <header>
     <h1>Harness Benchmark Results</h1>
-    <p>Generated at 2026-05-02T16:58:00.681Z</p>
+    <p>Generated at 2026-05-02T18:44:19.419Z</p>
   </header>
   <main>
     <section class="summary">
       <div class="metric"><div class="label">Agent Runs</div><div class="value">9</div></div>
       <div class="metric"><div class="label">Pass Rate</div><div class="value">67%</div></div>
       <div class="metric"><div class="label">Median Wall Time</div><div class="value">239.7s</div></div>
-      <div class="metric"><div class="label">Total Reported Cost</div><div class="value">$3.0107</div></div>
+      <div class="metric"><div class="label">Invalid Runs</div><div class="value">1</div></div>
+      <div class="metric"><div class="label">Reported Cost</div><div class="value">$3.0107</div></div>
+      <div class="metric"><div class="label">Estimated Cost</div><div class="value">n/a</div></div>
+    </section>
+    <section class="summaries">
+      
+      <div class="summary-table">
+        <h2>By Case</h2>
+        <table>
+          <thead><tr><th>Name</th><th>Runs</th><th>Pass</th><th>Rate</th><th>Median Wall</th><th>Reported $</th><th>Estimated $</th></tr></thead>
+          <tbody>
+    <tr>
+      <td>sharkdp-bat-high-fallback-syntax</td>
+      <td>3</td>
+      <td>1</td>
+      <td>33%</td>
+      <td>262.2s</td>
+      <td>$1.4101</td>
+      <td></td>
+    </tr>
+  
+
+    <tr>
+      <td>sharkdp-bat-low-zip-binary-detection</td>
+      <td>3</td>
+      <td>3</td>
+      <td>100%</td>
+      <td>189.4s</td>
+      <td>$0.4362</td>
+      <td></td>
+    </tr>
+  
+
+    <tr>
+      <td>sharkdp-bat-mid-control-character-wrapping</td>
+      <td>3</td>
+      <td>2</td>
+      <td>67%</td>
+      <td>333.5s</td>
+      <td>$1.1644</td>
+      <td></td>
+    </tr>
+  </tbody>
+        </table>
+      </div>
+    
+      
+      <div class="summary-table">
+        <h2>By Harness</h2>
+        <table>
+          <thead><tr><th>Name</th><th>Runs</th><th>Pass</th><th>Rate</th><th>Median Wall</th><th>Reported $</th><th>Estimated $</th></tr></thead>
+          <tbody>
+    <tr>
+      <td>claude</td>
+      <td>3</td>
+      <td>2</td>
+      <td>67%</td>
+      <td>262.2s</td>
+      <td>$3.0107</td>
+      <td></td>
+    </tr>
+  
+
+    <tr>
+      <td>codex</td>
+      <td>3</td>
+      <td>3</td>
+      <td>100%</td>
+      <td>295.0s</td>
+      <td></td>
+      <td></td>
+    </tr>
+  
+
+    <tr>
+      <td>cursor</td>
+      <td>3</td>
+      <td>1</td>
+      <td>33%</td>
+      <td>237.6s</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+        </table>
+      </div>
+    
+      
+      <div class="summary-table">
+        <h2>By Difficulty</h2>
+        <table>
+          <thead><tr><th>Name</th><th>Runs</th><th>Pass</th><th>Rate</th><th>Median Wall</th><th>Reported $</th><th>Estimated $</th></tr></thead>
+          <tbody>
+    <tr>
+      <td>unknown</td>
+      <td>9</td>
+      <td>6</td>
+      <td>67%</td>
+      <td>239.7s</td>
+      <td>$3.0107</td>
+      <td></td>
+    </tr>
+  </tbody>
+        </table>
+      </div>
+    
+      
+      <div class="summary-table">
+        <h2>By Repo Size</h2>
+        <table>
+          <thead><tr><th>Name</th><th>Runs</th><th>Pass</th><th>Rate</th><th>Median Wall</th><th>Reported $</th><th>Estimated $</th></tr></thead>
+          <tbody>
+    <tr>
+      <td>unknown</td>
+      <td>9</td>
+      <td>6</td>
+      <td>67%</td>
+      <td>239.7s</td>
+      <td>$3.0107</td>
+      <td></td>
+    </tr>
+  </tbody>
+        </table>
+      </div>
+    
+    </section>
+    <section class="controls">
+      
+    <label>Case
+      <select id="case-filter">
+        <option value="">All</option>
+<option value="sharkdp-bat-high-fallback-syntax">sharkdp-bat-high-fallback-syntax</option>
+<option value="sharkdp-bat-low-zip-binary-detection">sharkdp-bat-low-zip-binary-detection</option>
+<option value="sharkdp-bat-mid-control-character-wrapping">sharkdp-bat-mid-control-character-wrapping</option>
+      </select>
+    </label>
+  
+      
+    <label>Harness
+      <select id="harness-filter">
+        <option value="">All</option>
+<option value="claude">claude</option>
+<option value="codex">codex</option>
+<option value="cursor">cursor</option>
+      </select>
+    </label>
+  
+      
+    <label>Result
+      <select id="result-filter">
+        <option value="">All</option>
+<option value="pass">pass</option>
+<option value="fail">fail</option>
+      </select>
+    </label>
+  
     </section>
     <div class="table-wrap">
       <table>
         <thead>
           <tr>
-            <th>Case</th><th>Harness</th><th>Model</th><th>Effort</th><th>Result</th>
+            <th>Case</th><th>Difficulty</th><th>Size</th><th>Harness</th><th>Condition</th><th>Model</th><th>Effort</th><th>Result</th>
             <th>Wall</th><th>Harness</th><th>Tests</th><th>Conv Turns</th><th>Assistant</th><th>Tools</th>
             <th>Commands</th><th>File Edits</th><th>Fresh Input</th><th>Cache Read</th><th>Cache Write</th><th>Effective Input</th>
             <th>Output</th><th>Reasoning</th><th>Effective Total</th>
@@ -49,9 +212,12 @@
           </tr>
         </thead>
         <tbody>
-      <tr>
+      <tr data-case="sharkdp-bat-low-zip-binary-detection" data-harness="claude" data-result="pass">
         <td>sharkdp-bat-low-zip-binary-detection</td>
+        <td></td>
+        <td></td>
         <td>claude</td>
+        <td></td>
         <td>claude-opus-4-7</td>
         <td>medium</td>
         <td class="pass">pass</td>
@@ -76,9 +242,12 @@
       </tr>
     
 
-      <tr>
+      <tr data-case="sharkdp-bat-low-zip-binary-detection" data-harness="cursor" data-result="pass">
         <td>sharkdp-bat-low-zip-binary-detection</td>
+        <td></td>
+        <td></td>
         <td>cursor</td>
+        <td></td>
         <td>gpt-5.5-medium</td>
         <td>medium</td>
         <td class="pass">pass</td>
@@ -103,9 +272,12 @@
       </tr>
     
 
-      <tr>
+      <tr data-case="sharkdp-bat-low-zip-binary-detection" data-harness="codex" data-result="pass">
         <td>sharkdp-bat-low-zip-binary-detection</td>
+        <td></td>
+        <td></td>
         <td>codex</td>
+        <td></td>
         <td>gpt-5.5</td>
         <td>medium</td>
         <td class="pass">pass</td>
@@ -130,9 +302,12 @@
       </tr>
     
 
-      <tr>
+      <tr data-case="sharkdp-bat-mid-control-character-wrapping" data-harness="codex" data-result="pass">
         <td>sharkdp-bat-mid-control-character-wrapping</td>
+        <td></td>
+        <td></td>
         <td>codex</td>
+        <td></td>
         <td>gpt-5.5</td>
         <td>medium</td>
         <td class="pass">pass</td>
@@ -157,9 +332,12 @@
       </tr>
     
 
-      <tr>
+      <tr data-case="sharkdp-bat-mid-control-character-wrapping" data-harness="cursor" data-result="fail">
         <td>sharkdp-bat-mid-control-character-wrapping</td>
+        <td></td>
+        <td></td>
         <td>cursor</td>
+        <td></td>
         <td>gpt-5.5-medium</td>
         <td>medium</td>
         <td class="fail">fail</td>
@@ -184,9 +362,12 @@
       </tr>
     
 
-      <tr>
+      <tr data-case="sharkdp-bat-mid-control-character-wrapping" data-harness="claude" data-result="pass">
         <td>sharkdp-bat-mid-control-character-wrapping</td>
+        <td></td>
+        <td></td>
         <td>claude</td>
+        <td></td>
         <td>claude-opus-4-7</td>
         <td>medium</td>
         <td class="pass">pass</td>
@@ -211,9 +392,12 @@
       </tr>
     
 
-      <tr>
+      <tr data-case="sharkdp-bat-high-fallback-syntax" data-harness="codex" data-result="pass">
         <td>sharkdp-bat-high-fallback-syntax</td>
+        <td></td>
+        <td></td>
         <td>codex</td>
+        <td></td>
         <td>gpt-5.5</td>
         <td>medium</td>
         <td class="pass">pass</td>
@@ -238,9 +422,12 @@
       </tr>
     
 
-      <tr>
+      <tr data-case="sharkdp-bat-high-fallback-syntax" data-harness="claude" data-result="fail">
         <td>sharkdp-bat-high-fallback-syntax</td>
+        <td></td>
+        <td></td>
         <td>claude</td>
+        <td></td>
         <td>claude-opus-4-7</td>
         <td>medium</td>
         <td class="fail">fail</td>
@@ -265,9 +452,12 @@
       </tr>
     
 
-      <tr>
+      <tr data-case="sharkdp-bat-high-fallback-syntax" data-harness="cursor" data-result="fail">
         <td>sharkdp-bat-high-fallback-syntax</td>
+        <td></td>
+        <td></td>
         <td>cursor</td>
+        <td></td>
         <td>gpt-5.5-medium</td>
         <td>medium</td>
         <td class="fail">fail</td>
@@ -293,6 +483,39 @@
     </tbody>
       </table>
     </div>
+    <section class="section">
+      <h2>Invalid Runs</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Case</th><th>Harness</th><th>Condition</th><th>Reason</th><th>Run</th></tr></thead>
+          <tbody>
+      <tr>
+        <td>sharkdp-bat-mid-control-character-wrapping</td>
+        <td>claude</td>
+        <td></td>
+        <td>infrastructure failure: hidden-test build failed with No space left on device before case outcome could be evaluated</td>
+        <td><code>2026-05-02T16-25-17-966Z-sharkdp-bat-mid-control-character-wrapping-agent</code></td>
+      </tr>
+    </tbody>
+        </table>
+      </div>
+    </section>
   </main>
+  <script>
+    const filters = {
+      case: document.getElementById("case-filter"),
+      harness: document.getElementById("harness-filter"),
+      result: document.getElementById("result-filter")
+    };
+    for (const filter of Object.values(filters)) filter.addEventListener("change", applyFilters);
+    function applyFilters() {
+      for (const row of document.querySelectorAll("tbody tr[data-case]")) {
+        const visible = (!filters.case.value || row.dataset.case === filters.case.value)
+          && (!filters.harness.value || row.dataset.harness === filters.harness.value)
+          && (!filters.result.value || row.dataset.result === filters.result.value);
+        row.hidden = !visible;
+      }
+    }
+  </script>
 </body>
 </html>
