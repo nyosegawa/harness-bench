@@ -1,0 +1,35 @@
+id: langflow-ai-langflow-mid-mcp-connectable-inputs
+repo: langflow-ai/langflow
+repo_url: https://github.com/langflow-ai/langflow
+license: MIT
+stars_at_selection: 147629
+size_bucket: large
+language_tags: [python, web-app, mcp, schema]
+pr_number: 12782
+pr_url: https://github.com/langflow-ai/langflow/pull/12782
+pr_title: "fix(mcp): render connection handles for non-string MCP tool inputs"
+merged_at: "2026-04-28T22:23:55Z"
+base_commit: 1a9ffa05c0b9d38eb866ff81c9470c545ecc6d13
+original_pr_head_commit: e9da4b252e7a0bbb269148fde384654644fdcf18
+fixed_commit: d1b73e9f18549c76e27bda1b6daf1627ec701049
+difficulty: mid
+instruction: >
+  MCP tool inputs generated from number, boolean, and JSON schema fields render
+  as UI-only widgets instead of connectable handles. Reproduce schema-to-input
+  conversion and make non-string fields advertise the correct connection input
+  types while preserving their value coercion behavior.
+setup:
+  - uv run --package lfx python -c "import lfx"
+public_tests:
+  - uv run --package lfx python -c "from lfx.io.schema import schema_to_langflow_inputs"
+hidden_tests:
+  - benchmark/cases/langflow-ai__langflow/hidden-tests/mid/run.sh
+test_strategy:
+  core_tests:
+    - benchmark/cases/langflow-ai__langflow/hidden-tests/mid/run.sh
+  oracle_suites: []
+  regression_tests: []
+  success_rule: core_tests_pass
+selection_notes: >
+  Mid-difficulty schema conversion and coercion bug crossing MCP model schema,
+  input metadata, and frontend handle semantics.

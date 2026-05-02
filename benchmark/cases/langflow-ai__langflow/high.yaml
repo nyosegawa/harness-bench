@@ -1,0 +1,36 @@
+id: langflow-ai-langflow-high-lfx-stream-fallback
+repo: langflow-ai/langflow
+repo_url: https://github.com/langflow-ai/langflow
+license: MIT
+stars_at_selection: 147629
+size_bucket: large
+language_tags: [python, web-app, cli, streaming]
+pr_number: 12906
+pr_url: https://github.com/langflow-ai/langflow/pull/12906
+pr_title: "fix: fallback to sync call in lfx run when stream=true"
+merged_at: "2026-04-29T15:44:47Z"
+base_commit: 3f2d2fc39920149fd5552b8903a49734f3ea9c59
+original_pr_head_commit: 7b68a5ad1b040a04bf5f12daa4404ac4c480b63c
+fixed_commit: 784169cee7adb6ea20c062f5ac2dc735cdd26527
+difficulty: high
+instruction: >
+  lfx run can crash or return empty output when stream=true because streaming
+  model output is persisted without a session/event manager to drain chunks.
+  Reproduce the streaming handler path and fall back to a normal ainvoke result
+  when lfx lacks the runtime context required for token streaming.
+setup:
+  - uv run --package lfx python -c "import lfx"
+public_tests:
+  - uv run --package lfx python -c "from lfx.base.models.model import LCModelComponent"
+hidden_tests:
+  - benchmark/cases/langflow-ai__langflow/hidden-tests/high/run.sh
+test_strategy:
+  core_tests:
+    - benchmark/cases/langflow-ai__langflow/hidden-tests/high/run.sh
+  oracle_suites: []
+  regression_tests: []
+  success_rule: core_tests_pass
+selection_notes: >
+  Higher-difficulty runtime bug in streaming model handling for CLI execution.
+  Hidden test exercises the async handler with missing event-manager context and
+  verifies it returns plain text without persisting an unconsumed stream.
