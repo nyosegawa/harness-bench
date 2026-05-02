@@ -1,0 +1,36 @@
+id: axios-axios-low-settle-error-code
+repo: axios/axios
+repo_url: https://github.com/axios/axios
+license: MIT
+stars_at_selection: 107000
+size_bucket: small
+language_tags: [javascript, node, http-client]
+pr_number: 7276
+pr_url: https://github.com/axios/axios/pull/7276
+pr_title: "fix: prevent undefined error codes in settle"
+merged_at: "2026-04-22T05:28:32Z"
+base_commit: e57349992f230b6b13e80613eb84302560aa5ba8
+original_pr_head_commit: b71f141769fbee5a658aa2fd5661c27aaa951b31
+fixed_commit: 5107ee69aee527b19eabaf80000ca65752135435
+difficulty: low
+instruction: >
+  Custom validateStatus callbacks can reject statuses outside the normal 4xx
+  and 5xx ranges, and AxiosError.code becomes undefined. Reproduce the settle
+  behavior and ensure rejected responses always receive a defined bad-request or
+  bad-response error code.
+setup:
+  - npm install
+public_tests:
+  - npm run test:vitest:unit -- tests/unit/core
+hidden_tests:
+  - benchmark/cases/axios__axios/hidden-tests/low/run.sh
+test_strategy:
+  core_tests:
+    - benchmark/cases/axios__axios/hidden-tests/low/run.sh
+  oracle_suites: []
+  regression_tests: []
+  success_rule: core_tests_pass
+selection_notes: >
+  Focused core error-classification bug with a narrow implementation surface.
+  Hidden tests call settle directly and require codes for custom rejected
+  non-4xx/5xx statuses.

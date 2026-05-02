@@ -1,0 +1,36 @@
+id: axios-axios-mid-fetch-global-access
+repo: axios/axios
+repo_url: https://github.com/axios/axios
+license: MIT
+stars_at_selection: 107000
+size_bucket: small
+language_tags: [javascript, node, fetch, http-client]
+pr_number: 7260
+pr_url: https://github.com/axios/axios/pull/7260
+pr_title: "fix(fetch): defer global access to avoid module-load TypeError"
+merged_at: "2026-04-20T06:45:31Z"
+base_commit: ad68e1a484b50086af427f767bbd7d6e3aab7ac3
+original_pr_head_commit: dac3e7384c1b53308c956c5cd1c44c28022edbfd
+fixed_commit: e57349992f230b6b13e80613eb84302560aa5ba8
+difficulty: mid
+instruction: >
+  The fetch adapter can throw during module load when the internal global
+  reference is temporarily unavailable. Reproduce the module-load failure and
+  defer global fetch API access so adapter creation still works with explicit
+  env overrides.
+setup:
+  - npm install
+public_tests:
+  - npm run test:vitest:unit -- tests/unit/adapters/fetch.test.js
+hidden_tests:
+  - benchmark/cases/axios__axios/hidden-tests/mid/run.sh
+test_strategy:
+  core_tests:
+    - benchmark/cases/axios__axios/hidden-tests/mid/run.sh
+  oracle_suites: []
+  regression_tests: []
+  success_rule: core_tests_pass
+selection_notes: >
+  Adapter initialization bug that requires understanding module evaluation and
+  explicit environment overrides. Hidden tests avoid browser infrastructure and
+  check the module-load edge case directly.

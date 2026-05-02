@@ -1,0 +1,4430 @@
+{
+  "generatedAt": "2026-05-02T19:07:14.116Z",
+  "repo": "axios/axios",
+  "since": "2026-01-01",
+  "limit": 80,
+  "debugKeywords": [
+    "bug",
+    "fix",
+    "regression",
+    "crash",
+    "incorrect",
+    "wrong",
+    "error",
+    "exception",
+    "edge",
+    "flaky",
+    "race",
+    "leak",
+    "validation",
+    "parser",
+    "parsing",
+    "timeout",
+    "fail",
+    "failure",
+    "broken"
+  ],
+  "prs": [
+    {
+      "number": 10836,
+      "title": "Improve GET request example clarity in documentation.",
+      "url": "https://github.com/axios/axios/pull/10836",
+      "mergedAt": "2026-05-02T16:27:31Z",
+      "baseRefName": "v1.x",
+      "headRefName": "hpinmetaverse-improve_get_exampleDoc-1",
+      "baseRefOid": "90ae1993e0eaa39ccccbaa25957bb23cc5676df7",
+      "headRefOid": "9cd706ccb836c581371c760b4c6a5c61c656ea1f",
+      "mergeCommitOid": "050608027b8d9dc9f3db82314ca7281bb1ca629e",
+      "changedFiles": 1,
+      "additions": 10,
+      "deletions": 2,
+      "labels": [
+        "priority::medium",
+        "commit::docs",
+        "status::changes-requested"
+      ],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "docs-only",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "additions": 10,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10835,
+      "title": "chore: ai readiness",
+      "url": "https://github.com/axios/axios/pull/10835",
+      "mergedAt": "2026-05-02T15:18:57Z",
+      "baseRefName": "v1.x",
+      "headRefName": "chore/ai-readiness",
+      "baseRefOid": "df53d7dd99b202fb194217abd127ae6a630e70dc",
+      "headRefOid": "12bd24e2a8530edd1ae5485cee067bd8f8102ec0",
+      "mergeCommitOid": "90ae1993e0eaa39ccccbaa25957bb23cc5676df7",
+      "changedFiles": 4,
+      "additions": 50,
+      "deletions": 146,
+      "labels": [
+        "priority::medium",
+        "commit::chore"
+      ],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".github/workflows/update-sponsor-block.yml",
+          "additions": 0,
+          "deletions": 74,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "AGENTS.md",
+          "additions": 49,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "CLAUDE.md",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "scripts/update-readme-sponsors.mjs",
+          "additions": 0,
+          "deletions": 72,
+          "changeType": "DELETED"
+        }
+      ]
+    },
+    {
+      "number": 10834,
+      "title": "chore(release): prepare release 1.16.0",
+      "url": "https://github.com/axios/axios/pull/10834",
+      "mergedAt": "2026-05-02T11:49:30Z",
+      "baseRefName": "v1.x",
+      "headRefName": "release-v1x/version-1.16.0",
+      "baseRefOid": "9d92bcd32639d1eea5b89f03ae45f248d3bb058e",
+      "headRefOid": "a75daf5549879b6b7df2399daf6a26ea0121c9d4",
+      "mergeCommitOid": "df53d7dd99b202fb194217abd127ae6a630e70dc",
+      "changedFiles": 3,
+      "additions": 8,
+      "deletions": 8,
+      "labels": [
+        "priority::high",
+        "commit::chore",
+        "type::automated-pr"
+      ],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "lib/env/data.js",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "package-lock.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "package.json",
+          "additions": 5,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10833,
+      "title": "fix: gadgets and smaller issues",
+      "url": "https://github.com/axios/axios/pull/10833",
+      "mergedAt": "2026-05-02T10:40:59Z",
+      "baseRefName": "v1.x",
+      "headRefName": "fix/gadgets-and-smaller-issues",
+      "baseRefOid": "5107ee69aee527b19eabaf80000ca65752135435",
+      "headRefOid": "58816eabc989f1efc429bad1d5dd1e4cd64ebcc0",
+      "mergeCommitOid": "9d92bcd32639d1eea5b89f03ae45f248d3bb058e",
+      "changedFiles": 23,
+      "additions": 1495,
+      "deletions": 352,
+      "labels": [
+        "priority::medium",
+        "commit::fix",
+        "type::security"
+      ],
+      "keywordHits": [
+        "fix",
+        "error",
+        "leak"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/browser/cookies.browser.test.js",
+        "tests/browser/xsrf.browser.test.js",
+        "tests/unit/adapters/fetch.test.js",
+        "tests/unit/adapters/http.test.js",
+        "tests/unit/core/AxiosError.test.js",
+        "tests/unit/helpers/formDataToStream.test.js",
+        "tests/unit/helpers/shouldBypassProxy.test.js",
+        "tests/unit/prototypePollution.test.js"
+      ],
+      "debugScore": 2,
+      "suggestedDifficulty": "high",
+      "exclusionHints": [
+        "huge-diff"
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "additions": 22,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/pages/advanced/error-handling.md",
+          "additions": 11,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/pages/advanced/request-config.md",
+          "additions": 24,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "index.d.cts",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "index.d.ts",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/adapters/adapters.js",
+          "additions": 4,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/adapters/http.js",
+          "additions": 68,
+          "deletions": 30,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/core/AxiosError.js",
+          "additions": 85,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/core/AxiosHeaders.js",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/core/mergeConfig.js",
+          "additions": 6,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/helpers/cookies.js",
+          "additions": 14,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/helpers/resolveConfig.js",
+          "additions": 27,
+          "deletions": 18,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/helpers/shouldBypassProxy.js",
+          "additions": 26,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/helpers/validator.js",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/utils.js",
+          "additions": 22,
+          "deletions": 10,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/browser/cookies.browser.test.js",
+          "additions": 37,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/browser/xsrf.browser.test.js",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/adapters/fetch.test.js",
+          "additions": 50,
+          "deletions": 50,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/adapters/http.test.js",
+          "additions": 399,
+          "deletions": 159,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/core/AxiosError.test.js",
+          "additions": 217,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/helpers/formDataToStream.test.js",
+          "additions": 56,
+          "deletions": 34,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/helpers/shouldBypassProxy.test.js",
+          "additions": 95,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/prototypePollution.test.js",
+          "additions": 322,
+          "deletions": 38,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 7414,
+      "title": "fix(types): align cjs cancelToken types",
+      "url": "https://github.com/axios/axios/pull/7414",
+      "mergedAt": "2026-04-26T10:52:11Z",
+      "baseRefName": "v1.x",
+      "headRefName": "mn/fix/cancel-token",
+      "baseRefOid": "c918e85e91528da910836f0fa5c74ca3714daff1",
+      "headRefOid": "9f51f1bde514524f883b96f22645faca0714d762",
+      "mergeCommitOid": "b072ee8e0c628bd5e4706ba38887b9f60720c3d8",
+      "changedFiles": 1,
+      "additions": 1,
+      "deletions": 1,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "error"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "index.d.cts",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 7276,
+      "title": "fix: prevent undefined error codes in settle",
+      "url": "https://github.com/axios/axios/pull/7276",
+      "mergedAt": "2026-05-01T17:24:29Z",
+      "baseRefName": "v1.x",
+      "headRefName": "v1.x",
+      "baseRefOid": "e57349992f230b6b13e80613eb84302560aa5ba8",
+      "headRefOid": "b71f141769fbee5a658aa2fd5661c27aaa951b31",
+      "mergeCommitOid": "5107ee69aee527b19eabaf80000ca65752135435",
+      "changedFiles": 2,
+      "additions": 137,
+      "deletions": 11,
+      "labels": [
+        "priority::medium",
+        "commit::fix",
+        "status::changes-requested",
+        "status::needs-rebase"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "error",
+        "fail"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/unit/core/settle.test.js"
+      ],
+      "debugScore": 6,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "lib/core/settle.js",
+          "additions": 7,
+          "deletions": 11,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/core/settle.test.js",
+          "additions": 130,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 7260,
+      "title": "fix(fetch): defer global access to avoid module-load TypeError",
+      "url": "https://github.com/axios/axios/pull/7260",
+      "mergedAt": "2026-05-01T16:20:18Z",
+      "baseRefName": "v1.x",
+      "headRefName": "fix/global-undefined-issue-7259",
+      "baseRefOid": "ad68e1a484b50086af427f767bbd7d6e3aab7ac3",
+      "headRefOid": "dac3e7384c1b53308c956c5cd1c44c28022edbfd",
+      "mergeCommitOid": "e57349992f230b6b13e80613eb84302560aa5ba8",
+      "changedFiles": 2,
+      "additions": 26,
+      "deletions": 8,
+      "labels": [
+        "priority::medium",
+        "commit::fix",
+        "status::changes-requested",
+        "status::needs-rebase"
+      ],
+      "keywordHits": [
+        "fix",
+        "crash",
+        "error",
+        "fail",
+        "failure"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/unit/adapters/fetch.test.js"
+      ],
+      "debugScore": 7,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "lib/adapters/fetch.js",
+          "additions": 7,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/adapters/fetch.test.js",
+          "additions": 19,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10790,
+      "title": "chore: update changelog and packages",
+      "url": "https://github.com/axios/axios/pull/10790",
+      "mergedAt": "2026-04-21T18:34:54Z",
+      "baseRefName": "v1.x",
+      "headRefName": "chore/update-changelog-and-packages",
+      "baseRefOid": "b2890f8efbcfcd2fa3652a1eae7fc40f9de1f9e6",
+      "headRefOid": "14144d0242caa73f13417a38101af69636d5deb4",
+      "mergeCommitOid": "de1a81004411a671556d0e1c9be09d6052ef88b5",
+      "changedFiles": 9,
+      "additions": 841,
+      "deletions": 2363,
+      "labels": [
+        "priority::medium",
+        "commit::chore"
+      ],
+      "keywordHits": [
+        "fix",
+        "leak"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/module/esm/package-lock.json",
+        "tests/module/esm/package.json",
+        "tests/smoke/esm/package-lock.json",
+        "tests/smoke/esm/package.json"
+      ],
+      "debugScore": -3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "huge-diff"
+      ],
+      "files": [
+        {
+          "path": "CHANGELOG.md",
+          "additions": 32,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/package-lock.json",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/package.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "package-lock.json",
+          "additions": 426,
+          "deletions": 2041,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "package.json",
+          "additions": 14,
+          "deletions": 21,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/module/esm/package-lock.json",
+          "additions": 180,
+          "deletions": 143,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/module/esm/package.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/smoke/esm/package-lock.json",
+          "additions": 179,
+          "deletions": 142,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/smoke/esm/package.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10819,
+      "title": "fix(http): honor timeout during connect without redirects",
+      "url": "https://github.com/axios/axios/pull/10819",
+      "mergedAt": "2026-04-30T16:59:05Z",
+      "baseRefName": "v1.x",
+      "headRefName": "fix/http-connect-timeout-maxredirects-0",
+      "baseRefOid": "2a51828213128691d2e37502b5eb2cf4965a737d",
+      "headRefOid": "f4ed29a7883f52f49f30707aabc13bcbf3b0e0cc",
+      "mergeCommitOid": "ad68e1a484b50086af427f767bbd7d6e3aab7ac3",
+      "changedFiles": 2,
+      "additions": 140,
+      "deletions": 18,
+      "labels": [
+        "priority::medium",
+        "commit::fix"
+      ],
+      "keywordHits": [
+        "fix",
+        "regression",
+        "error",
+        "timeout"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/unit/adapters/http.test.js"
+      ],
+      "debugScore": 6,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "lib/adapters/http.js",
+          "additions": 46,
+          "deletions": 18,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/adapters/http.test.js",
+          "additions": 94,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10825,
+      "title": "fix(http): decode URL basic auth credentials",
+      "url": "https://github.com/axios/axios/pull/10825",
+      "mergedAt": "2026-04-30T16:49:57Z",
+      "baseRefName": "v1.x",
+      "headRefName": "af/fix-url-basic-auth-decoding",
+      "baseRefOid": "0e8b6bbb542131bae9940618d84d5286255d4db1",
+      "headRefOid": "4fe03aba52ed5c7ecf70d71d4477277e54d29f7e",
+      "mergeCommitOid": "2a51828213128691d2e37502b5eb2cf4965a737d",
+      "changedFiles": 2,
+      "additions": 56,
+      "deletions": 2,
+      "labels": [
+        "priority::medium",
+        "commit::fix"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "validation",
+        "fail"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/unit/adapters/http.test.js"
+      ],
+      "debugScore": 6,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "lib/adapters/http.js",
+          "additions": 18,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/adapters/http.test.js",
+          "additions": 38,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10822,
+      "title": "fix(http): preserve user-supplied Host header when forwarding through a proxy (#10805)",
+      "url": "https://github.com/axios/axios/pull/10822",
+      "mergedAt": "2026-04-30T16:33:34Z",
+      "baseRefName": "v1.x",
+      "headRefName": "fix/10805-preserve-host-header-with-proxy",
+      "baseRefOid": "79f39e1d041dca87173226d0255f90eaf252564b",
+      "headRefOid": "eaacc9aa904281c18b3dbc7b5c7e66f551c2a790",
+      "mergeCommitOid": "0e8b6bbb542131bae9940618d84d5286255d4db1",
+      "changedFiles": 3,
+      "additions": 76,
+      "deletions": 1,
+      "labels": [
+        "priority::medium",
+        "commit::fix"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/unit/adapters/http.test.js"
+      ],
+      "debugScore": 4,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "README.md",
+          "additions": 6,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/adapters/http.js",
+          "additions": 12,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/adapters/http.test.js",
+          "additions": 58,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10821,
+      "title": "docs: document paramsSerializer.encode for strict RFC 3986 query encoding (#10809)",
+      "url": "https://github.com/axios/axios/pull/10821",
+      "mergedAt": "2026-04-30T16:19:04Z",
+      "baseRefName": "v1.x",
+      "headRefName": "docs/paramsSerializer-strict-encoding",
+      "baseRefOid": "0fe3a5fc14829535e1d517c662d448e86c33438e",
+      "headRefOid": "8ddb414102d25a65bfdebe772544a25c25c3a8ce",
+      "mergeCommitOid": "79f39e1d041dca87173226d0255f90eaf252564b",
+      "changedFiles": 5,
+      "additions": 95,
+      "deletions": 0,
+      "labels": [
+        "priority::medium",
+        "commit::docs"
+      ],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "docs-only",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "additions": 19,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/es/pages/advanced/request-config.md",
+          "additions": 19,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/fr/pages/advanced/request-config.md",
+          "additions": 19,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/pages/advanced/request-config.md",
+          "additions": 19,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/zh/pages/advanced/request-config.md",
+          "additions": 19,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10782,
+      "title": "[Docs/Types] Update `parseReviver` TypeScript definitions for ES2023 and add to official configuration documentation",
+      "url": "https://github.com/axios/axios/pull/10782",
+      "mergedAt": "2026-04-29T17:33:58Z",
+      "baseRefName": "v1.x",
+      "headRefName": "feat/types-parse-reviver-context",
+      "baseRefOid": "cd6737fd84bdb7caf2a319d3579573a49f9d238d",
+      "headRefOid": "8df2d9ee69cf0e1b9e36e1e0ad042e2ef4bc97ec",
+      "mergeCommitOid": "0fe3a5fc14829535e1d517c662d448e86c33438e",
+      "changedFiles": 4,
+      "additions": 67,
+      "deletions": 2,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "error",
+        "edge",
+        "parser",
+        "parsing"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 5,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "additions": 21,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/pages/advanced/request-config.md",
+          "additions": 44,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "index.d.cts",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "index.d.ts",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 7149,
+      "title": "fix: unsettled promise when request is aborted and compression is used and maxRedirects is set to 0",
+      "url": "https://github.com/axios/axios/pull/7149",
+      "mergedAt": "2026-04-29T17:21:04Z",
+      "baseRefName": "v1.x",
+      "headRefName": "bugfix/handle-closed-socket",
+      "baseRefOid": "9fcdf488119c56133ac6bc1df7155598e347b773",
+      "headRefOid": "9fd728feb966045856f73cf471ad65b56355e569",
+      "mergeCommitOid": "cd6737fd84bdb7caf2a319d3579573a49f9d238d",
+      "changedFiles": 2,
+      "additions": 23,
+      "deletions": 1,
+      "labels": [
+        "priority::medium",
+        "commit::fix"
+      ],
+      "keywordHits": [
+        "fix",
+        "error",
+        "timeout",
+        "fail"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/unit/adapters/http.test.js"
+      ],
+      "debugScore": 6,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "lib/adapters/http.js",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/adapters/http.test.js",
+          "additions": 22,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10820,
+      "title": "test: harden http test server lifecycle to fix flaky FormData EPIPE",
+      "url": "https://github.com/axios/axios/pull/10820",
+      "mergedAt": "2026-04-28T17:44:26Z",
+      "baseRefName": "v1.x",
+      "headRefName": "test/improve-http-server-test-resilience",
+      "baseRefOid": "3cf6917576417961de6c96a99844690b5cc41451",
+      "headRefOid": "977ae5a9f06d89db40a7453de1a48c6713af8e5c",
+      "mergeCommitOid": "9fcdf488119c56133ac6bc1df7155598e347b773",
+      "changedFiles": 3,
+      "additions": 54,
+      "deletions": 21,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "error",
+        "flaky",
+        "race",
+        "timeout"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/setup/server.js",
+        "tests/unit/adapters/fetch.test.js",
+        "tests/unit/adapters/http.test.js"
+      ],
+      "debugScore": 7,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "tests/setup/server.js",
+          "additions": 28,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/adapters/fetch.test.js",
+          "additions": 4,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/adapters/http.test.js",
+          "additions": 22,
+          "deletions": 14,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10814,
+      "title": "chore(deps): bump postcss from 8.5.8 to 8.5.12 in /docs",
+      "url": "https://github.com/axios/axios/pull/10814",
+      "mergedAt": "2026-04-28T16:45:51Z",
+      "baseRefName": "v1.x",
+      "headRefName": "dependabot/npm_and_yarn/docs/postcss-8.5.12",
+      "baseRefOid": "66337fc6fc238286231afd3e5ea385a10e15236a",
+      "headRefOid": "c3083d07c2c5e67e7db1fd60e43f0dfd6d61a378",
+      "mergeCommitOid": "3cf6917576417961de6c96a99844690b5cc41451",
+      "changedFiles": 1,
+      "additions": 3,
+      "deletions": 3,
+      "labels": [
+        "dependencies",
+        "javascript"
+      ],
+      "keywordHits": [
+        "fix",
+        "error",
+        "parsing"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -5,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "docs-only",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "docs/package-lock.json",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 7378,
+      "title": "fix: replace deprecated unescape() with modern UTF-8 encoding",
+      "url": "https://github.com/axios/axios/pull/7378",
+      "mergedAt": "2026-04-28T14:24:49Z",
+      "baseRefName": "v1.x",
+      "headRefName": "fix/deprecate-unescape-and-jsdoc-typo",
+      "baseRefOid": "cd0d44825fe1db7ab597bb139206d780ae94a8ce",
+      "headRefOid": "91a4aa56b2f2a0ba435b88aebcbac8091df3b75e",
+      "mergeCommitOid": "66337fc6fc238286231afd3e5ea385a10e15236a",
+      "changedFiles": 2,
+      "additions": 16,
+      "deletions": 9,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "incorrect"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "lib/helpers/resolveConfig.js",
+          "additions": 15,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/utils.js",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10708,
+      "title": "fix(http): preserve response in error when stream is aborted after headers",
+      "url": "https://github.com/axios/axios/pull/10708",
+      "mergedAt": "2026-04-28T13:31:37Z",
+      "baseRefName": "v1.x",
+      "headRefName": "fix/stream-abort-preserve-response",
+      "baseRefOid": "f39203dcbee0632eff0c77cdfe350b08a241f838",
+      "headRefOid": "1dfadfa6633fbadc958aadbabaec0223fd11fe8c",
+      "mergeCommitOid": "cd0d44825fe1db7ab597bb139206d780ae94a8ce",
+      "changedFiles": 2,
+      "additions": 21,
+      "deletions": 6,
+      "labels": [
+        "priority::medium",
+        "commit::fix",
+        "status::changes-requested"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "error",
+        "fail"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/unit/adapters/http.test.js"
+      ],
+      "debugScore": 6,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "lib/adapters/http.js",
+          "additions": 3,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/adapters/http.test.js",
+          "additions": 18,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10802,
+      "title": "feat: add QUERY HTTP method support",
+      "url": "https://github.com/axios/axios/pull/10802",
+      "mergedAt": "2026-04-28T12:28:31Z",
+      "baseRefName": "v1.x",
+      "headRefName": "feat/query-http-method",
+      "baseRefOid": "bd887271986704382cfe22994c63fe5428e31da6",
+      "headRefOid": "3c051361afd6ce7e855e4aa51c6b87caba62643c",
+      "mergeCommitOid": "f39203dcbee0632eff0c77cdfe350b08a241f838",
+      "changedFiles": 13,
+      "additions": 405,
+      "deletions": 6,
+      "labels": [],
+      "keywordHits": [],
+      "hasTests": true,
+      "testFiles": [
+        "tests/module/cjs/tests/helpers/cjs-typing.ts",
+        "tests/module/esm/tests/helpers/esm-index.ts",
+        "tests/unit/adapters/fetch.test.js",
+        "tests/unit/api.test.js",
+        "tests/unit/query.test.js"
+      ],
+      "debugScore": 1,
+      "suggestedDifficulty": "high",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "docs/es/pages/advanced/request-method-aliases.md",
+          "additions": 20,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/fr/pages/advanced/request-method-aliases.md",
+          "additions": 20,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/pages/advanced/request-method-aliases.md",
+          "additions": 20,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/zh/pages/advanced/request-method-aliases.md",
+          "additions": 20,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "index.d.cts",
+          "additions": 8,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "index.d.ts",
+          "additions": 8,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/core/Axios.js",
+          "additions": 7,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/defaults/index.js",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/module/cjs/tests/helpers/cjs-typing.ts",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/module/esm/tests/helpers/esm-index.ts",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/adapters/fetch.test.js",
+          "additions": 27,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/api.test.js",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/query.test.js",
+          "additions": 268,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 10813,
+      "title": "chore(deps): bump actions/setup-node from 6.3.0 to 6.4.0 in the github-actions group",
+      "url": "https://github.com/axios/axios/pull/10813",
+      "mergedAt": "2026-04-28T12:05:35Z",
+      "baseRefName": "v1.x",
+      "headRefName": "dependabot/github_actions/github-actions-366259472f",
+      "baseRefOid": "2344aab6090c17c7d9ff8719c435a15abf2be2bb",
+      "headRefOid": "3e85a2f6a743c811467c4ddf6b2a8403109a82af",
+      "mergeCommitOid": "bd887271986704382cfe22994c63fe5428e31da6",
+      "changedFiles": 6,
+      "additions": 15,
+      "deletions": 15,
+      "labels": [
+        "commit::chore",
+        "type::automated-pr"
+      ],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".github/workflows/lockfile-lint.yml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": ".github/workflows/publish.yml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": ".github/workflows/release-branch.yml",
+          "additions": 6,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": ".github/workflows/run-ci.yml",
+          "additions": 5,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": ".github/workflows/update-sponsor-block.yml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": ".github/workflows/verify-build-reproducibility.yml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10745,
+      "title": "[codex] fix transformRequest input typing",
+      "url": "https://github.com/axios/axios/pull/10745",
+      "mergedAt": "2026-04-26T08:03:21Z",
+      "baseRefName": "v1.x",
+      "headRefName": "codex/fix-request-transformer-input-typing",
+      "baseRefOid": "bd3816bf9eaff677c3e278df9b03bcd302e9177b",
+      "headRefOid": "3228da4bcfae6490f18f4a28749c9a61e4fd3af4",
+      "mergeCommitOid": "694f1eca8cc3869e88b6434466f432b358962a42",
+      "changedFiles": 11,
+      "additions": 192,
+      "deletions": 20,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "timeout",
+        "fail"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/module/cjs/tests/helpers/fixture.cjs",
+        "tests/module/cjs/tests/helpers/transform-request-typing.ts",
+        "tests/module/cjs/tests/ts-require-default.module.test.cjs",
+        "tests/module/cjs/tests/ts-require.module.test.cjs",
+        "tests/module/cjs/tests/typings.module.test.cjs",
+        "tests/module/esm/tests/helpers/fixture.js",
+        "tests/module/esm/tests/helpers/transform-request-typing.ts",
+        "tests/module/esm/tests/ts.module.test.js",
+        "tests/module/esm/tests/typings.module.test.js"
+      ],
+      "debugScore": 4,
+      "suggestedDifficulty": "high",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "index.d.cts",
+          "additions": 5,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "index.d.ts",
+          "additions": 5,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/module/cjs/tests/helpers/fixture.cjs",
+          "additions": 7,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/module/cjs/tests/helpers/transform-request-typing.ts",
+          "additions": 52,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "tests/module/cjs/tests/ts-require-default.module.test.cjs",
+          "additions": 7,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/module/cjs/tests/ts-require.module.test.cjs",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/module/cjs/tests/typings.module.test.cjs",
+          "additions": 21,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/module/esm/tests/helpers/fixture.js",
+          "additions": 7,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/module/esm/tests/helpers/transform-request-typing.ts",
+          "additions": 52,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "tests/module/esm/tests/ts.module.test.js",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/module/esm/tests/typings.module.test.js",
+          "additions": 34,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10806,
+      "title": "fix(fetch): preserve abort reasons in fetch adapter",
+      "url": "https://github.com/axios/axios/pull/10806",
+      "mergedAt": "2026-04-27T15:42:33Z",
+      "baseRefName": "v1.x",
+      "headRefName": "codex/fetch-timeout-safari",
+      "baseRefOid": "d9b941c3027f815e1ec9727c739699d4776b323f",
+      "headRefOid": "3ff04a21e187c527c99455dbe0987503a47c3603",
+      "mergeCommitOid": "2344aab6090c17c7d9ff8719c435a15abf2be2bb",
+      "changedFiles": 3,
+      "additions": 131,
+      "deletions": 3,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "crash",
+        "error",
+        "exception",
+        "timeout",
+        "fail",
+        "failure",
+        "broken"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/smoke/bun/tests/timeout.smoke.test.ts",
+        "tests/unit/adapters/fetch.test.js"
+      ],
+      "debugScore": 11,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "lib/adapters/fetch.js",
+          "additions": 11,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/smoke/bun/tests/timeout.smoke.test.ts",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/adapters/fetch.test.js",
+          "additions": 118,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10810,
+      "title": "revert: transformrequest typing 10745",
+      "url": "https://github.com/axios/axios/pull/10810",
+      "mergedAt": "2026-04-27T15:27:26Z",
+      "baseRefName": "v1.x",
+      "headRefName": "revert/transformrequest-typing-10745",
+      "baseRefOid": "bef4868caf27a1076d4ce87b4995ddbf0ac49f20",
+      "headRefOid": "2de9cc79ddfd172571508ad973434ccd041949ed",
+      "mergeCommitOid": "d9b941c3027f815e1ec9727c739699d4776b323f",
+      "changedFiles": 11,
+      "additions": 24,
+      "deletions": 246,
+      "labels": [],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/module/cjs/tests/helpers/fixture.cjs",
+        "tests/module/cjs/tests/helpers/transform-request-typing.ts",
+        "tests/module/cjs/tests/ts-require-default.module.test.cjs",
+        "tests/module/cjs/tests/ts-require.module.test.cjs",
+        "tests/module/cjs/tests/typings.module.test.cjs",
+        "tests/module/esm/tests/helpers/fixture.js",
+        "tests/module/esm/tests/helpers/transform-request-typing.ts",
+        "tests/module/esm/tests/ts.module.test.js",
+        "tests/module/esm/tests/typings.module.test.js"
+      ],
+      "debugScore": 2,
+      "suggestedDifficulty": "high",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "index.d.cts",
+          "additions": 7,
+          "deletions": 32,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "index.d.ts",
+          "additions": 7,
+          "deletions": 32,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/module/cjs/tests/helpers/fixture.cjs",
+          "additions": 1,
+          "deletions": 7,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/module/cjs/tests/helpers/transform-request-typing.ts",
+          "additions": 0,
+          "deletions": 52,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "tests/module/cjs/tests/ts-require-default.module.test.cjs",
+          "additions": 1,
+          "deletions": 7,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/module/cjs/tests/ts-require.module.test.cjs",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/module/cjs/tests/typings.module.test.cjs",
+          "additions": 1,
+          "deletions": 21,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/module/esm/tests/helpers/fixture.js",
+          "additions": 1,
+          "deletions": 7,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/module/esm/tests/helpers/transform-request-typing.ts",
+          "additions": 0,
+          "deletions": 52,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "tests/module/esm/tests/ts.module.test.js",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/module/esm/tests/typings.module.test.js",
+          "additions": 4,
+          "deletions": 34,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6460,
+      "title": "fix(index): add create to index exports",
+      "url": "https://github.com/axios/axios/pull/6460",
+      "mergedAt": "2026-04-27T13:28:47Z",
+      "baseRefName": "v1.x",
+      "headRefName": "fix/export-create",
+      "baseRefOid": "25387ae1cedb93b385029e759cac9a22b71ec498",
+      "headRefOid": "e973cae9e1680f97e2e241923d420ef1783dfeec",
+      "mergeCommitOid": "bef4868caf27a1076d4ce87b4995ddbf0ac49f20",
+      "changedFiles": 3,
+      "additions": 10,
+      "deletions": 1,
+      "labels": [
+        "priority::medium",
+        "commit::fix"
+      ],
+      "keywordHits": [
+        "fix",
+        "fail"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/unit/api.test.js"
+      ],
+      "debugScore": 4,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "index.d.ts",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "index.js",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/api.test.js",
+          "additions": 6,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10804,
+      "title": "chore: added clarifying docs for the type change",
+      "url": "https://github.com/axios/axios/pull/10804",
+      "mergedAt": "2026-04-27T12:33:32Z",
+      "baseRefName": "v1.x",
+      "headRefName": "chore/add-comment-for-pr-10745",
+      "baseRefOid": "caa3497913b731fbae957e6e88edd82da7930111",
+      "headRefOid": "c3f187e9fb9eba575172214daf42f46c4f520609",
+      "mergeCommitOid": "25387ae1cedb93b385029e759cac9a22b71ec498",
+      "changedFiles": 2,
+      "additions": 50,
+      "deletions": 0,
+      "labels": [
+        "priority::medium",
+        "commit::chore"
+      ],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "index.d.cts",
+          "additions": 25,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "index.d.ts",
+          "additions": 25,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6241,
+      "title": "fix: missing beforeRedirect requestDetails argument",
+      "url": "https://github.com/axios/axios/pull/6241",
+      "mergedAt": "2026-04-26T16:14:24Z",
+      "baseRefName": "v1.x",
+      "headRefName": "master",
+      "baseRefOid": "80324886b1f528a9ec25b0e13e2eba4f75fa817a",
+      "headRefOid": "a5870f7660099f42b22af0b95c1516886dc7dc76",
+      "mergeCommitOid": "caa3497913b731fbae957e6e88edd82da7930111",
+      "changedFiles": 4,
+      "additions": 41,
+      "deletions": 4,
+      "labels": [
+        "priority::medium",
+        "commit::fix"
+      ],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/unit/adapters/http.test.js"
+      ],
+      "debugScore": 3,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "index.d.cts",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "index.d.ts",
+          "additions": 6,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/adapters/http.js",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/adapters/http.test.js",
+          "additions": 31,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6389,
+      "title": "fix: using `RawAxiosHeaders` type cause compiler error",
+      "url": "https://github.com/axios/axios/pull/6389",
+      "mergedAt": "2026-04-26T16:02:10Z",
+      "baseRefName": "v1.x",
+      "headRefName": "fix/type-headers-compile-error",
+      "baseRefOid": "a88f748cc957eeb45a982236190d89cf07a8a230",
+      "headRefOid": "baf6cf33513710d4ab3a55f8bf134bbe09dd4b19",
+      "mergeCommitOid": "80324886b1f528a9ec25b0e13e2eba4f75fa817a",
+      "changedFiles": 2,
+      "additions": 11,
+      "deletions": 11,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "error"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "index.d.cts",
+          "additions": 10,
+          "deletions": 10,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "index.d.ts",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 6897,
+      "title": "feat: export encode function from buildURL helper",
+      "url": "https://github.com/axios/axios/pull/6897",
+      "mergedAt": "2026-04-26T15:16:19Z",
+      "baseRefName": "v1.x",
+      "headRefName": "export-buildurl-encode",
+      "baseRefOid": "2f89ce60ac3457acb337eff95bec082f44e97240",
+      "headRefOid": "4a8aea9ad6ae60282bdaf37881957098434fabeb",
+      "mergeCommitOid": "a88f748cc957eeb45a982236190d89cf07a8a230",
+      "changedFiles": 2,
+      "additions": 38,
+      "deletions": 2,
+      "labels": [
+        "priority::medium",
+        "commit::feat"
+      ],
+      "keywordHits": [],
+      "hasTests": true,
+      "testFiles": [
+        "tests/unit/helpers/buildURL.test.js"
+      ],
+      "debugScore": 2,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "lib/helpers/buildURL.js",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/helpers/buildURL.test.js",
+          "additions": 37,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10759,
+      "title": "docs(readme): add timeout guidance to first async example",
+      "url": "https://github.com/axios/axios/pull/10759",
+      "mergedAt": "2026-04-26T11:41:50Z",
+      "baseRefName": "v1.x",
+      "headRefName": "docs/axios-contrib-improvements",
+      "baseRefOid": "b072ee8e0c628bd5e4706ba38887b9f60720c3d8",
+      "headRefOid": "02ff2e49824494d9541c74844713ca1d29fc218b",
+      "mergeCommitOid": "2f89ce60ac3457acb337eff95bec082f44e97240",
+      "changedFiles": 2,
+      "additions": 16,
+      "deletions": 0,
+      "labels": [
+        "priority::low",
+        "commit::docs"
+      ],
+      "keywordHits": [
+        "error",
+        "timeout"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "docs-only",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/pages/getting-started/first-steps.md",
+          "additions": 12,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10772,
+      "title": "fix(fetch-adapter): set User-Agent header to match http adapter",
+      "url": "https://github.com/axios/axios/pull/10772",
+      "mergedAt": "2026-04-26T10:37:25Z",
+      "baseRefName": "v1.x",
+      "headRefName": "fix/fetch-adapter-user-agent",
+      "baseRefOid": "694f1eca8cc3869e88b6434466f432b358962a42",
+      "headRefOid": "d7e0817a2ce6bc6dfa3401e7386c3d24f9d6dae9",
+      "mergeCommitOid": "c918e85e91528da910836f0fa5c74ca3714daff1",
+      "changedFiles": 2,
+      "additions": 51,
+      "deletions": 0,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/unit/adapters/fetch.test.js"
+      ],
+      "debugScore": 4,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "lib/adapters/fetch.js",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/adapters/fetch.test.js",
+          "additions": 47,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10724,
+      "title": "fix(dispatchRequest): attach response to AxiosError on JSON parse failure",
+      "url": "https://github.com/axios/axios/pull/10724",
+      "mergedAt": "2026-04-25T16:53:25Z",
+      "baseRefName": "v1.x",
+      "headRefName": "fix/json-parse-error-response",
+      "baseRefOid": "f2dc4495472071d3ed9a5637f35660226c8e44c6",
+      "headRefOid": "cc0d8fcfe4545157cce91aedc2c6a84efc6a7f88",
+      "mergeCommitOid": "bd3816bf9eaff677c3e278df9b03bcd302e9177b",
+      "changedFiles": 3,
+      "additions": 206,
+      "deletions": 7,
+      "labels": [],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "error",
+        "parsing",
+        "fail",
+        "failure"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/unit/core/dispatchRequest.test.js",
+        "tests/unit/transformResponse.test.js"
+      ],
+      "debugScore": 8,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "lib/core/dispatchRequest.js",
+          "additions": 19,
+          "deletions": 7,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/core/dispatchRequest.test.js",
+          "additions": 146,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "tests/unit/transformResponse.test.js",
+          "additions": 41,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10729,
+      "title": "fix(parseProtocol): fix regex to require colon in protocol separator",
+      "url": "https://github.com/axios/axios/pull/10729",
+      "mergedAt": "2026-04-25T16:27:58Z",
+      "baseRefName": "v1.x",
+      "headRefName": "deepview/46fc78298f",
+      "baseRefOid": "a501f100a774f8b382b0844fb7cdd168b90c4a31",
+      "headRefOid": "079fe8f4d4a715e4e8f2009a11bd01a90f8a8624",
+      "mergeCommitOid": "f2dc4495472071d3ed9a5637f35660226c8e44c6",
+      "changedFiles": 2,
+      "additions": 5,
+      "deletions": 1,
+      "labels": [
+        "priority::medium",
+        "commit::fix"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "incorrect"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/unit/parseProtocol.test.js"
+      ],
+      "debugScore": 5,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "lib/helpers/parseProtocol.js",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/parseProtocol.test.js",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10680,
+      "title": "feat: add ECONNREFUSED error code constant to AxiosError (closes #6485)",
+      "url": "https://github.com/axios/axios/pull/10680",
+      "mergedAt": "2026-04-25T16:24:10Z",
+      "baseRefName": "v1.x",
+      "headRefName": "feat/add-econnrefused-error-code",
+      "baseRefOid": "640458daaf097dede696508a9fb223d41fbe1217",
+      "headRefOid": "644ab15cbd9700b065f9c7c8b0e8c5fc2c51bd99",
+      "mergeCommitOid": "a501f100a774f8b382b0844fb7cdd168b90c4a31",
+      "changedFiles": 3,
+      "additions": 3,
+      "deletions": 0,
+      "labels": [
+        "priority::medium",
+        "commit::feat"
+      ],
+      "keywordHits": [
+        "error"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "index.d.cts",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "index.d.ts",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/core/AxiosError.js",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10787,
+      "title": "fix(xhr): unsubscribe cancelToken and signal on error, timeout, and abort paths",
+      "url": "https://github.com/axios/axios/pull/10787",
+      "mergedAt": "2026-04-25T15:44:00Z",
+      "baseRefName": "v1.x",
+      "headRefName": "fix/xhr-cancel-listener-leak-on-errors",
+      "baseRefOid": "cc9aa2f487d460dd61e7d1f1941cdafac1131ad2",
+      "headRefOid": "8653298e8b48118379c8ad52f7c26bcbb1b3fe9c",
+      "mergeCommitOid": "640458daaf097dede696508a9fb223d41fbe1217",
+      "changedFiles": 2,
+      "additions": 50,
+      "deletions": 0,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "error",
+        "leak",
+        "timeout",
+        "fail",
+        "failure"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/browser/cancel.browser.test.js"
+      ],
+      "debugScore": 8,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "lib/adapters/xhr.js",
+          "additions": 4,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/browser/cancel.browser.test.js",
+          "additions": 46,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 7419,
+      "title": "chore: boundary error message",
+      "url": "https://github.com/axios/axios/pull/7419",
+      "mergedAt": "2026-04-24T17:45:20Z",
+      "baseRefName": "v1.x",
+      "headRefName": "typo",
+      "baseRefOid": "767b975545d2d83627799f35e5cafbbe0bc1099a",
+      "headRefOid": "d4e8435c4bc98600869721f6c3d14cb5201d951e",
+      "mergeCommitOid": "2a08578f5b9015001bcab19d6db4311bce059601",
+      "changedFiles": 1,
+      "additions": 1,
+      "deletions": 1,
+      "labels": [
+        "priority::medium",
+        "commit::chore"
+      ],
+      "keywordHits": [
+        "fix",
+        "error",
+        "validation"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "lib/helpers/formDataToStream.js",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10588,
+      "title": "refactor: modernize utils and xhr adapter using ES6 features",
+      "url": "https://github.com/axios/axios/pull/10588",
+      "mergedAt": "2026-04-24T17:36:50Z",
+      "baseRefName": "v1.x",
+      "headRefName": "refactor/modernize-utils-xhr",
+      "baseRefOid": "e6a62415821802fc078e2b031f63306e44b11d9c",
+      "headRefOid": "02dd11704dc53d6093672db3cf67a3b4304cc2eb",
+      "mergeCommitOid": "767b975545d2d83627799f35e5cafbbe0bc1099a",
+      "changedFiles": 2,
+      "additions": 6,
+      "deletions": 6,
+      "labels": [
+        "priority::medium",
+        "commit::refactor"
+      ],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "lib/adapters/xhr.js",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/utils.js",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10800,
+      "title": "fix: close redirect listiner chanin correctly to no longer stack",
+      "url": "https://github.com/axios/axios/pull/10800",
+      "mergedAt": "2026-04-24T17:12:52Z",
+      "baseRefName": "v1.x",
+      "headRefName": "fix/maxlistenersexceededwarning-occurs-when-single-request-follows-11-redirects",
+      "baseRefOid": "afca61a070728e717203c2bc21e7b589b59b858b",
+      "headRefOid": "fbf7ec745443cfc10f362d236766a14be2a3297f",
+      "mergeCommitOid": "e6a62415821802fc078e2b031f63306e44b11d9c",
+      "changedFiles": 2,
+      "additions": 152,
+      "deletions": 2,
+      "labels": [
+        "priority::medium",
+        "commit::fix"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "error",
+        "leak"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/unit/adapters/http.test.js"
+      ],
+      "debugScore": 6,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "lib/adapters/http.js",
+          "additions": 16,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/adapters/http.test.js",
+          "additions": 136,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10779,
+      "title": "fix: more header pollutions",
+      "url": "https://github.com/axios/axios/pull/10779",
+      "mergedAt": "2026-04-20T19:33:20Z",
+      "baseRefName": "v1.x",
+      "headRefName": "fix/axi-226-pollution-in-http-adapter",
+      "baseRefOid": "6feafcff6c2dbafe206161c5d09e38e1d36af66f",
+      "headRefOid": "17c83a5a52d150a77bbd4910025480c9a724dd18",
+      "mergeCommitOid": "47915144662f2733e6c051bdcb895a8c8f0586aa",
+      "changedFiles": 6,
+      "additions": 601,
+      "deletions": 59,
+      "labels": [
+        "priority::medium",
+        "commit::fix"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "parser",
+        "parsing",
+        "fail",
+        "failure"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/unit/prototypePollution.test.js"
+      ],
+      "debugScore": 8,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "CHANGELOG.md",
+          "additions": 44,
+          "deletions": 44,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/adapters/http.js",
+          "additions": 17,
+          "deletions": 11,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/core/mergeConfig.js",
+          "additions": 12,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/helpers/resolveConfig.js",
+          "additions": 14,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/helpers/validator.js",
+          "additions": 3,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/prototypePollution.test.js",
+          "additions": 511,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10660,
+      "title": "fix: unrestricted cloud metadata exfiltration via header injection chain",
+      "url": "https://github.com/axios/axios/pull/10660",
+      "mergedAt": "2026-04-06T12:01:54Z",
+      "baseRefName": "v1.x",
+      "headRefName": "sec/ghsa-fvcv-3m26-pcqx",
+      "baseRefOid": "fb3befb6daac6cad26b2e54094d0f2d9e47f24df",
+      "headRefOid": "c16da40207332079c4ad5bda01a9c518dd36d964",
+      "mergeCommitOid": "363185461b90b1b78845dc8a99a1f103d9b122a1",
+      "changedFiles": 6,
+      "additions": 120,
+      "deletions": 16,
+      "labels": [
+        "priority::medium",
+        "commit::fix",
+        "type::security"
+      ],
+      "keywordHits": [
+        "fix",
+        "error",
+        "leak",
+        "validation",
+        "fail"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/browser/adapter.browser.test.js",
+        "tests/unit/adapters/fetch.test.js",
+        "tests/unit/adapters/http.test.js",
+        "tests/unit/axiosHeaders.test.js"
+      ],
+      "debugScore": 7,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "lib/core/Axios.js",
+          "additions": 19,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/core/AxiosHeaders.js",
+          "additions": 35,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/browser/adapter.browser.test.js",
+          "additions": 16,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/adapters/fetch.test.js",
+          "additions": 11,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/adapters/http.test.js",
+          "additions": 11,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/axiosHeaders.test.js",
+          "additions": 28,
+          "deletions": 9,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10794,
+      "title": "fix: clear stale header on redirect when target is no-proxy",
+      "url": "https://github.com/axios/axios/pull/10794",
+      "mergedAt": "2026-04-22T18:53:41Z",
+      "baseRefName": "v1.x",
+      "headRefName": "fix/axi-197",
+      "baseRefOid": "d8165e9f2c4a73176a372d5d84f43c5fd166026b",
+      "headRefOid": "d78e4ca2f810d448ec36239bf29618cc81ec2d0c",
+      "mergeCommitOid": "afca61a070728e717203c2bc21e7b589b59b858b",
+      "changedFiles": 2,
+      "additions": 235,
+      "deletions": 15,
+      "labels": [
+        "priority::medium",
+        "commit::fix"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "leak"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/unit/adapters/http.test.js"
+      ],
+      "debugScore": 5,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "lib/adapters/http.js",
+          "additions": 13,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/adapters/http.test.js",
+          "additions": 222,
+          "deletions": 13,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10796,
+      "title": "fix: incorrect assumption on test",
+      "url": "https://github.com/axios/axios/pull/10796",
+      "mergedAt": "2026-04-22T17:41:12Z",
+      "baseRefName": "v1.x",
+      "headRefName": "fix/axi-201",
+      "baseRefOid": "e5540dcafe423909527c0af097fb6ae7f68c08f3",
+      "headRefOid": "ca8724684223a1f1d190836618021305a6d7485f",
+      "mergeCommitOid": "d8165e9f2c4a73176a372d5d84f43c5fd166026b",
+      "changedFiles": 2,
+      "additions": 24,
+      "deletions": 7,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "incorrect",
+        "error"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "lib/adapters/fetch.js",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/helpers/estimateDataURLDecodedBytes.js",
+          "additions": 23,
+          "deletions": 7,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10795,
+      "title": "fix: fetch adaptor is not enforcing max body or content length",
+      "url": "https://github.com/axios/axios/pull/10795",
+      "mergedAt": "2026-04-22T16:54:13Z",
+      "baseRefName": "v1.x",
+      "headRefName": "fix/axi-201",
+      "baseRefOid": "fba7fcc44ee808af5cef423d07b0d81cbfce1502",
+      "headRefOid": "600048cd2fdb1f6b86be0faed6d79d799ff4c1bb",
+      "mergeCommitOid": "e5540dcafe423909527c0af097fb6ae7f68c08f3",
+      "changedFiles": 3,
+      "additions": 280,
+      "deletions": 3,
+      "labels": [
+        "priority::medium",
+        "commit::fix"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "error"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/unit/adapters/fetch.test.js"
+      ],
+      "debugScore": 5,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "lib/adapters/fetch.js",
+          "additions": 103,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/helpers/estimateDataURLDecodedBytes.js",
+          "additions": 12,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/adapters/fetch.test.js",
+          "additions": 165,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10788,
+      "title": "fix: added fix for memory leak in sockets",
+      "url": "https://github.com/axios/axios/pull/10788",
+      "mergedAt": "2026-04-21T17:25:49Z",
+      "baseRefName": "v1.x",
+      "headRefName": "10780-tlssocket-maxlistenersexceededwarning-under-concurrent-keep-alive-requests-since-v1151-pr-10576",
+      "baseRefOid": "be3336014e01f9a4fc1f8aef15303cf7daaf58db",
+      "headRefOid": "19840e4fc86fae35f322790a3bf596bed64b5d2a",
+      "mergeCommitOid": "4709a48fa2717ba97f43f5432d48ca4e26c2d326",
+      "changedFiles": 2,
+      "additions": 336,
+      "deletions": 18,
+      "labels": [
+        "priority::high",
+        "commit::fix",
+        "commit::perf"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "error",
+        "race",
+        "leak"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/unit/adapters/http.test.js"
+      ],
+      "debugScore": 7,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "lib/adapters/http.js",
+          "additions": 24,
+          "deletions": 11,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/adapters/http.test.js",
+          "additions": 312,
+          "deletions": 7,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10791,
+      "title": "test: fix Win32 platform support for pipe tests;",
+      "url": "https://github.com/axios/axios/pull/10791",
+      "mergedAt": "2026-04-22T06:50:38Z",
+      "baseRefName": "v1.x",
+      "headRefName": "chore/pipe-tests",
+      "baseRefOid": "de1a81004411a671556d0e1c9be09d6052ef88b5",
+      "headRefOid": "472dde739729cb8d21fb9e57eb6937776f665425",
+      "mergeCommitOid": "fba7fcc44ee808af5cef423d07b0d81cbfce1502",
+      "changedFiles": 1,
+      "additions": 5,
+      "deletions": 1,
+      "labels": [],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/unit/adapters/http.test.js"
+      ],
+      "debugScore": 3,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "tests/unit/adapters/http.test.js",
+          "additions": 5,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10785,
+      "title": "chore(deps): bump the github-actions group with 3 updates",
+      "url": "https://github.com/axios/axios/pull/10785",
+      "mergedAt": "2026-04-21T18:18:38Z",
+      "baseRefName": "v1.x",
+      "headRefName": "dependabot/github_actions/github-actions-bb66e7736b",
+      "baseRefOid": "582934382e4e0e0bcb679c628071a4203e93cf57",
+      "headRefOid": "e92b9277ea0cf721efe0749750cca4596729a092",
+      "mergeCommitOid": "b2890f8efbcfcd2fa3652a1eae7fc40f9de1f9e6",
+      "changedFiles": 5,
+      "additions": 6,
+      "deletions": 6,
+      "labels": [
+        "commit::chore",
+        "type::automated-pr"
+      ],
+      "keywordHits": [
+        "fix",
+        "error"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".github/workflows/release-branch.yml",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": ".github/workflows/run-ci.yml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": ".github/workflows/update-sponsor-block.yml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": ".github/workflows/verify-build-reproducibility.yml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": ".github/workflows/zizmor.yml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10789,
+      "title": "chore(release): prepare release 1.15.2",
+      "url": "https://github.com/axios/axios/pull/10789",
+      "mergedAt": "2026-04-21T17:45:23Z",
+      "baseRefName": "v1.x",
+      "headRefName": "release-v1x/version-1.15.2",
+      "baseRefOid": "4709a48fa2717ba97f43f5432d48ca4e26c2d326",
+      "headRefOid": "f46699f355035021b24b4deb837a5002c25494cf",
+      "mergeCommitOid": "582934382e4e0e0bcb679c628071a4203e93cf57",
+      "changedFiles": 3,
+      "additions": 4,
+      "deletions": 4,
+      "labels": [
+        "priority::high",
+        "commit::chore",
+        "type::automated-pr"
+      ],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "lib/env/data.js",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "package-lock.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "package.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10781,
+      "title": "chore: update changelog",
+      "url": "https://github.com/axios/axios/pull/10781",
+      "mergedAt": "2026-04-20T19:57:15Z",
+      "baseRefName": "v1.x",
+      "headRefName": "chore/chainglog-update",
+      "baseRefOid": "47915144662f2733e6c051bdcb895a8c8f0586aa",
+      "headRefOid": "186b895d3d62607d951ed710983c8d0ba717184a",
+      "mergeCommitOid": "be3336014e01f9a4fc1f8aef15303cf7daaf58db",
+      "changedFiles": 1,
+      "additions": 68,
+      "deletions": 0,
+      "labels": [
+        "priority::medium",
+        "commit::docs"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "docs-only",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "CHANGELOG.md",
+          "additions": 68,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10777,
+      "title": "fix: socket issue",
+      "url": "https://github.com/axios/axios/pull/10777",
+      "mergedAt": "2026-04-20T18:27:09Z",
+      "baseRefName": "v1.x",
+      "headRefName": "fix/axi-202-unix-domain-socket-fix",
+      "baseRefOid": "302e2739c602f00e323d4f3f5c79500647633a73",
+      "headRefOid": "e6f66ece78826b3571b51fd8b4bd78145c484701",
+      "mergeCommitOid": "6feafcff6c2dbafe206161c5d09e38e1d36af66f",
+      "changedFiles": 10,
+      "additions": 271,
+      "deletions": 0,
+      "labels": [
+        "priority::medium",
+        "commit::fix"
+      ],
+      "keywordHits": [
+        "fix",
+        "error",
+        "validation",
+        "fail"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/unit/adapters/http.test.js"
+      ],
+      "debugScore": 5,
+      "suggestedDifficulty": "high",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "README.md",
+          "additions": 11,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/es/pages/advanced/request-config.md",
+          "additions": 23,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/fr/pages/advanced/request-config.md",
+          "additions": 23,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/pages/advanced/request-config.md",
+          "additions": 23,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/zh/pages/advanced/request-config.md",
+          "additions": 23,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "index.d.cts",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "index.d.ts",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/adapters/http.js",
+          "additions": 28,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/core/mergeConfig.js",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/adapters/http.test.js",
+          "additions": 137,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10776,
+      "title": "docs: update docs, add a couple actions etc",
+      "url": "https://github.com/axios/axios/pull/10776",
+      "mergedAt": "2026-04-20T17:52:36Z",
+      "baseRefName": "v1.x",
+      "headRefName": "docs/update-threat-model",
+      "baseRefOid": "ac42446be51300fe214ba3c6e40cc95f34fd6871",
+      "headRefOid": "2b00074950dd229af4b1baf79f2f41bd64370f03",
+      "mergeCommitOid": "302e2739c602f00e323d4f3f5c79500647633a73",
+      "changedFiles": 12,
+      "additions": 493,
+      "deletions": 41,
+      "labels": [
+        "priority::medium",
+        "commit::chore",
+        "commit::fix",
+        "commit::docs"
+      ],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".github/CODEOWNERS",
+          "additions": 33,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": ".github/workflows/lockfile-lint.yml",
+          "additions": 47,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": ".github/workflows/verify-build-reproducibility.yml",
+          "additions": 81,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": ".gitignore",
+          "additions": 0,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": ".npmrc",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "README.md",
+          "additions": 19,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "SECURITY.md",
+          "additions": 45,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "THREATMODEL.md",
+          "additions": 72,
+          "deletions": 27,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/es/pages/misc/security.md",
+          "additions": 49,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/fr/pages/misc/security.md",
+          "additions": 49,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/pages/misc/security.md",
+          "additions": 49,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/zh/pages/misc/security.md",
+          "additions": 48,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10767,
+      "title": "chore(release): prepare release 1.15.1",
+      "url": "https://github.com/axios/axios/pull/10767",
+      "mergedAt": "2026-04-19T16:51:44Z",
+      "baseRefName": "v1.x",
+      "headRefName": "release-v1x/version-1.15.1",
+      "baseRefOid": "908f2206b6bfeff67236784abce85935698ac1d9",
+      "headRefOid": "08d88d67b4c333427c9d929240bda3759435d0c3",
+      "mergeCommitOid": "ac42446be51300fe214ba3c6e40cc95f34fd6871",
+      "changedFiles": 3,
+      "additions": 7,
+      "deletions": 7,
+      "labels": [
+        "priority::high",
+        "commit::chore",
+        "type::automated-pr"
+      ],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "lib/env/data.js",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "package-lock.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "package.json",
+          "additions": 4,
+          "deletions": 4,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10766,
+      "title": "chore(release): prepare release v0.31.1",
+      "url": "https://github.com/axios/axios/pull/10766",
+      "mergedAt": "2026-04-19T16:50:46Z",
+      "baseRefName": "v0.x",
+      "headRefName": "release-v0x/version-0.31.1",
+      "baseRefOid": "b0c632f36a5ea2e73c9bdf3a54164a8ede925736",
+      "headRefOid": "6b0854f4bc81394180e12dd8096563bf7f6068cf",
+      "mergeCommitOid": "a589dc525af12e0fabef7d6e5be028ad433eee31",
+      "changedFiles": 3,
+      "additions": 5,
+      "deletions": 5,
+      "labels": [
+        "priority::high",
+        "commit::chore",
+        "type::automated-pr"
+      ],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "lib/env/data.js",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "package-lock.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "package.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10765,
+      "title": "docs: update threatmodel",
+      "url": "https://github.com/axios/axios/pull/10765",
+      "mergedAt": "2026-04-19T16:38:37Z",
+      "baseRefName": "v1.x",
+      "headRefName": "docs/improve-threatmodel",
+      "baseRefOid": "f93f8155250c2e066205521eda05ae22983a1f6d",
+      "headRefOid": "24cddebeaddd52748ee97b3f7a366afab63d44c2",
+      "mergeCommitOid": "908f2206b6bfeff67236784abce85935698ac1d9",
+      "changedFiles": 1,
+      "additions": 78,
+      "deletions": 54,
+      "labels": [
+        "priority::medium",
+        "commit::docs"
+      ],
+      "keywordHits": [
+        "fix",
+        "error",
+        "edge",
+        "parsing"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "docs-only",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "THREATMODEL.md",
+          "additions": 78,
+          "deletions": 54,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10764,
+      "title": "fix: backport security issues",
+      "url": "https://github.com/axios/axios/pull/10764",
+      "mergedAt": "2026-04-19T16:25:29Z",
+      "baseRefName": "v0.x",
+      "headRefName": "fix/backport-security-issues",
+      "baseRefOid": "b52187f4571b6b8663fed5904e3082ab30660364",
+      "headRefOid": "135f1721f05d3cd64a86afeaa9047721fa998bda",
+      "mergeCommitOid": "b0c632f36a5ea2e73c9bdf3a54164a8ede925736",
+      "changedFiles": 12,
+      "additions": 2199,
+      "deletions": 1398,
+      "labels": [
+        "commit::fix",
+        "type::security"
+      ],
+      "keywordHits": [
+        "fix",
+        "error",
+        "validation"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "test/unit/adapters/http.js",
+        "test/unit/core/prototypePollution.js",
+        "test/unit/helpers/AxiosURLSearchParams.js",
+        "test/unit/helpers/toFormData.js",
+        "test/unit/utils/isFormData.js"
+      ],
+      "debugScore": 2,
+      "suggestedDifficulty": "high",
+      "exclusionHints": [
+        "huge-diff"
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "additions": 16,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/adapters/http.js",
+          "additions": 77,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/adapters/xhr.js",
+          "additions": 7,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/core/mergeConfig.js",
+          "additions": 3,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/helpers/AxiosURLSearchParams.js",
+          "additions": 2,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/helpers/toFormData.js",
+          "additions": 3,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/utils.js",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "test/unit/adapters/http.js",
+          "additions": 1955,
+          "deletions": 1382,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "test/unit/core/prototypePollution.js",
+          "additions": 34,
+          "deletions": 7,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "test/unit/helpers/AxiosURLSearchParams.js",
+          "additions": 16,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "test/unit/helpers/toFormData.js",
+          "additions": 33,
+          "deletions": 0,
+          "changeType": "ADDED"
+        },
+        {
+          "path": "test/unit/utils/isFormData.js",
+          "additions": 50,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10763,
+      "title": "docs: added docs around potential decompressions bomb",
+      "url": "https://github.com/axios/axios/pull/10763",
+      "mergedAt": "2026-04-19T15:04:17Z",
+      "baseRefName": "v1.x",
+      "headRefName": "fix/axi-198-decompression-bomb-unlimited-response-buffering",
+      "baseRefOid": "1728aa1b15b8857f970611fd8983c06b423fc486",
+      "headRefOid": "b5f2a09f10f20fcd8d37dfa2e23367b78082f4ce",
+      "mergeCommitOid": "f93f8155250c2e066205521eda05ae22983a1f6d",
+      "changedFiles": 9,
+      "additions": 102,
+      "deletions": 0,
+      "labels": [
+        "priority::medium",
+        "commit::docs",
+        "type::security"
+      ],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -5,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "docs-only",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "additions": 13,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/es/pages/advanced/request-config.md",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/es/pages/misc/security.md",
+          "additions": 19,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/fr/pages/advanced/request-config.md",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/fr/pages/misc/security.md",
+          "additions": 19,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/pages/advanced/request-config.md",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/pages/misc/security.md",
+          "additions": 20,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/zh/pages/advanced/request-config.md",
+          "additions": 3,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/zh/pages/misc/security.md",
+          "additions": 19,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10762,
+      "title": "fix: short-circuits on any truthy non-boolean in withXSRFToken",
+      "url": "https://github.com/axios/axios/pull/10762",
+      "mergedAt": "2026-04-19T14:24:37Z",
+      "baseRefName": "v1.x",
+      "headRefName": "fix/axi-205-xsrf-token-cross-origin-leakage-via-prototype-pollution",
+      "baseRefOid": "42eb721eebc95cfded8d6c70cf62f3fbe83f3246",
+      "headRefOid": "bf3a288261b803bc317606dff8201a66b0984630",
+      "mergeCommitOid": "1728aa1b15b8857f970611fd8983c06b423fc486",
+      "changedFiles": 2,
+      "additions": 67,
+      "deletions": 3,
+      "labels": [
+        "priority::medium",
+        "commit::fix",
+        "type::security"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "leak"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/browser/xsrf.browser.test.js"
+      ],
+      "debugScore": 5,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "lib/helpers/resolveConfig.js",
+          "additions": 11,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/browser/xsrf.browser.test.js",
+          "additions": 56,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10761,
+      "title": "fix: prevent authentication bypass via prototype pollution",
+      "url": "https://github.com/axios/axios/pull/10761",
+      "mergedAt": "2026-04-19T14:04:05Z",
+      "baseRefName": "v1.x",
+      "headRefName": "fix/axi-207-authentication-bypass-via-prototype-pollution-gadget",
+      "baseRefOid": "75873270a59bd5d895322eee145738e95fb89258",
+      "headRefOid": "2f1f96a8cb492441b4cfb6dc29327b7c5b830f68",
+      "mergeCommitOid": "42eb721eebc95cfded8d6c70cf62f3fbe83f3246",
+      "changedFiles": 2,
+      "additions": 40,
+      "deletions": 2,
+      "labels": [
+        "priority::medium",
+        "commit::fix",
+        "type::security"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "leak"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/unit/prototypePollution.test.js"
+      ],
+      "debugScore": 5,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "lib/core/mergeConfig.js",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/prototypePollution.test.js",
+          "additions": 38,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10758,
+      "title": "fix: strip crlf correctly from multipart headers",
+      "url": "https://github.com/axios/axios/pull/10758",
+      "mergedAt": "2026-04-19T13:32:33Z",
+      "baseRefName": "v1.x",
+      "headRefName": "fix/axi-199-crlf-injection-in-multipartform-data-body-via-unsanitized",
+      "baseRefOid": "f0b98673b32677643a3b608431270d36e997473c",
+      "headRefOid": "59f848c8378aa8c0fb23a281e188abc9f2db4d03",
+      "mergeCommitOid": "75873270a59bd5d895322eee145738e95fb89258",
+      "changedFiles": 2,
+      "additions": 126,
+      "deletions": 1,
+      "labels": [
+        "priority::medium",
+        "commit::fix",
+        "type::security"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/unit/helpers/formDataToStream.test.js"
+      ],
+      "debugScore": 4,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "lib/helpers/formDataToStream.js",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/helpers/formDataToStream.test.js",
+          "additions": 124,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 10760,
+      "title": "chore: added additional testing for prototype pollution",
+      "url": "https://github.com/axios/axios/pull/10760",
+      "mergedAt": "2026-04-19T13:28:41Z",
+      "baseRefName": "v1.x",
+      "headRefName": "fix/axi-210-invisible-json-response-tampering-via-prototype-pollution",
+      "baseRefOid": "e033f243a08e3514c03e510f76658da1e0fac3bd",
+      "headRefOid": "3a57ac0a28458ee73a19fcd990da19a171353846",
+      "mergeCommitOid": "f0b98673b32677643a3b608431270d36e997473c",
+      "changedFiles": 1,
+      "additions": 43,
+      "deletions": 0,
+      "labels": [
+        "priority::medium",
+        "commit::fix",
+        "type::security"
+      ],
+      "keywordHits": [
+        "fix",
+        "parser",
+        "parsing"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/unit/prototypePollution.test.js"
+      ],
+      "debugScore": 5,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "tests/unit/prototypePollution.test.js",
+          "additions": 43,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10754,
+      "title": "fix: stream response bypassed max content length",
+      "url": "https://github.com/axios/axios/pull/10754",
+      "mergedAt": "2026-04-18T14:23:39Z",
+      "baseRefName": "v1.x",
+      "headRefName": "fix/ghsa-vf2m-468p-8v99",
+      "baseRefOid": "1c7f6d76e58359daddf38a6e636dd801ffd9c61b",
+      "headRefOid": "34ea6dde50c9fea13f324b9ff57edb5ca876d73b",
+      "mergeCommitOid": "e8904af03385b040e53f1263a444e825db4335d9",
+      "changedFiles": 2,
+      "additions": 88,
+      "deletions": 0,
+      "labels": [
+        "priority::medium",
+        "commit::fix",
+        "type::security"
+      ],
+      "keywordHits": [
+        "fix",
+        "error",
+        "fail"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/unit/adapters/http.test.js"
+      ],
+      "debugScore": 5,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "lib/adapters/http.js",
+          "additions": 24,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/adapters/http.test.js",
+          "additions": 64,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10752,
+      "title": "fix: harden config merging",
+      "url": "https://github.com/axios/axios/pull/10752",
+      "mergedAt": "2026-04-18T13:45:31Z",
+      "baseRefName": "v0.x",
+      "headRefName": "fix/ghsa-pf86-5x62-jrwf",
+      "baseRefOid": "e3ddeb40f6a142a234925341151e2ca631a6de64",
+      "headRefOid": "446c8ebbe20ba260e31de45a50cafb1ea18dea74",
+      "mergeCommitOid": "b52187f4571b6b8663fed5904e3082ab30660364",
+      "changedFiles": 4,
+      "additions": 69,
+      "deletions": 14,
+      "labels": [
+        "priority::medium",
+        "commit::fix",
+        "type::security"
+      ],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "test/unit/core/prototypePollution.js"
+      ],
+      "debugScore": 3,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "lib/adapters/http.js",
+          "additions": 3,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/core/mergeConfig.js",
+          "additions": 17,
+          "deletions": 9,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/defaults/index.js",
+          "additions": 6,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "test/unit/core/prototypePollution.js",
+          "additions": 43,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10753,
+      "title": "fix: enforce max body length when max redirects is 0",
+      "url": "https://github.com/axios/axios/pull/10753",
+      "mergedAt": "2026-04-18T13:45:43Z",
+      "baseRefName": "v1.x",
+      "headRefName": "fix/ghsa-5c9x-8gcm-mpgx",
+      "baseRefOid": "48fd644be167f85f6b193ec376133f85ff8f8911",
+      "headRefOid": "bf0a3491743b08f583f012b0fa5b7ee57caf3ffa",
+      "mergeCommitOid": "1c7f6d76e58359daddf38a6e636dd801ffd9c61b",
+      "changedFiles": 2,
+      "additions": 111,
+      "deletions": 1,
+      "labels": [
+        "priority::medium",
+        "commit::fix",
+        "type::security"
+      ],
+      "keywordHits": [
+        "fix",
+        "error"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/unit/adapters/http.test.js"
+      ],
+      "debugScore": 4,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "lib/adapters/http.js",
+          "additions": 35,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/adapters/http.test.js",
+          "additions": 76,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10755,
+      "title": "fix: incomplete fix for cve",
+      "url": "https://github.com/axios/axios/pull/10755",
+      "mergedAt": "2026-04-18T15:41:15Z",
+      "baseRefName": "v1.x",
+      "headRefName": "fix/ghsa-pmwg-cvhr-8vh7",
+      "baseRefOid": "e8904af03385b040e53f1263a444e825db4335d9",
+      "headRefOid": "44c472aa3e49eafac1e9f90f3a419dd1987df911",
+      "mergeCommitOid": "e033f243a08e3514c03e510f76658da1e0fac3bd",
+      "changedFiles": 2,
+      "additions": 111,
+      "deletions": 2,
+      "labels": [
+        "priority::medium",
+        "commit::fix",
+        "type::security"
+      ],
+      "keywordHits": [
+        "bug",
+        "fix",
+        "parsing"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/unit/helpers/shouldBypassProxy.test.js"
+      ],
+      "debugScore": 5,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "lib/helpers/shouldBypassProxy.js",
+          "additions": 45,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/helpers/shouldBypassProxy.test.js",
+          "additions": 66,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10671,
+      "title": "chore(release): prepare release 1.15.0",
+      "url": "https://github.com/axios/axios/pull/10671",
+      "mergedAt": "2026-04-07T16:03:52Z",
+      "baseRefName": "v1.x",
+      "headRefName": "release",
+      "baseRefOid": "4b071371be2f810b4bc7797a13838e0f806ebb22",
+      "headRefOid": "e61021e9568c4c4b2f33326ac4bd337ce12dc2de",
+      "mergeCommitOid": "772a4e54ecc4cc2421e2b746daff0aca10f359d7",
+      "changedFiles": 4,
+      "additions": 6,
+      "deletions": 6,
+      "labels": [
+        "priority::high",
+        "commit::chore",
+        "type::automated-pr"
+      ],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -4,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "bower.json",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/env/data.js",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "package-lock.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "package.json",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10750,
+      "title": "fix: header security issues",
+      "url": "https://github.com/axios/axios/pull/10750",
+      "mergedAt": "2026-04-18T13:00:49Z",
+      "baseRefName": "v0.x",
+      "headRefName": "fix/ghsa-6chq-wfr3-2hj9-v0x",
+      "baseRefOid": "f4f2d76e25cc0f777e5416e2d76282ab873ef9dc",
+      "headRefOid": "50ac5a3a0f172015db66bfc5e01a94e65f4b3bfd",
+      "mergeCommitOid": "e3ddeb40f6a142a234925341151e2ca631a6de64",
+      "changedFiles": 3,
+      "additions": 66,
+      "deletions": 6,
+      "labels": [
+        "priority::medium",
+        "commit::fix",
+        "type::security"
+      ],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "test/unit/adapters/http.js"
+      ],
+      "debugScore": 3,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "lib/adapters/http.js",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/utils.js",
+          "additions": 8,
+          "deletions": 5,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "test/unit/adapters/http.js",
+          "additions": 56,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10749,
+      "title": "fix: header security issues",
+      "url": "https://github.com/axios/axios/pull/10749",
+      "mergedAt": "2026-04-18T12:56:39Z",
+      "baseRefName": "v1.x",
+      "headRefName": "fix/ghsa-6chq-wfr3-2hj9",
+      "baseRefOid": "0a73b7c585356fd7a85c35fda756dcaffae6089c",
+      "headRefOid": "f898f0a042eb9f62c9470934b85f6357961cd2ac",
+      "mergeCommitOid": "37cf18f2e2c10171ddd851c8e46938d48cc35948",
+      "changedFiles": 3,
+      "additions": 61,
+      "deletions": 11,
+      "labels": [
+        "priority::medium",
+        "commit::fix",
+        "type::security"
+      ],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/unit/adapters/http.test.js"
+      ],
+      "debugScore": 3,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "lib/adapters/http.js",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/utils.js",
+          "additions": 10,
+          "deletions": 10,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/adapters/http.test.js",
+          "additions": 49,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10747,
+      "title": "chore: stop committing dist/ and remove bower",
+      "url": "https://github.com/axios/axios/pull/10747",
+      "mergedAt": "2026-04-18T11:55:22Z",
+      "baseRefName": "v0.x",
+      "headRefName": "chore/remove-committed-dist-v0x",
+      "baseRefOid": "1f2f64433e5be205d74471c78c2721909282b9c0",
+      "headRefOid": "65574e5f235fc260799f25724cac6994f68d1ea5",
+      "mergeCommitOid": "f4f2d76e25cc0f777e5416e2d76282ab873ef9dc",
+      "changedFiles": 15,
+      "additions": 5,
+      "deletions": 4927,
+      "labels": [
+        "priority::medium",
+        "commit::chore"
+      ],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "huge-diff",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".gitignore",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": ".npmignore",
+          "additions": 0,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "CONTRIBUTING.md",
+          "additions": 0,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "Gruntfile.js",
+          "additions": 1,
+          "deletions": 27,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "README.md",
+          "additions": 0,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "UPGRADE_GUIDE.md",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "bower.json",
+          "additions": 0,
+          "deletions": 38,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "dist/axios.js",
+          "additions": 0,
+          "deletions": 2425,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "dist/axios.js.map",
+          "additions": 0,
+          "deletions": 1,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "dist/axios.min.js",
+          "additions": 0,
+          "deletions": 2,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "dist/axios.min.js.map",
+          "additions": 0,
+          "deletions": 1,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "dist/esm/axios.js",
+          "additions": 0,
+          "deletions": 2417,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "dist/esm/axios.js.map",
+          "additions": 0,
+          "deletions": 1,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "dist/esm/axios.min.js",
+          "additions": 0,
+          "deletions": 2,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "dist/esm/axios.min.js.map",
+          "additions": 0,
+          "deletions": 1,
+          "changeType": "DELETED"
+        }
+      ]
+    },
+    {
+      "number": 10746,
+      "title": "chore: remove orphaned bower support",
+      "url": "https://github.com/axios/axios/pull/10746",
+      "mergedAt": "2026-04-18T11:54:07Z",
+      "baseRefName": "v1.x",
+      "headRefName": "chore/remove-bower-v1x",
+      "baseRefOid": "87535e8e868b3bd07f1643503e28b59ffb7559ce",
+      "headRefOid": "30d1c7aa9191cc7c0c27a8d15ac3a2aee7a8cf39",
+      "mergeCommitOid": "0a73b7c585356fd7a85c35fda756dcaffae6089c",
+      "changedFiles": 4,
+      "additions": 3,
+      "deletions": 66,
+      "labels": [
+        "priority::medium",
+        "commit::chore"
+      ],
+      "keywordHits": [
+        "fail",
+        "broken"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".github/workflows/release-branch.yml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "README.md",
+          "additions": 0,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "bower.json",
+          "additions": 0,
+          "deletions": 43,
+          "changeType": "DELETED"
+        },
+        {
+          "path": "gulpfile.js",
+          "additions": 2,
+          "deletions": 16,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10741,
+      "title": "test: migrate progressEventReducer test to vitest",
+      "url": "https://github.com/axios/axios/pull/10741",
+      "mergedAt": "2026-04-17T08:39:40Z",
+      "baseRefName": "v1.x",
+      "headRefName": "test/migrate-progress-event-reducer",
+      "baseRefOid": "d7906f2eea3fc4b706cba3befe7c4e3ce56044a2",
+      "headRefOid": "e155b1c339f06d73716872a2ad2b72cb474dea00",
+      "mergeCommitOid": "9ed4f58982d587be080872bd0d943451b74fc1ff",
+      "changedFiles": 1,
+      "additions": 9,
+      "deletions": 9,
+      "labels": [],
+      "keywordHits": [],
+      "hasTests": true,
+      "testFiles": [
+        "tests/unit/helpers/progressEventReducer.test.js"
+      ],
+      "debugScore": 2,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "tests/unit/helpers/progressEventReducer.test.js",
+          "additions": 9,
+          "deletions": 9,
+          "changeType": "RENAMED"
+        }
+      ]
+    },
+    {
+      "number": 10740,
+      "title": "chore: add CODEOWNERS",
+      "url": "https://github.com/axios/axios/pull/10740",
+      "mergedAt": "2026-04-17T08:14:28Z",
+      "baseRefName": "v0.x",
+      "headRefName": "chore/codeowners-v0x",
+      "baseRefOid": "44bca902e1bdd7dd6490c7b4985b63e729b0e634",
+      "headRefOid": "419269646917d6167ea63a5bc356f5586add7f01",
+      "mergeCommitOid": "1f2f64433e5be205d74471c78c2721909282b9c0",
+      "changedFiles": 1,
+      "additions": 1,
+      "deletions": 0,
+      "labels": [
+        "priority::medium",
+        "commit::chore"
+      ],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".github/CODEOWNERS",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 10739,
+      "title": "chore: add CODEOWNERS",
+      "url": "https://github.com/axios/axios/pull/10739",
+      "mergedAt": "2026-04-17T08:21:06Z",
+      "baseRefName": "v1.x",
+      "headRefName": "chore/codeowners-v1x",
+      "baseRefOid": "5266af94540552e99079caa66bb241bf35b42051",
+      "headRefOid": "2575241a91ee20f9b2a8c50f3ef069564726fb57",
+      "mergeCommitOid": "d7906f2eea3fc4b706cba3befe7c4e3ce56044a2",
+      "changedFiles": 1,
+      "additions": 1,
+      "deletions": 0,
+      "labels": [],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".github/CODEOWNERS",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "ADDED"
+        }
+      ]
+    },
+    {
+      "number": 10738,
+      "title": "chore(ci): use ephemeral release branch for v1.x",
+      "url": "https://github.com/axios/axios/pull/10738",
+      "mergedAt": "2026-04-17T14:32:10Z",
+      "baseRefName": "v1.x",
+      "headRefName": "chore/release-branch-ephemeral-v1x",
+      "baseRefOid": "9ed4f58982d587be080872bd0d943451b74fc1ff",
+      "headRefOid": "d42757325cc7aa8cfff063a2e910cb779e0afb6c",
+      "mergeCommitOid": "87535e8e868b3bd07f1643503e28b59ffb7559ce",
+      "changedFiles": 1,
+      "additions": 5,
+      "deletions": 2,
+      "labels": [],
+      "keywordHits": [],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 0,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": ".github/workflows/release-branch.yml",
+          "additions": 5,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10737,
+      "title": "fix: improve regex in AxiosURLSearchParams",
+      "url": "https://github.com/axios/axios/pull/10737",
+      "mergedAt": "2026-04-16T19:21:59Z",
+      "baseRefName": "v0.x",
+      "headRefName": "fix/update-bad-regex-in-url-param-search",
+      "baseRefOid": "4c4f07fabdb005f5430bab797f12b55e2ed5fb33",
+      "headRefOid": "977aa2d7adf165704f369a3a7313cddc1fa180c3",
+      "mergeCommitOid": "44bca902e1bdd7dd6490c7b4985b63e729b0e634",
+      "changedFiles": 1,
+      "additions": 2,
+      "deletions": 3,
+      "labels": [
+        "priority::medium",
+        "commit::fix"
+      ],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "lib/helpers/AxiosURLSearchParams.js",
+          "additions": 2,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10736,
+      "title": "fix: improve regex in AxiosURLSearchParams",
+      "url": "https://github.com/axios/axios/pull/10736",
+      "mergedAt": "2026-04-16T19:14:23Z",
+      "baseRefName": "v1.x",
+      "headRefName": "fix/update-bad-regex-in-url-param-search",
+      "baseRefOid": "d87df3f7a1c3417ec02acb667cbb47e2c1c8d473",
+      "headRefOid": "1c03ffe2047e526f5810eceafdb9fbd02944b802",
+      "mergeCommitOid": "5266af94540552e99079caa66bb241bf35b42051",
+      "changedFiles": 1,
+      "additions": 1,
+      "deletions": 2,
+      "labels": [
+        "priority::medium",
+        "commit::fix"
+      ],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": 1,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "lib/helpers/AxiosURLSearchParams.js",
+          "additions": 1,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10716,
+      "title": "chore(deps): bump follow-redirects from 1.15.11 to 1.16.0 in /docs",
+      "url": "https://github.com/axios/axios/pull/10716",
+      "mergedAt": "2026-04-15T19:07:08Z",
+      "baseRefName": "v1.x",
+      "headRefName": "dependabot/npm_and_yarn/docs/follow-redirects-1.16.0",
+      "baseRefOid": "770f5ef0811fc6ec8e7cea4ff40eb83542957bc3",
+      "headRefOid": "09b9e5c0fe3b1d10a93224c30380a6ea0c3a4401",
+      "mergeCommitOid": "d87df3f7a1c3417ec02acb667cbb47e2c1c8d473",
+      "changedFiles": 1,
+      "additions": 3,
+      "deletions": 3,
+      "labels": [
+        "dependencies",
+        "javascript"
+      ],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -7,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "docs-only",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "docs/package-lock.json",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10717,
+      "title": "chore(deps): bump follow-redirects from 1.15.11 to 1.16.0",
+      "url": "https://github.com/axios/axios/pull/10717",
+      "mergedAt": "2026-04-15T19:02:09Z",
+      "baseRefName": "v1.x",
+      "headRefName": "dependabot/npm_and_yarn/follow-redirects-1.16.0",
+      "baseRefOid": "250937a148eed433d14d1a16209c49b9e184cc56",
+      "headRefOid": "37f4ab407649e37caa708533399e1a69bb6110e7",
+      "mergeCommitOid": "770f5ef0811fc6ec8e7cea4ff40eb83542957bc3",
+      "changedFiles": 1,
+      "additions": 3,
+      "deletions": 3,
+      "labels": [
+        "commit::chore",
+        "type::automated-pr"
+      ],
+      "keywordHits": [
+        "fix"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -3,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "dependency-update",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "package-lock.json",
+          "additions": 3,
+          "deletions": 3,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10727,
+      "title": "fix: docs incorrectly added",
+      "url": "https://github.com/axios/axios/pull/10727",
+      "mergedAt": "2026-04-15T18:51:03Z",
+      "baseRefName": "v1.x",
+      "headRefName": "docs/incorrect-docs-issue",
+      "baseRefOid": "e04ee42a673684357e865e2484b522b2034f756c",
+      "headRefOid": "4a8877c0a3e56078e4c8b183404de97a52ba5ad2",
+      "mergeCommitOid": "250937a148eed433d14d1a16209c49b9e184cc56",
+      "changedFiles": 5,
+      "additions": 11,
+      "deletions": 12,
+      "labels": [
+        "priority::medium",
+        "commit::docs"
+      ],
+      "keywordHits": [
+        "fix",
+        "incorrect"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "docs-only",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "additions": 7,
+          "deletions": 8,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/es/pages/advanced/multipart-form-data-format.md",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/fr/pages/advanced/multipart-form-data-format.md",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/pages/advanced/multipart-form-data-format.md",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/zh/pages/advanced/multipart-form-data-format.md",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10728,
+      "title": "fix: form data recursion",
+      "url": "https://github.com/axios/axios/pull/10728",
+      "mergedAt": "2026-04-15T18:52:19Z",
+      "baseRefName": "v0.x",
+      "headRefName": "fix/form-data-recursion",
+      "baseRefOid": "5073eca0edd37b13a0e39dcb48794d779b7dff8d",
+      "headRefOid": "865aa1dd45d56a014bb5ee6612660449860951ba",
+      "mergeCommitOid": "4c4f07fabdb005f5430bab797f12b55e2ed5fb33",
+      "changedFiles": 5,
+      "additions": 121,
+      "deletions": 4,
+      "labels": [
+        "priority::medium",
+        "commit::fix"
+      ],
+      "keywordHits": [
+        "fix",
+        "error"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "test/specs/helpers/toFormData.spec.js"
+      ],
+      "debugScore": 4,
+      "suggestedDifficulty": "mid",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "README.md",
+          "additions": 10,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "index.d.ts",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/core/AxiosError.js",
+          "additions": 2,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/helpers/toFormData.js",
+          "additions": 12,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "test/specs/helpers/toFormData.spec.js",
+          "additions": 96,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10725,
+      "title": "test(AxiosError): document and test error.status behaviour",
+      "url": "https://github.com/axios/axios/pull/10725",
+      "mergedAt": "2026-04-15T18:45:58Z",
+      "baseRefName": "v1.x",
+      "headRefName": "fix/axioserror-status-jsdoc",
+      "baseRefOid": "85132ffba1a77609ea5d101c8a413dea7174932f",
+      "headRefOid": "3124138a6c073aa1a9422db5cb8580c909857dd2",
+      "mergeCommitOid": "e04ee42a673684357e865e2484b522b2034f756c",
+      "changedFiles": 1,
+      "additions": 44,
+      "deletions": 0,
+      "labels": [],
+      "keywordHits": [
+        "fix",
+        "regression",
+        "error"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/unit/core/AxiosError.test.js"
+      ],
+      "debugScore": 5,
+      "suggestedDifficulty": "low",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": "tests/unit/core/AxiosError.test.js",
+          "additions": 44,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10726,
+      "title": "fix: form data recursion",
+      "url": "https://github.com/axios/axios/pull/10726",
+      "mergedAt": "2026-04-15T18:28:34Z",
+      "baseRefName": "v1.x",
+      "headRefName": "fix/form-data-recursion",
+      "baseRefOid": "42b215406e4d89b6300c1dfe912baf015fef226c",
+      "headRefOid": "0f849ee010b2bbb7184967e9ad3be502889983bd",
+      "mergeCommitOid": "85132ffba1a77609ea5d101c8a413dea7174932f",
+      "changedFiles": 19,
+      "additions": 627,
+      "deletions": 361,
+      "labels": [
+        "priority::medium",
+        "commit::fix"
+      ],
+      "keywordHits": [
+        "fix",
+        "crash",
+        "error"
+      ],
+      "hasTests": true,
+      "testFiles": [
+        "tests/unit/toFormData.test.js"
+      ],
+      "debugScore": 4,
+      "suggestedDifficulty": "high",
+      "exclusionHints": [],
+      "files": [
+        {
+          "path": ".github/workflows/zizmor.yml",
+          "additions": 1,
+          "deletions": 1,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "README.md",
+          "additions": 197,
+          "deletions": 197,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/es/pages/advanced/multipart-form-data-format.md",
+          "additions": 39,
+          "deletions": 29,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/es/pages/advanced/request-config.md",
+          "additions": 22,
+          "deletions": 6,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/es/pages/advanced/x-www-form-urlencoded-format.md",
+          "additions": 13,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/fr/pages/advanced/multipart-form-data-format.md",
+          "additions": 39,
+          "deletions": 29,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/fr/pages/advanced/request-config.md",
+          "additions": 18,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/fr/pages/advanced/x-www-form-urlencoded-format.md",
+          "additions": 13,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/pages/advanced/multipart-form-data-format.md",
+          "additions": 39,
+          "deletions": 29,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/pages/advanced/request-config.md",
+          "additions": 18,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/pages/advanced/x-www-form-urlencoded-format.md",
+          "additions": 13,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/zh/pages/advanced/multipart-form-data-format.md",
+          "additions": 39,
+          "deletions": 29,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/zh/pages/advanced/request-config.md",
+          "additions": 18,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "docs/zh/pages/advanced/x-www-form-urlencoded-format.md",
+          "additions": 13,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "index.d.cts",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "index.d.ts",
+          "additions": 1,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/core/AxiosError.js",
+          "additions": 34,
+          "deletions": 33,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "lib/helpers/toFormData.js",
+          "additions": 10,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        },
+        {
+          "path": "tests/unit/toFormData.test.js",
+          "additions": 99,
+          "deletions": 0,
+          "changeType": "MODIFIED"
+        }
+      ]
+    },
+    {
+      "number": 10722,
+      "title": "docs(threatmodel): clarify TLS and tag-replay threat wording",
+      "url": "https://github.com/axios/axios/pull/10722",
+      "mergedAt": "2026-04-15T18:01:01Z",
+      "baseRefName": "v1.x",
+      "headRefName": "copilot/fix-spacing-in-threatmodel",
+      "baseRefOid": "0e1634aa9a5f9abc2789292598650ea4de798054",
+      "headRefOid": "3554bc8d0309ddddd7e7f1aa28e2b74910823560",
+      "mergeCommitOid": "42b215406e4d89b6300c1dfe912baf015fef226c",
+      "changedFiles": 1,
+      "additions": 2,
+      "deletions": 2,
+      "labels": [
+        "priority::medium",
+        "commit::docs"
+      ],
+      "keywordHits": [
+        "fix",
+        "error"
+      ],
+      "hasTests": false,
+      "testFiles": [],
+      "debugScore": -2,
+      "suggestedDifficulty": "reject",
+      "exclusionHints": [
+        "docs-only",
+        "no-test-files-in-first-60-files"
+      ],
+      "files": [
+        {
+          "path": "THREATMODEL.md",
+          "additions": 2,
+          "deletions": 2,
+          "changeType": "MODIFIED"
+        }
+      ]
+    }
+  ]
+}

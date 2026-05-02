@@ -1,0 +1,35 @@
+id: axios-axios-high-http-connect-timeout
+repo: axios/axios
+repo_url: https://github.com/axios/axios
+license: MIT
+stars_at_selection: 107000
+size_bucket: small
+language_tags: [javascript, node, http-client, networking]
+pr_number: 10819
+pr_url: https://github.com/axios/axios/pull/10819
+pr_title: "fix(http): honor timeout during connect without redirects"
+merged_at: "2026-04-20T06:39:27Z"
+base_commit: 2a51828213128691d2e37502b5eb2cf4965a737d
+original_pr_head_commit: f4ed29a7883f52f49f30707aabc13bcbf3b0e0cc
+fixed_commit: ad68e1a484b50086af427f767bbd7d6e3aab7ac3
+difficulty: high
+instruction: >
+  Node HTTP requests with maxRedirects set to 0 do not honor the configured
+  timeout while the TCP connection is still pending. Reproduce the hanging
+  connect phase and make timeout handling abort the request consistently without
+  changing timeout: 0 behavior.
+setup:
+  - npm install
+public_tests:
+  - npm run test:vitest:unit -- tests/unit/adapters/http.test.js
+hidden_tests:
+  - benchmark/cases/axios__axios/hidden-tests/high/run.sh
+test_strategy:
+  core_tests:
+    - benchmark/cases/axios__axios/hidden-tests/high/run.sh
+  oracle_suites: []
+  regression_tests: []
+  success_rule: core_tests_pass
+selection_notes: >
+  Higher-difficulty networking lifecycle bug involving native ClientRequest
+  timeout semantics, abort handling, and maxRedirects transport selection.
