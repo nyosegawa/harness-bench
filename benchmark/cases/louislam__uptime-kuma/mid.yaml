@@ -1,0 +1,35 @@
+id: louislam-uptime-kuma-mid-uptime-cleanup-buckets
+repo: louislam/uptime-kuma
+repo_url: https://github.com/louislam/uptime-kuma
+license: MIT
+stars_at_selection: 86135
+size_bucket: medium
+language_tags: [javascript, node, monitoring, uptime]
+pr_number: 7235
+pr_url: https://github.com/louislam/uptime-kuma/pull/7235
+pr_title: "fix(uptime): ensure correct handling of missing time buckets in uptime calculations"
+merged_at: "2026-04-10T14:22:02Z"
+base_commit: 7136dd7832971beb5691d09e86b28a0fcb5fa0fb
+original_pr_head_commit: 08ca92ee1c7fae24c744ef9bb0a9cf461568a360
+fixed_commit: 07d28d818180796123b7876c161c2712d80cd0d1
+difficulty: mid
+instruction: >
+  Uptime cleanup lookups can create missing historical buckets, which shifts
+  the rolling data window and makes longer-period uptime views show too little
+  recent data. Reproduce the missing-bucket side effect and prevent cleanup
+  lookups from mutating minutely, hourly, or daily uptime queues.
+setup:
+  - npm ci --omit=dev --ignore-scripts --no-audit
+public_tests:
+  - node --test --test-reporter=spec test/backend-test/test-uptime-calculator.js
+hidden_tests:
+  - benchmark/cases/louislam__uptime-kuma/hidden-tests/mid/run.sh
+test_strategy:
+  core_tests:
+    - benchmark/cases/louislam__uptime-kuma/hidden-tests/mid/run.sh
+  oracle_suites: []
+  regression_tests: []
+  success_rule: core_tests_pass
+selection_notes: >
+  Mid-difficulty state mutation bug in rolling uptime queues. Hidden tests
+  avoid DB-heavy update paths and directly verify key lookup side effects.

@@ -1,0 +1,36 @@
+id: louislam-uptime-kuma-high-websocket-auth-options
+repo: louislam/uptime-kuma
+repo_url: https://github.com/louislam/uptime-kuma
+license: MIT
+stars_at_selection: 86135
+size_bucket: medium
+language_tags: [javascript, node, monitoring, websocket]
+pr_number: 7304
+pr_url: https://github.com/louislam/uptime-kuma/pull/7304
+pr_title: "feat: websocket improve to fix issue #7268 including support authentication"
+merged_at: "2026-04-21T11:15:07Z"
+base_commit: 7d7f12b5b18274e385d3b6416b6dd7f6aa212fe4
+original_pr_head_commit: 3686febc791def3075388bdb5c5d942e93ff7cef
+fixed_commit: 2f45b46315bf8dae4e906dec41a341765c59a3f0
+difficulty: high
+instruction: >
+  WebSocket monitors ignore custom headers and authentication options during
+  the upgrade handshake. Reproduce option construction for websocket checks and
+  support headers, basic auth, OAuth client credentials, mTLS, and handshake
+  timeouts without breaking existing status-code behavior.
+setup:
+  - npm ci --omit=dev --ignore-scripts --no-audit
+public_tests:
+  - node --test --test-reporter=spec test/backend-test/monitors/test-websocket.js
+hidden_tests:
+  - benchmark/cases/louislam__uptime-kuma/hidden-tests/high/run.sh
+test_strategy:
+  core_tests:
+    - benchmark/cases/louislam__uptime-kuma/hidden-tests/high/run.sh
+  oracle_suites: []
+  regression_tests: []
+  success_rule: core_tests_pass
+selection_notes: >
+  Higher-difficulty monitor behavior spanning websocket handshake options and
+  authentication precedence. Hidden tests check options directly to avoid
+  flaky network timing.
