@@ -1,0 +1,36 @@
+id: fastapi-fastapi-high-pydantic-json-fast-path
+repo: fastapi/fastapi
+repo_url: https://github.com/fastapi/fastapi
+license: MIT
+stars_at_selection: 97825
+size_bucket: large
+language_tags: [python, web-framework, pydantic, serialization]
+pr_number: 14962
+pr_url: https://github.com/fastapi/fastapi/pull/14962
+pr_title: "Serialize JSON response with Pydantic when response model is available"
+merged_at: "2026-02-22T16:07:19Z"
+base_commit: 1e78a36b7310003f0ff634627d8a7bc53c6ccdee
+original_pr_head_commit: 880ad19087c65436da083118aad4b4b9f4da1503
+fixed_commit: 590a5e535587cc07041ba12d308c748433ccb168
+difficulty: high
+instruction: >
+  FastAPI responses with a Pydantic return type or response model still go
+  through the slower Python json.dumps path when the default response class is
+  used. Reproduce response serialization for Pydantic models and use the direct
+  Pydantic JSON bytes path only when no explicit response class overrides it.
+setup:
+  - uv run --with-editable . --with httpx python -c "import fastapi"
+public_tests:
+  - uv run --with-editable . --with httpx pytest tests/test_dump_json_fast_path.py -q
+hidden_tests:
+  - benchmark/cases/fastapi__fastapi/hidden-tests/high/run.sh
+test_strategy:
+  core_tests:
+    - benchmark/cases/fastapi__fastapi/hidden-tests/high/run.sh
+  oracle_suites: []
+  regression_tests: []
+  success_rule: core_tests_pass
+selection_notes: >
+  Higher-difficulty routing/serialization behavior with a performance-sensitive
+  fast path. Hidden test verifies both the optimized default path and the
+  explicit JSONResponse fallback.

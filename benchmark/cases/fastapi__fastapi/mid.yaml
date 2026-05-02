@@ -1,0 +1,35 @@
+id: fastapi-fastapi-mid-jsonable-encoder-color-types
+repo: fastapi/fastapi
+repo_url: https://github.com/fastapi/fastapi
+license: MIT
+stars_at_selection: 97825
+size_bucket: large
+language_tags: [python, web-framework, pydantic]
+pr_number: 15101
+pr_url: https://github.com/fastapi/fastapi/pull/15101
+pr_title: "Update Pydantic v2 code to address deprecations"
+merged_at: "2026-04-23T16:40:29Z"
+base_commit: cbd64b09a32681d3b0ea097608bc62eb0d1587e0
+original_pr_head_commit: e0e25685acdda24e2a36faf7d435c50295fe0807
+fixed_commit: 7815a32f2ed177b8b786a48b3e0712c05b5c644f
+difficulty: mid
+instruction: >
+  FastAPI's JSON encoder still relies on deprecated Pydantic color imports and
+  misses the newer pydantic-extra-types color class. Reproduce color encoding
+  with current Pydantic v2 packages and support both legacy and new color
+  classes without import-time failures.
+setup:
+  - uv run --with-editable . --with pydantic-extra-types python -c "import fastapi"
+public_tests:
+  - uv run --with-editable . --with pydantic-extra-types pytest tests/test_jsonable_encoder.py -q
+hidden_tests:
+  - benchmark/cases/fastapi__fastapi/hidden-tests/mid/run.sh
+test_strategy:
+  core_tests:
+    - benchmark/cases/fastapi__fastapi/hidden-tests/mid/run.sh
+  oracle_suites: []
+  regression_tests: []
+  success_rule: core_tests_pass
+selection_notes: >
+  Mid-difficulty compatibility bug around Pydantic v2 deprecations and optional
+  extra color types. Hidden test exercises both import paths directly.
