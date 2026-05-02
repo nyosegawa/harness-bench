@@ -1,0 +1,36 @@
+id: go-gitea-gitea-mid-pr-merge-self-reference
+repo: go-gitea/gitea
+repo_url: https://github.com/go-gitea/gitea
+license: MIT
+stars_at_selection: 55300
+size_bucket: large
+language_tags: [go, web-app, git, issues]
+pr_number: 36490
+pr_url: https://github.com/go-gitea/gitea/pull/36490
+pr_title: "Don't create self-references in merged PRs"
+merged_at: "2026-01-30T20:12:24Z"
+base_commit: 2d1306291b63a95725c281118340ce2dabd71c8c
+original_pr_head_commit: 197346193dd215bebf7172e55d10c2d46fa0cab6
+fixed_commit: a16ca3c57cc1fc05a1839bb604a82abcc62052c5
+difficulty: mid
+instruction: >
+  Pull request merge commits often mention the merged PR number in their commit
+  message. Reproduce the issue timeline behavior and prevent a merged PR from
+  creating a commit-reference comment to itself, while keeping normal issue and
+  pull request references working.
+setup:
+  - go mod download
+public_tests:
+  - go test ./services/issue -run TestUpdateIssuesCommit
+hidden_tests:
+  - benchmark/cases/go-gitea__gitea/hidden-tests/mid/run.sh
+test_strategy:
+  core_tests:
+    - benchmark/cases/go-gitea__gitea/hidden-tests/mid/run.sh
+  oracle_suites: []
+  regression_tests: []
+  success_rule: core_tests_pass
+selection_notes: >
+  Mid-difficulty issue timeline bug requiring fixture-backed model behavior:
+  skip only the PR merge commit's reference to its own PR, without suppressing
+  unrelated commit references.

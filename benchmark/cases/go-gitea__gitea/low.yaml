@@ -1,0 +1,35 @@
+id: go-gitea-gitea-low-schedule-null-payload
+repo: go-gitea/gitea
+repo_url: https://github.com/go-gitea/gitea
+license: MIT
+stars_at_selection: 55300
+size_bucket: large
+language_tags: [go, web-app, git, actions]
+pr_number: 37466
+pr_url: https://github.com/go-gitea/gitea/pull/37466
+pr_title: "Fix scheduled action panic with null event payload (#37459)"
+merged_at: "2026-04-28T05:07:26Z"
+base_commit: 78899832eb806bb3ee2e536115af2e5ef0094706
+original_pr_head_commit: d2213d59405ec3d4bbcb56d0a0ebcf13928d26b2
+fixed_commit: c4a1ff7d1665a8eecc488b8edec6aebc946ed062
+difficulty: low
+instruction: >
+  Scheduled Actions can panic when the stored event payload is JSON null.
+  Reproduce the schedule payload handling edge case and make scheduled runs add
+  the schedule field without crashing or dropping already valid payload fields.
+setup:
+  - go mod download
+public_tests:
+  - go test ./services/actions -run Test
+hidden_tests:
+  - benchmark/cases/go-gitea__gitea/hidden-tests/low/run.sh
+test_strategy:
+  core_tests:
+    - benchmark/cases/go-gitea__gitea/hidden-tests/low/run.sh
+  oracle_suites: []
+  regression_tests: []
+  success_rule: core_tests_pass
+selection_notes: >
+  Focused scheduled-action payload bug with a narrow helper-level failure.
+  Hidden tests cover JSON null, empty payloads, and preserving existing payload
+  keys when adding the schedule value.
