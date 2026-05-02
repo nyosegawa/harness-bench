@@ -5,6 +5,7 @@ import { dirname, resolve } from "node:path";
 
 const runsRoot = resolve(process.argv[2] ?? "benchmark/runs");
 const output = resolve(process.argv[3] ?? "benchmark/reports/results.html");
+const caseMetadataCache = new Map();
 
 const results = loadResults(runsRoot);
 mkdirSync(dirname(output), { recursive: true });
@@ -187,6 +188,7 @@ function renderHtml(results) {
 }
 
 function normalizeResultForDisplay(result) {
+  result.case_metadata = result.case_metadata ?? loadCaseMetadata(result.case_path);
   if (result.mode !== "agent") return result;
   const runDir = dirname(result.result_path);
   const metrics = result.metrics ?? {};
@@ -419,6 +421,55 @@ function unique(values) {
 
 function caseMeta(result) {
   return result.case_metadata ?? {};
+}
+
+function loadCaseMetadata(path) {
+  if (!path) return {};
+  const resolved = resolve(path);
+  if (caseMetadataCache.has(resolved)) return caseMetadataCache.get(resolved);
+  if (!existsSync(resolved)) return {};
+  const text = readFileSync(resolved, "utf8");
+  const metadata = {
+    difficulty: scalarField(text, "difficulty"),
+    size_bucket: scalarField(text, "size_bucket"),
+    language_tags: listField(text, "language_tags"),
+    license: scalarField(text, "license"),
+    stars_at_selection: numericField(text, "stars_at_selection"),
+    pr_number: numericField(text, "pr_number"),
+    pr_url: scalarField(text, "pr_url"),
+    pr_title: scalarField(text, "pr_title"),
+    merged_at: scalarField(text, "merged_at"),
+    base_commit: scalarField(text, "base_commit"),
+    fixed_commit: scalarField(text, "fixed_commit"),
+  };
+  caseMetadataCache.set(resolved, metadata);
+  return metadata;
+}
+
+function scalarField(text, key) {
+  const match = text.match(new RegExp(`^${escapeRegExp(key)}:\\s*(.+)$`, "m"));
+  if (!match) return null;
+  const value = match[1].trim();
+  if (value === "null") return null;
+  if ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith("'") && value.endsWith("'"))) {
+    return value.slice(1, -1);
+  }
+  return value;
+}
+
+function numericField(text, key) {
+  const value = scalarField(text, key);
+  return /^-?\d+$/.test(String(value)) ? Number(value) : null;
+}
+
+function listField(text, key) {
+  const value = scalarField(text, key);
+  if (!value?.startsWith("[") || !value.endsWith("]")) return [];
+  return value.slice(1, -1).split(",").map((item) => item.trim()).filter(Boolean);
+}
+
+function escapeRegExp(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 function readJsonl(path) {
