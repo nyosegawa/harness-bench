@@ -21,17 +21,27 @@ retry was needed in these three full matrices.
 
 Wall time includes checkout/setup, agent work, and hidden test execution.
 
-| Harness | Median Wall | Median Pass Wall | Median Turns | Median Assistant | Median Tools | Median Effective Total Tokens | Reported Cost |
+| Harness | Median Wall | Median Pass Wall | Median Turns | Median Assistant | Median Tools | Median Effective Total Tokens | Cost |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Codex | 248.9s | 248.9s | 1 | 9 | 36 | 1,172,347 | n/a |
+| Codex | 248.9s | 248.9s | 1 | 9 | 36 | 1,172,347 | $33.84 estimated |
 | Claude Code | 224.6s | 254.7s | 20 | 20 | n/a | 618,693 | $22.62 |
-| Cursor Agent | 186.6s | 174.8s | 7 | 7 | 33 | 980,871 | n/a |
+| Cursor Agent | 186.6s | 174.8s | 7 | 7 | 33 | 980,871 | $28.34 estimated |
 
 Metric semantics differ by harness. In particular, Codex's single
 conversation turn reflects one `codex exec` invocation; action volume is better
 represented by assistant messages, command calls, file edits, and tool calls.
-Claude's reported cost is native CLI output. Codex and Cursor costs require a
-rate card.
+Claude's reported cost is native CLI output. Codex and Cursor costs use the
+API-equivalent rate card `benchmark/rate-cards/api-equivalent-2026-05-03.json`.
+That card uses the OpenAI GPT-5.5 API rates checked on 2026-05-03 and should
+not be read as Cursor subscription billing truth.
+
+Cost per pass, using total matrix cost divided by passed cases:
+
+| Harness | Matrix Cost | Passed | Cost / Pass |
+| --- | ---: | ---: | ---: |
+| Codex | $33.84 estimated | 18 | $1.88 |
+| Claude Code | $22.62 reported | 18 | $1.26 |
+| Cursor Agent | $28.34 estimated | 17 | $1.67 |
 
 ## Success By Difficulty
 
@@ -118,5 +128,8 @@ case's hidden expectation is later judged incorrect.
 - `benchmark/runs/` and `benchmark/workspaces/` remain local ignored data.
 - Raw harness logs were preserved; `scripts/refresh-result-metrics.mjs` found
   no parser updates needed after these runs.
+- `scripts/apply-rate-card.mjs` was used to apply
+  `benchmark/rate-cards/api-equivalent-2026-05-03.json` to local run results
+  before regenerating the tracked HTML report.
 - The HTML report includes smoke and pilot runs as well as the three baseline
   matrices. Use matrix IDs above when isolating the production baseline set.

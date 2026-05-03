@@ -15,3 +15,8 @@ node scripts/run-case.mjs ... --rateCard benchmark/rate-cards/example-2026-05-03
 Only publish estimated costs after filling in real rates and recording the rate-card id/hash.
 
 Cursor estimates are API-equivalent estimates. They may not match Cursor subscription billing or credit accounting.
+
+`api-equivalent-2026-05-03.json` records the OpenAI GPT-5.5 API-equivalent
+rates checked on 2026-05-03. It can estimate Codex and Cursor GPT-5.5 runs.
+Claude Code runs keep their reported `total_cost_usd` and are not overwritten
+by estimated costs.

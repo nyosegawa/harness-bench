@@ -1,0 +1,48 @@
+{
+  "id": "api-equivalent-2026-05-03",
+  "currency": "USD",
+  "unit": "per_1m_tokens",
+  "sources": [
+    {
+      "provider": "OpenAI",
+      "url": "https://openai.com/api/pricing/",
+      "checked_at": "2026-05-03",
+      "notes": "GPT-5.5 standard processing API price: input $5.00, cached input $0.50, output $30.00 per 1M tokens."
+    }
+  ],
+  "notes": [
+    "This card estimates API-equivalent dollar costs for harnesses that expose token usage but not dollar cost.",
+    "Claude Code reports total_cost_usd directly; scripts/apply-rate-card.mjs preserves reported costs and does not overwrite them.",
+    "Cursor estimates are API-equivalent estimates for the emitted GPT-5.5 model name. They are not Cursor subscription billing or credit accounting.",
+    "OpenAI output_tokens are treated as already including reasoning output tokens, so reasoning_output is set to 0 to avoid double counting."
+  ],
+  "aliases": {
+    "GPT-5.5 272K Medium": "gpt-5.5",
+    "GPT-5.5 1M Medium": "gpt-5.5",
+    "gpt-5.5-medium": "gpt-5.5",
+    "claude-opus-4-7-medium": "claude-opus-4-7",
+    "Opus 4.7 (Thinking) 300K Extra High": "claude-opus-4-7",
+    "Opus 4.7 (Thinking) 1M Extra High": "claude-opus-4-7"
+  },
+  "models": {
+    "gpt-5.5": {
+      "input": 5.0,
+      "cached_input": 0.5,
+      "output": 30.0,
+      "reasoning_output": 0.0,
+      "cache_write": null
+    },
+    "claude-opus-4-7": {
+      "input": null,
+      "cached_input": null,
+      "output": null,
+      "cache_write": null
+    },
+    "composer-2": {
+      "input": null,
+      "cached_input": null,
+      "output": null,
+      "cache_write": null
+    }
+  }
+}
