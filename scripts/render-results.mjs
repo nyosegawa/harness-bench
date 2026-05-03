@@ -30,12 +30,17 @@ function loadResults(root) {
 function renderHtml(results) {
   const agentResults = results.filter((result) => result.mode === "agent" && !result.invalid_run);
   const invalidResults = results.filter((result) => result.mode === "agent" && result.invalid_run);
-  const summary = summarize(agentResults);
-  const caseSummaryRows = renderSummaryRows(groupSummary(agentResults, (result) => result.case_id));
-  const harnessSummaryRows = renderSummaryRows(groupSummary(agentResults, (result) => result.harness));
-  const difficultySummaryRows = renderSummaryRows(groupSummary(agentResults, (result) => caseMeta(result).difficulty ?? "unknown"));
-  const sizeSummaryRows = renderSummaryRows(groupSummary(agentResults, (result) => caseMeta(result).size_bucket ?? "unknown"));
-  const failureSummaryRows = renderFailureSummaryRows(failureSummary(agentResults.filter((result) => !result.success)));
+  const views = buildViews(agentResults);
+  const summary = summarize(views.baseline);
+  const harnessSummaryRows = renderSummaryRows(groupSummary(views.baseline, (result) => result.harness));
+  const conditionCards = renderConditionCards(conditionSummary(views.baseline));
+  const charts = renderCharts(views.baseline);
+  const matrixGrid = renderMatrixGrid(views.baseline);
+  const caseCatalog = renderCaseCatalog(views.baseline);
+  const falseNegativeRows = renderFalseNegativeRows(falseNegativeSummary(views.baseline));
+  const difficultySummaryRows = renderSummaryRows(groupSummary(views.baseline, (result) => caseMeta(result).difficulty ?? "unknown"));
+  const sizeSummaryRows = renderSummaryRows(groupSummary(views.baseline, (result) => caseMeta(result).size_bucket ?? "unknown"));
+  const failureSummaryRows = renderFailureSummaryRows(failureSummary(views.baseline.filter((result) => !result.success)));
   const invalidRows = invalidResults.map((result) => `
       <tr>
         <td>${esc(result.case_id)}</td>
@@ -53,18 +58,20 @@ function renderHtml(results) {
     const cost = formatCost(usage);
     const meta = caseMeta(result);
     const failure = classifyFailure(result);
+    const view = runView(result);
+    const condition = displayCondition(result);
     return `
-      <tr data-case="${escAttr(result.case_id)}" data-harness="${escAttr(result.harness ?? "")}" data-result="${result.success ? "pass" : "fail"}">
+      <tr data-view="${escAttr(view)}" data-case="${escAttr(result.case_id)}" data-harness="${escAttr(result.harness ?? "")}" data-result="${result.success ? "pass" : "fail"}"${view === "baseline" ? "" : " hidden"}>
         <td>${esc(result.case_id)}</td>
-        <td>${esc(meta.difficulty ?? "")}</td>
-        <td>${esc(meta.size_bucket ?? "")}</td>
-        <td>${esc(result.harness ?? "")}</td>
-        <td>${esc(result.condition_id ?? "")}</td>
+        <td>${badge(meta.difficulty ?? "")}</td>
+        <td>${badge(meta.size_bucket ?? "")}</td>
+        <td>${badge(result.harness ?? "")}</td>
+        <td>${badge(condition)}</td>
         <td>${esc(result.model ?? harnessMetrics.model ?? "")}</td>
         <td>${esc(effort)}</td>
-        <td class="${result.success ? "pass" : "fail"}">${result.success ? "pass" : "fail"}</td>
-        <td>${esc(failure.category)}</td>
-        <td>${esc(failure.detail)}</td>
+        <td>${badge(result.success ? "pass" : "fail", result.success ? "pass-badge" : "fail-badge", result.success ? "passValue" : "failValue")}</td>
+        <td>${failure.category ? badge(failure.category, "failure-badge", failureCategoryKey(failure.category)) : ""}</td>
+        <td class="evidence">${esc(failure.detail)}</td>
         <td>${fmtMs(metrics.wall_time_ms)}</td>
         <td>${fmtMs(harnessMetrics.harness_duration_ms)}</td>
         <td>${fmtMs(metrics.tests?.total_duration_ms)}</td>
@@ -110,6 +117,53 @@ function renderHtml(results) {
     select { min-width: 150px; border: 1px solid #c9c9c5; border-radius: 6px; background: #fff; padding: 7px 8px; font: inherit; }
     .summaries { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin: 0 0 18px; }
     .summary-table { overflow-x: auto; background: #ffffff; border: 1px solid #dededb; border-radius: 8px; }
+    .summary-table table { table-layout: fixed; }
+    .summary-table th, .summary-table td { white-space: normal; padding: 8px 9px; }
+    .condition-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin: 0 0 18px; }
+    .condition-card { background: #ffffff; border: 1px solid #dededb; border-radius: 8px; padding: 14px; display: grid; gap: 10px; }
+    .condition-card h2 { padding: 0; font-size: 14px; }
+    .condition-main { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+    .condition-rate { font-size: 28px; font-weight: 750; }
+    .condition-meta { color: #5f6368; font-size: 12px; }
+    .condition-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; font-size: 12px; }
+    .condition-stats div { background: #f7f7f4; border-radius: 6px; padding: 8px; }
+    .condition-stats strong { display: block; font-size: 14px; color: #202124; margin-top: 2px; }
+    .chart-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 12px; margin: 0 0 18px; }
+    .chart-card { background: #ffffff; border: 1px solid #dededb; border-radius: 8px; padding: 14px; }
+    .chart-card h2 { padding: 0; margin: 0 0 10px; }
+    .bar-row { display: grid; grid-template-columns: minmax(86px, 0.7fr) minmax(150px, 1.8fr) minmax(58px, 0.5fr); gap: 10px; align-items: center; margin: 8px 0; }
+    .bar-label { font-size: 12px; font-weight: 650; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .bar-track { height: 12px; background: #ecedea; border-radius: 999px; overflow: hidden; }
+    .bar-fill { height: 100%; background: #2f6f9f; border-radius: 999px; }
+    .bar-fill.secondary { background: #6f7f45; }
+    .bar-fill.cost { background: #936a2f; }
+    .bar-value { font-size: 12px; color: #3f4248; text-align: right; white-space: nowrap; }
+    .stack-row { display: grid; grid-template-columns: minmax(78px, 0.6fr) 1fr; gap: 10px; align-items: center; margin: 8px 0; }
+    .stack-track { display: grid; grid-template-columns: repeat(3, 1fr); height: 22px; border-radius: 6px; overflow: hidden; border: 1px solid #dededb; }
+    .stack-seg { display: flex; align-items: center; justify-content: center; color: #fff; font-size: 11px; font-weight: 700; }
+    .stack-low { background: #577b9d; }
+    .stack-mid { background: #668650; }
+    .stack-high { background: #9d6d44; }
+    .matrix-panel { background: #ffffff; border: 1px solid #dededb; border-radius: 8px; margin: 0 0 18px; overflow: hidden; }
+    .report-section { background: #ffffff; border: 1px solid #dededb; border-radius: 8px; margin: 0 0 18px; padding: 14px; }
+    .report-section h2 { padding: 0 0 8px; }
+    .report-section p, .section-copy { white-space: normal; line-height: 1.55; color: #3f4248; margin: 0 12px 12px; }
+    .matrix-grid { display: grid; grid-template-columns: minmax(220px, 1.7fr) repeat(var(--condition-count), minmax(92px, 0.7fr)); }
+    .matrix-cell { padding: 8px 10px; border-bottom: 1px solid #ededeb; border-right: 1px solid #ededeb; min-width: 0; }
+    .matrix-head { background: #fafaf8; font-weight: 650; color: #4b4f56; }
+    .case-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .case-sub { color: #6b6f76; font-size: 11px; margin-top: 2px; }
+    .result-dot { display: inline-flex; align-items: center; justify-content: center; min-width: 54px; border-radius: 999px; padding: 3px 8px; font-size: 12px; font-weight: 750; }
+    .result-pass { background: #e7f4ea; color: #137333; }
+    .result-fail { background: #fce8e6; color: #b3261e; }
+    .detail-toggle { border: 1px solid #c9c9c5; border-radius: 6px; background: #fff; padding: 7px 10px; font: inherit; cursor: pointer; margin: 0 0 12px; }
+    .detail-table-section[hidden] { display: none; }
+    .compact-list { display: grid; gap: 8px; padding: 0 12px 12px; }
+    .review-row { display: grid; grid-template-columns: minmax(220px, 1.2fr) minmax(90px, 0.4fr) minmax(260px, 1.6fr); gap: 10px; align-items: start; border-top: 1px solid #ededeb; padding-top: 8px; }
+    .case-catalog { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 10px; padding: 0 12px 12px; }
+    .case-card { border-top: 1px solid #ededeb; padding-top: 10px; }
+    .case-card h3 { margin: 0 0 6px; font-size: 13px; }
+    .case-card p { margin: 6px 0 0; white-space: normal; line-height: 1.4; color: #3f4248; }
     h2 { font-size: 15px; margin: 0; padding: 12px 12px 0; }
     table { border-collapse: collapse; width: 100%; font-size: 13px; }
     th, td { padding: 9px 10px; border-bottom: 1px solid #ededeb; text-align: left; white-space: nowrap; }
@@ -117,74 +171,209 @@ function renderHtml(results) {
     tr:last-child td { border-bottom: 0; }
     .pass { color: #137333; font-weight: 700; }
     .fail { color: #b3261e; font-weight: 700; }
+    .badge { display: inline-block; max-width: 260px; overflow: hidden; text-overflow: ellipsis; vertical-align: middle; border: 1px solid #d8d9d5; border-radius: 999px; padding: 2px 8px; background: #f5f6f3; color: #34373d; font-size: 12px; }
+    .pass-badge { background: #e7f4ea; border-color: #b8dfc2; color: #137333; font-weight: 700; }
+    .fail-badge { background: #fce8e6; border-color: #f2b8b5; color: #b3261e; font-weight: 700; }
+    .failure-badge { background: #fff4d6; border-color: #f2d184; color: #5f4600; }
+    .evidence { max-width: 420px; white-space: normal; line-height: 1.35; color: #3f4248; }
     .muted { color: #6b6f76; }
+    .note { margin: -6px 0 14px; font-size: 12px; color: #6b6f76; }
     .section { margin-top: 18px; }
     code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; }
   </style>
 </head>
 <body>
   <header>
-    <h1>Harness Benchmark Results</h1>
+    <h1 data-i18n="reportTitle">Harness Benchmark Results</h1>
     <p>Generated at ${esc(new Date().toISOString())}</p>
   </header>
   <main>
+    <section class="controls">
+      ${renderSelect("language-filter", "Language", ["en", "ja"], "language")}
+      ${renderSelect("view-filter", "View", ["baseline", "all", "pilot-smoke"], "view")}
+      ${renderSelect("case-filter", "Case", ["", ...unique(agentResults.map((result) => result.case_id))], "case")}
+      ${renderSelect("harness-filter", "Harness", ["", ...unique(agentResults.map((result) => result.harness))], "harness")}
+      ${renderSelect("result-filter", "Result", ["", "pass", "fail"], "result")}
+    </section>
+    <p class="note" data-i18n="viewNote">Default view shows only the 81 production baseline runs. Pilot and smoke runs are available from the View filter.</p>
     <section class="summary">
-      <div class="metric"><div class="label">Agent Runs</div><div class="value">${summary.count}</div></div>
-      <div class="metric"><div class="label">Pass Rate</div><div class="value">${summary.passRate}</div></div>
-      <div class="metric"><div class="label">Median Wall Time</div><div class="value">${fmtMs(summary.medianWallMs)}</div></div>
-      <div class="metric"><div class="label">Invalid Runs</div><div class="value">${invalidResults.length}</div></div>
-      <div class="metric"><div class="label">Reported Cost</div><div class="value">${summary.reportedCost == null ? "n/a" : `$${summary.reportedCost.toFixed(4)}`}</div></div>
-      <div class="metric"><div class="label">Estimated Cost</div><div class="value">${summary.estimatedCost == null ? "n/a" : `$${summary.estimatedCost.toFixed(4)}`}</div></div>
+      <div class="metric"><div class="label" data-i18n="baselineRuns">Baseline Runs</div><div class="value">${summary.count}</div></div>
+      <div class="metric"><div class="label" data-i18n="passRate">Pass Rate</div><div class="value">${summary.passRate}</div></div>
+      <div class="metric"><div class="label" data-i18n="medianWall">Median Wall Time</div><div class="value">${fmtMs(summary.medianWallMs)}</div></div>
+      <div class="metric"><div class="label" data-i18n="invalidRuns">Invalid Runs</div><div class="value">${invalidResults.length}</div></div>
+      <div class="metric"><div class="label" data-i18n="reportedCost">Reported Cost</div><div class="value">${summary.reportedCost == null ? "n/a" : `$${summary.reportedCost.toFixed(4)}`}</div></div>
+      <div class="metric"><div class="label" data-i18n="estimatedCost">Estimated Cost</div><div class="value">${summary.estimatedCost == null ? "n/a" : `$${summary.estimatedCost.toFixed(4)}`}</div></div>
     </section>
     <section class="summaries">
-      ${renderSummaryTable("By Case", caseSummaryRows)}
-      ${renderSummaryTable("By Harness", harnessSummaryRows)}
-      ${renderSummaryTable("By Difficulty", difficultySummaryRows)}
-      ${renderSummaryTable("By Repo Size", sizeSummaryRows)}
-      ${renderFailureSummaryTable("By Failure", failureSummaryRows)}
+      ${renderSummaryTable("By Harness", "byHarness", harnessSummaryRows)}
+      ${renderSummaryTable("By Difficulty", "byDifficulty", difficultySummaryRows)}
+      ${renderSummaryTable("By Repo Size", "byRepoSize", sizeSummaryRows)}
+      ${renderFailureSummaryTable("By Failure", "byFailure", failureSummaryRows)}
     </section>
-    <section class="controls">
-      ${renderSelect("case-filter", "Case", ["", ...unique(agentResults.map((result) => result.case_id))])}
-      ${renderSelect("harness-filter", "Harness", ["", ...unique(agentResults.map((result) => result.harness))])}
-      ${renderSelect("result-filter", "Result", ["", "pass", "fail"])}
+    <section>
+      <h2 data-i18n="conditionComparison">Harness x Model Comparison</h2>
+      <div class="condition-grid">${conditionCards}</div>
     </section>
-    <div class="table-wrap">
+    <section class="chart-grid">${charts}</section>
+    <section class="report-section">
+      <h2 data-i18n="executiveSummary">Executive Summary</h2>
+      <p data-i18n="executiveSummaryBody">This baseline compares three memory-disabled agent harnesses on the same 27 real-repository debugging cases. Codex and Claude each pass 18/27 cases, Cursor passes 17/27. Claude has the lowest observed cost per pass in this run, Cursor has the fastest median wall time, and Codex is roughly tied with Claude on hidden-oracle pass rate while using more estimated tokens and cost.</p>
+      <p data-i18n="executiveCaveatBody">The headline score is a hidden-oracle pass rate, not yet the final correctness score. False-negative review found several cases where hidden tests may over-constrain implementation details or unstated API choices; those cases are called out below and should be resolved before using the matrix as a final leaderboard.</p>
+    </section>
+    <section class="report-section">
+      <h2 data-i18n="frameworkExplanation">Benchmark Design</h2>
+      <p data-i18n="frameworkBody">Each case starts from a real repository base commit where the hidden core test fails, and a fixed commit where the same hidden test passes. Agent runs receive only the issue-style instruction and work inside an isolated checkout. A run is counted as pass only when the hidden core test passes after the agent edit. Raw harness logs are kept locally, metrics are normalized per harness, and invalid infrastructure runs are excluded from baseline summaries.</p>
+      <p data-i18n="caseDesignBody">The case set spans 9 repositories with low, mid, and high difficulty tasks per repository. Difficulty is based on expected debugging complexity, not just repository size. Repo size is tracked separately because a large repository can still have a localized bug, while a small repository can require subtle behavior reconstruction.</p>
+      <p data-i18n="metricDesignBody">Turns, tokens, tool calls, and cost are intentionally not collapsed into one ambiguous number. Codex turns mean completed harness invocations, Claude turns and cost come from Claude CLI output, and Cursor usage is normalized from stream events. Cached input is separated from fresh input where the harness exposes it; Codex and Cursor dollar values are API-equivalent estimates, while Claude cost is reported by the harness.</p>
+    </section>
+    <section class="matrix-panel">
+      <h2 data-i18n="caseMatrix">Case Result Matrix</h2>
+      ${matrixGrid}
+    </section>
+    <section class="matrix-panel">
+      <h2 data-i18n="falseNegativeReview">False-negative Review</h2>
+      <p class="section-copy" data-i18n="falseNegativeBody">Failed baseline runs were checked against hidden-test output. No failure looks like an infrastructure-only false negative, but several hidden tests appear to encode implementation details, exact encodings, or requirements not explicit in the prompt. Those cases are marked review and should be resolved before final headline scoring.</p>
+      <div class="compact-list">${falseNegativeRows}</div>
+    </section>
+    <section class="matrix-panel">
+      <h2 data-i18n="caseCatalog">Case Catalog</h2>
+      <div class="case-catalog">${caseCatalog}</div>
+    </section>
+    <button class="detail-toggle" id="detail-toggle" type="button" data-i18n="showDetails">Show Detailed Table</button>
+    <div class="table-wrap detail-table-section" id="detail-section" hidden>
       <table>
         <thead>
           <tr>
-            <th>Case</th><th>Difficulty</th><th>Size</th><th>Harness</th><th>Condition</th><th>Model</th><th>Effort</th><th>Result</th>
-            <th>Failure</th><th>Evidence</th><th>Wall</th><th>Harness</th><th>Tests</th><th>Conv Turns</th><th>Assistant</th><th>Tools</th>
-            <th>Commands</th><th>File Edits</th><th>Fresh Input</th><th>Cache Read</th><th>Cache Write</th><th>Effective Input</th>
-            <th>Output</th><th>Reasoning</th><th>Effective Total</th>
-            <th>Cost</th><th>Cost Source</th><th>Run</th>
+            <th data-i18n="case">Case</th><th data-i18n="difficulty">Difficulty</th><th data-i18n="size">Size</th><th data-i18n="harness">Harness</th><th data-i18n="condition">Condition</th><th data-i18n="model">Model</th><th data-i18n="effort">Effort</th><th data-i18n="result">Result</th>
+            <th data-i18n="failure">Failure</th><th data-i18n="evidence">Evidence</th><th data-i18n="wall">Wall</th><th data-i18n="harnessTime">Harness</th><th data-i18n="tests">Tests</th><th data-i18n="convTurns">Conv Turns</th><th data-i18n="assistant">Assistant</th><th data-i18n="tools">Tools</th>
+            <th data-i18n="commands">Commands</th><th data-i18n="fileEdits">File Edits</th><th data-i18n="freshInput">Fresh Input</th><th data-i18n="cacheRead">Cache Read</th><th data-i18n="cacheWrite">Cache Write</th><th data-i18n="effectiveInput">Effective Input</th>
+            <th data-i18n="output">Output</th><th data-i18n="reasoning">Reasoning</th><th data-i18n="effectiveTotal">Effective Total</th>
+            <th data-i18n="cost">Cost</th><th data-i18n="costSource">Cost Source</th><th data-i18n="run">Run</th>
           </tr>
         </thead>
         <tbody>${rows}</tbody>
       </table>
     </div>
     <section class="section">
-      <h2>Invalid Runs</h2>
+      <h2 data-i18n="invalidRuns">Invalid Runs</h2>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Case</th><th>Harness</th><th>Condition</th><th>Reason</th><th>Run</th></tr></thead>
-          <tbody>${invalidRows || `<tr><td colspan="5" class="muted">No invalid runs</td></tr>`}</tbody>
+          <thead><tr><th data-i18n="case">Case</th><th data-i18n="harness">Harness</th><th data-i18n="condition">Condition</th><th data-i18n="reason">Reason</th><th data-i18n="run">Run</th></tr></thead>
+          <tbody>${invalidRows || `<tr><td colspan="5" class="muted" data-i18n="noInvalidRuns">No invalid runs</td></tr>`}</tbody>
         </table>
       </div>
     </section>
   </main>
   <script>
+    const translations = {
+      en: {
+        reportTitle: "Harness Benchmark Results",
+        baselineRuns: "Baseline Runs", passRate: "Pass Rate", medianWall: "Median Wall Time", invalidRuns: "Invalid Runs",
+        reportedCost: "Reported Cost", estimatedCost: "Estimated Cost", byCase: "By Case", byHarness: "By Harness",
+        byDifficulty: "By Difficulty", byRepoSize: "By Repo Size", byFailure: "By Failure", language: "Language",
+        view: "View", case: "Case", harness: "Harness", result: "Result", difficulty: "Difficulty", size: "Size",
+        condition: "Condition", model: "Model", effort: "Effort", failure: "Failure", evidence: "Evidence",
+        wall: "Wall", harnessTime: "Harness", tests: "Tests", convTurns: "Conv Turns", assistant: "Assistant",
+        tools: "Tools", commands: "Commands", fileEdits: "File Edits", freshInput: "Fresh Input", cacheRead: "Cache Read",
+        cacheWrite: "Cache Write", effectiveInput: "Effective Input", output: "Output", reasoning: "Reasoning",
+        effectiveTotal: "Effective Total", cost: "Cost", costSource: "Cost Source", run: "Run", reason: "Reason",
+        name: "Name", runs: "Runs", pass: "Pass", rate: "Rate", medianWallShort: "Median Wall",
+        reportedDollar: "Reported $", estimatedDollar: "Estimated $", conditionComparison: "Harness x Model Comparison",
+        executiveSummary: "Executive Summary", executiveSummaryBody: "This baseline compares three memory-disabled agent harnesses on the same 27 real-repository debugging cases. Codex and Claude each pass 18/27 cases, Cursor passes 17/27. Claude has the lowest observed cost per pass in this run, Cursor has the fastest median wall time, and Codex is roughly tied with Claude on hidden-oracle pass rate while using more estimated tokens and cost.",
+        executiveCaveatBody: "The headline score is a hidden-oracle pass rate, not yet the final correctness score. False-negative review found several cases where hidden tests may over-constrain implementation details or unstated API choices; those cases are called out below and should be resolved before using the matrix as a final leaderboard.",
+        caseMatrix: "Case Result Matrix", showDetails: "Show Detailed Table", hideDetails: "Hide Detailed Table",
+        viewNote: "Default view shows only the 81 production baseline runs. Pilot and smoke runs are available from the View filter.",
+        frameworkExplanation: "Benchmark Design", frameworkBody: "Each case starts from a real repository base commit where the hidden core test fails, and a fixed commit where the same hidden test passes. Agent runs receive only the issue-style instruction and work inside an isolated checkout. A run is counted as pass only when the hidden core test passes after the agent edit. Raw harness logs are kept locally, metrics are normalized per harness, and invalid infrastructure runs are excluded from baseline summaries.",
+        caseDesignBody: "The case set spans 9 repositories with low, mid, and high difficulty tasks per repository. Difficulty is based on expected debugging complexity, not just repository size. Repo size is tracked separately because a large repository can still have a localized bug, while a small repository can require subtle behavior reconstruction.",
+        metricDesignBody: "Turns, tokens, tool calls, and cost are intentionally not collapsed into one ambiguous number. Codex turns mean completed harness invocations, Claude turns and cost come from Claude CLI output, and Cursor usage is normalized from stream events. Cached input is separated from fresh input where the harness exposes it; Codex and Cursor dollar values are API-equivalent estimates, while Claude cost is reported by the harness.",
+        falseNegativeReview: "False-negative Review", falseNegativeBody: "Failed baseline runs were checked against hidden-test output. No failure looks like an infrastructure-only false negative, but several hidden tests appear to encode implementation details, exact encodings, or requirements not explicit in the prompt. Those cases are marked review and should be resolved before final headline scoring.",
+        caseCatalog: "Case Catalog", passRateChart: "Pass Rate", wallTimeChart: "Median Wall Time", costPassChart: "Cost Per Pass", difficultyChart: "Success By Difficulty",
+        passValue: "pass", failValue: "fail", noInvalidRuns: "No invalid runs",
+        noRuns: "No runs", noFailures: "No failures", allOption: "All", medianWallLabel: "Median wall",
+        costPerPassLabel: "Cost/pass", costSourceLabel: "Cost source", passedSuffix: "pass",
+        reviewVerdict: "review", unlikelyFalseNegative: "unlikely false negative", costSourceReported: "reported",
+        costSourceEstimated: "estimated", costSourceUnavailable: "unavailable", failureHiddenTest: "hidden test failure",
+        failureBuildSymbol: "build or symbol failure", failureWrongSurface: "wrong CLI/API surface",
+        failureAssertion: "hidden assertion mismatch", optionBaseline: "Baseline", optionAllViews: "All runs",
+        optionPilotSmoke: "Pilot/Smoke", optionPass: "pass", optionFail: "fail", optionEn: "English", optionJa: "Japanese"
+      },
+      ja: {
+        reportTitle: "Harness Benchmark 結果",
+        baselineRuns: "Baseline 実行", passRate: "成功率", medianWall: "Wall Time 中央値", invalidRuns: "Invalid 実行",
+        reportedCost: "報告 Cost", estimatedCost: "推定 Cost", byCase: "Case 別", byHarness: "Harness 別",
+        byDifficulty: "Difficulty 別", byRepoSize: "Repo Size 別", byFailure: "Failure 別", language: "言語",
+        view: "表示", case: "Case", harness: "Harness", result: "結果", difficulty: "難度", size: "Size",
+        condition: "条件", model: "Model", effort: "Effort", failure: "失敗分類", evidence: "根拠",
+        wall: "Wall", harnessTime: "Harness 時間", tests: "Test 時間", convTurns: "会話 Turn", assistant: "Assistant",
+        tools: "Tool", commands: "Command", fileEdits: "File Edit", freshInput: "Fresh Input", cacheRead: "Cache Read",
+        cacheWrite: "Cache Write", effectiveInput: "Effective Input", output: "Output", reasoning: "Reasoning",
+        effectiveTotal: "Effective Total", cost: "Cost", costSource: "Cost 種別", run: "Run", reason: "理由",
+        name: "名前", runs: "実行数", pass: "成功", rate: "率", medianWallShort: "Wall 中央値",
+        reportedDollar: "報告 $", estimatedDollar: "推定 $", conditionComparison: "Harness x Model 比較",
+        executiveSummary: "要約", executiveSummaryBody: "この baseline は、memory を無効化した 3 つの agent harness を、同じ 27 件の実リポジトリ debug case で比較したものです。Codex と Claude はそれぞれ 18/27 件、Cursor は 17/27 件に成功しました。この実行では Claude が成功あたり cost 最小、Cursor が wall time 中央値最速、Codex は hidden-oracle 成功率で Claude とほぼ同等ですが、推定 token/cost は大きめです。",
+        executiveCaveatBody: "この headline score は hidden-oracle 成功率であり、最終的な絶対正解率ではありません。false-negative 調査では、hidden test が実装詳細や prompt に明示されていない API 選択を縛っている可能性がある case が見つかりました。該当 case は下で明示し、最終 leaderboard として使う前に oracle を確定すべきです。",
+        caseMatrix: "Case 結果 Matrix", showDetails: "詳細表を表示", hideDetails: "詳細表を隠す",
+        viewNote: "デフォルトでは 81 件の本番 baseline run だけを表示します。Pilot/Smoke run は表示フィルタから確認できます。",
+        frameworkExplanation: "ベンチマーク設計", frameworkBody: "各 case は、hidden core test が失敗する実リポジトリの base commit と、同じ hidden test が成功する fixed commit を持ちます。Agent には issue 形式の instruction だけを渡し、隔離 checkout 内で修正させます。Agent 編集後に hidden core test が通った場合だけ pass と数えます。raw harness log はローカルに保持し、metrics は harness ごとの意味を保ったまま正規化し、infra invalid run は baseline 集計から除外します。",
+        caseDesignBody: "case set は 9 リポジトリにまたがり、各リポジトリに low/mid/high の 3 段階の task を置いています。difficulty は単なる repo size ではなく、想定される debug の複雑さで決めています。大規模 repo でも局所的な bug はあり、小規模 repo でも微妙な仕様復元が必要な bug はあるため、repo size は別軸として扱います。",
+        metricDesignBody: "turn、token、tool call、cost は harness ごとに意味が違うため、曖昧な単一指標に潰していません。Codex の turn は完了した harness invocation、Claude の turn と cost は Claude CLI output、Cursor の usage は stream event から正規化した値です。cache input は fresh input と分け、Codex/Cursor の dollar は API-equivalent 推定、Claude は harness 報告値です。",
+        falseNegativeReview: "False-negative Review", falseNegativeBody: "失敗した baseline run は hidden test output と照合しました。infra だけが原因の false negative には見えませんが、いくつかの hidden test は実装詳細、厳密な encoding、または prompt に明示されていない要件を固定している可能性があります。review とした case は、最終スコアを確定する前に oracle を見直すべきです。",
+        caseCatalog: "Case Catalog", passRateChart: "成功率", wallTimeChart: "Wall Time 中央値", costPassChart: "成功あたり Cost", difficultyChart: "Difficulty 別成功数",
+        passValue: "成功", failValue: "失敗", noInvalidRuns: "Invalid run はありません",
+        noRuns: "実行なし", noFailures: "失敗なし", allOption: "すべて", medianWallLabel: "Wall 中央値",
+        costPerPassLabel: "成功あたり Cost", costSourceLabel: "Cost 種別", passedSuffix: "成功",
+        reviewVerdict: "要レビュー", unlikelyFalseNegative: "false negative 可能性低",
+        costSourceReported: "報告値", costSourceEstimated: "推定値", costSourceUnavailable: "なし",
+        failureHiddenTest: "hidden test 失敗", failureBuildSymbol: "build/symbol 失敗",
+        failureWrongSurface: "CLI/API surface 不一致", failureAssertion: "hidden assertion 不一致",
+        optionBaseline: "Baseline のみ", optionAllViews: "全 run", optionPilotSmoke: "Pilot/Smoke",
+        optionPass: "成功", optionFail: "失敗", optionEn: "英語", optionJa: "日本語"
+      }
+    };
+    const falseNegativeNotes = ${JSON.stringify(falseNegativeNoteTranslations(), null, 6)};
     const filters = {
+      language: document.getElementById("language-filter"),
+      view: document.getElementById("view-filter"),
       case: document.getElementById("case-filter"),
       harness: document.getElementById("harness-filter"),
       result: document.getElementById("result-filter")
     };
-    for (const filter of Object.values(filters)) filter.addEventListener("change", applyFilters);
+    for (const filter of Object.values(filters)) filter.addEventListener("change", () => {
+      applyFilters();
+      applyLanguage();
+    });
+    document.getElementById("detail-toggle").addEventListener("click", () => {
+      const section = document.getElementById("detail-section");
+      section.hidden = !section.hidden;
+      document.getElementById("detail-toggle").dataset.open = String(!section.hidden);
+      applyLanguage();
+    });
+    applyLanguage();
+    applyFilters();
     function applyFilters() {
       for (const row of document.querySelectorAll("tbody tr[data-case]")) {
-        const visible = (!filters.case.value || row.dataset.case === filters.case.value)
+        const viewVisible = filters.view.value === "all" || row.dataset.view === filters.view.value;
+        const visible = viewVisible
+          && (!filters.case.value || row.dataset.case === filters.case.value)
           && (!filters.harness.value || row.dataset.harness === filters.harness.value)
           && (!filters.result.value || row.dataset.result === filters.result.value);
         row.hidden = !visible;
+      }
+    }
+    function applyLanguage() {
+      const lang = filters.language.value || "en";
+      document.documentElement.lang = lang;
+      for (const node of document.querySelectorAll("[data-i18n]")) {
+        const key = node.dataset.i18n;
+        const effectiveKey = key === "showDetails" && node.dataset.open === "true" ? "hideDetails" : key;
+        node.textContent = translations[lang]?.[effectiveKey] || translations.en[effectiveKey] || node.textContent;
+      }
+      for (const option of document.querySelectorAll("option[data-i18n]")) {
+        const key = option.dataset.i18n;
+        option.textContent = translations[lang]?.[key] || translations.en[key] || option.textContent;
+      }
+      for (const node of document.querySelectorAll("[data-note-case]")) {
+        node.textContent = falseNegativeNotes[node.dataset.noteCase]?.[lang] || falseNegativeNotes[node.dataset.noteCase]?.en || node.textContent;
       }
     }
   </script>
@@ -193,7 +382,7 @@ function renderHtml(results) {
 }
 
 function normalizeResultForDisplay(result) {
-  result.case_metadata = result.case_metadata ?? loadCaseMetadata(result.case_path);
+  result.case_metadata = completeCaseMetadata(result.case_metadata, result);
   if (result.mode !== "agent") return result;
   const runDir = dirname(result.result_path);
   const metrics = result.metrics ?? {};
@@ -236,6 +425,30 @@ function normalizeResultForDisplay(result) {
   result.metrics = result.metrics ?? metrics;
   result.metrics.usage = normalizeDerivedUsage(result.metrics.usage ?? usage);
   return result;
+}
+
+function completeCaseMetadata(metadata, result) {
+  const loaded = loadCaseMetadata(result.case_path);
+  const fallbackPath = findCasePathById(result.case_id);
+  const fallback = fallbackPath ? loadCaseMetadata(fallbackPath) : {};
+  return {
+    ...fallback,
+    ...loaded,
+    ...(metadata ?? {}),
+  };
+}
+
+function findCasePathById(caseId) {
+  if (!caseId) return null;
+  const parts = String(caseId).split("-");
+  for (let index = parts.length - 1; index >= 2; index -= 1) {
+    const repoSlug = parts.slice(0, index).join("__");
+    const difficulty = parts[index];
+    if (!["low", "mid", "high"].includes(difficulty)) continue;
+    const candidate = resolve("benchmark/cases", repoSlug, `${difficulty}.yaml`);
+    if (existsSync(candidate)) return candidate;
+  }
+  return null;
 }
 
 function normalizeCodexUsage(events, previous) {
@@ -328,6 +541,26 @@ function dominantClaudeModel(modelUsage) {
   const entries = Object.entries(modelUsage ?? {});
   if (entries.length === 0) return null;
   return entries.sort((a, b) => (b[1]?.costUSD ?? 0) - (a[1]?.costUSD ?? 0))[0][0];
+}
+
+function buildViews(results) {
+  return {
+    all: results,
+    baseline: results.filter((result) => runView(result) === "baseline"),
+    "smoke-pilot": results.filter((result) => runView(result) === "smoke-pilot"),
+  };
+}
+
+function runView(result) {
+  return result.matrix_id ? "baseline" : "pilot-smoke";
+}
+
+function displayCondition(result) {
+  if (result.condition_id) return result.condition_id;
+  const effort = result.effort ?? inferEffort(result.model, result.metrics?.harness?.model);
+  const parts = [result.harness, result.model ?? result.metrics?.harness?.model, effort, "pilot-smoke"]
+    .filter(Boolean);
+  return parts.join(":");
 }
 
 function classifyFailure(result) {
@@ -424,6 +657,7 @@ function groupSummary(results, keyFn) {
         key,
         count: group.length,
         passed,
+        passRateValue: group.length ? passed / group.length : 0,
         passRate: group.length ? `${Math.round((passed / group.length) * 100)}%` : "n/a",
         medianWallMs: wall,
         reportedCost: reported.length ? reported.reduce((sum, value) => sum + value, 0) : null,
@@ -449,24 +683,232 @@ function failureSummary(results) {
     }));
 }
 
-function renderSummaryTable(title, rows) {
+function conditionSummary(results) {
+  return groupSummary(results, (result) => displayCondition(result))
+    .map((row) => {
+      const group = results.filter((result) => displayCondition(result) === row.key);
+      const costValues = group
+        .map((result) => result.metrics?.usage?.cost_usd)
+        .filter((value) => typeof value === "number");
+      const costSource = group.find((result) => result.metrics?.usage?.cost_source && result.metrics.usage.cost_source !== "unavailable")?.metrics?.usage?.cost_source ?? "unavailable";
+      const passed = group.filter((result) => result.success).length;
+      return {
+        ...row,
+        harness: group[0]?.harness ?? "",
+        model: group[0]?.model ?? group[0]?.metrics?.harness?.model ?? "",
+        cost: costValues.length ? costValues.reduce((sum, value) => sum + value, 0) : null,
+        costSource,
+        costPerPass: passed && costValues.length ? costValues.reduce((sum, value) => sum + value, 0) / passed : null,
+      };
+    })
+    .sort((a, b) => b.passRateValue - a.passRateValue || a.key.localeCompare(b.key));
+}
+
+function renderConditionCards(rows) {
+  return rows.map((row) => `
+    <article class="condition-card">
+      <h2>${esc(row.harness)} · ${esc(row.model)}</h2>
+      <div class="condition-main">
+        <div class="condition-rate">${esc(row.passRate)}</div>
+        <div class="condition-meta">${fmt(row.passed)}/${fmt(row.count)} <span data-i18n="passedSuffix">pass</span></div>
+      </div>
+      <div class="condition-stats">
+        <div><span data-i18n="medianWallLabel">Median wall</span><strong>${fmtMs(row.medianWallMs)}</strong></div>
+        <div><span data-i18n="costPerPassLabel">Cost/pass</span><strong>${row.costPerPass == null ? "n/a" : `$${row.costPerPass.toFixed(2)}`}</strong></div>
+        <div><span data-i18n="costSourceLabel">Cost source</span><strong data-i18n="${escAttr(costSourceKey(row.costSource))}">${esc(row.costSource)}</strong></div>
+      </div>
+    </article>
+  `).join("\n");
+}
+
+function renderCharts(results) {
+  const conditions = conditionSummary(results);
+  const maxWall = Math.max(...conditions.map((row) => row.medianWallMs ?? 0), 1);
+  const maxCost = Math.max(...conditions.map((row) => row.costPerPass ?? 0), 1);
+  const byHarnessDifficulty = groupByHarnessDifficulty(results);
+  return `
+    <article class="chart-card">
+      <h2 data-i18n="passRateChart">Pass Rate</h2>
+      ${conditions.map((row) => barRow(row.harness, row.passRateValue * 100, 100, row.passRate, "")).join("\n")}
+    </article>
+    <article class="chart-card">
+      <h2 data-i18n="wallTimeChart">Median Wall Time</h2>
+      ${conditions.map((row) => barRow(row.harness, row.medianWallMs ?? 0, maxWall, fmtMs(row.medianWallMs), "secondary")).join("\n")}
+    </article>
+    <article class="chart-card">
+      <h2 data-i18n="costPassChart">Cost Per Pass</h2>
+      ${conditions.map((row) => barRow(row.harness, row.costPerPass ?? 0, maxCost, row.costPerPass == null ? "n/a" : `$${row.costPerPass.toFixed(2)}`, "cost")).join("\n")}
+    </article>
+    <article class="chart-card">
+      <h2 data-i18n="difficultyChart">Success By Difficulty</h2>
+      ${byHarnessDifficulty.map((row) => `
+        <div class="stack-row">
+          <div class="bar-label">${esc(row.harness)}</div>
+          <div class="stack-track" title="${escAttr(`low ${row.low}/9, mid ${row.mid}/9, high ${row.high}/9`)}">
+            <div class="stack-seg stack-low">${row.low}/9</div>
+            <div class="stack-seg stack-mid">${row.mid}/9</div>
+            <div class="stack-seg stack-high">${row.high}/9</div>
+          </div>
+        </div>
+      `).join("\n")}
+    </article>
+  `;
+}
+
+function barRow(label, value, max, display, className) {
+  const width = Math.max(2, Math.round((value / max) * 100));
+  return `
+    <div class="bar-row">
+      <div class="bar-label" title="${escAttr(label)}">${esc(label)}</div>
+      <div class="bar-track"><div class="bar-fill ${escAttr(className)}" style="width:${width}%"></div></div>
+      <div class="bar-value">${esc(display)}</div>
+    </div>
+  `;
+}
+
+function groupByHarnessDifficulty(results) {
+  return unique(results.map((result) => result.harness)).map((harness) => {
+    const group = results.filter((result) => result.harness === harness && result.success);
+    return {
+      harness,
+      low: group.filter((result) => caseMeta(result).difficulty === "low").length,
+      mid: group.filter((result) => caseMeta(result).difficulty === "mid").length,
+      high: group.filter((result) => caseMeta(result).difficulty === "high").length,
+    };
+  });
+}
+
+function renderMatrixGrid(results) {
+  const conditions = unique(results.map((result) => displayCondition(result)));
+  const caseIds = unique(results.map((result) => result.case_id));
+  const cells = [];
+  cells.push(`<div class="matrix-cell matrix-head">Case</div>`);
+  for (const condition of conditions) {
+    cells.push(`<div class="matrix-cell matrix-head">${esc(shortCondition(condition))}</div>`);
+  }
+  for (const caseId of caseIds) {
+    const sample = results.find((result) => result.case_id === caseId);
+    const meta = caseMeta(sample ?? {});
+    cells.push(`<div class="matrix-cell"><div class="case-name" title="${escAttr(caseId)}">${esc(caseId)}</div><div class="case-sub">${esc(meta.difficulty ?? "")} · ${esc(meta.size_bucket ?? "")}</div></div>`);
+    for (const condition of conditions) {
+      const result = results.find((row) => row.case_id === caseId && displayCondition(row) === condition);
+      if (!result) {
+        cells.push(`<div class="matrix-cell muted">n/a</div>`);
+      } else {
+        cells.push(`<div class="matrix-cell"><span class="result-dot ${result.success ? "result-pass" : "result-fail"}" data-i18n="${result.success ? "passValue" : "failValue"}">${result.success ? "pass" : "fail"}</span></div>`);
+      }
+    }
+  }
+  return `<div class="matrix-grid" style="--condition-count:${conditions.length}">${cells.join("\n")}</div>`;
+}
+
+function shortCondition(condition) {
+  return String(condition)
+    .replace("codex:gpt-5.5:medium:baseline", "Codex")
+    .replace("claude:claude-opus-4-7:medium:baseline", "Claude")
+    .replace("cursor:gpt-5.5-medium:baseline", "Cursor");
+}
+
+function falseNegativeSummary(results) {
+  const failedByCase = new Map();
+  for (const result of results.filter((result) => !result.success)) {
+    const group = failedByCase.get(result.case_id) ?? [];
+    group.push(result);
+    failedByCase.set(result.case_id, group);
+  }
+  return [...failedByCase.entries()].sort((a, b) => a[0].localeCompare(b[0])).map(([caseId, group]) => {
+    const evidence = group.map((result) => classifyFailure(result).detail).filter(Boolean).join(" ");
+    const review = isReviewFalseNegativeCase(caseId);
+    return {
+      caseId,
+      harnesses: group.map((result) => result.harness).sort().join(", "),
+      verdict: review ? "review" : "unlikely false negative",
+      verdictKey: review ? "reviewVerdict" : "unlikelyFalseNegative",
+      evidence: review ? review : truncate(evidence, 240),
+    };
+  });
+}
+
+function isReviewFalseNegativeCase(caseId) {
+  return falseNegativeNoteTranslations()[caseId]?.en ?? "";
+}
+
+function falseNegativeNoteTranslations() {
+  return {
+    "axios-axios-low-settle-error-code": {
+      en: "Possible oracle issue: all harnesses assigned a defined Axios error code, but the hidden test requires rejected 200/302 responses to be ERR_BAD_RESPONSE. The prompt did not specify that non-4xx/5xx rejected responses must use that exact class.",
+      ja: "oracle 見直し候補: 全 harness が未定義 code を定義済み Axios error code に修正した一方、hidden test は reject された 200/302 response を ERR_BAD_RESPONSE に限定しています。prompt では non-4xx/5xx の rejected response にこの exact class を使うとは明示していません。",
+    },
+    "go-gitea-gitea-high-compare-no-common-history": {
+      en: "Possible oracle issue: all harnesses added typed no-merge-base handling and compare fallback behavior, but the hidden test requires errors.Is(err, util.ErrNotExist) from MergeBase rather than only black-box compare behavior.",
+      ja: "oracle 見直し候補: 全 harness が no-merge-base の typed handling と compare fallback behavior を追加しましたが、hidden test は black-box の compare 挙動だけでなく MergeBase から errors.Is(err, util.ErrNotExist) が返ることを要求しています。",
+    },
+    "jesseduffield-lazygit-high-branch-divergence-fast-path": {
+      en: "Possible oracle issue: hidden tests reference exact private helper names. Candidate fixes show equivalent batching/parsing helpers under different names, so the oracle may be testing implementation shape.",
+      ja: "oracle 見直し候補: hidden test が exact private helper name を参照しています。candidate fix は同等の batching/parsing helper を別名で実装しており、oracle が実装 shape をテストしている可能性があります。",
+    },
+    "louislam-uptime-kuma-high-websocket-auth-options": {
+      en: "Possible oracle issue: hidden tests require a specific buildWsOptions helper name and camelCase authMethod input, while candidate fixes used equivalent helper names or the existing auth_method schema.",
+      ja: "oracle 見直し候補: hidden test は特定の buildWsOptions helper 名と camelCase authMethod input を要求しますが、candidate fix は同等 helper 名または既存の auth_method schema を使っています。",
+    },
+    "louislam-uptime-kuma-low-submillisecond-ping-chart": {
+      en: "Possible oracle issue: Codex/Cursor add zero-ping handling, but the hidden test extracts a Vue method with regex and invokes it with an incomplete this context.",
+      ja: "oracle 見直し候補: Codex/Cursor は zero-ping handling を追加していますが、hidden test は Vue method を regex で抽出し、不完全な this context で呼び出しています。",
+    },
+    "sharkdp-bat-high-fallback-syntax": {
+      en: "Mixed: Codex/Cursor implemented --fallback-syntax but hidden also requires an unstated --fallback-language alias; Claude appears to be a true failure because --fallback-syntax itself is rejected.",
+      ja: "混在: Codex/Cursor は --fallback-syntax を実装しましたが、hidden test は prompt にない --fallback-language alias も要求しています。Claude は --fallback-syntax 自体を拒否しているため true failure と見なせます。",
+    },
+    "vitejs-vite-low-flatten-id-sanitized-chars": {
+      en: "Possible oracle issue: Codex/Cursor avoid sanitized-character collisions, but the hidden test asserts exact PR-style encodings rather than collision avoidance and path-safe reversibility.",
+      ja: "oracle 見直し候補: Codex/Cursor は sanitized-character collision を避けていますが、hidden test は collision avoidance と path-safe reversibility ではなく、exact PR-style encoding を要求しています。",
+    },
+  };
+}
+
+function renderFalseNegativeRows(rows) {
+  return rows.map((row) => `
+    <div class="review-row">
+      <div>${esc(row.caseId)}<div class="case-sub">${esc(row.harnesses)}</div></div>
+      <div>${badge(row.verdict, row.verdict === "review" ? "failure-badge" : "", row.verdictKey)}</div>
+      <div${isReviewFalseNegativeCase(row.caseId) ? ` data-note-case="${escAttr(row.caseId)}"` : ""}>${esc(row.evidence)}</div>
+    </div>
+  `).join("\n");
+}
+
+function renderCaseCatalog(results) {
+  return unique(results.map((result) => result.case_id)).map((caseId) => {
+    const sample = results.find((result) => result.case_id === caseId);
+    const meta = caseMeta(sample ?? {});
+    return `
+      <article class="case-card">
+        <h3>${esc(caseId)}</h3>
+        <div>${badge(meta.difficulty ?? "")} ${badge(meta.size_bucket ?? "")} ${badge(sample?.repo ?? "")}</div>
+        <p>${esc(meta.instruction ?? "")}</p>
+        <p class="case-sub">${esc(meta.selection_notes ?? "")}</p>
+      </article>
+    `;
+  }).join("\n");
+}
+
+function renderSummaryTable(title, i18nKey, rows) {
   return `
       <div class="summary-table">
-        <h2>${esc(title)}</h2>
+        <h2 data-i18n="${escAttr(i18nKey)}">${esc(title)}</h2>
         <table>
-          <thead><tr><th>Name</th><th>Runs</th><th>Pass</th><th>Rate</th><th>Median Wall</th><th>Reported $</th><th>Estimated $</th></tr></thead>
-          <tbody>${rows || `<tr><td colspan="7" class="muted">No runs</td></tr>`}</tbody>
+          <thead><tr><th data-i18n="name">Name</th><th data-i18n="runs">Runs</th><th data-i18n="pass">Pass</th><th data-i18n="rate">Rate</th><th data-i18n="medianWallShort">Median Wall</th></tr></thead>
+          <tbody>${rows || `<tr><td colspan="5" class="muted">No runs</td></tr>`}</tbody>
         </table>
       </div>
     `;
 }
 
-function renderFailureSummaryTable(title, rows) {
+function renderFailureSummaryTable(title, i18nKey, rows) {
   return `
       <div class="summary-table">
-        <h2>${esc(title)}</h2>
+        <h2 data-i18n="${escAttr(i18nKey)}">${esc(title)}</h2>
         <table>
-          <thead><tr><th>Name</th><th>Runs</th><th>Median Wall</th></tr></thead>
+          <thead><tr><th data-i18n="name">Name</th><th data-i18n="runs">Runs</th><th data-i18n="medianWallShort">Median Wall</th></tr></thead>
           <tbody>${rows || `<tr><td colspan="3" class="muted">No failures</td></tr>`}</tbody>
         </table>
       </div>
@@ -481,8 +923,6 @@ function renderSummaryRows(rows) {
       <td>${fmt(row.passed)}</td>
       <td>${esc(row.passRate)}</td>
       <td>${fmtMs(row.medianWallMs)}</td>
-      <td>${row.reportedCost == null ? "" : `$${row.reportedCost.toFixed(4)}`}</td>
-      <td>${row.estimatedCost == null ? "" : `$${row.estimatedCost.toFixed(4)}`}</td>
     </tr>
   `).join("\n");
 }
@@ -490,21 +930,50 @@ function renderSummaryRows(rows) {
 function renderFailureSummaryRows(rows) {
   return rows.map((row) => `
     <tr>
-      <td>${esc(row.key)}</td>
+      <td><span data-i18n="${escAttr(failureCategoryKey(row.key))}">${esc(row.key)}</span></td>
       <td>${fmt(row.count)}</td>
       <td>${fmtMs(row.medianWallMs)}</td>
     </tr>
   `).join("\n");
 }
 
-function renderSelect(id, label, values) {
+function renderSelect(id, label, values, i18nKey = null) {
   return `
-    <label>${esc(label)}
+    <label><span${i18nKey ? ` data-i18n="${escAttr(i18nKey)}"` : ""}>${esc(label)}</span>
       <select id="${escAttr(id)}">
-        ${values.map((value) => `<option value="${escAttr(value ?? "")}">${esc(value || "All")}</option>`).join("\n")}
+        ${values.map((value) => {
+          const key = optionI18nKey(id, value);
+          return `<option value="${escAttr(value ?? "")}"${key ? ` data-i18n="${escAttr(key)}"` : ""}>${esc(optionLabel(id, value))}</option>`;
+        }).join("\n")}
       </select>
     </label>
   `;
+}
+
+function optionI18nKey(id, value) {
+  if (!value) return "allOption";
+  const keys = {
+    "language-filter:en": "optionEn",
+    "language-filter:ja": "optionJa",
+    "view-filter:baseline": "optionBaseline",
+    "view-filter:all": "optionAllViews",
+    "view-filter:pilot-smoke": "optionPilotSmoke",
+    "result-filter:pass": "optionPass",
+    "result-filter:fail": "optionFail",
+  };
+  return keys[`${id}:${value}`] ?? "";
+}
+
+function optionLabel(id, value) {
+  if (!value) return "All";
+  const labels = {
+    "language-filter:en": "English",
+    "language-filter:ja": "Japanese",
+    "view-filter:baseline": "Baseline",
+    "view-filter:all": "All runs",
+    "view-filter:pilot-smoke": "Pilot/Smoke",
+  };
+  return labels[`${id}:${value}`] ?? value;
 }
 
 function costsBySource(results, source) {
@@ -545,6 +1014,8 @@ function loadCaseMetadata(path) {
     merged_at: scalarField(text, "merged_at"),
     base_commit: scalarField(text, "base_commit"),
     fixed_commit: scalarField(text, "fixed_commit"),
+    instruction: blockField(text, "instruction"),
+    selection_notes: blockField(text, "selection_notes"),
   };
   caseMetadataCache.set(resolved, metadata);
   return metadata;
@@ -570,6 +1041,21 @@ function listField(text, key) {
   const value = scalarField(text, key);
   if (!value?.startsWith("[") || !value.endsWith("]")) return [];
   return value.slice(1, -1).split(",").map((item) => item.trim()).filter(Boolean);
+}
+
+function blockField(text, key) {
+  const lines = text.split(/\r?\n/);
+  const start = lines.findIndex((line) => line.startsWith(`${key}:`));
+  if (start === -1) return null;
+  const first = lines[start].slice(key.length + 1).trim();
+  if (first && first !== ">" && first !== "|") return first.replace(/^['"]|['"]$/g, "");
+  const collected = [];
+  for (let index = start + 1; index < lines.length; index += 1) {
+    const line = lines[index];
+    if (/^[A-Za-z0-9_]+:/.test(line)) break;
+    collected.push(line.replace(/^  /, ""));
+  }
+  return collected.join(" ").replace(/\s+/g, " ").trim() || null;
 }
 
 function escapeRegExp(value) {
@@ -616,6 +1102,31 @@ function inferEffort(...values) {
 function formatCost(usage) {
   if (usage.cost_usd == null) return { value: "" };
   return { value: `$${usage.cost_usd.toFixed(6)}` };
+}
+
+function badge(value, className = "", i18nKey = "") {
+  const text = String(value ?? "");
+  if (!text) return "";
+  return `<span class="badge ${escAttr(className)}" title="${escAttr(text)}"${i18nKey ? ` data-i18n="${escAttr(i18nKey)}"` : ""}>${esc(text)}</span>`;
+}
+
+function failureCategoryKey(category) {
+  const keys = {
+    "hidden test failure": "failureHiddenTest",
+    "build or symbol failure": "failureBuildSymbol",
+    "wrong CLI/API surface": "failureWrongSurface",
+    "hidden assertion mismatch": "failureAssertion",
+  };
+  return keys[category] ?? "";
+}
+
+function costSourceKey(source) {
+  const keys = {
+    reported: "costSourceReported",
+    estimated: "costSourceEstimated",
+    unavailable: "costSourceUnavailable",
+  };
+  return keys[source] ?? "";
 }
 
 function numericOrNull(value) {
