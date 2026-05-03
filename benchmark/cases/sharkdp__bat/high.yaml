@@ -15,9 +15,9 @@ fixed_commit: 844bfded506e99c06237472bd83a8af5af433538
 difficulty: high
 instruction: >
   Users need a way to specify a syntax-highlighting fallback that applies
-  only when automatic syntax detection fails. Add support for such a fallback
-  without changing explicit language selection or normal file-name based
-  detection behavior.
+  only when automatic syntax detection fails. Add a `--fallback-syntax`
+  option for that fallback without changing explicit language selection or
+  normal file-name based detection behavior.
 setup:
   - cargo fetch
 public_tests:

@@ -94,7 +94,7 @@
 <body>
   <header>
     <h1 data-i18n="reportTitle">Harness Benchmark Results</h1>
-    <p>Generated at 2026-05-03T06:41:56.157Z</p>
+    <p>Generated at 2026-05-03T06:45:43.289Z</p>
   </header>
   <main>
     <section class="controls">
@@ -594,7 +594,7 @@
     </section>
     <section class="matrix-panel">
       <h2 data-i18n="falseNegativeReview">False-negative Review</h2>
-      <p class="section-copy" data-i18n="falseNegativeBody">Failed baseline runs were checked against hidden-test output and saved workspaces. Oracle fixes were applied by regrading preserved workspaces instead of rerunning agents. Remaining failures are mostly true implementation failures, with one case-design review still open for the bat fallback flag name.</p>
+      <p class="section-copy" data-i18n="falseNegativeBody">Failed baseline runs were checked against hidden-test output and saved workspaces. Oracle fixes were applied by regrading preserved workspaces instead of rerunning agents. Remaining failures are mostly true implementation failures. The bat fallback flag-name ambiguity is marked as a case-design review for the existing baseline and the prompt has been clarified for future runs.</p>
       <div class="compact-list">
     <div class="review-row">
       <div>go-gitea-gitea-mid-pr-merge-self-reference<div class="case-sub">cursor</div></div>
@@ -796,7 +796,7 @@
         </div>
         <p><strong data-i18n="failureLabel">Failure:</strong> <span data-review-key="sharkdp-bat-high-fallback-syntax::claude" data-review-field="failure_mode">The implementation added equivalent fallback semantics under --fallback-language, but not the upstream --fallback-syntax flag.</span></p>
         <p><strong data-i18n="evidenceLabel">Evidence:</strong> <span data-review-key="sharkdp-bat-high-fallback-syntax::claude" data-review-field="evidence">The hidden test invokes --fallback-syntax and the CLI rejects it, suggesting --fallback-language. The case PR title names --fallback-syntax, but the instruction text only says to add a fallback.</span></p>
-        <p><strong data-i18n="recommendationLabel">Recommendation:</strong> <span data-review-key="sharkdp-bat-high-fallback-syntax::claude" data-review-field="recommendation">Review case wording. If upstream API fidelity matters, explicitly require --fallback-syntax; otherwise do not treat this as a pure model failure.</span></p>
+        <p><strong data-i18n="recommendationLabel">Recommendation:</strong> <span data-review-key="sharkdp-bat-high-fallback-syntax::claude" data-review-field="recommendation">Treat the existing baseline as case-design review. The case prompt has been clarified for future runs to explicitly require --fallback-syntax.</span></p>
       </article>
     
 
@@ -1015,7 +1015,7 @@
       <article class="case-card">
         <h3>sharkdp-bat-high-fallback-syntax</h3>
         <div><span class="badge " title="high">high</span> <span class="badge " title="small">small</span> <span class="badge " title="sharkdp/bat">sharkdp/bat</span></div>
-        <p>Users need a way to specify a syntax-highlighting fallback that applies only when automatic syntax detection fails. Add support for such a fallback without changing explicit language selection or normal file-name based detection behavior.</p>
+        <p>Users need a way to specify a syntax-highlighting fallback that applies only when automatic syntax detection fails. Add a `--fallback-syntax` option for that fallback without changing explicit language selection or normal file-name based detection behavior.</p>
         <p class="case-sub">Pilot-only high case. This is broader than a bug fix and behaves more like a missing capability, so it is useful for validating runner mechanics but may be replaced in the final benchmark by a high-difficulty bug-fix PR from another repository.</p>
       </article>
     
@@ -1023,7 +1023,7 @@
       <article class="case-card">
         <h3>sharkdp-bat-low-zip-binary-detection</h3>
         <div><span class="badge " title="low">low</span> <span class="badge " title="small">small</span> <span class="badge " title="sharkdp/bat">sharkdp/bat</span></div>
-        <p>ZIP archive files whose first bytes are a standard ZIP signature are being treated like text in header-only output. Reproduce the behavior and make bat classify ZIP archive content as binary, without changing the behavior for ordinary text that merely starts with similar characters.</p>
+        <p>ZIP archive files whose first bytes are standard ZIP signatures are being treated like text in header-only output. Reproduce the behavior and make bat classify ZIP archive content as binary, without changing the behavior for ordinary text that merely starts with similar characters.</p>
         <p class="case-sub">Narrow CLI behavior bug with a small implementation surface and a simple external hidden test. The original PR also added unit and integration regressions.</p>
       </article>
     
@@ -4114,7 +4114,7 @@
         frameworkExplanation: "Benchmark Design", frameworkBody: "Each case starts from a real repository base commit where the hidden core test fails, and a fixed commit where the same hidden test passes. Agent runs receive only the issue-style instruction and work inside an isolated checkout. A run is counted as pass only when the hidden core test passes after the agent edit. Raw harness logs are kept locally, metrics are normalized per harness, and invalid infrastructure runs are excluded from baseline summaries.",
         caseDesignBody: "The case set spans 9 repositories with low, mid, and high difficulty tasks per repository. Difficulty is based on expected debugging complexity, not just repository size. Repo size is tracked separately because a large repository can still have a localized bug, while a small repository can require subtle behavior reconstruction.",
         metricDesignBody: "Turns, tokens, tool calls, and cost are intentionally not collapsed into one ambiguous number. Turn-like counts are harness-specific: Codex reports completed exec turns, Claude reports num_turns, and Cursor has assistant/action-step events rather than a completed-turn primitive. Cached input is separated from fresh input where the harness exposes it; Codex and Cursor dollar values are API-equivalent estimates, while Claude cost is reported by the harness.",
-        falseNegativeReview: "False-negative Review", falseNegativeBody: "Failed baseline runs were checked against hidden-test output and saved workspaces. Oracle fixes were applied by regrading preserved workspaces instead of rerunning agents. Remaining failures are mostly true implementation failures, with one case-design review still open for the bat fallback flag name.",
+        falseNegativeReview: "False-negative Review", falseNegativeBody: "Failed baseline runs were checked against hidden-test output and saved workspaces. Oracle fixes were applied by regrading preserved workspaces instead of rerunning agents. Remaining failures are mostly true implementation failures. The bat fallback flag-name ambiguity is marked as a case-design review for the existing baseline and the prompt has been clarified for future runs.",
         failureReview: "Failure Implementation Review", failureReviewBody: "These notes summarize how the failed implementations went wrong. They are auxiliary analysis generated from hidden-test output, workspace diffs, and saved harness logs where useful; they do not replace hidden-oracle pass/fail scoring.",
         caseCatalog: "Case Catalog", passRateChart: "Pass Rate", wallTimeChart: "Median Wall Time", costPassChart: "Cost Per Pass", difficultyChart: "Success By Difficulty",
         passValue: "pass", failValue: "fail", noInvalidRuns: "No invalid runs",
@@ -4147,7 +4147,7 @@
         frameworkExplanation: "ベンチマーク設計", frameworkBody: "各 case は、hidden core test が失敗する実リポジトリの base commit と、同じ hidden test が成功する fixed commit を持ちます。Agent には issue 形式の instruction だけを渡し、隔離 checkout 内で修正させます。Agent 編集後に hidden core test が通った場合だけ pass と数えます。raw harness log はローカルに保持し、metrics は harness ごとの意味を保ったまま正規化し、infra invalid run は baseline 集計から除外します。",
         caseDesignBody: "case set は 9 リポジトリにまたがり、各リポジトリに low/mid/high の 3 段階の task を置いています。difficulty は単なる repo size ではなく、想定される debug の複雑さで決めています。大規模 repo でも局所的な bug はあり、小規模 repo でも微妙な仕様復元が必要な bug はあるため、repo size は別軸として扱います。",
         metricDesignBody: "turn、token、tool call、cost は harness ごとに意味が違うため、曖昧な単一指標に潰していません。turn 系の値は harness 固有です。Codex は完了した exec turn、Claude は num_turns、Cursor は完了 turn primitive ではなく assistant/action-step event 数です。cache input は fresh input と分け、Codex/Cursor の dollar は API-equivalent 推定、Claude は harness 報告値です。",
-        falseNegativeReview: "False-negative Review", falseNegativeBody: "失敗した baseline run は hidden test output と保存済み workspace で照合しました。oracle fix は agent を再実行せず、保存済み workspace を再採点して反映しています。残る失敗はほぼ true implementation failure で、bat fallback flag 名だけ case-design review が残っています。",
+        falseNegativeReview: "False-negative Review", falseNegativeBody: "失敗した baseline run は hidden test output と保存済み workspace で照合しました。oracle fix は agent を再実行せず、保存済み workspace を再採点して反映しています。残る失敗はほぼ true implementation failure です。bat fallback flag 名の曖昧さは既存 baseline では case-design review とし、将来 run 向けには prompt を明確化済みです。",
         failureReview: "失敗実装レビュー", failureReviewBody: "ここでは failed implementation がどう間違えたかを要約します。hidden-test output、workspace diff、必要に応じて保存済み harness log から作る補助分析であり、hidden-oracle の pass/fail 判定を置き換えるものではありません。",
         caseCatalog: "Case Catalog", passRateChart: "成功率", wallTimeChart: "Wall Time 中央値", costPassChart: "成功あたり Cost", difficultyChart: "Difficulty 別成功数",
         passValue: "成功", failValue: "失敗", noInvalidRuns: "Invalid run はありません",
@@ -4329,8 +4329,8 @@
                   "ja": "hidden test は --fallback-syntax を呼び、CLI はそれを拒否して --fallback-language を示唆します。case の PR title は --fallback-syntax を含みますが、instruction 本文は fallback の追加とだけ述べています。"
             },
             "recommendation": {
-                  "en": "Review case wording. If upstream API fidelity matters, explicitly require --fallback-syntax; otherwise do not treat this as a pure model failure.",
-                  "ja": "case wording を見直します。upstream API fidelity を測るなら --fallback-syntax を明示し、そうでないなら pure model failure として扱わない方がよいです。"
+                  "en": "Treat the existing baseline as case-design review. The case prompt has been clarified for future runs to explicitly require --fallback-syntax.",
+                  "ja": "既存 baseline では case-design review として扱います。将来 run 向けには --fallback-syntax を明示するよう case prompt を修正済みです。"
             }
       },
       "sharkdp-bat-low-zip-binary-detection::claude": {

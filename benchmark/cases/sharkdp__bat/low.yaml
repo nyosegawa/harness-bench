@@ -14,7 +14,7 @@ original_pr_head_commit: b3aec318cf1fc16edefe8a90d78e3eb2f62100f8
 fixed_commit: a995764d230e49e089febd8e5487c1d61e5d3051
 difficulty: low
 instruction: >
-  ZIP archive files whose first bytes are a standard ZIP signature are being
+  ZIP archive files whose first bytes are standard ZIP signatures are being
   treated like text in header-only output. Reproduce the behavior and make
   bat classify ZIP archive content as binary, without changing the behavior
   for ordinary text that merely starts with similar characters.

@@ -159,15 +159,16 @@ current hidden oracle:
 | `jesseduffield-lazygit-high-branch-divergence-fast-path` | Claude | Public branch-loader fast path behavior still did not satisfy the hidden test. |
 | `louislam-uptime-kuma-high-websocket-auth-options` | Codex, Claude, Cursor | Even after helper-name/schema loosening, websocket auth option behavior remains wrong or incomplete. |
 | `louislam-uptime-kuma-mid-uptime-cleanup-buckets` | Claude | A stale cleanup bucket remained. |
-| `sharkdp-bat-high-fallback-syntax` | Claude | `--fallback-syntax` itself is rejected. This is marked `case_design_review` in the structured failure review because the prompt asks for fallback support but does not explicitly name the flag. |
+| `sharkdp-bat-high-fallback-syntax` | Claude | `--fallback-syntax` itself is rejected. This is marked `case_design_review` in the structured failure review because the baseline prompt asked for fallback support but did not explicitly name the flag. The case prompt has since been clarified for future runs. |
 | `sharkdp-bat-low-zip-binary-detection` | Claude | ZIP end-of-central-directory marker was not rendered as `<BINARY>`. |
 | `sharkdp-bat-mid-control-character-wrapping` | Codex, Cursor | NUL/DEL input at width 40 still rendered as one physical line instead of the expected two. |
 | `usememos-memos-mid-mixed-case-user-resource-names` | Claude | Mixed-case lookup remained empty and numeric usernames became valid. |
 | `vitejs-vite-low-flatten-id-sanitized-chars` | Codex | Collision/path-safety property test still failed. |
 
-Until the remaining case-design review is resolved, the headline matrix should
-be read as "hidden-oracle pass rate" rather than an absolute final correctness
-score.
+The remaining case-design review has been resolved in the case prompt for
+future runs, but the current baseline matrix still reflects the old prompt.
+Until the sanitized matrix is rerun, the headline should be read as
+"hidden-oracle pass rate" rather than an absolute final correctness score.
 
 Structured implementation reviews live in
 `benchmark/reviews/baseline-failure-reviews.json`. Each review is bilingual

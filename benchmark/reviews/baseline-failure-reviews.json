@@ -183,8 +183,8 @@
         "ja": "hidden test は --fallback-syntax を呼び、CLI はそれを拒否して --fallback-language を示唆します。case の PR title は --fallback-syntax を含みますが、instruction 本文は fallback の追加とだけ述べています。"
       },
       "recommendation": {
-        "en": "Review case wording. If upstream API fidelity matters, explicitly require --fallback-syntax; otherwise do not treat this as a pure model failure.",
-        "ja": "case wording を見直します。upstream API fidelity を測るなら --fallback-syntax を明示し、そうでないなら pure model failure として扱わない方がよいです。"
+        "en": "Treat the existing baseline as case-design review. The case prompt has been clarified for future runs to explicitly require --fallback-syntax.",
+        "ja": "既存 baseline では case-design review として扱います。将来 run 向けには --fallback-syntax を明示するよう case prompt を修正済みです。"
       }
     },
     {
