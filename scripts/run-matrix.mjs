@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { spawnSync } from "node:child_process";
+import { spawn } from "node:child_process";
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { basename, resolve } from "node:path";
 
@@ -13,6 +13,7 @@ const dryRun = parseBoolean(args.dryRun, false);
 const stopOnFailure = parseBoolean(args.stopOnFailure, false);
 const includeVerify = parseBoolean(args.includeVerify, false);
 const maxInfraRetries = Number(args.maxInfraRetries ?? 0);
+const jobsConcurrency = Math.max(1, Number(args.jobs ?? 1));
 const matrixId = args.matrixId ?? `matrix-${new Date().toISOString().replace(/[:.]/g, "-")}`;
 
 const cases = collectCases(args).map((path) => resolve(path));
@@ -54,6 +55,7 @@ const summary = {
   work_root: workRoot,
   agent_timeout_ms: agentTimeoutMs,
   max_infra_retries: maxInfraRetries,
+  jobs_concurrency: jobsConcurrency,
   rate_card: rateCard,
   cases,
   conditions,
@@ -65,12 +67,66 @@ console.log(JSON.stringify({
   dryRun,
   matrixId,
   jobs: jobs.length,
+  concurrency: jobsConcurrency,
   cases: cases.length,
   conditions: conditions.map((condition) => condition.id),
 }, null, 2));
 
 let failed = false;
-for (const job of jobs) {
+for (const jobRecord of await runJobs(jobs)) {
+  summary.jobs.push(jobRecord);
+  if (jobRecord.failed) failed = true;
+}
+
+async function runJobs(pendingJobs) {
+  if (jobsConcurrency === 1) {
+    const records = [];
+    for (const job of pendingJobs) {
+      const record = await runJob(job);
+      records.push(record);
+      if (record.failed && stopOnFailure) break;
+    }
+    return records;
+  }
+
+  const pending = [...pendingJobs];
+  const records = [];
+  const active = new Set();
+  const activeResources = new Set();
+
+  return await new Promise((resolvePromise) => {
+    const pump = () => {
+      while (active.size < jobsConcurrency && pending.length > 0 && !(failed && stopOnFailure)) {
+        const index = pending.findIndex((job) => !activeResources.has(jobResourceKey(job)));
+        if (index === -1) break;
+        const [job] = pending.splice(index, 1);
+        const resourceKey = jobResourceKey(job);
+        activeResources.add(resourceKey);
+        const promise = runJob(job)
+          .then((record) => {
+            records.push(record);
+            if (record.failed) failed = true;
+          })
+          .finally(() => {
+            active.delete(promise);
+            activeResources.delete(resourceKey);
+            if ((pending.length === 0 || (failed && stopOnFailure)) && active.size === 0) {
+              resolvePromise(records);
+            } else {
+              pump();
+            }
+          });
+        active.add(promise);
+      }
+      if ((pending.length === 0 || (failed && stopOnFailure)) && active.size === 0) {
+        resolvePromise(records);
+      }
+    };
+    pump();
+  });
+}
+
+async function runJob(job) {
   const label = job.kind === "agent"
     ? `${basename(job.casePath)} ${job.condition.id}`
     : `${basename(job.casePath)} ${job.mode}`;
@@ -82,7 +138,7 @@ for (const job of jobs) {
     const command = buildCommand(job, attempt);
     console.log(`\n==> ${label}${allowedAttempts > 1 ? ` attempt ${attempt}/${allowedAttempts}` : ""}`);
     console.log(shellJoin(command));
-    const record = runJobAttempt(job, command, attempt);
+    const record = await runJobAttempt(job, command, attempt);
     attempts.push(record);
     finalRecord = record;
     if (!record.invalid_run) break;
@@ -104,10 +160,7 @@ for (const job of jobs) {
     jobRecord.failure_reason = failureReason(job, finalRecord);
   }
 
-  summary.jobs.push(jobRecord);
-  if (jobRecord.failed && stopOnFailure) {
-    break;
-  }
+  return jobRecord;
 }
 
 summary.finished_at = new Date().toISOString();
@@ -135,33 +188,62 @@ function runJobAttempt(job, command, attempt) {
 
   if (dryRun) {
     record.finished_at = new Date().toISOString();
-    return record;
+    return Promise.resolve(record);
   }
 
   const startedMs = Date.now();
-  const result = spawnSync(command[0], command.slice(1), {
-    cwd: process.cwd(),
-    encoding: "utf8",
-    maxBuffer: 50 * 1024 * 1024,
+  return new Promise((resolvePromise) => {
+    const child = spawn(command[0], command.slice(1), {
+      cwd: process.cwd(),
+      stdio: ["ignore", "pipe", "pipe"],
+    });
+    let stdout = "";
+    let stderr = "";
+    child.stdout.setEncoding("utf8");
+    child.stderr.setEncoding("utf8");
+    child.stdout.on("data", (chunk) => {
+      stdout += chunk;
+      process.stdout.write(chunk);
+    });
+    child.stderr.on("data", (chunk) => {
+      stderr += chunk;
+      process.stderr.write(chunk);
+    });
+    child.on("error", (error) => {
+      stderr += error.stack ?? error.message;
+    });
+    child.on("close", (code, signal) => {
+      record.duration_ms = Date.now() - startedMs;
+      record.exit_code = code;
+      record.signal = signal;
+      const runCase = parseRunCaseStdout(stdout);
+      record.result_path = runCase?.resultPath ?? null;
+      record.run_dir = runCase?.runDir ?? null;
+      record.result_success = runCase?.success ?? null;
+      const completedResult = readResultJson(record.result_path);
+      record.case_id = completedResult?.case_id ?? null;
+      record.runner_error = completedResult?.error?.message ?? null;
+      record.invalid_run = completedResult?.invalid_run ?? false;
+      record.invalid_reason = completedResult?.invalid_reason ?? null;
+      record.agent_timed_out = completedResult?.agent_result?.timed_out ?? false;
+      record.finished_at = new Date().toISOString();
+      if (!record.result_path && stderr) {
+        record.stderr_tail = stderr.split(/\r?\n/).slice(-20).join("\n");
+      }
+      resolvePromise(record);
+    });
   });
-  record.duration_ms = Date.now() - startedMs;
-  record.exit_code = result.status;
-  record.signal = result.signal;
-  if (result.stdout) process.stdout.write(result.stdout);
-  if (result.stderr) process.stderr.write(result.stderr);
+}
 
-  const runCase = parseRunCaseStdout(result.stdout);
-  record.result_path = runCase?.resultPath ?? null;
-  record.run_dir = runCase?.runDir ?? null;
-  record.result_success = runCase?.success ?? null;
-  const completedResult = readResultJson(record.result_path);
-  record.case_id = completedResult?.case_id ?? null;
-  record.runner_error = completedResult?.error?.message ?? null;
-  record.invalid_run = completedResult?.invalid_run ?? false;
-  record.invalid_reason = completedResult?.invalid_reason ?? null;
-  record.agent_timed_out = completedResult?.agent_result?.timed_out ?? false;
-  record.finished_at = new Date().toISOString();
-  return record;
+function jobResourceKey(job) {
+  if (job.kind === "verify") return `verify:${repoSlugForCase(job.casePath)}`;
+  return `agent:${job.casePath}:${job.condition?.id ?? ""}`;
+}
+
+function repoSlugForCase(casePath) {
+  const text = readFileSync(casePath, "utf8");
+  const repo = text.match(/^repo:\s*(.+)$/m)?.[1]?.trim() ?? casePath;
+  return repo.replace("/", "__");
 }
 
 function buildCommand(job, attempt) {

@@ -97,6 +97,17 @@ Run the baseline matrix sequentially:
 node scripts/run-matrix.mjs
 ```
 
+Run the matrix with bounded parallelism:
+
+```bash
+node scripts/run-matrix.mjs --jobs 3
+```
+
+`--jobs` controls concurrent `run-case.mjs` processes. Agent runs use isolated
+per-run workspaces and can run in parallel. Verify runs are parallelized across
+different repositories, but `run-matrix.mjs` serializes verify jobs that share
+the same repository workspace to avoid `.git/index.lock` collisions.
+
 Preview the pilot matrix without starting agents:
 
 ```bash
@@ -509,6 +520,12 @@ before writing:
 
 ```bash
 node scripts/review-failed-runs.mjs --generate
+```
+
+Generate missing reviews with multiple Codex reviewer processes:
+
+```bash
+node scripts/review-failed-runs.mjs --generate --jobs 4
 ```
 
 The evidence bundle includes the failed `result.json`, hidden-test stdout and

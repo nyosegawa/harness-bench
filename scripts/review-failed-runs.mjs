@@ -2,7 +2,7 @@
 
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
-import { spawnSync } from "node:child_process";
+import { spawn, spawnSync } from "node:child_process";
 
 const args = parseArgs(process.argv.slice(2));
 const runsRoot = resolve(args.runsRoot ?? "benchmark/runs");
@@ -11,10 +11,12 @@ const reviewer = args.reviewer ?? "codex";
 const dryRun = Boolean(args.dryRun);
 const generate = Boolean(args.generate);
 const reviewerModel = args.model ?? "gpt-5.5";
+const jobsConcurrency = Math.max(1, Number(args.jobs ?? 1));
 
 const failed = loadFailedBaselineResults(runsRoot);
 const existing = existsSync(output) ? JSON.parse(readFileSync(output, "utf8")) : defaultReviewFile();
 const existingReviews = new Map((existing.reviews ?? []).map((review) => [reviewKey(review.case_id, review.harness), review]));
+const reviewJobs = [];
 
 for (const result of failed) {
   const key = reviewKey(result.case_id, result.harness);
@@ -27,7 +29,16 @@ for (const result of failed) {
   if (!generate) {
     throw new Error(`missing review ${key}; use --dryRun to inspect evidence or --generate to call ${reviewer}`);
   }
-  const review = generateReview(bundle);
+  reviewJobs.push({ key, bundle });
+}
+
+if (dryRun) {
+  validateReviewFile(existing, output);
+  console.log(`validated ${existing.reviews?.length ?? 0} existing reviews in ${output}`);
+  process.exit(0);
+}
+
+for (const { key, review } of await runReviewJobs(reviewJobs)) {
   validateSingleReview(review, `${reviewer}:${key}`);
   existingReviews.set(key, review);
   console.log(`generated ${key}`);
@@ -42,6 +53,35 @@ validateReviewFile(next, output);
 mkdirSync(dirname(output), { recursive: true });
 writeFileSync(output, `${JSON.stringify(next, null, 2)}\n`);
 console.log(`validated ${next.reviews.length} reviews in ${output}`);
+
+async function runReviewJobs(jobs) {
+  const pending = [...jobs];
+  const completed = [];
+  const active = new Set();
+  return await new Promise((resolvePromise, rejectPromise) => {
+    const pump = () => {
+      while (active.size < jobsConcurrency && pending.length > 0) {
+        const job = pending.shift();
+        const promise = generateReview(job.bundle)
+          .then((review) => completed.push({ key: job.key, review }))
+          .catch(rejectPromise)
+          .finally(() => {
+            active.delete(promise);
+            if (pending.length === 0 && active.size === 0) {
+              resolvePromise(completed);
+            } else {
+              pump();
+            }
+          });
+        active.add(promise);
+      }
+      if (pending.length === 0 && active.size === 0) {
+        resolvePromise(completed);
+      }
+    };
+    pump();
+  });
+}
 
 function loadFailedBaselineResults(root) {
   const find = spawnSync("find", [root, "-mindepth", "2", "-maxdepth", "2", "-name", "result.json"], {
@@ -113,7 +153,7 @@ function generateReview(bundle) {
     "Evidence bundle:",
     JSON.stringify(bundle, null, 2),
   ].join("\n\n");
-  const result = spawnSync("codex", [
+  return spawnJson("codex", [
     "exec",
     "--ignore-user-config",
     "--ignore-rules",
@@ -127,14 +167,41 @@ function generateReview(bundle) {
     prompt,
   ], {
     cwd: process.cwd(),
-    encoding: "utf8",
     timeout: Number(args.timeoutMs ?? 900000),
-    maxBuffer: 50 * 1024 * 1024,
+  }).then(parseJsonObject);
+}
+
+function spawnJson(command, commandArgs, options) {
+  return new Promise((resolvePromise, rejectPromise) => {
+    const child = spawn(command, commandArgs, {
+      cwd: options.cwd,
+      stdio: ["ignore", "pipe", "pipe"],
+    });
+    let stdout = "";
+    let stderr = "";
+    let timedOut = false;
+    const timer = setTimeout(() => {
+      timedOut = true;
+      child.kill("SIGTERM");
+    }, options.timeout);
+    child.stdout.setEncoding("utf8");
+    child.stderr.setEncoding("utf8");
+    child.stdout.on("data", (chunk) => { stdout += chunk; });
+    child.stderr.on("data", (chunk) => { stderr += chunk; });
+    child.on("error", rejectPromise);
+    child.on("close", (code, signal) => {
+      clearTimeout(timer);
+      if (timedOut) {
+        rejectPromise(new Error(`${command} reviewer timed out after ${options.timeout}ms`));
+        return;
+      }
+      if (code !== 0) {
+        rejectPromise(new Error(`${command} reviewer failed (${code ?? signal}): ${stderr || stdout}`));
+        return;
+      }
+      resolvePromise(stdout);
+    });
   });
-  if (result.status !== 0) {
-    throw new Error(`codex reviewer failed: ${result.stderr || result.stdout}`);
-  }
-  return parseJsonObject(result.stdout);
 }
 
 function parseJsonObject(text) {
@@ -176,7 +243,7 @@ function validateReviewFile(data, path) {
   for (const [index, review] of data.reviews.entries()) {
     validateSingleReview(review, `${path}: reviews[${index}]`);
     const key = reviewKey(review.case_id, review.harness);
-    if (seen.has(key)) throw new Error(`${prefix}: duplicate ${key}`);
+    if (seen.has(key)) throw new Error(`${path}: duplicate ${key}`);
     seen.add(key);
   }
 }
