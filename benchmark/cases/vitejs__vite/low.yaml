@@ -33,4 +33,5 @@ test_strategy:
   success_rule: core_tests_pass
 selection_notes: >
   Focused utility bug in optimizer ID flattening. Hidden tests check exact
-  encodings and collision avoidance for URL-sanitized characters.
+  collision avoidance and path-safety properties for URL-sanitized characters,
+  without requiring one exact upstream encoding spelling.

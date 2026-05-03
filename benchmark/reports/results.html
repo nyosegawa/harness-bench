@@ -94,7 +94,7 @@
 <body>
   <header>
     <h1 data-i18n="reportTitle">Harness Benchmark Results</h1>
-    <p>Generated at 2026-05-03T06:45:43.289Z</p>
+    <p>Generated at 2026-05-03T06:46:48.296Z</p>
   </header>
   <main>
     <section class="controls">
@@ -1072,7 +1072,7 @@
         <h3>vitejs-vite-low-flatten-id-sanitized-chars</h3>
         <div><span class="badge " title="low">low</span> <span class="badge " title="large">large</span> <span class="badge " title="vitejs/vite">vitejs/vite</span></div>
         <p>Optimized dependency file IDs can collide or lose information when package IDs contain characters that are later sanitized for URL paths. Reproduce the flattening edge case and make flattened IDs encode sanitized characters without colliding with underscores or nested IDs.</p>
-        <p class="case-sub">Focused utility bug in optimizer ID flattening. Hidden tests check exact encodings and collision avoidance for URL-sanitized characters.</p>
+        <p class="case-sub">Focused utility bug in optimizer ID flattening. Hidden tests check exact collision avoidance and path-safety properties for URL-sanitized characters, without requiring one exact upstream encoding spelling.</p>
       </article>
     
 
