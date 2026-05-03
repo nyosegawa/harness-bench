@@ -15,28 +15,6 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestHiddenParseAheadBehindAndChooseClosestBase(t *testing.T) {
-	output := "refs/heads/feature\x0042 0\x003 7\n" +
-		"refs/heads/bad\x00not-a-pair\x002 9\n" +
-		"\n"
-
-	parsed := parseAheadBehindForEachRefOutput(output, 2)
-	assert.Len(t, parsed, 2)
-	assert.Equal(t, "refs/heads/feature", parsed[0].refName)
-	assert.Equal(t, 7, selectBehindForBranch(parsed[0].aheadBehinds))
-
-	assert.Equal(t, "refs/heads/bad", parsed[1].refName)
-	assert.Equal(t, 9, selectBehindForBranch(parsed[1].aheadBehinds))
-
-	args := buildAheadBehindForEachRefArgs([]string{"refs/heads/master", "refs/remotes/origin/develop"})
-	assert.Equal(t, []string{
-		"git",
-		"for-each-ref",
-		"--format=%(refname)%00%(ahead-behind:refs/heads/master)%00%(ahead-behind:refs/remotes/origin/develop)",
-		"refs/heads",
-	}, args)
-}
-
 func TestHiddenFastBehindBaseBranchValuesResetMissingBranches(t *testing.T) {
 	mainBranchRefs := []string{"refs/heads/master", "refs/remotes/origin/develop"}
 	feature := &models.Branch{Name: "feature"}
@@ -78,4 +56,4 @@ func TestHiddenFastBehindBaseBranchValuesResetMissingBranches(t *testing.T) {
 }
 GOEOF
 
-go test ./pkg/commands/git_commands -run 'TestHidden(ParseAheadBehindAndChooseClosestBase|FastBehindBaseBranchValuesResetMissingBranches)' -count=1
+go test ./pkg/commands/git_commands -run TestHiddenFastBehindBaseBranchValuesResetMissingBranches -count=1

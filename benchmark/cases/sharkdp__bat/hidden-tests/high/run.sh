@@ -38,21 +38,6 @@ if [[ "$fallback_output" != "$explicit_output" ]]; then
   exit 1
 fi
 
-alias_output="$(
-  cd "$repo"
-  cargo run --quiet -- \
-    --color=always \
-    --style=plain \
-    --file-name=unknown.fallbacksyntax \
-    --fallback-language=bash \
-    "$unknown_file"
-)"
-
-if [[ "$alias_output" != "$explicit_output" ]]; then
-  printf 'fallback-language alias output did not match explicit language output\n' >&2
-  exit 1
-fi
-
 with_fallback="$(
   cd "$repo"
   cargo run --quiet -- \

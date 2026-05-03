@@ -64,6 +64,11 @@
     .detail-table-section[hidden] { display: none; }
     .compact-list { display: grid; gap: 8px; padding: 0 12px 12px; }
     .review-row { display: grid; grid-template-columns: minmax(220px, 1.2fr) minmax(90px, 0.4fr) minmax(260px, 1.6fr); gap: 10px; align-items: start; border-top: 1px solid #ededeb; padding-top: 8px; }
+    .failure-review-list { display: grid; gap: 10px; padding: 0 12px 12px; }
+    .failure-review-card { border-top: 1px solid #ededeb; padding-top: 10px; display: grid; gap: 6px; }
+    .failure-review-card h3 { margin: 0; font-size: 13px; }
+    .failure-review-meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+    .failure-review-card p { margin: 0; white-space: normal; line-height: 1.45; color: #3f4248; }
     .case-catalog { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 10px; padding: 0 12px 12px; }
     .case-card { border-top: 1px solid #ededeb; padding-top: 10px; }
     .case-card h3 { margin: 0 0 6px; font-size: 13px; }
@@ -89,7 +94,7 @@
 <body>
   <header>
     <h1 data-i18n="reportTitle">Harness Benchmark Results</h1>
-    <p>Generated at 2026-05-03T06:09:39.547Z</p>
+    <p>Generated at 2026-05-03T06:41:56.157Z</p>
   </header>
   <main>
     <section class="controls">
@@ -167,7 +172,7 @@
     <p class="note" data-i18n="viewNote">Default view shows only the 81 production baseline runs. Pilot and smoke runs are available from the View filter.</p>
     <section class="summary">
       <div class="metric"><div class="label" data-i18n="baselineRuns">Baseline Runs</div><div class="value">81</div></div>
-      <div class="metric"><div class="label" data-i18n="passRate">Pass Rate</div><div class="value">65%</div></div>
+      <div class="metric"><div class="label" data-i18n="passRate">Pass Rate</div><div class="value">81%</div></div>
       <div class="metric"><div class="label" data-i18n="medianWall">Median Wall Time</div><div class="value">224.6s</div></div>
       <div class="metric"><div class="label" data-i18n="invalidRuns">Invalid Runs</div><div class="value">1</div></div>
       <div class="metric"><div class="label" data-i18n="reportedCost">Reported Cost</div><div class="value">$22.6241</div></div>
@@ -183,8 +188,8 @@
     <tr>
       <td>claude</td>
       <td>27</td>
-      <td>18</td>
-      <td>67%</td>
+      <td>20</td>
+      <td>74%</td>
       <td>224.6s</td>
     </tr>
   
@@ -192,8 +197,8 @@
     <tr>
       <td>codex</td>
       <td>27</td>
-      <td>18</td>
-      <td>67%</td>
+      <td>23</td>
+      <td>85%</td>
       <td>248.9s</td>
     </tr>
   
@@ -201,8 +206,8 @@
     <tr>
       <td>cursor</td>
       <td>27</td>
-      <td>17</td>
-      <td>63%</td>
+      <td>23</td>
+      <td>85%</td>
       <td>186.6s</td>
     </tr>
   </tbody>
@@ -218,8 +223,8 @@
     <tr>
       <td>high</td>
       <td>27</td>
-      <td>15</td>
-      <td>56%</td>
+      <td>22</td>
+      <td>81%</td>
       <td>253.6s</td>
     </tr>
   
@@ -227,8 +232,8 @@
     <tr>
       <td>low</td>
       <td>27</td>
-      <td>19</td>
-      <td>70%</td>
+      <td>25</td>
+      <td>93%</td>
       <td>174.7s</td>
     </tr>
   
@@ -253,8 +258,8 @@
     <tr>
       <td>large</td>
       <td>36</td>
-      <td>27</td>
-      <td>75%</td>
+      <td>31</td>
+      <td>86%</td>
       <td>249.3s</td>
     </tr>
   
@@ -262,8 +267,8 @@
     <tr>
       <td>medium</td>
       <td>18</td>
-      <td>11</td>
-      <td>61%</td>
+      <td>13</td>
+      <td>72%</td>
       <td>227.5s</td>
     </tr>
   
@@ -271,8 +276,8 @@
     <tr>
       <td>small</td>
       <td>27</td>
-      <td>15</td>
-      <td>56%</td>
+      <td>22</td>
+      <td>81%</td>
       <td>197.2s</td>
     </tr>
   </tbody>
@@ -286,29 +291,22 @@
           <thead><tr><th data-i18n="name">Name</th><th data-i18n="runs">Runs</th><th data-i18n="medianWallShort">Median Wall</th></tr></thead>
           <tbody>
     <tr>
-      <td><span data-i18n="failureBuildSymbol">build or symbol failure</span></td>
-      <td>3</td>
-      <td>249.4s</td>
-    </tr>
-  
-
-    <tr>
       <td><span data-i18n="failureAssertion">hidden assertion mismatch</span></td>
-      <td>18</td>
-      <td>227.5s</td>
+      <td>10</td>
+      <td>349.1s</td>
     </tr>
   
 
     <tr>
       <td><span data-i18n="failureHiddenTest">hidden test failure</span></td>
       <td>4</td>
-      <td>186.6s</td>
+      <td>188.8s</td>
     </tr>
   
 
     <tr>
       <td><span data-i18n="failureWrongSurface">wrong CLI/API surface</span></td>
-      <td>3</td>
+      <td>1</td>
       <td>246.9s</td>
     </tr>
   </tbody>
@@ -320,28 +318,14 @@
       <h2 data-i18n="conditionComparison">Harness x Model Comparison</h2>
       <div class="condition-grid">
     <article class="condition-card">
-      <h2>claude · claude-opus-4-7</h2>
-      <div class="condition-main">
-        <div class="condition-rate">67%</div>
-        <div class="condition-meta">18/27 <span data-i18n="passedSuffix">pass</span></div>
-      </div>
-      <div class="condition-stats">
-        <div><span data-i18n="medianWallLabel">Median wall</span><strong>224.6s</strong></div>
-        <div><span data-i18n="costPerPassLabel">Cost/pass</span><strong>$1.26</strong></div>
-        <div><span data-i18n="costSourceLabel">Cost source</span><strong data-i18n="costSourceReported">reported</strong></div>
-      </div>
-    </article>
-  
-
-    <article class="condition-card">
       <h2>codex · gpt-5.5</h2>
       <div class="condition-main">
-        <div class="condition-rate">67%</div>
-        <div class="condition-meta">18/27 <span data-i18n="passedSuffix">pass</span></div>
+        <div class="condition-rate">85%</div>
+        <div class="condition-meta">23/27 <span data-i18n="passedSuffix">pass</span></div>
       </div>
       <div class="condition-stats">
         <div><span data-i18n="medianWallLabel">Median wall</span><strong>248.9s</strong></div>
-        <div><span data-i18n="costPerPassLabel">Cost/pass</span><strong>$1.88</strong></div>
+        <div><span data-i18n="costPerPassLabel">Cost/pass</span><strong>$1.47</strong></div>
         <div><span data-i18n="costSourceLabel">Cost source</span><strong data-i18n="costSourceEstimated">estimated</strong></div>
       </div>
     </article>
@@ -350,13 +334,27 @@
     <article class="condition-card">
       <h2>cursor · gpt-5.5-medium</h2>
       <div class="condition-main">
-        <div class="condition-rate">63%</div>
-        <div class="condition-meta">17/27 <span data-i18n="passedSuffix">pass</span></div>
+        <div class="condition-rate">85%</div>
+        <div class="condition-meta">23/27 <span data-i18n="passedSuffix">pass</span></div>
       </div>
       <div class="condition-stats">
         <div><span data-i18n="medianWallLabel">Median wall</span><strong>186.6s</strong></div>
-        <div><span data-i18n="costPerPassLabel">Cost/pass</span><strong>$1.67</strong></div>
+        <div><span data-i18n="costPerPassLabel">Cost/pass</span><strong>$1.23</strong></div>
         <div><span data-i18n="costSourceLabel">Cost source</span><strong data-i18n="costSourceEstimated">estimated</strong></div>
+      </div>
+    </article>
+  
+
+    <article class="condition-card">
+      <h2>claude · claude-opus-4-7</h2>
+      <div class="condition-main">
+        <div class="condition-rate">74%</div>
+        <div class="condition-meta">20/27 <span data-i18n="passedSuffix">pass</span></div>
+      </div>
+      <div class="condition-stats">
+        <div><span data-i18n="medianWallLabel">Median wall</span><strong>224.6s</strong></div>
+        <div><span data-i18n="costPerPassLabel">Cost/pass</span><strong>$1.13</strong></div>
+        <div><span data-i18n="costSourceLabel">Cost source</span><strong data-i18n="costSourceReported">reported</strong></div>
       </div>
     </article>
   </div>
@@ -366,36 +364,29 @@
       <h2 data-i18n="passRateChart">Pass Rate</h2>
       
     <div class="bar-row">
-      <div class="bar-label" title="claude">claude</div>
-      <div class="bar-track"><div class="bar-fill " style="width:67%"></div></div>
-      <div class="bar-value">67%</div>
-    </div>
-  
-
-    <div class="bar-row">
       <div class="bar-label" title="codex">codex</div>
-      <div class="bar-track"><div class="bar-fill " style="width:67%"></div></div>
-      <div class="bar-value">67%</div>
+      <div class="bar-track"><div class="bar-fill " style="width:85%"></div></div>
+      <div class="bar-value">85%</div>
     </div>
   
 
     <div class="bar-row">
       <div class="bar-label" title="cursor">cursor</div>
-      <div class="bar-track"><div class="bar-fill " style="width:63%"></div></div>
-      <div class="bar-value">63%</div>
+      <div class="bar-track"><div class="bar-fill " style="width:85%"></div></div>
+      <div class="bar-value">85%</div>
+    </div>
+  
+
+    <div class="bar-row">
+      <div class="bar-label" title="claude">claude</div>
+      <div class="bar-track"><div class="bar-fill " style="width:74%"></div></div>
+      <div class="bar-value">74%</div>
     </div>
   
     </article>
     <article class="chart-card">
       <h2 data-i18n="wallTimeChart">Median Wall Time</h2>
       
-    <div class="bar-row">
-      <div class="bar-label" title="claude">claude</div>
-      <div class="bar-track"><div class="bar-fill secondary" style="width:90%"></div></div>
-      <div class="bar-value">224.6s</div>
-    </div>
-  
-
     <div class="bar-row">
       <div class="bar-label" title="codex">codex</div>
       <div class="bar-track"><div class="bar-fill secondary" style="width:100%"></div></div>
@@ -409,28 +400,35 @@
       <div class="bar-value">186.6s</div>
     </div>
   
+
+    <div class="bar-row">
+      <div class="bar-label" title="claude">claude</div>
+      <div class="bar-track"><div class="bar-fill secondary" style="width:90%"></div></div>
+      <div class="bar-value">224.6s</div>
+    </div>
+  
     </article>
     <article class="chart-card">
       <h2 data-i18n="costPassChart">Cost Per Pass</h2>
       
     <div class="bar-row">
-      <div class="bar-label" title="claude">claude</div>
-      <div class="bar-track"><div class="bar-fill cost" style="width:67%"></div></div>
-      <div class="bar-value">$1.26</div>
-    </div>
-  
-
-    <div class="bar-row">
       <div class="bar-label" title="codex">codex</div>
       <div class="bar-track"><div class="bar-fill cost" style="width:100%"></div></div>
-      <div class="bar-value">$1.88</div>
+      <div class="bar-value">$1.47</div>
     </div>
   
 
     <div class="bar-row">
       <div class="bar-label" title="cursor">cursor</div>
-      <div class="bar-track"><div class="bar-fill cost" style="width:89%"></div></div>
-      <div class="bar-value">$1.67</div>
+      <div class="bar-track"><div class="bar-fill cost" style="width:84%"></div></div>
+      <div class="bar-value">$1.23</div>
+    </div>
+  
+
+    <div class="bar-row">
+      <div class="bar-label" title="claude">claude</div>
+      <div class="bar-track"><div class="bar-fill cost" style="width:77%"></div></div>
+      <div class="bar-value">$1.13</div>
     </div>
   
     </article>
@@ -439,30 +437,30 @@
       
         <div class="stack-row">
           <div class="bar-label">claude</div>
-          <div class="stack-track" title="low 7/9, mid 6/9, high 5/9">
-            <div class="stack-seg stack-low">7/9</div>
+          <div class="stack-track" title="low 8/9, mid 6/9, high 6/9">
+            <div class="stack-seg stack-low">8/9</div>
             <div class="stack-seg stack-mid">6/9</div>
-            <div class="stack-seg stack-high">5/9</div>
+            <div class="stack-seg stack-high">6/9</div>
           </div>
         </div>
       
 
         <div class="stack-row">
           <div class="bar-label">codex</div>
-          <div class="stack-track" title="low 6/9, mid 7/9, high 5/9">
-            <div class="stack-seg stack-low">6/9</div>
+          <div class="stack-track" title="low 8/9, mid 7/9, high 8/9">
+            <div class="stack-seg stack-low">8/9</div>
             <div class="stack-seg stack-mid">7/9</div>
-            <div class="stack-seg stack-high">5/9</div>
+            <div class="stack-seg stack-high">8/9</div>
           </div>
         </div>
       
 
         <div class="stack-row">
           <div class="bar-label">cursor</div>
-          <div class="stack-track" title="low 6/9, mid 6/9, high 5/9">
-            <div class="stack-seg stack-low">6/9</div>
+          <div class="stack-track" title="low 9/9, mid 6/9, high 8/9">
+            <div class="stack-seg stack-low">9/9</div>
             <div class="stack-seg stack-mid">6/9</div>
-            <div class="stack-seg stack-high">5/9</div>
+            <div class="stack-seg stack-high">8/9</div>
           </div>
         </div>
       
@@ -470,7 +468,7 @@
   </section>
     <section class="report-section">
       <h2 data-i18n="executiveSummary">Executive Summary</h2>
-      <p data-i18n="executiveSummaryBody">This baseline compares three memory-disabled agent harnesses on the same 27 real-repository debugging cases. Codex and Claude each pass 18/27 cases, Cursor passes 17/27. Claude has the lowest observed cost per pass in this run, Cursor has the fastest median wall time, and Codex is roughly tied with Claude on hidden-oracle pass rate while using more estimated tokens and cost.</p>
+      <p data-i18n="executiveSummaryBody">This baseline compares three memory-disabled agent harnesses on the same 27 real-repository debugging cases. Codex passes 23/27 cases, Claude passes 20/27, and Cursor passes 23/27 after oracle false-negative fixes and workspace regrade. Cursor has the fastest median wall time, Claude has the lowest cost per pass, and Codex/Cursor are tied on hidden-oracle pass rate.</p>
       <p data-i18n="executiveCaveatBody">The headline score is a hidden-oracle pass rate, not yet the final correctness score. False-negative review found several cases where hidden tests may over-constrain implementation details or unstated API choices; those cases are called out below and should be resolved before using the matrix as a final leaderboard.</p>
     </section>
     <section class="report-section">
@@ -490,9 +488,9 @@
 <div class="matrix-cell"><span class="result-dot result-pass" data-i18n="passValue">pass</span></div>
 <div class="matrix-cell"><span class="result-dot result-pass" data-i18n="passValue">pass</span></div>
 <div class="matrix-cell"><div class="case-name" title="axios-axios-low-settle-error-code">axios-axios-low-settle-error-code</div><div class="case-sub">low · small</div></div>
-<div class="matrix-cell"><span class="result-dot result-fail" data-i18n="failValue">fail</span></div>
-<div class="matrix-cell"><span class="result-dot result-fail" data-i18n="failValue">fail</span></div>
-<div class="matrix-cell"><span class="result-dot result-fail" data-i18n="failValue">fail</span></div>
+<div class="matrix-cell"><span class="result-dot result-pass" data-i18n="passValue">pass</span></div>
+<div class="matrix-cell"><span class="result-dot result-pass" data-i18n="passValue">pass</span></div>
+<div class="matrix-cell"><span class="result-dot result-pass" data-i18n="passValue">pass</span></div>
 <div class="matrix-cell"><div class="case-name" title="axios-axios-mid-fetch-global-access">axios-axios-mid-fetch-global-access</div><div class="case-sub">mid · small</div></div>
 <div class="matrix-cell"><span class="result-dot result-pass" data-i18n="passValue">pass</span></div>
 <div class="matrix-cell"><span class="result-dot result-pass" data-i18n="passValue">pass</span></div>
@@ -510,9 +508,9 @@
 <div class="matrix-cell"><span class="result-dot result-pass" data-i18n="passValue">pass</span></div>
 <div class="matrix-cell"><span class="result-dot result-pass" data-i18n="passValue">pass</span></div>
 <div class="matrix-cell"><div class="case-name" title="go-gitea-gitea-high-compare-no-common-history">go-gitea-gitea-high-compare-no-common-history</div><div class="case-sub">high · large</div></div>
-<div class="matrix-cell"><span class="result-dot result-fail" data-i18n="failValue">fail</span></div>
-<div class="matrix-cell"><span class="result-dot result-fail" data-i18n="failValue">fail</span></div>
-<div class="matrix-cell"><span class="result-dot result-fail" data-i18n="failValue">fail</span></div>
+<div class="matrix-cell"><span class="result-dot result-pass" data-i18n="passValue">pass</span></div>
+<div class="matrix-cell"><span class="result-dot result-pass" data-i18n="passValue">pass</span></div>
+<div class="matrix-cell"><span class="result-dot result-pass" data-i18n="passValue">pass</span></div>
 <div class="matrix-cell"><div class="case-name" title="go-gitea-gitea-low-schedule-null-payload">go-gitea-gitea-low-schedule-null-payload</div><div class="case-sub">low · large</div></div>
 <div class="matrix-cell"><span class="result-dot result-pass" data-i18n="passValue">pass</span></div>
 <div class="matrix-cell"><span class="result-dot result-pass" data-i18n="passValue">pass</span></div>
@@ -523,8 +521,8 @@
 <div class="matrix-cell"><span class="result-dot result-fail" data-i18n="failValue">fail</span></div>
 <div class="matrix-cell"><div class="case-name" title="jesseduffield-lazygit-high-branch-divergence-fast-path">jesseduffield-lazygit-high-branch-divergence-fast-path</div><div class="case-sub">high · small</div></div>
 <div class="matrix-cell"><span class="result-dot result-fail" data-i18n="failValue">fail</span></div>
-<div class="matrix-cell"><span class="result-dot result-fail" data-i18n="failValue">fail</span></div>
-<div class="matrix-cell"><span class="result-dot result-fail" data-i18n="failValue">fail</span></div>
+<div class="matrix-cell"><span class="result-dot result-pass" data-i18n="passValue">pass</span></div>
+<div class="matrix-cell"><span class="result-dot result-pass" data-i18n="passValue">pass</span></div>
 <div class="matrix-cell"><div class="case-name" title="jesseduffield-lazygit-low-github-owner-casing">jesseduffield-lazygit-low-github-owner-casing</div><div class="case-sub">low · small</div></div>
 <div class="matrix-cell"><span class="result-dot result-pass" data-i18n="passValue">pass</span></div>
 <div class="matrix-cell"><span class="result-dot result-pass" data-i18n="passValue">pass</span></div>
@@ -551,16 +549,16 @@
 <div class="matrix-cell"><span class="result-dot result-fail" data-i18n="failValue">fail</span></div>
 <div class="matrix-cell"><div class="case-name" title="louislam-uptime-kuma-low-submillisecond-ping-chart">louislam-uptime-kuma-low-submillisecond-ping-chart</div><div class="case-sub">low · medium</div></div>
 <div class="matrix-cell"><span class="result-dot result-pass" data-i18n="passValue">pass</span></div>
-<div class="matrix-cell"><span class="result-dot result-fail" data-i18n="failValue">fail</span></div>
-<div class="matrix-cell"><span class="result-dot result-fail" data-i18n="failValue">fail</span></div>
+<div class="matrix-cell"><span class="result-dot result-pass" data-i18n="passValue">pass</span></div>
+<div class="matrix-cell"><span class="result-dot result-pass" data-i18n="passValue">pass</span></div>
 <div class="matrix-cell"><div class="case-name" title="louislam-uptime-kuma-mid-uptime-cleanup-buckets">louislam-uptime-kuma-mid-uptime-cleanup-buckets</div><div class="case-sub">mid · medium</div></div>
 <div class="matrix-cell"><span class="result-dot result-fail" data-i18n="failValue">fail</span></div>
 <div class="matrix-cell"><span class="result-dot result-pass" data-i18n="passValue">pass</span></div>
 <div class="matrix-cell"><span class="result-dot result-pass" data-i18n="passValue">pass</span></div>
 <div class="matrix-cell"><div class="case-name" title="sharkdp-bat-high-fallback-syntax">sharkdp-bat-high-fallback-syntax</div><div class="case-sub">high · small</div></div>
 <div class="matrix-cell"><span class="result-dot result-fail" data-i18n="failValue">fail</span></div>
-<div class="matrix-cell"><span class="result-dot result-fail" data-i18n="failValue">fail</span></div>
-<div class="matrix-cell"><span class="result-dot result-fail" data-i18n="failValue">fail</span></div>
+<div class="matrix-cell"><span class="result-dot result-pass" data-i18n="passValue">pass</span></div>
+<div class="matrix-cell"><span class="result-dot result-pass" data-i18n="passValue">pass</span></div>
 <div class="matrix-cell"><div class="case-name" title="sharkdp-bat-low-zip-binary-detection">sharkdp-bat-low-zip-binary-detection</div><div class="case-sub">low · small</div></div>
 <div class="matrix-cell"><span class="result-dot result-fail" data-i18n="failValue">fail</span></div>
 <div class="matrix-cell"><span class="result-dot result-pass" data-i18n="passValue">pass</span></div>
@@ -588,7 +586,7 @@
 <div class="matrix-cell"><div class="case-name" title="vitejs-vite-low-flatten-id-sanitized-chars">vitejs-vite-low-flatten-id-sanitized-chars</div><div class="case-sub">low · large</div></div>
 <div class="matrix-cell"><span class="result-dot result-pass" data-i18n="passValue">pass</span></div>
 <div class="matrix-cell"><span class="result-dot result-fail" data-i18n="failValue">fail</span></div>
-<div class="matrix-cell"><span class="result-dot result-fail" data-i18n="failValue">fail</span></div>
+<div class="matrix-cell"><span class="result-dot result-pass" data-i18n="passValue">pass</span></div>
 <div class="matrix-cell"><div class="case-name" title="vitejs-vite-mid-deno-workspace-root">vitejs-vite-mid-deno-workspace-root</div><div class="case-sub">mid · large</div></div>
 <div class="matrix-cell"><span class="result-dot result-pass" data-i18n="passValue">pass</span></div>
 <div class="matrix-cell"><span class="result-dot result-pass" data-i18n="passValue">pass</span></div>
@@ -596,22 +594,8 @@
     </section>
     <section class="matrix-panel">
       <h2 data-i18n="falseNegativeReview">False-negative Review</h2>
-      <p class="section-copy" data-i18n="falseNegativeBody">Failed baseline runs were checked against hidden-test output. No failure looks like an infrastructure-only false negative, but several hidden tests appear to encode implementation details, exact encodings, or requirements not explicit in the prompt. Those cases are marked review and should be resolved before final headline scoring.</p>
+      <p class="section-copy" data-i18n="falseNegativeBody">Failed baseline runs were checked against hidden-test output and saved workspaces. Oracle fixes were applied by regrading preserved workspaces instead of rerunning agents. Remaining failures are mostly true implementation failures, with one case-design review still open for the bat fallback flag name.</p>
       <div class="compact-list">
-    <div class="review-row">
-      <div>axios-axios-low-settle-error-code<div class="case-sub">claude, codex, cursor</div></div>
-      <div><span class="badge failure-badge" title="review" data-i18n="reviewVerdict">review</span></div>
-      <div data-note-case="axios-axios-low-settle-error-code">Possible oracle issue: all harnesses assigned a defined Axios error code, but the hidden test requires rejected 200/302 responses to be ERR_BAD_RESPONSE. The prompt did not specify that non-4xx/5xx rejected responses must use that exact class.</div>
-    </div>
-  
-
-    <div class="review-row">
-      <div>go-gitea-gitea-high-compare-no-common-history<div class="case-sub">claude, codex, cursor</div></div>
-      <div><span class="badge failure-badge" title="review" data-i18n="reviewVerdict">review</span></div>
-      <div data-note-case="go-gitea-gitea-high-compare-no-common-history">Possible oracle issue: all harnesses added typed no-merge-base handling and compare fallback behavior, but the hidden test requires errors.Is(err, util.ErrNotExist) from MergeBase rather than only black-box compare behavior.</div>
-    </div>
-  
-
     <div class="review-row">
       <div>go-gitea-gitea-mid-pr-merge-self-reference<div class="case-sub">cursor</div></div>
       <div><span class="badge " title="unlikely false negative" data-i18n="unlikelyFalseNegative">unlikely false negative</span></div>
@@ -620,9 +604,9 @@
   
 
     <div class="review-row">
-      <div>jesseduffield-lazygit-high-branch-divergence-fast-path<div class="case-sub">claude, codex, cursor</div></div>
+      <div>jesseduffield-lazygit-high-branch-divergence-fast-path<div class="case-sub">claude</div></div>
       <div><span class="badge failure-badge" title="review" data-i18n="reviewVerdict">review</span></div>
-      <div data-note-case="jesseduffield-lazygit-high-branch-divergence-fast-path">Possible oracle issue: hidden tests reference exact private helper names. Candidate fixes show equivalent batching/parsing helpers under different names, so the oracle may be testing implementation shape.</div>
+      <div data-note-case="jesseduffield-lazygit-high-branch-divergence-fast-path">Fixed oracle false negative: private helper-name assertions were removed. Codex and Cursor pass after regrade; Claude still fails the public batching behavior.</div>
     </div>
   
 
@@ -636,14 +620,7 @@
     <div class="review-row">
       <div>louislam-uptime-kuma-high-websocket-auth-options<div class="case-sub">claude, codex, cursor</div></div>
       <div><span class="badge failure-badge" title="review" data-i18n="reviewVerdict">review</span></div>
-      <div data-note-case="louislam-uptime-kuma-high-websocket-auth-options">Possible oracle issue: hidden tests require a specific buildWsOptions helper name and camelCase authMethod input, while candidate fixes used equivalent helper names or the existing auth_method schema.</div>
-    </div>
-  
-
-    <div class="review-row">
-      <div>louislam-uptime-kuma-low-submillisecond-ping-chart<div class="case-sub">codex, cursor</div></div>
-      <div><span class="badge failure-badge" title="review" data-i18n="reviewVerdict">review</span></div>
-      <div data-note-case="louislam-uptime-kuma-low-submillisecond-ping-chart">Possible oracle issue: Codex/Cursor add zero-ping handling, but the hidden test extracts a Vue method with regex and invokes it with an incomplete this context.</div>
+      <div data-note-case="louislam-uptime-kuma-high-websocket-auth-options">Oracle was loosened for equivalent helper names and auth field spellings. All three still fail behavior checks, so this is now treated as true failure.</div>
     </div>
   
 
@@ -655,7 +632,7 @@
   
 
     <div class="review-row">
-      <div>sharkdp-bat-high-fallback-syntax<div class="case-sub">claude, codex, cursor</div></div>
+      <div>sharkdp-bat-high-fallback-syntax<div class="case-sub">claude</div></div>
       <div><span class="badge failure-badge" title="review" data-i18n="reviewVerdict">review</span></div>
       <div data-note-case="sharkdp-bat-high-fallback-syntax">Mixed: Codex/Cursor implemented --fallback-syntax but hidden also requires an unstated --fallback-language alias; Claude appears to be a true failure because --fallback-syntax itself is rejected.</div>
     </div>
@@ -683,11 +660,210 @@
   
 
     <div class="review-row">
-      <div>vitejs-vite-low-flatten-id-sanitized-chars<div class="case-sub">codex, cursor</div></div>
+      <div>vitejs-vite-low-flatten-id-sanitized-chars<div class="case-sub">codex</div></div>
       <div><span class="badge failure-badge" title="review" data-i18n="reviewVerdict">review</span></div>
-      <div data-note-case="vitejs-vite-low-flatten-id-sanitized-chars">Possible oracle issue: Codex/Cursor avoid sanitized-character collisions, but the hidden test asserts exact PR-style encodings rather than collision avoidance and path-safe reversibility.</div>
+      <div data-note-case="vitejs-vite-low-flatten-id-sanitized-chars">Fixed oracle false negative: exact PR-style encoding checks were replaced by uniqueness and path-safety properties. Cursor passes after regrade; Codex still leaves unsafe characters.</div>
     </div>
   </div>
+    </section>
+    <section class="matrix-panel">
+      <h2 data-i18n="failureReview">Failure Implementation Review</h2>
+      <p class="section-copy" data-i18n="failureReviewBody">These notes summarize how the failed implementations went wrong. They are auxiliary analysis generated from hidden-test output, workspace diffs, and saved harness logs where useful; they do not replace hidden-oracle pass/fail scoring.</p>
+      <div class="failure-review-list">
+      <article class="failure-review-card">
+        <h3>go-gitea-gitea-mid-pr-merge-self-reference</h3>
+        <div class="failure-review-meta">
+          <span class="badge " title="cursor">cursor</span>
+          <span class="badge fail-badge" title="true_failure">true_failure</span>
+          <span class="badge " title="high">high</span>
+        </div>
+        <p><strong data-i18n="failureLabel">Failure:</strong> <span data-review-key="go-gitea-gitea-mid-pr-merge-self-reference::cursor" data-review-field="failure_mode">The fix only skipped self-reference comments when a caller passed explicit skip IDs.</span></p>
+        <p><strong data-i18n="evidenceLabel">Evidence:</strong> <span data-review-key="go-gitea-gitea-mid-pr-merge-self-reference::cursor" data-review-field="evidence">The hidden test calls UpdateIssuesCommit directly with the self-merge commit. Cursor added skip plumbing through push options, but the service-level path still creates the self-reference comment.</span></p>
+        <p><strong data-i18n="recommendationLabel">Recommendation:</strong> <span data-review-key="go-gitea-gitea-mid-pr-merge-self-reference::cursor" data-review-field="recommendation">Keep as a model failure. The service behavior remains wrong on a public path.</span></p>
+      </article>
+    
+
+      <article class="failure-review-card">
+        <h3>jesseduffield-lazygit-high-branch-divergence-fast-path</h3>
+        <div class="failure-review-meta">
+          <span class="badge " title="claude">claude</span>
+          <span class="badge fail-badge" title="true_failure">true_failure</span>
+          <span class="badge " title="high">high</span>
+        </div>
+        <p><strong data-i18n="failureLabel">Failure:</strong> <span data-review-key="jesseduffield-lazygit-high-branch-divergence-fast-path::claude" data-review-field="failure_mode">The implementation still performs merge-base work per branch before the batch ahead-behind path.</span></p>
+        <p><strong data-i18n="evidenceLabel">Evidence:</strong> <span data-review-key="jesseduffield-lazygit-high-branch-divergence-fast-path::claude" data-review-field="evidence">The fake git runner observed unexpected git merge-base calls and the public branch loader did not update the hidden feature branch behind count.</span></p>
+        <p><strong data-i18n="recommendationLabel">Recommendation:</strong> <span data-review-key="jesseduffield-lazygit-high-branch-divergence-fast-path::claude" data-review-field="recommendation">Keep as a model failure. The case checks the intended performance-sensitive public behavior, not just a helper name.</span></p>
+      </article>
+    
+
+      <article class="failure-review-card">
+        <h3>langflow-ai-langflow-mid-mcp-connectable-inputs</h3>
+        <div class="failure-review-meta">
+          <span class="badge " title="claude">claude</span>
+          <span class="badge fail-badge" title="true_failure">true_failure</span>
+          <span class="badge " title="high">high</span>
+        </div>
+        <p><strong data-i18n="failureLabel">Failure:</strong> <span data-review-key="langflow-ai-langflow-mid-mcp-connectable-inputs::claude" data-review-field="failure_mode">Primitive inputs were mostly fixed, but dictionary inputs were also exposed as Message instead of JSON.</span></p>
+        <p><strong data-i18n="evidenceLabel">Evidence:</strong> <span data-review-key="langflow-ai-langflow-mid-mcp-connectable-inputs::claude" data-review-field="evidence">Claude used [&quot;Message&quot;] for widget-only classes broadly. The hidden test still fails because DictInput must remain connectable as [&quot;JSON&quot;].</span></p>
+        <p><strong data-i18n="recommendationLabel">Recommendation:</strong> <span data-review-key="langflow-ai-langflow-mid-mcp-connectable-inputs::claude" data-review-field="recommendation">Keep as a model failure. The implementation overgeneralizes the rule.</span></p>
+      </article>
+    
+
+      <article class="failure-review-card">
+        <h3>langflow-ai-langflow-mid-mcp-connectable-inputs</h3>
+        <div class="failure-review-meta">
+          <span class="badge " title="codex">codex</span>
+          <span class="badge fail-badge" title="true_failure">true_failure</span>
+          <span class="badge " title="high">high</span>
+        </div>
+        <p><strong data-i18n="failureLabel">Failure:</strong> <span data-review-key="langflow-ai-langflow-mid-mcp-connectable-inputs::codex" data-review-field="failure_mode">Numeric and boolean MCP inputs were exposed as primitive input types instead of connectable Message inputs.</span></p>
+        <p><strong data-i18n="evidenceLabel">Evidence:</strong> <span data-review-key="langflow-ai-langflow-mid-mcp-connectable-inputs::codex" data-review-field="evidence">The hidden UI-schema check expects float, int, and bool fields to have input_types [&quot;Message&quot;], while dict fields use [&quot;JSON&quot;]. Codex produced number/bool-oriented types.</span></p>
+        <p><strong data-i18n="recommendationLabel">Recommendation:</strong> <span data-review-key="langflow-ai-langflow-mid-mcp-connectable-inputs::codex" data-review-field="recommendation">Keep as a model failure. The fixed commit establishes this connection contract.</span></p>
+      </article>
+    
+
+      <article class="failure-review-card">
+        <h3>langflow-ai-langflow-mid-mcp-connectable-inputs</h3>
+        <div class="failure-review-meta">
+          <span class="badge " title="cursor">cursor</span>
+          <span class="badge fail-badge" title="true_failure">true_failure</span>
+          <span class="badge " title="high">high</span>
+        </div>
+        <p><strong data-i18n="failureLabel">Failure:</strong> <span data-review-key="langflow-ai-langflow-mid-mcp-connectable-inputs::cursor" data-review-field="failure_mode">The implementation kept numeric and boolean type labels rather than using the Message connection contract.</span></p>
+        <p><strong data-i18n="evidenceLabel">Evidence:</strong> <span data-review-key="langflow-ai-langflow-mid-mcp-connectable-inputs::cursor" data-review-field="evidence">Cursor produced types such as number/int, number/float, bool, and Data/JSON. The hidden test expects Message for primitive values and JSON for dict.</span></p>
+        <p><strong data-i18n="recommendationLabel">Recommendation:</strong> <span data-review-key="langflow-ai-langflow-mid-mcp-connectable-inputs::cursor" data-review-field="recommendation">Keep as a model failure. The UI connection semantics do not match the fixed behavior.</span></p>
+      </article>
+    
+
+      <article class="failure-review-card">
+        <h3>louislam-uptime-kuma-high-websocket-auth-options</h3>
+        <div class="failure-review-meta">
+          <span class="badge " title="claude">claude</span>
+          <span class="badge fail-badge" title="true_failure">true_failure</span>
+          <span class="badge " title="medium">medium</span>
+        </div>
+        <p><strong data-i18n="failureLabel">Failure:</strong> <span data-review-key="louislam-uptime-kuma-high-websocket-auth-options::claude" data-review-field="failure_mode">Invalid custom header JSON throws instead of falling back to empty headers.</span></p>
+        <p><strong data-i18n="evidenceLabel">Evidence:</strong> <span data-review-key="louislam-uptime-kuma-high-websocket-auth-options::claude" data-review-field="evidence">Claude appears to handle auth precedence, but the hidden invalid-header case throws before returning websocket options. The fixed commit tolerates invalid custom headers.</span></p>
+        <p><strong data-i18n="recommendationLabel">Recommendation:</strong> <span data-review-key="louislam-uptime-kuma-high-websocket-auth-options::claude" data-review-field="recommendation">Keep as a model failure, with a note that this is a resilience edge case rather than the main auth-precedence bug.</span></p>
+      </article>
+    
+
+      <article class="failure-review-card">
+        <h3>louislam-uptime-kuma-high-websocket-auth-options</h3>
+        <div class="failure-review-meta">
+          <span class="badge " title="codex">codex</span>
+          <span class="badge fail-badge" title="true_failure">true_failure</span>
+          <span class="badge " title="high">high</span>
+        </div>
+        <p><strong data-i18n="failureLabel">Failure:</strong> <span data-review-key="louislam-uptime-kuma-high-websocket-auth-options::codex" data-review-field="failure_mode">Custom headers overwrite the configured Basic Authorization header.</span></p>
+        <p><strong data-i18n="evidenceLabel">Evidence:</strong> <span data-review-key="louislam-uptime-kuma-high-websocket-auth-options::codex" data-review-field="evidence">The hidden test supplies a stale Authorization custom header plus basic auth. Codex merges auth before custom headers, so the stale Bearer value wins.</span></p>
+        <p><strong data-i18n="recommendationLabel">Recommendation:</strong> <span data-review-key="louislam-uptime-kuma-high-websocket-auth-options::codex" data-review-field="recommendation">Keep as a model failure. Auth configuration should take precedence over stale user headers.</span></p>
+      </article>
+    
+
+      <article class="failure-review-card">
+        <h3>louislam-uptime-kuma-high-websocket-auth-options</h3>
+        <div class="failure-review-meta">
+          <span class="badge " title="cursor">cursor</span>
+          <span class="badge fail-badge" title="true_failure">true_failure</span>
+          <span class="badge " title="high">high</span>
+        </div>
+        <p><strong data-i18n="failureLabel">Failure:</strong> <span data-review-key="louislam-uptime-kuma-high-websocket-auth-options::cursor" data-review-field="failure_mode">Custom headers overwrite the configured Basic Authorization header.</span></p>
+        <p><strong data-i18n="evidenceLabel">Evidence:</strong> <span data-review-key="louislam-uptime-kuma-high-websocket-auth-options::cursor" data-review-field="evidence">Cursor has the same merge-order issue as Codex: the stale Bearer Authorization from custom headers remains in the returned options.</span></p>
+        <p><strong data-i18n="recommendationLabel">Recommendation:</strong> <span data-review-key="louislam-uptime-kuma-high-websocket-auth-options::cursor" data-review-field="recommendation">Keep as a model failure. The returned websocket options violate the configured auth method.</span></p>
+      </article>
+    
+
+      <article class="failure-review-card">
+        <h3>louislam-uptime-kuma-mid-uptime-cleanup-buckets</h3>
+        <div class="failure-review-meta">
+          <span class="badge " title="claude">claude</span>
+          <span class="badge fail-badge" title="true_failure">true_failure</span>
+          <span class="badge " title="high">high</span>
+        </div>
+        <p><strong data-i18n="failureLabel">Failure:</strong> <span data-review-key="louislam-uptime-kuma-mid-uptime-cleanup-buckets::claude" data-review-field="failure_mode">The database cleanup changed, but stale in-memory uptime buckets are not purged.</span></p>
+        <p><strong data-i18n="evidenceLabel">Evidence:</strong> <span data-review-key="louislam-uptime-kuma-mid-uptime-cleanup-buckets::claude" data-review-field="evidence">The hidden test drives the in-memory minutely/hourly/daily bucket cleanup path. Claude changed SQL timestamp cutoffs, leaving the stale minutely list length at 2 instead of 1.</span></p>
+        <p><strong data-i18n="recommendationLabel">Recommendation:</strong> <span data-review-key="louislam-uptime-kuma-mid-uptime-cleanup-buckets::claude" data-review-field="recommendation">Keep as a model failure. It fixes the wrong layer of the bug.</span></p>
+      </article>
+    
+
+      <article class="failure-review-card">
+        <h3>sharkdp-bat-high-fallback-syntax</h3>
+        <div class="failure-review-meta">
+          <span class="badge " title="claude">claude</span>
+          <span class="badge failure-badge" title="case_design_review">case_design_review</span>
+          <span class="badge " title="medium">medium</span>
+        </div>
+        <p><strong data-i18n="failureLabel">Failure:</strong> <span data-review-key="sharkdp-bat-high-fallback-syntax::claude" data-review-field="failure_mode">The implementation added equivalent fallback semantics under --fallback-language, but not the upstream --fallback-syntax flag.</span></p>
+        <p><strong data-i18n="evidenceLabel">Evidence:</strong> <span data-review-key="sharkdp-bat-high-fallback-syntax::claude" data-review-field="evidence">The hidden test invokes --fallback-syntax and the CLI rejects it, suggesting --fallback-language. The case PR title names --fallback-syntax, but the instruction text only says to add a fallback.</span></p>
+        <p><strong data-i18n="recommendationLabel">Recommendation:</strong> <span data-review-key="sharkdp-bat-high-fallback-syntax::claude" data-review-field="recommendation">Review case wording. If upstream API fidelity matters, explicitly require --fallback-syntax; otherwise do not treat this as a pure model failure.</span></p>
+      </article>
+    
+
+      <article class="failure-review-card">
+        <h3>sharkdp-bat-low-zip-binary-detection</h3>
+        <div class="failure-review-meta">
+          <span class="badge " title="claude">claude</span>
+          <span class="badge fail-badge" title="true_failure">true_failure</span>
+          <span class="badge " title="high">high</span>
+        </div>
+        <p><strong data-i18n="failureLabel">Failure:</strong> <span data-review-key="sharkdp-bat-low-zip-binary-detection::claude" data-review-field="failure_mode">Only the common local-file ZIP signature was detected.</span></p>
+        <p><strong data-i18n="evidenceLabel">Evidence:</strong> <span data-review-key="sharkdp-bat-low-zip-binary-detection::claude" data-review-field="evidence">The hidden test checks PK\u0003\u0004, PK\u0005\u0006, and PK\u0007\u0008 signatures. Claude only added detection for PK\u0003\u0004, so the empty/end-of-central-directory signature is rendered as text.</span></p>
+        <p><strong data-i18n="recommendationLabel">Recommendation:</strong> <span data-review-key="sharkdp-bat-low-zip-binary-detection::claude" data-review-field="recommendation">Keep as a model failure. The implementation is partial.</span></p>
+      </article>
+    
+
+      <article class="failure-review-card">
+        <h3>sharkdp-bat-mid-control-character-wrapping</h3>
+        <div class="failure-review-meta">
+          <span class="badge " title="codex">codex</span>
+          <span class="badge fail-badge" title="true_failure">true_failure</span>
+          <span class="badge " title="high">high</span>
+        </div>
+        <p><strong data-i18n="failureLabel">Failure:</strong> <span data-review-key="sharkdp-bat-mid-control-character-wrapping::codex" data-review-field="failure_mode">Control characters were counted as width 1 instead of their caret-notation display width.</span></p>
+        <p><strong data-i18n="evidenceLabel">Evidence:</strong> <span data-review-key="sharkdp-bat-mid-control-character-wrapping::codex" data-review-field="evidence">At terminal width 40, NUL and DEL sequences should wrap to two physical lines. Codex still renders one line because the displayed control representation consumes two columns.</span></p>
+        <p><strong data-i18n="recommendationLabel">Recommendation:</strong> <span data-review-key="sharkdp-bat-mid-control-character-wrapping::codex" data-review-field="recommendation">Keep as a model failure. The observable wrapping behavior is still wrong.</span></p>
+      </article>
+    
+
+      <article class="failure-review-card">
+        <h3>sharkdp-bat-mid-control-character-wrapping</h3>
+        <div class="failure-review-meta">
+          <span class="badge " title="cursor">cursor</span>
+          <span class="badge fail-badge" title="true_failure">true_failure</span>
+          <span class="badge " title="high">high</span>
+        </div>
+        <p><strong data-i18n="failureLabel">Failure:</strong> <span data-review-key="sharkdp-bat-mid-control-character-wrapping::cursor" data-review-field="failure_mode">Control characters were counted as width 1 instead of their caret-notation display width.</span></p>
+        <p><strong data-i18n="evidenceLabel">Evidence:</strong> <span data-review-key="sharkdp-bat-mid-control-character-wrapping::cursor" data-review-field="evidence">Cursor made the same width mistake as Codex, so NUL and DEL input at width 40 remains a single rendered line.</span></p>
+        <p><strong data-i18n="recommendationLabel">Recommendation:</strong> <span data-review-key="sharkdp-bat-mid-control-character-wrapping::cursor" data-review-field="recommendation">Keep as a model failure. The hidden test checks user-visible wrapping.</span></p>
+      </article>
+    
+
+      <article class="failure-review-card">
+        <h3>usememos-memos-mid-mixed-case-user-resource-names</h3>
+        <div class="failure-review-meta">
+          <span class="badge " title="claude">claude</span>
+          <span class="badge fail-badge" title="true_failure">true_failure</span>
+          <span class="badge " title="high">high</span>
+        </div>
+        <p><strong data-i18n="failureLabel">Failure:</strong> <span data-review-key="usememos-memos-mid-mixed-case-user-resource-names::claude" data-review-field="failure_mode">Mixed-case lookup remains broken and numeric usernames are accidentally accepted.</span></p>
+        <p><strong data-i18n="evidenceLabel">Evidence:</strong> <span data-review-key="usememos-memos-mid-mixed-case-user-resource-names::claude" data-review-field="evidence">The hidden test receives an empty BatchGetUsers result for a mixed-case resource name and no validation error when creating a numeric username.</span></p>
+        <p><strong data-i18n="recommendationLabel">Recommendation:</strong> <span data-review-key="usememos-memos-mid-mixed-case-user-resource-names::claude" data-review-field="recommendation">Keep as a model failure. The fix removes one validation but misses lookup normalization and weakens numeric username validation.</span></p>
+      </article>
+    
+
+      <article class="failure-review-card">
+        <h3>vitejs-vite-low-flatten-id-sanitized-chars</h3>
+        <div class="failure-review-meta">
+          <span class="badge " title="codex">codex</span>
+          <span class="badge fail-badge" title="true_failure">true_failure</span>
+          <span class="badge " title="high">high</span>
+        </div>
+        <p><strong data-i18n="failureLabel">Failure:</strong> <span data-review-key="vitejs-vite-low-flatten-id-sanitized-chars::codex" data-review-field="failure_mode">Only some sanitized characters were encoded, leaving path-unsafe characters in flattened IDs.</span></p>
+        <p><strong data-i18n="evidenceLabel">Evidence:</strong> <span data-review-key="vitejs-vite-low-flatten-id-sanitized-chars::codex" data-review-field="evidence">The hidden property test checks that +, #, $, and * are encoded away and remain distinct. Codex handles only a subset, so $ or * can remain in the output.</span></p>
+        <p><strong data-i18n="recommendationLabel">Recommendation:</strong> <span data-review-key="vitejs-vite-low-flatten-id-sanitized-chars::codex" data-review-field="recommendation">Keep as a model failure. The path-safety property is not satisfied.</span></p>
+      </article>
+    </div>
     </section>
     <section class="matrix-panel">
       <h2 data-i18n="caseCatalog">Case Catalog</h2>
@@ -1337,7 +1513,7 @@
       </tr>
     
 
-      <tr data-view="baseline" data-case="axios-axios-low-settle-error-code" data-harness="codex" data-result="fail">
+      <tr data-view="baseline" data-case="axios-axios-low-settle-error-code" data-harness="codex" data-result="pass">
         <td>axios-axios-low-settle-error-code</td>
         <td><span class="badge " title="low">low</span></td>
         <td><span class="badge " title="small">small</span></td>
@@ -1345,12 +1521,12 @@
         <td><span class="badge " title="codex:gpt-5.5:medium:baseline">codex:gpt-5.5:medium:baseline</span></td>
         <td>gpt-5.5</td>
         <td>medium</td>
-        <td><span class="badge fail-badge" title="fail" data-i18n="failValue">fail</span></td>
-        <td><span class="badge failure-badge" title="hidden assertion mismatch" data-i18n="failureAssertion">hidden assertion mismatch</span></td>
-        <td class="evidence">at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26) at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) { generatedMessa...</td>
+        <td><span class="badge pass-badge" title="pass" data-i18n="passValue">pass</span></td>
+        <td></td>
+        <td class="evidence"></td>
         <td>159.8s</td>
         <td>148.9s</td>
-        <td>4.0s</td>
+        <td>75ms</td>
         <td>1</td>
         <td>6</td>
         <td>16</td>
@@ -1497,7 +1673,7 @@
       </tr>
     
 
-      <tr data-view="baseline" data-case="go-gitea-gitea-high-compare-no-common-history" data-harness="codex" data-result="fail">
+      <tr data-view="baseline" data-case="go-gitea-gitea-high-compare-no-common-history" data-harness="codex" data-result="pass">
         <td>go-gitea-gitea-high-compare-no-common-history</td>
         <td><span class="badge " title="high">high</span></td>
         <td><span class="badge " title="large">large</span></td>
@@ -1505,12 +1681,12 @@
         <td><span class="badge " title="codex:gpt-5.5:medium:baseline">codex:gpt-5.5:medium:baseline</span></td>
         <td>gpt-5.5</td>
         <td>medium</td>
-        <td><span class="badge fail-badge" title="fail" data-i18n="failValue">fail</span></td>
-        <td><span class="badge failure-badge" title="hidden assertion mismatch" data-i18n="failureAssertion">hidden assertion mismatch</span></td>
-        <td class="evidence">merge_base_hidden_test.go:38: Error Trace: /home/sakasegawa/src/github.com/nyosegawa/harness-debug-benchmark/benchmark/runs/2026-05-02T21-09-44-224Z-go-gitea-gitea-high-compare-no...</td>
+        <td><span class="badge pass-badge" title="pass" data-i18n="passValue">pass</span></td>
+        <td></td>
+        <td class="evidence"></td>
         <td>382.9s</td>
         <td>300.4s</td>
-        <td>10.3s</td>
+        <td>1.8s</td>
         <td>1</td>
         <td>10</td>
         <td>52</td>
@@ -1593,7 +1769,7 @@
       </tr>
     
 
-      <tr data-view="baseline" data-case="jesseduffield-lazygit-high-branch-divergence-fast-path" data-harness="codex" data-result="fail">
+      <tr data-view="baseline" data-case="jesseduffield-lazygit-high-branch-divergence-fast-path" data-harness="codex" data-result="pass">
         <td>jesseduffield-lazygit-high-branch-divergence-fast-path</td>
         <td><span class="badge " title="high">high</span></td>
         <td><span class="badge " title="small">small</span></td>
@@ -1601,12 +1777,12 @@
         <td><span class="badge " title="codex:gpt-5.5:medium:baseline">codex:gpt-5.5:medium:baseline</span></td>
         <td>gpt-5.5</td>
         <td>medium</td>
-        <td><span class="badge fail-badge" title="fail" data-i18n="failValue">fail</span></td>
-        <td><span class="badge failure-badge" title="build or symbol failure" data-i18n="failureBuildSymbol">build or symbol failure</span></td>
-        <td class="evidence"># github.com/jesseduffield/lazygit/pkg/commands/git_commands [github.com/jesseduffield/lazygit/pkg/commands/git_commands.test] pkg/commands/git_commands/branch_loader_fast_hidden_...</td>
+        <td><span class="badge pass-badge" title="pass" data-i18n="passValue">pass</span></td>
+        <td></td>
+        <td class="evidence"></td>
         <td>268.1s</td>
         <td>231.8s</td>
-        <td>2.2s</td>
+        <td>496ms</td>
         <td>1</td>
         <td>8</td>
         <td>31</td>
@@ -1795,10 +1971,10 @@
         <td>medium</td>
         <td><span class="badge fail-badge" title="fail" data-i18n="failValue">fail</span></td>
         <td><span class="badge failure-badge" title="hidden assertion mismatch" data-i18n="failureAssertion">hidden assertion mismatch</span></td>
-        <td class="evidence">at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5) at node:internal/main/run_main_module:36:49 { generatedMessage: true, code: 'ERR_ASSERTION', ...</td>
+        <td class="evidence">} at main (/home/sakasegawa/src/github.com/nyosegawa/harness-debug-benchmark/benchmark/runs/2026-05-02T22-02-12-028Z-louislam-uptime-kuma-high-websocket-auth-options-agent/workspa...</td>
         <td>227.5s</td>
         <td>195.6s</td>
-        <td>20.9s</td>
+        <td>271ms</td>
         <td>1</td>
         <td>11</td>
         <td>36</td>
@@ -1817,7 +1993,7 @@
       </tr>
     
 
-      <tr data-view="baseline" data-case="louislam-uptime-kuma-low-submillisecond-ping-chart" data-harness="codex" data-result="fail">
+      <tr data-view="baseline" data-case="louislam-uptime-kuma-low-submillisecond-ping-chart" data-harness="codex" data-result="pass">
         <td>louislam-uptime-kuma-low-submillisecond-ping-chart</td>
         <td><span class="badge " title="low">low</span></td>
         <td><span class="badge " title="medium">medium</span></td>
@@ -1825,12 +2001,12 @@
         <td><span class="badge " title="codex:gpt-5.5:medium:baseline">codex:gpt-5.5:medium:baseline</span></td>
         <td>gpt-5.5</td>
         <td>medium</td>
-        <td><span class="badge fail-badge" title="fail" data-i18n="failValue">fail</span></td>
-        <td><span class="badge failure-badge" title="hidden test failure" data-i18n="failureHiddenTest">hidden test failure</span></td>
-        <td class="evidence">at run (/home/sakasegawa/src/github.com/nyosegawa/harness-debug-benchmark/benchmark/runs/2026-05-02T22-05-59-584Z-louislam-uptime-kuma-low-submillisecond-ping-chart-agent/workspac...</td>
+        <td><span class="badge pass-badge" title="pass" data-i18n="passValue">pass</span></td>
+        <td></td>
+        <td class="evidence"></td>
         <td>174.9s</td>
         <td>165.5s</td>
-        <td>55ms</td>
+        <td>51ms</td>
         <td>1</td>
         <td>7</td>
         <td>31</td>
@@ -1881,7 +2057,7 @@
       </tr>
     
 
-      <tr data-view="baseline" data-case="sharkdp-bat-high-fallback-syntax" data-harness="codex" data-result="fail">
+      <tr data-view="baseline" data-case="sharkdp-bat-high-fallback-syntax" data-harness="codex" data-result="pass">
         <td>sharkdp-bat-high-fallback-syntax</td>
         <td><span class="badge " title="high">high</span></td>
         <td><span class="badge " title="small">small</span></td>
@@ -1889,12 +2065,12 @@
         <td><span class="badge " title="codex:gpt-5.5:medium:baseline">codex:gpt-5.5:medium:baseline</span></td>
         <td>gpt-5.5</td>
         <td>medium</td>
-        <td><span class="badge fail-badge" title="fail" data-i18n="failValue">fail</span></td>
-        <td><span class="badge failure-badge" title="wrong CLI/API surface" data-i18n="failureWrongSurface">wrong CLI/API surface</span></td>
-        <td class="evidence">error: unexpected argument '--fallback-language' found tip: a similar argument exists: '--fallback-syntax' Usage: bat --color &lt;when&gt; --style &lt;components&gt; --file-name &lt;name&gt; --fall...</td>
+        <td><span class="badge pass-badge" title="pass" data-i18n="passValue">pass</span></td>
+        <td></td>
+        <td class="evidence"></td>
         <td>352.4s</td>
         <td>320.0s</td>
-        <td>24.1s</td>
+        <td>2.1s</td>
         <td>1</td>
         <td>9</td>
         <td>56</td>
@@ -2114,11 +2290,11 @@
         <td>gpt-5.5</td>
         <td>medium</td>
         <td><span class="badge fail-badge" title="fail" data-i18n="failValue">fail</span></td>
-        <td><span class="badge failure-badge" title="hidden assertion mismatch" data-i18n="failureAssertion">hidden assertion mismatch</span></td>
-        <td class="evidence">+ &quot;foo_pbar&quot;, ] ❯ packages/vite/src/node/__tests__/flatten-id-hidden.spec.ts:21:21 19| flattenId('foo+bar'), 20| ] 21| expect(flattened).toEqual([ | ^ 22| 'foo___bar', 23| 'foo__b...</td>
+        <td><span class="badge failure-badge" title="hidden test failure" data-i18n="failureHiddenTest">hidden test failure</span></td>
+        <td class="evidence">- true + false ❯ packages/vite/src/node/__tests__/flatten-id-hidden.spec.ts:12:55 10| ] 11| expect(new Set(flattened).size).toBe(flattened.length) 12| expect(flattened.every((id) ...</td>
         <td>188.8s</td>
         <td>161.9s</td>
-        <td>10.3s</td>
+        <td>2.3s</td>
         <td>1</td>
         <td>7</td>
         <td>29</td>
@@ -2201,7 +2377,7 @@
       </tr>
     
 
-      <tr data-view="baseline" data-case="axios-axios-low-settle-error-code" data-harness="claude" data-result="fail">
+      <tr data-view="baseline" data-case="axios-axios-low-settle-error-code" data-harness="claude" data-result="pass">
         <td>axios-axios-low-settle-error-code</td>
         <td><span class="badge " title="low">low</span></td>
         <td><span class="badge " title="small">small</span></td>
@@ -2209,12 +2385,12 @@
         <td><span class="badge " title="claude:claude-opus-4-7:medium:baseline">claude:claude-opus-4-7:medium:baseline</span></td>
         <td>claude-opus-4-7</td>
         <td>medium</td>
-        <td><span class="badge fail-badge" title="fail" data-i18n="failValue">fail</span></td>
-        <td><span class="badge failure-badge" title="hidden assertion mismatch" data-i18n="failureAssertion">hidden assertion mismatch</span></td>
-        <td class="evidence">at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26) at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) { generatedMessa...</td>
+        <td><span class="badge pass-badge" title="pass" data-i18n="passValue">pass</span></td>
+        <td></td>
+        <td class="evidence"></td>
         <td>174.7s</td>
         <td>168.2s</td>
-        <td>74ms</td>
+        <td>77ms</td>
         <td>18</td>
         <td>18</td>
         <td></td>
@@ -2361,7 +2537,7 @@
       </tr>
     
 
-      <tr data-view="baseline" data-case="go-gitea-gitea-high-compare-no-common-history" data-harness="claude" data-result="fail">
+      <tr data-view="baseline" data-case="go-gitea-gitea-high-compare-no-common-history" data-harness="claude" data-result="pass">
         <td>go-gitea-gitea-high-compare-no-common-history</td>
         <td><span class="badge " title="high">high</span></td>
         <td><span class="badge " title="large">large</span></td>
@@ -2369,12 +2545,12 @@
         <td><span class="badge " title="claude:claude-opus-4-7:medium:baseline">claude:claude-opus-4-7:medium:baseline</span></td>
         <td>claude-opus-4-7</td>
         <td>medium</td>
-        <td><span class="badge fail-badge" title="fail" data-i18n="failValue">fail</span></td>
-        <td><span class="badge failure-badge" title="hidden assertion mismatch" data-i18n="failureAssertion">hidden assertion mismatch</span></td>
-        <td class="evidence">--- FAIL: TestHiddenMergeBaseUnrelatedBranchesReturnsNotExist (0.03s) merge_base_hidden_test.go:38: Error Trace: /home/sakasegawa/src/github.com/nyosegawa/harness-debug-benchmark/...</td>
+        <td><span class="badge pass-badge" title="pass" data-i18n="passValue">pass</span></td>
+        <td></td>
+        <td class="evidence"></td>
         <td>484.6s</td>
         <td>414.9s</td>
-        <td>2.4s</td>
+        <td>945ms</td>
         <td>42</td>
         <td>42</td>
         <td></td>
@@ -2466,11 +2642,11 @@
         <td>claude-opus-4-7</td>
         <td>medium</td>
         <td><span class="badge fail-badge" title="fail" data-i18n="failValue">fail</span></td>
-        <td><span class="badge failure-badge" title="build or symbol failure" data-i18n="failureBuildSymbol">build or symbol failure</span></td>
-        <td class="evidence"># github.com/jesseduffield/lazygit/pkg/commands/git_commands [github.com/jesseduffield/lazygit/pkg/commands/git_commands.test] pkg/commands/git_commands/branch_loader_fast_hidden_...</td>
+        <td><span class="badge failure-badge" title="hidden assertion mismatch" data-i18n="failureAssertion">hidden assertion mismatch</span></td>
+        <td class="evidence">Error Trace: /home/sakasegawa/src/github.com/nyosegawa/harness-debug-benchmark/benchmark/runs/2026-05-02T23-24-46-863Z-jesseduffield-lazygit-high-branch-divergence-fast-path-agent...</td>
         <td>197.2s</td>
         <td>160.9s</td>
-        <td>340ms</td>
+        <td>498ms</td>
         <td>20</td>
         <td>20</td>
         <td></td>
@@ -2658,11 +2834,11 @@
         <td>claude-opus-4-7</td>
         <td>medium</td>
         <td><span class="badge fail-badge" title="fail" data-i18n="failValue">fail</span></td>
-        <td><span class="badge failure-badge" title="hidden assertion mismatch" data-i18n="failureAssertion">hidden assertion mismatch</span></td>
-        <td class="evidence">} at main (/home/sakasegawa/src/github.com/nyosegawa/harness-debug-benchmark/benchmark/runs/2026-05-02T23-55-03-479Z-louislam-uptime-kuma-high-websocket-auth-options-agent/workspa...</td>
+        <td><span class="badge failure-badge" title="hidden test failure" data-i18n="failureHiddenTest">hidden test failure</span></td>
+        <td class="evidence">/home/sakasegawa/src/github.com/nyosegawa/harness-debug-benchmark/benchmark/runs/2026-05-02T23-55-03-479Z-louislam-uptime-kuma-high-websocket-auth-options-agent/workspace/server/m...</td>
         <td>165.6s</td>
         <td>156.0s</td>
-        <td>277ms</td>
+        <td>272ms</td>
         <td>17</td>
         <td>17</td>
         <td></td>
@@ -2758,7 +2934,7 @@
         <td class="evidence">error: unexpected argument '--fallback-syntax' found tip: a similar argument exists: '--fallback-language' Usage: bat --color &lt;when&gt; --style &lt;components&gt; --file-name &lt;name&gt; --fall...</td>
         <td>246.9s</td>
         <td>234.0s</td>
-        <td>4.0s</td>
+        <td>184ms</td>
         <td>26</td>
         <td>26</td>
         <td></td>
@@ -3065,7 +3241,7 @@
       </tr>
     
 
-      <tr data-view="baseline" data-case="axios-axios-low-settle-error-code" data-harness="cursor" data-result="fail">
+      <tr data-view="baseline" data-case="axios-axios-low-settle-error-code" data-harness="cursor" data-result="pass">
         <td>axios-axios-low-settle-error-code</td>
         <td><span class="badge " title="low">low</span></td>
         <td><span class="badge " title="small">small</span></td>
@@ -3073,12 +3249,12 @@
         <td><span class="badge " title="cursor:gpt-5.5-medium:baseline">cursor:gpt-5.5-medium:baseline</span></td>
         <td>gpt-5.5-medium</td>
         <td>medium</td>
-        <td><span class="badge fail-badge" title="fail" data-i18n="failValue">fail</span></td>
-        <td><span class="badge failure-badge" title="hidden assertion mismatch" data-i18n="failureAssertion">hidden assertion mismatch</span></td>
-        <td class="evidence">at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26) at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) { generatedMessa...</td>
+        <td><span class="badge pass-badge" title="pass" data-i18n="passValue">pass</span></td>
+        <td></td>
+        <td class="evidence"></td>
         <td>73.9s</td>
         <td>63.1s</td>
-        <td>4.0s</td>
+        <td>75ms</td>
         <td>6</td>
         <td>6</td>
         <td>17</td>
@@ -3225,7 +3401,7 @@
       </tr>
     
 
-      <tr data-view="baseline" data-case="go-gitea-gitea-high-compare-no-common-history" data-harness="cursor" data-result="fail">
+      <tr data-view="baseline" data-case="go-gitea-gitea-high-compare-no-common-history" data-harness="cursor" data-result="pass">
         <td>go-gitea-gitea-high-compare-no-common-history</td>
         <td><span class="badge " title="high">high</span></td>
         <td><span class="badge " title="large">large</span></td>
@@ -3233,12 +3409,12 @@
         <td><span class="badge " title="cursor:gpt-5.5-medium:baseline">cursor:gpt-5.5-medium:baseline</span></td>
         <td>gpt-5.5-medium</td>
         <td>medium</td>
-        <td><span class="badge fail-badge" title="fail" data-i18n="failValue">fail</span></td>
-        <td><span class="badge failure-badge" title="hidden assertion mismatch" data-i18n="failureAssertion">hidden assertion mismatch</span></td>
-        <td class="evidence">merge_base_hidden_test.go:38: Error Trace: /home/sakasegawa/src/github.com/nyosegawa/harness-debug-benchmark/benchmark/runs/2026-05-03T01-02-09-881Z-go-gitea-gitea-high-compare-no...</td>
+        <td><span class="badge pass-badge" title="pass" data-i18n="passValue">pass</span></td>
+        <td></td>
+        <td class="evidence"></td>
         <td>249.3s</td>
         <td>162.2s</td>
-        <td>11.1s</td>
+        <td>840ms</td>
         <td>9</td>
         <td>9</td>
         <td>44</td>
@@ -3321,7 +3497,7 @@
       </tr>
     
 
-      <tr data-view="baseline" data-case="jesseduffield-lazygit-high-branch-divergence-fast-path" data-harness="cursor" data-result="fail">
+      <tr data-view="baseline" data-case="jesseduffield-lazygit-high-branch-divergence-fast-path" data-harness="cursor" data-result="pass">
         <td>jesseduffield-lazygit-high-branch-divergence-fast-path</td>
         <td><span class="badge " title="high">high</span></td>
         <td><span class="badge " title="small">small</span></td>
@@ -3329,12 +3505,12 @@
         <td><span class="badge " title="cursor:gpt-5.5-medium:baseline">cursor:gpt-5.5-medium:baseline</span></td>
         <td>gpt-5.5-medium</td>
         <td>medium</td>
-        <td><span class="badge fail-badge" title="fail" data-i18n="failValue">fail</span></td>
-        <td><span class="badge failure-badge" title="build or symbol failure" data-i18n="failureBuildSymbol">build or symbol failure</span></td>
-        <td class="evidence"># github.com/jesseduffield/lazygit/pkg/commands/git_commands [github.com/jesseduffield/lazygit/pkg/commands/git_commands.test] pkg/commands/git_commands/branch_loader_fast_hidden_...</td>
+        <td><span class="badge pass-badge" title="pass" data-i18n="passValue">pass</span></td>
+        <td></td>
+        <td class="evidence"></td>
         <td>249.4s</td>
         <td>214.8s</td>
-        <td>2.5s</td>
+        <td>495ms</td>
         <td>7</td>
         <td>7</td>
         <td>36</td>
@@ -3523,10 +3699,10 @@
         <td>medium</td>
         <td><span class="badge fail-badge" title="fail" data-i18n="failValue">fail</span></td>
         <td><span class="badge failure-badge" title="hidden assertion mismatch" data-i18n="failureAssertion">hidden assertion mismatch</span></td>
-        <td class="evidence">at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5) at node:internal/main/run_main_module:36:49 { generatedMessage: true, code: 'ERR_ASSERTION', ...</td>
+        <td class="evidence">} at main (/home/sakasegawa/src/github.com/nyosegawa/harness-debug-benchmark/benchmark/runs/2026-05-03T01-46-46-806Z-louislam-uptime-kuma-high-websocket-auth-options-agent/workspa...</td>
         <td>214.9s</td>
         <td>183.0s</td>
-        <td>22.6s</td>
+        <td>271ms</td>
         <td>9</td>
         <td>9</td>
         <td>34</td>
@@ -3545,7 +3721,7 @@
       </tr>
     
 
-      <tr data-view="baseline" data-case="louislam-uptime-kuma-low-submillisecond-ping-chart" data-harness="cursor" data-result="fail">
+      <tr data-view="baseline" data-case="louislam-uptime-kuma-low-submillisecond-ping-chart" data-harness="cursor" data-result="pass">
         <td>louislam-uptime-kuma-low-submillisecond-ping-chart</td>
         <td><span class="badge " title="low">low</span></td>
         <td><span class="badge " title="medium">medium</span></td>
@@ -3553,9 +3729,9 @@
         <td><span class="badge " title="cursor:gpt-5.5-medium:baseline">cursor:gpt-5.5-medium:baseline</span></td>
         <td>gpt-5.5-medium</td>
         <td>medium</td>
-        <td><span class="badge fail-badge" title="fail" data-i18n="failValue">fail</span></td>
-        <td><span class="badge failure-badge" title="hidden test failure" data-i18n="failureHiddenTest">hidden test failure</span></td>
-        <td class="evidence">at Object.&lt;anonymous&gt; (/home/sakasegawa/src/github.com/nyosegawa/harness-debug-benchmark/benchmark/runs/2026-05-03T01-50-21-745Z-louislam-uptime-kuma-low-submillisecond-ping-chart...</td>
+        <td><span class="badge pass-badge" title="pass" data-i18n="passValue">pass</span></td>
+        <td></td>
+        <td class="evidence"></td>
         <td>168.1s</td>
         <td>154.2s</td>
         <td>52ms</td>
@@ -3609,7 +3785,7 @@
       </tr>
     
 
-      <tr data-view="baseline" data-case="sharkdp-bat-high-fallback-syntax" data-harness="cursor" data-result="fail">
+      <tr data-view="baseline" data-case="sharkdp-bat-high-fallback-syntax" data-harness="cursor" data-result="pass">
         <td>sharkdp-bat-high-fallback-syntax</td>
         <td><span class="badge " title="high">high</span></td>
         <td><span class="badge " title="small">small</span></td>
@@ -3617,12 +3793,12 @@
         <td><span class="badge " title="cursor:gpt-5.5-medium:baseline">cursor:gpt-5.5-medium:baseline</span></td>
         <td>gpt-5.5-medium</td>
         <td>medium</td>
-        <td><span class="badge fail-badge" title="fail" data-i18n="failValue">fail</span></td>
-        <td><span class="badge failure-badge" title="wrong CLI/API surface" data-i18n="failureWrongSurface">wrong CLI/API surface</span></td>
-        <td class="evidence">error: unexpected argument '--fallback-language' found tip: a similar argument exists: '--fallback-syntax' Usage: bat --color &lt;when&gt; --style &lt;components&gt; --file-name &lt;name&gt; --fall...</td>
+        <td><span class="badge pass-badge" title="pass" data-i18n="passValue">pass</span></td>
+        <td></td>
+        <td class="evidence"></td>
         <td>196.8s</td>
         <td>146.9s</td>
-        <td>39.6s</td>
+        <td>2.1s</td>
         <td>7</td>
         <td>7</td>
         <td>41</td>
@@ -3833,7 +4009,7 @@
       </tr>
     
 
-      <tr data-view="baseline" data-case="vitejs-vite-low-flatten-id-sanitized-chars" data-harness="cursor" data-result="fail">
+      <tr data-view="baseline" data-case="vitejs-vite-low-flatten-id-sanitized-chars" data-harness="cursor" data-result="pass">
         <td>vitejs-vite-low-flatten-id-sanitized-chars</td>
         <td><span class="badge " title="low">low</span></td>
         <td><span class="badge " title="large">large</span></td>
@@ -3841,12 +4017,12 @@
         <td><span class="badge " title="cursor:gpt-5.5-medium:baseline">cursor:gpt-5.5-medium:baseline</span></td>
         <td>gpt-5.5-medium</td>
         <td>medium</td>
-        <td><span class="badge fail-badge" title="fail" data-i18n="failValue">fail</span></td>
-        <td><span class="badge failure-badge" title="hidden assertion mismatch" data-i18n="failureAssertion">hidden assertion mismatch</span></td>
-        <td class="evidence">+ &quot;foo_2b_bar&quot;, ] ❯ packages/vite/src/node/__tests__/flatten-id-hidden.spec.ts:21:21 19| flattenId('foo+bar'), 20| ] 21| expect(flattened).toEqual([ | ^ 22| 'foo___bar', 23| 'foo_...</td>
+        <td><span class="badge pass-badge" title="pass" data-i18n="passValue">pass</span></td>
+        <td></td>
+        <td class="evidence"></td>
         <td>181.9s</td>
         <td>155.4s</td>
-        <td>9.5s</td>
+        <td>2.3s</td>
         <td>7</td>
         <td>7</td>
         <td>33</td>
@@ -3931,16 +4107,18 @@
         effectiveTotal: "Effective Total", cost: "Cost", costSource: "Cost Source", run: "Run", reason: "Reason",
         name: "Name", runs: "Runs", pass: "Pass", rate: "Rate", medianWallShort: "Median Wall",
         reportedDollar: "Reported $", estimatedDollar: "Estimated $", conditionComparison: "Harness x Model Comparison",
-        executiveSummary: "Executive Summary", executiveSummaryBody: "This baseline compares three memory-disabled agent harnesses on the same 27 real-repository debugging cases. Codex and Claude each pass 18/27 cases, Cursor passes 17/27. Claude has the lowest observed cost per pass in this run, Cursor has the fastest median wall time, and Codex is roughly tied with Claude on hidden-oracle pass rate while using more estimated tokens and cost.",
+        executiveSummary: "Executive Summary", executiveSummaryBody: "This baseline compares three memory-disabled agent harnesses on the same 27 real-repository debugging cases. Codex passes 23/27 cases, Claude passes 20/27, and Cursor passes 23/27 after oracle false-negative fixes and workspace regrade. Cursor has the fastest median wall time, Claude has the lowest cost per pass, and Codex/Cursor are tied on hidden-oracle pass rate.",
         executiveCaveatBody: "The headline score is a hidden-oracle pass rate, not yet the final correctness score. False-negative review found several cases where hidden tests may over-constrain implementation details or unstated API choices; those cases are called out below and should be resolved before using the matrix as a final leaderboard.",
         caseMatrix: "Case Result Matrix", showDetails: "Show Detailed Table", hideDetails: "Hide Detailed Table",
         viewNote: "Default view shows only the 81 production baseline runs. Pilot and smoke runs are available from the View filter.",
         frameworkExplanation: "Benchmark Design", frameworkBody: "Each case starts from a real repository base commit where the hidden core test fails, and a fixed commit where the same hidden test passes. Agent runs receive only the issue-style instruction and work inside an isolated checkout. A run is counted as pass only when the hidden core test passes after the agent edit. Raw harness logs are kept locally, metrics are normalized per harness, and invalid infrastructure runs are excluded from baseline summaries.",
         caseDesignBody: "The case set spans 9 repositories with low, mid, and high difficulty tasks per repository. Difficulty is based on expected debugging complexity, not just repository size. Repo size is tracked separately because a large repository can still have a localized bug, while a small repository can require subtle behavior reconstruction.",
         metricDesignBody: "Turns, tokens, tool calls, and cost are intentionally not collapsed into one ambiguous number. Turn-like counts are harness-specific: Codex reports completed exec turns, Claude reports num_turns, and Cursor has assistant/action-step events rather than a completed-turn primitive. Cached input is separated from fresh input where the harness exposes it; Codex and Cursor dollar values are API-equivalent estimates, while Claude cost is reported by the harness.",
-        falseNegativeReview: "False-negative Review", falseNegativeBody: "Failed baseline runs were checked against hidden-test output. No failure looks like an infrastructure-only false negative, but several hidden tests appear to encode implementation details, exact encodings, or requirements not explicit in the prompt. Those cases are marked review and should be resolved before final headline scoring.",
+        falseNegativeReview: "False-negative Review", falseNegativeBody: "Failed baseline runs were checked against hidden-test output and saved workspaces. Oracle fixes were applied by regrading preserved workspaces instead of rerunning agents. Remaining failures are mostly true implementation failures, with one case-design review still open for the bat fallback flag name.",
+        failureReview: "Failure Implementation Review", failureReviewBody: "These notes summarize how the failed implementations went wrong. They are auxiliary analysis generated from hidden-test output, workspace diffs, and saved harness logs where useful; they do not replace hidden-oracle pass/fail scoring.",
         caseCatalog: "Case Catalog", passRateChart: "Pass Rate", wallTimeChart: "Median Wall Time", costPassChart: "Cost Per Pass", difficultyChart: "Success By Difficulty",
         passValue: "pass", failValue: "fail", noInvalidRuns: "No invalid runs",
+        failureLabel: "Failure:", evidenceLabel: "Evidence:", recommendationLabel: "Recommendation:",
         noRuns: "No runs", noFailures: "No failures", allOption: "All", medianWallLabel: "Median wall",
         costPerPassLabel: "Cost/pass", costSourceLabel: "Cost source", passedSuffix: "pass",
         reviewVerdict: "review", unlikelyFalseNegative: "unlikely false negative", costSourceReported: "reported",
@@ -3962,16 +4140,18 @@
         effectiveTotal: "Effective Total", cost: "Cost", costSource: "Cost 種別", run: "Run", reason: "理由",
         name: "名前", runs: "実行数", pass: "成功", rate: "率", medianWallShort: "Wall 中央値",
         reportedDollar: "報告 $", estimatedDollar: "推定 $", conditionComparison: "Harness x Model 比較",
-        executiveSummary: "要約", executiveSummaryBody: "この baseline は、memory を無効化した 3 つの agent harness を、同じ 27 件の実リポジトリ debug case で比較したものです。Codex と Claude はそれぞれ 18/27 件、Cursor は 17/27 件に成功しました。この実行では Claude が成功あたり cost 最小、Cursor が wall time 中央値最速、Codex は hidden-oracle 成功率で Claude とほぼ同等ですが、推定 token/cost は大きめです。",
+        executiveSummary: "要約", executiveSummaryBody: "この baseline は、memory を無効化した 3 つの agent harness を、同じ 27 件の実リポジトリ debug case で比較したものです。oracle false-negative 修正と保存済み workspace の再採点後、Codex は 23/27 件、Claude は 20/27 件、Cursor は 23/27 件に成功しました。Cursor が wall time 中央値最速、Claude が成功あたり cost 最小、Codex/Cursor が hidden-oracle 成功率で同率です。",
         executiveCaveatBody: "この headline score は hidden-oracle 成功率であり、最終的な絶対正解率ではありません。false-negative 調査では、hidden test が実装詳細や prompt に明示されていない API 選択を縛っている可能性がある case が見つかりました。該当 case は下で明示し、最終 leaderboard として使う前に oracle を確定すべきです。",
         caseMatrix: "Case 結果 Matrix", showDetails: "詳細表を表示", hideDetails: "詳細表を隠す",
         viewNote: "デフォルトでは 81 件の本番 baseline run だけを表示します。Pilot/Smoke run は表示フィルタから確認できます。",
         frameworkExplanation: "ベンチマーク設計", frameworkBody: "各 case は、hidden core test が失敗する実リポジトリの base commit と、同じ hidden test が成功する fixed commit を持ちます。Agent には issue 形式の instruction だけを渡し、隔離 checkout 内で修正させます。Agent 編集後に hidden core test が通った場合だけ pass と数えます。raw harness log はローカルに保持し、metrics は harness ごとの意味を保ったまま正規化し、infra invalid run は baseline 集計から除外します。",
         caseDesignBody: "case set は 9 リポジトリにまたがり、各リポジトリに low/mid/high の 3 段階の task を置いています。difficulty は単なる repo size ではなく、想定される debug の複雑さで決めています。大規模 repo でも局所的な bug はあり、小規模 repo でも微妙な仕様復元が必要な bug はあるため、repo size は別軸として扱います。",
         metricDesignBody: "turn、token、tool call、cost は harness ごとに意味が違うため、曖昧な単一指標に潰していません。turn 系の値は harness 固有です。Codex は完了した exec turn、Claude は num_turns、Cursor は完了 turn primitive ではなく assistant/action-step event 数です。cache input は fresh input と分け、Codex/Cursor の dollar は API-equivalent 推定、Claude は harness 報告値です。",
-        falseNegativeReview: "False-negative Review", falseNegativeBody: "失敗した baseline run は hidden test output と照合しました。infra だけが原因の false negative には見えませんが、いくつかの hidden test は実装詳細、厳密な encoding、または prompt に明示されていない要件を固定している可能性があります。review とした case は、最終スコアを確定する前に oracle を見直すべきです。",
+        falseNegativeReview: "False-negative Review", falseNegativeBody: "失敗した baseline run は hidden test output と保存済み workspace で照合しました。oracle fix は agent を再実行せず、保存済み workspace を再採点して反映しています。残る失敗はほぼ true implementation failure で、bat fallback flag 名だけ case-design review が残っています。",
+        failureReview: "失敗実装レビュー", failureReviewBody: "ここでは failed implementation がどう間違えたかを要約します。hidden-test output、workspace diff、必要に応じて保存済み harness log から作る補助分析であり、hidden-oracle の pass/fail 判定を置き換えるものではありません。",
         caseCatalog: "Case Catalog", passRateChart: "成功率", wallTimeChart: "Wall Time 中央値", costPassChart: "成功あたり Cost", difficultyChart: "Difficulty 別成功数",
         passValue: "成功", failValue: "失敗", noInvalidRuns: "Invalid run はありません",
+        failureLabel: "失敗:", evidenceLabel: "根拠:", recommendationLabel: "扱い:",
         noRuns: "実行なし", noFailures: "失敗なし", allOption: "すべて", medianWallLabel: "Wall 中央値",
         costPerPassLabel: "成功あたり Cost", costSourceLabel: "Cost 種別", passedSuffix: "成功",
         reviewVerdict: "要レビュー", unlikelyFalseNegative: "false negative 可能性低",
@@ -3984,32 +4164,244 @@
     };
     const falseNegativeNotes = {
       "axios-axios-low-settle-error-code": {
-            "en": "Possible oracle issue: all harnesses assigned a defined Axios error code, but the hidden test requires rejected 200/302 responses to be ERR_BAD_RESPONSE. The prompt did not specify that non-4xx/5xx rejected responses must use that exact class.",
-            "ja": "oracle 見直し候補: 全 harness が未定義 code を定義済み Axios error code に修正した一方、hidden test は reject された 200/302 response を ERR_BAD_RESPONSE に限定しています。prompt では non-4xx/5xx の rejected response にこの exact class を使うとは明示していません。"
+            "en": "Fixed oracle false negative: rejected non-success statuses may use any defined Axios bad request/response code. All three pass after regrade.",
+            "ja": "oracle false negative 修正済み: reject された non-success status は定義済み Axios bad request/response code なら許容します。再採点後は 3 harness すべて pass です。"
       },
       "go-gitea-gitea-high-compare-no-common-history": {
-            "en": "Possible oracle issue: all harnesses added typed no-merge-base handling and compare fallback behavior, but the hidden test requires errors.Is(err, util.ErrNotExist) from MergeBase rather than only black-box compare behavior.",
-            "ja": "oracle 見直し候補: 全 harness が no-merge-base の typed handling と compare fallback behavior を追加しましたが、hidden test は black-box の compare 挙動だけでなく MergeBase から errors.Is(err, util.ErrNotExist) が返ることを要求しています。"
+            "en": "Fixed oracle false negative: the oracle now accepts equivalent no-merge-base typed behavior instead of one exact errors.Is path. All three pass after regrade.",
+            "ja": "oracle false negative 修正済み: oracle は単一の errors.Is path ではなく、同等の no-merge-base typed behavior を許容します。再採点後は 3 harness すべて pass です。"
       },
       "jesseduffield-lazygit-high-branch-divergence-fast-path": {
-            "en": "Possible oracle issue: hidden tests reference exact private helper names. Candidate fixes show equivalent batching/parsing helpers under different names, so the oracle may be testing implementation shape.",
-            "ja": "oracle 見直し候補: hidden test が exact private helper name を参照しています。candidate fix は同等の batching/parsing helper を別名で実装しており、oracle が実装 shape をテストしている可能性があります。"
+            "en": "Fixed oracle false negative: private helper-name assertions were removed. Codex and Cursor pass after regrade; Claude still fails the public batching behavior.",
+            "ja": "oracle false negative 修正済み: private helper-name assertion を削除しました。再採点後 Codex/Cursor は pass、Claude は public batching behavior でまだ fail です。"
       },
       "louislam-uptime-kuma-high-websocket-auth-options": {
-            "en": "Possible oracle issue: hidden tests require a specific buildWsOptions helper name and camelCase authMethod input, while candidate fixes used equivalent helper names or the existing auth_method schema.",
-            "ja": "oracle 見直し候補: hidden test は特定の buildWsOptions helper 名と camelCase authMethod input を要求しますが、candidate fix は同等 helper 名または既存の auth_method schema を使っています。"
+            "en": "Oracle was loosened for equivalent helper names and auth field spellings. All three still fail behavior checks, so this is now treated as true failure.",
+            "ja": "同等 helper 名と auth field spelling を許容するよう oracle を緩和しました。それでも 3 harness すべて behavior check で fail するため、現在は true failure と扱います。"
       },
       "louislam-uptime-kuma-low-submillisecond-ping-chart": {
-            "en": "Possible oracle issue: Codex/Cursor add zero-ping handling, but the hidden test extracts a Vue method with regex and invokes it with an incomplete this context.",
-            "ja": "oracle 見直し候補: Codex/Cursor は zero-ping handling を追加していますが、hidden test は Vue method を regex で抽出し、不完全な this context で呼び出しています。"
+            "en": "Fixed oracle false negative: the hidden test now evaluates the real helper method context instead of a fixed-signature mock. Codex, Claude, and Cursor pass after regrade.",
+            "ja": "oracle false negative 修正済み: hidden test は fixed-signature mock ではなく実際の helper method context を評価します。再採点後 Codex/Claude/Cursor は pass です。"
       },
       "sharkdp-bat-high-fallback-syntax": {
             "en": "Mixed: Codex/Cursor implemented --fallback-syntax but hidden also requires an unstated --fallback-language alias; Claude appears to be a true failure because --fallback-syntax itself is rejected.",
             "ja": "混在: Codex/Cursor は --fallback-syntax を実装しましたが、hidden test は prompt にない --fallback-language alias も要求しています。Claude は --fallback-syntax 自体を拒否しているため true failure と見なせます。"
       },
       "vitejs-vite-low-flatten-id-sanitized-chars": {
-            "en": "Possible oracle issue: Codex/Cursor avoid sanitized-character collisions, but the hidden test asserts exact PR-style encodings rather than collision avoidance and path-safe reversibility.",
-            "ja": "oracle 見直し候補: Codex/Cursor は sanitized-character collision を避けていますが、hidden test は collision avoidance と path-safe reversibility ではなく、exact PR-style encoding を要求しています。"
+            "en": "Fixed oracle false negative: exact PR-style encoding checks were replaced by uniqueness and path-safety properties. Cursor passes after regrade; Codex still leaves unsafe characters.",
+            "ja": "oracle false negative 修正済み: exact PR-style encoding check を uniqueness と path-safety property に置き換えました。再採点後 Cursor は pass、Codex は unsafe character が残るため fail です。"
+      }
+};
+    const failureReviews = {
+      "go-gitea-gitea-mid-pr-merge-self-reference::cursor": {
+            "failure_mode": {
+                  "en": "The fix only skipped self-reference comments when a caller passed explicit skip IDs.",
+                  "ja": "明示的な skip ID を渡した呼び出しだけ self-reference comment を避ける実装でした。"
+            },
+            "evidence": {
+                  "en": "The hidden test calls UpdateIssuesCommit directly with the self-merge commit. Cursor added skip plumbing through push options, but the service-level path still creates the self-reference comment.",
+                  "ja": "hidden test は self-merge commit で UpdateIssuesCommit を直接呼びます。Cursor は push option 経由の skip plumbing を追加しましたが、service-level path では self-reference comment がまだ作られます。"
+            },
+            "recommendation": {
+                  "en": "Keep as a model failure. The service behavior remains wrong on a public path.",
+                  "ja": "model failure として維持します。public な service path の挙動がまだ誤っています。"
+            }
+      },
+      "jesseduffield-lazygit-high-branch-divergence-fast-path::claude": {
+            "failure_mode": {
+                  "en": "The implementation still performs merge-base work per branch before the batch ahead-behind path.",
+                  "ja": "batch ahead-behind path の前に branch ごとの merge-base 処理が残っています。"
+            },
+            "evidence": {
+                  "en": "The fake git runner observed unexpected git merge-base calls and the public branch loader did not update the hidden feature branch behind count.",
+                  "ja": "fake git runner が想定外の git merge-base 呼び出しを観測し、public branch loader は hidden feature branch の behind count を更新できませんでした。"
+            },
+            "recommendation": {
+                  "en": "Keep as a model failure. The case checks the intended performance-sensitive public behavior, not just a helper name.",
+                  "ja": "model failure として維持します。この case は helper 名ではなく、performance-sensitive な public behavior を確認しています。"
+            }
+      },
+      "langflow-ai-langflow-mid-mcp-connectable-inputs::claude": {
+            "failure_mode": {
+                  "en": "Primitive inputs were mostly fixed, but dictionary inputs were also exposed as Message instead of JSON.",
+                  "ja": "primitive input は概ね直りましたが、dictionary input も JSON ではなく Message として公開されました。"
+            },
+            "evidence": {
+                  "en": "Claude used [\"Message\"] for widget-only classes broadly. The hidden test still fails because DictInput must remain connectable as [\"JSON\"].",
+                  "ja": "Claude は widget-only class に広く [\"Message\"] を使いました。DictInput は [\"JSON\"] として connectable である必要があり、hidden test はそこを検出しています。"
+            },
+            "recommendation": {
+                  "en": "Keep as a model failure. The implementation overgeneralizes the rule.",
+                  "ja": "model failure として維持します。実装が rule を過剰に一般化しています。"
+            }
+      },
+      "langflow-ai-langflow-mid-mcp-connectable-inputs::codex": {
+            "failure_mode": {
+                  "en": "Numeric and boolean MCP inputs were exposed as primitive input types instead of connectable Message inputs.",
+                  "ja": "numeric/bool MCP input が connectable な Message input ではなく primitive input type として公開されました。"
+            },
+            "evidence": {
+                  "en": "The hidden UI-schema check expects float, int, and bool fields to have input_types [\"Message\"], while dict fields use [\"JSON\"]. Codex produced number/bool-oriented types.",
+                  "ja": "hidden UI-schema check は float/int/bool field の input_types を [\"Message\"]、dict field を [\"JSON\"] と期待します。Codex は number/bool 系の type を出しました。"
+            },
+            "recommendation": {
+                  "en": "Keep as a model failure. The fixed commit establishes this connection contract.",
+                  "ja": "model failure として維持します。fixed commit がこの connection contract を示しています。"
+            }
+      },
+      "langflow-ai-langflow-mid-mcp-connectable-inputs::cursor": {
+            "failure_mode": {
+                  "en": "The implementation kept numeric and boolean type labels rather than using the Message connection contract.",
+                  "ja": "Message connection contract ではなく numeric/bool の type label を維持しました。"
+            },
+            "evidence": {
+                  "en": "Cursor produced types such as number/int, number/float, bool, and Data/JSON. The hidden test expects Message for primitive values and JSON for dict.",
+                  "ja": "Cursor は number/int、number/float、bool、Data/JSON のような type を出しました。hidden test は primitive value には Message、dict には JSON を期待します。"
+            },
+            "recommendation": {
+                  "en": "Keep as a model failure. The UI connection semantics do not match the fixed behavior.",
+                  "ja": "model failure として維持します。UI connection semantics が fixed behavior と一致していません。"
+            }
+      },
+      "louislam-uptime-kuma-high-websocket-auth-options::claude": {
+            "failure_mode": {
+                  "en": "Invalid custom header JSON throws instead of falling back to empty headers.",
+                  "ja": "invalid custom header JSON が empty headers への fallback ではなく例外になります。"
+            },
+            "evidence": {
+                  "en": "Claude appears to handle auth precedence, but the hidden invalid-header case throws before returning websocket options. The fixed commit tolerates invalid custom headers.",
+                  "ja": "Claude は auth precedence は扱えているようですが、invalid-header case で websocket options を返す前に throw します。fixed commit は invalid custom header を許容します。"
+            },
+            "recommendation": {
+                  "en": "Keep as a model failure, with a note that this is a resilience edge case rather than the main auth-precedence bug.",
+                  "ja": "model failure として維持します。ただしこれは main の auth-precedence bug ではなく resilience edge case です。"
+            }
+      },
+      "louislam-uptime-kuma-high-websocket-auth-options::codex": {
+            "failure_mode": {
+                  "en": "Custom headers overwrite the configured Basic Authorization header.",
+                  "ja": "custom header が設定済みの Basic Authorization header を上書きします。"
+            },
+            "evidence": {
+                  "en": "The hidden test supplies a stale Authorization custom header plus basic auth. Codex merges auth before custom headers, so the stale Bearer value wins.",
+                  "ja": "hidden test は stale Authorization custom header と basic auth を同時に渡します。Codex は auth を custom header より先に merge するため、stale Bearer value が勝ちます。"
+            },
+            "recommendation": {
+                  "en": "Keep as a model failure. Auth configuration should take precedence over stale user headers.",
+                  "ja": "model failure として維持します。auth configuration は stale な user header より優先されるべきです。"
+            }
+      },
+      "louislam-uptime-kuma-high-websocket-auth-options::cursor": {
+            "failure_mode": {
+                  "en": "Custom headers overwrite the configured Basic Authorization header.",
+                  "ja": "custom header が設定済みの Basic Authorization header を上書きします。"
+            },
+            "evidence": {
+                  "en": "Cursor has the same merge-order issue as Codex: the stale Bearer Authorization from custom headers remains in the returned options.",
+                  "ja": "Cursor は Codex と同じ merge order issue を持ち、custom header 由来の stale Bearer Authorization が returned options に残ります。"
+            },
+            "recommendation": {
+                  "en": "Keep as a model failure. The returned websocket options violate the configured auth method.",
+                  "ja": "model failure として維持します。returned websocket options が configured auth method に反しています。"
+            }
+      },
+      "louislam-uptime-kuma-mid-uptime-cleanup-buckets::claude": {
+            "failure_mode": {
+                  "en": "The database cleanup changed, but stale in-memory uptime buckets are not purged.",
+                  "ja": "database cleanup は変更されましたが、stale な in-memory uptime bucket が削除されません。"
+            },
+            "evidence": {
+                  "en": "The hidden test drives the in-memory minutely/hourly/daily bucket cleanup path. Claude changed SQL timestamp cutoffs, leaving the stale minutely list length at 2 instead of 1.",
+                  "ja": "hidden test は in-memory の minutely/hourly/daily bucket cleanup path を動かします。Claude は SQL timestamp cutoff を変更しただけで、stale minutely list length が 1 ではなく 2 のままでした。"
+            },
+            "recommendation": {
+                  "en": "Keep as a model failure. It fixes the wrong layer of the bug.",
+                  "ja": "model failure として維持します。bug の layer を取り違えています。"
+            }
+      },
+      "sharkdp-bat-high-fallback-syntax::claude": {
+            "failure_mode": {
+                  "en": "The implementation added equivalent fallback semantics under --fallback-language, but not the upstream --fallback-syntax flag.",
+                  "ja": "同等の fallback semantics を --fallback-language として追加しましたが、upstream の --fallback-syntax flag は追加していません。"
+            },
+            "evidence": {
+                  "en": "The hidden test invokes --fallback-syntax and the CLI rejects it, suggesting --fallback-language. The case PR title names --fallback-syntax, but the instruction text only says to add a fallback.",
+                  "ja": "hidden test は --fallback-syntax を呼び、CLI はそれを拒否して --fallback-language を示唆します。case の PR title は --fallback-syntax を含みますが、instruction 本文は fallback の追加とだけ述べています。"
+            },
+            "recommendation": {
+                  "en": "Review case wording. If upstream API fidelity matters, explicitly require --fallback-syntax; otherwise do not treat this as a pure model failure.",
+                  "ja": "case wording を見直します。upstream API fidelity を測るなら --fallback-syntax を明示し、そうでないなら pure model failure として扱わない方がよいです。"
+            }
+      },
+      "sharkdp-bat-low-zip-binary-detection::claude": {
+            "failure_mode": {
+                  "en": "Only the common local-file ZIP signature was detected.",
+                  "ja": "一般的な local-file ZIP signature だけを検出しました。"
+            },
+            "evidence": {
+                  "en": "The hidden test checks PK\\u0003\\u0004, PK\\u0005\\u0006, and PK\\u0007\\u0008 signatures. Claude only added detection for PK\\u0003\\u0004, so the empty/end-of-central-directory signature is rendered as text.",
+                  "ja": "hidden test は PK\\u0003\\u0004、PK\\u0005\\u0006、PK\\u0007\\u0008 signature を確認します。Claude は PK\\u0003\\u0004 だけを追加したため、empty/end-of-central-directory signature が text として表示されます。"
+            },
+            "recommendation": {
+                  "en": "Keep as a model failure. The implementation is partial.",
+                  "ja": "model failure として維持します。実装が部分的です。"
+            }
+      },
+      "sharkdp-bat-mid-control-character-wrapping::codex": {
+            "failure_mode": {
+                  "en": "Control characters were counted as width 1 instead of their caret-notation display width.",
+                  "ja": "control character を caret notation の表示幅ではなく width 1 と数えました。"
+            },
+            "evidence": {
+                  "en": "At terminal width 40, NUL and DEL sequences should wrap to two physical lines. Codex still renders one line because the displayed control representation consumes two columns.",
+                  "ja": "terminal width 40 では NUL/DEL sequence は 2 physical lines に wrap すべきです。表示される control representation は 2 columns を消費するため、Codex の 1 line rendering は誤りです。"
+            },
+            "recommendation": {
+                  "en": "Keep as a model failure. The observable wrapping behavior is still wrong.",
+                  "ja": "model failure として維持します。observable wrapping behavior がまだ誤っています。"
+            }
+      },
+      "sharkdp-bat-mid-control-character-wrapping::cursor": {
+            "failure_mode": {
+                  "en": "Control characters were counted as width 1 instead of their caret-notation display width.",
+                  "ja": "control character を caret notation の表示幅ではなく width 1 と数えました。"
+            },
+            "evidence": {
+                  "en": "Cursor made the same width mistake as Codex, so NUL and DEL input at width 40 remains a single rendered line.",
+                  "ja": "Cursor は Codex と同じ width の誤りをしており、width 40 の NUL/DEL input が 1 rendered line のままです。"
+            },
+            "recommendation": {
+                  "en": "Keep as a model failure. The hidden test checks user-visible wrapping.",
+                  "ja": "model failure として維持します。hidden test は user-visible wrapping を確認しています。"
+            }
+      },
+      "usememos-memos-mid-mixed-case-user-resource-names::claude": {
+            "failure_mode": {
+                  "en": "Mixed-case lookup remains broken and numeric usernames are accidentally accepted.",
+                  "ja": "mixed-case lookup は壊れたままで、numeric username が誤って許可されます。"
+            },
+            "evidence": {
+                  "en": "The hidden test receives an empty BatchGetUsers result for a mixed-case resource name and no validation error when creating a numeric username.",
+                  "ja": "hidden test では mixed-case resource name の BatchGetUsers が空になり、numeric username 作成時にも validation error が出ません。"
+            },
+            "recommendation": {
+                  "en": "Keep as a model failure. The fix removes one validation but misses lookup normalization and weakens numeric username validation.",
+                  "ja": "model failure として維持します。実装は validation を一部外しただけで lookup normalization を逃し、numeric username validation も弱めています。"
+            }
+      },
+      "vitejs-vite-low-flatten-id-sanitized-chars::codex": {
+            "failure_mode": {
+                  "en": "Only some sanitized characters were encoded, leaving path-unsafe characters in flattened IDs.",
+                  "ja": "一部の sanitized character だけを encode し、path-unsafe な character が flattened ID に残りました。"
+            },
+            "evidence": {
+                  "en": "The hidden property test checks that +, #, $, and * are encoded away and remain distinct. Codex handles only a subset, so $ or * can remain in the output.",
+                  "ja": "hidden property test は +、#、$、* が encode され、かつ distinct であることを確認します。Codex は subset だけを扱うため、$ や * が output に残り得ます。"
+            },
+            "recommendation": {
+                  "en": "Keep as a model failure. The path-safety property is not satisfied.",
+                  "ja": "model failure として維持します。path-safety property を満たしていません。"
+            }
       }
 };
     const filters = {
@@ -4055,6 +4447,11 @@
       }
       for (const node of document.querySelectorAll("[data-note-case]")) {
         node.textContent = falseNegativeNotes[node.dataset.noteCase]?.[lang] || falseNegativeNotes[node.dataset.noteCase]?.en || node.textContent;
+      }
+      for (const node of document.querySelectorAll("[data-review-field]")) {
+        const review = failureReviews[node.dataset.reviewKey];
+        const value = review?.[node.dataset.reviewField]?.[lang] || review?.[node.dataset.reviewField]?.en;
+        if (value) node.textContent = value;
       }
     }
   </script>

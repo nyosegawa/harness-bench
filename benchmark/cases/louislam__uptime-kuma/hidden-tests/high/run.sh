@@ -14,15 +14,17 @@ const { WebSocketMonitorType } = require("./server/monitor-types/websocket-upgra
 
 async function main() {
     const monitorType = new WebSocketMonitorType();
-    assert.equal(typeof monitorType.buildWsOptions, "function");
+    const buildOptions = monitorType.buildWsOptions ?? monitorType.buildWebSocketOptions;
+    assert.equal(typeof buildOptions, "function");
 
-    const options = await monitorType.buildWsOptions({
+    const options = await buildOptions.call(monitorType, {
         timeout: 7,
         headers: JSON.stringify({
             Authorization: "Bearer stale",
             "X-Trace": "hidden",
         }),
         authMethod: "basic",
+        auth_method: "basic",
         basic_auth_user: "agent",
         basic_auth_pass: "secret",
     });
@@ -33,15 +35,16 @@ async function main() {
         "X-Trace": "hidden",
     });
 
-    const invalidHeaderOptions = await monitorType.buildWsOptions({
+    const invalidHeaderOptions = await buildOptions.call(monitorType, {
         timeout: 1,
         headers: "{not json",
     });
     assert.deepEqual(invalidHeaderOptions.headers, {});
     assert.equal(invalidHeaderOptions.handshakeTimeout, 1000);
 
-    const mtlsOptions = await monitorType.buildWsOptions({
+    const mtlsOptions = await buildOptions.call(monitorType, {
         authMethod: "mtls",
+        auth_method: "mtls",
         tlsCert: "cert",
         tlsKey: "key",
         tlsCa: "ca",

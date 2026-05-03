@@ -1,0 +1,285 @@
+#!/usr/bin/env node
+
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { dirname, resolve } from "node:path";
+import { spawnSync } from "node:child_process";
+
+const args = parseArgs(process.argv.slice(2));
+const runsRoot = resolve(args.runsRoot ?? "benchmark/runs");
+const caseFilter = new Set([].concat(args.case ?? []).filter(Boolean));
+const dryRun = Boolean(args.dryRun);
+
+const resultPaths = findResultPaths(runsRoot);
+let updated = 0;
+
+for (const resultPath of resultPaths) {
+  const result = JSON.parse(readFileSync(resultPath, "utf8"));
+  if (result.mode !== "agent" || result.invalid_run) continue;
+  if (caseFilter.size > 0 && !caseFilter.has(result.case_id)) continue;
+
+  const workspace = resolve(dirname(resultPath), "workspace");
+  if (!existsSync(workspace)) continue;
+  sanitizeWorkspaceInstructions(workspace);
+  const casePath = resolve(result.case_path);
+  if (!existsSync(casePath)) continue;
+
+  const caseData = parseSimpleYaml(readFileSync(casePath, "utf8"));
+  const testResult = runTestStrategy(caseData, workspace, dirname(resultPath));
+  const previous = {
+    success: result.success,
+    test_result: result.test_result ?? null,
+  };
+
+  result.previous_regrade = previous;
+  result.regraded_at = new Date().toISOString();
+  result.regrade_reason = args.reason ?? "hidden oracle update";
+  result.test_result = testResult;
+  result.success = testResult.success;
+  result.metrics = {
+    ...(result.metrics ?? {}),
+    tests: testResult.metrics,
+  };
+
+  if (!dryRun) {
+    writeFileSync(resultPath, `${JSON.stringify(result, null, 2)}\n`);
+  }
+  updated += 1;
+  console.log(`${dryRun ? "would regrade" : "regraded"} ${result.case_id} ${result.harness}: ${previous.success} -> ${result.success}`);
+}
+
+console.log(`${dryRun ? "would update" : "updated"} ${updated} results`);
+
+function findResultPaths(root) {
+  const entries = existsSync(root) ? spawnSync("find", [root, "-mindepth", "2", "-maxdepth", "2", "-name", "result.json"], {
+    encoding: "utf8",
+    maxBuffer: 50 * 1024 * 1024,
+  }) : { status: 0, stdout: "" };
+  if (entries.status !== 0) {
+    throw new Error(entries.stderr || "find result.json failed");
+  }
+  return entries.stdout.split(/\r?\n/).filter(Boolean).map((path) => resolve(path));
+}
+
+function runTestStrategy(caseData, repoDir, runDir) {
+  const strategy = caseData.test_strategy ?? {
+    core_tests: caseData.hidden_tests ?? [],
+    oracle_suites: [],
+    regression_tests: [],
+    success_rule: "core_tests_pass",
+  };
+
+  const core = runCommands("regrade-core", strategy.core_tests ?? [], repoDir, runDir);
+  const regressions = runCommands("regrade-regression", strategy.regression_tests ?? [], repoDir, runDir);
+  const oracleSuites = runOracleSuites(strategy.oracle_suites ?? [], repoDir, runDir);
+
+  const corePass = core.every((test) => test.exit_code === 0);
+  const regressionPass = regressions.every((test) => test.exit_code === 0);
+  const hasOracleSuites = oracleSuites.length > 0;
+  const oraclePass = !hasOracleSuites || oracleSuites.some((suite) => suite.success);
+
+  let success;
+  switch (strategy.success_rule) {
+    case "core_tests_pass":
+      success = corePass;
+      break;
+    case "core_and_regression":
+      success = corePass && regressionPass;
+      break;
+    case "core_and_regression_and_one_oracle":
+      success = corePass && regressionPass && oraclePass;
+      break;
+    default:
+      success = corePass && regressionPass && oraclePass;
+      break;
+  }
+
+  return {
+    success,
+    success_rule: strategy.success_rule ?? "default",
+    core_pass: corePass,
+    regression_pass: regressionPass,
+    oracle_pass: oraclePass,
+    core,
+    regressions,
+    oracle_suites: oracleSuites,
+    metrics: summarizeTestMetrics(core, regressions, oracleSuites),
+  };
+}
+
+function runCommands(group, commands, repoDir, runDir) {
+  return commands.map((command, index) => runTestCommand(group, index, command, repoDir, runDir));
+}
+
+function runOracleSuites(suites, repoDir, runDir) {
+  return suites.map((suite, index) => {
+    const id = suite.id ?? `oracle-${index}`;
+    const commands = suite.command ? [suite.command] : suite.commands ?? [];
+    const tests = commands.map((command, commandIndex) =>
+      runTestCommand(`regrade-oracle-${id}`, commandIndex, command, repoDir, runDir),
+    );
+    return {
+      id,
+      success: tests.length > 0 && tests.every((test) => test.exit_code === 0),
+      tests,
+    };
+  });
+}
+
+function runTestCommand(group, index, command, repoDir, runDir) {
+  mkdirSync(runDir, { recursive: true });
+  const safeGroup = group.replace(/[^A-Za-z0-9_.-]/g, "_");
+  const stdoutPath = resolve(runDir, `${safeGroup}-${index}.stdout.log`);
+  const stderrPath = resolve(runDir, `${safeGroup}-${index}.stderr.log`);
+  const started = new Date();
+  const startedMs = Date.now();
+  const result = spawnSync("bash", ["-lc", `${shellQuote(command)} ${shellQuote(repoDir)}`], {
+    cwd: process.cwd(),
+    encoding: "utf8",
+    maxBuffer: 50 * 1024 * 1024,
+  });
+  writeFileSync(stdoutPath, result.stdout ?? "");
+  writeFileSync(stderrPath, result.stderr ?? "");
+  return {
+    group,
+    index,
+    command,
+    exit_code: result.status,
+    signal: result.signal,
+    stdout_path: stdoutPath,
+    stderr_path: stderrPath,
+    started_at: started.toISOString(),
+    finished_at: new Date().toISOString(),
+    duration_ms: Date.now() - startedMs,
+  };
+}
+
+function summarizeTestMetrics(core, regressions, oracleSuites) {
+  const oracleTests = oracleSuites.flatMap((suite) => suite.tests);
+  const coreDuration = sumDurations(core);
+  const regressionDuration = sumDurations(regressions);
+  const oracleDuration = sumDurations(oracleTests);
+  return {
+    total_duration_ms: coreDuration + regressionDuration + oracleDuration,
+    core_duration_ms: coreDuration,
+    regression_duration_ms: regressionDuration,
+    oracle_duration_ms: oracleDuration,
+  };
+}
+
+function sumDurations(tests) {
+  return tests.reduce((sum, test) => sum + (test.duration_ms ?? 0), 0);
+}
+
+function sanitizeWorkspaceInstructions(repoDir) {
+  for (const relativePath of ["AGENTS.md", "agents.md", "CLAUDE.md", "claude.md", ".agents", ".claude", ".codex"]) {
+    rmSync(resolve(repoDir, relativePath), { recursive: true, force: true });
+  }
+}
+
+function parseSimpleYaml(text) {
+  const root = {};
+  const stack = [{ indent: -1, value: root }];
+  const lines = text.split(/\r?\n/);
+
+  for (let index = 0; index < lines.length; index += 1) {
+    const raw = lines[index];
+    if (!raw.trim() || raw.trim().startsWith("#")) continue;
+    const indent = raw.match(/^ */)[0].length;
+    const line = raw.trim();
+
+    while (stack.length > 1 && indent <= stack.at(-1).indent) stack.pop();
+    const parent = stack.at(-1).value;
+
+    if (line.startsWith("- ")) {
+      if (!Array.isArray(parent)) throw new Error(`unsupported YAML list: ${line}`);
+      const itemText = line.slice(2);
+      if (itemText.includes(": ")) {
+        const obj = {};
+        parent.push(obj);
+        const [key, value] = splitKeyValue(itemText);
+        obj[key] = parseScalar(value);
+        stack.push({ indent, value: obj });
+      } else {
+        parent.push(parseScalar(itemText));
+      }
+      continue;
+    }
+
+    const [key, value] = splitKeyValue(line);
+    if (value === "") {
+      const next = nextMeaningfulLine(lines, index + 1);
+      const container = next?.trim().startsWith("- ") ? [] : {};
+      parent[key] = container;
+      stack.push({ indent, value: container });
+    } else if (value === ">") {
+      const blockLines = [];
+      const blockIndent = nextMeaningfulLine(lines, index + 1)?.match(/^ */)?.[0].length ?? indent + 2;
+      index += 1;
+      while (index < lines.length) {
+        const blockRaw = lines[index];
+        if (blockRaw.trim() && blockRaw.match(/^ */)[0].length < blockIndent) {
+          index -= 1;
+          break;
+        }
+        blockLines.push(blockRaw.slice(Math.min(blockIndent, blockRaw.length)));
+        index += 1;
+      }
+      parent[key] = blockLines.join(" ").replace(/\s+/g, " ").trim();
+    } else {
+      parent[key] = parseScalar(value);
+    }
+  }
+  return root;
+}
+
+function splitKeyValue(line) {
+  const index = line.indexOf(":");
+  if (index === -1) throw new Error(`unsupported YAML line: ${line}`);
+  return [line.slice(0, index).trim(), line.slice(index + 1).trim()];
+}
+
+function nextMeaningfulLine(lines, start) {
+  for (let index = start; index < lines.length; index += 1) {
+    if (lines[index].trim() && !lines[index].trim().startsWith("#")) return lines[index];
+  }
+  return null;
+}
+
+function parseScalar(value) {
+  if (value === "[]") return [];
+  if (value === "null") return null;
+  if (value === "true") return true;
+  if (value === "false") return false;
+  if (/^-?\d+$/.test(value)) return Number(value);
+  if (value.startsWith("[") && value.endsWith("]")) {
+    const inner = value.slice(1, -1).trim();
+    if (!inner) return [];
+    return inner.split(",").map((part) => parseScalar(part.trim()));
+  }
+  if ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith("'") && value.endsWith("'"))) {
+    return value.slice(1, -1);
+  }
+  return value;
+}
+
+function parseArgs(argv) {
+  const parsed = {};
+  for (let index = 0; index < argv.length; index += 1) {
+    const arg = argv[index];
+    if (!arg.startsWith("--")) continue;
+    const key = arg.slice(2);
+    const next = argv[index + 1];
+    const value = !next || next.startsWith("--") ? true : next;
+    if (parsed[key] == null) {
+      parsed[key] = value;
+    } else {
+      parsed[key] = [].concat(parsed[key], value);
+    }
+    if (value !== true) index += 1;
+  }
+  return parsed;
+}
+
+function shellQuote(value) {
+  return `'${String(value).replaceAll("'", "'\\''")}'`;
+}

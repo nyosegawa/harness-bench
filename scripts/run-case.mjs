@@ -2,7 +2,7 @@
 
 import { spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { basename, dirname, resolve } from "node:path";
 
 const args = parseArgs(process.argv.slice(2));
@@ -863,6 +863,7 @@ function ensureRepo(repoUrl, repoDir) {
 function checkout(repoDir, commit) {
   git(repoDir, ["checkout", "-q", commit]);
   git(repoDir, ["clean", "-fdx", "-q"]);
+  sanitizeWorkspaceInstructions(repoDir);
 }
 
 function git(repoDir, args) {
@@ -875,6 +876,12 @@ function git(repoDir, args) {
     throw new Error(`git ${args.join(" ")} failed: ${result.stderr || result.stdout}`);
   }
   return result;
+}
+
+function sanitizeWorkspaceInstructions(repoDir) {
+  for (const relativePath of ["AGENTS.md", "agents.md", "CLAUDE.md", "claude.md", ".agents", ".claude", ".codex"]) {
+    rmSync(resolve(repoDir, relativePath), { recursive: true, force: true });
+  }
 }
 
 function parseSimpleYaml(text) {

@@ -210,6 +210,12 @@ Invalid runs are preserved for auditability but excluded from `results.html`.
 
 Agent mode must capture both normalized metrics and raw harness logs. Normalized metrics make cross-harness comparison possible; raw logs make future parser fixes possible.
 
+After checkout, the runner removes repository-local agent steering files from
+the candidate workspace before setup, verification, or agent execution:
+`AGENTS.md`, `agents.md`, `CLAUDE.md`, `claude.md`, `.agents`, `.claude`, and
+`.codex`. Case instructions must come only from the benchmark prompt and hidden
+tests, not from upstream repository agent configuration.
+
 ### Required Normalized Fields
 
 - `wall_time_ms`: elapsed runner wall time for the whole run
@@ -479,6 +485,36 @@ The report shows:
 - cache usage
 - reported/estimated/unavailable cost
 - modified files via run details
+- bilingual failure implementation reviews from `benchmark/reviews/*.json`
+
+Failure reviews are auxiliary analysis. The hidden oracle remains the source
+of pass/fail truth, while the review explains how a failed implementation went
+wrong and whether the failure looks like a true implementation failure, oracle
+false negative, case-design issue, or infrastructure failure.
+
+Validate the current structured reviews:
+
+```bash
+node scripts/review-failed-runs.mjs
+```
+
+Build evidence bundles for failed baseline runs without writing:
+
+```bash
+node scripts/review-failed-runs.mjs --dryRun --force
+```
+
+Generate missing bilingual review entries with Codex and validate the JSON
+before writing:
+
+```bash
+node scripts/review-failed-runs.mjs --generate
+```
+
+The evidence bundle includes the failed `result.json`, hidden-test stdout and
+stderr tails, workspace diff summary/excerpt, and saved harness session-log
+summary (`harness.events.jsonl` or `harness.result.json`). Generated review
+JSON must pass schema validation before `render-results.mjs` will include it.
 
 ## Current Limitations
 

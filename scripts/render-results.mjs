@@ -6,6 +6,7 @@ import { dirname, resolve } from "node:path";
 const runsRoot = resolve(process.argv[2] ?? "benchmark/runs");
 const output = resolve(process.argv[3] ?? "benchmark/reports/results.html");
 const caseMetadataCache = new Map();
+const failureReviews = loadFailureReviews(resolve("benchmark/reviews/baseline-failure-reviews.json"));
 
 const results = loadResults(runsRoot);
 mkdirSync(dirname(output), { recursive: true });
@@ -38,6 +39,7 @@ function renderHtml(results) {
   const matrixGrid = renderMatrixGrid(views.baseline);
   const caseCatalog = renderCaseCatalog(views.baseline);
   const falseNegativeRows = renderFalseNegativeRows(falseNegativeSummary(views.baseline));
+  const failureReviewRows = renderFailureReviewRows(views.baseline);
   const difficultySummaryRows = renderSummaryRows(groupSummary(views.baseline, (result) => caseMeta(result).difficulty ?? "unknown"));
   const sizeSummaryRows = renderSummaryRows(groupSummary(views.baseline, (result) => caseMeta(result).size_bucket ?? "unknown"));
   const failureSummaryRows = renderFailureSummaryRows(failureSummary(views.baseline.filter((result) => !result.success)));
@@ -160,6 +162,11 @@ function renderHtml(results) {
     .detail-table-section[hidden] { display: none; }
     .compact-list { display: grid; gap: 8px; padding: 0 12px 12px; }
     .review-row { display: grid; grid-template-columns: minmax(220px, 1.2fr) minmax(90px, 0.4fr) minmax(260px, 1.6fr); gap: 10px; align-items: start; border-top: 1px solid #ededeb; padding-top: 8px; }
+    .failure-review-list { display: grid; gap: 10px; padding: 0 12px 12px; }
+    .failure-review-card { border-top: 1px solid #ededeb; padding-top: 10px; display: grid; gap: 6px; }
+    .failure-review-card h3 { margin: 0; font-size: 13px; }
+    .failure-review-meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+    .failure-review-card p { margin: 0; white-space: normal; line-height: 1.45; color: #3f4248; }
     .case-catalog { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 10px; padding: 0 12px 12px; }
     .case-card { border-top: 1px solid #ededeb; padding-top: 10px; }
     .case-card h3 { margin: 0 0 6px; font-size: 13px; }
@@ -217,7 +224,7 @@ function renderHtml(results) {
     <section class="chart-grid">${charts}</section>
     <section class="report-section">
       <h2 data-i18n="executiveSummary">Executive Summary</h2>
-      <p data-i18n="executiveSummaryBody">This baseline compares three memory-disabled agent harnesses on the same 27 real-repository debugging cases. Codex and Claude each pass 18/27 cases, Cursor passes 17/27. Claude has the lowest observed cost per pass in this run, Cursor has the fastest median wall time, and Codex is roughly tied with Claude on hidden-oracle pass rate while using more estimated tokens and cost.</p>
+      <p data-i18n="executiveSummaryBody">This baseline compares three memory-disabled agent harnesses on the same 27 real-repository debugging cases. Codex passes 23/27 cases, Claude passes 20/27, and Cursor passes 23/27 after oracle false-negative fixes and workspace regrade. Cursor has the fastest median wall time, Claude has the lowest cost per pass, and Codex/Cursor are tied on hidden-oracle pass rate.</p>
       <p data-i18n="executiveCaveatBody">The headline score is a hidden-oracle pass rate, not yet the final correctness score. False-negative review found several cases where hidden tests may over-constrain implementation details or unstated API choices; those cases are called out below and should be resolved before using the matrix as a final leaderboard.</p>
     </section>
     <section class="report-section">
@@ -232,8 +239,13 @@ function renderHtml(results) {
     </section>
     <section class="matrix-panel">
       <h2 data-i18n="falseNegativeReview">False-negative Review</h2>
-      <p class="section-copy" data-i18n="falseNegativeBody">Failed baseline runs were checked against hidden-test output. No failure looks like an infrastructure-only false negative, but several hidden tests appear to encode implementation details, exact encodings, or requirements not explicit in the prompt. Those cases are marked review and should be resolved before final headline scoring.</p>
+      <p class="section-copy" data-i18n="falseNegativeBody">Failed baseline runs were checked against hidden-test output and saved workspaces. Oracle fixes were applied by regrading preserved workspaces instead of rerunning agents. Remaining failures are mostly true implementation failures, with one case-design review still open for the bat fallback flag name.</p>
       <div class="compact-list">${falseNegativeRows}</div>
+    </section>
+    <section class="matrix-panel">
+      <h2 data-i18n="failureReview">Failure Implementation Review</h2>
+      <p class="section-copy" data-i18n="failureReviewBody">These notes summarize how the failed implementations went wrong. They are auxiliary analysis generated from hidden-test output, workspace diffs, and saved harness logs where useful; they do not replace hidden-oracle pass/fail scoring.</p>
+      <div class="failure-review-list">${failureReviewRows}</div>
     </section>
     <section class="matrix-panel">
       <h2 data-i18n="caseCatalog">Case Catalog</h2>
@@ -279,16 +291,18 @@ function renderHtml(results) {
         effectiveTotal: "Effective Total", cost: "Cost", costSource: "Cost Source", run: "Run", reason: "Reason",
         name: "Name", runs: "Runs", pass: "Pass", rate: "Rate", medianWallShort: "Median Wall",
         reportedDollar: "Reported $", estimatedDollar: "Estimated $", conditionComparison: "Harness x Model Comparison",
-        executiveSummary: "Executive Summary", executiveSummaryBody: "This baseline compares three memory-disabled agent harnesses on the same 27 real-repository debugging cases. Codex and Claude each pass 18/27 cases, Cursor passes 17/27. Claude has the lowest observed cost per pass in this run, Cursor has the fastest median wall time, and Codex is roughly tied with Claude on hidden-oracle pass rate while using more estimated tokens and cost.",
+        executiveSummary: "Executive Summary", executiveSummaryBody: "This baseline compares three memory-disabled agent harnesses on the same 27 real-repository debugging cases. Codex passes 23/27 cases, Claude passes 20/27, and Cursor passes 23/27 after oracle false-negative fixes and workspace regrade. Cursor has the fastest median wall time, Claude has the lowest cost per pass, and Codex/Cursor are tied on hidden-oracle pass rate.",
         executiveCaveatBody: "The headline score is a hidden-oracle pass rate, not yet the final correctness score. False-negative review found several cases where hidden tests may over-constrain implementation details or unstated API choices; those cases are called out below and should be resolved before using the matrix as a final leaderboard.",
         caseMatrix: "Case Result Matrix", showDetails: "Show Detailed Table", hideDetails: "Hide Detailed Table",
         viewNote: "Default view shows only the 81 production baseline runs. Pilot and smoke runs are available from the View filter.",
         frameworkExplanation: "Benchmark Design", frameworkBody: "Each case starts from a real repository base commit where the hidden core test fails, and a fixed commit where the same hidden test passes. Agent runs receive only the issue-style instruction and work inside an isolated checkout. A run is counted as pass only when the hidden core test passes after the agent edit. Raw harness logs are kept locally, metrics are normalized per harness, and invalid infrastructure runs are excluded from baseline summaries.",
         caseDesignBody: "The case set spans 9 repositories with low, mid, and high difficulty tasks per repository. Difficulty is based on expected debugging complexity, not just repository size. Repo size is tracked separately because a large repository can still have a localized bug, while a small repository can require subtle behavior reconstruction.",
         metricDesignBody: "Turns, tokens, tool calls, and cost are intentionally not collapsed into one ambiguous number. Turn-like counts are harness-specific: Codex reports completed exec turns, Claude reports num_turns, and Cursor has assistant/action-step events rather than a completed-turn primitive. Cached input is separated from fresh input where the harness exposes it; Codex and Cursor dollar values are API-equivalent estimates, while Claude cost is reported by the harness.",
-        falseNegativeReview: "False-negative Review", falseNegativeBody: "Failed baseline runs were checked against hidden-test output. No failure looks like an infrastructure-only false negative, but several hidden tests appear to encode implementation details, exact encodings, or requirements not explicit in the prompt. Those cases are marked review and should be resolved before final headline scoring.",
+        falseNegativeReview: "False-negative Review", falseNegativeBody: "Failed baseline runs were checked against hidden-test output and saved workspaces. Oracle fixes were applied by regrading preserved workspaces instead of rerunning agents. Remaining failures are mostly true implementation failures, with one case-design review still open for the bat fallback flag name.",
+        failureReview: "Failure Implementation Review", failureReviewBody: "These notes summarize how the failed implementations went wrong. They are auxiliary analysis generated from hidden-test output, workspace diffs, and saved harness logs where useful; they do not replace hidden-oracle pass/fail scoring.",
         caseCatalog: "Case Catalog", passRateChart: "Pass Rate", wallTimeChart: "Median Wall Time", costPassChart: "Cost Per Pass", difficultyChart: "Success By Difficulty",
         passValue: "pass", failValue: "fail", noInvalidRuns: "No invalid runs",
+        failureLabel: "Failure:", evidenceLabel: "Evidence:", recommendationLabel: "Recommendation:",
         noRuns: "No runs", noFailures: "No failures", allOption: "All", medianWallLabel: "Median wall",
         costPerPassLabel: "Cost/pass", costSourceLabel: "Cost source", passedSuffix: "pass",
         reviewVerdict: "review", unlikelyFalseNegative: "unlikely false negative", costSourceReported: "reported",
@@ -310,16 +324,18 @@ function renderHtml(results) {
         effectiveTotal: "Effective Total", cost: "Cost", costSource: "Cost 種別", run: "Run", reason: "理由",
         name: "名前", runs: "実行数", pass: "成功", rate: "率", medianWallShort: "Wall 中央値",
         reportedDollar: "報告 $", estimatedDollar: "推定 $", conditionComparison: "Harness x Model 比較",
-        executiveSummary: "要約", executiveSummaryBody: "この baseline は、memory を無効化した 3 つの agent harness を、同じ 27 件の実リポジトリ debug case で比較したものです。Codex と Claude はそれぞれ 18/27 件、Cursor は 17/27 件に成功しました。この実行では Claude が成功あたり cost 最小、Cursor が wall time 中央値最速、Codex は hidden-oracle 成功率で Claude とほぼ同等ですが、推定 token/cost は大きめです。",
+        executiveSummary: "要約", executiveSummaryBody: "この baseline は、memory を無効化した 3 つの agent harness を、同じ 27 件の実リポジトリ debug case で比較したものです。oracle false-negative 修正と保存済み workspace の再採点後、Codex は 23/27 件、Claude は 20/27 件、Cursor は 23/27 件に成功しました。Cursor が wall time 中央値最速、Claude が成功あたり cost 最小、Codex/Cursor が hidden-oracle 成功率で同率です。",
         executiveCaveatBody: "この headline score は hidden-oracle 成功率であり、最終的な絶対正解率ではありません。false-negative 調査では、hidden test が実装詳細や prompt に明示されていない API 選択を縛っている可能性がある case が見つかりました。該当 case は下で明示し、最終 leaderboard として使う前に oracle を確定すべきです。",
         caseMatrix: "Case 結果 Matrix", showDetails: "詳細表を表示", hideDetails: "詳細表を隠す",
         viewNote: "デフォルトでは 81 件の本番 baseline run だけを表示します。Pilot/Smoke run は表示フィルタから確認できます。",
         frameworkExplanation: "ベンチマーク設計", frameworkBody: "各 case は、hidden core test が失敗する実リポジトリの base commit と、同じ hidden test が成功する fixed commit を持ちます。Agent には issue 形式の instruction だけを渡し、隔離 checkout 内で修正させます。Agent 編集後に hidden core test が通った場合だけ pass と数えます。raw harness log はローカルに保持し、metrics は harness ごとの意味を保ったまま正規化し、infra invalid run は baseline 集計から除外します。",
         caseDesignBody: "case set は 9 リポジトリにまたがり、各リポジトリに low/mid/high の 3 段階の task を置いています。difficulty は単なる repo size ではなく、想定される debug の複雑さで決めています。大規模 repo でも局所的な bug はあり、小規模 repo でも微妙な仕様復元が必要な bug はあるため、repo size は別軸として扱います。",
         metricDesignBody: "turn、token、tool call、cost は harness ごとに意味が違うため、曖昧な単一指標に潰していません。turn 系の値は harness 固有です。Codex は完了した exec turn、Claude は num_turns、Cursor は完了 turn primitive ではなく assistant/action-step event 数です。cache input は fresh input と分け、Codex/Cursor の dollar は API-equivalent 推定、Claude は harness 報告値です。",
-        falseNegativeReview: "False-negative Review", falseNegativeBody: "失敗した baseline run は hidden test output と照合しました。infra だけが原因の false negative には見えませんが、いくつかの hidden test は実装詳細、厳密な encoding、または prompt に明示されていない要件を固定している可能性があります。review とした case は、最終スコアを確定する前に oracle を見直すべきです。",
+        falseNegativeReview: "False-negative Review", falseNegativeBody: "失敗した baseline run は hidden test output と保存済み workspace で照合しました。oracle fix は agent を再実行せず、保存済み workspace を再採点して反映しています。残る失敗はほぼ true implementation failure で、bat fallback flag 名だけ case-design review が残っています。",
+        failureReview: "失敗実装レビュー", failureReviewBody: "ここでは failed implementation がどう間違えたかを要約します。hidden-test output、workspace diff、必要に応じて保存済み harness log から作る補助分析であり、hidden-oracle の pass/fail 判定を置き換えるものではありません。",
         caseCatalog: "Case Catalog", passRateChart: "成功率", wallTimeChart: "Wall Time 中央値", costPassChart: "成功あたり Cost", difficultyChart: "Difficulty 別成功数",
         passValue: "成功", failValue: "失敗", noInvalidRuns: "Invalid run はありません",
+        failureLabel: "失敗:", evidenceLabel: "根拠:", recommendationLabel: "扱い:",
         noRuns: "実行なし", noFailures: "失敗なし", allOption: "すべて", medianWallLabel: "Wall 中央値",
         costPerPassLabel: "成功あたり Cost", costSourceLabel: "Cost 種別", passedSuffix: "成功",
         reviewVerdict: "要レビュー", unlikelyFalseNegative: "false negative 可能性低",
@@ -331,6 +347,7 @@ function renderHtml(results) {
       }
     };
     const falseNegativeNotes = ${JSON.stringify(falseNegativeNoteTranslations(), null, 6)};
+    const failureReviews = ${JSON.stringify(failureReviewTranslations(), null, 6)};
     const filters = {
       language: document.getElementById("language-filter"),
       view: document.getElementById("view-filter"),
@@ -374,6 +391,11 @@ function renderHtml(results) {
       }
       for (const node of document.querySelectorAll("[data-note-case]")) {
         node.textContent = falseNegativeNotes[node.dataset.noteCase]?.[lang] || falseNegativeNotes[node.dataset.noteCase]?.en || node.textContent;
+      }
+      for (const node of document.querySelectorAll("[data-review-field]")) {
+        const review = failureReviews[node.dataset.reviewKey];
+        const value = review?.[node.dataset.reviewField]?.[lang] || review?.[node.dataset.reviewField]?.en;
+        if (value) node.textContent = value;
       }
     }
   </script>
@@ -848,32 +870,32 @@ function isReviewFalseNegativeCase(caseId) {
 function falseNegativeNoteTranslations() {
   return {
     "axios-axios-low-settle-error-code": {
-      en: "Possible oracle issue: all harnesses assigned a defined Axios error code, but the hidden test requires rejected 200/302 responses to be ERR_BAD_RESPONSE. The prompt did not specify that non-4xx/5xx rejected responses must use that exact class.",
-      ja: "oracle 見直し候補: 全 harness が未定義 code を定義済み Axios error code に修正した一方、hidden test は reject された 200/302 response を ERR_BAD_RESPONSE に限定しています。prompt では non-4xx/5xx の rejected response にこの exact class を使うとは明示していません。",
+      en: "Fixed oracle false negative: rejected non-success statuses may use any defined Axios bad request/response code. All three pass after regrade.",
+      ja: "oracle false negative 修正済み: reject された non-success status は定義済み Axios bad request/response code なら許容します。再採点後は 3 harness すべて pass です。",
     },
     "go-gitea-gitea-high-compare-no-common-history": {
-      en: "Possible oracle issue: all harnesses added typed no-merge-base handling and compare fallback behavior, but the hidden test requires errors.Is(err, util.ErrNotExist) from MergeBase rather than only black-box compare behavior.",
-      ja: "oracle 見直し候補: 全 harness が no-merge-base の typed handling と compare fallback behavior を追加しましたが、hidden test は black-box の compare 挙動だけでなく MergeBase から errors.Is(err, util.ErrNotExist) が返ることを要求しています。",
+      en: "Fixed oracle false negative: the oracle now accepts equivalent no-merge-base typed behavior instead of one exact errors.Is path. All three pass after regrade.",
+      ja: "oracle false negative 修正済み: oracle は単一の errors.Is path ではなく、同等の no-merge-base typed behavior を許容します。再採点後は 3 harness すべて pass です。",
     },
     "jesseduffield-lazygit-high-branch-divergence-fast-path": {
-      en: "Possible oracle issue: hidden tests reference exact private helper names. Candidate fixes show equivalent batching/parsing helpers under different names, so the oracle may be testing implementation shape.",
-      ja: "oracle 見直し候補: hidden test が exact private helper name を参照しています。candidate fix は同等の batching/parsing helper を別名で実装しており、oracle が実装 shape をテストしている可能性があります。",
+      en: "Fixed oracle false negative: private helper-name assertions were removed. Codex and Cursor pass after regrade; Claude still fails the public batching behavior.",
+      ja: "oracle false negative 修正済み: private helper-name assertion を削除しました。再採点後 Codex/Cursor は pass、Claude は public batching behavior でまだ fail です。",
     },
     "louislam-uptime-kuma-high-websocket-auth-options": {
-      en: "Possible oracle issue: hidden tests require a specific buildWsOptions helper name and camelCase authMethod input, while candidate fixes used equivalent helper names or the existing auth_method schema.",
-      ja: "oracle 見直し候補: hidden test は特定の buildWsOptions helper 名と camelCase authMethod input を要求しますが、candidate fix は同等 helper 名または既存の auth_method schema を使っています。",
+      en: "Oracle was loosened for equivalent helper names and auth field spellings. All three still fail behavior checks, so this is now treated as true failure.",
+      ja: "同等 helper 名と auth field spelling を許容するよう oracle を緩和しました。それでも 3 harness すべて behavior check で fail するため、現在は true failure と扱います。",
     },
     "louislam-uptime-kuma-low-submillisecond-ping-chart": {
-      en: "Possible oracle issue: Codex/Cursor add zero-ping handling, but the hidden test extracts a Vue method with regex and invokes it with an incomplete this context.",
-      ja: "oracle 見直し候補: Codex/Cursor は zero-ping handling を追加していますが、hidden test は Vue method を regex で抽出し、不完全な this context で呼び出しています。",
+      en: "Fixed oracle false negative: the hidden test now evaluates the real helper method context instead of a fixed-signature mock. Codex, Claude, and Cursor pass after regrade.",
+      ja: "oracle false negative 修正済み: hidden test は fixed-signature mock ではなく実際の helper method context を評価します。再採点後 Codex/Claude/Cursor は pass です。",
     },
     "sharkdp-bat-high-fallback-syntax": {
       en: "Mixed: Codex/Cursor implemented --fallback-syntax but hidden also requires an unstated --fallback-language alias; Claude appears to be a true failure because --fallback-syntax itself is rejected.",
       ja: "混在: Codex/Cursor は --fallback-syntax を実装しましたが、hidden test は prompt にない --fallback-language alias も要求しています。Claude は --fallback-syntax 自体を拒否しているため true failure と見なせます。",
     },
     "vitejs-vite-low-flatten-id-sanitized-chars": {
-      en: "Possible oracle issue: Codex/Cursor avoid sanitized-character collisions, but the hidden test asserts exact PR-style encodings rather than collision avoidance and path-safe reversibility.",
-      ja: "oracle 見直し候補: Codex/Cursor は sanitized-character collision を避けていますが、hidden test は collision avoidance と path-safe reversibility ではなく、exact PR-style encoding を要求しています。",
+      en: "Fixed oracle false negative: exact PR-style encoding checks were replaced by uniqueness and path-safety properties. Cursor passes after regrade; Codex still leaves unsafe characters.",
+      ja: "oracle false negative 修正済み: exact PR-style encoding check を uniqueness と path-safety property に置き換えました。再採点後 Cursor は pass、Codex は unsafe character が残るため fail です。",
     },
   };
 }
@@ -886,6 +908,98 @@ function renderFalseNegativeRows(rows) {
       <div${isReviewFalseNegativeCase(row.caseId) ? ` data-note-case="${escAttr(row.caseId)}"` : ""}>${esc(row.evidence)}</div>
     </div>
   `).join("\n");
+}
+
+function renderFailureReviewRows(results) {
+  const failedKeys = new Set(results.filter((result) => !result.success).map((result) => reviewKey(result.case_id, result.harness)));
+  const rows = failureReviews
+    .filter((review) => failedKeys.has(reviewKey(review.case_id, review.harness)))
+    .sort((a, b) => a.case_id.localeCompare(b.case_id) || a.harness.localeCompare(b.harness));
+  if (rows.length === 0) {
+    return `<div class="muted" data-i18n="noFailures">No failures</div>`;
+  }
+  return rows.map((review) => {
+    const key = reviewKey(review.case_id, review.harness);
+    return `
+      <article class="failure-review-card">
+        <h3>${esc(review.case_id)}</h3>
+        <div class="failure-review-meta">
+          ${badge(review.harness)}
+          ${badge(review.verdict, review.verdict === "true_failure" ? "fail-badge" : "failure-badge")}
+          ${badge(review.confidence ?? "")}
+        </div>
+        <p><strong data-i18n="failureLabel">Failure:</strong> <span data-review-key="${escAttr(key)}" data-review-field="failure_mode">${esc(localized(review.failure_mode, "en"))}</span></p>
+        <p><strong data-i18n="evidenceLabel">Evidence:</strong> <span data-review-key="${escAttr(key)}" data-review-field="evidence">${esc(localized(review.evidence, "en"))}</span></p>
+        <p><strong data-i18n="recommendationLabel">Recommendation:</strong> <span data-review-key="${escAttr(key)}" data-review-field="recommendation">${esc(localized(review.recommendation, "en"))}</span></p>
+      </article>
+    `;
+  }).join("\n");
+}
+
+function loadFailureReviews(path) {
+  if (!existsSync(path)) return [];
+  const data = JSON.parse(readFileSync(path, "utf8"));
+  validateFailureReviewData(data, path);
+  return data.reviews ?? [];
+}
+
+function reviewKey(caseId, harness) {
+  return `${caseId}::${harness}`;
+}
+
+function failureReviewTranslations() {
+  return Object.fromEntries(failureReviews.map((review) => [reviewKey(review.case_id, review.harness), {
+    failure_mode: review.failure_mode,
+    evidence: review.evidence,
+    recommendation: review.recommendation,
+  }]));
+}
+
+function validateFailureReviewData(data, path) {
+  if (!data || typeof data !== "object" || Array.isArray(data)) {
+    throw new Error(`${path}: failure review file must be a JSON object`);
+  }
+  if (!Array.isArray(data.reviews)) {
+    throw new Error(`${path}: reviews must be an array`);
+  }
+  const seen = new Set();
+  for (const [index, review] of data.reviews.entries()) {
+    const prefix = `${path}: reviews[${index}]`;
+    requireString(review.case_id, `${prefix}.case_id`);
+    requireString(review.harness, `${prefix}.harness`);
+    if (!["codex", "claude", "cursor"].includes(review.harness)) {
+      throw new Error(`${prefix}.harness must be codex, claude, or cursor`);
+    }
+    requireString(review.verdict, `${prefix}.verdict`);
+    if (!["true_failure", "oracle_false_negative", "case_design_review", "infra_failure"].includes(review.verdict)) {
+      throw new Error(`${prefix}.verdict has unsupported value ${review.verdict}`);
+    }
+    requireLocalized(review.failure_mode, `${prefix}.failure_mode`);
+    requireLocalized(review.evidence, `${prefix}.evidence`);
+    requireLocalized(review.recommendation, `${prefix}.recommendation`);
+    const key = reviewKey(review.case_id, review.harness);
+    if (seen.has(key)) throw new Error(`${prefix}: duplicate review key ${key}`);
+    seen.add(key);
+  }
+}
+
+function requireString(value, name) {
+  if (typeof value !== "string" || value.trim() === "") {
+    throw new Error(`${name} must be a non-empty string`);
+  }
+}
+
+function requireLocalized(value, name) {
+  if (!value || typeof value !== "object" || Array.isArray(value)) {
+    throw new Error(`${name} must be an object with en and ja strings`);
+  }
+  requireString(value.en, `${name}.en`);
+  requireString(value.ja, `${name}.ja`);
+}
+
+function localized(value, lang) {
+  if (value && typeof value === "object") return value[lang] ?? value.en ?? "";
+  return value ?? "";
 }
 
 function renderCaseCatalog(results) {

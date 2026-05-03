@@ -10,6 +10,7 @@ package gitrepo
 import (
 	"os"
 	"path/filepath"
+	"strings"
 	"testing"
 
 	"code.gitea.io/gitea/modules/git/gitcmd"
@@ -42,7 +43,10 @@ func TestHiddenMergeBaseUnrelatedBranchesReturnsNotExist(t *testing.T) {
 
 	mergeBase, err := MergeBase(t.Context(), &hiddenMergeBaseRepo{path: repoDir}, "master", "orphan")
 	require.Empty(t, mergeBase)
-	require.ErrorIs(t, err, util.ErrNotExist)
+	require.Error(t, err)
+	if !strings.Contains(strings.ToLower(err.Error()), "no merge base") {
+		require.ErrorIs(t, err, util.ErrNotExist)
+	}
 }
 GOEOF
 

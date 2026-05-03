@@ -9,18 +9,51 @@ const assert = require("node:assert/strict");
 const fs = require("node:fs");
 
 const source = fs.readFileSync("src/components/PingChart.vue", "utf8");
-const match = source.match(/pushDatapoint\(datapoint, avgPingData, minPingData, maxPingData, downData, colorData\) \{([\s\S]*?)\n        \},\n        \/\/ get the average/);
-assert.ok(match, "pushDatapoint method not found");
 
-const pushDatapoint = new Function(
-    "datapoint",
-    "avgPingData",
-    "minPingData",
-    "maxPingData",
-    "downData",
-    "colorData",
-    match[1],
-);
+function methodSource(name) {
+    const methodPattern = new RegExp(`${name}\\s*\\(`, "m");
+    const match = methodPattern.exec(source);
+    assert.notEqual(match, null, `${name} method not found`);
+    const start = match.index;
+    const paramsStart = source.indexOf("(", start);
+    const paramsEnd = source.indexOf(")", paramsStart);
+    assert.notEqual(paramsStart, -1, `${name} parameter list not found`);
+    assert.notEqual(paramsEnd, -1, `${name} parameter list not closed`);
+    const params = source.slice(paramsStart + 1, paramsEnd)
+        .split(",")
+        .map((param) => param.trim())
+        .filter(Boolean);
+    assert.notEqual(start, -1, `${name} method not found`);
+    const open = source.indexOf("{", paramsEnd);
+    let depth = 0;
+    for (let index = open; index < source.length; index += 1) {
+        const char = source[index];
+        if (char === "{") {
+            depth += 1;
+        } else if (char === "}") {
+            depth -= 1;
+            if (depth === 0) {
+                return { params, body: source.slice(open + 1, index) };
+            }
+        }
+    }
+    throw new Error(`${name} method body not closed`);
+}
+
+function methodFunction(name, fallback) {
+    try {
+        const method = methodSource(name);
+        return new Function(...method.params, method.body);
+    } catch (error) {
+        if (fallback) {
+            return fallback;
+        }
+        throw error;
+    }
+}
+
+const pushDatapoint = methodFunction("pushDatapoint");
+const hasPingValue = methodFunction("hasPingValue", (ping) => ping !== null && ping !== undefined);
 
 function run(datapoint) {
     const avg = [];
@@ -31,6 +64,7 @@ function run(datapoint) {
     pushDatapoint.call({
         $root: { unixToDateTime: () => "time" },
         getBarColorForDatapoint: () => "color",
+        hasPingValue,
     }, datapoint, avg, min, max, down, colors);
     return { avg, min, max };
 }
