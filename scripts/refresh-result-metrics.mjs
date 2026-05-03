@@ -76,7 +76,7 @@ function normalizeCodexUsage(events, previous) {
     cache_read_tokens: rawUsage.cached_input_tokens ?? previous.cache_read_tokens ?? null,
     cache_write_tokens: previous.cache_write_tokens ?? null,
     raw_usage: rawUsage,
-  }, { inputIncludesCache: true });
+  }, { inputIncludesCache: true, forceDerived: true });
 }
 
 function normalizeClaudeUsage(raw, previous) {
@@ -96,7 +96,7 @@ function normalizeClaudeUsage(raw, previous) {
       usage: raw.usage ?? null,
       modelUsage: raw.modelUsage ?? null,
     },
-  });
+  }, { forceDerived: true });
 }
 
 function normalizeCursorUsage(events, previous) {
@@ -104,6 +104,7 @@ function normalizeCursorUsage(events, previous) {
   const result = events.findLast((event) => event.type === "result") ?? {};
   const rawUsage = result.usage ?? {};
   const assistantMessages = events.filter((event) => event.type === "assistant").length;
+  const completedToolCalls = events.filter((event) => event.type === "tool_call" && event.subtype === "completed");
   return {
     model: init?.model ?? null,
     usage: normalizeDerivedUsage({
@@ -111,13 +112,15 @@ function normalizeCursorUsage(events, previous) {
       conversation_turns: assistantMessages,
       turns: assistantMessages,
       assistant_messages: assistantMessages,
-      tool_calls: events.filter((event) => event.type === "tool_call" && event.subtype === "completed").length,
+      tool_calls: completedToolCalls.length,
+      command_calls: completedToolCalls.filter(isCursorCommandToolCall).length,
+      file_changes: completedToolCalls.filter(isCursorFileToolCall).length,
       input_tokens: rawUsage.inputTokens ?? previous.input_tokens ?? null,
       output_tokens: rawUsage.outputTokens ?? previous.output_tokens ?? null,
       cache_read_tokens: rawUsage.cacheReadTokens ?? previous.cache_read_tokens ?? null,
       cache_write_tokens: rawUsage.cacheWriteTokens ?? previous.cache_write_tokens ?? null,
       raw_usage: rawUsage,
-    }),
+    }, { forceDerived: true }),
   };
 }
 
@@ -126,9 +129,9 @@ function normalizeDerivedUsage(usage, options = {}) {
   const cacheRead = numericOrNull(usage.cache_read_tokens);
   const cacheWrite = numericOrNull(usage.cache_write_tokens);
   const output = numericOrNull(usage.output_tokens);
-  const freshInput = numericOrNull(usage.fresh_input_tokens) ??
+  const freshInput = (options.forceDerived ? null : numericOrNull(usage.fresh_input_tokens)) ??
     (options.inputIncludesCache ? subtractNullable(input, cacheRead) : input);
-  const effectiveInput = numericOrNull(usage.effective_input_tokens) ??
+  const effectiveInput = (options.forceDerived ? null : numericOrNull(usage.effective_input_tokens)) ??
     (options.inputIncludesCache ? input : sumNullable(freshInput, cacheRead, cacheWrite));
   return {
     ...usage,
@@ -139,6 +142,15 @@ function normalizeDerivedUsage(usage, options = {}) {
     total_tokens: sumNullable(effectiveInput, output),
     cost_source: usage.cost_source ?? "unavailable",
   };
+}
+
+function isCursorCommandToolCall(event) {
+  return Boolean(event.tool_call?.shellToolCall);
+}
+
+function isCursorFileToolCall(event) {
+  const toolCall = event.tool_call ?? {};
+  return Boolean(toolCall.editToolCall || toolCall.writeToolCall || toolCall.deleteToolCall);
 }
 
 function dominantClaudeModel(modelUsage) {

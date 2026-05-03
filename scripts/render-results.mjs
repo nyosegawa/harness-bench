@@ -273,8 +273,8 @@ function renderHtml(results) {
         byDifficulty: "By Difficulty", byRepoSize: "By Repo Size", byFailure: "By Failure", language: "Language",
         view: "View", case: "Case", harness: "Harness", result: "Result", difficulty: "Difficulty", size: "Size",
         condition: "Condition", model: "Model", effort: "Effort", failure: "Failure", evidence: "Evidence",
-        wall: "Wall", harnessTime: "Harness", tests: "Tests", convTurns: "Conv Turns", assistant: "Assistant",
-        tools: "Tools", commands: "Commands", fileEdits: "File Edits", freshInput: "Fresh Input", cacheRead: "Cache Read",
+        wall: "Wall", harnessTime: "Harness", tests: "Tests", convTurns: "Harness Turns", assistant: "Assistant/Steps",
+        tools: "Observable Tools", commands: "Shell Commands", fileEdits: "File Edit Events", freshInput: "Fresh Input", cacheRead: "Cache Read",
         cacheWrite: "Cache Write", effectiveInput: "Effective Input", output: "Output", reasoning: "Reasoning",
         effectiveTotal: "Effective Total", cost: "Cost", costSource: "Cost Source", run: "Run", reason: "Reason",
         name: "Name", runs: "Runs", pass: "Pass", rate: "Rate", medianWallShort: "Median Wall",
@@ -285,7 +285,7 @@ function renderHtml(results) {
         viewNote: "Default view shows only the 81 production baseline runs. Pilot and smoke runs are available from the View filter.",
         frameworkExplanation: "Benchmark Design", frameworkBody: "Each case starts from a real repository base commit where the hidden core test fails, and a fixed commit where the same hidden test passes. Agent runs receive only the issue-style instruction and work inside an isolated checkout. A run is counted as pass only when the hidden core test passes after the agent edit. Raw harness logs are kept locally, metrics are normalized per harness, and invalid infrastructure runs are excluded from baseline summaries.",
         caseDesignBody: "The case set spans 9 repositories with low, mid, and high difficulty tasks per repository. Difficulty is based on expected debugging complexity, not just repository size. Repo size is tracked separately because a large repository can still have a localized bug, while a small repository can require subtle behavior reconstruction.",
-        metricDesignBody: "Turns, tokens, tool calls, and cost are intentionally not collapsed into one ambiguous number. Codex turns mean completed harness invocations, Claude turns and cost come from Claude CLI output, and Cursor usage is normalized from stream events. Cached input is separated from fresh input where the harness exposes it; Codex and Cursor dollar values are API-equivalent estimates, while Claude cost is reported by the harness.",
+        metricDesignBody: "Turns, tokens, tool calls, and cost are intentionally not collapsed into one ambiguous number. Turn-like counts are harness-specific: Codex reports completed exec turns, Claude reports num_turns, and Cursor has assistant/action-step events rather than a completed-turn primitive. Cached input is separated from fresh input where the harness exposes it; Codex and Cursor dollar values are API-equivalent estimates, while Claude cost is reported by the harness.",
         falseNegativeReview: "False-negative Review", falseNegativeBody: "Failed baseline runs were checked against hidden-test output. No failure looks like an infrastructure-only false negative, but several hidden tests appear to encode implementation details, exact encodings, or requirements not explicit in the prompt. Those cases are marked review and should be resolved before final headline scoring.",
         caseCatalog: "Case Catalog", passRateChart: "Pass Rate", wallTimeChart: "Median Wall Time", costPassChart: "Cost Per Pass", difficultyChart: "Success By Difficulty",
         passValue: "pass", failValue: "fail", noInvalidRuns: "No invalid runs",
@@ -304,8 +304,8 @@ function renderHtml(results) {
         byDifficulty: "Difficulty 別", byRepoSize: "Repo Size 別", byFailure: "Failure 別", language: "言語",
         view: "表示", case: "Case", harness: "Harness", result: "結果", difficulty: "難度", size: "Size",
         condition: "条件", model: "Model", effort: "Effort", failure: "失敗分類", evidence: "根拠",
-        wall: "Wall", harnessTime: "Harness 時間", tests: "Test 時間", convTurns: "会話 Turn", assistant: "Assistant",
-        tools: "Tool", commands: "Command", fileEdits: "File Edit", freshInput: "Fresh Input", cacheRead: "Cache Read",
+        wall: "Wall", harnessTime: "Harness 時間", tests: "Test 時間", convTurns: "Harness Turn", assistant: "Assistant/Step",
+        tools: "観測 Tool", commands: "Shell Command", fileEdits: "File Edit Event", freshInput: "Fresh Input", cacheRead: "Cache Read",
         cacheWrite: "Cache Write", effectiveInput: "Effective Input", output: "Output", reasoning: "Reasoning",
         effectiveTotal: "Effective Total", cost: "Cost", costSource: "Cost 種別", run: "Run", reason: "理由",
         name: "名前", runs: "実行数", pass: "成功", rate: "率", medianWallShort: "Wall 中央値",
@@ -316,7 +316,7 @@ function renderHtml(results) {
         viewNote: "デフォルトでは 81 件の本番 baseline run だけを表示します。Pilot/Smoke run は表示フィルタから確認できます。",
         frameworkExplanation: "ベンチマーク設計", frameworkBody: "各 case は、hidden core test が失敗する実リポジトリの base commit と、同じ hidden test が成功する fixed commit を持ちます。Agent には issue 形式の instruction だけを渡し、隔離 checkout 内で修正させます。Agent 編集後に hidden core test が通った場合だけ pass と数えます。raw harness log はローカルに保持し、metrics は harness ごとの意味を保ったまま正規化し、infra invalid run は baseline 集計から除外します。",
         caseDesignBody: "case set は 9 リポジトリにまたがり、各リポジトリに low/mid/high の 3 段階の task を置いています。difficulty は単なる repo size ではなく、想定される debug の複雑さで決めています。大規模 repo でも局所的な bug はあり、小規模 repo でも微妙な仕様復元が必要な bug はあるため、repo size は別軸として扱います。",
-        metricDesignBody: "turn、token、tool call、cost は harness ごとに意味が違うため、曖昧な単一指標に潰していません。Codex の turn は完了した harness invocation、Claude の turn と cost は Claude CLI output、Cursor の usage は stream event から正規化した値です。cache input は fresh input と分け、Codex/Cursor の dollar は API-equivalent 推定、Claude は harness 報告値です。",
+        metricDesignBody: "turn、token、tool call、cost は harness ごとに意味が違うため、曖昧な単一指標に潰していません。turn 系の値は harness 固有です。Codex は完了した exec turn、Claude は num_turns、Cursor は完了 turn primitive ではなく assistant/action-step event 数です。cache input は fresh input と分け、Codex/Cursor の dollar は API-equivalent 推定、Claude は harness 報告値です。",
         falseNegativeReview: "False-negative Review", falseNegativeBody: "失敗した baseline run は hidden test output と照合しました。infra だけが原因の false negative には見えませんが、いくつかの hidden test は実装詳細、厳密な encoding、または prompt に明示されていない要件を固定している可能性があります。review とした case は、最終スコアを確定する前に oracle を見直すべきです。",
         caseCatalog: "Case Catalog", passRateChart: "成功率", wallTimeChart: "Wall Time 中央値", costPassChart: "成功あたり Cost", difficultyChart: "Difficulty 別成功数",
         passValue: "成功", failValue: "失敗", noInvalidRuns: "Invalid run はありません",
@@ -472,7 +472,7 @@ function normalizeCodexUsage(events, previous) {
     cache_write_tokens: previous.cache_write_tokens ?? null,
     raw_usage: rawUsage,
   };
-  return normalizeDerivedUsage(usage, { codexInputIncludesCache: true });
+  return normalizeDerivedUsage(usage, { codexInputIncludesCache: true, forceDerived: true });
 }
 
 function normalizeClaudeUsage(raw, previous) {
@@ -493,7 +493,7 @@ function normalizeClaudeUsage(raw, previous) {
       usage: raw.usage ?? null,
       modelUsage: raw.modelUsage ?? null,
     },
-  });
+  }, { forceDerived: true });
 }
 
 function normalizeCursorUsage(events, previous) {
@@ -501,19 +501,22 @@ function normalizeCursorUsage(events, previous) {
   const result = events.findLast((event) => event.type === "result") ?? {};
   const rawUsage = result.usage ?? previous.raw_usage ?? {};
   const assistantMessages = events.filter((event) => event.type === "assistant").length;
+  const completedToolCalls = events.filter((event) => event.type === "tool_call" && event.subtype === "completed");
   const usage = normalizeDerivedUsage({
     ...previous,
     conversation_turns: assistantMessages,
     turns: assistantMessages,
     assistant_messages: assistantMessages,
-    tool_calls: events.filter((event) => event.type === "tool_call" && event.subtype === "completed").length,
+    tool_calls: completedToolCalls.length,
+    command_calls: completedToolCalls.filter(isCursorCommandToolCall).length,
+    file_changes: completedToolCalls.filter(isCursorFileToolCall).length,
     input_tokens: rawUsage.inputTokens ?? previous.input_tokens ?? null,
     output_tokens: rawUsage.outputTokens ?? previous.output_tokens ?? null,
     reasoning_tokens: previous.reasoning_tokens ?? null,
     cache_read_tokens: rawUsage.cacheReadTokens ?? previous.cache_read_tokens ?? null,
     cache_write_tokens: rawUsage.cacheWriteTokens ?? previous.cache_write_tokens ?? null,
     raw_usage: rawUsage,
-  });
+  }, { forceDerived: true });
   return { model: init?.model ?? null, usage };
 }
 
@@ -522,9 +525,9 @@ function normalizeDerivedUsage(usage, options = {}) {
   const cacheRead = numericOrNull(usage.cache_read_tokens);
   const cacheWrite = numericOrNull(usage.cache_write_tokens);
   const output = numericOrNull(usage.output_tokens);
-  const freshInput = numericOrNull(usage.fresh_input_tokens) ??
+  const freshInput = (options.forceDerived ? null : numericOrNull(usage.fresh_input_tokens)) ??
     (options.codexInputIncludesCache ? subtractNullable(input, cacheRead) : input);
-  const effectiveInput = numericOrNull(usage.effective_input_tokens) ??
+  const effectiveInput = (options.forceDerived ? null : numericOrNull(usage.effective_input_tokens)) ??
     (options.codexInputIncludesCache ? input : sumNullable(freshInput, cacheRead, cacheWrite));
   return {
     ...usage,
@@ -535,6 +538,15 @@ function normalizeDerivedUsage(usage, options = {}) {
     total_tokens: sumNullable(effectiveInput, output),
     cost_source: usage.cost_source ?? "unavailable",
   };
+}
+
+function isCursorCommandToolCall(event) {
+  return Boolean(event.tool_call?.shellToolCall);
+}
+
+function isCursorFileToolCall(event) {
+  const toolCall = event.tool_call ?? {};
+  return Boolean(toolCall.editToolCall || toolCall.writeToolCall || toolCall.deleteToolCall);
 }
 
 function dominantClaudeModel(modelUsage) {

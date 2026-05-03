@@ -59,10 +59,14 @@ Wall time includes checkout/setup, agent work, and hidden test execution.
 Metric semantics differ by harness. In particular, Codex's single
 conversation turn reflects one `codex exec` invocation; action volume is better
 represented by assistant messages, command calls, file edits, and tool calls.
-Claude's reported cost is native CLI output. Codex and Cursor costs use the
-API-equivalent rate card `benchmark/rate-cards/api-equivalent-2026-05-03.json`.
-That card uses the OpenAI GPT-5.5 API rates checked on 2026-05-03 and should
-not be read as Cursor subscription billing truth.
+Claude's `assistant_messages` is a `num_turns` proxy because the saved aggregate
+JSON does not expose a separate message count. Cursor does not expose a
+Codex-style completed turn primitive; the benchmark stores assistant/action-step
+events as the turn-like count. Claude's reported cost is native CLI output.
+Codex and Cursor costs use the API-equivalent rate card
+`benchmark/rate-cards/api-equivalent-2026-05-03.json`. That card uses the
+OpenAI GPT-5.5 API rates checked on 2026-05-03 and should not be read as Cursor
+subscription billing truth.
 
 Cost per pass, using total matrix cost divided by passed cases:
 

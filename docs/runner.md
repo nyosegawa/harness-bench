@@ -214,12 +214,12 @@ Agent mode must capture both normalized metrics and raw harness logs. Normalized
 
 - `wall_time_ms`: elapsed runner wall time for the whole run
 - `harness_duration_ms`: elapsed subprocess wall time for the agent command
-- `conversation_turns`: harness-level completed conversation turns, when defined
+- `conversation_turns`: harness-specific turn-like count. Do not compare this field across harnesses without reading the harness notes below.
 - `turns`: backwards-compatible alias for `conversation_turns`
-- `assistant_messages`: assistant messages or model action steps, when observable
+- `assistant_messages`: assistant messages or model action steps, when observable. For Claude aggregate JSON this is currently the same proxy as `num_turns`, not an independently observed message count.
 - `tool_calls`: number of tool calls if observable
 - `command_calls`: shell command executions, when distinguishable
-- `file_changes`: file edit events, when distinguishable
+- `file_changes`: file edit events, when distinguishable. This is not necessarily the number of unique files changed.
 - `fresh_input_tokens`: non-cache-read input tokens
 - `input_tokens`: harness-native input field; for Codex this includes cache reads, for Claude/Cursor this is fresh input
 - `effective_input_tokens`: fresh input plus cache read/write tokens, or harness-native effective input
@@ -304,7 +304,7 @@ Observed top-level fields:
 Claude metrics:
 
 - `conversation_turns`: `num_turns`
-- `assistant_messages`: `num_turns`
+- `assistant_messages`: `num_turns` as a proxy. The saved aggregate JSON does not expose a separate assistant-message count.
 - `fresh_input_tokens`: `usage.input_tokens`
 - `input_tokens`: `usage.input_tokens`
 - `cache_read_tokens`: `usage.cache_read_input_tokens`
@@ -352,6 +352,8 @@ Cursor metrics:
 - `conversation_turns`: count assistant events
 - `assistant_messages`: count assistant events
 - `tool_calls`: count `tool_call` events with `subtype: "completed"`
+- `command_calls`: count completed `shellToolCall` events
+- `file_changes`: count completed `editToolCall`, `writeToolCall`, and `deleteToolCall` events
 - `fresh_input_tokens`: `usage.inputTokens`
 - `input_tokens`: `usage.inputTokens`
 - `output_tokens`: `usage.outputTokens`

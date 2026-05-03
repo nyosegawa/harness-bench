@@ -607,7 +607,10 @@ function normalizeCursorMetrics(events, execution) {
   const effectiveInput = sumNullable(freshInput, cacheRead, cacheWrite);
   const output = usage.outputTokens ?? null;
   const assistantMessages = events.filter((event) => event.type === "assistant").length;
-  const toolCalls = events.filter((event) => event.type === "tool_call" && event.subtype === "completed").length;
+  const completedToolCalls = events.filter((event) => event.type === "tool_call" && event.subtype === "completed");
+  const toolCalls = completedToolCalls.length;
+  const commandCalls = completedToolCalls.filter(isCursorCommandToolCall).length;
+  const fileChanges = completedToolCalls.filter(isCursorFileToolCall).length;
   const totals = tokenTotals({ freshInput, effectiveInput, output });
   return {
     harness: "cursor",
@@ -621,8 +624,8 @@ function normalizeCursorMetrics(events, execution) {
       turns: assistantMessages,
       assistant_messages: assistantMessages,
       tool_calls: toolCalls,
-      command_calls: null,
-      file_changes: null,
+      command_calls: commandCalls,
+      file_changes: fileChanges,
       fresh_input_tokens: freshInput,
       input_tokens: freshInput,
       effective_input_tokens: effectiveInput,
@@ -638,6 +641,15 @@ function normalizeCursorMetrics(events, execution) {
       raw_usage: usage,
     },
   };
+}
+
+function isCursorCommandToolCall(event) {
+  return Boolean(event.tool_call?.shellToolCall);
+}
+
+function isCursorFileToolCall(event) {
+  const toolCall = event.tool_call ?? {};
+  return Boolean(toolCall.editToolCall || toolCall.writeToolCall || toolCall.deleteToolCall);
 }
 
 function modelFromCodexEvents(_events) {

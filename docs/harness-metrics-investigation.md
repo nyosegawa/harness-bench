@@ -49,7 +49,7 @@ Capture:
 - command count by counting completed `command_execution` items
 - file-change count by counting completed `file_change` items
 
-`turn.completed` is a conversation-level count. In a single-prompt `codex exec` run it can be `1` even when the agent performs many commands and edits, so reports must show action counts next to conversation turns.
+`turn.completed` is a Codex exec turn count. In a single-prompt `codex exec` run it can be `1` even when the agent performs many commands and edits, so reports must show action counts next to conversation turns. `file_change` counts are edit events, not unique files; one event can contain multiple changed paths.
 
 Codex `input_tokens` includes `cached_input_tokens` in the observed JSONL. Normalize:
 
@@ -109,6 +109,8 @@ Observed Claude `usage.input_tokens` is fresh input only. Cache reads/writes can
 - `effective_input_tokens = fresh_input_tokens + cache_read_tokens + cache_write_tokens`
 - `effective_total_tokens = effective_input_tokens + output_tokens`
 
+`assistant_messages` is not independently observable in the saved aggregate JSON. The benchmark stores `num_turns` there as a Claude-specific proxy. `tool_calls`, `command_calls`, and `file_changes` remain unavailable unless future runs capture stream-json transcripts.
+
 `stream-json` requires `--verbose` in the observed version. It can be useful for live event timing, but the final JSON result is easier for batch metrics.
 
 ## Cursor Agent CLI
@@ -144,6 +146,10 @@ Capture:
 - duration from result event
 - tool calls from completed `tool_call` events
 - conversation turns / assistant messages by counting assistant events
+- shell command calls from completed `shellToolCall` events
+- file edit events from completed `editToolCall`, `writeToolCall`, and `deleteToolCall` events
+
+Cursor does not expose a completed-turn primitive equivalent to Codex `turn.completed`. The benchmark stores assistant/action-step event count as both `conversation_turns` and `assistant_messages`; reports should treat that as a Cursor-specific action-step count.
 
 Observed Cursor `inputTokens` is fresh input. Normalize:
 
