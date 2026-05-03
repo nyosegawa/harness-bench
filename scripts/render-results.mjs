@@ -35,6 +35,7 @@ function renderHtml(results) {
   const harnessSummaryRows = renderSummaryRows(groupSummary(agentResults, (result) => result.harness));
   const difficultySummaryRows = renderSummaryRows(groupSummary(agentResults, (result) => caseMeta(result).difficulty ?? "unknown"));
   const sizeSummaryRows = renderSummaryRows(groupSummary(agentResults, (result) => caseMeta(result).size_bucket ?? "unknown"));
+  const failureSummaryRows = renderFailureSummaryRows(failureSummary(agentResults.filter((result) => !result.success)));
   const invalidRows = invalidResults.map((result) => `
       <tr>
         <td>${esc(result.case_id)}</td>
@@ -51,6 +52,7 @@ function renderHtml(results) {
     const effort = result.effort ?? inferEffort(result.model, harnessMetrics.model);
     const cost = formatCost(usage);
     const meta = caseMeta(result);
+    const failure = classifyFailure(result);
     return `
       <tr data-case="${escAttr(result.case_id)}" data-harness="${escAttr(result.harness ?? "")}" data-result="${result.success ? "pass" : "fail"}">
         <td>${esc(result.case_id)}</td>
@@ -61,6 +63,8 @@ function renderHtml(results) {
         <td>${esc(result.model ?? harnessMetrics.model ?? "")}</td>
         <td>${esc(effort)}</td>
         <td class="${result.success ? "pass" : "fail"}">${result.success ? "pass" : "fail"}</td>
+        <td>${esc(failure.category)}</td>
+        <td>${esc(failure.detail)}</td>
         <td>${fmtMs(metrics.wall_time_ms)}</td>
         <td>${fmtMs(harnessMetrics.harness_duration_ms)}</td>
         <td>${fmtMs(metrics.tests?.total_duration_ms)}</td>
@@ -137,6 +141,7 @@ function renderHtml(results) {
       ${renderSummaryTable("By Harness", harnessSummaryRows)}
       ${renderSummaryTable("By Difficulty", difficultySummaryRows)}
       ${renderSummaryTable("By Repo Size", sizeSummaryRows)}
+      ${renderFailureSummaryTable("By Failure", failureSummaryRows)}
     </section>
     <section class="controls">
       ${renderSelect("case-filter", "Case", ["", ...unique(agentResults.map((result) => result.case_id))])}
@@ -148,7 +153,7 @@ function renderHtml(results) {
         <thead>
           <tr>
             <th>Case</th><th>Difficulty</th><th>Size</th><th>Harness</th><th>Condition</th><th>Model</th><th>Effort</th><th>Result</th>
-            <th>Wall</th><th>Harness</th><th>Tests</th><th>Conv Turns</th><th>Assistant</th><th>Tools</th>
+            <th>Failure</th><th>Evidence</th><th>Wall</th><th>Harness</th><th>Tests</th><th>Conv Turns</th><th>Assistant</th><th>Tools</th>
             <th>Commands</th><th>File Edits</th><th>Fresh Input</th><th>Cache Read</th><th>Cache Write</th><th>Effective Input</th>
             <th>Output</th><th>Reasoning</th><th>Effective Total</th>
             <th>Cost</th><th>Cost Source</th><th>Run</th>
@@ -325,6 +330,66 @@ function dominantClaudeModel(modelUsage) {
   return entries.sort((a, b) => (b[1]?.costUSD ?? 0) - (a[1]?.costUSD ?? 0))[0][0];
 }
 
+function classifyFailure(result) {
+  if (result.success) return { category: "", detail: "" };
+  if (result.invalid_run) {
+    return {
+      category: "infrastructure invalid",
+      detail: truncate(result.invalid_reason ?? "invalid run"),
+    };
+  }
+
+  const core = result.test_result?.core?.find((entry) => entry.exit_code !== 0 || entry.signal) ??
+    result.test_result?.core?.[0] ??
+    null;
+  if (!core) {
+    return { category: "agent or runner failure", detail: "no failing core test recorded" };
+  }
+  if (core.signal) {
+    return { category: "timeout or signal", detail: `core test signal ${core.signal}` };
+  }
+
+  const output = `${tailFile(core.stderr_path)}\n${tailFile(core.stdout_path)}`;
+  const compact = output.replace(/\s+/g, " ").trim();
+  if (!compact) {
+    return { category: "hidden test failure", detail: `exit ${core.exit_code}` };
+  }
+  if (/No space left on device|ENOSPC/i.test(compact)) {
+    return { category: "infrastructure failure", detail: "disk exhaustion" };
+  }
+  if (/timed out|timeout/i.test(compact)) {
+    return { category: "timeout", detail: firstMatch(compact, /[^.]*timed? out[^.]*/i) };
+  }
+  if (/\[build failed\]|undefined:|cannot find (name|module)|not found|compilation failed/i.test(compact)) {
+    return { category: "build or symbol failure", detail: truncate(compact) };
+  }
+  if (/unexpected argument|unknown option|unknown flag|unrecognized option/i.test(compact)) {
+    return { category: "wrong CLI/API surface", detail: truncate(compact) };
+  }
+  if (/AssertionError|assert |expected:|expected .* actual|actual:|toEqual|Should be false|An error is expected/i.test(compact)) {
+    return { category: "hidden assertion mismatch", detail: truncate(compact) };
+  }
+  if (/Traceback|panic:|FAIL\b|Error Trace:/i.test(compact)) {
+    return { category: "hidden test failure", detail: truncate(compact) };
+  }
+  return { category: "hidden test failure", detail: truncate(compact) };
+}
+
+function tailFile(path) {
+  if (!path || !existsSync(path)) return "";
+  const lines = readFileSync(path, "utf8").split(/\r?\n/).filter(Boolean);
+  return lines.slice(-10).join("\n");
+}
+
+function firstMatch(text, pattern) {
+  return truncate(text.match(pattern)?.[0] ?? text);
+}
+
+function truncate(value, length = 180) {
+  const text = String(value ?? "").trim();
+  return text.length > length ? `${text.slice(0, length - 1)}...` : text;
+}
+
 function summarize(results) {
   const count = results.length;
   const passed = results.filter((result) => result.success).length;
@@ -367,6 +432,23 @@ function groupSummary(results, keyFn) {
     });
 }
 
+function failureSummary(results) {
+  const groups = new Map();
+  for (const result of results) {
+    const failure = classifyFailure(result);
+    const group = groups.get(failure.category) ?? [];
+    group.push(result);
+    groups.set(failure.category, group);
+  }
+  return [...groups.entries()]
+    .sort((a, b) => String(a[0]).localeCompare(String(b[0])))
+    .map(([key, group]) => ({
+      key,
+      count: group.length,
+      medianWallMs: median(group.map((result) => result.metrics?.wall_time_ms).filter((value) => typeof value === "number")),
+    }));
+}
+
 function renderSummaryTable(title, rows) {
   return `
       <div class="summary-table">
@@ -374,6 +456,18 @@ function renderSummaryTable(title, rows) {
         <table>
           <thead><tr><th>Name</th><th>Runs</th><th>Pass</th><th>Rate</th><th>Median Wall</th><th>Reported $</th><th>Estimated $</th></tr></thead>
           <tbody>${rows || `<tr><td colspan="7" class="muted">No runs</td></tr>`}</tbody>
+        </table>
+      </div>
+    `;
+}
+
+function renderFailureSummaryTable(title, rows) {
+  return `
+      <div class="summary-table">
+        <h2>${esc(title)}</h2>
+        <table>
+          <thead><tr><th>Name</th><th>Runs</th><th>Median Wall</th></tr></thead>
+          <tbody>${rows || `<tr><td colspan="3" class="muted">No failures</td></tr>`}</tbody>
         </table>
       </div>
     `;
@@ -389,6 +483,16 @@ function renderSummaryRows(rows) {
       <td>${fmtMs(row.medianWallMs)}</td>
       <td>${row.reportedCost == null ? "" : `$${row.reportedCost.toFixed(4)}`}</td>
       <td>${row.estimatedCost == null ? "" : `$${row.estimatedCost.toFixed(4)}`}</td>
+    </tr>
+  `).join("\n");
+}
+
+function renderFailureSummaryRows(rows) {
+  return rows.map((row) => `
+    <tr>
+      <td>${esc(row.key)}</td>
+      <td>${fmt(row.count)}</td>
+      <td>${fmtMs(row.medianWallMs)}</td>
     </tr>
   `).join("\n");
 }
