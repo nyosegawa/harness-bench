@@ -1,12 +1,15 @@
 #!/usr/bin/env node
 
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 
-const runsRoot = resolve(process.argv[2] ?? "benchmark/runs");
-const output = resolve(process.argv[3] ?? "benchmark/reports/results.html");
+const args = parseArgs(process.argv.slice(2));
+const runsRoot = resolve(required(args.runsRoot, "--runsRoot is required"));
+const output = resolve(required(args.output, "--output is required"));
+const matrixIdFilter = args.matrixId ?? null;
+const reviewFile = resolve(required(args.reviewFile, "--reviewFile is required"));
 const caseMetadataCache = new Map();
-const failureReviews = loadFailureReviews(resolve("benchmark/reviews/baseline-failure-reviews.json"));
+const failureReviews = loadFailureReviews(reviewFile);
 
 const results = loadResults(runsRoot);
 mkdirSync(dirname(output), { recursive: true });
@@ -17,7 +20,7 @@ function loadResults(root) {
   const stdin = readFileSync("/dev/stdin", "utf8").trim();
   const list = stdin
     ? (stdin.startsWith("[") ? JSON.parse(stdin) : stdin.split(/\r?\n/).filter(Boolean))
-    : [];
+    : findRunDirs(root);
   return list
     .map((path) => resolve(path, "result.json"))
     .filter((path) => existsSync(path))
@@ -25,7 +28,16 @@ function loadResults(root) {
       const result = JSON.parse(readFileSync(path, "utf8"));
       return normalizeResultForDisplay({ ...result, result_path: path });
     })
+    .filter((result) => !matrixIdFilter || result.matrix_id === matrixIdFilter)
     .sort((a, b) => String(a.started_at).localeCompare(String(b.started_at)));
+}
+
+function findRunDirs(root) {
+  if (!existsSync(root)) return [];
+  return readdirSync(root, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => resolve(root, entry.name))
+    .filter((path) => existsSync(resolve(path, "result.json")));
 }
 
 function renderHtml(results) {
@@ -1293,4 +1305,26 @@ function esc(value) {
 
 function escAttr(value) {
   return esc(value).replaceAll("'", "&#39;");
+}
+
+function parseArgs(argv) {
+  const parsed = {};
+  for (let index = 0; index < argv.length; index += 1) {
+    const token = argv[index];
+    if (!token.startsWith("--")) throw new Error(`unexpected argument ${token}`);
+    const key = token.slice(2);
+    const next = argv[index + 1];
+    if (!next || next.startsWith("--")) {
+      parsed[key] = true;
+    } else {
+      parsed[key] = next;
+      index += 1;
+    }
+  }
+  return parsed;
+}
+
+function required(value, message) {
+  if (value == null || value === "") throw new Error(message);
+  return value;
 }

@@ -6,7 +6,7 @@ This repository is a benchmark harness for comparing debugging ability and effic
 
 ## Operating Rules
 
-- Do not commit `benchmark/runs/` or `benchmark/workspaces/`; they are intentionally ignored and may be large.
+- Do not commit `benchmark/runs/`, `benchmark/workspaces/`, or `benchmark/archive/`; they are intentionally ignored and may be large.
 - Preserve raw harness logs. Parser fixes should use raw logs to re-normalize existing results rather than rerunning expensive jobs when possible.
 - Use `rg` for search when available; `grep` is acceptable until `ripgrep` is installed.
 - Use `apply_patch` for manual file edits.
@@ -20,7 +20,7 @@ This repository is a benchmark harness for comparing debugging ability and effic
 }
 ```
 
-Invalid runs are excluded from `results.html` by `scripts/render-results.mjs`.
+Invalid runs are excluded from experiment `results.html` by `scripts/render-results.mjs`.
 
 ## Runtime Setup
 
@@ -43,6 +43,9 @@ node --version
 cargo --version
 node --check scripts/run-case.mjs
 node --check scripts/render-results.mjs
+node --check scripts/render-experiment-index.mjs
+node --check scripts/run-matrix.mjs
+node --check scripts/review-failed-runs.mjs
 node --check scripts/apply-rate-card.mjs
 node --check scripts/refresh-result-metrics.mjs
 ```
@@ -55,10 +58,13 @@ node --check scripts/refresh-result-metrics.mjs
 - `docs/end-to-end-smoke.md`: pilot results and current benchmark state
 - `benchmark/cases/`: case YAML and hidden tests
 - `benchmark/repos/`: candidate repository and PR scan outputs
-- `benchmark/reports/results.html`: generated HTML report
+- `benchmark/experiments/`: immutable experiment artifacts (`manifest.json`, `summary.json`, `failure-reviews.json`, `results.html`)
+- `benchmark/reports/index.html`: generated experiment index
 - `benchmark/rate-cards/`: rate card schema and example
 - `scripts/run-case.mjs`: verify and agent run runner
-- `scripts/render-results.mjs`: HTML report generator
+- `scripts/render-results.mjs`: experiment HTML report generator
+- `scripts/render-experiment-index.mjs`: experiment index generator
+- `scripts/review-failed-runs.mjs`: auxiliary failure review generator/schema validator
 - `scripts/refresh-result-metrics.mjs`: raw-log based result metric refresher
 - `scripts/apply-rate-card.mjs`: applies rate-card cost estimates to existing results
 
@@ -80,11 +86,28 @@ Do not collapse all token or turn metrics into a single ambiguous number.
 
 ## Common Commands
 
-Regenerate the HTML report:
+Generate an experiment HTML report:
 
 ```bash
-find benchmark/runs -mindepth 1 -maxdepth 1 -type d \
-  | node scripts/render-results.mjs benchmark/runs benchmark/reports/results.html
+node scripts/render-results.mjs \
+  --runsRoot benchmark/runs \
+  --matrixId sanitized-baseline-2026-05-03 \
+  --reviewFile benchmark/experiments/sanitized-baseline-2026-05-03/failure-reviews.json \
+  --output benchmark/experiments/sanitized-baseline-2026-05-03/results.html
+```
+
+Run an official baseline experiment:
+
+```bash
+node scripts/run-matrix.mjs \
+  --experimentId sanitized-baseline-2026-05-03 \
+  --includeVerify true \
+  --jobs 3 \
+  --agentTimeoutMs 900000 \
+  --maxInfraRetries 1 \
+  --rateCard benchmark/rate-cards/api-equivalent-2026-05-03.json \
+  --review true \
+  --report true
 ```
 
 Re-normalize existing run metrics from raw logs:

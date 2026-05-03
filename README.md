@@ -1,8 +1,11 @@
 # Harness Debug Benchmark
 
-Benchmark harness and pilot data for comparing Codex, Claude Code, and Cursor debugging runs.
+Benchmark harness for comparing debugging ability and operating efficiency
+across Codex, Claude Code, and Cursor Agent on real repository bugs.
 
-The repository tracks benchmark specifications, case definitions, hidden test scripts, runner scripts, candidate repository metadata, and generated HTML reports. Large local run outputs and cloned workspaces are intentionally ignored under `benchmark/runs/` and `benchmark/workspaces/`.
+The repository tracks benchmark specifications, case definitions, hidden tests,
+runner scripts, condition configs, rate cards, and immutable experiment reports.
+Raw run logs and cloned workspaces are local data and are intentionally ignored.
 
 ## Quick Checks
 
@@ -10,87 +13,122 @@ The repository tracks benchmark specifications, case definitions, hidden test sc
 node --check scripts/run-case.mjs
 node --check scripts/run-matrix.mjs
 node --check scripts/render-results.mjs
-node --check scripts/apply-rate-card.mjs
+node --check scripts/render-experiment-index.mjs
+node --check scripts/review-failed-runs.mjs
 node --check scripts/refresh-result-metrics.mjs
+node --check scripts/apply-rate-card.mjs
 ```
+
+## Artifact Model
+
+Official benchmark results are experiment artifacts under:
+
+```text
+benchmark/experiments/<experiment-id>/
+  manifest.json
+  summary.json
+  failure-reviews.json
+  results.html
+```
+
+`manifest.json` records the matrix id, case and condition inputs, runner git
+commit, script hashes, prompt bundle hashes, rate card, and raw run ids.
+`summary.json` records aggregate pass/fail, invalid runs, timing, and cost.
+`failure-reviews.json` stores bilingual auxiliary implementation reviews.
+`results.html` is the immutable report for that experiment.
+
+The top-level experiment index is:
+
+```text
+benchmark/reports/index.html
+```
+
+## Run An Official Experiment
+
+Baseline conditions are defined in `benchmark/conditions/baseline.json`.
+
+Preview:
+
+```bash
+node scripts/run-matrix.mjs \
+  --experimentId sanitized-baseline-2026-05-03 \
+  --includeVerify true \
+  --jobs 3 \
+  --dryRun true
+```
+
+Run:
+
+```bash
+node scripts/run-matrix.mjs \
+  --experimentId sanitized-baseline-2026-05-03 \
+  --includeVerify true \
+  --jobs 3 \
+  --agentTimeoutMs 900000 \
+  --maxInfraRetries 1 \
+  --rateCard benchmark/rate-cards/api-equivalent-2026-05-03.json \
+  --review true \
+  --report true
+```
+
+`--jobs` controls concurrent `run-case.mjs` processes. Agent runs use isolated
+per-run workspaces. Verify jobs are serialized per repository workspace to
+avoid `.git/index.lock` collisions.
 
 ## Case Verification
 
-Each case starts from the original PR base commit and is expected to fail hidden tests before the fix and pass after the fixed commit:
+Each case has a base commit expected to fail hidden tests and a fixed commit
+expected to pass:
 
 ```bash
 node scripts/run-case.mjs --case benchmark/cases/sharkdp__bat/low.yaml --mode verify-base
 node scripts/run-case.mjs --case benchmark/cases/sharkdp__bat/low.yaml --mode verify-fixed
 ```
 
-Case YAML files record the source repository, base/fixed commits, PR metadata, difficulty, repo size bucket, and hidden test strategy. Hidden tests live under `benchmark/cases/*/hidden-tests/` and are copied only into benchmark-controlled test execution, not into the agent prompt.
+Hidden tests live under `benchmark/cases/*/hidden-tests/` and are never shown
+to the agent prompt.
 
-## Matrix Runs
+## Failure Reviews
 
-Baseline harness/model conditions are defined in:
+LLM-as-a-judge is auxiliary only. Hidden tests remain the source of pass/fail
+truth. Review generation explains how failed implementations went wrong.
+
+Validate an experiment review file:
+
+```bash
+node scripts/review-failed-runs.mjs \
+  --runsRoot benchmark/runs \
+  --matrixId sanitized-baseline-2026-05-03 \
+  --output benchmark/experiments/sanitized-baseline-2026-05-03/failure-reviews.json
+```
+
+Generate missing bilingual Codex reviews in parallel:
+
+```bash
+node scripts/review-failed-runs.mjs \
+  --runsRoot benchmark/runs \
+  --matrixId sanitized-baseline-2026-05-03 \
+  --output benchmark/experiments/sanitized-baseline-2026-05-03/failure-reviews.json \
+  --generate \
+  --jobs 4
+```
+
+## Local Data Policy
+
+Do not commit:
 
 ```text
-benchmark/conditions/baseline.json
+benchmark/runs/
+benchmark/workspaces/
+benchmark/archive/
 ```
 
-Preview the current baseline matrix:
-
-```bash
-node scripts/run-matrix.mjs --dryRun true
-```
-
-Run a selected subset:
-
-```bash
-node scripts/run-matrix.mjs \
-  --case benchmark/cases/sharkdp__bat/low.yaml \
-  --harness codex,cursor \
-  --includeVerify true \
-  --agentTimeoutMs 900000
-```
-
-`run-matrix.mjs` runs sequentially. This keeps Cursor CLI config writes serialized and makes raw logs easier to audit. Agent failures are benchmark outcomes; infrastructure failures are marked separately as invalid runs when detectable.
-
-Each agent run writes:
-
-```text
-benchmark/runs/<run-id>/
-  result.json
-  prompt.txt
-  prompt-bundle.json
-  harness.events.jsonl
-  harness.result.json
-  harness.stderr.log
-  harness.diff.patch
-  harness.git-status.txt
-```
-
-Raw harness logs are intentionally preserved. Parser or metric fixes should use `scripts/refresh-result-metrics.mjs` to re-normalize existing results before rerunning expensive jobs.
-
-## Reports
-
-Regenerate the report from local run data:
-
-```bash
-find benchmark/runs -mindepth 1 -maxdepth 1 -type d \
-  | node scripts/render-results.mjs benchmark/runs benchmark/reports/results.html
-```
-
-The HTML report excludes invalid runs from success-rate summaries, displays invalid runs separately, and keeps reported costs separate from rate-card estimates.
-
-Apply a rate card to existing results:
-
-```bash
-node scripts/apply-rate-card.mjs \
-  --rateCard benchmark/rate-cards/example-2026-05-03.json
-```
-
-The example rate card is a schema placeholder. Fill in real rates before publishing estimated cost comparisons, and keep Cursor estimates labeled as API-equivalent estimates rather than subscription billing truth.
-
-## Run Data Policy
-
-Do not commit `benchmark/runs/` or `benchmark/workspaces/`. They are ignored local working data and can be large. Commit case definitions, hidden tests, docs, scripts, condition configs, and generated reports intentionally.
+Raw harness logs are valuable. Parser fixes should use
+`scripts/refresh-result-metrics.mjs` to re-normalize existing logs rather than
+rerunning expensive jobs whenever possible.
 
 ## Future Interventions
 
-Prompt or Agent Skill experiments should be added as separate condition files under `benchmark/conditions/`. Keep baseline runs memory-free and free of custom rules so intervention comparisons can be isolated by `condition_id`.
+Prompt, Agent Skill, memory, or tool-use experiments should use separate
+condition files under `benchmark/conditions/` and a distinct `experimentId`.
+Baseline runs must keep memory and repository-local agent steering disabled.

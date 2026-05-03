@@ -91,32 +91,34 @@ node scripts/run-case.mjs ... \
   --rateCard benchmark/rate-cards/example-2026-05-03.json
 ```
 
-Run the baseline matrix sequentially:
+Run an official experiment:
 
 ```bash
-node scripts/run-matrix.mjs
+node scripts/run-matrix.mjs \
+  --experimentId sanitized-baseline-2026-05-03 \
+  --includeVerify true \
+  --jobs 3 \
+  --agentTimeoutMs 900000 \
+  --maxInfraRetries 1 \
+  --rateCard benchmark/rate-cards/api-equivalent-2026-05-03.json \
+  --review true \
+  --report true
 ```
 
-Run the matrix with bounded parallelism:
+Preview an official experiment without starting agents:
 
 ```bash
-node scripts/run-matrix.mjs --jobs 3
+node scripts/run-matrix.mjs \
+  --experimentId sanitized-baseline-2026-05-03 \
+  --includeVerify true \
+  --jobs 3 \
+  --dryRun true
 ```
 
 `--jobs` controls concurrent `run-case.mjs` processes. Agent runs use isolated
 per-run workspaces and can run in parallel. Verify runs are parallelized across
 different repositories, but `run-matrix.mjs` serializes verify jobs that share
 the same repository workspace to avoid `.git/index.lock` collisions.
-
-Preview the pilot matrix without starting agents:
-
-```bash
-node scripts/run-matrix.mjs \
-  --case benchmark/cases/sharkdp__bat/low.yaml \
-  --case benchmark/cases/sharkdp__bat/mid.yaml \
-  --case benchmark/cases/sharkdp__bat/high.yaml \
-  --dryRun true
-```
 
 Run a subset and verify base/fixed behavior before agent runs:
 
@@ -128,10 +130,10 @@ node scripts/run-matrix.mjs \
   --agentTimeoutMs 900000
 ```
 
-`run-matrix.mjs` intentionally runs jobs sequentially. Agent failures are valid
-benchmark outcomes and do not stop the matrix; runner errors, unexpected
-`verify-base` passes, and `verify-fixed` failures are treated as matrix
-failures. Pass `--stopOnFailure true` to stop on the first matrix failure.
+Agent failures are valid benchmark outcomes and do not stop the matrix. Runner
+errors, invalid runs after retry exhaustion, unexpected `verify-base` passes,
+and `verify-fixed` failures are treated as matrix failures. Pass
+`--stopOnFailure true` to stop on the first matrix failure.
 
 ## Result Layout
 
@@ -215,7 +217,8 @@ agent has run, mark it with:
 }
 ```
 
-Invalid runs are preserved for auditability but excluded from `results.html`.
+Invalid runs are preserved for auditability but excluded from experiment
+`results.html` success-rate summaries.
 
 ## Harness Metrics
 
@@ -468,19 +471,32 @@ Observed outcomes:
 - mid: base failed, fixed passed
 - high: base failed, fixed passed
 
-## Result Visualization
+## Experiment Artifacts
 
-Generate the HTML report:
-
-```bash
-find benchmark/runs -mindepth 1 -maxdepth 1 -type d \
-  | node scripts/render-results.mjs benchmark/runs benchmark/reports/results.html
-```
-
-Output:
+`run-matrix.mjs --experimentId <id> --report true` writes:
 
 ```text
-benchmark/reports/results.html
+benchmark/experiments/<id>/
+  manifest.json
+  summary.json
+  failure-reviews.json
+  results.html
+```
+
+It also refreshes:
+
+```text
+benchmark/reports/index.html
+```
+
+Generate an experiment report manually:
+
+```bash
+node scripts/render-results.mjs \
+  --runsRoot benchmark/runs \
+  --matrixId sanitized-baseline-2026-05-03 \
+  --reviewFile benchmark/experiments/sanitized-baseline-2026-05-03/failure-reviews.json \
+  --output benchmark/experiments/sanitized-baseline-2026-05-03/results.html
 ```
 
 The report shows:
@@ -496,36 +512,43 @@ The report shows:
 - cache usage
 - reported/estimated/unavailable cost
 - modified files via run details
-- bilingual failure implementation reviews from `benchmark/reviews/*.json`
+- bilingual failure implementation reviews from the experiment review file
 
 Failure reviews are auxiliary analysis. The hidden oracle remains the source
 of pass/fail truth, while the review explains how a failed implementation went
 wrong and whether the failure looks like a true implementation failure, oracle
 false negative, case-design issue, or infrastructure failure.
 
-Validate the current structured reviews:
+Validate structured reviews for one experiment:
 
 ```bash
-node scripts/review-failed-runs.mjs
+node scripts/review-failed-runs.mjs \
+  --runsRoot benchmark/runs \
+  --matrixId sanitized-baseline-2026-05-03 \
+  --output benchmark/experiments/sanitized-baseline-2026-05-03/failure-reviews.json
 ```
 
 Build evidence bundles for failed baseline runs without writing:
 
 ```bash
-node scripts/review-failed-runs.mjs --dryRun --force
+node scripts/review-failed-runs.mjs \
+  --runsRoot benchmark/runs \
+  --matrixId sanitized-baseline-2026-05-03 \
+  --output benchmark/experiments/sanitized-baseline-2026-05-03/failure-reviews.json \
+  --dryRun \
+  --force
 ```
 
 Generate missing bilingual review entries with Codex and validate the JSON
 before writing:
 
 ```bash
-node scripts/review-failed-runs.mjs --generate
-```
-
-Generate missing reviews with multiple Codex reviewer processes:
-
-```bash
-node scripts/review-failed-runs.mjs --generate --jobs 4
+node scripts/review-failed-runs.mjs \
+  --runsRoot benchmark/runs \
+  --matrixId sanitized-baseline-2026-05-03 \
+  --output benchmark/experiments/sanitized-baseline-2026-05-03/failure-reviews.json \
+  --generate \
+  --jobs 4
 ```
 
 The evidence bundle includes the failed `result.json`, hidden-test stdout and

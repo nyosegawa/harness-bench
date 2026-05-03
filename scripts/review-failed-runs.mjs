@@ -6,7 +6,8 @@ import { spawn, spawnSync } from "node:child_process";
 
 const args = parseArgs(process.argv.slice(2));
 const runsRoot = resolve(args.runsRoot ?? "benchmark/runs");
-const output = resolve(args.output ?? "benchmark/reviews/baseline-failure-reviews.json");
+const output = resolve(required(args.output, "--output is required"));
+const matrixIdFilter = args.matrixId ?? null;
 const reviewer = args.reviewer ?? "codex";
 const dryRun = Boolean(args.dryRun);
 const generate = Boolean(args.generate);
@@ -93,6 +94,7 @@ function loadFailedBaselineResults(root) {
     .filter(Boolean)
     .map((path) => ({ path: resolve(path), result: JSON.parse(readFileSync(path, "utf8")) }))
     .filter(({ result }) => result.mode === "agent" && result.matrix_id && !result.invalid_run && !result.success)
+    .filter(({ result }) => !matrixIdFilter || result.matrix_id === matrixIdFilter)
     .map(({ path, result }) => ({ ...result, result_path: path }))
     .sort((a, b) => a.case_id.localeCompare(b.case_id) || String(a.harness).localeCompare(String(b.harness)));
 }
@@ -263,7 +265,7 @@ function validateSingleReview(review, prefix) {
 function defaultReviewFile() {
   return {
     schema_version: 1,
-    scope: "baseline matrix",
+    scope: matrixIdFilter ? `matrix:${matrixIdFilter}` : "matrix",
     judge_role: {
       en: "Auxiliary implementation review only. Hidden tests remain the source of pass/fail truth.",
       ja: "補助的な実装レビューのみ。pass/fail の基準は hidden test のままです。",
@@ -333,4 +335,9 @@ function parseArgs(argv) {
     }
   }
   return parsed;
+}
+
+function required(value, message) {
+  if (value == null || value === "") throw new Error(message);
+  return value;
 }

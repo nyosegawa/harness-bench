@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
-import { spawn } from "node:child_process";
+import { spawn, spawnSync } from "node:child_process";
+import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
-import { basename, resolve } from "node:path";
+import { basename, relative, resolve } from "node:path";
 
 const args = parseArgs(process.argv.slice(2));
 const runsRoot = resolve(args.runsRoot ?? "benchmark/runs");
@@ -14,7 +15,18 @@ const stopOnFailure = parseBoolean(args.stopOnFailure, false);
 const includeVerify = parseBoolean(args.includeVerify, false);
 const maxInfraRetries = Number(args.maxInfraRetries ?? 0);
 const jobsConcurrency = Math.max(1, Number(args.jobs ?? 1));
-const matrixId = args.matrixId ?? `matrix-${new Date().toISOString().replace(/[:.]/g, "-")}`;
+const experimentId = args.experimentId ?? null;
+const matrixId = args.matrixId ?? experimentId ?? `matrix-${new Date().toISOString().replace(/[:.]/g, "-")}`;
+const experimentDir = experimentId ? resolve(args.experimentsRoot ?? "benchmark/experiments", experimentId) : null;
+const writeReport = parseBoolean(args.report, Boolean(experimentId));
+const review = parseBoolean(args.review, false);
+
+if ((writeReport || review) && !experimentId) {
+  fatal("--report/--review require --experimentId so artifacts are immutable");
+}
+if (!dryRun && experimentDir && existsSync(experimentDir) && readdirSync(experimentDir).length > 0) {
+  fatal(`experiment directory already exists and is not empty: ${experimentDir}`);
+}
 
 const cases = collectCases(args).map((path) => resolve(path));
 if (cases.length === 0) {
@@ -56,6 +68,10 @@ const summary = {
   agent_timeout_ms: agentTimeoutMs,
   max_infra_retries: maxInfraRetries,
   jobs_concurrency: jobsConcurrency,
+  experiment_id: experimentId,
+  experiment_dir: experimentDir,
+  report: writeReport,
+  review,
   rate_card: rateCard,
   cases,
   conditions,
@@ -171,9 +187,242 @@ const summaryPath = resolve(runsRoot, `matrix-${startedAt.toISOString().replace(
 if (!dryRun) {
   mkdirSync(runsRoot, { recursive: true });
   writeFileSync(summaryPath, `${JSON.stringify(summary, null, 2)}\n`);
+  if (experimentDir) {
+    await writeExperimentArtifacts(summary, summaryPath);
+  }
 }
 console.log(JSON.stringify({ success: summary.success, summaryPath: dryRun ? null : summaryPath }, null, 2));
 process.exit(summary.success ? 0 : 1);
+
+async function writeExperimentArtifacts(matrixSummary, summaryPath) {
+  mkdirSync(experimentDir, { recursive: true });
+  const manifest = buildExperimentManifest(matrixSummary, summaryPath);
+  writeFileSync(resolve(experimentDir, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);
+  writeFileSync(resolve(experimentDir, "summary.json"), `${JSON.stringify(buildExperimentSummary(matrixSummary), null, 2)}\n`);
+
+  const reviewFile = resolve(experimentDir, "failure-reviews.json");
+  if (review) {
+    await runAuxiliaryCommand([
+      process.execPath,
+      "scripts/review-failed-runs.mjs",
+      "--runsRoot",
+      runsRoot,
+      "--matrixId",
+      matrixId,
+      "--output",
+      reviewFile,
+      "--generate",
+      "--jobs",
+      String(Math.min(jobsConcurrency, Number(args.reviewJobs ?? jobsConcurrency))),
+    ]);
+  } else {
+    writeFileSync(reviewFile, `${JSON.stringify(emptyReviewFile(), null, 2)}\n`);
+  }
+
+  if (writeReport) {
+    await runAuxiliaryCommand([
+      process.execPath,
+      "scripts/render-results.mjs",
+      "--runsRoot",
+      runsRoot,
+      "--output",
+      resolve(experimentDir, "results.html"),
+      "--matrixId",
+      matrixId,
+      "--reviewFile",
+      reviewFile,
+    ]);
+    await runAuxiliaryCommand([
+      process.execPath,
+      "scripts/render-experiment-index.mjs",
+      "--experimentsRoot",
+      args.experimentsRoot ?? "benchmark/experiments",
+      "--output",
+      "benchmark/reports/index.html",
+    ]);
+  }
+}
+
+function buildExperimentManifest(matrixSummary, summaryPath) {
+  return {
+    schema_version: 1,
+    experiment_id: experimentId,
+    matrix_id: matrixId,
+    created_at: new Date().toISOString(),
+    started_at: matrixSummary.started_at,
+    finished_at: matrixSummary.finished_at,
+    success: matrixSummary.success,
+    runner: {
+      git_commit: gitOutput(["rev-parse", "HEAD"]),
+      git_status_short: gitOutput(["status", "--short"]),
+      run_matrix_script_sha256: fileSha256("scripts/run-matrix.mjs"),
+      run_case_script_sha256: fileSha256("scripts/run-case.mjs"),
+      render_results_script_sha256: fileSha256("scripts/render-results.mjs"),
+      review_failed_runs_script_sha256: fileSha256("scripts/review-failed-runs.mjs"),
+    },
+    inputs: {
+      cases: cases.map((casePath) => caseManifestEntry(casePath)),
+      conditions,
+      conditions_file: args.conditions ? resolve(args.conditions) : resolve("benchmark/conditions/baseline.json"),
+      conditions_file_sha256: fileSha256(args.conditions ? resolve(args.conditions) : "benchmark/conditions/baseline.json"),
+      rate_card: rateCard ? { path: rateCard, sha256: fileSha256(rateCard) } : null,
+      include_verify: includeVerify,
+      agent_timeout_ms: agentTimeoutMs,
+      max_infra_retries: maxInfraRetries,
+      jobs_concurrency: jobsConcurrency,
+    },
+    artifacts: {
+      matrix_summary_path: summaryPath,
+      report_path: writeReport ? resolve(experimentDir, "results.html") : null,
+      failure_reviews_path: resolve(experimentDir, "failure-reviews.json"),
+    },
+    runs: matrixSummary.jobs.flatMap((job) => job.attempts.map((attempt) => runManifestEntry(job, attempt)).filter(Boolean)),
+  };
+}
+
+function runManifestEntry(job, attempt) {
+  if (!attempt.run_dir) return null;
+  const promptBundlePath = resolve(attempt.run_dir, "prompt-bundle.json");
+  const resultPath = attempt.result_path ? resolve(attempt.result_path) : resolve(attempt.run_dir, "result.json");
+  return {
+    run_id: basename(attempt.run_dir),
+    kind: job.kind,
+    case_path: job.case_path,
+    condition_id: job.condition_id ?? null,
+    attempt: attempt.attempt,
+    run_dir: attempt.run_dir,
+    result_path: resultPath,
+    result_sha256: fileSha256(resultPath),
+    prompt_bundle_path: existsSync(promptBundlePath) ? promptBundlePath : null,
+    prompt_bundle_sha256: fileSha256(promptBundlePath),
+    invalid_run: attempt.invalid_run ?? false,
+  };
+}
+
+function buildExperimentSummary(matrixSummary) {
+  const finalAgentRecords = matrixSummary.jobs
+    .filter((job) => job.kind === "agent")
+    .map((job) => readResultJson(job.final?.result_path))
+    .filter(Boolean)
+    .filter((result) => !result.invalid_run);
+  const byCondition = groupBy(finalAgentRecords, (result) => result.condition_id ?? result.harness ?? "unknown");
+  const conditionsSummary = Object.fromEntries([...byCondition.entries()].map(([conditionId, group]) => {
+    const passed = group.filter((result) => result.success).length;
+    return [conditionId, {
+      runs: group.length,
+      passed,
+      pass_rate: group.length ? passed / group.length : null,
+      median_wall_time_ms: median(group.map((result) => result.metrics?.wall_time_ms).filter((value) => typeof value === "number")),
+      cost_usd: sum(group.map((result) => result.metrics?.usage?.cost_usd).filter((value) => typeof value === "number")),
+    }];
+  }));
+  return {
+    schema_version: 1,
+    experiment_id: experimentId,
+    matrix_id: matrixId,
+    started_at: matrixSummary.started_at,
+    finished_at: matrixSummary.finished_at,
+    duration_ms: matrixSummary.duration_ms,
+    success: matrixSummary.success,
+    jobs: matrixSummary.jobs.length,
+    agent_runs: finalAgentRecords.length,
+    passed: finalAgentRecords.filter((result) => result.success).length,
+    invalid_runs: matrixSummary.jobs.filter((job) => job.final?.invalid_run).length,
+    conditions: conditionsSummary,
+    failures: finalAgentRecords
+      .filter((result) => !result.success)
+      .map((result) => ({
+        case_id: result.case_id,
+        harness: result.harness,
+        condition_id: result.condition_id,
+        run_id: result.run_id,
+      }))
+      .sort((a, b) => a.case_id.localeCompare(b.case_id) || a.harness.localeCompare(b.harness)),
+  };
+}
+
+function caseManifestEntry(casePath) {
+  const text = readFileSync(casePath, "utf8");
+  return {
+    path: casePath,
+    relative_path: relative(process.cwd(), casePath),
+    sha256: sha256(text),
+    id: text.match(/^id:\s*(.+)$/m)?.[1]?.trim() ?? null,
+    repo: text.match(/^repo:\s*(.+)$/m)?.[1]?.trim() ?? null,
+    difficulty: text.match(/^difficulty:\s*(.+)$/m)?.[1]?.trim() ?? null,
+    base_commit: text.match(/^base_commit:\s*(.+)$/m)?.[1]?.trim() ?? null,
+    fixed_commit: text.match(/^fixed_commit:\s*(.+)$/m)?.[1]?.trim() ?? null,
+  };
+}
+
+function runAuxiliaryCommand(command) {
+  console.log(`\n==> ${shellJoin(command)}`);
+  const result = spawn(command[0], command.slice(1), {
+    cwd: process.cwd(),
+    stdio: "inherit",
+  });
+  return new Promise((resolvePromise, rejectPromise) => {
+    result.on("error", rejectPromise);
+    result.on("close", (code, signal) => {
+      if (code !== 0) {
+        rejectPromise(new Error(`${shellJoin(command)} failed with ${code ?? signal}`));
+      } else {
+        resolvePromise();
+      }
+    });
+  });
+}
+
+function emptyReviewFile() {
+  return {
+    schema_version: 1,
+    scope: `experiment:${experimentId}`,
+    judge_role: {
+      en: "Auxiliary implementation review only. Hidden tests remain the source of pass/fail truth.",
+      ja: "補助的な実装レビューのみ。pass/fail の基準は hidden test のままです。",
+    },
+    generated_at: new Date().toISOString(),
+    reviews: [],
+  };
+}
+
+function gitOutput(args) {
+  const result = spawnSync("git", args, {
+    cwd: process.cwd(),
+    encoding: "utf8",
+    maxBuffer: 10 * 1024 * 1024,
+  });
+  return result.status === 0 ? result.stdout.trim() : null;
+}
+
+function fileSha256(path) {
+  const resolved = resolve(path);
+  return existsSync(resolved) ? sha256(readFileSync(resolved)) : null;
+}
+
+function sha256(value) {
+  return createHash("sha256").update(value).digest("hex");
+}
+
+function groupBy(values, keyFn) {
+  const groups = new Map();
+  for (const value of values) {
+    const key = keyFn(value);
+    const group = groups.get(key) ?? [];
+    group.push(value);
+    groups.set(key, group);
+  }
+  return groups;
+}
+
+function sum(values) {
+  return values.reduce((total, value) => total + value, 0);
+}
+
+function median(values) {
+  const sorted = values.toSorted((a, b) => a - b);
+  return sorted.length ? sorted[Math.floor(sorted.length / 2)] : null;
+}
 
 function runJobAttempt(job, command, attempt) {
   const record = {

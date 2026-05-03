@@ -1,6 +1,7 @@
 # Agent run outputs and cloned workspaces.
 benchmark/runs/
 benchmark/workspaces/
+benchmark/archive/
 
 # Local caches and dependency outputs.
 node_modules/

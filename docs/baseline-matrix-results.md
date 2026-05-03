@@ -1,10 +1,12 @@
 # Baseline Matrix Results
 
-This document summarizes the first full baseline matrix across the completed
-27-case benchmark set.
+This document summarizes the pre-artifact baseline matrix across the completed
+27-case benchmark set. It is retained as historical context; publishable runs
+should use immutable experiment artifacts under `benchmark/experiments/<id>/`.
 
-Run data is local and intentionally untracked under `benchmark/runs/`. The
-tracked report was regenerated at `benchmark/reports/results.html`.
+Run data is local and intentionally untracked under `benchmark/runs/`. The old
+aggregate report format has been replaced by per-experiment `results.html`
+files and `benchmark/reports/index.html`.
 
 ## Benchmark Design
 
@@ -170,12 +172,12 @@ future runs, but the current baseline matrix still reflects the old prompt.
 Until the sanitized matrix is rerun, the headline should be read as
 "hidden-oracle pass rate" rather than an absolute final correctness score.
 
-Structured implementation reviews live in
-`benchmark/reviews/baseline-failure-reviews.json`. Each review is bilingual
-(`en`/`ja`) and records the failure mode, evidence, recommendation, verdict,
-and confidence. `scripts/render-results.mjs` validates this schema before
-rendering the report, so malformed review output fails fast instead of
-silently breaking `results.html`.
+Structured implementation reviews now live inside each experiment directory as
+`failure-reviews.json`. Each review is bilingual (`en`/`ja`) and records the
+failure mode, evidence, recommendation, verdict, and confidence.
+`scripts/render-results.mjs` validates this schema before rendering an
+experiment report, so malformed review output fails fast instead of silently
+breaking `results.html`.
 
 `scripts/review-failed-runs.mjs --dryRun` builds evidence bundles for failed
 baseline runs from `result.json`, hidden-test logs, workspace diffs, and saved

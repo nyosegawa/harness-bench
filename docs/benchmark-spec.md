@@ -628,15 +628,24 @@ benchmark/
         high/
   runs/
     <run-id>/
-      metadata.json
+      result.json
+      prompt-bundle.json
       prompt.txt
-      stdout.log
-      stderr.log
-      events.jsonl
-      diff.patch
-      test-results.json
+      harness.events.jsonl
+      harness.result.json
+      harness.stderr.log
+      harness.diff.patch
+      harness.git-status.txt
+      core-0.stdout.log
+      core-0.stderr.log
+  experiments/
+    <experiment-id>/
+      manifest.json
+      summary.json
+      failure-reviews.json
+      results.html
   reports/
-    results.html
+    index.html
 ```
 
 `cases/*.yaml` must include enough information to reproduce:

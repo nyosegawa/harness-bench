@@ -66,17 +66,22 @@ Interpretation notes:
 
 ## Report
 
-Generated report:
+Legacy generated report:
 
 ```text
 benchmark/reports/results.html
 ```
 
-Generate again with:
+Current experiment reports are generated under
+`benchmark/experiments/<experiment-id>/results.html`; the command below is kept
+only as historical context for the smoke run.
 
 ```bash
-find benchmark/runs -mindepth 1 -maxdepth 1 -type d \
-  | node scripts/render-results.mjs benchmark/runs benchmark/reports/results.html
+node scripts/render-results.mjs \
+  --runsRoot benchmark/runs \
+  --matrixId <matrix-id> \
+  --reviewFile benchmark/experiments/<experiment-id>/failure-reviews.json \
+  --output benchmark/experiments/<experiment-id>/results.html
 ```
 
 ## Notes
