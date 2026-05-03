@@ -23,12 +23,25 @@
   - `low`: ZIP binary detection
   - `mid`: control-character wrapping
   - `high`: fallback syntax
+- Full 27-case benchmark set completed across 9 repositories:
+  - `axios/axios`
+  - `fastapi/fastapi`
+  - `go-gitea/gitea`
+  - `jesseduffield/lazygit`
+  - `langflow-ai/langflow`
+  - `louislam/uptime-kuma`
+  - `sharkdp/bat`
+  - `usememos/memos`
+  - `vitejs/vite`
 - Hidden tests verified:
-  - low: base fail / fixed pass
-  - mid: base fail / fixed pass
-  - high: base fail / fixed pass
+  - all 27 cases: base fail / fixed pass
 - Pilot agent runs completed for low/mid/high across Codex, Claude, Cursor.
+- Baseline matrices completed:
+  - Codex `gpt-5.5` medium: 18/27
+  - Claude `claude-opus-4-7` medium: 18/27
+  - Cursor `gpt-5.5-medium`: 17/27
 - HTML report generated at `benchmark/reports/results.html`.
+- Baseline result summary saved at `docs/baseline-matrix-results.md`.
 - Runtime checked:
   - Node.js `v22.21.1`
   - Rust `cargo 1.93.0`
@@ -52,32 +65,31 @@ One earlier Claude mid run failed due to disk exhaustion during Rust build. It i
 
 ## Next Tasks
 
-1. Install `ripgrep` if useful:
-
-```bash
-sudo apt-get update && sudo apt-get install -y ripgrep
-```
-
-2. Decide whether to keep `sharkdp/bat` high as pilot-only or replace it with a more bug-like high-difficulty case.
-3. Expand beyond the pilot toward the target benchmark shape:
-   - 3 small repositories
-   - 3 medium repositories
-   - 3 large repositories
-   - low/mid/high case per repository
-4. Prefer application/service/tool repositories that use frameworks rather than framework-core repositories.
-5. For each new case:
-   - collect recent merged PR candidates
-   - choose low/mid/high debug-style PRs
-   - write concise issue instructions
-   - write hidden tests
-   - verify base fail / fixed pass
-   - run at least one smoke agent condition before scaling
-6. Improve report UX:
+1. Review shared-failure cases and decide whether any hidden expectation should be refined:
+   - `axios-axios-low-settle-error-code`
+   - `go-gitea-gitea-high-compare-no-common-history`
+   - `jesseduffield-lazygit-high-branch-divergence-fast-path`
+   - `langflow-ai-langflow-mid-mcp-connectable-inputs`
+   - `louislam-uptime-kuma-high-websocket-auth-options`
+   - `sharkdp-bat-high-fallback-syntax`
+2. Add failure-mode annotations to generated reports:
+   - no patch / wrong file
+   - partial fix
+   - wrong API or compatibility path
+   - hidden assertion mismatch
+   - timeout
+   - infrastructure invalid run
+3. Improve report UX:
    - filter by case/harness
    - show invalid runs separately
    - add per-case summary and cost totals by source
-7. Add real rate cards for Codex/Cursor/Claude if current pricing should be estimated. Keep reported and estimated cost clearly separated.
-8. Consider Cursor Max Mode as a separate experimental axis once CLI config switching is made safe and serialized.
+4. Add real rate cards for Codex/Cursor/Claude if current pricing should be estimated. Keep reported and estimated cost clearly separated.
+5. Consider re-running selected split cases to estimate variance:
+   - `sharkdp-bat-low-zip-binary-detection`
+   - `sharkdp-bat-mid-control-character-wrapping`
+   - `usememos-memos-mid-mixed-case-user-resource-names`
+   - `vitejs-vite-low-flatten-id-sanitized-chars`
+6. Consider Cursor Max Mode as a separate experimental axis once CLI config switching is made safe and serialized.
 
 ## Useful Commands
 
@@ -133,7 +145,7 @@ Preview or run the baseline matrix:
 
 ```bash
 node scripts/run-matrix.mjs --dryRun true
-node scripts/run-matrix.mjs --includeVerify true --agentTimeoutMs 900000
+node scripts/run-matrix.mjs --agentTimeoutMs 900000 --maxInfraRetries 1
 ```
 
 ## Notes For Future Agents
