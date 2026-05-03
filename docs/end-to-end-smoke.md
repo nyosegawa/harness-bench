@@ -66,12 +66,6 @@ Interpretation notes:
 
 ## Report
 
-Legacy generated report:
-
-```text
-benchmark/reports/results.html
-```
-
 Current experiment reports are generated under
 `benchmark/experiments/<experiment-id>/results.html`; the command below is kept
 only as historical context for the smoke run.

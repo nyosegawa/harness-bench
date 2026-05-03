@@ -13,7 +13,7 @@ const failureReviews = loadFailureReviews(reviewFile);
 
 const results = loadResults(runsRoot);
 mkdirSync(dirname(output), { recursive: true });
-writeFileSync(output, renderHtml(results));
+writeFileSync(output, `${renderHtml(results).replace(/[ \t]+$/gm, "")}\n`);
 console.log(output);
 
 function loadResults(root) {
@@ -50,6 +50,7 @@ function renderHtml(results) {
   const charts = renderCharts(views.baseline);
   const matrixGrid = renderMatrixGrid(views.baseline);
   const caseCatalog = renderCaseCatalog(views.baseline);
+  const executiveSummary = buildExecutiveSummary(views.baseline);
   const falseNegativeRows = renderFalseNegativeRows(falseNegativeSummary(views.baseline));
   const failureReviewRows = renderFailureReviewRows(views.baseline);
   const difficultySummaryRows = renderSummaryRows(groupSummary(views.baseline, (result) => caseMeta(result).difficulty ?? "unknown"));
@@ -236,8 +237,9 @@ function renderHtml(results) {
     <section class="chart-grid">${charts}</section>
     <section class="report-section">
       <h2 data-i18n="executiveSummary">Executive Summary</h2>
-      <p data-i18n="executiveSummaryBody">This baseline compares three memory-disabled agent harnesses on the same 27 real-repository debugging cases. Codex passes 23/27 cases, Claude passes 20/27, and Cursor passes 23/27 after oracle false-negative fixes and workspace regrade. Cursor has the fastest median wall time, Claude has the lowest cost per pass, and Codex/Cursor are tied on hidden-oracle pass rate.</p>
+      <p data-i18n="executiveSummaryBody">${esc(executiveSummary.en)}</p>
       <p data-i18n="executiveCaveatBody">The headline score is a hidden-oracle pass rate, not yet the final correctness score. False-negative review found several cases where hidden tests may over-constrain implementation details or unstated API choices; those cases are called out below and should be resolved before using the matrix as a final leaderboard.</p>
+      <p data-i18n="sanitizationCaveatBody">Sanitization caveat: this recorded run removed repository-local steering files from the working tree before agents started, but it did not yet materialize a fresh git root. A sufficiently curious agent could still have recovered tracked steering files from git objects. Future runs use a fresh one-commit sanitized workspace.</p>
     </section>
     <section class="report-section">
       <h2 data-i18n="frameworkExplanation">Benchmark Design</h2>
@@ -303,8 +305,9 @@ function renderHtml(results) {
         effectiveTotal: "Effective Total", cost: "Cost", costSource: "Cost Source", run: "Run", reason: "Reason",
         name: "Name", runs: "Runs", pass: "Pass", rate: "Rate", medianWallShort: "Median Wall",
         reportedDollar: "Reported $", estimatedDollar: "Estimated $", conditionComparison: "Harness x Model Comparison",
-        executiveSummary: "Executive Summary", executiveSummaryBody: "This baseline compares three memory-disabled agent harnesses on the same 27 real-repository debugging cases. Codex passes 23/27 cases, Claude passes 20/27, and Cursor passes 23/27 after oracle false-negative fixes and workspace regrade. Cursor has the fastest median wall time, Claude has the lowest cost per pass, and Codex/Cursor are tied on hidden-oracle pass rate.",
+        executiveSummary: "Executive Summary", executiveSummaryBody: ${JSON.stringify(executiveSummary.en)},
         executiveCaveatBody: "The headline score is a hidden-oracle pass rate, not yet the final correctness score. False-negative review found several cases where hidden tests may over-constrain implementation details or unstated API choices; those cases are called out below and should be resolved before using the matrix as a final leaderboard.",
+        sanitizationCaveatBody: "Sanitization caveat: this recorded run removed repository-local steering files from the working tree before agents started, but it did not yet materialize a fresh git root. A sufficiently curious agent could still have recovered tracked steering files from git objects. Future runs use a fresh one-commit sanitized workspace.",
         caseMatrix: "Case Result Matrix", showDetails: "Show Detailed Table", hideDetails: "Hide Detailed Table",
         viewNote: "Default view shows only the 81 production baseline runs. Pilot and smoke runs are available from the View filter.",
         frameworkExplanation: "Benchmark Design", frameworkBody: "Each case starts from a real repository base commit where the hidden core test fails, and a fixed commit where the same hidden test passes. Agent runs receive only the issue-style instruction and work inside an isolated checkout. A run is counted as pass only when the hidden core test passes after the agent edit. Raw harness logs are kept locally, metrics are normalized per harness, and invalid infrastructure runs are excluded from baseline summaries.",
@@ -336,8 +339,9 @@ function renderHtml(results) {
         effectiveTotal: "Effective Total", cost: "Cost", costSource: "Cost 種別", run: "Run", reason: "理由",
         name: "名前", runs: "実行数", pass: "成功", rate: "率", medianWallShort: "Wall 中央値",
         reportedDollar: "報告 $", estimatedDollar: "推定 $", conditionComparison: "Harness x Model 比較",
-        executiveSummary: "要約", executiveSummaryBody: "この baseline は、memory を無効化した 3 つの agent harness を、同じ 27 件の実リポジトリ debug case で比較したものです。oracle false-negative 修正と保存済み workspace の再採点後、Codex は 23/27 件、Claude は 20/27 件、Cursor は 23/27 件に成功しました。Cursor が wall time 中央値最速、Claude が成功あたり cost 最小、Codex/Cursor が hidden-oracle 成功率で同率です。",
+        executiveSummary: "要約", executiveSummaryBody: ${JSON.stringify(executiveSummary.ja)},
         executiveCaveatBody: "この headline score は hidden-oracle 成功率であり、最終的な絶対正解率ではありません。false-negative 調査では、hidden test が実装詳細や prompt に明示されていない API 選択を縛っている可能性がある case が見つかりました。該当 case は下で明示し、最終 leaderboard として使う前に oracle を確定すべきです。",
+        sanitizationCaveatBody: "Sanitization caveat: この記録済み run では、agent 開始前に repository-local steering file を working tree から削除していましたが、fresh git root 化はまだしていませんでした。そのため tracked file は git object から復元可能でした。将来の run では sanitized tree を fresh one-commit workspace として渡します。",
         caseMatrix: "Case 結果 Matrix", showDetails: "詳細表を表示", hideDetails: "詳細表を隠す",
         viewNote: "デフォルトでは 81 件の本番 baseline run だけを表示します。Pilot/Smoke run は表示フィルタから確認できます。",
         frameworkExplanation: "ベンチマーク設計", frameworkBody: "各 case は、hidden core test が失敗する実リポジトリの base commit と、同じ hidden test が成功する fixed commit を持ちます。Agent には issue 形式の instruction だけを渡し、隔離 checkout 内で修正させます。Agent 編集後に hidden core test が通った場合だけ pass と数えます。raw harness log はローカルに保持し、metrics は harness ごとの意味を保ったまま正規化し、infra invalid run は baseline 集計から除外します。",
@@ -682,6 +686,44 @@ function summarize(results) {
     reportedCost: reportedCosts.length ? reportedCosts.reduce((sum, value) => sum + value, 0) : null,
     estimatedCost: estimatedCosts.length ? estimatedCosts.reduce((sum, value) => sum + value, 0) : null,
   };
+}
+
+function buildExecutiveSummary(results) {
+  const caseCount = unique(results.map((result) => result.case_id)).length;
+  const rows = groupSummary(results, (result) => result.harness);
+  const ordered = ["codex", "claude", "cursor"]
+    .map((name) => rows.find((row) => row.key === name))
+    .filter(Boolean);
+  const scoreEn = ordered
+    .map((row) => `${titleCase(row.key)} passes ${row.passed}/${row.count} (${Math.round(row.passRateValue * 100)}%)`)
+    .join(", ");
+  const scoreJa = ordered
+    .map((row) => `${titleCase(row.key)} は ${row.passed}/${row.count} 件 (${Math.round(row.passRateValue * 100)}%) に成功`)
+    .join("、");
+  const fastest = rows
+    .filter((row) => typeof row.medianWallMs === "number")
+    .toSorted((a, b) => a.medianWallMs - b.medianWallMs)[0];
+  const cheapest = rows
+    .map((row) => {
+      const cost = row.reportedCost ?? row.estimatedCost;
+      return { ...row, costPerPass: cost != null && row.passed > 0 ? cost / row.passed : null };
+    })
+    .filter((row) => typeof row.costPerPass === "number")
+    .toSorted((a, b) => a.costPerPass - b.costPerPass)[0];
+  const invalidCount = results.filter((result) => result.invalid_run).length;
+  return {
+    en: `This baseline compares three memory-disabled agent harnesses on the same ${caseCount} real-repository debugging cases. ${scoreEn}. After one oracle false-negative fix and preserved-workspace regrade, ${titleCase(bestHarness(rows)?.key ?? "unknown")} has the highest hidden-oracle pass rate, ${titleCase(fastest?.key ?? "unknown")} has the fastest median wall time, and ${titleCase(cheapest?.key ?? "unknown")} has the lowest cost per pass. Invalid runs: ${invalidCount}.`,
+    ja: `この baseline は、memory を無効化した 3 つの agent harness を、同じ ${caseCount} 件の実リポジトリ debug case で比較したものです。${scoreJa}。1 件の oracle false-negative 修正と保存済み workspace の再採点後、hidden-oracle 成功率は ${titleCase(bestHarness(rows)?.key ?? "unknown")} が最高、wall time 中央値は ${titleCase(fastest?.key ?? "unknown")} が最速、成功あたり cost は ${titleCase(cheapest?.key ?? "unknown")} が最小です。Invalid run は ${invalidCount} 件です。`,
+  };
+}
+
+function bestHarness(rows) {
+  return rows.toSorted((a, b) => b.passRateValue - a.passRateValue || b.passed - a.passed)[0];
+}
+
+function titleCase(value) {
+  const text = String(value ?? "");
+  return text ? `${text.slice(0, 1).toUpperCase()}${text.slice(1)}` : text;
 }
 
 function groupSummary(results, keyFn) {

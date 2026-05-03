@@ -103,13 +103,21 @@ function buildReviewBundle(result) {
   const runDir = dirname(result.result_path);
   const workspace = resolve(runDir, "workspace");
   const failingCore = result.test_result?.core?.find((test) => test.exit_code !== 0 || test.signal) ?? result.test_result?.core?.[0] ?? null;
-  const changedFiles = git(workspace, ["diff", "--name-only"]).stdout.split(/\r?\n/).filter(Boolean).slice(0, 30);
+  const changedFiles = git(workspace, ["diff", "--name-only"]).stdout
+    .split(/\r?\n/)
+    .filter(Boolean)
+    .filter((path) => !isSanitizedInstructionPath(path))
+    .slice(0, 30);
   return {
     case_id: result.case_id,
     harness: result.harness,
     model: result.model,
     run_id: result.run_id,
     instruction: result.case_metadata?.instruction ?? null,
+    evidence_notes: [
+      "Repository-local steering files are removed by the benchmark harness before the agent starts.",
+      "Ignore AGENTS.md, agents.md, CLAUDE.md, claude.md, .agents, .claude, and .codex deletions as harness sanitization artifacts; they are not candidate implementation edits.",
+    ],
     failing_test: failingCore ? {
       command: failingCore.command,
       exit_code: failingCore.exit_code,
@@ -118,8 +126,8 @@ function buildReviewBundle(result) {
       stdout_tail: tail(failingCore.stdout_path, 80),
     } : null,
     changed_files: changedFiles,
-    diff_summary: git(workspace, ["diff", "--stat"]).stdout,
-    diff_excerpt: git(workspace, ["diff", "--", ...changedFiles.slice(0, 12)]).stdout.slice(0, 60000),
+    diff_summary: changedFiles.length ? git(workspace, ["diff", "--stat", "--", ...changedFiles]).stdout : "",
+    diff_excerpt: git(workspace, ["diff", "--", ...changedFiles.slice(0, 12)]).stdout.slice(0, 25000),
     session_log_summary: summarizeSessionLog(runDir, result.harness),
     required_schema: {
       case_id: "string",
@@ -141,6 +149,7 @@ function generateReview(bundle) {
     "You are producing an auxiliary failure implementation review for a debugging benchmark.",
     "Hidden tests remain the pass/fail source of truth. Do not relabel a run as pass just because the implementation looks plausible.",
     "Use the evidence bundle, including hidden-test output, workspace diff, and session-log summary.",
+    "Do not count benchmark harness sanitization of repository-local steering files as an agent implementation change.",
     "Return exactly one JSON object and no markdown.",
     "Schema:",
     JSON.stringify({
@@ -166,10 +175,11 @@ function generateReview(bundle) {
     "--sandbox", "read-only",
     "-m", reviewerModel,
     "-C", process.cwd(),
-    prompt,
+    "-",
   ], {
     cwd: process.cwd(),
     timeout: Number(args.timeoutMs ?? 900000),
+    input: prompt,
   }).then(parseJsonObject);
 }
 
@@ -177,7 +187,7 @@ function spawnJson(command, commandArgs, options) {
   return new Promise((resolvePromise, rejectPromise) => {
     const child = spawn(command, commandArgs, {
       cwd: options.cwd,
-      stdio: ["ignore", "pipe", "pipe"],
+      stdio: [options.input ? "pipe" : "ignore", "pipe", "pipe"],
     });
     let stdout = "";
     let stderr = "";
@@ -190,6 +200,7 @@ function spawnJson(command, commandArgs, options) {
     child.stderr.setEncoding("utf8");
     child.stdout.on("data", (chunk) => { stdout += chunk; });
     child.stderr.on("data", (chunk) => { stderr += chunk; });
+    if (options.input) child.stdin.end(options.input);
     child.on("error", rejectPromise);
     child.on("close", (code, signal) => {
       clearTimeout(timer);
@@ -234,8 +245,36 @@ function summarizeSessionLog(runDir, harness) {
   return {
     event_count: events.length,
     event_types: countBy(events.map((event) => event.type)),
-    tool_events: events.filter((event) => event.type === "tool_call" || event.item?.type === "command_execution" || event.item?.type === "file_change").slice(-20),
+    tool_events: events
+      .filter((event) => event.type === "tool_call" || event.item?.type === "command_execution" || event.item?.type === "file_change")
+      .slice(-12)
+      .map(compactToolEvent),
   };
+}
+
+function isSanitizedInstructionPath(path) {
+  return /^(AGENTS\.md|agents\.md|CLAUDE\.md|claude\.md|\.agents(?:\/|$)|\.claude(?:\/|$)|\.codex(?:\/|$))/.test(path);
+}
+
+function compactToolEvent(event) {
+  const item = event.item && typeof event.item === "object" ? event.item : {};
+  const command = item.command ?? event.command ?? item.cmd ?? null;
+  return {
+    type: event.type ?? null,
+    item_type: item.type ?? null,
+    status: item.status ?? event.status ?? null,
+    exit_code: item.exit_code ?? event.exit_code ?? null,
+    command: command == null ? null : tailText(command, 700),
+    path: item.path ?? item.file ?? event.path ?? null,
+    output_tail: scrubSanitizedInstructionLines(tailText(item.aggregated_output ?? item.output ?? event.output ?? "", 1200)),
+  };
+}
+
+function scrubSanitizedInstructionLines(text) {
+  return String(text ?? "")
+    .split(/\r?\n/)
+    .filter((line) => !/(AGENTS\.md|agents\.md|CLAUDE\.md|claude\.md|\.agents\/|\.claude\/|\.codex\/)/.test(line))
+    .join("\n");
 }
 
 function validateReviewFile(data, path) {

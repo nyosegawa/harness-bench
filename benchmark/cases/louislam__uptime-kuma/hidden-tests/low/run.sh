@@ -54,6 +54,7 @@ function methodFunction(name, fallback) {
 
 const pushDatapoint = methodFunction("pushDatapoint");
 const hasPingValue = methodFunction("hasPingValue", (ping) => ping !== null && ping !== undefined);
+const hasValue = methodFunction("hasValue", (value) => value !== null && value !== undefined);
 
 function run(datapoint) {
     const avg = [];
@@ -65,6 +66,7 @@ function run(datapoint) {
         $root: { unixToDateTime: () => "time" },
         getBarColorForDatapoint: () => "color",
         hasPingValue,
+        hasValue,
     }, datapoint, avg, min, max, down, colors);
     return { avg, min, max };
 }

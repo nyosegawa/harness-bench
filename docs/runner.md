@@ -230,6 +230,13 @@ the candidate workspace before setup, verification, or agent execution:
 `.codex`. Case instructions must come only from the benchmark prompt and hidden
 tests, not from upstream repository agent configuration.
 
+For agent runs with runner-managed workspaces, the sanitized tree is then
+materialized as a fresh one-commit git repository. This prevents the deleted
+steering files from appearing in `git diff` and keeps normal `git log` /
+`git show HEAD:<path>` exploration from recovering upstream agent instructions.
+The original benchmark base commit remains recorded in `result.json` and the
+experiment manifest.
+
 ### Required Normalized Fields
 
 - `wall_time_ms`: elapsed runner wall time for the whole run

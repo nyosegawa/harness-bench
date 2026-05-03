@@ -80,7 +80,9 @@ try {
     activeRepoDir = repoOverride ?? resolve(runDir, "workspace");
     result.repo_dir = activeRepoDir;
     ensureRepo(repoUrl, activeRepoDir);
-    checkout(activeRepoDir, required(caseData.base_commit, "base_commit is required"));
+    checkout(activeRepoDir, required(caseData.base_commit, "base_commit is required"), {
+      materializeSanitizedRoot: !repoOverride,
+    });
     result.checkout_commit = caseData.base_commit;
     const agentResult = runAgent({
       harness,
@@ -860,10 +862,13 @@ function ensureRepo(repoUrl, repoDir) {
   }
 }
 
-function checkout(repoDir, commit) {
+function checkout(repoDir, commit, options = {}) {
   git(repoDir, ["checkout", "-q", commit]);
   git(repoDir, ["clean", "-fdx", "-q"]);
   sanitizeWorkspaceInstructions(repoDir);
+  if (options.materializeSanitizedRoot) {
+    materializeSanitizedGitRoot(repoDir);
+  }
 }
 
 function git(repoDir, args) {
@@ -882,6 +887,32 @@ function sanitizeWorkspaceInstructions(repoDir) {
   for (const relativePath of ["AGENTS.md", "agents.md", "CLAUDE.md", "claude.md", ".agents", ".claude", ".codex"]) {
     rmSync(resolve(repoDir, relativePath), { recursive: true, force: true });
   }
+}
+
+function materializeSanitizedGitRoot(repoDir) {
+  rmSync(resolve(repoDir, ".git"), { recursive: true, force: true });
+  spawnGit(repoDir, ["init", "-q"]);
+  spawnGit(repoDir, ["add", "-A"]);
+  spawnGit(repoDir, [
+    "-c", "user.name=Benchmark Runner",
+    "-c", "user.email=benchmark@example.invalid",
+    "commit",
+    "--allow-empty",
+    "-qm",
+    "benchmark sanitized baseline",
+  ]);
+}
+
+function spawnGit(repoDir, args) {
+  const result = spawnSync("git", args, {
+    cwd: repoDir,
+    encoding: "utf8",
+    maxBuffer: 50 * 1024 * 1024,
+  });
+  if (result.status !== 0) {
+    throw new Error(`git ${args.join(" ")} failed: ${result.stderr || result.stdout}`);
+  }
+  return result;
 }
 
 function parseSimpleYaml(text) {

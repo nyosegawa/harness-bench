@@ -43,9 +43,28 @@ The top-level experiment index is:
 benchmark/reports/index.html
 ```
 
+Current sanitized baseline:
+
+```text
+benchmark/experiments/sanitized-baseline-2026-05-03/results.html
+```
+
+It contains 81 baseline agent runs across 27 cases. After one oracle
+false-negative fix and preserved-workspace regrade, the hidden-oracle pass
+counts are Codex 19/27, Claude Code 20/27, and Cursor Agent 23/27, with 0
+invalid runs.
+
+Limitation: this recorded baseline removed repository-local steering files from
+the working tree, but it was run before fresh git-root materialization was
+implemented. Future runs close that gap by re-initializing runner-managed agent
+workspaces as a sanitized one-commit repository before the agent starts.
+
 ## Run An Official Experiment
 
 Baseline conditions are defined in `benchmark/conditions/baseline.json`.
+Runner-managed agent workspaces remove upstream agent steering files and
+materialize the sanitized tree as a fresh one-commit git repository before the
+agent starts.
 
 Preview:
 

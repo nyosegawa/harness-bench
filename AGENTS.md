@@ -84,6 +84,15 @@ Do not collapse all token or turn metrics into a single ambiguous number.
 - Claude and Cursor observed `input_tokens` are fresh input. Their effective input includes cache read/write.
 - Claude reports dollar cost directly. Codex and Cursor need rate-card estimation.
 
+## Workspace Sanitization
+
+Agent runs remove upstream `AGENTS.md`, `agents.md`, `CLAUDE.md`, `claude.md`,
+`.agents`, `.claude`, and `.codex` before execution. Runner-managed agent
+workspaces are then re-initialized as a fresh one-commit git repository so the
+removed steering files do not remain visible through ordinary `git diff` or
+`git show HEAD:<path>` inspection. The original benchmark base commit is still
+recorded in `result.json` and experiment manifests.
+
 ## Common Commands
 
 Generate an experiment HTML report:
