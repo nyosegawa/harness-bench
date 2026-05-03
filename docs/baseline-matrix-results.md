@@ -46,6 +46,16 @@ that gap.
 | Claude Code | `claude:claude-opus-4-7:medium:baseline` | `sanitized-baseline-2026-05-03` | 27 | 20 | 74.1% |
 | Cursor Agent | `cursor:gpt-5.5-medium:baseline` | `sanitized-baseline-2026-05-03` | 27 | 23 | 85.2% |
 
+Follow-up Cursor Composer 2 run:
+
+| Harness | Condition | Matrix ID | Cases | Pass | Rate |
+| --- | --- | --- | ---: | ---: | ---: |
+| Cursor Agent | `cursor:composer-2:baseline` | `cursor-composer-2-2026-05-03` | 27 | 15 | 55.6% |
+
+Composer 2 is stored as a separate immutable experiment artifact rather than
+being merged into the original baseline artifact. The experiment index compares
+all conditions side by side.
+
 All baseline runs used memory-disabled harness commands. The score above is
 after one hidden-oracle false-negative fix and regrading preserved agent
 workspaces without rerunning the agents. The matrix had 0 invalid runs.

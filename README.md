@@ -54,6 +54,16 @@ false-negative fix and preserved-workspace regrade, the hidden-oracle pass
 counts are Codex 19/27, Claude Code 20/27, and Cursor Agent 23/27, with 0
 invalid runs.
 
+Current Cursor Composer 2 follow-up:
+
+```text
+benchmark/experiments/cursor-composer-2-2026-05-03/results.html
+```
+
+It uses the same 27 cases with the `cursor:composer-2:baseline` condition.
+The run passed 15/27 cases with 0 invalid runs. Composer 2 pricing is not in
+the local rate card, so cost is reported as unavailable rather than estimated.
+
 Limitation: this recorded baseline removed repository-local steering files from
 the working tree, but it was run before fresh git-root materialization was
 implemented. Future runs close that gap by re-initializing runner-managed agent

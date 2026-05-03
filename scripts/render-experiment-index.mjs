@@ -9,7 +9,7 @@ const output = resolve(args.output ?? "benchmark/reports/index.html");
 
 const experiments = loadExperiments(experimentsRoot);
 mkdirSync(dirname(output), { recursive: true });
-writeFileSync(output, renderHtml(experiments));
+writeFileSync(output, `${renderHtml(experiments).replace(/[ \t]+$/gm, "")}\n`);
 console.log(output);
 
 function loadExperiments(root) {
@@ -34,6 +34,13 @@ function loadExperiments(root) {
 }
 
 function renderHtml(experiments) {
+  const conditionRows = experiments.flatMap((experiment) =>
+    Object.entries(experiment.summary.conditions ?? {}).map(([conditionId, condition]) => ({
+      experiment,
+      conditionId,
+      ...condition,
+    })),
+  ).sort((a, b) => String(a.conditionId).localeCompare(String(b.conditionId)));
   const rows = experiments.map((experiment) => {
     const summary = experiment.summary;
     const manifest = experiment.manifest;
@@ -55,6 +62,23 @@ function renderHtml(experiments) {
       </tr>
     `;
   }).join("\n");
+  const comparisonRows = conditionRows.map((row) => {
+    const reportHref = existsSync(row.experiment.reportPath)
+      ? relative(dirname(output), row.experiment.reportPath)
+      : "";
+    return `
+      <tr>
+        <td><code>${esc(row.conditionId)}</code></td>
+        <td><code>${esc(row.experiment.id)}</code></td>
+        <td>${fmt(row.runs)}</td>
+        <td>${fmt(row.passed)}</td>
+        <td>${row.pass_rate == null ? "n/a" : `${Math.round(row.pass_rate * 100)}%`}</td>
+        <td>${fmtMs(row.median_wall_time_ms)}</td>
+        <td>${typeof row.cost_usd === "number" ? `$${row.cost_usd.toFixed(4)}` : "n/a"}</td>
+        <td>${reportHref ? `<a href="${escAttr(reportHref)}">report</a>` : ""}</td>
+      </tr>
+    `;
+  }).join("\n");
 
   return `<!doctype html>
 <html lang="en">
@@ -70,6 +94,7 @@ function renderHtml(experiments) {
     h1 { margin: 0 0 8px; font-size: 24px; }
     p { margin: 0; color: #5f6368; }
     .panel { background: #fff; border: 1px solid #dededb; border-radius: 8px; overflow-x: auto; }
+    .panel + .panel { margin-top: 18px; }
     table { border-collapse: collapse; width: 100%; font-size: 13px; }
     th, td { padding: 10px 12px; border-bottom: 1px solid #ededeb; text-align: left; white-space: nowrap; }
     th { background: #fafaf8; color: #4b4f56; font-weight: 650; }
@@ -85,6 +110,12 @@ function renderHtml(experiments) {
     <p>Immutable experiment reports. Raw run logs remain local under the configured runs root.</p>
   </header>
   <main>
+    <section class="panel">
+      ${comparisonRows ? `<table>
+        <thead><tr><th>Condition</th><th>Experiment</th><th>Runs</th><th>Pass</th><th>Rate</th><th>Median Wall</th><th>Cost</th><th>Report</th></tr></thead>
+        <tbody>${comparisonRows}</tbody>
+      </table>` : `<div class="empty">No condition summaries have been generated yet.</div>`}
+    </section>
     <section class="panel">
       ${rows ? `<table>
         <thead><tr><th>Experiment</th><th>Matrix</th><th>Created</th><th>Runs</th><th>Pass</th><th>Rate</th><th>Duration</th><th>Success</th><th>Report</th></tr></thead>

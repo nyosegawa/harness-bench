@@ -308,12 +308,13 @@ function buildExperimentSummary(matrixSummary) {
   const byCondition = groupBy(finalAgentRecords, (result) => result.condition_id ?? result.harness ?? "unknown");
   const conditionsSummary = Object.fromEntries([...byCondition.entries()].map(([conditionId, group]) => {
     const passed = group.filter((result) => result.success).length;
+    const costValues = group.map((result) => result.metrics?.usage?.cost_usd).filter((value) => typeof value === "number");
     return [conditionId, {
       runs: group.length,
       passed,
       pass_rate: group.length ? passed / group.length : null,
       median_wall_time_ms: median(group.map((result) => result.metrics?.wall_time_ms).filter((value) => typeof value === "number")),
-      cost_usd: sum(group.map((result) => result.metrics?.usage?.cost_usd).filter((value) => typeof value === "number")),
+      cost_usd: costValues.length ? sum(costValues) : null,
     }];
   }));
   return {
