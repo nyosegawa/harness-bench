@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use HarnessBench, please cite the repository."
+title: "HarnessBench: Comparing Coding Agent Harnesses on Real-Repository Debugging Tasks"
+authors:
+  - family-names: "Sakasegawa"
+repository-code: "https://github.com/nyosegawa/harness-bench"
+url: "https://github.com/nyosegawa/harness-bench"
+license: "Apache-2.0"
+version: "0.2.0"
+date-released: "2026-05-04"

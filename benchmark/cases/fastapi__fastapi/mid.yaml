@@ -28,13 +28,11 @@ setup:
   - uv run --with-editable . --with pydantic-extra-types python -c "import fastapi"
 public_tests:
   - uv run --with-editable . --with pydantic-extra-types pytest tests/test_jsonable_encoder.py -q
-hidden_tests:
-  - benchmark/cases/fastapi__fastapi/hidden-tests/mid/run.sh
 test_strategy:
   core_tests:
-    - benchmark/cases/fastapi__fastapi/hidden-tests/mid/run.sh
+    - benchmark/cases/fastapi__fastapi/hidden-tests/mid/core.sh
   regression_tests:
-    - benchmark/cases/fastapi__fastapi/hidden-tests/mid/run.sh
+    - benchmark/cases/fastapi__fastapi/hidden-tests/mid/regression.sh
   success_rule: core_and_regression
 selection_notes: >
   Mid-difficulty compatibility bug around Pydantic v2 deprecations and optional

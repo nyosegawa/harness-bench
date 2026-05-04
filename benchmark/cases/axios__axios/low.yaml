@@ -28,13 +28,11 @@ setup:
   - npm install
 public_tests:
   - npm run test:vitest:unit -- tests/unit/core
-hidden_tests:
-  - benchmark/cases/axios__axios/hidden-tests/low/run.sh
 test_strategy:
   core_tests:
-    - benchmark/cases/axios__axios/hidden-tests/low/run.sh
+    - benchmark/cases/axios__axios/hidden-tests/low/core.sh
   regression_tests:
-    - benchmark/cases/axios__axios/hidden-tests/low/run.sh
+    - benchmark/cases/axios__axios/hidden-tests/low/regression.sh
   success_rule: core_and_regression
 selection_notes: >
   Focused core error-classification bug with a narrow implementation surface.

@@ -29,13 +29,11 @@ setup:
   - go mod download
 public_tests:
   - go test ./pkg/commands/git_commands -run TestGetBehindBaseBranchValuesForAllBranches
-hidden_tests:
-  - benchmark/cases/jesseduffield__lazygit/hidden-tests/high/run.sh
 test_strategy:
   core_tests:
-    - benchmark/cases/jesseduffield__lazygit/hidden-tests/high/run.sh
+    - benchmark/cases/jesseduffield__lazygit/hidden-tests/high/core.sh
   regression_tests:
-    - benchmark/cases/jesseduffield__lazygit/hidden-tests/high/run.sh
+    - benchmark/cases/jesseduffield__lazygit/hidden-tests/high/regression.sh
   success_rule: core_and_regression
 selection_notes: >
   Higher-difficulty performance bug requiring knowledge of Git version-gated

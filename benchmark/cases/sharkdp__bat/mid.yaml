@@ -28,13 +28,11 @@ setup:
   - cargo fetch
 public_tests:
   - cargo test --test integration_tests
-hidden_tests:
-  - benchmark/cases/sharkdp__bat/hidden-tests/mid/run.sh
 test_strategy:
   core_tests:
-    - benchmark/cases/sharkdp__bat/hidden-tests/mid/run.sh
+    - benchmark/cases/sharkdp__bat/hidden-tests/mid/core.sh
   regression_tests:
-    - benchmark/cases/sharkdp__bat/hidden-tests/mid/run.sh
+    - benchmark/cases/sharkdp__bat/hidden-tests/mid/regression.sh
   success_rule: core_and_regression
 selection_notes: >
   Terminal rendering bug that requires understanding how non-printable

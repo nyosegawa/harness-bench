@@ -28,13 +28,11 @@ setup:
   - npm install
 public_tests:
   - npm run test:vitest:unit -- tests/unit/adapters/fetch.test.js
-hidden_tests:
-  - benchmark/cases/axios__axios/hidden-tests/mid/run.sh
 test_strategy:
   core_tests:
-    - benchmark/cases/axios__axios/hidden-tests/mid/run.sh
+    - benchmark/cases/axios__axios/hidden-tests/mid/core.sh
   regression_tests:
-    - benchmark/cases/axios__axios/hidden-tests/mid/run.sh
+    - benchmark/cases/axios__axios/hidden-tests/mid/regression.sh
   success_rule: core_and_regression
 selection_notes: >
   Adapter initialization bug that requires understanding module evaluation and

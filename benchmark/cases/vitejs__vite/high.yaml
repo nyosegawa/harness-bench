@@ -29,13 +29,11 @@ setup:
   - pnpm --filter=./packages/vite run build-bundle
 public_tests:
   - pnpm vitest run packages/vite/src/node/server/__tests__
-hidden_tests:
-  - benchmark/cases/vitejs__vite/hidden-tests/high/run.sh
 test_strategy:
   core_tests:
-    - benchmark/cases/vitejs__vite/hidden-tests/high/run.sh
+    - benchmark/cases/vitejs__vite/hidden-tests/high/core.sh
   regression_tests:
-    - benchmark/cases/vitejs__vite/hidden-tests/high/run.sh
+    - benchmark/cases/vitejs__vite/hidden-tests/high/regression.sh
   success_rule: core_and_regression
 selection_notes: >
   Higher-difficulty bundled-dev HMR behavior touching dev-server internals and

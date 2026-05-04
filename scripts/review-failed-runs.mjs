@@ -132,7 +132,7 @@ function buildReviewBundle(result) {
     required_schema: {
       case_id: "string",
       harness: "codex|claude|cursor",
-      verdict: "true_failure|oracle_false_negative|case_design_review|infra_failure",
+      verdict: "true_failure|core_false_negative|regression_false_negative|case_design_review|infra_failure",
       confidence: "low|medium|high",
       failure_mode: { en: "string", ja: "string" },
       evidence: { en: "string", ja: "string" },
@@ -155,7 +155,7 @@ function generateReview(bundle) {
     JSON.stringify({
       case_id: "string",
       harness: "codex|claude|cursor",
-      verdict: "true_failure|oracle_false_negative|case_design_review|infra_failure",
+      verdict: "true_failure|core_false_negative|regression_false_negative|case_design_review|infra_failure",
       confidence: "low|medium|high",
       failure_mode: { en: "string", ja: "string" },
       evidence: { en: "string", ja: "string" },
@@ -294,7 +294,7 @@ function validateSingleReview(review, prefix) {
   requireString(review.harness, `${prefix}.harness`);
   if (!["codex", "claude", "cursor"].includes(review.harness)) throw new Error(`${prefix}.harness invalid`);
   requireString(review.verdict, `${prefix}.verdict`);
-  if (!["true_failure", "oracle_false_negative", "case_design_review", "infra_failure"].includes(review.verdict)) throw new Error(`${prefix}.verdict invalid`);
+  if (!["true_failure", "core_false_negative", "regression_false_negative", "case_design_review", "infra_failure"].includes(review.verdict)) throw new Error(`${prefix}.verdict invalid`);
   if (review.confidence != null && !["low", "medium", "high"].includes(review.confidence)) throw new Error(`${prefix}.confidence invalid`);
   requireLocalized(review.failure_mode, `${prefix}.failure_mode`);
   requireLocalized(review.evidence, `${prefix}.evidence`);

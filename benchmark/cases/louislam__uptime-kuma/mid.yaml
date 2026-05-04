@@ -28,13 +28,11 @@ setup:
   - npm ci --omit=dev --ignore-scripts --no-audit
 public_tests:
   - node --test --test-reporter=spec test/backend-test/test-uptime-calculator.js
-hidden_tests:
-  - benchmark/cases/louislam__uptime-kuma/hidden-tests/mid/run.sh
 test_strategy:
   core_tests:
-    - benchmark/cases/louislam__uptime-kuma/hidden-tests/mid/run.sh
+    - benchmark/cases/louislam__uptime-kuma/hidden-tests/mid/core.sh
   regression_tests:
-    - benchmark/cases/louislam__uptime-kuma/hidden-tests/mid/run.sh
+    - benchmark/cases/louislam__uptime-kuma/hidden-tests/mid/regression.sh
   success_rule: core_and_regression
 selection_notes: >
   Mid-difficulty state mutation bug in rolling uptime queues. Hidden tests

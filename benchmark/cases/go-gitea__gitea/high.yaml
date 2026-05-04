@@ -28,13 +28,11 @@ setup:
   - go mod download
 public_tests:
   - go test ./modules/gitrepo ./services/git -run Test
-hidden_tests:
-  - benchmark/cases/go-gitea__gitea/hidden-tests/high/run.sh
 test_strategy:
   core_tests:
-    - benchmark/cases/go-gitea__gitea/hidden-tests/high/run.sh
+    - benchmark/cases/go-gitea__gitea/hidden-tests/high/core.sh
   regression_tests:
-    - benchmark/cases/go-gitea__gitea/hidden-tests/high/run.sh
+    - benchmark/cases/go-gitea__gitea/hidden-tests/high/regression.sh
   success_rule: core_and_regression
 selection_notes: >
   Higher-difficulty Git compare failure where the symptom is a web compare

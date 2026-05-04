@@ -25,7 +25,24 @@ for (const resultPath of resultPaths) {
 
   const caseData = parseSimpleYaml(readFileSync(casePath, "utf8"));
   validateCaseStrategy(caseData);
-  const testResult = runTestStrategy(caseData, workspace, dirname(resultPath));
+  const runDir = dirname(resultPath);
+  const setupResult = runCommands("regrade-setup", caseData.setup ?? [], workspace, runDir, caseData, {
+    appendRepoArg: false,
+    network: "bridge",
+  });
+  const setupPass = setupResult.every((step) => step.exit_code === 0);
+  const testResult = setupPass
+    ? runTestStrategy(caseData, workspace, runDir)
+    : {
+        success: false,
+        success_rule: "setup_and_tests",
+        setup_pass: false,
+        core_pass: false,
+        regression_pass: false,
+        core: [],
+        regressions: [],
+        metrics: summarizeTestMetrics([], []),
+      };
   const previous = {
     success: result.success,
     test_result: result.test_result ?? null,
@@ -34,6 +51,7 @@ for (const resultPath of resultPaths) {
   result.previous_regrade = previous;
   result.regraded_at = new Date().toISOString();
   result.regrade_reason = args.reason ?? "hidden scoring update";
+  result.setup_result = setupResult;
   result.test_result = testResult;
   result.success = testResult.success;
   result.metrics = {
@@ -68,8 +86,8 @@ function runTestStrategy(caseData, repoDir, runDir) {
     success_rule: "core_tests_pass",
   };
 
-  const core = runCommands("regrade-core", strategy.core_tests ?? [], repoDir, runDir);
-  const regressions = runCommands("regrade-regression", strategy.regression_tests ?? [], repoDir, runDir);
+  const core = runCommands("regrade-core", strategy.core_tests ?? [], repoDir, runDir, caseData);
+  const regressions = runCommands("regrade-regression", strategy.regression_tests ?? [], repoDir, runDir, caseData);
 
   const corePass = core.every((test) => test.exit_code === 0);
   const regressionPass = regressions.every((test) => test.exit_code === 0);
@@ -110,28 +128,25 @@ function validateCaseStrategy(caseData) {
   }
 }
 
-function runCommands(group, commands, repoDir, runDir) {
-  return commands.map((command, index) => runTestCommand(group, index, command, repoDir, runDir));
+function runCommands(group, commands, repoDir, runDir, caseData, options = {}) {
+  return commands.map((command, index) => runTestCommand(group, index, command, repoDir, runDir, caseData, options));
 }
 
-function runTestCommand(group, index, command, repoDir, runDir) {
+function runTestCommand(group, index, command, repoDir, runDir, caseData, options = {}) {
   mkdirSync(runDir, { recursive: true });
+  const normalized = String(command);
   const safeGroup = group.replace(/[^A-Za-z0-9_.-]/g, "_");
   const stdoutPath = resolve(runDir, `${safeGroup}-${index}.stdout.log`);
   const stderrPath = resolve(runDir, `${safeGroup}-${index}.stderr.log`);
   const started = new Date();
   const startedMs = Date.now();
-  const result = spawnSync("bash", ["-lc", `${shellQuote(command)} ${shellQuote(repoDir)}`], {
-    cwd: process.cwd(),
-    encoding: "utf8",
-    maxBuffer: 50 * 1024 * 1024,
-  });
+  const result = runCommandProcess({ command: normalized, repoDir, runDir, caseData, options });
   writeFileSync(stdoutPath, result.stdout ?? "");
   writeFileSync(stderrPath, result.stderr ?? "");
   return {
     group,
     index,
-    command,
+    command: normalized,
     exit_code: result.status,
     signal: result.signal,
     stdout_path: stdoutPath,
@@ -140,6 +155,68 @@ function runTestCommand(group, index, command, repoDir, runDir) {
     finished_at: new Date().toISOString(),
     duration_ms: Date.now() - startedMs,
   };
+}
+
+function runCommandProcess({ command, repoDir, runDir, caseData, options }) {
+  const environment = caseData.environment ?? {};
+  const useContainer = Boolean(environment.image) && environment.tests_in_container !== false;
+  const appendRepoArg = options.appendRepoArg ?? true;
+  if (!useContainer) {
+    const hostCommand = appendRepoArg ? `${shellQuote(command)} ${shellQuote(repoDir)}` : command;
+    return spawnSync("bash", ["-lc", hostCommand], {
+      cwd: process.cwd(),
+      encoding: "utf8",
+      maxBuffer: 50 * 1024 * 1024,
+    });
+  }
+
+  const workdir = environment.workdir ?? "/work/repo";
+  const benchRoot = process.cwd();
+  const cacheDir = resolve(runDir, "container-cache");
+  mkdirSync(cacheDir, { recursive: true });
+  const translated = translateContainerCommand(command);
+  const shellCommand = appendRepoArg ? `${shellQuote(translated)} ${shellQuote(workdir)}` : translated;
+  const network = options.network ?? (environment.test_network === "none" ? "none" : "bridge");
+  return spawnSync("docker", [
+    "run",
+    "--rm",
+    "--network",
+    network,
+    "--user",
+    `${process.getuid?.() ?? 0}:${process.getgid?.() ?? 0}`,
+    "-v",
+    `${repoDir}:${workdir}`,
+    "-v",
+    `${benchRoot}:/work/bench:ro`,
+    "-v",
+    `${cacheDir}:/work/cache`,
+    "-w",
+    workdir,
+    "-e",
+    "HOME=/work/cache/home",
+    "-e",
+    "XDG_CACHE_HOME=/work/cache/xdg",
+    "-e",
+    "CARGO_HOME=/work/cache/cargo",
+    "-e",
+    "GOMODCACHE=/work/cache/go/pkg/mod",
+    "-e",
+    "GOCACHE=/work/cache/go/build",
+    "-e",
+    "UV_CACHE_DIR=/work/cache/uv",
+    environment.image,
+    "bash",
+    "-lc",
+    shellCommand,
+  ], {
+    cwd: process.cwd(),
+    encoding: "utf8",
+    maxBuffer: 50 * 1024 * 1024,
+  });
+}
+
+function translateContainerCommand(command) {
+  return command.replaceAll("benchmark/cases/", "/work/bench/benchmark/cases/");
 }
 
 function summarizeTestMetrics(core, regressions) {

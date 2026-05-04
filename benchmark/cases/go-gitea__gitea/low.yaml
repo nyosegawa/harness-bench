@@ -27,13 +27,11 @@ setup:
   - go mod download
 public_tests:
   - go test ./services/actions -run Test
-hidden_tests:
-  - benchmark/cases/go-gitea__gitea/hidden-tests/low/run.sh
 test_strategy:
   core_tests:
-    - benchmark/cases/go-gitea__gitea/hidden-tests/low/run.sh
+    - benchmark/cases/go-gitea__gitea/hidden-tests/low/core.sh
   regression_tests:
-    - benchmark/cases/go-gitea__gitea/hidden-tests/low/run.sh
+    - benchmark/cases/go-gitea__gitea/hidden-tests/low/regression.sh
   success_rule: core_and_regression
 selection_notes: >
   Focused scheduled-action payload bug with a narrow helper-level failure.

@@ -28,13 +28,11 @@ setup:
   - go mod download
 public_tests:
   - go test ./server/router/api/v1/test -run TestUser
-hidden_tests:
-  - benchmark/cases/usememos__memos/hidden-tests/low/run.sh
 test_strategy:
   core_tests:
-    - benchmark/cases/usememos__memos/hidden-tests/low/run.sh
+    - benchmark/cases/usememos__memos/hidden-tests/low/core.sh
   regression_tests:
-    - benchmark/cases/usememos__memos/hidden-tests/low/run.sh
+    - benchmark/cases/usememos__memos/hidden-tests/low/regression.sh
   success_rule: core_and_regression
 selection_notes: >
   Focused API data-leak/regression bug in a medium application repository.

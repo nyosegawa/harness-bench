@@ -27,13 +27,11 @@ setup:
   - uv run --with-editable . --with httpx python -c "import fastapi"
 public_tests:
   - uv run --with-editable . --with httpx python -c "from fastapi import FastAPI; assert not hasattr(FastAPI(), 'vibe')"
-hidden_tests:
-  - benchmark/cases/fastapi__fastapi/hidden-tests/low/run.sh
 test_strategy:
   core_tests:
-    - benchmark/cases/fastapi__fastapi/hidden-tests/low/run.sh
+    - benchmark/cases/fastapi__fastapi/hidden-tests/low/core.sh
   regression_tests:
-    - benchmark/cases/fastapi__fastapi/hidden-tests/low/run.sh
+    - benchmark/cases/fastapi__fastapi/hidden-tests/low/regression.sh
   success_rule: core_and_regression
 selection_notes: >
   Low-difficulty public API cleanup. Hidden tests assert the temporary

@@ -29,13 +29,11 @@ setup:
   - pnpm --filter=./packages/vite run build-bundle
 public_tests:
   - pnpm vitest run packages/vite/src/node/__tests__/utils.spec.ts -t flattenId
-hidden_tests:
-  - benchmark/cases/vitejs__vite/hidden-tests/low/run.sh
 test_strategy:
   core_tests:
-    - benchmark/cases/vitejs__vite/hidden-tests/low/run.sh
+    - benchmark/cases/vitejs__vite/hidden-tests/low/core.sh
   regression_tests:
-    - benchmark/cases/vitejs__vite/hidden-tests/low/run.sh
+    - benchmark/cases/vitejs__vite/hidden-tests/low/regression.sh
   success_rule: core_and_regression
 selection_notes: >
   Focused utility bug in optimizer ID flattening. Hidden tests check exact

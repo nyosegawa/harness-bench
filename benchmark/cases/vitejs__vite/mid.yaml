@@ -29,13 +29,11 @@ setup:
   - pnpm --filter=./packages/vite run build-bundle
 public_tests:
   - pnpm vitest run packages/vite/src/node/server/__tests__/search-root.spec.ts
-hidden_tests:
-  - benchmark/cases/vitejs__vite/hidden-tests/mid/run.sh
 test_strategy:
   core_tests:
-    - benchmark/cases/vitejs__vite/hidden-tests/mid/run.sh
+    - benchmark/cases/vitejs__vite/hidden-tests/mid/core.sh
   regression_tests:
-    - benchmark/cases/vitejs__vite/hidden-tests/mid/run.sh
+    - benchmark/cases/vitejs__vite/hidden-tests/mid/regression.sh
   success_rule: core_and_regression
 selection_notes: >
   Mid-difficulty root-search bug requiring filesystem fixture behavior and

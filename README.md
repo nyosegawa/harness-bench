@@ -63,6 +63,11 @@ benchmark/reports/index.html
 After a reset, old experiments are archived locally and are not part of the
 public benchmark record.
 
+## Citation
+
+Use the repository citation metadata in `CITATION.cff`. A paper citation can be
+added there after the manuscript is public.
+
 ## Quick Checks
 
 ```bash

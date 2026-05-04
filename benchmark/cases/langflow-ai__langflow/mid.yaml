@@ -28,13 +28,11 @@ setup:
   - uv run --package lfx python -c "import lfx"
 public_tests:
   - uv run --package lfx python -c "from lfx.io.schema import schema_to_langflow_inputs"
-hidden_tests:
-  - benchmark/cases/langflow-ai__langflow/hidden-tests/mid/run.sh
 test_strategy:
   core_tests:
-    - benchmark/cases/langflow-ai__langflow/hidden-tests/mid/run.sh
+    - benchmark/cases/langflow-ai__langflow/hidden-tests/mid/core.sh
   regression_tests:
-    - benchmark/cases/langflow-ai__langflow/hidden-tests/mid/run.sh
+    - benchmark/cases/langflow-ai__langflow/hidden-tests/mid/regression.sh
   success_rule: core_and_regression
 selection_notes: >
   Mid-difficulty schema conversion and coercion bug crossing MCP model schema,

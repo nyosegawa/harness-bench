@@ -123,10 +123,26 @@ try {
 
   const setupResult = runSetup(caseData, activeRepoDir, runDir);
   result.setup_result = setupResult;
-  const strategyResult = runTestStrategy(caseData, activeRepoDir, runDir);
-  result.test_result = strategyResult;
-  result.metrics.tests = strategyResult.metrics;
-  result.success = strategyResult.success;
+  const setupPass = setupResult.every((step) => step.exit_code === 0);
+  if (!setupPass) {
+    result.test_result = {
+      success: false,
+      success_rule: "setup_and_tests",
+      setup_pass: false,
+      core_pass: false,
+      regression_pass: false,
+      core: [],
+      regressions: [],
+      metrics: summarizeTestMetrics([], []),
+    };
+    result.metrics.tests = result.test_result.metrics;
+    result.success = false;
+  } else {
+    const strategyResult = runTestStrategy(caseData, activeRepoDir, runDir);
+    result.test_result = strategyResult;
+    result.metrics.tests = strategyResult.metrics;
+    result.success = strategyResult.success;
+  }
 } catch (error) {
   result.error = {
     message: error.message,
@@ -208,7 +224,7 @@ function runTestCommand(group, index, command, repoDir, runDir, caseData, option
   const stderrPath = resolve(runDir, `${safeGroup}-${index}.stderr.log`);
   const started = new Date();
   const startedMs = Date.now();
-  const result = runCommandProcess({ command: normalized, repoDir, caseData, group, options });
+  const result = runCommandProcess({ command: normalized, repoDir, runDir, caseData, group, options });
   writeFileSync(stdoutPath, result.stdout ?? "");
   writeFileSync(stderrPath, result.stderr ?? "");
 
@@ -226,7 +242,7 @@ function runTestCommand(group, index, command, repoDir, runDir, caseData, option
   };
 }
 
-function runCommandProcess({ command, repoDir, caseData, group, options }) {
+function runCommandProcess({ command, repoDir, runDir, caseData, group, options }) {
   const environment = caseData.environment ?? {};
   const useContainer = Boolean(environment.image) && environment.tests_in_container !== false;
   const appendRepoArg = options.appendRepoArg ?? true;
@@ -241,6 +257,8 @@ function runCommandProcess({ command, repoDir, caseData, group, options }) {
 
   const workdir = environment.workdir ?? "/work/repo";
   const benchRoot = process.cwd();
+  const cacheDir = resolve(runDir, "container-cache");
+  mkdirSync(cacheDir, { recursive: true });
   const containerRepo = workdir;
   const translated = translateContainerCommand(command);
   const shellCommand = appendRepoArg ? `${shellQuote(translated)} ${shellQuote(containerRepo)}` : translated;
@@ -256,8 +274,22 @@ function runCommandProcess({ command, repoDir, caseData, group, options }) {
     `${repoDir}:${workdir}`,
     "-v",
     `${benchRoot}:/work/bench:ro`,
+    "-v",
+    `${cacheDir}:/work/cache`,
     "-w",
     workdir,
+    "-e",
+    "HOME=/work/cache/home",
+    "-e",
+    "XDG_CACHE_HOME=/work/cache/xdg",
+    "-e",
+    "CARGO_HOME=/work/cache/cargo",
+    "-e",
+    "GOMODCACHE=/work/cache/go/pkg/mod",
+    "-e",
+    "GOCACHE=/work/cache/go/build",
+    "-e",
+    "UV_CACHE_DIR=/work/cache/uv",
     environment.image,
     "bash",
     "-lc",

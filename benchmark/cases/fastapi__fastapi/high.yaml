@@ -28,13 +28,11 @@ setup:
   - uv run --with-editable . --with httpx python -c "import fastapi"
 public_tests:
   - uv run --with-editable . --with httpx pytest tests/test_dump_json_fast_path.py -q
-hidden_tests:
-  - benchmark/cases/fastapi__fastapi/hidden-tests/high/run.sh
 test_strategy:
   core_tests:
-    - benchmark/cases/fastapi__fastapi/hidden-tests/high/run.sh
+    - benchmark/cases/fastapi__fastapi/hidden-tests/high/core.sh
   regression_tests:
-    - benchmark/cases/fastapi__fastapi/hidden-tests/high/run.sh
+    - benchmark/cases/fastapi__fastapi/hidden-tests/high/regression.sh
   success_rule: core_and_regression
 selection_notes: >
   Higher-difficulty routing/serialization behavior with a performance-sensitive

@@ -27,13 +27,11 @@ setup:
   - npm ci --omit=dev --ignore-scripts --no-audit
 public_tests:
   - node --test --test-reporter=spec test/backend-test/test-ping-chart.js
-hidden_tests:
-  - benchmark/cases/louislam__uptime-kuma/hidden-tests/low/run.sh
 test_strategy:
   core_tests:
-    - benchmark/cases/louislam__uptime-kuma/hidden-tests/low/run.sh
+    - benchmark/cases/louislam__uptime-kuma/hidden-tests/low/core.sh
   regression_tests:
-    - benchmark/cases/louislam__uptime-kuma/hidden-tests/low/run.sh
+    - benchmark/cases/louislam__uptime-kuma/hidden-tests/low/regression.sh
   success_rule: core_and_regression
 selection_notes: >
   Focused frontend data filtering bug. Hidden test executes the component

@@ -28,13 +28,11 @@ setup:
   - cargo fetch
 public_tests:
   - cargo test --lib
-hidden_tests:
-  - benchmark/cases/sharkdp__bat/hidden-tests/low/run.sh
 test_strategy:
   core_tests:
-    - benchmark/cases/sharkdp__bat/hidden-tests/low/run.sh
+    - benchmark/cases/sharkdp__bat/hidden-tests/low/core.sh
   regression_tests:
-    - benchmark/cases/sharkdp__bat/hidden-tests/low/run.sh
+    - benchmark/cases/sharkdp__bat/hidden-tests/low/regression.sh
   success_rule: core_and_regression
 selection_notes: >
   Narrow CLI behavior bug with a small implementation surface and a simple

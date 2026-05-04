@@ -244,6 +244,7 @@ async function writeExperimentArtifacts(matrixSummary, summaryPath) {
 }
 
 function buildExperimentManifest(matrixSummary, summaryPath) {
+  const runEntries = matrixSummary.jobs.flatMap((job) => job.attempts.map((attempt) => runManifestEntry(job, attempt)).filter(Boolean));
   return {
     schema_version: 1,
     experiment_id: experimentId,
@@ -276,7 +277,9 @@ function buildExperimentManifest(matrixSummary, summaryPath) {
       report_path: writeReport ? resolve(experimentDir, "results.html") : null,
       failure_reviews_path: resolve(experimentDir, "failure-reviews.json"),
     },
-    runs: matrixSummary.jobs.flatMap((job) => job.attempts.map((attempt) => runManifestEntry(job, attempt)).filter(Boolean)),
+    harness_versions: summarizeHarnessVersions(runEntries),
+    harness_version_drift_detected: hasHarnessVersionDrift(runEntries),
+    runs: runEntries,
   };
 }
 
@@ -284,6 +287,7 @@ function runManifestEntry(job, attempt) {
   if (!attempt.run_dir) return null;
   const promptBundlePath = resolve(attempt.run_dir, "prompt-bundle.json");
   const resultPath = attempt.result_path ? resolve(attempt.result_path) : resolve(attempt.run_dir, "result.json");
+  const result = readResultJson(resultPath);
   return {
     run_id: basename(attempt.run_dir),
     kind: job.kind,
@@ -296,7 +300,53 @@ function runManifestEntry(job, attempt) {
     prompt_bundle_path: existsSync(promptBundlePath) ? promptBundlePath : null,
     prompt_bundle_sha256: fileSha256(promptBundlePath),
     invalid_run: attempt.invalid_run ?? false,
+    harness: result?.harness ?? null,
+    model: result?.model ?? null,
+    effort: result?.effort ?? null,
+    harness_version: result?.harness_version ?? result?.agent_result?.harness_version ?? null,
   };
+}
+
+function summarizeHarnessVersions(runEntries) {
+  const byHarness = new Map();
+  for (const entry of runEntries) {
+    const version = entry.harness_version;
+    if (!entry.harness || !version) continue;
+    const group = byHarness.get(entry.harness) ?? {
+      name: entry.harness,
+      versions: new Map(),
+      first_seen_at: null,
+      last_seen_at: null,
+    };
+    const key = [
+      version.version_string ?? "",
+      version.binary_sha256 ?? "",
+      version.binary_path ?? "",
+    ].join("\0");
+    const versionGroup = group.versions.get(key) ?? {
+      version_string: version.version_string ?? null,
+      binary_path: version.binary_path ?? null,
+      binary_sha256: version.binary_sha256 ?? null,
+      raw_version_output: version.raw_version_output ?? null,
+      runs: 0,
+    };
+    versionGroup.runs += 1;
+    group.versions.set(key, versionGroup);
+    const capturedAt = version.captured_at ?? null;
+    if (capturedAt && (!group.first_seen_at || capturedAt < group.first_seen_at)) group.first_seen_at = capturedAt;
+    if (capturedAt && (!group.last_seen_at || capturedAt > group.last_seen_at)) group.last_seen_at = capturedAt;
+    byHarness.set(entry.harness, group);
+  }
+  return Object.fromEntries([...byHarness.entries()].map(([name, group]) => [name, {
+    name,
+    first_seen_at: group.first_seen_at,
+    last_seen_at: group.last_seen_at,
+    versions: [...group.versions.values()],
+  }]));
+}
+
+function hasHarnessVersionDrift(runEntries) {
+  return Object.values(summarizeHarnessVersions(runEntries)).some((group) => group.versions.length > 1);
 }
 
 function buildExperimentSummary(matrixSummary) {

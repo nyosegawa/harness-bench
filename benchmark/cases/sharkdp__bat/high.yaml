@@ -28,13 +28,11 @@ setup:
   - cargo fetch
 public_tests:
   - cargo test
-hidden_tests:
-  - benchmark/cases/sharkdp__bat/hidden-tests/high/run.sh
 test_strategy:
   core_tests:
-    - benchmark/cases/sharkdp__bat/hidden-tests/high/run.sh
+    - benchmark/cases/sharkdp__bat/hidden-tests/high/core.sh
   regression_tests:
-    - benchmark/cases/sharkdp__bat/hidden-tests/high/run.sh
+    - benchmark/cases/sharkdp__bat/hidden-tests/high/regression.sh
   success_rule: core_and_regression
 selection_notes: >
   Pilot-only high case. This is broader than a bug fix and behaves more like

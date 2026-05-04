@@ -28,13 +28,11 @@ setup:
   - go mod download
 public_tests:
   - go test ./pkg/commands/git_commands -run TestGenerateGithubPullRequestMap
-hidden_tests:
-  - benchmark/cases/jesseduffield__lazygit/hidden-tests/low/run.sh
 test_strategy:
   core_tests:
-    - benchmark/cases/jesseduffield__lazygit/hidden-tests/low/run.sh
+    - benchmark/cases/jesseduffield__lazygit/hidden-tests/low/core.sh
   regression_tests:
-    - benchmark/cases/jesseduffield__lazygit/hidden-tests/low/run.sh
+    - benchmark/cases/jesseduffield__lazygit/hidden-tests/low/regression.sh
   success_rule: core_and_regression
 selection_notes: >
   Small Go logic bug with a focused unit-level behavior. The original PR added

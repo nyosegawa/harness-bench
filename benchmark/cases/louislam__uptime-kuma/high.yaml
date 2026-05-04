@@ -28,13 +28,11 @@ setup:
   - npm ci --omit=dev --ignore-scripts --no-audit
 public_tests:
   - node --test --test-reporter=spec test/backend-test/monitors/test-websocket.js
-hidden_tests:
-  - benchmark/cases/louislam__uptime-kuma/hidden-tests/high/run.sh
 test_strategy:
   core_tests:
-    - benchmark/cases/louislam__uptime-kuma/hidden-tests/high/run.sh
+    - benchmark/cases/louislam__uptime-kuma/hidden-tests/high/core.sh
   regression_tests:
-    - benchmark/cases/louislam__uptime-kuma/hidden-tests/high/run.sh
+    - benchmark/cases/louislam__uptime-kuma/hidden-tests/high/regression.sh
   success_rule: core_and_regression
 selection_notes: >
   Higher-difficulty monitor behavior spanning websocket handshake options and
