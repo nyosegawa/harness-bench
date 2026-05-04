@@ -163,7 +163,7 @@ async function runJob(job) {
     : `${basename(job.casePath)} ${job.mode}`;
   const attempts = [];
   let finalRecord = null;
-  const allowedAttempts = job.kind === "agent" ? maxInfraRetries + 1 : 1;
+  const allowedAttempts = maxInfraRetries + 1;
 
   for (let attempt = 1; attempt <= allowedAttempts; attempt += 1) {
     const command = buildCommand(job, attempt);
@@ -713,8 +713,8 @@ function readResultJson(path) {
 
 function isMatrixFailure(job, record) {
   if (dryRun) return false;
-  if (record.runner_error) return true;
   if (record.invalid_run) return true;
+  if (record.runner_error) return true;
   if (!record.result_path || !existsSync(record.result_path)) return true;
   if (job.kind === "agent") return false;
   if (job.mode === "verify-base") return record.result_success !== false;
@@ -723,8 +723,8 @@ function isMatrixFailure(job, record) {
 }
 
 function failureReason(job, record) {
-  if (record.runner_error) return `runner error: ${record.runner_error}`;
   if (record.invalid_run) return record.invalid_reason ?? "invalid run";
+  if (record.runner_error) return `runner error: ${record.runner_error}`;
   if (!record.result_path || !existsSync(record.result_path)) return "missing result.json";
   if (job.kind === "agent") return "agent run did not complete";
   if (job.mode === "verify-base") return "verify-base unexpectedly passed";
