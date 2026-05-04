@@ -6,7 +6,7 @@ stars_at_selection: 64000
 size_bucket: small
 language_tags: [go, cli, tui, git]
 environment:
-  image: ghcr.io/nyosegawa/harness-bench-go:1.24@sha256:af07864fa8f600bfee7f03f4850f0581cad0b3848bf1606f3a02b8407343dd16
+  image: ghcr.io/nyosegawa/harness-bench-go:1.26@sha256:24bb18aa517ef736724b294ab461760599ed7b6ab36f0d6517eed0d39571c497
   workdir: /work/repo
   setup_in_container: true
   tests_in_container: true

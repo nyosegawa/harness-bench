@@ -281,7 +281,7 @@ function runCommandProcess({ command, repoDir, runDir, caseData, group, options 
     "UV_CACHE_DIR=/work/cache/uv",
     environment.image,
     "bash",
-    "-lc",
+    "-c",
     shellCommand,
   ];
   return spawnSync("docker", dockerArgs, {

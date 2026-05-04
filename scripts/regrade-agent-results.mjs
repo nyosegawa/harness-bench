@@ -195,7 +195,7 @@ function runCommandProcess({ command, repoDir, runDir, caseData, options }) {
     "UV_CACHE_DIR=/work/cache/uv",
     environment.image,
     "bash",
-    "-lc",
+    "-c",
     shellCommand,
   ], {
     cwd: process.cwd(),

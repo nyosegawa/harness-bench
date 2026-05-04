@@ -1,6 +1,7 @@
-FROM golang:1.24-bookworm
+FROM golang:1.26-bookworm
 
 ENV DEBIAN_FRONTEND=noninteractive
+ENV PATH="/usr/local/go/bin:${PATH}"
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
