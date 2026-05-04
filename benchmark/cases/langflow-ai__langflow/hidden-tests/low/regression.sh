@@ -19,7 +19,7 @@ with tempfile.TemporaryDirectory() as tmp_dir:
 
     configure(log_level="INFO", log_file=first, cache=False)
     logging.getLogger("langflow.hidden").info("standard logging still routes")
-    configure(log_level="INFO", log_file=second, cache=False)
+    configure(log_level="DEBUG", log_file=second, cache=False)
     loguru_logger.info("new file only")
 
     for handler in logging.root.handlers:
@@ -28,6 +28,7 @@ with tempfile.TemporaryDirectory() as tmp_dir:
 
     assert "standard logging still routes" in first.read_text()
     assert "new file only" in second.read_text()
+    assert "new file only" not in first.read_text()
 PYEOF
 
 uv run --package lfx python .benchmark-hidden-loguru-regression.py

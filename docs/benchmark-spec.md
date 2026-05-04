@@ -100,15 +100,9 @@ all core_tests pass
 AND all regression_tests pass
 ```
 
-`core_and_regression` is the only accepted success rule. Earlier authoring
-drafts allowed core-only scoring, but v2 intentionally removes that fallback so
-case YAMLs cannot silently degrade to one-layer grading.
-
-There is no oracle-suite layer. Earlier drafts supported `oracle_suites`, but
-that structure acted as an additional gate rather than a true substitute for
-core behavior. The final design keeps scoring simple: alternative valid fixes
-belong in a stronger behavioral core contract, and surrounding breakage belongs
-in regression tests.
+`core_and_regression` is the only accepted success rule. Core tests define the
+required user-visible behavior as a behavioral contract. Regression tests
+protect nearby behavior that should remain unchanged.
 
 ## Case YAML
 
@@ -147,8 +141,7 @@ selection_notes: >
   Why this case is suitable.
 ```
 
-`hidden_tests` is deprecated. New cases should express scoring only through
-`test_strategy`.
+Cases express scoring through `test_strategy`.
 
 ## Hidden Test Authoring
 
@@ -312,7 +305,7 @@ system dependencies only.
 Initial public images:
 
 ```text
-ghcr.io/nyosegawa/harness-bench-rust:1.85@sha256:...
+ghcr.io/nyosegawa/harness-bench-rust:1.88@sha256:...
 ghcr.io/nyosegawa/harness-bench-node:22@sha256:...
 ghcr.io/nyosegawa/harness-bench-python:3.12@sha256:...
 ghcr.io/nyosegawa/harness-bench-go:1.26@sha256:...
@@ -323,7 +316,7 @@ Case YAML records the image digest:
 
 ```yaml
 environment:
-  image: ghcr.io/nyosegawa/harness-bench-rust:1.85@sha256:...
+  image: ghcr.io/nyosegawa/harness-bench-rust:1.88@sha256:...
   workdir: /work/repo
   setup_in_container: true
   tests_in_container: true

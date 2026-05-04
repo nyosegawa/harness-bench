@@ -8,6 +8,7 @@ import { basename, relative, resolve } from "node:path";
 const args = parseArgs(process.argv.slice(2));
 const runsRoot = resolve(args.runsRoot ?? "benchmark/runs");
 const workRoot = resolve(args.workRoot ?? "benchmark/workspaces");
+const containerCacheRoot = resolve(args.containerCacheRoot ?? "benchmark/cache/container");
 const agentTimeoutMs = Number(args.agentTimeoutMs ?? 3600000);
 const rateCard = args.rateCard ? resolve(args.rateCard) : null;
 const dryRun = parseBoolean(args.dryRun, false);
@@ -72,6 +73,7 @@ const summary = {
   stop_on_failure: stopOnFailure,
   runs_root: runsRoot,
   work_root: workRoot,
+  container_cache_root: containerCacheRoot,
   agent_timeout_ms: agentTimeoutMs,
   max_infra_retries: maxInfraRetries,
   jobs_concurrency: jobsConcurrency,
@@ -82,9 +84,15 @@ const summary = {
   rate_card: rateCard,
   cases,
   conditions,
+  harness_version_snapshots: {},
   jobs: [],
   success: false,
 };
+
+const harnessVersionSnapshots = includeAgents && !dryRun
+  ? captureHarnessVersionSnapshots([...new Set(conditions.map((condition) => condition.harness))])
+  : {};
+summary.harness_version_snapshots = harnessVersionSnapshots;
 
 console.log(JSON.stringify({
   dryRun,
@@ -214,6 +222,8 @@ async function writeExperimentArtifacts(matrixSummary, summaryPath) {
       "scripts/review-failed-runs.mjs",
       "--runsRoot",
       runsRoot,
+      "--containerCacheRoot",
+      containerCacheRoot,
       "--matrixId",
       matrixId,
       "--output",
@@ -277,6 +287,7 @@ function buildExperimentManifest(matrixSummary, summaryPath) {
       include_verify: includeVerify,
       include_agents: includeAgents,
       agent_timeout_ms: agentTimeoutMs,
+      container_cache_root: containerCacheRoot,
       max_infra_retries: maxInfraRetries,
       jobs_concurrency: jobsConcurrency,
     },
@@ -592,12 +603,56 @@ function buildCommand(job, attempt) {
     if (job.condition.prompt_template_id) {
       command.push("--promptTemplateId", job.condition.prompt_template_id);
     }
+    if (harnessVersionSnapshots[job.condition.harness]) {
+      command.push("--harnessVersion", JSON.stringify(harnessVersionSnapshots[job.condition.harness]));
+    }
     if (rateCard) {
       command.push("--rateCard", rateCard);
     }
   }
 
   return command;
+}
+
+function captureHarnessVersionSnapshots(harnesses) {
+  return Object.fromEntries(harnesses.map((harness) => [harness, captureHarnessVersion(harness)]));
+}
+
+function captureHarnessVersion(harnessName) {
+  const binary = harnessBinary(harnessName);
+  const capturedAt = new Date().toISOString();
+  const version = spawnSync(binary, ["--version"], {
+    encoding: "utf8",
+    timeout: 30000,
+    maxBuffer: 1024 * 1024,
+  });
+  const which = spawnSync("which", [binary], {
+    encoding: "utf8",
+    maxBuffer: 1024 * 1024,
+  });
+  const binaryPath = which.status === 0 ? which.stdout.trim() : null;
+  return {
+    name: harnessName,
+    version_string: firstNonEmptyLine(`${version.stdout ?? ""}\n${version.stderr ?? ""}`),
+    binary_path: binaryPath,
+    binary_sha256: binaryPath ? fileSha256(binaryPath) : null,
+    captured_at: capturedAt,
+    raw_version_output: `${version.stdout ?? ""}${version.stderr ?? ""}`,
+    version_exit_code: version.status,
+    version_signal: version.signal,
+    version_error: version.error?.message ?? null,
+  };
+}
+
+function harnessBinary(harnessName) {
+  if (harnessName === "codex") return "codex";
+  if (harnessName === "claude") return "claude";
+  if (harnessName === "cursor") return "agent";
+  return harnessName;
+}
+
+function firstNonEmptyLine(text) {
+  return text.split(/\r?\n/).map((line) => line.trim()).find(Boolean) ?? null;
 }
 
 function loadConditions(path) {

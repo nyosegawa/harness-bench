@@ -34,9 +34,8 @@ test_strategy:
   success_rule: core_and_regression
 ```
 
-There is no oracle-suite layer. Alternative valid fixes are handled by writing
-the core contract as a behavioral class rather than by enumerating expected
-implementation paths.
+Core tests define the required user-visible behavior as a behavioral contract.
+Regression tests protect nearby behavior that should remain unchanged.
 
 ## Artifact Policy
 

@@ -37,8 +37,8 @@ Success means:
 all core_tests pass AND all regression_tests pass
 ```
 
-`core_and_regression` is the only supported success rule. Cases without an
-explicit `test_strategy` or cases using legacy `hidden_tests` are rejected.
+`core_and_regression` is the only supported success rule. Cases must provide an
+explicit `test_strategy`.
 
 ## Matrix Runner
 

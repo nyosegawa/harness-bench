@@ -19,10 +19,12 @@ const promptTemplateId = args.promptTemplateId ?? "baseline-v1";
 const promptTemplatePath = resolve(args.promptTemplate ?? `benchmark/prompts/${promptTemplateId}.txt`);
 const workRoot = resolve(args.workRoot ?? "benchmark/workspaces");
 const runsRoot = resolve(args.runsRoot ?? "benchmark/runs");
+const containerCacheRoot = resolve(args.containerCacheRoot ?? "benchmark/cache/container");
 const repoOverride = args.repoDir ? resolve(args.repoDir) : null;
 const conditionId = args.conditionId ?? defaultConditionId({ harness, model, effort });
 const matrixId = args.matrixId ?? null;
 const attempt = Number(args.attempt ?? 1);
+const harnessVersionOverride = args.harnessVersion ? JSON.parse(args.harnessVersion) : null;
 
 if (!["verify-base", "verify-fixed", "verify-current", "agent"].includes(mode)) {
   fatal(`unsupported --mode ${mode}`);
@@ -87,7 +89,7 @@ try {
       materializeSanitizedRoot: !repoOverride,
     });
     result.checkout_commit = caseData.base_commit;
-    result.harness_version = captureHarnessVersion(harness);
+    result.harness_version = harnessVersionOverride ?? captureHarnessVersion(harness);
     const agentResult = runAgent({
       harness,
       model,
@@ -246,7 +248,11 @@ function runCommandProcess({ command, repoDir, runDir, caseData, group, options 
 
   const workdir = environment.workdir ?? "/work/repo";
   const benchRoot = process.cwd();
-  const cacheDir = resolve(runDir, "container-cache");
+  const cacheKey = [
+    (caseData.repo ?? "unknown").replace(/[^A-Za-z0-9_.-]/g, "__"),
+    sha256Text(environment.image ?? "host").slice(0, 16),
+  ].join("-");
+  const cacheDir = resolve(containerCacheRoot, cacheKey);
   mkdirSync(cacheDir, { recursive: true });
   const containerRepo = workdir;
   const translated = translateContainerCommand(command);
@@ -754,6 +760,7 @@ function captureHarnessVersion(harnessName) {
   const capturedAt = new Date().toISOString();
   const version = spawnSync(binary, ["--version"], {
     encoding: "utf8",
+    timeout: 30000,
     maxBuffer: 1024 * 1024,
   });
   const which = spawnSync("which", [binary], {
@@ -769,6 +776,8 @@ function captureHarnessVersion(harnessName) {
     captured_at: capturedAt,
     raw_version_output: `${version.stdout ?? ""}${version.stderr ?? ""}`,
     version_exit_code: version.status,
+    version_signal: version.signal,
+    version_error: version.error?.message ?? null,
   };
 }
 
