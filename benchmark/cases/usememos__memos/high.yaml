@@ -5,6 +5,12 @@ license: MIT
 stars_at_selection: 47000
 size_bucket: medium
 language_tags: [go, typescript, web-app, api]
+environment:
+  image: ghcr.io/nyosegawa/harness-bench-go:1.24
+  workdir: /work/repo
+  setup_in_container: true
+  tests_in_container: true
+  test_network: none
 pr_number: 5809
 pr_url: https://github.com/usememos/memos/pull/5809
 pr_title: "fix(api): tolerate missing related users in memo conversions"
@@ -27,9 +33,9 @@ hidden_tests:
 test_strategy:
   core_tests:
     - benchmark/cases/usememos__memos/hidden-tests/high/run.sh
-  oracle_suites: []
-  regression_tests: []
-  success_rule: core_tests_pass
+  regression_tests:
+    - benchmark/cases/usememos__memos/hidden-tests/high/run.sh
+  success_rule: core_and_regression
 selection_notes: >
   Higher-difficulty API conversion bug spanning memo, comment, reaction, and
   user deletion paths. Hidden tests check observable API behavior across

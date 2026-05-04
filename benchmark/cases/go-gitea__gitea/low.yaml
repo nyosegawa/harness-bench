@@ -5,6 +5,12 @@ license: MIT
 stars_at_selection: 55300
 size_bucket: large
 language_tags: [go, web-app, git, actions]
+environment:
+  image: ghcr.io/nyosegawa/harness-bench-go:1.24
+  workdir: /work/repo
+  setup_in_container: true
+  tests_in_container: true
+  test_network: none
 pr_number: 37466
 pr_url: https://github.com/go-gitea/gitea/pull/37466
 pr_title: "Fix scheduled action panic with null event payload (#37459)"
@@ -26,9 +32,9 @@ hidden_tests:
 test_strategy:
   core_tests:
     - benchmark/cases/go-gitea__gitea/hidden-tests/low/run.sh
-  oracle_suites: []
-  regression_tests: []
-  success_rule: core_tests_pass
+  regression_tests:
+    - benchmark/cases/go-gitea__gitea/hidden-tests/low/run.sh
+  success_rule: core_and_regression
 selection_notes: >
   Focused scheduled-action payload bug with a narrow helper-level failure.
   Hidden tests cover JSON null, empty payloads, and preserving existing payload

@@ -5,6 +5,12 @@ license: MIT
 stars_at_selection: 97825
 size_bucket: large
 language_tags: [python, web-framework, pydantic]
+environment:
+  image: ghcr.io/nyosegawa/harness-bench-python:3.12
+  workdir: /work/repo
+  setup_in_container: true
+  tests_in_container: true
+  test_network: none
 pr_number: 15101
 pr_url: https://github.com/fastapi/fastapi/pull/15101
 pr_title: "Update Pydantic v2 code to address deprecations"
@@ -27,9 +33,9 @@ hidden_tests:
 test_strategy:
   core_tests:
     - benchmark/cases/fastapi__fastapi/hidden-tests/mid/run.sh
-  oracle_suites: []
-  regression_tests: []
-  success_rule: core_tests_pass
+  regression_tests:
+    - benchmark/cases/fastapi__fastapi/hidden-tests/mid/run.sh
+  success_rule: core_and_regression
 selection_notes: >
   Mid-difficulty compatibility bug around Pydantic v2 deprecations and optional
   extra color types. Hidden test exercises both import paths directly.

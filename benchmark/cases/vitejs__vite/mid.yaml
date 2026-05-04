@@ -5,6 +5,12 @@ license: MIT
 stars_at_selection: 80354
 size_bucket: large
 language_tags: [typescript, node, build-tool, deno]
+environment:
+  image: ghcr.io/nyosegawa/harness-bench-node:22
+  workdir: /work/repo
+  setup_in_container: true
+  tests_in_container: true
+  test_network: none
 pr_number: 22238
 pr_url: https://github.com/vitejs/vite/pull/22238
 pr_title: "fix: detect Deno workspace root (fix #22237)"
@@ -28,9 +34,9 @@ hidden_tests:
 test_strategy:
   core_tests:
     - benchmark/cases/vitejs__vite/hidden-tests/mid/run.sh
-  oracle_suites: []
-  regression_tests: []
-  success_rule: core_tests_pass
+  regression_tests:
+    - benchmark/cases/vitejs__vite/hidden-tests/mid/run.sh
+  success_rule: core_and_regression
 selection_notes: >
   Mid-difficulty root-search bug requiring filesystem fixture behavior and
   support for Deno workspace manifests alongside existing package manager

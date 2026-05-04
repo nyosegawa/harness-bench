@@ -24,6 +24,7 @@ for (const resultPath of resultPaths) {
   if (!existsSync(casePath)) continue;
 
   const caseData = parseSimpleYaml(readFileSync(casePath, "utf8"));
+  validateCaseStrategy(caseData);
   const testResult = runTestStrategy(caseData, workspace, dirname(resultPath));
   const previous = {
     success: result.success,
@@ -32,7 +33,7 @@ for (const resultPath of resultPaths) {
 
   result.previous_regrade = previous;
   result.regraded_at = new Date().toISOString();
-  result.regrade_reason = args.reason ?? "hidden oracle update";
+  result.regrade_reason = args.reason ?? "hidden scoring update";
   result.test_result = testResult;
   result.success = testResult.success;
   result.metrics = {
@@ -63,19 +64,15 @@ function findResultPaths(root) {
 function runTestStrategy(caseData, repoDir, runDir) {
   const strategy = caseData.test_strategy ?? {
     core_tests: caseData.hidden_tests ?? [],
-    oracle_suites: [],
     regression_tests: [],
     success_rule: "core_tests_pass",
   };
 
   const core = runCommands("regrade-core", strategy.core_tests ?? [], repoDir, runDir);
   const regressions = runCommands("regrade-regression", strategy.regression_tests ?? [], repoDir, runDir);
-  const oracleSuites = runOracleSuites(strategy.oracle_suites ?? [], repoDir, runDir);
 
   const corePass = core.every((test) => test.exit_code === 0);
   const regressionPass = regressions.every((test) => test.exit_code === 0);
-  const hasOracleSuites = oracleSuites.length > 0;
-  const oraclePass = !hasOracleSuites || oracleSuites.some((suite) => suite.success);
 
   let success;
   switch (strategy.success_rule) {
@@ -85,11 +82,8 @@ function runTestStrategy(caseData, repoDir, runDir) {
     case "core_and_regression":
       success = corePass && regressionPass;
       break;
-    case "core_and_regression_and_one_oracle":
-      success = corePass && regressionPass && oraclePass;
-      break;
     default:
-      success = corePass && regressionPass && oraclePass;
+      success = corePass && regressionPass;
       break;
   }
 
@@ -98,31 +92,26 @@ function runTestStrategy(caseData, repoDir, runDir) {
     success_rule: strategy.success_rule ?? "default",
     core_pass: corePass,
     regression_pass: regressionPass,
-    oracle_pass: oraclePass,
     core,
     regressions,
-    oracle_suites: oracleSuites,
-    metrics: summarizeTestMetrics(core, regressions, oracleSuites),
+    metrics: summarizeTestMetrics(core, regressions),
   };
+}
+
+function validateCaseStrategy(caseData) {
+  const strategy = caseData.test_strategy;
+  if (!strategy) return;
+  if (Object.hasOwn(strategy, "oracle_suites")) {
+    throw new Error(`${caseData.id ?? "case"} uses removed field test_strategy.oracle_suites`);
+  }
+  const rule = strategy.success_rule ?? "core_and_regression";
+  if (!["core_tests_pass", "core_and_regression"].includes(rule)) {
+    throw new Error(`${caseData.id ?? "case"} uses unsupported success_rule ${rule}`);
+  }
 }
 
 function runCommands(group, commands, repoDir, runDir) {
   return commands.map((command, index) => runTestCommand(group, index, command, repoDir, runDir));
-}
-
-function runOracleSuites(suites, repoDir, runDir) {
-  return suites.map((suite, index) => {
-    const id = suite.id ?? `oracle-${index}`;
-    const commands = suite.command ? [suite.command] : suite.commands ?? [];
-    const tests = commands.map((command, commandIndex) =>
-      runTestCommand(`regrade-oracle-${id}`, commandIndex, command, repoDir, runDir),
-    );
-    return {
-      id,
-      success: tests.length > 0 && tests.every((test) => test.exit_code === 0),
-      tests,
-    };
-  });
 }
 
 function runTestCommand(group, index, command, repoDir, runDir) {
@@ -153,16 +142,13 @@ function runTestCommand(group, index, command, repoDir, runDir) {
   };
 }
 
-function summarizeTestMetrics(core, regressions, oracleSuites) {
-  const oracleTests = oracleSuites.flatMap((suite) => suite.tests);
+function summarizeTestMetrics(core, regressions) {
   const coreDuration = sumDurations(core);
   const regressionDuration = sumDurations(regressions);
-  const oracleDuration = sumDurations(oracleTests);
   return {
-    total_duration_ms: coreDuration + regressionDuration + oracleDuration,
+    total_duration_ms: coreDuration + regressionDuration,
     core_duration_ms: coreDuration,
     regression_duration_ms: regressionDuration,
-    oracle_duration_ms: oracleDuration,
   };
 }
 

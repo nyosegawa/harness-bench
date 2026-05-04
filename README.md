@@ -1,27 +1,50 @@
-# Harness Debug Benchmark
+# HarnessBench
 
-Benchmark harness for comparing debugging ability and operating efficiency
-across Codex, Claude Code, and Cursor Agent on real repository bugs.
+HarnessBench compares coding-agent harnesses on real-repository debugging
+tasks.
 
-The repository tracks benchmark specifications, case definitions, hidden tests,
-runner scripts, condition configs, rate cards, and immutable experiment reports.
-Raw run logs and cloned workspaces are local data and are intentionally ignored.
+The benchmark asks each harness to fix the same bug from the same sanitized
+repository checkout, then scores the patch with hidden behavioral tests. The
+current scope is Codex, Claude Code, and Cursor Agent, but the condition schema
+is harness-neutral.
 
-## Quick Checks
+Project name:
 
-```bash
-node --check scripts/run-case.mjs
-node --check scripts/run-matrix.mjs
-node --check scripts/render-results.mjs
-node --check scripts/render-experiment-index.mjs
-node --check scripts/review-failed-runs.mjs
-node --check scripts/refresh-result-metrics.mjs
-node --check scripts/apply-rate-card.mjs
+```text
+HarnessBench: Comparing Coding Agent Harnesses on Real-Repository Debugging Tasks
+Repository: nyosegawa/harness-bench
 ```
 
-## Artifact Model
+## Design
 
-Official benchmark results are experiment artifacts under:
+HarnessBench uses a two-layer scoring model:
+
+- `core_tests`: the observable bug-fix contract. Every core test must pass.
+- `regression_tests`: targeted surrounding behavior that must not break. Every
+  regression test must pass.
+
+Official cases use:
+
+```yaml
+test_strategy:
+  core_tests:
+    - benchmark/cases/<repo>/hidden-tests/<difficulty>/core.sh
+  regression_tests:
+    - benchmark/cases/<repo>/hidden-tests/<difficulty>/regression.sh
+  success_rule: core_and_regression
+```
+
+There is no oracle-suite layer. Alternative valid fixes are handled by writing
+the core contract as a behavioral class rather than by enumerating expected
+implementation paths.
+
+## Artifact Policy
+
+`benchmark/runs/`, `benchmark/workspaces/`, and `benchmark/archive/` are local
+data and are ignored by git. Raw logs are preserved under `benchmark/archive/`
+when experiments are reset.
+
+Official, publishable experiment artifacts live under:
 
 ```text
 benchmark/experiments/<experiment-id>/
@@ -31,133 +54,88 @@ benchmark/experiments/<experiment-id>/
   results.html
 ```
 
-`manifest.json` records the matrix id, case and condition inputs, runner git
-commit, script hashes, prompt bundle hashes, rate card, and raw run ids.
-`summary.json` records aggregate pass/fail, invalid runs, timing, and cost.
-`failure-reviews.json` stores bilingual auxiliary implementation reviews.
-`results.html` is the immutable report for that experiment.
-
-The top-level experiment index is:
+The public report index is:
 
 ```text
 benchmark/reports/index.html
 ```
 
-Current sanitized baseline:
+After a reset, old experiments are archived locally and are not part of the
+public benchmark record.
 
-```text
-benchmark/experiments/sanitized-baseline-2026-05-03/results.html
+## Quick Checks
+
+```bash
+node --check scripts/run-case.mjs
+node --check scripts/run-matrix.mjs
+node --check scripts/render-results.mjs
+node --check scripts/render-experiment-index.mjs
+node --check scripts/review-failed-runs.mjs
+node --check scripts/regrade-agent-results.mjs
+node --check scripts/refresh-result-metrics.mjs
+node --check scripts/apply-rate-card.mjs
 ```
 
-It contains 81 baseline agent runs across 27 cases. After one oracle
-false-negative fix and preserved-workspace regrade, the hidden-oracle pass
-counts are Codex 19/27, Claude Code 20/27, and Cursor Agent 23/27, with 0
-invalid runs.
+## Verify A Case
 
-Current Cursor Composer 2 follow-up:
+```bash
+node scripts/run-case.mjs \
+  --case benchmark/cases/sharkdp__bat/low.yaml \
+  --mode verify-base
 
-```text
-benchmark/experiments/cursor-composer-2-2026-05-03/results.html
+node scripts/run-case.mjs \
+  --case benchmark/cases/sharkdp__bat/low.yaml \
+  --mode verify-fixed
 ```
 
-It uses the same 27 cases with the `cursor:composer-2:baseline` condition.
-The run passed 15/27 cases with 0 invalid runs. Composer 2 pricing is not in
-the local rate card, so cost is reported as unavailable rather than estimated.
+Expected case quality gate:
 
-Limitation: this recorded baseline removed repository-local steering files from
-the working tree, but it was run before fresh git-root materialization was
-implemented. Future runs close that gap by re-initializing runner-managed agent
-workspaces as a sanitized one-commit repository before the agent starts.
+- `verify-base` fails.
+- `verify-fixed` passes.
+- failure output identifies whether the miss is in core or regression.
 
-## Run An Official Experiment
-
-Baseline conditions are defined in `benchmark/conditions/baseline.json`.
-Runner-managed agent workspaces remove upstream agent steering files and
-materialize the sanitized tree as a fresh one-commit git repository before the
-agent starts.
-
-Preview:
+## Run A Matrix
 
 ```bash
 node scripts/run-matrix.mjs \
-  --experimentId sanitized-baseline-2026-05-03 \
+  --experimentId harnessbench-smoke-YYYY-MM-DD \
+  --conditions benchmark/conditions/baseline.json \
   --includeVerify true \
   --jobs 3 \
-  --dryRun true
-```
-
-Run:
-
-```bash
-node scripts/run-matrix.mjs \
-  --experimentId sanitized-baseline-2026-05-03 \
-  --includeVerify true \
-  --jobs 3 \
-  --agentTimeoutMs 900000 \
+  --agentTimeoutMs 3600000 \
   --maxInfraRetries 1 \
   --rateCard benchmark/rate-cards/api-equivalent-2026-05-03.json \
   --review true \
+  --reviewJobs 3 \
   --report true
 ```
 
-`--jobs` controls concurrent `run-case.mjs` processes. Agent runs use isolated
-per-run workspaces. Verify jobs are serialized per repository workspace to
-avoid `.git/index.lock` collisions.
+Official runs use a 60 minute per-issue timeout. Cursor conditions that require CLI model configuration should run with
+`--jobs 1` unless the runner has been updated to isolate Cursor configuration
+per process.
 
-## Case Verification
+## Sanitization
 
-Each case has a base commit expected to fail hidden tests and a fixed commit
-expected to pass:
-
-```bash
-node scripts/run-case.mjs --case benchmark/cases/sharkdp__bat/low.yaml --mode verify-base
-node scripts/run-case.mjs --case benchmark/cases/sharkdp__bat/low.yaml --mode verify-fixed
-```
-
-Hidden tests live under `benchmark/cases/*/hidden-tests/` and are never shown
-to the agent prompt.
-
-## Failure Reviews
-
-LLM-as-a-judge is auxiliary only. Hidden tests remain the source of pass/fail
-truth. Review generation explains how failed implementations went wrong.
-
-Validate an experiment review file:
-
-```bash
-node scripts/review-failed-runs.mjs \
-  --runsRoot benchmark/runs \
-  --matrixId sanitized-baseline-2026-05-03 \
-  --output benchmark/experiments/sanitized-baseline-2026-05-03/failure-reviews.json
-```
-
-Generate missing bilingual Codex reviews in parallel:
-
-```bash
-node scripts/review-failed-runs.mjs \
-  --runsRoot benchmark/runs \
-  --matrixId sanitized-baseline-2026-05-03 \
-  --output benchmark/experiments/sanitized-baseline-2026-05-03/failure-reviews.json \
-  --generate \
-  --jobs 4
-```
-
-## Local Data Policy
-
-Do not commit:
+Runner-managed agent workspaces remove upstream steering files before the agent
+starts:
 
 ```text
-benchmark/runs/
-benchmark/workspaces/
-benchmark/archive/
+AGENTS.md
+agents.md
+CLAUDE.md
+claude.md
+.agents/
+.claude/
+.codex/
 ```
 
-Raw harness logs are valuable. Parser fixes should use
-`scripts/refresh-result-metrics.mjs` to re-normalize existing logs rather than
-rerunning expensive jobs whenever possible.
+The sanitized tree is materialized as a fresh one-commit git repository for
+agent runs. This prevents `git diff`, `git show`, or `git log` from exposing
+deleted steering instructions.
 
-## Future Interventions
+## Failure Review
 
-Prompt, Agent Skill, memory, or tool-use experiments should use separate
-condition files under `benchmark/conditions/` and a distinct `experimentId`.
-Baseline runs must keep memory and repository-local agent steering disabled.
+The hidden tests are authoritative. LLM failure reviews are auxiliary evidence:
+they summarize likely root cause, whether the patch partially solved the issue,
+and whether a false-negative investigation is warranted. Reviews are schema
+validated before being included in reports.

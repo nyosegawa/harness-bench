@@ -5,6 +5,12 @@ license: MIT
 stars_at_selection: 147629
 size_bucket: large
 language_tags: [python, web-app, observability]
+environment:
+  image: ghcr.io/nyosegawa/harness-bench-python:3.12
+  workdir: /work/repo
+  setup_in_container: true
+  tests_in_container: true
+  test_network: none
 pr_number: 12926
 pr_url: https://github.com/langflow-ai/langflow/pull/12926
 pr_title: "fix: route custom Loguru logs through Langflow logger"
@@ -27,9 +33,9 @@ hidden_tests:
 test_strategy:
   core_tests:
     - benchmark/cases/langflow-ai__langflow/hidden-tests/low/run.sh
-  oracle_suites: []
-  regression_tests: []
-  success_rule: core_tests_pass
+  regression_tests:
+    - benchmark/cases/langflow-ai__langflow/hidden-tests/low/run.sh
+  success_rule: core_and_regression
 selection_notes: >
   Focused logging integration bug. Hidden test configures a temporary log file
   and verifies Loguru output reaches the same sink as Langflow logs.

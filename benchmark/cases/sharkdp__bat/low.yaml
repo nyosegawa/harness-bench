@@ -5,6 +5,12 @@ license: Apache-2.0
 stars_at_selection: 58657
 size_bucket: small
 language_tags: [rust, cli]
+environment:
+  image: ghcr.io/nyosegawa/harness-bench-rust:1.85
+  workdir: /work/repo
+  setup_in_container: true
+  tests_in_container: true
+  test_network: none
 pr_number: 3686
 pr_url: https://github.com/sharkdp/bat/pull/3686
 pr_title: Detect ZIP archives as binary content
@@ -27,9 +33,9 @@ hidden_tests:
 test_strategy:
   core_tests:
     - benchmark/cases/sharkdp__bat/hidden-tests/low/run.sh
-  oracle_suites: []
-  regression_tests: []
-  success_rule: core_tests_pass
+  regression_tests:
+    - benchmark/cases/sharkdp__bat/hidden-tests/low/run.sh
+  success_rule: core_and_regression
 selection_notes: >
   Narrow CLI behavior bug with a small implementation surface and a simple
   external hidden test. The original PR also added unit and integration

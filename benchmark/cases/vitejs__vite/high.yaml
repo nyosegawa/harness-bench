@@ -5,6 +5,12 @@ license: MIT
 stars_at_selection: 80354
 size_bucket: large
 language_tags: [typescript, node, build-tool, dev-server, hmr]
+environment:
+  image: ghcr.io/nyosegawa/harness-bench-node:22
+  workdir: /work/repo
+  setup_in_container: true
+  tests_in_container: true
+  test_network: none
 pr_number: 22269
 pr_url: https://github.com/vitejs/vite/pull/22269
 pr_title: "fix(bundled-dev): reject requests to HMR patch files in non potentially trustworthy origins"
@@ -28,9 +34,9 @@ hidden_tests:
 test_strategy:
   core_tests:
     - benchmark/cases/vitejs__vite/hidden-tests/high/run.sh
-  oracle_suites: []
-  regression_tests: []
-  success_rule: core_tests_pass
+  regression_tests:
+    - benchmark/cases/vitejs__vite/hidden-tests/high/run.sh
+  success_rule: core_and_regression
 selection_notes: >
   Higher-difficulty bundled-dev HMR behavior touching dev-server internals and
   security semantics. Hidden tests exercise patch-memory output directly while

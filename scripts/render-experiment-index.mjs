@@ -85,7 +85,7 @@ function renderHtml(experiments) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Harness Debug Benchmark Experiments</title>
+  <title>HarnessBench Experiments</title>
   <style>
     :root { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #202124; background: #f7f7f4; }
     body { margin: 0; }
@@ -106,7 +106,7 @@ function renderHtml(experiments) {
 </head>
 <body>
   <header>
-    <h1>Harness Debug Benchmark Experiments</h1>
+    <h1>HarnessBench Experiments</h1>
     <p>Immutable experiment reports. Raw run logs remain local under the configured runs root.</p>
   </header>
   <main>

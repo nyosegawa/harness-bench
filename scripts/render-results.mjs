@@ -114,7 +114,7 @@ function renderHtml(results) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Harness Benchmark Results</title>
+  <title>HarnessBench Results</title>
   <style>
     :root { color-scheme: light; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
     body { margin: 0; background: #f7f7f4; color: #202124; }
@@ -204,7 +204,7 @@ function renderHtml(results) {
 </head>
 <body>
   <header>
-    <h1 data-i18n="reportTitle">Harness Benchmark Results</h1>
+    <h1 data-i18n="reportTitle">HarnessBench Results</h1>
     <p>Generated at ${esc(new Date().toISOString())}</p>
   </header>
   <main>
@@ -215,9 +215,9 @@ function renderHtml(results) {
       ${renderSelect("harness-filter", "Harness", ["", ...unique(agentResults.map((result) => result.harness))], "harness")}
       ${renderSelect("result-filter", "Result", ["", "pass", "fail"], "result")}
     </section>
-    <p class="note" data-i18n="viewNote">Default view shows only the 81 production baseline runs. Pilot and smoke runs are available from the View filter.</p>
+    <p class="note" data-i18n="viewNote">Default view shows official matrix runs. Exploratory and smoke runs are available from the View filter.</p>
     <section class="summary">
-      <div class="metric"><div class="label" data-i18n="baselineRuns">Baseline Runs</div><div class="value">${summary.count}</div></div>
+      <div class="metric"><div class="label" data-i18n="baselineRuns">Official Runs</div><div class="value">${summary.count}</div></div>
       <div class="metric"><div class="label" data-i18n="passRate">Pass Rate</div><div class="value">${summary.passRate}</div></div>
       <div class="metric"><div class="label" data-i18n="medianWall">Median Wall Time</div><div class="value">${fmtMs(summary.medianWallMs)}</div></div>
       <div class="metric"><div class="label" data-i18n="invalidRuns">Invalid Runs</div><div class="value">${invalidResults.length}</div></div>
@@ -238,12 +238,12 @@ function renderHtml(results) {
     <section class="report-section">
       <h2 data-i18n="executiveSummary">Executive Summary</h2>
       <p data-i18n="executiveSummaryBody">${esc(executiveSummary.en)}</p>
-      <p data-i18n="executiveCaveatBody">The headline score is a hidden-oracle pass rate, not yet the final correctness score. False-negative review found several cases where hidden tests may over-constrain implementation details or unstated API choices; those cases are called out below and should be resolved before using the matrix as a final leaderboard.</p>
+      <p data-i18n="executiveCaveatBody">The headline score is a hidden-test pass rate. Failed runs still need false-negative review before the matrix is used as a final leaderboard.</p>
       <p data-i18n="sanitizationCaveatBody">Sanitization caveat: this recorded run removed repository-local steering files from the working tree before agents started, but it did not yet materialize a fresh git root. A sufficiently curious agent could still have recovered tracked steering files from git objects. Future runs use a fresh one-commit sanitized workspace.</p>
     </section>
     <section class="report-section">
       <h2 data-i18n="frameworkExplanation">Benchmark Design</h2>
-      <p data-i18n="frameworkBody">Each case starts from a real repository base commit where the hidden core test fails, and a fixed commit where the same hidden test passes. Agent runs receive only the issue-style instruction and work inside an isolated checkout. A run is counted as pass only when the hidden core test passes after the agent edit. Raw harness logs are kept locally, metrics are normalized per harness, and invalid infrastructure runs are excluded from baseline summaries.</p>
+      <p data-i18n="frameworkBody">Each case starts from a real repository base commit where hidden scoring fails, and a fixed commit where hidden scoring passes. Agent runs receive only the issue-style instruction and work inside an isolated checkout. A run is counted as pass only when both hidden core and regression tests pass after the agent edit. Raw harness logs are kept locally, metrics are normalized per harness, and invalid infrastructure runs are excluded from official summaries.</p>
       <p data-i18n="caseDesignBody">The case set spans 9 repositories with low, mid, and high difficulty tasks per repository. Difficulty is based on expected debugging complexity, not just repository size. Repo size is tracked separately because a large repository can still have a localized bug, while a small repository can require subtle behavior reconstruction.</p>
       <p data-i18n="metricDesignBody">Turns, tokens, tool calls, and cost are intentionally not collapsed into one ambiguous number. Codex turns mean completed harness invocations, Claude turns and cost come from Claude CLI output, and Cursor usage is normalized from stream events. Cached input is separated from fresh input where the harness exposes it; Codex and Cursor dollar values are API-equivalent estimates, while Claude cost is reported by the harness.</p>
     </section>
@@ -253,12 +253,12 @@ function renderHtml(results) {
     </section>
     <section class="matrix-panel">
       <h2 data-i18n="falseNegativeReview">False-negative Review</h2>
-      <p class="section-copy" data-i18n="falseNegativeBody">Failed baseline runs were checked against hidden-test output and saved workspaces. Oracle fixes were applied by regrading preserved workspaces instead of rerunning agents. Remaining failures are mostly true implementation failures. The bat fallback flag-name ambiguity is marked as a case-design review for the existing baseline and the prompt has been clarified for future runs.</p>
+      <p class="section-copy" data-i18n="falseNegativeBody">Failed baseline runs were checked against hidden-test output and saved workspaces. Hidden-test fixes are applied by regrading preserved workspaces instead of rerunning agents when possible. Remaining failures are reviewed as true implementation failures, core false negatives, regression false negatives, case-design issues, or infrastructure failures.</p>
       <div class="compact-list">${falseNegativeRows}</div>
     </section>
     <section class="matrix-panel">
       <h2 data-i18n="failureReview">Failure Implementation Review</h2>
-      <p class="section-copy" data-i18n="failureReviewBody">These notes summarize how the failed implementations went wrong. They are auxiliary analysis generated from hidden-test output, workspace diffs, and saved harness logs where useful; they do not replace hidden-oracle pass/fail scoring.</p>
+      <p class="section-copy" data-i18n="failureReviewBody">These notes summarize how the failed implementations went wrong. They are auxiliary analysis generated from hidden-test output, workspace diffs, and saved harness logs where useful; they do not replace hidden-test pass/fail scoring.</p>
       <div class="failure-review-list">${failureReviewRows}</div>
     </section>
     <section class="matrix-panel">
@@ -293,8 +293,8 @@ function renderHtml(results) {
   <script>
     const translations = {
       en: {
-        reportTitle: "Harness Benchmark Results",
-        baselineRuns: "Baseline Runs", passRate: "Pass Rate", medianWall: "Median Wall Time", invalidRuns: "Invalid Runs",
+        reportTitle: "HarnessBench Results",
+        baselineRuns: "Official Runs", passRate: "Pass Rate", medianWall: "Median Wall Time", invalidRuns: "Invalid Runs",
         reportedCost: "Reported Cost", estimatedCost: "Estimated Cost", byCase: "By Case", byHarness: "By Harness",
         byDifficulty: "By Difficulty", byRepoSize: "By Repo Size", byFailure: "By Failure", language: "Language",
         view: "View", case: "Case", harness: "Harness", result: "Result", difficulty: "Difficulty", size: "Size",
@@ -306,15 +306,15 @@ function renderHtml(results) {
         name: "Name", runs: "Runs", pass: "Pass", rate: "Rate", medianWallShort: "Median Wall",
         reportedDollar: "Reported $", estimatedDollar: "Estimated $", conditionComparison: "Harness x Model Comparison",
         executiveSummary: "Executive Summary", executiveSummaryBody: ${JSON.stringify(executiveSummary.en)},
-        executiveCaveatBody: "The headline score is a hidden-oracle pass rate, not yet the final correctness score. False-negative review found several cases where hidden tests may over-constrain implementation details or unstated API choices; those cases are called out below and should be resolved before using the matrix as a final leaderboard.",
+        executiveCaveatBody: "The headline score is a hidden-test pass rate. Failed runs still need false-negative review before the matrix is used as a final leaderboard.",
         sanitizationCaveatBody: "Sanitization caveat: this recorded run removed repository-local steering files from the working tree before agents started, but it did not yet materialize a fresh git root. A sufficiently curious agent could still have recovered tracked steering files from git objects. Future runs use a fresh one-commit sanitized workspace.",
         caseMatrix: "Case Result Matrix", showDetails: "Show Detailed Table", hideDetails: "Hide Detailed Table",
-        viewNote: "Default view shows only the 81 production baseline runs. Pilot and smoke runs are available from the View filter.",
-        frameworkExplanation: "Benchmark Design", frameworkBody: "Each case starts from a real repository base commit where the hidden core test fails, and a fixed commit where the same hidden test passes. Agent runs receive only the issue-style instruction and work inside an isolated checkout. A run is counted as pass only when the hidden core test passes after the agent edit. Raw harness logs are kept locally, metrics are normalized per harness, and invalid infrastructure runs are excluded from baseline summaries.",
+        viewNote: "Default view shows official matrix runs. Exploratory and smoke runs are available from the View filter.",
+        frameworkExplanation: "Benchmark Design", frameworkBody: "Each case starts from a real repository base commit where hidden scoring fails, and a fixed commit where hidden scoring passes. Agent runs receive only the issue-style instruction and work inside an isolated checkout. A run is counted as pass only when both hidden core and regression tests pass after the agent edit. Raw harness logs are kept locally, metrics are normalized per harness, and invalid infrastructure runs are excluded from official summaries.",
         caseDesignBody: "The case set spans 9 repositories with low, mid, and high difficulty tasks per repository. Difficulty is based on expected debugging complexity, not just repository size. Repo size is tracked separately because a large repository can still have a localized bug, while a small repository can require subtle behavior reconstruction.",
         metricDesignBody: "Turns, tokens, tool calls, and cost are intentionally not collapsed into one ambiguous number. Turn-like counts are harness-specific: Codex reports completed exec turns, Claude reports num_turns, and Cursor has assistant/action-step events rather than a completed-turn primitive. Cached input is separated from fresh input where the harness exposes it; Codex and Cursor dollar values are API-equivalent estimates, while Claude cost is reported by the harness.",
-        falseNegativeReview: "False-negative Review", falseNegativeBody: "Failed baseline runs were checked against hidden-test output and saved workspaces. Oracle fixes were applied by regrading preserved workspaces instead of rerunning agents. Remaining failures are mostly true implementation failures. The bat fallback flag-name ambiguity is marked as a case-design review for the existing baseline and the prompt has been clarified for future runs.",
-        failureReview: "Failure Implementation Review", failureReviewBody: "These notes summarize how the failed implementations went wrong. They are auxiliary analysis generated from hidden-test output, workspace diffs, and saved harness logs where useful; they do not replace hidden-oracle pass/fail scoring.",
+        falseNegativeReview: "False-negative Review", falseNegativeBody: "Failed baseline runs were checked against hidden-test output and saved workspaces. Hidden-test fixes are applied by regrading preserved workspaces instead of rerunning agents when possible. Remaining failures are reviewed as true implementation failures, core false negatives, regression false negatives, case-design issues, or infrastructure failures.",
+        failureReview: "Failure Implementation Review", failureReviewBody: "These notes summarize how the failed implementations went wrong. They are auxiliary analysis generated from hidden-test output, workspace diffs, and saved harness logs where useful; they do not replace hidden-test pass/fail scoring.",
         caseCatalog: "Case Catalog", passRateChart: "Pass Rate", wallTimeChart: "Median Wall Time", costPassChart: "Cost Per Pass", difficultyChart: "Success By Difficulty",
         passValue: "pass", failValue: "fail", noInvalidRuns: "No invalid runs",
         failureLabel: "Failure:", evidenceLabel: "Evidence:", recommendationLabel: "Recommendation:",
@@ -327,8 +327,8 @@ function renderHtml(results) {
         optionPilotSmoke: "Pilot/Smoke", optionPass: "pass", optionFail: "fail", optionEn: "English", optionJa: "Japanese"
       },
       ja: {
-        reportTitle: "Harness Benchmark 結果",
-        baselineRuns: "Baseline 実行", passRate: "成功率", medianWall: "Wall Time 中央値", invalidRuns: "Invalid 実行",
+        reportTitle: "HarnessBench 結果",
+        baselineRuns: "公式実行", passRate: "成功率", medianWall: "Wall Time 中央値", invalidRuns: "Invalid 実行",
         reportedCost: "報告 Cost", estimatedCost: "推定 Cost", byCase: "Case 別", byHarness: "Harness 別",
         byDifficulty: "Difficulty 別", byRepoSize: "Repo Size 別", byFailure: "Failure 別", language: "言語",
         view: "表示", case: "Case", harness: "Harness", result: "結果", difficulty: "難度", size: "Size",
@@ -340,15 +340,15 @@ function renderHtml(results) {
         name: "名前", runs: "実行数", pass: "成功", rate: "率", medianWallShort: "Wall 中央値",
         reportedDollar: "報告 $", estimatedDollar: "推定 $", conditionComparison: "Harness x Model 比較",
         executiveSummary: "要約", executiveSummaryBody: ${JSON.stringify(executiveSummary.ja)},
-        executiveCaveatBody: "この headline score は hidden-oracle 成功率であり、最終的な絶対正解率ではありません。false-negative 調査では、hidden test が実装詳細や prompt に明示されていない API 選択を縛っている可能性がある case が見つかりました。該当 case は下で明示し、最終 leaderboard として使う前に oracle を確定すべきです。",
+        executiveCaveatBody: "この headline score は hidden-test 成功率です。最終 leaderboard として使う前に、失敗 run の false-negative review が必要です。",
         sanitizationCaveatBody: "Sanitization caveat: この記録済み run では、agent 開始前に repository-local steering file を working tree から削除していましたが、fresh git root 化はまだしていませんでした。そのため tracked file は git object から復元可能でした。将来の run では sanitized tree を fresh one-commit workspace として渡します。",
         caseMatrix: "Case 結果 Matrix", showDetails: "詳細表を表示", hideDetails: "詳細表を隠す",
-        viewNote: "デフォルトでは 81 件の本番 baseline run だけを表示します。Pilot/Smoke run は表示フィルタから確認できます。",
-        frameworkExplanation: "ベンチマーク設計", frameworkBody: "各 case は、hidden core test が失敗する実リポジトリの base commit と、同じ hidden test が成功する fixed commit を持ちます。Agent には issue 形式の instruction だけを渡し、隔離 checkout 内で修正させます。Agent 編集後に hidden core test が通った場合だけ pass と数えます。raw harness log はローカルに保持し、metrics は harness ごとの意味を保ったまま正規化し、infra invalid run は baseline 集計から除外します。",
+        viewNote: "デフォルトでは公式 matrix run を表示します。探索/Smoke run は表示フィルタから確認できます。",
+        frameworkExplanation: "ベンチマーク設計", frameworkBody: "各 case は、hidden scoring が失敗する実リポジトリの base commit と、hidden scoring が成功する fixed commit を持ちます。Agent には issue 形式の instruction だけを渡し、隔離 checkout 内で修正させます。Agent 編集後に hidden core/regression test が両方通った場合だけ pass と数えます。raw harness log はローカルに保持し、metrics は harness ごとの意味を保ったまま正規化し、infra invalid run は公式集計から除外します。",
         caseDesignBody: "case set は 9 リポジトリにまたがり、各リポジトリに low/mid/high の 3 段階の task を置いています。difficulty は単なる repo size ではなく、想定される debug の複雑さで決めています。大規模 repo でも局所的な bug はあり、小規模 repo でも微妙な仕様復元が必要な bug はあるため、repo size は別軸として扱います。",
         metricDesignBody: "turn、token、tool call、cost は harness ごとに意味が違うため、曖昧な単一指標に潰していません。turn 系の値は harness 固有です。Codex は完了した exec turn、Claude は num_turns、Cursor は完了 turn primitive ではなく assistant/action-step event 数です。cache input は fresh input と分け、Codex/Cursor の dollar は API-equivalent 推定、Claude は harness 報告値です。",
-        falseNegativeReview: "False-negative Review", falseNegativeBody: "失敗した baseline run は hidden test output と保存済み workspace で照合しました。oracle fix は agent を再実行せず、保存済み workspace を再採点して反映しています。残る失敗はほぼ true implementation failure です。bat fallback flag 名の曖昧さは既存 baseline では case-design review とし、将来 run 向けには prompt を明確化済みです。",
-        failureReview: "失敗実装レビュー", failureReviewBody: "ここでは failed implementation がどう間違えたかを要約します。hidden-test output、workspace diff、必要に応じて保存済み harness log から作る補助分析であり、hidden-oracle の pass/fail 判定を置き換えるものではありません。",
+        falseNegativeReview: "False-negative Review", falseNegativeBody: "失敗した baseline run は hidden test output と保存済み workspace で照合しました。hidden test 修正は、可能な限り agent を再実行せず保存済み workspace の再採点で反映します。残る失敗は true implementation failure、core false negative、regression false negative、case-design issue、infrastructure failure としてレビューします。",
+        failureReview: "失敗実装レビュー", failureReviewBody: "ここでは failed implementation がどう間違えたかを要約します。hidden-test output、workspace diff、必要に応じて保存済み harness log から作る補助分析であり、hidden-test の pass/fail 判定を置き換えるものではありません。",
         caseCatalog: "Case Catalog", passRateChart: "成功率", wallTimeChart: "Wall Time 中央値", costPassChart: "成功あたり Cost", difficultyChart: "Difficulty 別成功数",
         passValue: "成功", failValue: "失敗", noInvalidRuns: "Invalid run はありません",
         failureLabel: "失敗:", evidenceLabel: "根拠:", recommendationLabel: "扱い:",
@@ -712,8 +712,8 @@ function buildExecutiveSummary(results) {
     .toSorted((a, b) => a.costPerPass - b.costPerPass)[0];
   const invalidCount = results.filter((result) => result.invalid_run).length;
   return {
-    en: `This baseline compares three memory-disabled agent harnesses on the same ${caseCount} real-repository debugging cases. ${scoreEn}. After one oracle false-negative fix and preserved-workspace regrade, ${titleCase(bestHarness(rows)?.key ?? "unknown")} has the highest hidden-oracle pass rate, ${titleCase(fastest?.key ?? "unknown")} has the fastest median wall time, and ${titleCase(cheapest?.key ?? "unknown")} has the lowest cost per pass. Invalid runs: ${invalidCount}.`,
-    ja: `この baseline は、memory を無効化した 3 つの agent harness を、同じ ${caseCount} 件の実リポジトリ debug case で比較したものです。${scoreJa}。1 件の oracle false-negative 修正と保存済み workspace の再採点後、hidden-oracle 成功率は ${titleCase(bestHarness(rows)?.key ?? "unknown")} が最高、wall time 中央値は ${titleCase(fastest?.key ?? "unknown")} が最速、成功あたり cost は ${titleCase(cheapest?.key ?? "unknown")} が最小です。Invalid run は ${invalidCount} 件です。`,
+    en: `This report compares memory-disabled agent harness conditions on ${caseCount} real-repository debugging cases. ${scoreEn}. ${titleCase(bestHarness(rows)?.key ?? "unknown")} has the highest hidden-test pass rate, ${titleCase(fastest?.key ?? "unknown")} has the fastest median wall time, and ${titleCase(cheapest?.key ?? "unknown")} has the lowest cost per pass. Invalid runs: ${invalidCount}.`,
+    ja: `この report は、memory を無効化した agent harness 条件を、${caseCount} 件の実リポジトリ debug case で比較します。${scoreJa}。hidden-test 成功率は ${titleCase(bestHarness(rows)?.key ?? "unknown")} が最高、wall time 中央値は ${titleCase(fastest?.key ?? "unknown")} が最速、成功あたり cost は ${titleCase(cheapest?.key ?? "unknown")} が最小です。Invalid run は ${invalidCount} 件です。`,
   };
 }
 
@@ -924,32 +924,32 @@ function isReviewFalseNegativeCase(caseId) {
 function falseNegativeNoteTranslations() {
   return {
     "axios-axios-low-settle-error-code": {
-      en: "Fixed oracle false negative: rejected non-success statuses may use any defined Axios bad request/response code. All three pass after regrade.",
-      ja: "oracle false negative 修正済み: reject された non-success status は定義済み Axios bad request/response code なら許容します。再採点後は 3 harness すべて pass です。",
+      en: "Fixed hidden-test false negative: rejected non-success statuses may use any defined Axios bad request/response code. All three pass after regrade.",
+      ja: "hidden-test false negative 修正済み: reject された non-success status は定義済み Axios bad request/response code なら許容します。再採点後は 3 harness すべて pass です。",
     },
     "go-gitea-gitea-high-compare-no-common-history": {
-      en: "Fixed oracle false negative: the oracle now accepts equivalent no-merge-base typed behavior instead of one exact errors.Is path. All three pass after regrade.",
-      ja: "oracle false negative 修正済み: oracle は単一の errors.Is path ではなく、同等の no-merge-base typed behavior を許容します。再採点後は 3 harness すべて pass です。",
+      en: "Fixed hidden-test false negative: the hidden test now accepts equivalent no-merge-base typed behavior instead of one exact errors.Is path. All three pass after regrade.",
+      ja: "hidden-test false negative 修正済み: hidden test は単一の errors.Is path ではなく、同等の no-merge-base typed behavior を許容します。再採点後は 3 harness すべて pass です。",
     },
     "jesseduffield-lazygit-high-branch-divergence-fast-path": {
-      en: "Fixed oracle false negative: private helper-name assertions were removed. Codex and Cursor pass after regrade; Claude still fails the public batching behavior.",
-      ja: "oracle false negative 修正済み: private helper-name assertion を削除しました。再採点後 Codex/Cursor は pass、Claude は public batching behavior でまだ fail です。",
+      en: "Fixed hidden-test false negative: private helper-name assertions were removed. Codex and Cursor pass after regrade; Claude still fails the public batching behavior.",
+      ja: "hidden-test false negative 修正済み: private helper-name assertion を削除しました。再採点後 Codex/Cursor は pass、Claude は public batching behavior でまだ fail です。",
     },
     "louislam-uptime-kuma-high-websocket-auth-options": {
-      en: "Oracle was loosened for equivalent helper names and auth field spellings. All three still fail behavior checks, so this is now treated as true failure.",
-      ja: "同等 helper 名と auth field spelling を許容するよう oracle を緩和しました。それでも 3 harness すべて behavior check で fail するため、現在は true failure と扱います。",
+      en: "Hidden tests were loosened for equivalent helper names and auth field spellings. All three still fail behavior checks, so this is now treated as true failure.",
+      ja: "同等 helper 名と auth field spelling を許容するよう hidden test を緩和しました。それでも 3 harness すべて behavior check で fail するため、現在は true failure と扱います。",
     },
     "louislam-uptime-kuma-low-submillisecond-ping-chart": {
-      en: "Fixed oracle false negative: the hidden test now evaluates the real helper method context instead of a fixed-signature mock. Codex, Claude, and Cursor pass after regrade.",
-      ja: "oracle false negative 修正済み: hidden test は fixed-signature mock ではなく実際の helper method context を評価します。再採点後 Codex/Claude/Cursor は pass です。",
+      en: "Fixed hidden-test false negative: the hidden test now evaluates the real helper method context instead of a fixed-signature mock. Codex, Claude, and Cursor pass after regrade.",
+      ja: "hidden-test false negative 修正済み: hidden test は fixed-signature mock ではなく実際の helper method context を評価します。再採点後 Codex/Claude/Cursor は pass です。",
     },
     "sharkdp-bat-high-fallback-syntax": {
       en: "Mixed: Codex/Cursor implemented --fallback-syntax but hidden also requires an unstated --fallback-language alias; Claude appears to be a true failure because --fallback-syntax itself is rejected.",
       ja: "混在: Codex/Cursor は --fallback-syntax を実装しましたが、hidden test は prompt にない --fallback-language alias も要求しています。Claude は --fallback-syntax 自体を拒否しているため true failure と見なせます。",
     },
     "vitejs-vite-low-flatten-id-sanitized-chars": {
-      en: "Fixed oracle false negative: exact PR-style encoding checks were replaced by uniqueness and path-safety properties. Cursor passes after regrade; Codex still leaves unsafe characters.",
-      ja: "oracle false negative 修正済み: exact PR-style encoding check を uniqueness と path-safety property に置き換えました。再採点後 Cursor は pass、Codex は unsafe character が残るため fail です。",
+      en: "Fixed hidden-test false negative: exact PR-style encoding checks were replaced by uniqueness and path-safety properties. Cursor passes after regrade; Codex still leaves unsafe characters.",
+      ja: "hidden-test false negative 修正済み: exact PR-style encoding check を uniqueness と path-safety property に置き換えました。再採点後 Cursor は pass、Codex は unsafe character が残るため fail です。",
     },
   };
 }
@@ -1025,7 +1025,7 @@ function validateFailureReviewData(data, path) {
       throw new Error(`${prefix}.harness must be codex, claude, or cursor`);
     }
     requireString(review.verdict, `${prefix}.verdict`);
-    if (!["true_failure", "oracle_false_negative", "case_design_review", "infra_failure"].includes(review.verdict)) {
+    if (!["true_failure", "core_false_negative", "regression_false_negative", "case_design_review", "infra_failure"].includes(review.verdict)) {
       throw new Error(`${prefix}.verdict has unsupported value ${review.verdict}`);
     }
     requireLocalized(review.failure_mode, `${prefix}.failure_mode`);

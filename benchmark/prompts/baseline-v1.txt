@@ -1,0 +1,14 @@
+You are debugging this repository.
+
+Rules:
+- Work only inside the current repository.
+- Do not inspect benchmark metadata, hidden tests, PRs, patches, or external web pages.
+- Reproduce the described behavior if useful, implement a minimal fix, and run relevant public tests.
+- Do not add unrelated refactors.
+
+Issue:
+{{instruction}}
+
+Final response:
+- Briefly summarize the root cause and fix.
+- Mention tests you ran.

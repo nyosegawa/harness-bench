@@ -1,139 +1,65 @@
-# Benchmark Runner
+# Runner
 
-`scripts/run-case.mjs` is the initial runner. It supports agent-free verification modes and agent execution mode:
+HarnessBench runners execute case verification, agent runs, matrix orchestration,
+metric normalization, regrading, failure review, and report generation.
 
-- `verify-base`
-- `verify-fixed`
-- `verify-current`
-- `agent`
-
-The runner reads a case YAML file, checks out the requested commit, executes the case `test_strategy`, and writes a structured result under `benchmark/runs/`.
-
-## Usage
-
-Verify that a case fails on the base commit:
+## Single Case Runner
 
 ```bash
-node scripts/run-case.mjs \
-  --case benchmark/cases/sharkdp__bat/low.yaml \
-  --mode verify-base
+node scripts/run-case.mjs --case benchmark/cases/sharkdp__bat/low.yaml --mode verify-base
+node scripts/run-case.mjs --case benchmark/cases/sharkdp__bat/low.yaml --mode verify-fixed
+node scripts/run-case.mjs --case benchmark/cases/sharkdp__bat/low.yaml --mode agent --harness codex --model gpt-5.5 --effort medium
 ```
 
-Verify that a case passes on the fixed commit:
+Modes:
 
-```bash
-node scripts/run-case.mjs \
-  --case benchmark/cases/sharkdp__bat/low.yaml \
-  --mode verify-fixed
+- `verify-base`: checkout `base_commit` and run hidden scoring tests
+- `verify-fixed`: checkout `fixed_commit` and run hidden scoring tests
+- `verify-current`: run hidden scoring tests against an existing checkout
+- `agent`: checkout `base_commit`, run the agent, then score the patch
+
+## Test Strategy
+
+The runner supports the final two-layer HarnessBench strategy:
+
+```yaml
+test_strategy:
+  core_tests:
+    - benchmark/cases/<repo>/hidden-tests/<difficulty>/core.sh
+  regression_tests:
+    - benchmark/cases/<repo>/hidden-tests/<difficulty>/regression.sh
+  success_rule: core_and_regression
 ```
 
-Verify the currently checked out repository state:
+Success means:
 
-```bash
-node scripts/run-case.mjs \
-  --case benchmark/cases/sharkdp__bat/low.yaml \
-  --mode verify-current
+```text
+all core_tests pass AND all regression_tests pass
 ```
 
-Optional paths:
+`core_tests_pass` is kept only for authoring smoke checks. Official cases must
+use `core_and_regression`.
 
-```bash
-node scripts/run-case.mjs \
-  --case benchmark/cases/sharkdp__bat/low.yaml \
-  --mode verify-fixed \
-  --workRoot benchmark/workspaces \
-  --runsRoot benchmark/runs \
-  --repoDir benchmark/workspaces/sharkdp__bat
-```
-
-Run one agent condition:
-
-```bash
-node scripts/run-case.mjs \
-  --case benchmark/cases/sharkdp__bat/low.yaml \
-  --mode agent \
-  --harness codex \
-  --model gpt-5.5 \
-  --effort medium
-```
-
-Claude:
-
-```bash
-node scripts/run-case.mjs \
-  --case benchmark/cases/sharkdp__bat/low.yaml \
-  --mode agent \
-  --harness claude \
-  --model claude-opus-4-7 \
-  --effort medium
-```
-
-Cursor:
-
-```bash
-node scripts/run-case.mjs \
-  --case benchmark/cases/sharkdp__bat/low.yaml \
-  --mode agent \
-  --harness cursor \
-  --model gpt-5.5-medium
-```
-
-Set a timeout:
-
-```bash
-node scripts/run-case.mjs ... --agentTimeoutMs 900000
-```
-
-Estimate cost during a run:
-
-```bash
-node scripts/run-case.mjs ... \
-  --rateCard benchmark/rate-cards/example-2026-05-03.json
-```
-
-Run an official experiment:
+## Matrix Runner
 
 ```bash
 node scripts/run-matrix.mjs \
-  --experimentId sanitized-baseline-2026-05-03 \
+  --experimentId harnessbench-baseline-YYYY-MM-DD \
+  --conditions benchmark/conditions/baseline.json \
   --includeVerify true \
   --jobs 3 \
-  --agentTimeoutMs 900000 \
+  --agentTimeoutMs 3600000 \
   --maxInfraRetries 1 \
   --rateCard benchmark/rate-cards/api-equivalent-2026-05-03.json \
   --review true \
+  --reviewJobs 3 \
   --report true
 ```
 
-Preview an official experiment without starting agents:
-
-```bash
-node scripts/run-matrix.mjs \
-  --experimentId sanitized-baseline-2026-05-03 \
-  --includeVerify true \
-  --jobs 3 \
-  --dryRun true
-```
-
-`--jobs` controls concurrent `run-case.mjs` processes. Agent runs use isolated
-per-run workspaces and can run in parallel. Verify runs are parallelized across
-different repositories, but `run-matrix.mjs` serializes verify jobs that share
-the same repository workspace to avoid `.git/index.lock` collisions.
-
-Run a subset and verify base/fixed behavior before agent runs:
-
-```bash
-node scripts/run-matrix.mjs \
-  --case benchmark/cases/sharkdp__bat/low.yaml \
-  --harness codex,cursor \
-  --includeVerify true \
-  --agentTimeoutMs 900000
-```
-
-Agent failures are valid benchmark outcomes and do not stop the matrix. Runner
-errors, invalid runs after retry exhaustion, unexpected `verify-base` passes,
-and `verify-fixed` failures are treated as matrix failures. Pass
-`--stopOnFailure true` to stop on the first matrix failure.
+`--jobs` controls concurrent `run-case.mjs` processes. Official agent runs use
+a 60 minute per-issue timeout. Cursor conditions that
+use `cursor_config` should run serially unless Cursor CLI configuration is
+isolated per run.
 
 ## Result Layout
 
@@ -143,6 +69,7 @@ Each run writes:
 benchmark/runs/<run-id>/
   result.json
   prompt.txt
+  prompt-bundle.json
   harness.events.jsonl
   harness.result.json
   harness.stderr.log
@@ -150,65 +77,69 @@ benchmark/runs/<run-id>/
   harness.git-status.txt
   core-0.stdout.log
   core-0.stderr.log
+  regression-0.stdout.log
+  regression-0.stderr.log
 ```
 
-Not every harness writes every raw file. For example, Claude writes `harness.result.json`; Codex and Cursor write `harness.events.jsonl`.
+Not every harness writes every raw file. Raw harness logs are kept because
+normalizers can improve after a run.
 
-`result.json` includes:
+## Result Schema
 
-- case id
-- case path
-- repo
-- mode
-- checkout commit
-- test strategy
-- per-test stdout/stderr paths
-- pass/fail state
-- duration
-- metrics
+Key fields:
 
-Current metrics shape:
+```json
+{
+  "case_id": "sharkdp-bat-low-zip-binary-detection",
+  "mode": "agent",
+  "harness": "codex",
+  "model": "gpt-5.5",
+  "effort": "medium",
+  "condition_id": "codex:gpt-5.5:medium:baseline",
+  "matrix_id": "harnessbench-baseline-YYYY-MM-DD",
+  "test_result": {
+    "success": true,
+    "success_rule": "core_and_regression",
+    "core_pass": true,
+    "regression_pass": true,
+    "core": [],
+    "regressions": []
+  }
+}
+```
+
+Each agent run also records harness version metadata:
+
+```json
+{
+  "harness_version": {
+    "name": "codex",
+    "version_string": "codex-cli 0.125.0",
+    "binary_path": "/home/user/.local/bin/codex",
+    "binary_sha256": "...",
+    "raw_version_output": "codex-cli 0.125.0\n",
+    "captured_at": "2026-05-04T10:23:45.123Z"
+  }
+}
+```
+
+Test metrics:
 
 ```json
 {
   "metrics": {
-    "wall_time_ms": 194125,
-    "harness": null,
     "tests": {
-      "total_duration_ms": 163755,
-      "core_duration_ms": 163755,
-      "regression_duration_ms": 0,
-      "oracle_duration_ms": 0
-    },
-    "usage": {
-      "conversation_turns": null,
-      "turns": null,
-      "assistant_messages": null,
-      "tool_calls": null,
-      "command_calls": null,
-      "file_changes": null,
-      "fresh_input_tokens": null,
-      "input_tokens": null,
-      "effective_input_tokens": null,
-      "output_tokens": null,
-      "reasoning_tokens": null,
-      "cache_read_tokens": null,
-      "cache_write_tokens": null,
-      "fresh_total_tokens": null,
-      "effective_total_tokens": null,
-      "total_tokens": null,
-      "cost_usd": null,
-      "cost_source": null,
-      "raw_usage": null
+      "total_duration_ms": 1000,
+      "core_duration_ms": 700,
+      "regression_duration_ms": 300
     }
   }
 }
 ```
 
-In verify modes, harness usage fields are `null`; test duration fields are populated.
+## Invalid Runs
 
-If a run cannot be evaluated because of an infrastructure failure after the
-agent has run, mark it with:
+A benchmark failure is a valid outcome. An infrastructure failure is marked:
 
 ```json
 {
@@ -217,364 +148,64 @@ agent has run, mark it with:
 }
 ```
 
-Invalid runs are preserved for auditability but excluded from experiment
-`results.html` success-rate summaries.
+Invalid runs are preserved but excluded from success-rate summaries.
 
-## Harness Metrics
+## Sanitization
 
-Agent mode must capture both normalized metrics and raw harness logs. Normalized metrics make cross-harness comparison possible; raw logs make future parser fixes possible.
+Runner-managed agent workspaces remove target-repository steering files:
 
-After checkout, the runner removes repository-local agent steering files from
-the candidate workspace before setup, verification, or agent execution:
-`AGENTS.md`, `agents.md`, `CLAUDE.md`, `claude.md`, `.agents`, `.claude`, and
-`.codex`. Case instructions must come only from the benchmark prompt and hidden
-tests, not from upstream repository agent configuration.
+```text
+AGENTS.md
+agents.md
+CLAUDE.md
+claude.md
+.agents/
+.claude/
+.codex/
+```
 
-For agent runs with runner-managed workspaces, the sanitized tree is then
-materialized as a fresh one-commit git repository. This prevents the deleted
-steering files from appearing in `git diff` and keeps normal `git log` /
-`git show HEAD:<path>` exploration from recovering upstream agent instructions.
-The original benchmark base commit remains recorded in `result.json` and the
-experiment manifest.
+The sanitized workspace is re-materialized as a fresh one-commit git repository
+before the agent starts.
 
-### Required Normalized Fields
+## Hybrid Docker Execution
 
-- `wall_time_ms`: elapsed runner wall time for the whole run
-- `harness_duration_ms`: elapsed subprocess wall time for the agent command
-- `conversation_turns`: harness-specific turn-like count. Do not compare this field across harnesses without reading the harness notes below.
-- `turns`: backwards-compatible alias for `conversation_turns`
-- `assistant_messages`: assistant messages or model action steps, when observable. For Claude aggregate JSON this is currently the same proxy as `num_turns`, not an independently observed message count.
-- `tool_calls`: number of tool calls if observable
-- `command_calls`: shell command executions, when distinguishable
-- `file_changes`: file edit events, when distinguishable. This is not necessarily the number of unique files changed.
-- `fresh_input_tokens`: non-cache-read input tokens
-- `input_tokens`: harness-native input field; for Codex this includes cache reads, for Claude/Cursor this is fresh input
-- `effective_input_tokens`: fresh input plus cache read/write tokens, or harness-native effective input
-- `output_tokens`
-- `reasoning_tokens`
+The runner executes repository setup and tests inside Docker when a case defines
+`environment.image`. The agent CLI remains on the host and edits the host
+workspace.
+
+Container responsibilities:
+
+- `setup`
+- optional `public_tests`
+- `core_tests`
+- `regression_tests`
+
+Hidden scoring containers run with `--network none`. The benchmark root or a
+hidden-test bundle is mounted read-only, and the workspace is mounted at the
+case `environment.workdir` path.
+
+## Metrics
+
+Normalized fields:
+
+- `wall_time_ms`
+- `harness_duration_ms`
+- `conversation_turns`
+- `assistant_messages`
+- `tool_calls`
+- `command_calls`
+- `file_changes`
+- `fresh_input_tokens`
 - `cache_read_tokens`
 - `cache_write_tokens`
-- `fresh_total_tokens`: `fresh_input_tokens + output_tokens`
-- `effective_total_tokens`: `effective_input_tokens + output_tokens`
-- `total_tokens`: backwards-compatible alias for `effective_total_tokens`
+- `effective_input_tokens`
+- `output_tokens`
+- `reasoning_tokens`
+- `effective_total_tokens`
 - `cost_usd`
-- `cost_source`: `reported`, `estimated`, or `unavailable`
-- `model`
-- `raw_usage`
-
-### Codex CLI
-
-Use `codex exec --json` and capture stdout as JSONL.
-
-Recommended shape:
-
-```bash
-codex exec --json ... "$PROMPT" > harness.events.jsonl 2> harness.stderr.log
-```
-
-Observed final usage event:
-
-```json
-{
-  "type": "turn.completed",
-  "usage": {
-    "input_tokens": 22098,
-    "cached_input_tokens": 3456,
-    "output_tokens": 21,
-    "reasoning_output_tokens": 9
-  }
-}
-```
-
-Codex metrics:
-
-- `conversation_turns`: count `turn.completed`
-- `assistant_messages`: count completed `agent_message` items
-- `command_calls`: count completed `command_execution` items
-- `file_changes`: count completed `file_change` items
-- `tool_calls`: `command_calls + file_changes`
-- `input_tokens`: final `usage.input_tokens`
-- `fresh_input_tokens`: `usage.input_tokens - usage.cached_input_tokens`
-- `effective_input_tokens`: `usage.input_tokens`
-- `cache_read_tokens`: `usage.cached_input_tokens`
-- `output_tokens`: `usage.output_tokens`
-- `reasoning_tokens`: `usage.reasoning_output_tokens`
-- `effective_total_tokens`: `effective_input_tokens + output_tokens`
-- `cost_usd`: not directly reported by observed CLI JSONL
-- `cost_source`: `unavailable` unless offline estimation is added
-- `wall_time_ms` / `harness_duration_ms`: measured by runner
-
-Do not rely on normal human stdout for benchmark metrics. It has a formatted `tokens used` value but not enough breakdown.
-
-### Claude Code CLI
-
-Use `--output-format json` as the primary capture path.
-
-```bash
-claude -p --output-format json ... "$PROMPT" > harness.result.json 2> harness.stderr.log
-```
-
-Observed top-level fields:
-
-- `duration_ms`
-- `duration_api_ms`
-- `num_turns`
-- `total_cost_usd`
-- `usage`
-- `modelUsage`
-- `stop_reason`
-- `terminal_reason`
-- `permission_denials`
-- `session_id`
-- `uuid`
-
-Claude metrics:
-
-- `conversation_turns`: `num_turns`
-- `assistant_messages`: `num_turns` as a proxy. The saved aggregate JSON does not expose a separate assistant-message count.
-- `fresh_input_tokens`: `usage.input_tokens`
-- `input_tokens`: `usage.input_tokens`
-- `cache_read_tokens`: `usage.cache_read_input_tokens`
-- `cache_write_tokens`: `usage.cache_creation_input_tokens`
-- `effective_input_tokens`: `input_tokens + cache_read_tokens + cache_write_tokens`
-- `output_tokens`: `usage.output_tokens`
-- `effective_total_tokens`: `effective_input_tokens + output_tokens`
-- `cost_usd`: `total_cost_usd`
-- `cost_source`: `reported`
-- `raw_usage`: include `usage` and `modelUsage`
-
-`stream-json` requires `--verbose` in the observed version. The final `type=result` record has equivalent aggregate fields, but JSON output is simpler for batch runs.
-
-### Cursor Agent CLI
-
-Use `--output-format stream-json` and capture stdout as JSONL.
-
-```bash
-agent -p --output-format stream-json ... "$PROMPT" > harness.events.jsonl 2> harness.stderr.log
-```
-
-Observed event shape from earlier probes:
-
-```json
-{
-  "type": "result",
-  "subtype": "success",
-  "duration_ms": 9852,
-  "duration_api_ms": 9852,
-  "is_error": false,
-  "result": "OK",
-  "session_id": "...",
-  "request_id": "...",
-  "usage": {
-    "inputTokens": 142,
-    "outputTokens": 28,
-    "cacheReadTokens": 14336,
-    "cacheWriteTokens": 0
-  }
-}
-```
-
-Cursor metrics:
-
-- `conversation_turns`: count assistant events
-- `assistant_messages`: count assistant events
-- `tool_calls`: count `tool_call` events with `subtype: "completed"`
-- `command_calls`: count completed `shellToolCall` events
-- `file_changes`: count completed `editToolCall`, `writeToolCall`, and `deleteToolCall` events
-- `fresh_input_tokens`: `usage.inputTokens`
-- `input_tokens`: `usage.inputTokens`
-- `output_tokens`: `usage.outputTokens`
-- `cache_read_tokens`: `usage.cacheReadTokens`
-- `cache_write_tokens`: `usage.cacheWriteTokens`
-- `effective_input_tokens`: `inputTokens + cacheReadTokens + cacheWriteTokens`
-- `effective_total_tokens`: `effective_input_tokens + outputTokens`
-- `duration_ms`: result `duration_ms`
-- `cost_usd`: not observed in stream-json result
-- `cost_source`: `unavailable` unless offline estimation is added
-
-Do not use `--stream-partial-output` for benchmark runs unless turn counting deduplication is implemented. Partial output can emit multiple assistant events for the same response.
-
-Cursor runs should be serialized unless config isolation is implemented, because the CLI writes `~/.cursor/cli-config.json`.
-
-## Cost Policy
-
-Cost availability differs by harness:
-
-- Claude Code: reported directly as `total_cost_usd`.
-- Codex CLI: not observed in `--json`; store token usage and estimate offline if needed.
-- Cursor Agent CLI: not observed in `json` or `stream-json`; store token usage and estimate offline if needed.
-
-The runner should never silently mix reported and estimated costs. Use:
-
-- `cost_source: "reported"` for harness-reported dollar values
-- `cost_source: "estimated"` for rate-card derived values
-- `cost_source: "unavailable"` when no cost is available
-
-If cost is estimated, store the rate-card identifier or file hash in run metadata.
-
-Rate card format:
-
-```json
-{
-  "id": "example-2026-05-03",
-  "currency": "USD",
-  "unit": "per_1m_tokens",
-  "aliases": {
-    "GPT-5.5 272K Medium": "gpt-5.5",
-    "gpt-5.5-medium": "gpt-5.5"
-  },
-  "models": {
-    "gpt-5.5": {
-      "input": 0,
-      "cached_input": 0,
-      "output": 0,
-      "reasoning_output": 0,
-      "cache_write": 0
-    }
-  }
-}
-```
-
-Apply or re-apply a rate card to existing results:
-
-```bash
-node scripts/apply-rate-card.mjs \
-  --rateCard benchmark/rate-cards/example-2026-05-03.json
-```
-
-Preview without writing:
-
-```bash
-node scripts/apply-rate-card.mjs \
-  --rateCard benchmark/rate-cards/example-2026-05-03.json \
-  --dryRun true
-```
-
-Cursor estimates should be described as API-equivalent estimates, not actual Cursor subscription billing.
-
-## Pilot Verification
-
-The following checks have been run successfully for `sharkdp/bat`:
-
-```bash
-node scripts/run-case.mjs --case benchmark/cases/sharkdp__bat/low.yaml --mode verify-base
-node scripts/run-case.mjs --case benchmark/cases/sharkdp__bat/low.yaml --mode verify-fixed
-
-node scripts/run-case.mjs --case benchmark/cases/sharkdp__bat/mid.yaml --mode verify-base
-node scripts/run-case.mjs --case benchmark/cases/sharkdp__bat/mid.yaml --mode verify-fixed
-
-node scripts/run-case.mjs --case benchmark/cases/sharkdp__bat/high.yaml --mode verify-base
-node scripts/run-case.mjs --case benchmark/cases/sharkdp__bat/high.yaml --mode verify-fixed
-```
-
-Expected outcomes:
-
-- `verify-base`: exits non-zero
-- `verify-fixed`: exits zero
-
-Observed outcomes:
-
-- low: base failed, fixed passed
-- mid: base failed, fixed passed
-- high: base failed, fixed passed
-
-## Experiment Artifacts
-
-`run-matrix.mjs --experimentId <id> --report true` writes:
-
-```text
-benchmark/experiments/<id>/
-  manifest.json
-  summary.json
-  failure-reviews.json
-  results.html
-```
-
-It also refreshes:
-
-```text
-benchmark/reports/index.html
-```
-
-Generate an experiment report manually:
-
-```bash
-node scripts/render-results.mjs \
-  --runsRoot benchmark/runs \
-  --matrixId sanitized-baseline-2026-05-03 \
-  --reviewFile benchmark/experiments/sanitized-baseline-2026-05-03/failure-reviews.json \
-  --output benchmark/experiments/sanitized-baseline-2026-05-03/results.html
-```
-
-The report shows:
-
-- pass/fail
-- wall time
-- harness duration
-- test duration
-- conversation turns and assistant messages
-- tool calls
-- command/file-change counts when available
-- fresh input, cache read/write, effective input, output, reasoning, and effective total tokens
-- cache usage
-- reported/estimated/unavailable cost
-- modified files via run details
-- bilingual failure implementation reviews from the experiment review file
-
-Failure reviews are auxiliary analysis. The hidden oracle remains the source
-of pass/fail truth, while the review explains how a failed implementation went
-wrong and whether the failure looks like a true implementation failure, oracle
-false negative, case-design issue, or infrastructure failure.
-
-Validate structured reviews for one experiment:
-
-```bash
-node scripts/review-failed-runs.mjs \
-  --runsRoot benchmark/runs \
-  --matrixId sanitized-baseline-2026-05-03 \
-  --output benchmark/experiments/sanitized-baseline-2026-05-03/failure-reviews.json
-```
-
-Build evidence bundles for failed baseline runs without writing:
-
-```bash
-node scripts/review-failed-runs.mjs \
-  --runsRoot benchmark/runs \
-  --matrixId sanitized-baseline-2026-05-03 \
-  --output benchmark/experiments/sanitized-baseline-2026-05-03/failure-reviews.json \
-  --dryRun \
-  --force
-```
-
-Generate missing bilingual review entries with Codex and validate the JSON
-before writing:
-
-```bash
-node scripts/review-failed-runs.mjs \
-  --runsRoot benchmark/runs \
-  --matrixId sanitized-baseline-2026-05-03 \
-  --output benchmark/experiments/sanitized-baseline-2026-05-03/failure-reviews.json \
-  --generate \
-  --jobs 4
-```
-
-The evidence bundle includes the failed `result.json`, hidden-test stdout and
-stderr tails, workspace diff summary/excerpt, and saved harness session-log
-summary (`harness.events.jsonl` or `harness.result.json`). Generated review
-JSON must pass schema validation before `render-results.mjs` will include it.
-
-## Current Limitations
-
-- YAML parsing is intentionally minimal and only supports the current case file shape.
-- Test commands are shell scripts that receive the repo path as their first argument.
-- Rust compilation makes the `bat` pilot slow on cold runs.
-- Cursor Max Mode config switching is not implemented in runner yet.
-- Cost estimation requires a rate card with non-null rates. The runner and `scripts/apply-rate-card.mjs` use fresh input plus cache/read/write breakdowns to avoid double-counting cached input.
-
-## Next Implementation Step
-
-Next runner improvements:
-
-1. Add Cursor Max Mode config switching.
-2. Add batch matrix execution.
-3. Add timeout and failure summaries to the HTML report.
+- `cost_source`
+- `harness_version.version_string`
+- `harness_version.binary_sha256`
+
+Harness-specific semantics are documented in
+`docs/harness-metrics-investigation.md`.

@@ -2,15 +2,28 @@
 
 ## Project Purpose
 
-This repository is a benchmark harness for comparing debugging ability and efficiency across Codex, Claude Code, and Cursor Agent. It stores the benchmark spec, case definitions, hidden test scripts, runner scripts, candidate repository scans, and generated reports.
+HarnessBench is a benchmark for comparing coding-agent harnesses on
+real-repository debugging tasks.
+
+Full title:
+
+```text
+HarnessBench: Comparing Coding Agent Harnesses on Real-Repository Debugging Tasks
+```
+
+The project stores benchmark specifications, case definitions, hidden tests,
+runner scripts, condition configs, rate cards, and generated experiment
+reports.
 
 ## Operating Rules
 
-- Do not commit `benchmark/runs/`, `benchmark/workspaces/`, or `benchmark/archive/`; they are intentionally ignored and may be large.
-- Preserve raw harness logs. Parser fixes should use raw logs to re-normalize existing results rather than rerunning expensive jobs when possible.
-- Use `rg` for search when available; `grep` is acceptable until `ripgrep` is installed.
+- Do not commit `benchmark/runs/`, `benchmark/workspaces/`, or
+  `benchmark/archive/`.
+- Preserve raw harness logs. Parser fixes should re-normalize existing logs
+  rather than rerunning expensive jobs when possible.
+- Use `rg` for search when available.
 - Use `apply_patch` for manual file edits.
-- Avoid destructive git commands. Do not delete run logs unless explicitly asked or they are clearly build artifacts such as nested `target/` directories.
+- Avoid destructive git commands.
 - If a run fails because of infrastructure, mark the `result.json` with:
 
 ```json
@@ -20,17 +33,40 @@ This repository is a benchmark harness for comparing debugging ability and effic
 }
 ```
 
-Invalid runs are excluded from experiment `results.html` by `scripts/render-results.mjs`.
+Invalid runs are preserved for auditability but excluded from success-rate
+summaries.
+
+## Scoring Model
+
+HarnessBench uses two scoring layers:
+
+- `core_tests`: behavioral bug-fix contract. All must pass.
+- `regression_tests`: targeted surrounding behavior. All must pass.
+
+Official cases should use:
+
+```yaml
+test_strategy:
+  core_tests:
+    - benchmark/cases/<repo>/hidden-tests/<difficulty>/core.sh
+  regression_tests:
+    - benchmark/cases/<repo>/hidden-tests/<difficulty>/regression.sh
+  success_rule: core_and_regression
+```
+
+There is no oracle-suite layer. Alternative valid fixes must be accepted by
+writing the core contract as a behavioral class, not by checking implementation
+paths.
 
 ## Runtime Setup
 
 The current environment has:
 
-- Node.js installed under `~/.local/opt/node-v22.21.1-linux-*/`
-- `~/.local/bin` and `~/.cargo/bin` appended to `~/.profile` and `~/.bashrc`
-- Rust available via `~/.cargo/bin`
+- Node.js under `~/.local/opt/node-v22.21.1-linux-*/`
+- `~/.local/bin` and `~/.cargo/bin` on the shell path
+- Rust via `~/.cargo/bin`
 
-For non-interactive SSH commands, use:
+For non-interactive commands:
 
 ```bash
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
@@ -42,90 +78,57 @@ Basic checks:
 node --version
 cargo --version
 node --check scripts/run-case.mjs
+node --check scripts/run-matrix.mjs
 node --check scripts/render-results.mjs
 node --check scripts/render-experiment-index.mjs
-node --check scripts/run-matrix.mjs
 node --check scripts/review-failed-runs.mjs
+node --check scripts/regrade-agent-results.mjs
 node --check scripts/apply-rate-card.mjs
 node --check scripts/refresh-result-metrics.mjs
 ```
 
 ## Repository Layout
 
-- `docs/benchmark-spec.md`: benchmark design and selection rules
+- `docs/benchmark-spec.md`: benchmark design and case authoring rules
 - `docs/runner.md`: runner behavior, metrics schema, cost policy
 - `docs/harness-metrics-investigation.md`: observed CLI metrics behavior
-- `docs/end-to-end-smoke.md`: pilot results and current benchmark state
+- `docs/end-to-end-smoke.md`: smoke-run procedure and acceptance criteria
 - `benchmark/cases/`: case YAML and hidden tests
 - `benchmark/repos/`: candidate repository and PR scan outputs
-- `benchmark/experiments/`: immutable experiment artifacts (`manifest.json`, `summary.json`, `failure-reviews.json`, `results.html`)
-- `benchmark/reports/index.html`: generated experiment index
-- `benchmark/rate-cards/`: rate card schema and example
-- `scripts/run-case.mjs`: verify and agent run runner
-- `scripts/render-results.mjs`: experiment HTML report generator
-- `scripts/render-experiment-index.mjs`: experiment index generator
-- `scripts/review-failed-runs.mjs`: auxiliary failure review generator/schema validator
-- `scripts/refresh-result-metrics.mjs`: raw-log based result metric refresher
-- `scripts/apply-rate-card.mjs`: applies rate-card cost estimates to existing results
+- `benchmark/conditions/`: matrix condition configs
+- `benchmark/rate-cards/`: cost estimation configs
+- `benchmark/reports/`: public report index
+- `scripts/run-case.mjs`: single-case verifier and agent runner
+- `scripts/run-matrix.mjs`: matrix orchestrator
+- `scripts/render-results.mjs`: experiment report generator
+- `scripts/regrade-agent-results.mjs`: preserved-workspace regrader
+- `scripts/review-failed-runs.mjs`: auxiliary failure reviewer
 
-## Current Metric Semantics
+## Metric Semantics
 
 Do not collapse all token or turn metrics into a single ambiguous number.
 
 - `conversation_turns`: harness-level completed turns.
-- `assistant_messages`: assistant/model messages or action steps when observable.
-- `tool_calls`: observable tool calls. For Codex this is `command_calls + file_changes`.
+- `assistant_messages`: assistant/model messages or action steps when
+  observable.
+- `tool_calls`: observable tool calls. For Codex this is
+  `command_calls + file_changes`.
 - `fresh_input_tokens`: non-cache input.
 - `cache_read_tokens`: cache read input.
 - `cache_write_tokens`: cache creation/write input.
-- `effective_input_tokens`: fresh input plus cache read/write, or harness-native effective input.
+- `effective_input_tokens`: fresh input plus cache read/write, or
+  harness-native effective input.
 - `effective_total_tokens`: `effective_input_tokens + output_tokens`.
-- Codex `input_tokens` includes cached input in observed JSONL. Use `fresh_input_tokens = input_tokens - cache_read_tokens`.
-- Claude and Cursor observed `input_tokens` are fresh input. Their effective input includes cache read/write.
-- Claude reports dollar cost directly. Codex and Cursor need rate-card estimation.
-
-## Workspace Sanitization
-
-Agent runs remove upstream `AGENTS.md`, `agents.md`, `CLAUDE.md`, `claude.md`,
-`.agents`, `.claude`, and `.codex` before execution. Runner-managed agent
-workspaces are then re-initialized as a fresh one-commit git repository so the
-removed steering files do not remain visible through ordinary `git diff` or
-`git show HEAD:<path>` inspection. The original benchmark base commit is still
-recorded in `result.json` and experiment manifests.
+- Codex `input_tokens` includes cached input in observed JSONL. Use
+  `fresh_input_tokens = input_tokens - cache_read_tokens`.
+- Claude and Cursor observed `input_tokens` are fresh input. Their effective
+  input includes cache read/write.
+- Claude reports dollar cost directly. Codex and Cursor need rate-card
+  estimation.
 
 ## Common Commands
 
-Generate an experiment HTML report:
-
-```bash
-node scripts/render-results.mjs \
-  --runsRoot benchmark/runs \
-  --matrixId sanitized-baseline-2026-05-03 \
-  --reviewFile benchmark/experiments/sanitized-baseline-2026-05-03/failure-reviews.json \
-  --output benchmark/experiments/sanitized-baseline-2026-05-03/results.html
-```
-
-Run an official baseline experiment:
-
-```bash
-node scripts/run-matrix.mjs \
-  --experimentId sanitized-baseline-2026-05-03 \
-  --includeVerify true \
-  --jobs 3 \
-  --agentTimeoutMs 900000 \
-  --maxInfraRetries 1 \
-  --rateCard benchmark/rate-cards/api-equivalent-2026-05-03.json \
-  --review true \
-  --report true
-```
-
-Re-normalize existing run metrics from raw logs:
-
-```bash
-node scripts/refresh-result-metrics.mjs benchmark/runs
-```
-
-Verify case base/fixed behavior:
+Verify case behavior:
 
 ```bash
 node scripts/run-case.mjs --case benchmark/cases/sharkdp__bat/low.yaml --mode verify-base
@@ -141,31 +144,39 @@ node scripts/run-case.mjs \
   --harness codex \
   --model gpt-5.5 \
   --effort medium \
-  --agentTimeoutMs 900000
+  --agentTimeoutMs 3600000
+```
+
+Regenerate a report from current local runs:
+
+```bash
+find benchmark/runs -mindepth 1 -maxdepth 1 -type d \
+  | node scripts/render-results.mjs benchmark/runs benchmark/reports/index.html
 ```
 
 ## Harness Commands
 
-The runner currently uses these baseline forms:
+Baseline runs disable harness memory and project-local steering.
 
-- Codex: `codex exec --json --ignore-user-config --ignore-rules --ephemeral --disable memories --disable plugins --disable apps --disable browser_use --disable computer_use --sandbox workspace-write -m gpt-5.5 -c 'model_reasoning_effort="medium"' -C "$repo" "$prompt"`
-- Claude: `CLAUDE_CODE_DISABLE_AUTO_MEMORY=1 claude -p --output-format json --no-session-persistence --model claude-opus-4-7 --effort medium --permission-mode bypassPermissions --setting-sources project --settings "$settings" "$prompt"`
-- Cursor: `agent -p --output-format stream-json --trust --workspace "$repo" --model gpt-5.5-medium "$prompt"`
+- Codex:
+  `codex exec --json --ignore-user-config --ignore-rules --ephemeral --disable memories --disable plugins --disable apps --disable browser_use --disable computer_use --sandbox workspace-write -m gpt-5.5 -c 'model_reasoning_effort="medium"' -C "$repo" "$prompt"`
+- Claude:
+  `CLAUDE_CODE_DISABLE_AUTO_MEMORY=1 claude -p --output-format json --no-session-persistence --model claude-opus-4-7 --effort medium --permission-mode bypassPermissions --setting-sources project --settings "$settings" "$prompt"`
+- Cursor:
+  `agent -p --output-format stream-json --trust --workspace "$repo" --model gpt-5.5-medium "$prompt"`
 
 Memory should remain disabled for baseline runs.
 
 ## Repository Notes
 
-The GitHub repository is private:
+Expected repository:
 
 ```text
-nyosegawa/harness-debug-benchmark
+nyosegawa/harness-bench
 ```
 
-Expected checkout:
+Expected checkout after rename:
 
 ```bash
-cd /home/sakasegawa/src/github.com/nyosegawa/harness-debug-benchmark
+cd /home/sakasegawa/src/github.com/nyosegawa/harness-bench
 ```
-
-`benchmark/runs/` and `benchmark/workspaces/` are local working data and are intentionally ignored by git.

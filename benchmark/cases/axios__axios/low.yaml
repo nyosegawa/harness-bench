@@ -5,6 +5,12 @@ license: MIT
 stars_at_selection: 107000
 size_bucket: small
 language_tags: [javascript, node, http-client]
+environment:
+  image: ghcr.io/nyosegawa/harness-bench-node:22
+  workdir: /work/repo
+  setup_in_container: true
+  tests_in_container: true
+  test_network: none
 pr_number: 7276
 pr_url: https://github.com/axios/axios/pull/7276
 pr_title: "fix: prevent undefined error codes in settle"
@@ -27,9 +33,9 @@ hidden_tests:
 test_strategy:
   core_tests:
     - benchmark/cases/axios__axios/hidden-tests/low/run.sh
-  oracle_suites: []
-  regression_tests: []
-  success_rule: core_tests_pass
+  regression_tests:
+    - benchmark/cases/axios__axios/hidden-tests/low/run.sh
+  success_rule: core_and_regression
 selection_notes: >
   Focused core error-classification bug with a narrow implementation surface.
   Hidden tests call settle directly and require codes for custom rejected

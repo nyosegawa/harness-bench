@@ -5,6 +5,12 @@ license: MIT
 stars_at_selection: 64000
 size_bucket: small
 language_tags: [go, cli, tui, git, performance]
+environment:
+  image: ghcr.io/nyosegawa/harness-bench-go:1.24
+  workdir: /work/repo
+  setup_in_container: true
+  tests_in_container: true
+  test_network: none
 pr_number: 5536
 pr_url: https://github.com/jesseduffield/lazygit/pull/5536
 pr_title: "Improve performance of showDivergenceFromBaseBranch"
@@ -28,9 +34,9 @@ hidden_tests:
 test_strategy:
   core_tests:
     - benchmark/cases/jesseduffield__lazygit/hidden-tests/high/run.sh
-  oracle_suites: []
-  regression_tests: []
-  success_rule: core_tests_pass
+  regression_tests:
+    - benchmark/cases/jesseduffield__lazygit/hidden-tests/high/run.sh
+  success_rule: core_and_regression
 selection_notes: >
   Higher-difficulty performance bug requiring knowledge of Git version-gated
   ahead/behind formatting, multiple base branches, parser robustness, and stale

@@ -5,6 +5,12 @@ license: MIT
 stars_at_selection: 64000
 size_bucket: small
 language_tags: [go, cli, tui, git]
+environment:
+  image: ghcr.io/nyosegawa/harness-bench-go:1.24
+  workdir: /work/repo
+  setup_in_container: true
+  tests_in_container: true
+  test_network: none
 pr_number: 5528
 pr_url: https://github.com/jesseduffield/lazygit/pull/5528
 pr_title: Preserve whitespace when remembering commit message
@@ -27,9 +33,9 @@ hidden_tests:
 test_strategy:
   core_tests:
     - benchmark/cases/jesseduffield__lazygit/hidden-tests/mid/run.sh
-  oracle_suites: []
-  regression_tests: []
-  success_rule: core_tests_pass
+  regression_tests:
+    - benchmark/cases/jesseduffield__lazygit/hidden-tests/mid/run.sh
+  success_rule: core_and_regression
 selection_notes: >
   Multi-file TUI commit-message handling bug. Hidden tests check observable
   string behavior around preserved body whitespace and co-author trailer

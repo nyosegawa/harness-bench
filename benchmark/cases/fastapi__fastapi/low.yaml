@@ -5,6 +5,12 @@ license: MIT
 stars_at_selection: 97825
 size_bucket: large
 language_tags: [python, web-framework, api]
+environment:
+  image: ghcr.io/nyosegawa/harness-bench-python:3.12
+  workdir: /work/repo
+  setup_in_container: true
+  tests_in_container: true
+  test_network: none
 pr_number: 15363
 pr_url: https://github.com/fastapi/fastapi/pull/15363
 pr_title: "Remove April Fool's @app.vibe()"
@@ -26,9 +32,9 @@ hidden_tests:
 test_strategy:
   core_tests:
     - benchmark/cases/fastapi__fastapi/hidden-tests/low/run.sh
-  oracle_suites: []
-  regression_tests: []
-  success_rule: core_tests_pass
+  regression_tests:
+    - benchmark/cases/fastapi__fastapi/hidden-tests/low/run.sh
+  success_rule: core_and_regression
 selection_notes: >
   Low-difficulty public API cleanup. Hidden tests assert the temporary
   decorator is gone while ordinary route decorators continue to work.

@@ -5,6 +5,12 @@ license: MIT
 stars_at_selection: 147629
 size_bucket: large
 language_tags: [python, web-app, mcp, schema]
+environment:
+  image: ghcr.io/nyosegawa/harness-bench-python:3.12
+  workdir: /work/repo
+  setup_in_container: true
+  tests_in_container: true
+  test_network: none
 pr_number: 12782
 pr_url: https://github.com/langflow-ai/langflow/pull/12782
 pr_title: "fix(mcp): render connection handles for non-string MCP tool inputs"
@@ -27,9 +33,9 @@ hidden_tests:
 test_strategy:
   core_tests:
     - benchmark/cases/langflow-ai__langflow/hidden-tests/mid/run.sh
-  oracle_suites: []
-  regression_tests: []
-  success_rule: core_tests_pass
+  regression_tests:
+    - benchmark/cases/langflow-ai__langflow/hidden-tests/mid/run.sh
+  success_rule: core_and_regression
 selection_notes: >
   Mid-difficulty schema conversion and coercion bug crossing MCP model schema,
   input metadata, and frontend handle semantics.

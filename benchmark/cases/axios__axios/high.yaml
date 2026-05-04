@@ -5,6 +5,12 @@ license: MIT
 stars_at_selection: 107000
 size_bucket: small
 language_tags: [javascript, node, http-client, networking]
+environment:
+  image: ghcr.io/nyosegawa/harness-bench-node:22
+  workdir: /work/repo
+  setup_in_container: true
+  tests_in_container: true
+  test_network: none
 pr_number: 10819
 pr_url: https://github.com/axios/axios/pull/10819
 pr_title: "fix(http): honor timeout during connect without redirects"
@@ -27,9 +33,9 @@ hidden_tests:
 test_strategy:
   core_tests:
     - benchmark/cases/axios__axios/hidden-tests/high/run.sh
-  oracle_suites: []
-  regression_tests: []
-  success_rule: core_tests_pass
+  regression_tests:
+    - benchmark/cases/axios__axios/hidden-tests/high/run.sh
+  success_rule: core_and_regression
 selection_notes: >
   Higher-difficulty networking lifecycle bug involving native ClientRequest
   timeout semantics, abort handling, and maxRedirects transport selection.

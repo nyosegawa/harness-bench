@@ -1,7 +1,9 @@
 {
-  "schema_version": 1,
-  "id": "baseline-2026-05-03",
-  "description": "Baseline no-memory debugging conditions for Codex, Claude Code, and Cursor Agent.",
+  "schema_version": 2,
+  "id": "harnessbench-v2-baseline",
+  "description": "HarnessBench v2 full single-sample baseline: 14 host-harness conditions over 27 real-repository debugging cases.",
+  "agent_timeout_ms": 3600000,
+  "prompt_template_id": "baseline-v1",
   "prompt_policy": {
     "hide_original_pr": true,
     "hide_fixed_commit": true,
@@ -10,7 +12,231 @@
     "custom_rules": false,
     "agent_skills": false
   },
+  "workspace_policy": {
+    "steering_policy": "remove_upstream_agent_instructions",
+    "git_root_policy": "fresh_sanitized_one_commit_root"
+  },
   "conditions": [
+    {
+      "id": "cursor:composer-2-fast:baseline",
+      "harness": "cursor",
+      "model": "composer-2-fast",
+      "effort": "fast",
+      "context": "default",
+      "max_mode": true,
+      "cursor_config": {
+        "maxMode": true,
+        "model": {
+          "modelId": "composer-2",
+          "displayModelId": "composer-2",
+          "displayName": "Composer 2 Fast",
+          "displayNameShort": "Composer 2 Fast",
+          "aliases": [],
+          "maxMode": true
+        },
+        "hasChangedDefaultModel": true,
+        "selectedModel": {
+          "modelId": "composer-2",
+          "parameters": [
+            { "id": "fast", "value": "true" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "cursor:composer-2:baseline",
+      "harness": "cursor",
+      "model": "composer-2",
+      "effort": "standard",
+      "context": "default",
+      "max_mode": true,
+      "cursor_config": {
+        "maxMode": true,
+        "model": {
+          "modelId": "composer-2",
+          "displayModelId": "composer-2",
+          "displayName": "Composer 2",
+          "displayNameShort": "Composer 2",
+          "aliases": [],
+          "maxMode": true
+        },
+        "hasChangedDefaultModel": true,
+        "selectedModel": {
+          "modelId": "composer-2",
+          "parameters": [
+            { "id": "fast", "value": "false" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "cursor:gpt-5.5-medium:baseline",
+      "harness": "cursor",
+      "model": "gpt-5.5-medium",
+      "effort": "medium",
+      "context": "1m",
+      "max_mode": true,
+      "cursor_config": {
+        "maxMode": true,
+        "model": {
+          "modelId": "gpt-5.5",
+          "displayModelId": "gpt-5.5",
+          "displayName": "GPT-5.5 1M Medium",
+          "displayNameShort": "GPT-5.5 1M Medium",
+          "aliases": [],
+          "maxMode": true
+        },
+        "hasChangedDefaultModel": true,
+        "selectedModel": {
+          "modelId": "gpt-5.5",
+          "parameters": [
+            { "id": "context", "value": "1m" },
+            { "id": "reasoning", "value": "medium" },
+            { "id": "fast", "value": "false" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "cursor:gpt-5.5-high:baseline",
+      "harness": "cursor",
+      "model": "gpt-5.5-high",
+      "effort": "high",
+      "context": "1m",
+      "max_mode": true,
+      "cursor_config": {
+        "maxMode": true,
+        "model": {
+          "modelId": "gpt-5.5",
+          "displayModelId": "gpt-5.5",
+          "displayName": "GPT-5.5 1M High",
+          "displayNameShort": "GPT-5.5 1M High",
+          "aliases": [],
+          "maxMode": true
+        },
+        "hasChangedDefaultModel": true,
+        "selectedModel": {
+          "modelId": "gpt-5.5",
+          "parameters": [
+            { "id": "context", "value": "1m" },
+            { "id": "reasoning", "value": "high" },
+            { "id": "fast", "value": "false" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "cursor:gpt-5.5-extra-high:baseline",
+      "harness": "cursor",
+      "model": "gpt-5.5-extra-high",
+      "effort": "extra-high",
+      "context": "1m",
+      "max_mode": true,
+      "cursor_config": {
+        "maxMode": true,
+        "model": {
+          "modelId": "gpt-5.5",
+          "displayModelId": "gpt-5.5",
+          "displayName": "GPT-5.5 1M Extra High",
+          "displayNameShort": "GPT-5.5 1M Extra High",
+          "aliases": [],
+          "maxMode": true
+        },
+        "hasChangedDefaultModel": true,
+        "selectedModel": {
+          "modelId": "gpt-5.5",
+          "parameters": [
+            { "id": "context", "value": "1m" },
+            { "id": "reasoning", "value": "extra-high" },
+            { "id": "fast", "value": "false" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "cursor:claude-opus-4-7-high:baseline",
+      "harness": "cursor",
+      "model": "claude-opus-4-7-high",
+      "effort": "high",
+      "context": "1m",
+      "max_mode": true,
+      "cursor_config": {
+        "maxMode": true,
+        "model": {
+          "modelId": "claude-opus-4-7",
+          "displayModelId": "claude-opus-4-7",
+          "displayName": "Opus 4.7 (Thinking) 1M High",
+          "displayNameShort": "Opus 4.7 (Thinking) 1M High",
+          "aliases": [],
+          "maxMode": true
+        },
+        "hasChangedDefaultModel": true,
+        "selectedModel": {
+          "modelId": "claude-opus-4-7",
+          "parameters": [
+            { "id": "thinking", "value": "true" },
+            { "id": "context", "value": "1m" },
+            { "id": "effort", "value": "high" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "cursor:claude-opus-4-7-extra-high:baseline",
+      "harness": "cursor",
+      "model": "claude-opus-4-7-xhigh",
+      "effort": "extra-high",
+      "context": "1m",
+      "max_mode": true,
+      "cursor_config": {
+        "maxMode": true,
+        "model": {
+          "modelId": "claude-opus-4-7",
+          "displayModelId": "claude-opus-4-7",
+          "displayName": "Opus 4.7 (Thinking) 1M Extra High",
+          "displayNameShort": "Opus 4.7 (Thinking) 1M Extra High",
+          "aliases": [],
+          "maxMode": true
+        },
+        "hasChangedDefaultModel": true,
+        "selectedModel": {
+          "modelId": "claude-opus-4-7",
+          "parameters": [
+            { "id": "thinking", "value": "true" },
+            { "id": "context", "value": "1m" },
+            { "id": "effort", "value": "xhigh" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "cursor:claude-opus-4-7-max:baseline",
+      "harness": "cursor",
+      "model": "claude-opus-4-7-max",
+      "effort": "max",
+      "context": "1m",
+      "max_mode": true,
+      "cursor_config": {
+        "maxMode": true,
+        "model": {
+          "modelId": "claude-opus-4-7",
+          "displayModelId": "claude-opus-4-7",
+          "displayName": "Opus 4.7 (Thinking) 1M Max",
+          "displayNameShort": "Opus 4.7 (Thinking) 1M Max",
+          "aliases": [],
+          "maxMode": true
+        },
+        "hasChangedDefaultModel": true,
+        "selectedModel": {
+          "modelId": "claude-opus-4-7",
+          "parameters": [
+            { "id": "thinking", "value": "true" },
+            { "id": "context", "value": "1m" },
+            { "id": "effort", "value": "max" }
+          ]
+        }
+      }
+    },
     {
       "id": "codex:gpt-5.5:medium:baseline",
       "harness": "codex",
@@ -18,16 +244,34 @@
       "effort": "medium"
     },
     {
-      "id": "claude:claude-opus-4-7:medium:baseline",
-      "harness": "claude",
-      "model": "claude-opus-4-7",
-      "effort": "medium"
+      "id": "codex:gpt-5.5:high:baseline",
+      "harness": "codex",
+      "model": "gpt-5.5",
+      "effort": "high"
     },
     {
-      "id": "cursor:gpt-5.5-medium:baseline",
-      "harness": "cursor",
-      "model": "gpt-5.5-medium",
-      "effort": null
+      "id": "codex:gpt-5.5:xhigh:baseline",
+      "harness": "codex",
+      "model": "gpt-5.5",
+      "effort": "xhigh"
+    },
+    {
+      "id": "claude:claude-opus-4-7:high:baseline",
+      "harness": "claude",
+      "model": "claude-opus-4-7",
+      "effort": "high"
+    },
+    {
+      "id": "claude:claude-opus-4-7:xhigh:baseline",
+      "harness": "claude",
+      "model": "claude-opus-4-7",
+      "effort": "xhigh"
+    },
+    {
+      "id": "claude:claude-opus-4-7:max:baseline",
+      "harness": "claude",
+      "model": "claude-opus-4-7",
+      "effort": "max"
     }
   ]
 }

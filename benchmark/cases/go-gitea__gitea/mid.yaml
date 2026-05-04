@@ -5,6 +5,12 @@ license: MIT
 stars_at_selection: 55300
 size_bucket: large
 language_tags: [go, web-app, git, issues]
+environment:
+  image: ghcr.io/nyosegawa/harness-bench-go:1.24
+  workdir: /work/repo
+  setup_in_container: true
+  tests_in_container: true
+  test_network: none
 pr_number: 36490
 pr_url: https://github.com/go-gitea/gitea/pull/36490
 pr_title: "Don't create self-references in merged PRs"
@@ -27,9 +33,9 @@ hidden_tests:
 test_strategy:
   core_tests:
     - benchmark/cases/go-gitea__gitea/hidden-tests/mid/run.sh
-  oracle_suites: []
-  regression_tests: []
-  success_rule: core_tests_pass
+  regression_tests:
+    - benchmark/cases/go-gitea__gitea/hidden-tests/mid/run.sh
+  success_rule: core_and_regression
 selection_notes: >
   Mid-difficulty issue timeline bug requiring fixture-backed model behavior:
   skip only the PR merge commit's reference to its own PR, without suppressing

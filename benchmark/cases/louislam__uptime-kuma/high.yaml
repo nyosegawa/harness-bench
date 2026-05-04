@@ -5,6 +5,12 @@ license: MIT
 stars_at_selection: 86135
 size_bucket: medium
 language_tags: [javascript, node, monitoring, websocket]
+environment:
+  image: ghcr.io/nyosegawa/harness-bench-node:22
+  workdir: /work/repo
+  setup_in_container: true
+  tests_in_container: true
+  test_network: none
 pr_number: 7304
 pr_url: https://github.com/louislam/uptime-kuma/pull/7304
 pr_title: "feat: websocket improve to fix issue #7268 including support authentication"
@@ -27,9 +33,9 @@ hidden_tests:
 test_strategy:
   core_tests:
     - benchmark/cases/louislam__uptime-kuma/hidden-tests/high/run.sh
-  oracle_suites: []
-  regression_tests: []
-  success_rule: core_tests_pass
+  regression_tests:
+    - benchmark/cases/louislam__uptime-kuma/hidden-tests/high/run.sh
+  success_rule: core_and_regression
 selection_notes: >
   Higher-difficulty monitor behavior spanning websocket handshake options and
   authentication precedence. Hidden tests check options directly to avoid

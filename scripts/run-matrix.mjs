@@ -8,7 +8,7 @@ import { basename, relative, resolve } from "node:path";
 const args = parseArgs(process.argv.slice(2));
 const runsRoot = resolve(args.runsRoot ?? "benchmark/runs");
 const workRoot = resolve(args.workRoot ?? "benchmark/workspaces");
-const agentTimeoutMs = Number(args.agentTimeoutMs ?? 900000);
+const agentTimeoutMs = Number(args.agentTimeoutMs ?? 3600000);
 const rateCard = args.rateCard ? resolve(args.rateCard) : null;
 const dryRun = parseBoolean(args.dryRun, false);
 const stopOnFailure = parseBoolean(args.stopOnFailure, false);
@@ -531,6 +531,9 @@ function buildCommand(job, attempt) {
     if (job.condition.cursor_config) {
       command.push("--cursorConfig", JSON.stringify(job.condition.cursor_config));
     }
+    if (job.condition.prompt_template_id) {
+      command.push("--promptTemplateId", job.condition.prompt_template_id);
+    }
     if (rateCard) {
       command.push("--rateCard", rateCard);
     }
@@ -555,7 +558,11 @@ function loadConditions(path) {
     model: requiredCondition(condition.model, "model"),
     effort: condition.effort ?? null,
     cursor_config: condition.cursor_config ?? null,
+    context: condition.context ?? null,
+    max_mode: condition.max_mode ?? null,
+    prompt_template_id: condition.prompt_template_id ?? data.prompt_template_id ?? null,
     prompt_policy: condition.prompt_policy ?? data.prompt_policy ?? null,
+    workspace_policy: condition.workspace_policy ?? data.workspace_policy ?? null,
   }));
 }
 

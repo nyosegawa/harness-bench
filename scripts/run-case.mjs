@@ -15,6 +15,8 @@ const agentTimeoutMs = Number(args.agentTimeoutMs ?? 900000);
 const rateCardPath = args.rateCard ? resolve(args.rateCard) : null;
 const rateCard = rateCardPath ? loadRateCard(rateCardPath) : null;
 const cursorConfig = args.cursorConfig ? JSON.parse(args.cursorConfig) : null;
+const promptTemplateId = args.promptTemplateId ?? "baseline-v1";
+const promptTemplatePath = resolve(args.promptTemplate ?? `benchmark/prompts/${promptTemplateId}.txt`);
 const workRoot = resolve(args.workRoot ?? "benchmark/workspaces");
 const runsRoot = resolve(args.runsRoot ?? "benchmark/runs");
 const repoOverride = args.repoDir ? resolve(args.repoDir) : null;
@@ -30,6 +32,7 @@ if (mode === "agent" && !harness) {
 }
 
 const caseData = parseSimpleYaml(readFileSync(casePath, "utf8"));
+validateCaseStrategy(caseData);
 const caseId = required(caseData.id, "case id is required");
 const repo = required(caseData.repo, "case repo is required");
 const repoUrl = required(caseData.repo_url, "case repo_url is required");
@@ -67,7 +70,6 @@ const result = {
       total_duration_ms: 0,
       core_duration_ms: 0,
       regression_duration_ms: 0,
-      oracle_duration_ms: 0,
     },
     usage: emptyUsageMetrics(),
   },
@@ -85,6 +87,7 @@ try {
       materializeSanitizedRoot: !repoOverride,
     });
     result.checkout_commit = caseData.base_commit;
+    result.harness_version = captureHarnessVersion(harness);
     const agentResult = runAgent({
       harness,
       model,
@@ -99,6 +102,7 @@ try {
       cursorConfig,
     });
     result.agent_result = agentResult;
+    result.agent_result.harness_version = result.harness_version;
     result.metrics.harness = agentResult.metrics;
     result.metrics.usage = agentResult.metrics.usage;
     applyCostEstimate(result.metrics.usage, agentResult.metrics.model ?? model, rateCard);
@@ -117,6 +121,8 @@ try {
     }
   }
 
+  const setupResult = runSetup(caseData, activeRepoDir, runDir);
+  result.setup_result = setupResult;
   const strategyResult = runTestStrategy(caseData, activeRepoDir, runDir);
   result.test_result = strategyResult;
   result.metrics.tests = strategyResult.metrics;
@@ -141,19 +147,15 @@ try {
 function runTestStrategy(caseData, repoDir, runDir) {
   const strategy = caseData.test_strategy ?? {
     core_tests: caseData.hidden_tests ?? [],
-    oracle_suites: [],
     regression_tests: [],
     success_rule: "core_tests_pass",
   };
 
-  const core = runCommands("core", strategy.core_tests ?? [], repoDir, runDir);
-  const regressions = runCommands("regression", strategy.regression_tests ?? [], repoDir, runDir);
-  const oracleSuites = runOracleSuites(strategy.oracle_suites ?? [], repoDir, runDir);
+  const core = runCommands("core", strategy.core_tests ?? [], repoDir, runDir, caseData);
+  const regressions = runCommands("regression", strategy.regression_tests ?? [], repoDir, runDir, caseData);
 
   const corePass = core.every((test) => test.exit_code === 0);
   const regressionPass = regressions.every((test) => test.exit_code === 0);
-  const hasOracleSuites = oracleSuites.length > 0;
-  const oraclePass = !hasOracleSuites || oracleSuites.some((suite) => suite.success);
 
   let success;
   switch (strategy.success_rule) {
@@ -163,11 +165,8 @@ function runTestStrategy(caseData, repoDir, runDir) {
     case "core_and_regression":
       success = corePass && regressionPass;
       break;
-    case "core_and_regression_and_one_oracle":
-      success = corePass && regressionPass && oraclePass;
-      break;
     default:
-      success = corePass && regressionPass && oraclePass;
+      success = corePass && regressionPass;
       break;
   }
 
@@ -176,45 +175,40 @@ function runTestStrategy(caseData, repoDir, runDir) {
     success_rule: strategy.success_rule ?? "default",
     core_pass: corePass,
     regression_pass: regressionPass,
-    oracle_pass: oraclePass,
     core,
     regressions,
-    oracle_suites: oracleSuites,
-    metrics: summarizeTestMetrics(core, regressions, oracleSuites),
+    metrics: summarizeTestMetrics(core, regressions),
   };
 }
 
-function runCommands(group, commands, repoDir, runDir) {
-  return commands.map((command, index) => runTestCommand(group, index, command, repoDir, runDir));
+function validateCaseStrategy(caseData) {
+  const strategy = caseData.test_strategy;
+  if (!strategy) return;
+  if (Object.hasOwn(strategy, "oracle_suites")) {
+    fatal(`${caseData.id ?? "case"} uses removed field test_strategy.oracle_suites`);
+  }
+  const rule = strategy.success_rule ?? "core_and_regression";
+  if (!["core_tests_pass", "core_and_regression"].includes(rule)) {
+    fatal(`${caseData.id ?? "case"} uses unsupported success_rule ${rule}`);
+  }
 }
 
-function runOracleSuites(suites, repoDir, runDir) {
-  return suites.map((suite, index) => {
-    const id = suite.id ?? `oracle-${index}`;
-    const commands = suite.command ? [suite.command] : suite.commands ?? [];
-    const tests = commands.map((command, commandIndex) =>
-      runTestCommand(`oracle-${id}`, commandIndex, command, repoDir, runDir),
-    );
-    return {
-      id,
-      success: tests.length > 0 && tests.every((test) => test.exit_code === 0),
-      tests,
-    };
-  });
+function runSetup(caseData, repoDir, runDir) {
+  return runCommands("setup", caseData.setup ?? [], repoDir, runDir, caseData, { appendRepoArg: false, network: "bridge" });
 }
 
-function runTestCommand(group, index, command, repoDir, runDir) {
+function runCommands(group, commands, repoDir, runDir, caseData, options = {}) {
+  return commands.map((command, index) => runTestCommand(group, index, command, repoDir, runDir, caseData, options));
+}
+
+function runTestCommand(group, index, command, repoDir, runDir, caseData, options = {}) {
   const normalized = String(command);
   const safeGroup = group.replace(/[^A-Za-z0-9_.-]/g, "_");
   const stdoutPath = resolve(runDir, `${safeGroup}-${index}.stdout.log`);
   const stderrPath = resolve(runDir, `${safeGroup}-${index}.stderr.log`);
   const started = new Date();
   const startedMs = Date.now();
-  const result = spawnSync("bash", ["-lc", `${shellQuote(normalized)} ${shellQuote(repoDir)}`], {
-    cwd: process.cwd(),
-    encoding: "utf8",
-    maxBuffer: 50 * 1024 * 1024,
-  });
+  const result = runCommandProcess({ command: normalized, repoDir, caseData, group, options });
   writeFileSync(stdoutPath, result.stdout ?? "");
   writeFileSync(stderrPath, result.stderr ?? "");
 
@@ -232,16 +226,61 @@ function runTestCommand(group, index, command, repoDir, runDir) {
   };
 }
 
-function summarizeTestMetrics(core, regressions, oracleSuites) {
-  const oracleTests = oracleSuites.flatMap((suite) => suite.tests);
+function runCommandProcess({ command, repoDir, caseData, group, options }) {
+  const environment = caseData.environment ?? {};
+  const useContainer = Boolean(environment.image) && environment.tests_in_container !== false;
+  const appendRepoArg = options.appendRepoArg ?? true;
+  if (!useContainer) {
+    const hostCommand = appendRepoArg ? `${shellQuote(command)} ${shellQuote(repoDir)}` : command;
+    return spawnSync("bash", ["-lc", hostCommand], {
+      cwd: process.cwd(),
+      encoding: "utf8",
+      maxBuffer: 50 * 1024 * 1024,
+    });
+  }
+
+  const workdir = environment.workdir ?? "/work/repo";
+  const benchRoot = process.cwd();
+  const containerRepo = workdir;
+  const translated = translateContainerCommand(command);
+  const shellCommand = appendRepoArg ? `${shellQuote(translated)} ${shellQuote(containerRepo)}` : translated;
+  const network = options.network ?? (environment.test_network === "none" ? "none" : "bridge");
+  const dockerArgs = [
+    "run",
+    "--rm",
+    "--network",
+    network,
+    "--user",
+    `${process.getuid?.() ?? 0}:${process.getgid?.() ?? 0}`,
+    "-v",
+    `${repoDir}:${workdir}`,
+    "-v",
+    `${benchRoot}:/work/bench:ro`,
+    "-w",
+    workdir,
+    environment.image,
+    "bash",
+    "-lc",
+    shellCommand,
+  ];
+  return spawnSync("docker", dockerArgs, {
+    cwd: process.cwd(),
+    encoding: "utf8",
+    maxBuffer: 50 * 1024 * 1024,
+  });
+}
+
+function translateContainerCommand(command) {
+  return command.replaceAll("benchmark/cases/", "/work/bench/benchmark/cases/");
+}
+
+function summarizeTestMetrics(core, regressions) {
   const coreDuration = sumDurations(core);
   const regressionDuration = sumDurations(regressions);
-  const oracleDuration = sumDurations(oracleTests);
   return {
-    total_duration_ms: coreDuration + regressionDuration + oracleDuration,
+    total_duration_ms: coreDuration + regressionDuration,
     core_duration_ms: coreDuration,
     regression_duration_ms: regressionDuration,
-    oracle_duration_ms: oracleDuration,
   };
 }
 
@@ -274,10 +313,11 @@ function emptyUsageMetrics() {
 }
 
 function runAgent({ harness, model, effort, conditionId, matrixId, attempt, caseData, repoDir, runDir, timeoutMs, cursorConfig }) {
-  const prompt = buildPrompt(caseData);
+  const promptTemplate = loadPromptTemplate();
+  const prompt = buildPrompt(caseData, promptTemplate.text);
   const promptPath = resolve(runDir, "prompt.txt");
   writeFileSync(promptPath, prompt);
-  writePromptBundle({ caseData, harness, model, effort, conditionId, matrixId, attempt, prompt, runDir, cursorConfig });
+  writePromptBundle({ caseData, harness, model, effort, conditionId, matrixId, attempt, prompt, runDir, cursorConfig, promptTemplate });
 
   if (harness === "codex") {
     return runCodexAgent({ model, effort, prompt, repoDir, runDir, timeoutMs });
@@ -291,7 +331,7 @@ function runAgent({ harness, model, effort, conditionId, matrixId, attempt, case
   fatal(`unsupported harness ${harness}`);
 }
 
-function writePromptBundle({ caseData, harness, model, effort, conditionId, matrixId, attempt, prompt, runDir, cursorConfig }) {
+function writePromptBundle({ caseData, harness, model, effort, conditionId, matrixId, attempt, prompt, runDir, cursorConfig, promptTemplate }) {
   const bundle = {
     schema_version: 1,
     created_at: new Date().toISOString(),
@@ -302,6 +342,11 @@ function writePromptBundle({ caseData, harness, model, effort, conditionId, matr
     model,
     effort,
     cursor_config: cursorConfig ?? null,
+    prompt_template: {
+      id: promptTemplate.id,
+      path: promptTemplate.path,
+      sha256: promptTemplate.sha256,
+    },
     case: {
       id: caseData.id ?? null,
       repo: caseData.repo ?? null,
@@ -330,23 +375,18 @@ function writePromptBundle({ caseData, harness, model, effort, conditionId, matr
   writeFileSync(resolve(runDir, "prompt-bundle.json"), `${JSON.stringify(bundle, null, 2)}\n`);
 }
 
-function buildPrompt(caseData) {
-  return [
-    "You are debugging this repository.",
-    "",
-    "Rules:",
-    "- Work only inside the current repository.",
-    "- Do not inspect benchmark metadata, hidden tests, PRs, patches, or external web pages.",
-    "- Reproduce the described behavior if useful, implement a minimal fix, and run relevant public tests.",
-    "- Do not add unrelated refactors.",
-    "",
-    "Issue:",
-    caseData.instruction,
-    "",
-    "Final response:",
-    "- Briefly summarize the root cause and fix.",
-    "- Mention tests you ran.",
-  ].join("\n");
+function loadPromptTemplate() {
+  const text = readFileSync(promptTemplatePath, "utf8");
+  return {
+    id: promptTemplateId,
+    path: promptTemplatePath,
+    sha256: sha256Text(text),
+    text,
+  };
+}
+
+function buildPrompt(caseData, template) {
+  return template.replaceAll("{{instruction}}", caseData.instruction ?? "");
 }
 
 function caseMetadata(caseData) {
@@ -525,10 +565,18 @@ function runHarnessProcess(command, cwd, stdoutPath, stderrPath, extraEnv = {}, 
     signal: result.signal,
     error: result.error ? { message: result.error.message, code: result.error.code } : null,
     timed_out: result.error?.code === "ETIMEDOUT",
+    completion_reason: completionReason(result),
     started_at: startedAt.toISOString(),
     finished_at: new Date().toISOString(),
     duration_ms: Date.now() - startedMs,
   };
+}
+
+function completionReason(result) {
+  if (result.error?.code === "ETIMEDOUT") return "timeout_60min";
+  if (result.error) return "harness_crash";
+  if (result.signal) return "signal_killed";
+  return "natural_stop";
 }
 
 function normalizeCodexMetrics(events, execution, requestedModel = null) {
@@ -680,6 +728,49 @@ function modelFromCodexEvents(_events) {
   return null;
 }
 
+function captureHarnessVersion(harnessName) {
+  const binary = harnessBinary(harnessName);
+  const capturedAt = new Date().toISOString();
+  const version = spawnSync(binary, ["--version"], {
+    encoding: "utf8",
+    maxBuffer: 1024 * 1024,
+  });
+  const which = spawnSync("which", [binary], {
+    encoding: "utf8",
+    maxBuffer: 1024 * 1024,
+  });
+  const binaryPath = which.status === 0 ? which.stdout.trim() : null;
+  return {
+    name: harnessName,
+    version_string: firstNonEmptyLine(`${version.stdout ?? ""}\n${version.stderr ?? ""}`),
+    binary_path: binaryPath,
+    binary_sha256: binaryPath ? sha256File(binaryPath) : null,
+    captured_at: capturedAt,
+    raw_version_output: `${version.stdout ?? ""}${version.stderr ?? ""}`,
+    version_exit_code: version.status,
+  };
+}
+
+function harnessBinary(harnessName) {
+  if (harnessName === "codex") return "codex";
+  if (harnessName === "claude") return "claude";
+  if (harnessName === "cursor") return "agent";
+  return harnessName;
+}
+
+function firstNonEmptyLine(text) {
+  return text.split(/\r?\n/).map((line) => line.trim()).find(Boolean) ?? null;
+}
+
+function sha256File(path) {
+  const result = spawnSync("sha256sum", [path], {
+    encoding: "utf8",
+    maxBuffer: 1024 * 1024,
+  });
+  if (result.status !== 0) return null;
+  return result.stdout.trim().split(/\s+/)[0] ?? null;
+}
+
 function sumNullable(...values) {
   const present = values.filter((value) => typeof value === "number");
   if (present.length === 0) return null;
@@ -748,6 +839,10 @@ function loadRateCard(path) {
     path,
     sha256: createHash("sha256").update(raw).digest("hex"),
   };
+}
+
+function sha256Text(text) {
+  return createHash("sha256").update(text).digest("hex");
 }
 
 function applyCostEstimate(usage, modelName, card) {
@@ -843,9 +938,6 @@ function invalidRunReason(result) {
     agent?.stderr_path ? readText(agent.stderr_path) : "",
     ...(result.test_result?.core ?? []).flatMap((test) => [readText(test.stdout_path), readText(test.stderr_path)]),
     ...(result.test_result?.regressions ?? []).flatMap((test) => [readText(test.stdout_path), readText(test.stderr_path)]),
-    ...(result.test_result?.oracle_suites ?? []).flatMap((suite) =>
-      suite.tests.flatMap((test) => [readText(test.stdout_path), readText(test.stderr_path)]),
-    ),
   ].join("\n");
 
   if (/no space left on device/i.test(infraText)) {

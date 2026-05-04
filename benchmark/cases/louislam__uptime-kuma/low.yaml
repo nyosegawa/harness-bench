@@ -5,6 +5,12 @@ license: MIT
 stars_at_selection: 86135
 size_bucket: medium
 language_tags: [javascript, vue, monitoring]
+environment:
+  image: ghcr.io/nyosegawa/harness-bench-node:22
+  workdir: /work/repo
+  setup_in_container: true
+  tests_in_container: true
+  test_network: none
 pr_number: 7159
 pr_url: https://github.com/louislam/uptime-kuma/pull/7159
 pr_title: "fix: monitor graph gaps for sub-millisecond TCP pings"
@@ -26,9 +32,9 @@ hidden_tests:
 test_strategy:
   core_tests:
     - benchmark/cases/louislam__uptime-kuma/hidden-tests/low/run.sh
-  oracle_suites: []
-  regression_tests: []
-  success_rule: core_tests_pass
+  regression_tests:
+    - benchmark/cases/louislam__uptime-kuma/hidden-tests/low/run.sh
+  success_rule: core_and_regression
 selection_notes: >
   Focused frontend data filtering bug. Hidden test executes the component
   method against zero, null, and non-zero ping datapoints without launching a
