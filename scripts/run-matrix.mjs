@@ -528,6 +528,9 @@ function buildCommand(job, attempt) {
     if (job.condition.effort) {
       command.push("--effort", job.condition.effort);
     }
+    if (job.condition.cursor_config) {
+      command.push("--cursorConfig", JSON.stringify(job.condition.cursor_config));
+    }
     if (rateCard) {
       command.push("--rateCard", rateCard);
     }
@@ -551,6 +554,7 @@ function loadConditions(path) {
     harness: requiredCondition(condition.harness, "harness"),
     model: requiredCondition(condition.model, "model"),
     effort: condition.effort ?? null,
+    cursor_config: condition.cursor_config ?? null,
     prompt_policy: condition.prompt_policy ?? data.prompt_policy ?? null,
   }));
 }

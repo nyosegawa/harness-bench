@@ -14,6 +14,7 @@ const effort = args.effort ?? null;
 const agentTimeoutMs = Number(args.agentTimeoutMs ?? 900000);
 const rateCardPath = args.rateCard ? resolve(args.rateCard) : null;
 const rateCard = rateCardPath ? loadRateCard(rateCardPath) : null;
+const cursorConfig = args.cursorConfig ? JSON.parse(args.cursorConfig) : null;
 const workRoot = resolve(args.workRoot ?? "benchmark/workspaces");
 const runsRoot = resolve(args.runsRoot ?? "benchmark/runs");
 const repoOverride = args.repoDir ? resolve(args.repoDir) : null;
@@ -95,6 +96,7 @@ try {
       repoDir: activeRepoDir,
       runDir,
       timeoutMs: agentTimeoutMs,
+      cursorConfig,
     });
     result.agent_result = agentResult;
     result.metrics.harness = agentResult.metrics;
@@ -271,11 +273,11 @@ function emptyUsageMetrics() {
   };
 }
 
-function runAgent({ harness, model, effort, conditionId, matrixId, attempt, caseData, repoDir, runDir, timeoutMs }) {
+function runAgent({ harness, model, effort, conditionId, matrixId, attempt, caseData, repoDir, runDir, timeoutMs, cursorConfig }) {
   const prompt = buildPrompt(caseData);
   const promptPath = resolve(runDir, "prompt.txt");
   writeFileSync(promptPath, prompt);
-  writePromptBundle({ caseData, harness, model, effort, conditionId, matrixId, attempt, prompt, runDir });
+  writePromptBundle({ caseData, harness, model, effort, conditionId, matrixId, attempt, prompt, runDir, cursorConfig });
 
   if (harness === "codex") {
     return runCodexAgent({ model, effort, prompt, repoDir, runDir, timeoutMs });
@@ -284,12 +286,12 @@ function runAgent({ harness, model, effort, conditionId, matrixId, attempt, case
     return runClaudeAgent({ model, effort, prompt, repoDir, runDir, timeoutMs });
   }
   if (harness === "cursor") {
-    return runCursorAgent({ model, prompt, repoDir, runDir, timeoutMs });
+    return runCursorAgent({ model, prompt, repoDir, runDir, timeoutMs, cursorConfig });
   }
   fatal(`unsupported harness ${harness}`);
 }
 
-function writePromptBundle({ caseData, harness, model, effort, conditionId, matrixId, attempt, prompt, runDir }) {
+function writePromptBundle({ caseData, harness, model, effort, conditionId, matrixId, attempt, prompt, runDir, cursorConfig }) {
   const bundle = {
     schema_version: 1,
     created_at: new Date().toISOString(),
@@ -299,6 +301,7 @@ function writePromptBundle({ caseData, harness, model, effort, conditionId, matr
     harness,
     model,
     effort,
+    cursor_config: cursorConfig ?? null,
     case: {
       id: caseData.id ?? null,
       repo: caseData.repo ?? null,
@@ -453,7 +456,7 @@ function runClaudeAgent({ model, effort, prompt, repoDir, runDir, timeoutMs }) {
   };
 }
 
-function runCursorAgent({ model, prompt, repoDir, runDir, timeoutMs }) {
+function runCursorAgent({ model, prompt, repoDir, runDir, timeoutMs, cursorConfig }) {
   const stdoutPath = resolve(runDir, "harness.events.jsonl");
   const stderrPath = resolve(runDir, "harness.stderr.log");
   const command = [
@@ -465,11 +468,13 @@ function runCursorAgent({ model, prompt, repoDir, runDir, timeoutMs }) {
     "--workspace",
     repoDir,
   ];
-  if (model) {
+  if (model && !cursorConfig) {
     command.push("--model", model);
   }
   command.push(prompt);
-  const execution = runHarnessProcess(command, repoDir, stdoutPath, stderrPath, {}, timeoutMs);
+  const execution = withCursorConfig(cursorConfig, () =>
+    runHarnessProcess(command, repoDir, stdoutPath, stderrPath, {}, timeoutMs),
+  );
   const events = readJsonl(stdoutPath);
   return {
     harness: "cursor",
@@ -483,6 +488,23 @@ function runCursorAgent({ model, prompt, repoDir, runDir, timeoutMs }) {
     duration_ms: execution.duration_ms,
     metrics: normalizeCursorMetrics(events, execution),
   };
+}
+
+function withCursorConfig(configPatch, callback) {
+  if (!configPatch) return callback();
+  const configPath = resolve(process.env.HOME ?? "", ".cursor/cli-config.json");
+  const original = existsSync(configPath) ? readFileSync(configPath, "utf8") : null;
+  try {
+    const base = original ? JSON.parse(original) : {};
+    writeFileSync(configPath, `${JSON.stringify({ ...base, ...configPatch }, null, 2)}\n`);
+    return callback();
+  } finally {
+    if (original == null) {
+      rmSync(configPath, { force: true });
+    } else {
+      writeFileSync(configPath, original);
+    }
+  }
 }
 
 function runHarnessProcess(command, cwd, stdoutPath, stderrPath, extraEnv = {}, timeoutMs = 900000) {
