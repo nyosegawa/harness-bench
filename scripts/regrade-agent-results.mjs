@@ -80,34 +80,18 @@ function findResultPaths(root) {
 }
 
 function runTestStrategy(caseData, repoDir, runDir) {
-  const strategy = caseData.test_strategy ?? {
-    core_tests: caseData.hidden_tests ?? [],
-    regression_tests: [],
-    success_rule: "core_tests_pass",
-  };
+  const strategy = caseData.test_strategy;
 
   const core = runCommands("regrade-core", strategy.core_tests ?? [], repoDir, runDir, caseData);
   const regressions = runCommands("regrade-regression", strategy.regression_tests ?? [], repoDir, runDir, caseData);
 
   const corePass = core.every((test) => test.exit_code === 0);
   const regressionPass = regressions.every((test) => test.exit_code === 0);
-
-  let success;
-  switch (strategy.success_rule) {
-    case "core_tests_pass":
-      success = corePass;
-      break;
-    case "core_and_regression":
-      success = corePass && regressionPass;
-      break;
-    default:
-      success = corePass && regressionPass;
-      break;
-  }
+  const success = corePass && regressionPass;
 
   return {
     success,
-    success_rule: strategy.success_rule ?? "default",
+    success_rule: "core_and_regression",
     core_pass: corePass,
     regression_pass: regressionPass,
     core,
@@ -118,12 +102,17 @@ function runTestStrategy(caseData, repoDir, runDir) {
 
 function validateCaseStrategy(caseData) {
   const strategy = caseData.test_strategy;
-  if (!strategy) return;
+  if (!strategy) {
+    throw new Error(`${caseData.id ?? "case"} is missing required test_strategy`);
+  }
+  if (Object.hasOwn(caseData, "hidden_tests")) {
+    throw new Error(`${caseData.id ?? "case"} uses removed field hidden_tests`);
+  }
   if (Object.hasOwn(strategy, "oracle_suites")) {
     throw new Error(`${caseData.id ?? "case"} uses removed field test_strategy.oracle_suites`);
   }
   const rule = strategy.success_rule ?? "core_and_regression";
-  if (!["core_tests_pass", "core_and_regression"].includes(rule)) {
+  if (rule !== "core_and_regression") {
     throw new Error(`${caseData.id ?? "case"} uses unsupported success_rule ${rule}`);
   }
 }

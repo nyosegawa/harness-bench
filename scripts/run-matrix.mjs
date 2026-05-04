@@ -13,6 +13,7 @@ const rateCard = args.rateCard ? resolve(args.rateCard) : null;
 const dryRun = parseBoolean(args.dryRun, false);
 const stopOnFailure = parseBoolean(args.stopOnFailure, false);
 const includeVerify = parseBoolean(args.includeVerify, false);
+const includeAgents = parseBoolean(args.includeAgents, true);
 const maxInfraRetries = Number(args.maxInfraRetries ?? 0);
 const jobsConcurrency = Math.max(1, Number(args.jobs ?? 1));
 const experimentId = args.experimentId ?? null;
@@ -48,10 +49,15 @@ if (includeVerify) {
     jobs.push({ kind: "verify", casePath, mode: "verify-fixed" });
   }
 }
-for (const casePath of cases) {
-  for (const condition of conditions) {
-    jobs.push({ kind: "agent", casePath, condition });
+if (includeAgents) {
+  for (const casePath of cases) {
+    for (const condition of conditions) {
+      jobs.push({ kind: "agent", casePath, condition });
+    }
   }
+}
+if (jobs.length === 0) {
+  fatal("matrix has no jobs; enable --includeVerify or --includeAgents");
 }
 
 const startedAt = new Date();
@@ -62,6 +68,7 @@ const summary = {
   finished_at: null,
   dry_run: dryRun,
   include_verify: includeVerify,
+  include_agents: includeAgents,
   stop_on_failure: stopOnFailure,
   runs_root: runsRoot,
   work_root: workRoot,
@@ -268,6 +275,7 @@ function buildExperimentManifest(matrixSummary, summaryPath) {
       conditions_file_sha256: fileSha256(args.conditions ? resolve(args.conditions) : "benchmark/conditions/baseline.json"),
       rate_card: rateCard ? { path: rateCard, sha256: fileSha256(rateCard) } : null,
       include_verify: includeVerify,
+      include_agents: includeAgents,
       agent_timeout_ms: agentTimeoutMs,
       max_infra_retries: maxInfraRetries,
       jobs_concurrency: jobsConcurrency,

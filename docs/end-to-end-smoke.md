@@ -29,7 +29,9 @@ Run all base/fixed checks before an agent matrix:
 ```bash
 node scripts/run-matrix.mjs \
   --experimentId harnessbench-verify-smoke-YYYY-MM-DD \
+  --conditions benchmark/conditions/baseline.json \
   --includeVerify true \
+  --includeAgents false \
   --jobs 3 \
   --dryRun true
 ```
@@ -40,7 +42,7 @@ Acceptance:
 
 - every `verify-base` fails
 - every `verify-fixed` passes
-- no case is `core_tests_pass` in the official set
+- every case uses `core_and_regression`
 - failures identify core or regression layer
 
 ## Agent Smoke
@@ -53,6 +55,7 @@ node scripts/run-matrix.mjs \
   --conditions benchmark/conditions/baseline.json \
   --harness codex \
   --includeVerify true \
+  --includeAgents true \
   --jobs 3 \
   --agentTimeoutMs 3600000 \
   --maxInfraRetries 1 \

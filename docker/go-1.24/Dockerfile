@@ -10,8 +10,6 @@ RUN apt-get update \
     git \
     jq \
     make \
-    nodejs \
-    npm \
     pkg-config \
     unzip \
     xz-utils \

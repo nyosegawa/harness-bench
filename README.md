@@ -106,6 +106,7 @@ node scripts/run-matrix.mjs \
   --experimentId harnessbench-smoke-YYYY-MM-DD \
   --conditions benchmark/conditions/baseline.json \
   --includeVerify true \
+  --includeAgents true \
   --jobs 3 \
   --agentTimeoutMs 3600000 \
   --maxInfraRetries 1 \
@@ -118,6 +119,17 @@ node scripts/run-matrix.mjs \
 Official runs use a 60 minute per-issue timeout. Cursor conditions that require CLI model configuration should run with
 `--jobs 1` unless the runner has been updated to isolate Cursor configuration
 per process.
+
+To run only the 27-case authoring gate without agent jobs:
+
+```bash
+node scripts/run-matrix.mjs \
+  --experimentId harnessbench-v2-verify-YYYY-MM-DD \
+  --conditions benchmark/conditions/baseline.json \
+  --includeVerify true \
+  --includeAgents false \
+  --jobs 3
+```
 
 ## Sanitization
 

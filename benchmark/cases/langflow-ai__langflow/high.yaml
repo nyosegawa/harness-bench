@@ -6,7 +6,7 @@ stars_at_selection: 147629
 size_bucket: large
 language_tags: [python, web-app, cli, streaming]
 environment:
-  image: ghcr.io/nyosegawa/harness-bench-python:3.12
+  image: ghcr.io/nyosegawa/harness-bench-python:3.12@sha256:f27b83613098507a203bf791f42f51abdc9f1ed4f2b5220503930232d3761597
   workdir: /work/repo
   setup_in_container: true
   tests_in_container: true

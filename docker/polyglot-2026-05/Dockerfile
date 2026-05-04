@@ -23,7 +23,7 @@ RUN apt-get update \
   && mkdir -p /opt/node \
   && curl -fsSL https://nodejs.org/dist/v22.21.1/node-v22.21.1-linux-x64.tar.xz | tar -C /opt/node --strip-components=1 -xJ \
   && /opt/node/bin/corepack enable \
-  && python3 -m pip install --break-system-packages --no-cache-dir --upgrade pip uv \
+  && python3 -m pip install --break-system-packages --no-cache-dir uv \
   && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /work/repo

@@ -37,8 +37,8 @@ Success means:
 all core_tests pass AND all regression_tests pass
 ```
 
-`core_tests_pass` is kept only for authoring smoke checks. Official cases must
-use `core_and_regression`.
+`core_and_regression` is the only supported success rule. Cases without an
+explicit `test_strategy` or cases using legacy `hidden_tests` are rejected.
 
 ## Matrix Runner
 
@@ -47,6 +47,7 @@ node scripts/run-matrix.mjs \
   --experimentId harnessbench-baseline-YYYY-MM-DD \
   --conditions benchmark/conditions/baseline.json \
   --includeVerify true \
+  --includeAgents true \
   --jobs 3 \
   --agentTimeoutMs 3600000 \
   --maxInfraRetries 1 \
@@ -55,6 +56,9 @@ node scripts/run-matrix.mjs \
   --reviewJobs 3 \
   --report true
 ```
+
+Use `--includeAgents false` with `--includeVerify true` for the 27-case
+authoring gate before expensive agent runs.
 
 `--jobs` controls concurrent `run-case.mjs` processes. Official agent runs use
 a 60 minute per-issue timeout. Cursor conditions that

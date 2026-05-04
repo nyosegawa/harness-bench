@@ -100,8 +100,9 @@ all core_tests pass
 AND all regression_tests pass
 ```
 
-`core_tests_pass` is allowed only for temporary authoring and smoke work. It is
-not acceptable for a publishable HarnessBench case.
+`core_and_regression` is the only accepted success rule. Earlier authoring
+drafts allowed core-only scoring, but v2 intentionally removes that fallback so
+case YAMLs cannot silently degrade to one-layer grading.
 
 There is no oracle-suite layer. Earlier drafts supported `oracle_suites`, but
 that structure acted as an additional gate rather than a true substitute for

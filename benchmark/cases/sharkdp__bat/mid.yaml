@@ -6,7 +6,7 @@ stars_at_selection: 58657
 size_bucket: small
 language_tags: [rust, cli, terminal]
 environment:
-  image: ghcr.io/nyosegawa/harness-bench-rust:1.85
+  image: ghcr.io/nyosegawa/harness-bench-rust:1.85@sha256:faa34d05fbc996aaa517720a2f63f5d07f43c76ddb736115aa14486fc0781fff
   workdir: /work/repo
   setup_in_container: true
   tests_in_container: true

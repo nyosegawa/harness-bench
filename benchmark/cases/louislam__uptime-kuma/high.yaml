@@ -6,7 +6,7 @@ stars_at_selection: 86135
 size_bucket: medium
 language_tags: [javascript, node, monitoring, websocket]
 environment:
-  image: ghcr.io/nyosegawa/harness-bench-node:22
+  image: ghcr.io/nyosegawa/harness-bench-node:22@sha256:43c4bd31695a5cbf59b0efdc6f6248193222d8ec107571bb92589faca8d2712c
   workdir: /work/repo
   setup_in_container: true
   tests_in_container: true
