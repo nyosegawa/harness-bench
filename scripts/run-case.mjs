@@ -41,7 +41,11 @@ const repoUrl = required(caseData.repo_url, "case repo_url is required");
 
 const repoSlug = repo.replace("/", "__");
 const repoDir = repoOverride ?? (mode === "agent" ? null : resolve(workRoot, repoSlug));
-const runId = `${new Date().toISOString().replace(/[:.]/g, "-")}-${caseId}-${mode}`;
+const runIdParts = [new Date().toISOString().replace(/[:.]/g, "-"), caseId, mode];
+if (mode === "agent") {
+  runIdParts.push(safePathSegment(conditionId), `attempt-${attempt}`);
+}
+const runId = runIdParts.join("-");
 const runDir = resolve(runsRoot, runId);
 mkdirSync(runDir, { recursive: true });
 
@@ -1178,6 +1182,10 @@ function required(value, message) {
 function defaultConditionId({ harness, model, effort }) {
   if (!harness) return null;
   return [harness, model, effort].filter(Boolean).join(":");
+}
+
+function safePathSegment(value) {
+  return String(value ?? "none").replace(/[^A-Za-z0-9_.-]/g, "-");
 }
 
 function fatal(message) {
