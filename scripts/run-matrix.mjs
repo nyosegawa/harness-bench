@@ -104,9 +104,23 @@ console.log(JSON.stringify({
 }, null, 2));
 
 let failed = false;
-for (const jobRecord of await runJobs(jobs)) {
-  summary.jobs.push(jobRecord);
-  if (jobRecord.failed) failed = true;
+const verifyJobs = jobs.filter((job) => job.kind === "verify");
+const agentJobs = jobs.filter((job) => job.kind === "agent");
+
+for (const stage of [
+  { name: "verify", jobs: verifyJobs },
+  { name: "agent", jobs: agentJobs },
+]) {
+  if (stage.jobs.length === 0) continue;
+  if (stage.name === "agent" && failed) {
+    summary.skipped_agent_jobs = stage.jobs.length;
+    summary.skip_reason = "verify stage failed";
+    break;
+  }
+  for (const jobRecord of await runJobs(stage.jobs)) {
+    summary.jobs.push(jobRecord);
+    if (jobRecord.failed) failed = true;
+  }
 }
 
 async function runJobs(pendingJobs) {

@@ -66,6 +66,11 @@ serialized by `run-matrix.mjs` because Cursor stores model selection in a host
 CLI config file. Codex and Claude jobs can still fill the remaining worker
 slots.
 
+When both `--includeVerify` and `--includeAgents` are enabled, `run-matrix.mjs`
+uses a hard stage boundary: all base/fixed verification jobs must finish before
+any agent job starts. If verification produces a matrix failure, agent jobs are
+skipped.
+
 ## Result Layout
 
 Each run writes:
