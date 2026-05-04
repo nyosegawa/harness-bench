@@ -3,6 +3,7 @@ benchmark/runs/
 benchmark/workspaces/
 benchmark/archive/
 benchmark/cache/
+benchmark/experiments/
 
 # Local caches and dependency outputs.
 node_modules/
