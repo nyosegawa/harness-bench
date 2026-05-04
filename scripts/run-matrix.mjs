@@ -556,6 +556,7 @@ function runJobAttempt(job, command, attempt) {
 
 function jobResourceKey(job) {
   if (job.kind === "verify") return `verify:${repoSlugForCase(job.casePath)}`;
+  if (job.condition?.harness === "cursor" && job.condition.cursor_config) return "agent:cursor-cli-config";
   return `agent:${job.casePath}:${job.condition?.id ?? ""}`;
 }
 

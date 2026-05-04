@@ -61,9 +61,10 @@ Use `--includeAgents false` with `--includeVerify true` for the 27-case
 authoring gate before expensive agent runs.
 
 `--jobs` controls concurrent `run-case.mjs` processes. Official agent runs use
-a 60 minute per-issue timeout. Cursor conditions that
-use `cursor_config` should run serially unless Cursor CLI configuration is
-isolated per run.
+a 60 minute per-issue timeout. Cursor conditions that use `cursor_config` are
+serialized by `run-matrix.mjs` because Cursor stores model selection in a host
+CLI config file. Codex and Claude jobs can still fill the remaining worker
+slots.
 
 ## Result Layout
 
