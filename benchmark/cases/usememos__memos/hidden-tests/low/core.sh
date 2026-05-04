@@ -40,11 +40,22 @@ func TestHiddenListUserSettingsCoreOmitsInternalSettings(t *testing.T) {
 	})
 	require.NoError(t, err)
 
+	_, err = ts.Store.UpsertUserSetting(ctx, &storepb.UserSetting{
+		UserId: user.ID,
+		Key:    storepb.UserSetting_GENERAL,
+		Value: &storepb.UserSetting_General{
+			General: &storepb.GeneralUserSetting{Locale: "ja"},
+		},
+	})
+	require.NoError(t, err)
+
 	resp, err := ts.Service.ListUserSettings(ts.CreateUserContext(ctx, user.ID), &apiv1.ListUserSettingsRequest{
 		Parent: apiv1server.BuildUserName(user.Username),
 	})
 	require.NoError(t, err)
-	require.Empty(t, resp.Settings)
+	require.Len(t, resp.Settings, 1)
+	require.Equal(t, "users/settings-user/settings/GENERAL", resp.Settings[0].Name)
+	require.Equal(t, "ja", resp.Settings[0].GetGeneralSetting().Locale)
 }
 GOEOF
 
