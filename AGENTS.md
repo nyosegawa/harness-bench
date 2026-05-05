@@ -94,6 +94,7 @@ node --version
 cargo --version
 node --check scripts/run-case.mjs
 node --check scripts/run-matrix.mjs
+node --check scripts/resume-agent-matrix.mjs
 node --check scripts/render-results.mjs
 node --check scripts/render-experiment-index.mjs
 node --check scripts/review-failed-runs.mjs
@@ -115,6 +116,7 @@ node --check scripts/refresh-result-metrics.mjs
 - `benchmark/reports/`: public report index
 - `scripts/run-case.mjs`: single-case verifier and agent runner
 - `scripts/run-matrix.mjs`: matrix orchestrator
+- `scripts/resume-agent-matrix.mjs`: agent-only matrix resume helper
 - `scripts/render-results.mjs`: experiment report generator
 - `scripts/regrade-agent-results.mjs`: preserved-workspace regrader
 - `scripts/review-failed-runs.mjs`: auxiliary failure reviewer

@@ -71,6 +71,30 @@ uses a hard stage boundary: all base/fixed verification jobs must finish before
 any agent job starts. If verification produces a matrix failure, agent jobs are
 skipped.
 
+## Agent Matrix Resume
+
+`scripts/resume-agent-matrix.mjs` resumes an interrupted agent matrix without
+rerunning completed agent results. It scans `benchmark/runs/**/result.json` for
+existing `(matrix_id, case_id, condition_id)` agent pairs, then invokes
+`scripts/run-case.mjs` only for missing pairs.
+
+Use it only after the verify stage has already passed for the same case set.
+It does not change prompts, cases, conditions, Docker images, or scoring logic;
+it only changes scheduling. Cursor jobs that write Cursor CLI config remain
+serialized.
+
+Example:
+
+```bash
+node scripts/resume-agent-matrix.mjs \
+  --matrixId harnessbench-v2-official-2026-05-04c \
+  --conditions benchmark/conditions/baseline.json \
+  --agentTimeoutMs 3600000 \
+  --rateCard benchmark/rate-cards/api-equivalent-2026-05-03.json \
+  --jobs 3 \
+  --minFreeGb 100
+```
+
 ## Result Layout
 
 Each run writes:
