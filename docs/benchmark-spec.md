@@ -299,6 +299,10 @@ HarnessBench uses a hybrid Docker architecture:
   Docker
 - hidden scoring containers run with `--network none`
 
+Docker Sandboxes were considered for agent execution but are not part of the
+HarnessBench v2 official protocol. See
+[`ADR-0001`](adr/0001-do-not-adopt-docker-sandboxes-for-v2.md).
+
 Repository clones are not baked into images. Images provide toolchains and
 system dependencies only.
 

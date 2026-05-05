@@ -183,6 +183,10 @@ The runner executes repository setup and tests inside Docker when a case defines
 `environment.image`. The agent CLI remains on the host and edits the host
 workspace.
 
+Docker Sandboxes are not used by the HarnessBench v2 runner. The decision is
+recorded in
+[`ADR-0001`](adr/0001-do-not-adopt-docker-sandboxes-for-v2.md).
+
 Container responsibilities:
 
 - `setup`

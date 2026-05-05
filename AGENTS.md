@@ -36,6 +36,22 @@ reports.
 Invalid runs are preserved for auditability but excluded from success-rate
 summaries.
 
+## Architecture Decision Records
+
+Use `docs/adr/` for material benchmark design decisions. Add or update an ADR
+when changing or rejecting decisions that affect:
+
+- execution substrate or isolation model
+- scoring semantics or case schema
+- official matrix conditions
+- report methodology or statistical interpretation
+- artifact retention, regrading, or reproducibility policy
+
+ADRs use YAML frontmatter plus Markdown sections. Prefer a short, append-only
+record with `Context`, `Decision`, `Consequences`, `Alternatives Considered`,
+and `Follow-Up`. Supersede old decisions with a new ADR instead of rewriting
+history. Link relevant specs or runner docs to the ADR.
+
 ## Scoring Model
 
 HarnessBench uses two scoring layers:
