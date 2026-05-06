@@ -7,6 +7,9 @@ import { spawnSync } from "node:child_process";
 const args = parseArgs(process.argv.slice(2));
 const runsRoot = resolve(args.runsRoot ?? "benchmark/runs");
 const caseFilter = new Set([].concat(args.case ?? []).filter(Boolean));
+const matrixIdFilter = args.matrixId ?? null;
+const conditionFilter = new Set([].concat(args.conditionId ?? []).filter(Boolean));
+const runIdFilter = new Set([].concat(args.runId ?? []).filter(Boolean));
 const dryRun = Boolean(args.dryRun);
 
 const resultPaths = findResultPaths(runsRoot);
@@ -15,7 +18,10 @@ let updated = 0;
 for (const resultPath of resultPaths) {
   const result = JSON.parse(readFileSync(resultPath, "utf8"));
   if (result.mode !== "agent" || result.invalid_run) continue;
+  if (matrixIdFilter && result.matrix_id !== matrixIdFilter) continue;
   if (caseFilter.size > 0 && !caseFilter.has(result.case_id)) continue;
+  if (conditionFilter.size > 0 && !conditionFilter.has(result.condition_id)) continue;
+  if (runIdFilter.size > 0 && !runIdFilter.has(result.run_id)) continue;
 
   const workspace = resolve(dirname(resultPath), "workspace");
   if (!existsSync(workspace)) continue;
@@ -193,6 +199,8 @@ function runCommandProcess({ command, repoDir, runDir, caseData, options }) {
     "GOCACHE=/work/cache/go/build",
     "-e",
     "UV_CACHE_DIR=/work/cache/uv",
+    "-e",
+    "CI=true",
     environment.image,
     "bash",
     "-c",

@@ -22,8 +22,9 @@ difficulty: mid
 instruction: >
   MCP tool inputs generated from number, boolean, and JSON schema fields render
   as UI-only widgets instead of connectable handles. Reproduce schema-to-input
-  conversion and make non-string fields advertise the correct connection input
-  types while preserving their value coercion behavior.
+  conversion and make MCP-generated number and boolean inputs connectable from
+  Message values, and make JSON object inputs connectable from JSON values,
+  while preserving their value coercion behavior.
 setup:
   - uv run --package lfx python -c "import lfx"
 public_tests:

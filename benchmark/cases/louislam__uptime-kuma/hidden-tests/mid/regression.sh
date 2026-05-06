@@ -15,19 +15,26 @@ const assert = require("node:assert/strict");
 const dayjs = require("dayjs");
 dayjs.extend(require("dayjs/plugin/utc"));
 
+const { UP } = require("./src/util");
 const { UptimeCalculator } = require("./server/uptime-calculator");
 
-const calculator = new UptimeCalculator();
-const minutelyKey = calculator.getMinutelyKey(dayjs.utc("2026-04-10T12:34:56Z"));
-const hourlyKey = calculator.getHourlyKey(dayjs.utc("2026-04-10T12:34:56Z"));
-const dailyKey = calculator.getDailyKey(dayjs.utc("2026-04-10T12:34:56Z"));
+(async () => {
+    const calculator = new UptimeCalculator();
+    const timestamp = dayjs.utc("2026-04-10T12:34:56Z");
 
-assert.ok(calculator.minutelyUptimeDataList[minutelyKey]);
-assert.ok(calculator.hourlyUptimeDataList[hourlyKey]);
-assert.ok(calculator.dailyUptimeDataList[dailyKey]);
-assert.equal(calculator.minutelyUptimeDataList.length(), 1);
-assert.equal(calculator.hourlyUptimeDataList.length(), 1);
-assert.equal(calculator.dailyUptimeDataList.length(), 1);
+    await calculator.update(UP, 42, timestamp);
+
+    const minutelyKey = calculator.getMinutelyKey(timestamp, false);
+    const hourlyKey = calculator.getHourlyKey(timestamp, false);
+    const dailyKey = calculator.getDailyKey(timestamp, false);
+
+    assert.ok(calculator.minutelyUptimeDataList[minutelyKey]);
+    assert.ok(calculator.hourlyUptimeDataList[hourlyKey]);
+    assert.ok(calculator.dailyUptimeDataList[dailyKey]);
+    assert.equal(calculator.minutelyUptimeDataList[minutelyKey].up, 1);
+    assert.equal(calculator.hourlyUptimeDataList[hourlyKey].up, 1);
+    assert.equal(calculator.dailyUptimeDataList[dailyKey].up, 1);
+})();
 JSEOF
 
 node .benchmark-hidden-uptime-buckets-regression.js

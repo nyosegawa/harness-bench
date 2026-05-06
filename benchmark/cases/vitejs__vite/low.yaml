@@ -22,8 +22,10 @@ difficulty: low
 instruction: >
   Optimized dependency file IDs can collide or lose information when package
   IDs contain characters that are later sanitized for URL paths. Reproduce the
-  flattening edge case and make flattened IDs encode sanitized characters
-  without colliding with underscores or nested IDs.
+  flattening edge case and make flattened IDs encode every character that is
+  unsafe in optimized-dependency file names, including literal underscores and
+  path-special characters such as slash, dot, greater-than, plus, hash, dollar,
+  and asterisk, without colliding with nested IDs.
 setup:
   - pnpm install --ignore-scripts
   - pnpm --filter=./packages/vite run build-bundle

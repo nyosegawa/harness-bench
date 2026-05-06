@@ -23,7 +23,10 @@ instruction: >
   WebSocket monitors ignore custom headers and authentication options during
   the upgrade handshake. Reproduce option construction for websocket checks and
   support headers, basic auth, OAuth client credentials, mTLS, and handshake
-  timeouts without breaking existing status-code behavior.
+  timeouts without breaking existing status-code behavior. Expose the option
+  construction through a reusable websocket options helper on the monitor type
+  so it can be tested without opening a network connection; authentication
+  headers must take precedence over stale custom Authorization headers.
 setup:
   - npm ci --omit=dev --ignore-scripts --no-audit
 public_tests:

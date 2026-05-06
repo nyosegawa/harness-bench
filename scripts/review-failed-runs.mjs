@@ -16,11 +16,11 @@ const jobsConcurrency = Math.max(1, Number(args.jobs ?? 1));
 
 const failed = loadFailedBaselineResults(runsRoot);
 const existing = existsSync(output) ? JSON.parse(readFileSync(output, "utf8")) : defaultReviewFile();
-const existingReviews = new Map((existing.reviews ?? []).map((review) => [reviewKey(review.case_id, review.harness), review]));
+const existingReviews = new Map((existing.reviews ?? []).map((review) => [reviewKey(review.case_id, review.harness, review.condition_id), review]));
 const reviewJobs = [];
 
 for (const result of failed) {
-  const key = reviewKey(result.case_id, result.harness);
+  const key = reviewKey(result.case_id, result.harness, result.condition_id);
   if (!args.force && existingReviews.has(key)) continue;
   const bundle = buildReviewBundle(result);
   if (dryRun) {
@@ -102,7 +102,10 @@ function loadFailedBaselineResults(root) {
 function buildReviewBundle(result) {
   const runDir = dirname(result.result_path);
   const workspace = resolve(runDir, "workspace");
-  const failingCore = result.test_result?.core?.find((test) => test.exit_code !== 0 || test.signal) ?? result.test_result?.core?.[0] ?? null;
+  const failingCore = result.test_result?.core?.find((test) => test.exit_code !== 0 || test.signal) ?? null;
+  const regressionTests = result.test_result?.regressions ?? result.test_result?.regression ?? [];
+  const failingRegression = regressionTests.find((test) => test.exit_code !== 0 || test.signal) ?? null;
+  const representativeTest = failingCore ?? failingRegression ?? result.test_result?.core?.[0] ?? regressionTests[0] ?? null;
   const changedFiles = git(workspace, ["diff", "--name-only"]).stdout
     .split(/\r?\n/)
     .filter(Boolean)
@@ -111,19 +114,30 @@ function buildReviewBundle(result) {
   return {
     case_id: result.case_id,
     harness: result.harness,
+    condition_id: result.condition_id ?? null,
     model: result.model,
+    effort: result.effort ?? null,
     run_id: result.run_id,
     instruction: result.case_metadata?.instruction ?? null,
     evidence_notes: [
       "Repository-local steering files are removed by the benchmark harness before the agent starts.",
       "Ignore AGENTS.md, agents.md, CLAUDE.md, claude.md, .agents, .claude, and .codex deletions as harness sanitization artifacts; they are not candidate implementation edits.",
     ],
-    failing_test: failingCore ? {
-      command: failingCore.command,
-      exit_code: failingCore.exit_code,
-      signal: failingCore.signal,
-      stderr_tail: tail(failingCore.stderr_path, 80),
-      stdout_tail: tail(failingCore.stdout_path, 80),
+    test_summary: {
+      success: result.test_result?.success ?? null,
+      success_rule: result.test_result?.success_rule ?? null,
+      core_pass: result.test_result?.core_pass ?? null,
+      regression_pass: result.test_result?.regression_pass ?? null,
+      core: summarizeTests(result.test_result?.core ?? []),
+      regressions: summarizeTests(regressionTests),
+    },
+    failing_test: representativeTest ? {
+      group: representativeTest.group ?? null,
+      command: representativeTest.command,
+      exit_code: representativeTest.exit_code,
+      signal: representativeTest.signal,
+      stderr_tail: tail(representativeTest.stderr_path, 80),
+      stdout_tail: tail(representativeTest.stdout_path, 80),
     } : null,
     changed_files: changedFiles,
     diff_summary: changedFiles.length ? git(workspace, ["diff", "--stat", "--", ...changedFiles]).stdout : "",
@@ -132,6 +146,7 @@ function buildReviewBundle(result) {
     required_schema: {
       case_id: "string",
       harness: "codex|claude|cursor",
+      condition_id: "string",
       verdict: "true_failure|core_false_negative|regression_false_negative|case_design_review|infra_failure",
       confidence: "low|medium|high",
       failure_mode: { en: "string", ja: "string" },
@@ -155,6 +170,7 @@ function generateReview(bundle) {
     JSON.stringify({
       case_id: "string",
       harness: "codex|claude|cursor",
+      condition_id: "string",
       verdict: "true_failure|core_false_negative|regression_false_negative|case_design_review|infra_failure",
       confidence: "low|medium|high",
       failure_mode: { en: "string", ja: "string" },
@@ -283,7 +299,7 @@ function validateReviewFile(data, path) {
   const seen = new Set();
   for (const [index, review] of data.reviews.entries()) {
     validateSingleReview(review, `${path}: reviews[${index}]`);
-    const key = reviewKey(review.case_id, review.harness);
+    const key = reviewKey(review.case_id, review.harness, review.condition_id);
     if (seen.has(key)) throw new Error(`${path}: duplicate ${key}`);
     seen.add(key);
   }
@@ -293,6 +309,7 @@ function validateSingleReview(review, prefix) {
   requireString(review.case_id, `${prefix}.case_id`);
   requireString(review.harness, `${prefix}.harness`);
   if (!["codex", "claude", "cursor"].includes(review.harness)) throw new Error(`${prefix}.harness invalid`);
+  requireString(review.condition_id, `${prefix}.condition_id`);
   requireString(review.verdict, `${prefix}.verdict`);
   if (!["true_failure", "core_false_negative", "regression_false_negative", "case_design_review", "infra_failure"].includes(review.verdict)) throw new Error(`${prefix}.verdict invalid`);
   if (review.confidence != null && !["low", "medium", "high"].includes(review.confidence)) throw new Error(`${prefix}.confidence invalid`);
@@ -339,6 +356,17 @@ function readJsonl(path) {
   });
 }
 
+function summarizeTests(tests) {
+  return tests.map((test) => ({
+    group: test.group ?? null,
+    command: test.command ?? null,
+    exit_code: test.exit_code ?? null,
+    signal: test.signal ?? null,
+    stdout_tail: tail(test.stdout_path, 40),
+    stderr_tail: tail(test.stderr_path, 40),
+  }));
+}
+
 function tail(path, lineCount) {
   if (!path || !existsSync(path)) return "";
   return readFileSync(path, "utf8").split(/\r?\n/).slice(-lineCount).join("\n");
@@ -354,8 +382,8 @@ function countBy(values) {
   return counts;
 }
 
-function reviewKey(caseId, harness) {
-  return `${caseId}::${harness}`;
+function reviewKey(caseId, harness, conditionId) {
+  return `${caseId}::${harness}::${conditionId ?? ""}`;
 }
 
 function requireString(value, name) {

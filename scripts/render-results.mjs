@@ -922,36 +922,28 @@ function isReviewFalseNegativeCase(caseId) {
 }
 
 function falseNegativeNoteTranslations() {
-  return {
-    "axios-axios-low-settle-error-code": {
-      en: "Fixed hidden-test false negative: rejected non-success statuses may use any defined Axios bad request/response code. All three pass after regrade.",
-      ja: "hidden-test false negative 修正済み: reject された non-success status は定義済み Axios bad request/response code なら許容します。再採点後は 3 harness すべて pass です。",
-    },
-    "go-gitea-gitea-high-compare-no-common-history": {
-      en: "Fixed hidden-test false negative: the hidden test now accepts equivalent no-merge-base typed behavior instead of one exact errors.Is path. All three pass after regrade.",
-      ja: "hidden-test false negative 修正済み: hidden test は単一の errors.Is path ではなく、同等の no-merge-base typed behavior を許容します。再採点後は 3 harness すべて pass です。",
-    },
-    "jesseduffield-lazygit-high-branch-divergence-fast-path": {
-      en: "Fixed hidden-test false negative: private helper-name assertions were removed. Codex and Cursor pass after regrade; Claude still fails the public batching behavior.",
-      ja: "hidden-test false negative 修正済み: private helper-name assertion を削除しました。再採点後 Codex/Cursor は pass、Claude は public batching behavior でまだ fail です。",
-    },
-    "louislam-uptime-kuma-high-websocket-auth-options": {
-      en: "Hidden tests were loosened for equivalent helper names and auth field spellings. All three still fail behavior checks, so this is now treated as true failure.",
-      ja: "同等 helper 名と auth field spelling を許容するよう hidden test を緩和しました。それでも 3 harness すべて behavior check で fail するため、現在は true failure と扱います。",
-    },
-    "louislam-uptime-kuma-low-submillisecond-ping-chart": {
-      en: "Fixed hidden-test false negative: the hidden test now evaluates the real helper method context instead of a fixed-signature mock. Codex, Claude, and Cursor pass after regrade.",
-      ja: "hidden-test false negative 修正済み: hidden test は fixed-signature mock ではなく実際の helper method context を評価します。再採点後 Codex/Claude/Cursor は pass です。",
-    },
-    "sharkdp-bat-high-fallback-syntax": {
-      en: "Mixed: Codex/Cursor implemented --fallback-syntax but hidden also requires an unstated --fallback-language alias; Claude appears to be a true failure because --fallback-syntax itself is rejected.",
-      ja: "混在: Codex/Cursor は --fallback-syntax を実装しましたが、hidden test は prompt にない --fallback-language alias も要求しています。Claude は --fallback-syntax 自体を拒否しているため true failure と見なせます。",
-    },
-    "vitejs-vite-low-flatten-id-sanitized-chars": {
-      en: "Fixed hidden-test false negative: exact PR-style encoding checks were replaced by uniqueness and path-safety properties. Cursor passes after regrade; Codex still leaves unsafe characters.",
-      ja: "hidden-test false negative 修正済み: exact PR-style encoding check を uniqueness と path-safety property に置き換えました。再採点後 Cursor は pass、Codex は unsafe character が残るため fail です。",
-    },
-  };
+  const interestingVerdicts = new Set(["core_false_negative", "regression_false_negative", "case_design_review", "infrastructure_failure"]);
+  const byCase = new Map();
+  for (const review of failureReviews) {
+    if (!interestingVerdicts.has(review.verdict)) continue;
+    const group = byCase.get(review.case_id) ?? [];
+    group.push(review);
+    byCase.set(review.case_id, group);
+  }
+  return Object.fromEntries([...byCase.entries()].map(([caseId, reviews]) => {
+    const counts = countValues(reviews.map((review) => review.verdict));
+    const summary = Object.entries(counts).map(([verdict, count]) => `${verdict}=${count}`).join(", ");
+    return [caseId, {
+      en: `Auxiliary review flagged ${reviews.length} failed run(s): ${summary}. See the per-condition failure review below for evidence.`,
+      ja: `補助レビューが ${reviews.length} 件の失敗 run を要確認として分類しました: ${summary}。根拠は下の条件別 failure review を参照してください。`,
+    }];
+  }));
+}
+
+function countValues(values) {
+  const counts = {};
+  for (const value of values) counts[value] = (counts[value] ?? 0) + 1;
+  return counts;
 }
 
 function renderFalseNegativeRows(rows) {
@@ -965,20 +957,21 @@ function renderFalseNegativeRows(rows) {
 }
 
 function renderFailureReviewRows(results) {
-  const failedKeys = new Set(results.filter((result) => !result.success).map((result) => reviewKey(result.case_id, result.harness)));
+  const failedKeys = new Set(results.filter((result) => !result.success).map((result) => reviewKey(result.case_id, result.harness, result.condition_id)));
   const rows = failureReviews
-    .filter((review) => failedKeys.has(reviewKey(review.case_id, review.harness)))
-    .sort((a, b) => a.case_id.localeCompare(b.case_id) || a.harness.localeCompare(b.harness));
+    .filter((review) => failedKeys.has(reviewKey(review.case_id, review.harness, review.condition_id)))
+    .sort((a, b) => a.case_id.localeCompare(b.case_id) || String(a.condition_id).localeCompare(String(b.condition_id)));
   if (rows.length === 0) {
     return `<div class="muted" data-i18n="noFailures">No failures</div>`;
   }
   return rows.map((review) => {
-    const key = reviewKey(review.case_id, review.harness);
+    const key = reviewKey(review.case_id, review.harness, review.condition_id);
     return `
       <article class="failure-review-card">
         <h3>${esc(review.case_id)}</h3>
         <div class="failure-review-meta">
           ${badge(review.harness)}
+          ${badge(review.condition_id ?? "")}
           ${badge(review.verdict, review.verdict === "true_failure" ? "fail-badge" : "failure-badge")}
           ${badge(review.confidence ?? "")}
         </div>
@@ -997,12 +990,12 @@ function loadFailureReviews(path) {
   return data.reviews ?? [];
 }
 
-function reviewKey(caseId, harness) {
-  return `${caseId}::${harness}`;
+function reviewKey(caseId, harness, conditionId) {
+  return `${caseId}::${harness}::${conditionId ?? ""}`;
 }
 
 function failureReviewTranslations() {
-  return Object.fromEntries(failureReviews.map((review) => [reviewKey(review.case_id, review.harness), {
+  return Object.fromEntries(failureReviews.map((review) => [reviewKey(review.case_id, review.harness, review.condition_id), {
     failure_mode: review.failure_mode,
     evidence: review.evidence,
     recommendation: review.recommendation,
@@ -1024,6 +1017,7 @@ function validateFailureReviewData(data, path) {
     if (!["codex", "claude", "cursor"].includes(review.harness)) {
       throw new Error(`${prefix}.harness must be codex, claude, or cursor`);
     }
+    requireString(review.condition_id, `${prefix}.condition_id`);
     requireString(review.verdict, `${prefix}.verdict`);
     if (!["true_failure", "core_false_negative", "regression_false_negative", "case_design_review", "infra_failure"].includes(review.verdict)) {
       throw new Error(`${prefix}.verdict has unsupported value ${review.verdict}`);
@@ -1031,7 +1025,7 @@ function validateFailureReviewData(data, path) {
     requireLocalized(review.failure_mode, `${prefix}.failure_mode`);
     requireLocalized(review.evidence, `${prefix}.evidence`);
     requireLocalized(review.recommendation, `${prefix}.recommendation`);
-    const key = reviewKey(review.case_id, review.harness);
+    const key = reviewKey(review.case_id, review.harness, review.condition_id);
     if (seen.has(key)) throw new Error(`${prefix}: duplicate review key ${key}`);
     seen.add(key);
   }

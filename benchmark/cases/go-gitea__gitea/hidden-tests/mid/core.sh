@@ -8,6 +8,7 @@ cat > services/issue/commit_self_reference_hidden_core_test.go <<'GOEOF'
 package issue
 
 import (
+	"reflect"
 	"testing"
 
 	issues_model "code.gitea.io/gitea/models/issues"
@@ -18,6 +19,61 @@ import (
 
 	"github.com/stretchr/testify/require"
 )
+
+func hiddenCoreUpdateIssuesCommit(t *testing.T, user *user_model.User, repo *repo_model.Repository, commits []*repository.PushCommit, branchName string, pushTrigger repository.PushTrigger, pullRequestID int64) error {
+	t.Helper()
+	fn := reflect.ValueOf(UpdateIssuesCommit)
+	args := []reflect.Value{
+		reflect.ValueOf(t.Context()),
+		reflect.ValueOf(user),
+		reflect.ValueOf(repo),
+		reflect.ValueOf(commits),
+		reflect.ValueOf(branchName),
+	}
+	fnType := fn.Type()
+	for index := len(args); index < fnType.NumIn(); index++ {
+		argType := fnType.In(index)
+		if fnType.IsVariadic() && index == fnType.NumIn()-1 {
+			elemType := argType.Elem()
+			elem := reflect.New(elemType).Elem()
+			if elem.Kind() == reflect.Struct {
+				if field := elem.FieldByName("SkipPullRequestID"); field.IsValid() && field.CanSet() && field.Kind() == reflect.Int64 {
+					field.SetInt(pullRequestID)
+				}
+				if field := elem.FieldByName("PullRequestID"); field.IsValid() && field.CanSet() && field.Kind() == reflect.Int64 {
+					field.SetInt(pullRequestID)
+				}
+				if field := elem.FieldByName("SkipCommitSHA"); field.IsValid() && field.CanSet() && field.Kind() == reflect.String && len(commits) > 0 {
+					field.SetString(commits[0].Sha1)
+				}
+				if field := elem.FieldByName("CommitSHA"); field.IsValid() && field.CanSet() && field.Kind() == reflect.String && len(commits) > 0 {
+					field.SetString(commits[0].Sha1)
+				}
+			}
+			variadic := reflect.MakeSlice(argType, 0, 1)
+			variadic = reflect.Append(variadic, elem)
+			args = append(args, variadic)
+			result := fn.CallSlice(args)
+			if len(result) == 0 || result[0].IsNil() {
+				return nil
+			}
+			return result[0].Interface().(error)
+		}
+		switch {
+		case argType == reflect.TypeOf(pushTrigger):
+			args = append(args, reflect.ValueOf(pushTrigger))
+		case argType.Kind() == reflect.Int64:
+			args = append(args, reflect.ValueOf(pullRequestID))
+		default:
+			args = append(args, reflect.Zero(argType))
+		}
+	}
+	result := fn.Call(args)
+	if len(result) == 0 || result[0].IsNil() {
+		return nil
+	}
+	return result[0].Interface().(error)
+}
 
 func TestHiddenUpdateIssuesCommitCoreSkipsMergedPullSelfReference(t *testing.T) {
 	require.NoError(t, unittest.PrepareTestDatabase())
@@ -41,7 +97,7 @@ func TestHiddenUpdateIssuesCommitCoreSkipsMergedPullSelfReference(t *testing.T) 
 	}
 
 	unittest.AssertNotExistsBean(t, selfRefComment)
-	require.NoError(t, UpdateIssuesCommit(t.Context(), user, repo, []*repository.PushCommit{selfMergeCommit}, repo.DefaultBranch))
+	require.NoError(t, hiddenCoreUpdateIssuesCommit(t, user, repo, []*repository.PushCommit{selfMergeCommit}, repo.DefaultBranch, repository.PushTriggerPRMergeToBase, 2))
 	unittest.AssertNotExistsBean(t, selfRefComment)
 }
 GOEOF

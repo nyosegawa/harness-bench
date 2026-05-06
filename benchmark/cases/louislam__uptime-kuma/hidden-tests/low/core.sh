@@ -44,6 +44,20 @@ function methodFunction(name, fallback) {
 const pushDatapoint = methodFunction("pushDatapoint");
 const hasPingValue = methodFunction("hasPingValue", (ping) => ping !== null && ping !== undefined);
 const hasValue = methodFunction("hasValue", (value) => value !== null && value !== undefined);
+const hasRenderablePing = methodFunction("hasRenderablePing", (datapoint) =>
+    datapoint.avgPing !== null && datapoint.avgPing !== undefined);
+const getPingValue = methodFunction("getPingValue", (datapoint, key) => key ? datapoint[key] : datapoint);
+const getPingChartValue = methodFunction("getPingChartValue", (datapoint, key) => key ? datapoint[key] : datapoint);
+const getAverageDatapoint = methodFunction("getAverageDatapoint", (datapoints) => datapoints);
+
+Object.assign(globalThis, {
+    hasPingValue,
+    hasValue,
+    hasRenderablePing,
+    getPingValue,
+    getPingChartValue,
+    getAverageDatapoint,
+});
 
 function run(datapoint) {
     const avg = [];
@@ -56,6 +70,10 @@ function run(datapoint) {
         getBarColorForDatapoint: () => "color",
         hasPingValue,
         hasValue,
+        hasRenderablePing,
+        getPingValue,
+        getPingChartValue,
+        getAverageDatapoint,
     }, datapoint, avg, min, max, down, colors);
     return { avg, min, max };
 }

@@ -13,7 +13,14 @@ cat > packages/vite/src/node/server/__tests__/full-bundle-hmr-hidden-core.spec.t
 import { expect, test } from 'vitest'
 import { FullBundleDevEnvironment } from '../environments/fullBundleEnvironment'
 
-test('hidden full bundle HMR core patch files include ESM syntax', () => {
+function containsEsmOnlySentinel(source: string): boolean {
+  if (/export\s*\{\}/.test(source)) return true
+  if (/\bimport\.meta\b/.test(source)) return true
+  if (/^\s*import\s+['"][^'"]+['"]/m.test(source)) return true
+  return false
+}
+
+test('hidden full bundle HMR core patch files include ESM-only syntax', () => {
   const memoryFiles = new Map<string, { source: string }>()
   const sent: unknown[] = []
   const env = {
@@ -35,10 +42,9 @@ test('hidden full bundle HMR core patch files include ESM syntax', () => {
     },
   )
 
-  expect(memoryFiles.get('/hmr_patch_0.js')?.source).toMatch(/export\s*\{\}/)
-  expect(memoryFiles.get('/hmr_patch_0.js')?.source).toContain(
-    'globalThis.__hiddenPatchValue = 1',
-  )
+  const source = memoryFiles.get('/hmr_patch_0.js')?.source ?? ''
+  expect(containsEsmOnlySentinel(source)).toBe(true)
+  expect(source).toContain('globalThis.__hiddenPatchValue = 1')
 })
 TSEOF
 

@@ -8,6 +8,7 @@ cat > pkg/commands/git_commands/branch_loader_fast_hidden_regression_test.go <<'
 package git_commands
 
 import (
+	"reflect"
 	"testing"
 
 	"github.com/jesseduffield/lazygit/pkg/commands/models"
@@ -21,8 +22,14 @@ func TestHiddenFastBehindBaseBranchValuesRegressionKeepsMatchedValuesAndRenders(
 
 	expectedFormat := "%(refname)%00%(ahead-behind:refs/heads/master)%00%(ahead-behind:refs/remotes/origin/develop)"
 	output := "refs/heads/feature\x0040 1\x004 8\n"
+	expectedPrefix := []string{"for-each-ref", "--format=" + expectedFormat}
 	runner := oscommands.NewFakeRunner(t).
-		ExpectGitArgs([]string{"for-each-ref", "--format=" + expectedFormat, "refs/heads"}, output, nil)
+		ExpectFunc("fast ahead-behind for-each-ref over local heads", func(cmdObj *oscommands.CmdObj) bool {
+			args := cmdObj.GetCmd().Args[1:]
+			return len(args) == 3 &&
+				reflect.DeepEqual(args[:2], expectedPrefix) &&
+				(args[2] == "refs/heads" || args[2] == "refs/heads/")
+		}, output, nil)
 
 	gitCommon := buildGitCommon(commonDeps{
 		runner:     runner,
