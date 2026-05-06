@@ -322,7 +322,14 @@ function git(cwd, args) {
 }
 
 function readJson(path) {
-  return existsSync(path) ? JSON.parse(readFileSync(path, "utf8")) : null;
+  if (!existsSync(path)) return null;
+  const text = readFileSync(path, "utf8").trim();
+  if (!text) return null;
+  try {
+    return JSON.parse(text);
+  } catch {
+    return null;
+  }
 }
 
 function readJsonl(path) {

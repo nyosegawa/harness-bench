@@ -239,7 +239,7 @@ function renderHtml(results) {
       <h2 data-i18n="executiveSummary">Executive Summary</h2>
       <p data-i18n="executiveSummaryBody">${esc(executiveSummary.en)}</p>
       <p data-i18n="executiveCaveatBody">The headline score is a hidden-test pass rate. Failed runs still need false-negative review before the matrix is used as a final leaderboard.</p>
-      <p data-i18n="sanitizationCaveatBody">Sanitization caveat: this recorded run removed repository-local steering files from the working tree before agents started, but it did not yet materialize a fresh git root. A sufficiently curious agent could still have recovered tracked steering files from git objects. Future runs use a fresh one-commit sanitized workspace.</p>
+      <p data-i18n="sanitizationCaveatBody">Sanitization policy: baseline agent workspaces remove repository-local steering files before the agent starts, then re-materialize the sanitized tree as a fresh one-commit git repository. Failure reviews treat any steering-file deletion mention as harness setup context, not as an implementation failure.</p>
     </section>
     <section class="report-section">
       <h2 data-i18n="frameworkExplanation">Benchmark Design</h2>
@@ -307,7 +307,7 @@ function renderHtml(results) {
         reportedDollar: "Reported $", estimatedDollar: "Estimated $", conditionComparison: "Harness x Model Comparison",
         executiveSummary: "Executive Summary", executiveSummaryBody: ${JSON.stringify(executiveSummary.en)},
         executiveCaveatBody: "The headline score is a hidden-test pass rate. Failed runs still need false-negative review before the matrix is used as a final leaderboard.",
-        sanitizationCaveatBody: "Sanitization caveat: this recorded run removed repository-local steering files from the working tree before agents started, but it did not yet materialize a fresh git root. A sufficiently curious agent could still have recovered tracked steering files from git objects. Future runs use a fresh one-commit sanitized workspace.",
+        sanitizationCaveatBody: "Sanitization policy: baseline agent workspaces remove repository-local steering files before the agent starts, then re-materialize the sanitized tree as a fresh one-commit git repository. Failure reviews treat any steering-file deletion mention as harness setup context, not as an implementation failure.",
         caseMatrix: "Case Result Matrix", showDetails: "Show Detailed Table", hideDetails: "Hide Detailed Table",
         viewNote: "Default view shows official matrix runs. Exploratory and smoke runs are available from the View filter.",
         frameworkExplanation: "Benchmark Design", frameworkBody: "Each case starts from a real repository base commit where hidden scoring fails, and a fixed commit where hidden scoring passes. Agent runs receive only the issue-style instruction and work inside an isolated checkout. A run is counted as pass only when both hidden core and regression tests pass after the agent edit. Raw harness logs are kept locally, metrics are normalized per harness, and invalid infrastructure runs are excluded from official summaries.",
@@ -341,7 +341,7 @@ function renderHtml(results) {
         reportedDollar: "報告 $", estimatedDollar: "推定 $", conditionComparison: "Harness x Model 比較",
         executiveSummary: "要約", executiveSummaryBody: ${JSON.stringify(executiveSummary.ja)},
         executiveCaveatBody: "この headline score は hidden-test 成功率です。最終 leaderboard として使う前に、失敗 run の false-negative review が必要です。",
-        sanitizationCaveatBody: "Sanitization caveat: この記録済み run では、agent 開始前に repository-local steering file を working tree から削除していましたが、fresh git root 化はまだしていませんでした。そのため tracked file は git object から復元可能でした。将来の run では sanitized tree を fresh one-commit workspace として渡します。",
+        sanitizationCaveatBody: "Sanitization policy: baseline agent workspace では、agent 開始前に repository-local steering file を削除し、その sanitized tree を fresh one-commit git repository として再生成します。Failure review では steering-file deletion への言及を実装失敗ではなく harness setup context として扱います。",
         caseMatrix: "Case 結果 Matrix", showDetails: "詳細表を表示", hideDetails: "詳細表を隠す",
         viewNote: "デフォルトでは公式 matrix run を表示します。探索/Smoke run は表示フィルタから確認できます。",
         frameworkExplanation: "ベンチマーク設計", frameworkBody: "各 case は、hidden scoring が失敗する実リポジトリの base commit と、hidden scoring が成功する fixed commit を持ちます。Agent には issue 形式の instruction だけを渡し、隔離 checkout 内で修正させます。Agent 編集後に hidden core/regression test が両方通った場合だけ pass と数えます。raw harness log はローカルに保持し、metrics は harness ごとの意味を保ったまま正規化し、infra invalid run は公式集計から除外します。",
