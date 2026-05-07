@@ -134,26 +134,32 @@ function renderHtml(results) {
     .summary-table { overflow-x: auto; background: #ffffff; border: 1px solid #dededb; border-radius: 8px; }
     .summary-table table { table-layout: fixed; }
     .summary-table th, .summary-table td { white-space: normal; padding: 8px 9px; }
-    .condition-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin: 0 0 18px; }
+    .condition-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin: 0 0 18px; }
     .condition-card { background: #ffffff; border: 1px solid #dededb; border-radius: 8px; padding: 14px; display: grid; gap: 10px; }
-    .condition-card h2 { padding: 0; font-size: 14px; }
+    .condition-card h2 { padding: 0; font-size: 14px; margin: 0; }
+    .condition-title { display: grid; gap: 6px; }
+    .condition-title-main { font-weight: 750; }
+    .condition-title-sub { display: flex; flex-wrap: wrap; gap: 6px; color: #4b4f56; font-size: 12px; }
+    .condition-chip { background: #f1f2ee; border: 1px solid #dededb; border-radius: 6px; padding: 2px 6px; }
     .condition-main { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
     .condition-rate { font-size: 28px; font-weight: 750; }
     .condition-meta { color: #5f6368; font-size: 12px; }
     .condition-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; font-size: 12px; }
     .condition-stats div { background: #f7f7f4; border-radius: 6px; padding: 8px; }
     .condition-stats strong { display: block; font-size: 14px; color: #202124; margin-top: 2px; }
-    .chart-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 12px; margin: 0 0 18px; }
+    .chart-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(520px, 1fr)); gap: 12px; margin: 0 0 18px; }
     .chart-card { background: #ffffff; border: 1px solid #dededb; border-radius: 8px; padding: 14px; }
     .chart-card h2 { padding: 0; margin: 0 0 10px; }
-    .bar-row { display: grid; grid-template-columns: minmax(86px, 0.7fr) minmax(150px, 1.8fr) minmax(58px, 0.5fr); gap: 10px; align-items: center; margin: 8px 0; }
-    .bar-label { font-size: 12px; font-weight: 650; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .bar-row { display: grid; grid-template-columns: minmax(190px, 1fr) minmax(150px, 1.4fr) minmax(58px, 0.35fr); gap: 10px; align-items: center; margin: 8px 0; }
+    .bar-label { min-width: 0; font-size: 12px; }
+    .bar-label-main { display: block; font-weight: 750; }
+    .bar-label-sub { display: block; color: #5f6368; overflow-wrap: anywhere; line-height: 1.25; }
     .bar-track { height: 12px; background: #ecedea; border-radius: 999px; overflow: hidden; }
     .bar-fill { height: 100%; background: #2f6f9f; border-radius: 999px; }
     .bar-fill.secondary { background: #6f7f45; }
     .bar-fill.cost { background: #936a2f; }
     .bar-value { font-size: 12px; color: #3f4248; text-align: right; white-space: nowrap; }
-    .stack-row { display: grid; grid-template-columns: minmax(78px, 0.6fr) 1fr; gap: 10px; align-items: center; margin: 8px 0; }
+    .stack-row { display: grid; grid-template-columns: minmax(190px, 1fr) minmax(180px, 1.4fr); gap: 10px; align-items: center; margin: 8px 0; }
     .stack-track { display: grid; grid-template-columns: repeat(3, 1fr); height: 22px; border-radius: 6px; overflow: hidden; border: 1px solid #dededb; }
     .stack-seg { display: flex; align-items: center; justify-content: center; color: #fff; font-size: 11px; font-weight: 700; }
     .stack-low { background: #577b9d; }
@@ -231,7 +237,7 @@ function renderHtml(results) {
       ${renderFailureSummaryTable("By Failure", "byFailure", failureSummaryRows)}
     </section>
     <section>
-      <h2 data-i18n="conditionComparison">Harness x Model Comparison</h2>
+      <h2 data-i18n="conditionComparison">Harness x Model x Effort Comparison</h2>
       <div class="condition-grid">${conditionCards}</div>
     </section>
     <section class="chart-grid">${charts}</section>
@@ -304,7 +310,7 @@ function renderHtml(results) {
         cacheWrite: "Cache Write", effectiveInput: "Effective Input", output: "Output", reasoning: "Reasoning",
         effectiveTotal: "Effective Total", cost: "Cost", costSource: "Cost Source", run: "Run", reason: "Reason",
         name: "Name", runs: "Runs", pass: "Pass", rate: "Rate", medianWallShort: "Median Wall",
-        reportedDollar: "Reported $", estimatedDollar: "Estimated $", conditionComparison: "Harness x Model Comparison",
+        reportedDollar: "Reported $", estimatedDollar: "Estimated $", conditionComparison: "Harness x Model x Effort Comparison",
         executiveSummary: "Executive Summary", executiveSummaryBody: ${JSON.stringify(executiveSummary.en)},
         executiveCaveatBody: "The headline score is a hidden-test pass rate. Failed runs still need false-negative review before the matrix is used as a final leaderboard.",
         sanitizationCaveatBody: "Sanitization policy: baseline agent workspaces remove repository-local steering files before the agent starts, then re-materialize the sanitized tree as a fresh one-commit git repository. Failure reviews treat any steering-file deletion mention as harness setup context, not as an implementation failure.",
@@ -338,7 +344,7 @@ function renderHtml(results) {
         cacheWrite: "Cache Write", effectiveInput: "Effective Input", output: "Output", reasoning: "Reasoning",
         effectiveTotal: "Effective Total", cost: "Cost", costSource: "Cost 種別", run: "Run", reason: "理由",
         name: "名前", runs: "実行数", pass: "成功", rate: "率", medianWallShort: "Wall 中央値",
-        reportedDollar: "報告 $", estimatedDollar: "推定 $", conditionComparison: "Harness x Model 比較",
+        reportedDollar: "報告 $", estimatedDollar: "推定 $", conditionComparison: "Harness x Model x Effort 比較",
         executiveSummary: "要約", executiveSummaryBody: ${JSON.stringify(executiveSummary.ja)},
         executiveCaveatBody: "この headline score は hidden-test 成功率です。最終 leaderboard として使う前に、失敗 run の false-negative review が必要です。",
         sanitizationCaveatBody: "Sanitization policy: baseline agent workspace では、agent 開始前に repository-local steering file を削除し、その sanitized tree を fresh one-commit git repository として再生成します。Failure review では steering-file deletion への言及を実装失敗ではなく harness setup context として扱います。",
@@ -780,10 +786,15 @@ function conditionSummary(results) {
         .filter((value) => typeof value === "number");
       const costSource = group.find((result) => result.metrics?.usage?.cost_source && result.metrics.usage.cost_source !== "unavailable")?.metrics?.usage?.cost_source ?? "unavailable";
       const passed = group.filter((result) => result.success).length;
+      const rawModel = group[0]?.model ?? group[0]?.metrics?.harness?.model ?? "";
+      const effort = group[0]?.effort ?? inferEffort(group[0]?.model, group[0]?.metrics?.harness?.model);
       return {
         ...row,
+        conditionId: row.key,
         harness: group[0]?.harness ?? "",
-        model: group[0]?.model ?? group[0]?.metrics?.harness?.model ?? "",
+        model: normalizedDisplayModel(rawModel, effort),
+        rawModel,
+        effort: effort ?? "",
         cost: costValues.length ? costValues.reduce((sum, value) => sum + value, 0) : null,
         costSource,
         costPerPass: passed && costValues.length ? costValues.reduce((sum, value) => sum + value, 0) / passed : null,
@@ -795,7 +806,13 @@ function conditionSummary(results) {
 function renderConditionCards(rows) {
   return rows.map((row) => `
     <article class="condition-card">
-      <h2>${esc(row.harness)} · ${esc(row.model)}</h2>
+      <h2 class="condition-title">
+        <span class="condition-title-main">${esc(titleCase(row.harness))}</span>
+        <span class="condition-title-sub">
+          <span class="condition-chip">${esc(row.model || "unknown model")}</span>
+          <span class="condition-chip">${esc(row.effort || "default effort")}</span>
+        </span>
+      </h2>
       <div class="condition-main">
         <div class="condition-rate">${esc(row.passRate)}</div>
         <div class="condition-meta">${fmt(row.passed)}/${fmt(row.count)} <span data-i18n="passedSuffix">pass</span></div>
@@ -813,25 +830,25 @@ function renderCharts(results) {
   const conditions = conditionSummary(results);
   const maxWall = Math.max(...conditions.map((row) => row.medianWallMs ?? 0), 1);
   const maxCost = Math.max(...conditions.map((row) => row.costPerPass ?? 0), 1);
-  const byHarnessDifficulty = groupByHarnessDifficulty(results);
+  const byConditionDifficulty = groupByConditionDifficulty(results);
   return `
     <article class="chart-card">
       <h2 data-i18n="passRateChart">Pass Rate</h2>
-      ${conditions.map((row) => barRow(row.harness, row.passRateValue * 100, 100, row.passRate, "")).join("\n")}
+      ${conditions.map((row) => barRow(row, row.passRateValue * 100, 100, `${row.passed}/${row.count} · ${row.passRate}`, "")).join("\n")}
     </article>
     <article class="chart-card">
       <h2 data-i18n="wallTimeChart">Median Wall Time</h2>
-      ${conditions.map((row) => barRow(row.harness, row.medianWallMs ?? 0, maxWall, fmtMs(row.medianWallMs), "secondary")).join("\n")}
+      ${conditions.map((row) => barRow(row, row.medianWallMs ?? 0, maxWall, fmtMs(row.medianWallMs), "secondary")).join("\n")}
     </article>
     <article class="chart-card">
       <h2 data-i18n="costPassChart">Cost Per Pass</h2>
-      ${conditions.map((row) => barRow(row.harness, row.costPerPass ?? 0, maxCost, row.costPerPass == null ? "n/a" : `$${row.costPerPass.toFixed(2)}`, "cost")).join("\n")}
+      ${conditions.map((row) => barRow(row, row.costPerPass ?? 0, maxCost, row.costPerPass == null ? "n/a" : `$${row.costPerPass.toFixed(2)}`, "cost")).join("\n")}
     </article>
     <article class="chart-card">
       <h2 data-i18n="difficultyChart">Success By Difficulty</h2>
-      ${byHarnessDifficulty.map((row) => `
+      ${byConditionDifficulty.map((row) => `
         <div class="stack-row">
-          <div class="bar-label">${esc(row.harness)}</div>
+          ${conditionLabelHtml(row)}
           <div class="stack-track" title="${escAttr(`low ${row.low}/9, mid ${row.mid}/9, high ${row.high}/9`)}">
             <div class="stack-seg stack-low">${row.low}/9</div>
             <div class="stack-seg stack-mid">${row.mid}/9</div>
@@ -843,22 +860,44 @@ function renderCharts(results) {
   `;
 }
 
-function barRow(label, value, max, display, className) {
+function conditionLabel(row) {
+  return `${titleCase(row.harness)} / ${row.model || "unknown"} / ${row.effort || "default"}`;
+}
+
+function conditionLabelHtml(row) {
+  return `<div class="bar-label" title="${escAttr(conditionLabel(row))}">
+    <span class="bar-label-main">${esc(titleCase(row.harness))}</span>
+    <span class="bar-label-sub">${esc(row.model || "unknown")} · ${esc(row.effort || "default")}</span>
+  </div>`;
+}
+
+function normalizedDisplayModel(model, effort) {
+  const text = String(model ?? "");
+  const suffixes = [effort, "extra-high", "medium", "high", "xhigh", "max", "fast", "standard"]
+    .filter(Boolean)
+    .map((value) => String(value));
+  for (const suffix of suffixes) {
+    if (text.endsWith(`-${suffix}`)) return text.slice(0, -suffix.length - 1);
+  }
+  return text;
+}
+
+function barRow(row, value, max, display, className) {
   const width = Math.max(2, Math.round((value / max) * 100));
   return `
     <div class="bar-row">
-      <div class="bar-label" title="${escAttr(label)}">${esc(label)}</div>
+      ${conditionLabelHtml(row)}
       <div class="bar-track"><div class="bar-fill ${escAttr(className)}" style="width:${width}%"></div></div>
       <div class="bar-value">${esc(display)}</div>
     </div>
   `;
 }
 
-function groupByHarnessDifficulty(results) {
-  return unique(results.map((result) => result.harness)).map((harness) => {
-    const group = results.filter((result) => result.harness === harness && result.success);
+function groupByConditionDifficulty(results) {
+  return conditionSummary(results).map((condition) => {
+    const group = results.filter((result) => displayCondition(result) === condition.conditionId && result.success);
     return {
-      harness,
+      ...condition,
       low: group.filter((result) => caseMeta(result).difficulty === "low").length,
       mid: group.filter((result) => caseMeta(result).difficulty === "mid").length,
       high: group.filter((result) => caseMeta(result).difficulty === "high").length,
