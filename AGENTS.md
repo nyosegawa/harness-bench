@@ -36,6 +36,75 @@ reports.
 Invalid runs are preserved for auditability but excluded from success-rate
 summaries.
 
+## Publishing Experiment Artifacts
+
+Publish official benchmark artifacts, but do not publish raw run data by
+default.
+
+Keep these local-only:
+
+- `benchmark/runs/`
+- `benchmark/workspaces/`
+- `benchmark/archive/`
+- `benchmark/cache/`
+
+These directories can contain raw harness logs, cloned repositories,
+workspaces, provider-specific session details, and local filesystem paths.
+Preserve them locally for auditability and re-normalization, but do not commit
+them.
+
+For an official experiment, publish only the curated artifact directory under
+`benchmark/experiments/<experiment-id>/` when it contains report-level files
+such as:
+
+- `summary.json`
+- `manifest.json`
+- `failure-reviews.json`
+- `results.html`
+
+Before committing an experiment artifact:
+
+1. Confirm the artifact size is reasonable:
+
+```bash
+du -sh benchmark/experiments/<experiment-id>
+```
+
+2. Remove local absolute paths from public artifacts. Replace repository paths
+   with `<repo>` and home-directory paths with `<home>`:
+
+```bash
+perl -0pi -e 's#/home/sakasegawa/src/github.com/nyosegawa/harness-debug-benchmark#<repo>#g; s#/home/sakasegawa#<home>#g' \
+  benchmark/experiments/<experiment-id>/summary.json \
+  benchmark/experiments/<experiment-id>/manifest.json \
+  benchmark/experiments/<experiment-id>/failure-reviews.json \
+  benchmark/experiments/<experiment-id>/results.html
+```
+
+3. Validate JSON artifacts:
+
+```bash
+node -e "for (const f of ['summary.json','manifest.json','failure-reviews.json']) JSON.parse(require('fs').readFileSync('benchmark/experiments/<experiment-id>/'+f,'utf8')); console.log('json ok')"
+```
+
+4. Scan for local paths and common secret patterns:
+
+```bash
+rg -n "(/home/sakasegawa|sk-[A-Za-z0-9_-]{20,}|xox[baprs]-|ghp_|github_pat_|ANTHROPIC_API_KEY|OPENAI_API_KEY|CURSOR_API_KEY|Authorization: Bearer [A-Za-z0-9._-]{20,})" \
+  benchmark/experiments/<experiment-id> || true
+```
+
+5. Keep `.gitignore` broad, and unignore only the specific official experiment
+   files intended for publication. Do not unignore `benchmark/runs/`,
+   `benchmark/workspaces/`, or `benchmark/archive/`.
+
+6. Run the basic script checks before pushing:
+
+```bash
+node --check scripts/render-results.mjs
+node --check scripts/run-case.mjs
+```
+
 ## Architecture Decision Records
 
 Use `docs/adr/` for material benchmark design decisions. Add or update an ADR
