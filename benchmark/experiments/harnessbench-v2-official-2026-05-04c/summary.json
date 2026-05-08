@@ -1,0 +1,788 @@
+{
+  "schema_version": 1,
+  "experiment_id": "harnessbench-v2-official-2026-05-04c",
+  "matrix_id": "harnessbench-v2-official-2026-05-04c",
+  "started_at": "2026-05-04T10:18:18.111Z",
+  "finished_at": "2026-05-06T12:31:27.489Z",
+  "duration_ms": 180789378,
+  "success": true,
+  "jobs": null,
+  "agent_runs": 378,
+  "agent_attempts": 379,
+  "passed": 275,
+  "failed": 103,
+  "invalid_runs": 0,
+  "invalid_attempts": 1,
+  "timeouts": 6,
+  "conditions": {
+    "claude:claude-opus-4-7:high:baseline": {
+      "runs": 27,
+      "passed": 20,
+      "pass_rate": 0.7407407407407407,
+      "median_wall_time_ms": 413854,
+      "cost_usd": 39.173702999999996,
+      "reported_cost_usd": 39.173702999999996,
+      "estimated_cost_usd": 0,
+      "timeouts": 1
+    },
+    "claude:claude-opus-4-7:max:baseline": {
+      "runs": 27,
+      "passed": 17,
+      "pass_rate": 0.6296296296296297,
+      "median_wall_time_ms": 908918,
+      "cost_usd": 87.38012850000001,
+      "reported_cost_usd": 87.38012850000001,
+      "estimated_cost_usd": 0,
+      "timeouts": 2
+    },
+    "claude:claude-opus-4-7:xhigh:baseline": {
+      "runs": 27,
+      "passed": 18,
+      "pass_rate": 0.6666666666666666,
+      "median_wall_time_ms": 656661,
+      "cost_usd": 62.2409858,
+      "reported_cost_usd": 62.2409858,
+      "estimated_cost_usd": 0,
+      "timeouts": 2
+    },
+    "codex:gpt-5.5:high:baseline": {
+      "runs": 27,
+      "passed": 19,
+      "pass_rate": 0.7037037037037037,
+      "median_wall_time_ms": 542122,
+      "cost_usd": 60.8897,
+      "reported_cost_usd": null,
+      "estimated_cost_usd": 60.8897,
+      "timeouts": 0
+    },
+    "codex:gpt-5.5:medium:baseline": {
+      "runs": 27,
+      "passed": 21,
+      "pass_rate": 0.7777777777777778,
+      "median_wall_time_ms": 405277,
+      "cost_usd": 40.031937,
+      "reported_cost_usd": null,
+      "estimated_cost_usd": 40.031937,
+      "timeouts": 0
+    },
+    "codex:gpt-5.5:xhigh:baseline": {
+      "runs": 27,
+      "passed": 22,
+      "pass_rate": 0.8148148148148148,
+      "median_wall_time_ms": 610893,
+      "cost_usd": 84.46191800000001,
+      "reported_cost_usd": null,
+      "estimated_cost_usd": 84.46191800000001,
+      "timeouts": 0
+    },
+    "cursor:claude-opus-4-7-extra-high:baseline": {
+      "runs": 27,
+      "passed": 20,
+      "pass_rate": 0.7407407407407407,
+      "median_wall_time_ms": 679723,
+      "cost_usd": 0,
+      "reported_cost_usd": null,
+      "estimated_cost_usd": 0,
+      "timeouts": 0
+    },
+    "cursor:claude-opus-4-7-high:baseline": {
+      "runs": 27,
+      "passed": 20,
+      "pass_rate": 0.7407407407407407,
+      "median_wall_time_ms": 434712,
+      "cost_usd": null,
+      "reported_cost_usd": null,
+      "estimated_cost_usd": null,
+      "timeouts": 1
+    },
+    "cursor:claude-opus-4-7-max:baseline": {
+      "runs": 27,
+      "passed": 21,
+      "pass_rate": 0.7777777777777778,
+      "median_wall_time_ms": 1179349,
+      "cost_usd": null,
+      "reported_cost_usd": null,
+      "estimated_cost_usd": null,
+      "timeouts": 0
+    },
+    "cursor:composer-2-fast:baseline": {
+      "runs": 27,
+      "passed": 17,
+      "pass_rate": 0.6296296296296297,
+      "median_wall_time_ms": 218662,
+      "cost_usd": null,
+      "reported_cost_usd": null,
+      "estimated_cost_usd": null,
+      "timeouts": 0
+    },
+    "cursor:composer-2:baseline": {
+      "runs": 27,
+      "passed": 18,
+      "pass_rate": 0.6666666666666666,
+      "median_wall_time_ms": 316651,
+      "cost_usd": null,
+      "reported_cost_usd": null,
+      "estimated_cost_usd": null,
+      "timeouts": 0
+    },
+    "cursor:gpt-5.5-extra-high:baseline": {
+      "runs": 27,
+      "passed": 20,
+      "pass_rate": 0.7407407407407407,
+      "median_wall_time_ms": 344921,
+      "cost_usd": 38.92970700000001,
+      "reported_cost_usd": null,
+      "estimated_cost_usd": 38.92970700000001,
+      "timeouts": 0
+    },
+    "cursor:gpt-5.5-high:baseline": {
+      "runs": 27,
+      "passed": 21,
+      "pass_rate": 0.7777777777777778,
+      "median_wall_time_ms": 371489,
+      "cost_usd": 42.67413200000001,
+      "reported_cost_usd": null,
+      "estimated_cost_usd": 42.67413200000001,
+      "timeouts": 0
+    },
+    "cursor:gpt-5.5-medium:baseline": {
+      "runs": 27,
+      "passed": 21,
+      "pass_rate": 0.7777777777777778,
+      "median_wall_time_ms": 280737,
+      "cost_usd": 28.588195000000002,
+      "reported_cost_usd": null,
+      "estimated_cost_usd": 28.588195000000002,
+      "timeouts": 0
+    }
+  },
+  "invalid_attempts_detail": [
+    {
+      "case_id": "langflow-ai-langflow-low-loguru-file-routing",
+      "harness": "cursor",
+      "condition_id": "cursor:claude-opus-4-7-max:baseline",
+      "run_id": "2026-05-05T20-09-47-389Z-langflow-ai-langflow-low-loguru-file-routing-agent-cursor-claude-opus-4-7-max-baseline-attempt-1",
+      "invalid_reason": "infrastructure failure: runner error: git clone failed: Cloning into '<repo>/benchmark/runs/2026-05-05T20-09-47-389Z-langflow-ai-langflow-low-loguru-file-routing-agent-cursor-claude-opus-4-7-max-baseline-attempt-1/workspace'...\nerror: RPC failed; curl 92 HTTP/2 stream 0 was not closed cleanly: CANCEL (err 8)\nerror: 2884 bytes of body are still expected\nfetch-pack: unexpected disconnect while reading sideband packet\nfatal: early EOF\nfatal: fetch-pack: invalid index-pack output\n"
+    }
+  ],
+  "failed_runs": [
+    {
+      "case_id": "fastapi-fastapi-high-pydantic-json-fast-path",
+      "harness": "cursor",
+      "condition_id": "cursor:composer-2-fast:baseline",
+      "run_id": "2026-05-04T13-11-30-936Z-fastapi-fastapi-high-pydantic-json-fast-path-agent-cursor-composer-2-fast-baseline-attempt-1"
+    },
+    {
+      "case_id": "fastapi-fastapi-high-pydantic-json-fast-path",
+      "harness": "cursor",
+      "condition_id": "cursor:composer-2:baseline",
+      "run_id": "2026-05-04T13-15-52-887Z-fastapi-fastapi-high-pydantic-json-fast-path-agent-cursor-composer-2-baseline-attempt-1"
+    },
+    {
+      "case_id": "go-gitea-gitea-high-compare-no-common-history",
+      "harness": "claude",
+      "condition_id": "claude:claude-opus-4-7:xhigh:baseline",
+      "run_id": "2026-05-04T13-53-15-567Z-go-gitea-gitea-high-compare-no-common-history-agent-claude-claude-opus-4-7-xhigh-baseline-attempt-1"
+    },
+    {
+      "case_id": "go-gitea-gitea-high-compare-no-common-history",
+      "harness": "cursor",
+      "condition_id": "cursor:composer-2-fast:baseline",
+      "run_id": "2026-05-04T16-21-22-192Z-go-gitea-gitea-high-compare-no-common-history-agent-cursor-composer-2-fast-baseline-attempt-1"
+    },
+    {
+      "case_id": "go-gitea-gitea-high-compare-no-common-history",
+      "harness": "cursor",
+      "condition_id": "cursor:composer-2:baseline",
+      "run_id": "2026-05-04T16-30-38-097Z-go-gitea-gitea-high-compare-no-common-history-agent-cursor-composer-2-baseline-attempt-1"
+    },
+    {
+      "case_id": "go-gitea-gitea-high-compare-no-common-history",
+      "harness": "cursor",
+      "condition_id": "cursor:gpt-5.5-extra-high:baseline",
+      "run_id": "2026-05-04T16-52-14-191Z-go-gitea-gitea-high-compare-no-common-history-agent-cursor-gpt-5.5-extra-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "go-gitea-gitea-high-compare-no-common-history",
+      "harness": "cursor",
+      "condition_id": "cursor:gpt-5.5-medium:baseline",
+      "run_id": "2026-05-04T16-38-22-179Z-go-gitea-gitea-high-compare-no-common-history-agent-cursor-gpt-5.5-medium-baseline-attempt-1"
+    },
+    {
+      "case_id": "go-gitea-gitea-mid-pr-merge-self-reference",
+      "harness": "codex",
+      "condition_id": "codex:gpt-5.5:high:baseline",
+      "run_id": "2026-05-04T14-31-44-400Z-go-gitea-gitea-mid-pr-merge-self-reference-agent-codex-gpt-5.5-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "go-gitea-gitea-mid-pr-merge-self-reference",
+      "harness": "codex",
+      "condition_id": "codex:gpt-5.5:medium:baseline",
+      "run_id": "2026-05-04T14-30-21-542Z-go-gitea-gitea-mid-pr-merge-self-reference-agent-codex-gpt-5.5-medium-baseline-attempt-1"
+    },
+    {
+      "case_id": "go-gitea-gitea-mid-pr-merge-self-reference",
+      "harness": "codex",
+      "condition_id": "codex:gpt-5.5:xhigh:baseline",
+      "run_id": "2026-05-04T14-41-04-993Z-go-gitea-gitea-mid-pr-merge-self-reference-agent-codex-gpt-5.5-xhigh-baseline-attempt-1"
+    },
+    {
+      "case_id": "go-gitea-gitea-mid-pr-merge-self-reference",
+      "harness": "cursor",
+      "condition_id": "cursor:composer-2-fast:baseline",
+      "run_id": "2026-05-05T11-10-39-066Z-go-gitea-gitea-mid-pr-merge-self-reference-agent-cursor-composer-2-fast-baseline-attempt-1"
+    },
+    {
+      "case_id": "go-gitea-gitea-mid-pr-merge-self-reference",
+      "harness": "cursor",
+      "condition_id": "cursor:composer-2:baseline",
+      "run_id": "2026-05-05T11-17-10-462Z-go-gitea-gitea-mid-pr-merge-self-reference-agent-cursor-composer-2-baseline-attempt-1"
+    },
+    {
+      "case_id": "go-gitea-gitea-mid-pr-merge-self-reference",
+      "harness": "cursor",
+      "condition_id": "cursor:gpt-5.5-extra-high:baseline",
+      "run_id": "2026-05-05T11-44-57-211Z-go-gitea-gitea-mid-pr-merge-self-reference-agent-cursor-gpt-5.5-extra-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "go-gitea-gitea-mid-pr-merge-self-reference",
+      "harness": "cursor",
+      "condition_id": "cursor:gpt-5.5-high:baseline",
+      "run_id": "2026-05-05T11-31-49-698Z-go-gitea-gitea-mid-pr-merge-self-reference-agent-cursor-gpt-5.5-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "jesseduffield-lazygit-high-branch-divergence-fast-path",
+      "harness": "claude",
+      "condition_id": "claude:claude-opus-4-7:max:baseline",
+      "run_id": "2026-05-04T15-24-07-522Z-jesseduffield-lazygit-high-branch-divergence-fast-path-agent-claude-claude-opus-4-7-max-baseline-attempt-1"
+    },
+    {
+      "case_id": "jesseduffield-lazygit-high-branch-divergence-fast-path",
+      "harness": "claude",
+      "condition_id": "claude:claude-opus-4-7:xhigh:baseline",
+      "run_id": "2026-05-04T15-23-23-912Z-jesseduffield-lazygit-high-branch-divergence-fast-path-agent-claude-claude-opus-4-7-xhigh-baseline-attempt-1"
+    },
+    {
+      "case_id": "jesseduffield-lazygit-high-branch-divergence-fast-path",
+      "harness": "codex",
+      "condition_id": "codex:gpt-5.5:high:baseline",
+      "run_id": "2026-05-04T15-05-24-402Z-jesseduffield-lazygit-high-branch-divergence-fast-path-agent-codex-gpt-5.5-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "jesseduffield-lazygit-high-branch-divergence-fast-path",
+      "harness": "codex",
+      "condition_id": "codex:gpt-5.5:medium:baseline",
+      "run_id": "2026-05-04T15-01-01-023Z-jesseduffield-lazygit-high-branch-divergence-fast-path-agent-codex-gpt-5.5-medium-baseline-attempt-1"
+    },
+    {
+      "case_id": "jesseduffield-lazygit-high-branch-divergence-fast-path",
+      "harness": "cursor",
+      "condition_id": "cursor:claude-opus-4-7-max:baseline",
+      "run_id": "2026-05-05T13-42-41-836Z-jesseduffield-lazygit-high-branch-divergence-fast-path-agent-cursor-claude-opus-4-7-max-baseline-attempt-1"
+    },
+    {
+      "case_id": "jesseduffield-lazygit-high-branch-divergence-fast-path",
+      "harness": "cursor",
+      "condition_id": "cursor:composer-2-fast:baseline",
+      "run_id": "2026-05-05T12-43-58-228Z-jesseduffield-lazygit-high-branch-divergence-fast-path-agent-cursor-composer-2-fast-baseline-attempt-1"
+    },
+    {
+      "case_id": "jesseduffield-lazygit-high-branch-divergence-fast-path",
+      "harness": "cursor",
+      "condition_id": "cursor:composer-2:baseline",
+      "run_id": "2026-05-05T12-49-19-741Z-jesseduffield-lazygit-high-branch-divergence-fast-path-agent-cursor-composer-2-baseline-attempt-1"
+    },
+    {
+      "case_id": "jesseduffield-lazygit-high-branch-divergence-fast-path",
+      "harness": "cursor",
+      "condition_id": "cursor:gpt-5.5-extra-high:baseline",
+      "run_id": "2026-05-05T13-06-18-273Z-jesseduffield-lazygit-high-branch-divergence-fast-path-agent-cursor-gpt-5.5-extra-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "jesseduffield-lazygit-high-branch-divergence-fast-path",
+      "harness": "cursor",
+      "condition_id": "cursor:gpt-5.5-high:baseline",
+      "run_id": "2026-05-05T12-58-43-181Z-jesseduffield-lazygit-high-branch-divergence-fast-path-agent-cursor-gpt-5.5-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "jesseduffield-lazygit-mid-preserve-commit-message-whitespace",
+      "harness": "claude",
+      "condition_id": "claude:claude-opus-4-7:high:baseline",
+      "run_id": "2026-05-04T16-06-39-472Z-jesseduffield-lazygit-mid-preserve-commit-message-whitespace-agent-claude-claude-opus-4-7-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "jesseduffield-lazygit-mid-preserve-commit-message-whitespace",
+      "harness": "cursor",
+      "condition_id": "cursor:claude-opus-4-7-extra-high:baseline",
+      "run_id": "2026-05-05T15-45-35-220Z-jesseduffield-lazygit-mid-preserve-commit-message-whitespace-agent-cursor-claude-opus-4-7-extra-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "jesseduffield-lazygit-mid-preserve-commit-message-whitespace",
+      "harness": "cursor",
+      "condition_id": "cursor:claude-opus-4-7-high:baseline",
+      "run_id": "2026-05-05T15-33-30-914Z-jesseduffield-lazygit-mid-preserve-commit-message-whitespace-agent-cursor-claude-opus-4-7-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "jesseduffield-lazygit-mid-preserve-commit-message-whitespace",
+      "harness": "cursor",
+      "condition_id": "cursor:composer-2-fast:baseline",
+      "run_id": "2026-05-05T14-55-06-612Z-jesseduffield-lazygit-mid-preserve-commit-message-whitespace-agent-cursor-composer-2-fast-baseline-attempt-1"
+    },
+    {
+      "case_id": "jesseduffield-lazygit-mid-preserve-commit-message-whitespace",
+      "harness": "cursor",
+      "condition_id": "cursor:composer-2:baseline",
+      "run_id": "2026-05-05T15-02-35-943Z-jesseduffield-lazygit-mid-preserve-commit-message-whitespace-agent-cursor-composer-2-baseline-attempt-1"
+    },
+    {
+      "case_id": "langflow-ai-langflow-low-loguru-file-routing",
+      "harness": "cursor",
+      "condition_id": "cursor:composer-2-fast:baseline",
+      "run_id": "2026-05-05T18-29-27-975Z-langflow-ai-langflow-low-loguru-file-routing-agent-cursor-composer-2-fast-baseline-attempt-1"
+    },
+    {
+      "case_id": "langflow-ai-langflow-low-loguru-file-routing",
+      "harness": "cursor",
+      "condition_id": "cursor:composer-2:baseline",
+      "run_id": "2026-05-05T18-40-03-541Z-langflow-ai-langflow-low-loguru-file-routing-agent-cursor-composer-2-baseline-attempt-1"
+    },
+    {
+      "case_id": "langflow-ai-langflow-mid-mcp-connectable-inputs",
+      "harness": "claude",
+      "condition_id": "claude:claude-opus-4-7:high:baseline",
+      "run_id": "2026-05-05T11-30-21-048Z-langflow-ai-langflow-mid-mcp-connectable-inputs-agent-claude-claude-opus-4-7-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "langflow-ai-langflow-mid-mcp-connectable-inputs",
+      "harness": "claude",
+      "condition_id": "claude:claude-opus-4-7:max:baseline",
+      "run_id": "2026-05-05T11-47-49-234Z-langflow-ai-langflow-mid-mcp-connectable-inputs-agent-claude-claude-opus-4-7-max-baseline-attempt-1"
+    },
+    {
+      "case_id": "langflow-ai-langflow-mid-mcp-connectable-inputs",
+      "harness": "claude",
+      "condition_id": "claude:claude-opus-4-7:xhigh:baseline",
+      "run_id": "2026-05-05T11-41-59-059Z-langflow-ai-langflow-mid-mcp-connectable-inputs-agent-claude-claude-opus-4-7-xhigh-baseline-attempt-1"
+    },
+    {
+      "case_id": "langflow-ai-langflow-mid-mcp-connectable-inputs",
+      "harness": "codex",
+      "condition_id": "codex:gpt-5.5:high:baseline",
+      "run_id": "2026-05-05T11-14-15-105Z-langflow-ai-langflow-mid-mcp-connectable-inputs-agent-codex-gpt-5.5-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "langflow-ai-langflow-mid-mcp-connectable-inputs",
+      "harness": "codex",
+      "condition_id": "codex:gpt-5.5:medium:baseline",
+      "run_id": "2026-05-05T11-06-43-273Z-langflow-ai-langflow-mid-mcp-connectable-inputs-agent-codex-gpt-5.5-medium-baseline-attempt-1"
+    },
+    {
+      "case_id": "langflow-ai-langflow-mid-mcp-connectable-inputs",
+      "harness": "codex",
+      "condition_id": "codex:gpt-5.5:xhigh:baseline",
+      "run_id": "2026-05-05T11-19-57-580Z-langflow-ai-langflow-mid-mcp-connectable-inputs-agent-codex-gpt-5.5-xhigh-baseline-attempt-1"
+    },
+    {
+      "case_id": "langflow-ai-langflow-mid-mcp-connectable-inputs",
+      "harness": "cursor",
+      "condition_id": "cursor:claude-opus-4-7-extra-high:baseline",
+      "run_id": "2026-05-05T21-54-10-917Z-langflow-ai-langflow-mid-mcp-connectable-inputs-agent-cursor-claude-opus-4-7-extra-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "langflow-ai-langflow-mid-mcp-connectable-inputs",
+      "harness": "cursor",
+      "condition_id": "cursor:claude-opus-4-7-high:baseline",
+      "run_id": "2026-05-05T21-40-39-114Z-langflow-ai-langflow-mid-mcp-connectable-inputs-agent-cursor-claude-opus-4-7-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "langflow-ai-langflow-mid-mcp-connectable-inputs",
+      "harness": "cursor",
+      "condition_id": "cursor:claude-opus-4-7-max:baseline",
+      "run_id": "2026-05-05T22-11-32-914Z-langflow-ai-langflow-mid-mcp-connectable-inputs-agent-cursor-claude-opus-4-7-max-baseline-attempt-1"
+    },
+    {
+      "case_id": "langflow-ai-langflow-mid-mcp-connectable-inputs",
+      "harness": "cursor",
+      "condition_id": "cursor:composer-2-fast:baseline",
+      "run_id": "2026-05-05T20-44-23-344Z-langflow-ai-langflow-mid-mcp-connectable-inputs-agent-cursor-composer-2-fast-baseline-attempt-1"
+    },
+    {
+      "case_id": "langflow-ai-langflow-mid-mcp-connectable-inputs",
+      "harness": "cursor",
+      "condition_id": "cursor:composer-2:baseline",
+      "run_id": "2026-05-05T20-58-42-765Z-langflow-ai-langflow-mid-mcp-connectable-inputs-agent-cursor-composer-2-baseline-attempt-1"
+    },
+    {
+      "case_id": "langflow-ai-langflow-mid-mcp-connectable-inputs",
+      "harness": "cursor",
+      "condition_id": "cursor:gpt-5.5-extra-high:baseline",
+      "run_id": "2026-05-05T21-31-49-006Z-langflow-ai-langflow-mid-mcp-connectable-inputs-agent-cursor-gpt-5.5-extra-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "langflow-ai-langflow-mid-mcp-connectable-inputs",
+      "harness": "cursor",
+      "condition_id": "cursor:gpt-5.5-high:baseline",
+      "run_id": "2026-05-05T21-20-18-356Z-langflow-ai-langflow-mid-mcp-connectable-inputs-agent-cursor-gpt-5.5-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "langflow-ai-langflow-mid-mcp-connectable-inputs",
+      "harness": "cursor",
+      "condition_id": "cursor:gpt-5.5-medium:baseline",
+      "run_id": "2026-05-05T21-10-49-492Z-langflow-ai-langflow-mid-mcp-connectable-inputs-agent-cursor-gpt-5.5-medium-baseline-attempt-1"
+    },
+    {
+      "case_id": "louislam-uptime-kuma-high-websocket-auth-options",
+      "harness": "claude",
+      "condition_id": "claude:claude-opus-4-7:high:baseline",
+      "run_id": "2026-05-05T12-09-54-292Z-louislam-uptime-kuma-high-websocket-auth-options-agent-claude-claude-opus-4-7-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "louislam-uptime-kuma-high-websocket-auth-options",
+      "harness": "claude",
+      "condition_id": "claude:claude-opus-4-7:max:baseline",
+      "run_id": "2026-05-05T12-15-29-518Z-louislam-uptime-kuma-high-websocket-auth-options-agent-claude-claude-opus-4-7-max-baseline-attempt-1"
+    },
+    {
+      "case_id": "louislam-uptime-kuma-high-websocket-auth-options",
+      "harness": "claude",
+      "condition_id": "claude:claude-opus-4-7:xhigh:baseline",
+      "run_id": "2026-05-05T12-14-26-504Z-louislam-uptime-kuma-high-websocket-auth-options-agent-claude-claude-opus-4-7-xhigh-baseline-attempt-1"
+    },
+    {
+      "case_id": "louislam-uptime-kuma-high-websocket-auth-options",
+      "harness": "codex",
+      "condition_id": "codex:gpt-5.5:high:baseline",
+      "run_id": "2026-05-05T12-01-36-081Z-louislam-uptime-kuma-high-websocket-auth-options-agent-codex-gpt-5.5-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "louislam-uptime-kuma-high-websocket-auth-options",
+      "harness": "codex",
+      "condition_id": "codex:gpt-5.5:medium:baseline",
+      "run_id": "2026-05-05T11-57-02-039Z-louislam-uptime-kuma-high-websocket-auth-options-agent-codex-gpt-5.5-medium-baseline-attempt-1"
+    },
+    {
+      "case_id": "louislam-uptime-kuma-high-websocket-auth-options",
+      "harness": "codex",
+      "condition_id": "codex:gpt-5.5:xhigh:baseline",
+      "run_id": "2026-05-05T12-06-02-735Z-louislam-uptime-kuma-high-websocket-auth-options-agent-codex-gpt-5.5-xhigh-baseline-attempt-1"
+    },
+    {
+      "case_id": "louislam-uptime-kuma-high-websocket-auth-options",
+      "harness": "cursor",
+      "condition_id": "cursor:claude-opus-4-7-extra-high:baseline",
+      "run_id": "2026-05-05T23-07-37-868Z-louislam-uptime-kuma-high-websocket-auth-options-agent-cursor-claude-opus-4-7-extra-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "louislam-uptime-kuma-high-websocket-auth-options",
+      "harness": "cursor",
+      "condition_id": "cursor:claude-opus-4-7-high:baseline",
+      "run_id": "2026-05-05T23-01-47-632Z-louislam-uptime-kuma-high-websocket-auth-options-agent-cursor-claude-opus-4-7-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "louislam-uptime-kuma-high-websocket-auth-options",
+      "harness": "cursor",
+      "condition_id": "cursor:claude-opus-4-7-max:baseline",
+      "run_id": "2026-05-05T23-15-24-097Z-louislam-uptime-kuma-high-websocket-auth-options-agent-cursor-claude-opus-4-7-max-baseline-attempt-1"
+    },
+    {
+      "case_id": "louislam-uptime-kuma-high-websocket-auth-options",
+      "harness": "cursor",
+      "condition_id": "cursor:composer-2-fast:baseline",
+      "run_id": "2026-05-05T22-37-00-981Z-louislam-uptime-kuma-high-websocket-auth-options-agent-cursor-composer-2-fast-baseline-attempt-1"
+    },
+    {
+      "case_id": "louislam-uptime-kuma-high-websocket-auth-options",
+      "harness": "cursor",
+      "condition_id": "cursor:composer-2:baseline",
+      "run_id": "2026-05-05T22-40-19-753Z-louislam-uptime-kuma-high-websocket-auth-options-agent-cursor-composer-2-baseline-attempt-1"
+    },
+    {
+      "case_id": "louislam-uptime-kuma-high-websocket-auth-options",
+      "harness": "cursor",
+      "condition_id": "cursor:gpt-5.5-extra-high:baseline",
+      "run_id": "2026-05-05T22-55-24-451Z-louislam-uptime-kuma-high-websocket-auth-options-agent-cursor-gpt-5.5-extra-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "louislam-uptime-kuma-high-websocket-auth-options",
+      "harness": "cursor",
+      "condition_id": "cursor:gpt-5.5-high:baseline",
+      "run_id": "2026-05-05T22-49-55-838Z-louislam-uptime-kuma-high-websocket-auth-options-agent-cursor-gpt-5.5-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "louislam-uptime-kuma-high-websocket-auth-options",
+      "harness": "cursor",
+      "condition_id": "cursor:gpt-5.5-medium:baseline",
+      "run_id": "2026-05-05T22-46-29-381Z-louislam-uptime-kuma-high-websocket-auth-options-agent-cursor-gpt-5.5-medium-baseline-attempt-1"
+    },
+    {
+      "case_id": "louislam-uptime-kuma-low-submillisecond-ping-chart",
+      "harness": "codex",
+      "condition_id": "codex:gpt-5.5:high:baseline",
+      "run_id": "2026-05-05T12-48-18-861Z-louislam-uptime-kuma-low-submillisecond-ping-chart-agent-codex-gpt-5.5-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "louislam-uptime-kuma-low-submillisecond-ping-chart",
+      "harness": "cursor",
+      "condition_id": "cursor:gpt-5.5-medium:baseline",
+      "run_id": "2026-05-05T23-44-03-864Z-louislam-uptime-kuma-low-submillisecond-ping-chart-agent-cursor-gpt-5.5-medium-baseline-attempt-1"
+    },
+    {
+      "case_id": "louislam-uptime-kuma-mid-uptime-cleanup-buckets",
+      "harness": "claude",
+      "condition_id": "claude:claude-opus-4-7:max:baseline",
+      "run_id": "2026-05-05T14-13-00-897Z-louislam-uptime-kuma-mid-uptime-cleanup-buckets-agent-claude-claude-opus-4-7-max-baseline-attempt-1"
+    },
+    {
+      "case_id": "louislam-uptime-kuma-mid-uptime-cleanup-buckets",
+      "harness": "claude",
+      "condition_id": "claude:claude-opus-4-7:xhigh:baseline",
+      "run_id": "2026-05-05T14-01-02-636Z-louislam-uptime-kuma-mid-uptime-cleanup-buckets-agent-claude-claude-opus-4-7-xhigh-baseline-attempt-1"
+    },
+    {
+      "case_id": "louislam-uptime-kuma-mid-uptime-cleanup-buckets",
+      "harness": "cursor",
+      "condition_id": "cursor:claude-opus-4-7-extra-high:baseline",
+      "run_id": "2026-05-06T00-35-25-801Z-louislam-uptime-kuma-mid-uptime-cleanup-buckets-agent-cursor-claude-opus-4-7-extra-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "sharkdp-bat-high-fallback-syntax",
+      "harness": "cursor",
+      "condition_id": "cursor:claude-opus-4-7-extra-high:baseline",
+      "run_id": "2026-05-06T01-35-31-595Z-sharkdp-bat-high-fallback-syntax-agent-cursor-claude-opus-4-7-extra-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "sharkdp-bat-low-zip-binary-detection",
+      "harness": "claude",
+      "condition_id": "claude:claude-opus-4-7:max:baseline",
+      "run_id": "2026-05-05T15-13-14-829Z-sharkdp-bat-low-zip-binary-detection-agent-claude-claude-opus-4-7-max-baseline-attempt-1"
+    },
+    {
+      "case_id": "sharkdp-bat-mid-control-character-wrapping",
+      "harness": "claude",
+      "condition_id": "claude:claude-opus-4-7:high:baseline",
+      "run_id": "2026-05-05T15-47-31-640Z-sharkdp-bat-mid-control-character-wrapping-agent-claude-claude-opus-4-7-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "sharkdp-bat-mid-control-character-wrapping",
+      "harness": "claude",
+      "condition_id": "claude:claude-opus-4-7:max:baseline",
+      "run_id": "2026-05-05T16-09-43-987Z-sharkdp-bat-mid-control-character-wrapping-agent-claude-claude-opus-4-7-max-baseline-attempt-1"
+    },
+    {
+      "case_id": "sharkdp-bat-mid-control-character-wrapping",
+      "harness": "claude",
+      "condition_id": "claude:claude-opus-4-7:xhigh:baseline",
+      "run_id": "2026-05-05T15-56-10-889Z-sharkdp-bat-mid-control-character-wrapping-agent-claude-claude-opus-4-7-xhigh-baseline-attempt-1"
+    },
+    {
+      "case_id": "sharkdp-bat-mid-control-character-wrapping",
+      "harness": "codex",
+      "condition_id": "codex:gpt-5.5:high:baseline",
+      "run_id": "2026-05-05T15-30-57-381Z-sharkdp-bat-mid-control-character-wrapping-agent-codex-gpt-5.5-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "sharkdp-bat-mid-control-character-wrapping",
+      "harness": "codex",
+      "condition_id": "codex:gpt-5.5:medium:baseline",
+      "run_id": "2026-05-05T15-24-39-777Z-sharkdp-bat-mid-control-character-wrapping-agent-codex-gpt-5.5-medium-baseline-attempt-1"
+    },
+    {
+      "case_id": "sharkdp-bat-mid-control-character-wrapping",
+      "harness": "cursor",
+      "condition_id": "cursor:claude-opus-4-7-extra-high:baseline",
+      "run_id": "2026-05-06T03-46-26-444Z-sharkdp-bat-mid-control-character-wrapping-agent-cursor-claude-opus-4-7-extra-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "sharkdp-bat-mid-control-character-wrapping",
+      "harness": "cursor",
+      "condition_id": "cursor:claude-opus-4-7-high:baseline",
+      "run_id": "2026-05-06T03-22-02-814Z-sharkdp-bat-mid-control-character-wrapping-agent-cursor-claude-opus-4-7-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "sharkdp-bat-mid-control-character-wrapping",
+      "harness": "cursor",
+      "condition_id": "cursor:claude-opus-4-7-max:baseline",
+      "run_id": "2026-05-06T04-03-59-744Z-sharkdp-bat-mid-control-character-wrapping-agent-cursor-claude-opus-4-7-max-baseline-attempt-1"
+    },
+    {
+      "case_id": "sharkdp-bat-mid-control-character-wrapping",
+      "harness": "cursor",
+      "condition_id": "cursor:composer-2-fast:baseline",
+      "run_id": "2026-05-06T02-53-44-540Z-sharkdp-bat-mid-control-character-wrapping-agent-cursor-composer-2-fast-baseline-attempt-1"
+    },
+    {
+      "case_id": "sharkdp-bat-mid-control-character-wrapping",
+      "harness": "cursor",
+      "condition_id": "cursor:gpt-5.5-extra-high:baseline",
+      "run_id": "2026-05-06T03-16-34-521Z-sharkdp-bat-mid-control-character-wrapping-agent-cursor-gpt-5.5-extra-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "sharkdp-bat-mid-control-character-wrapping",
+      "harness": "cursor",
+      "condition_id": "cursor:gpt-5.5-high:baseline",
+      "run_id": "2026-05-06T03-09-38-326Z-sharkdp-bat-mid-control-character-wrapping-agent-cursor-gpt-5.5-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "sharkdp-bat-mid-control-character-wrapping",
+      "harness": "cursor",
+      "condition_id": "cursor:gpt-5.5-medium:baseline",
+      "run_id": "2026-05-06T03-05-38-898Z-sharkdp-bat-mid-control-character-wrapping-agent-cursor-gpt-5.5-medium-baseline-attempt-1"
+    },
+    {
+      "case_id": "usememos-memos-high-missing-related-users",
+      "harness": "cursor",
+      "condition_id": "cursor:composer-2-fast:baseline",
+      "run_id": "2026-05-06T04-51-49-967Z-usememos-memos-high-missing-related-users-agent-cursor-composer-2-fast-baseline-attempt-1"
+    },
+    {
+      "case_id": "usememos-memos-high-missing-related-users",
+      "harness": "cursor",
+      "condition_id": "cursor:composer-2:baseline",
+      "run_id": "2026-05-06T04-55-17-021Z-usememos-memos-high-missing-related-users-agent-cursor-composer-2-baseline-attempt-1"
+    },
+    {
+      "case_id": "usememos-memos-mid-mixed-case-user-resource-names",
+      "harness": "claude",
+      "condition_id": "claude:claude-opus-4-7:max:baseline",
+      "run_id": "2026-05-05T18-41-35-514Z-usememos-memos-mid-mixed-case-user-resource-names-agent-claude-claude-opus-4-7-max-baseline-attempt-1"
+    },
+    {
+      "case_id": "usememos-memos-mid-mixed-case-user-resource-names",
+      "harness": "cursor",
+      "condition_id": "cursor:claude-opus-4-7-high:baseline",
+      "run_id": "2026-05-06T06-59-36-415Z-usememos-memos-mid-mixed-case-user-resource-names-agent-cursor-claude-opus-4-7-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "usememos-memos-mid-mixed-case-user-resource-names",
+      "harness": "cursor",
+      "condition_id": "cursor:claude-opus-4-7-max:baseline",
+      "run_id": "2026-05-06T08-01-05-032Z-usememos-memos-mid-mixed-case-user-resource-names-agent-cursor-claude-opus-4-7-max-baseline-attempt-1"
+    },
+    {
+      "case_id": "vitejs-vite-high-hmr-patch-esm-sentinel",
+      "harness": "claude",
+      "condition_id": "claude:claude-opus-4-7:high:baseline",
+      "run_id": "2026-05-05T19-34-09-616Z-vitejs-vite-high-hmr-patch-esm-sentinel-agent-claude-claude-opus-4-7-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "vitejs-vite-high-hmr-patch-esm-sentinel",
+      "harness": "claude",
+      "condition_id": "claude:claude-opus-4-7:max:baseline",
+      "run_id": "2026-05-05T19-41-31-181Z-vitejs-vite-high-hmr-patch-esm-sentinel-agent-claude-claude-opus-4-7-max-baseline-attempt-1"
+    },
+    {
+      "case_id": "vitejs-vite-high-hmr-patch-esm-sentinel",
+      "harness": "claude",
+      "condition_id": "claude:claude-opus-4-7:xhigh:baseline",
+      "run_id": "2026-05-05T19-37-09-864Z-vitejs-vite-high-hmr-patch-esm-sentinel-agent-claude-claude-opus-4-7-xhigh-baseline-attempt-1"
+    },
+    {
+      "case_id": "vitejs-vite-high-hmr-patch-esm-sentinel",
+      "harness": "codex",
+      "condition_id": "codex:gpt-5.5:high:baseline",
+      "run_id": "2026-05-05T19-15-14-245Z-vitejs-vite-high-hmr-patch-esm-sentinel-agent-codex-gpt-5.5-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "vitejs-vite-high-hmr-patch-esm-sentinel",
+      "harness": "codex",
+      "condition_id": "codex:gpt-5.5:xhigh:baseline",
+      "run_id": "2026-05-05T19-17-02-131Z-vitejs-vite-high-hmr-patch-esm-sentinel-agent-codex-gpt-5.5-xhigh-baseline-attempt-1"
+    },
+    {
+      "case_id": "vitejs-vite-low-flatten-id-sanitized-chars",
+      "harness": "claude",
+      "condition_id": "claude:claude-opus-4-7:high:baseline",
+      "run_id": "2026-05-05T20-07-40-253Z-vitejs-vite-low-flatten-id-sanitized-chars-agent-claude-claude-opus-4-7-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "vitejs-vite-low-flatten-id-sanitized-chars",
+      "harness": "claude",
+      "condition_id": "claude:claude-opus-4-7:max:baseline",
+      "run_id": "2026-05-05T20-37-03-258Z-vitejs-vite-low-flatten-id-sanitized-chars-agent-claude-claude-opus-4-7-max-baseline-attempt-1"
+    },
+    {
+      "case_id": "vitejs-vite-low-flatten-id-sanitized-chars",
+      "harness": "claude",
+      "condition_id": "claude:claude-opus-4-7:xhigh:baseline",
+      "run_id": "2026-05-05T20-14-34-144Z-vitejs-vite-low-flatten-id-sanitized-chars-agent-claude-claude-opus-4-7-xhigh-baseline-attempt-1"
+    },
+    {
+      "case_id": "vitejs-vite-low-flatten-id-sanitized-chars",
+      "harness": "codex",
+      "condition_id": "codex:gpt-5.5:high:baseline",
+      "run_id": "2026-05-05T19-50-40-116Z-vitejs-vite-low-flatten-id-sanitized-chars-agent-codex-gpt-5.5-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "vitejs-vite-low-flatten-id-sanitized-chars",
+      "harness": "codex",
+      "condition_id": "codex:gpt-5.5:medium:baseline",
+      "run_id": "2026-05-05T19-44-50-429Z-vitejs-vite-low-flatten-id-sanitized-chars-agent-codex-gpt-5.5-medium-baseline-attempt-1"
+    },
+    {
+      "case_id": "vitejs-vite-low-flatten-id-sanitized-chars",
+      "harness": "codex",
+      "condition_id": "codex:gpt-5.5:xhigh:baseline",
+      "run_id": "2026-05-05T20-00-04-419Z-vitejs-vite-low-flatten-id-sanitized-chars-agent-codex-gpt-5.5-xhigh-baseline-attempt-1"
+    },
+    {
+      "case_id": "vitejs-vite-low-flatten-id-sanitized-chars",
+      "harness": "cursor",
+      "condition_id": "cursor:claude-opus-4-7-extra-high:baseline",
+      "run_id": "2026-05-06T10-09-14-870Z-vitejs-vite-low-flatten-id-sanitized-chars-agent-cursor-claude-opus-4-7-extra-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "vitejs-vite-low-flatten-id-sanitized-chars",
+      "harness": "cursor",
+      "condition_id": "cursor:claude-opus-4-7-high:baseline",
+      "run_id": "2026-05-06T09-47-13-574Z-vitejs-vite-low-flatten-id-sanitized-chars-agent-cursor-claude-opus-4-7-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "vitejs-vite-low-flatten-id-sanitized-chars",
+      "harness": "cursor",
+      "condition_id": "cursor:claude-opus-4-7-max:baseline",
+      "run_id": "2026-05-06T10-21-45-693Z-vitejs-vite-low-flatten-id-sanitized-chars-agent-cursor-claude-opus-4-7-max-baseline-attempt-1"
+    },
+    {
+      "case_id": "vitejs-vite-low-flatten-id-sanitized-chars",
+      "harness": "cursor",
+      "condition_id": "cursor:gpt-5.5-extra-high:baseline",
+      "run_id": "2026-05-06T09-40-14-578Z-vitejs-vite-low-flatten-id-sanitized-chars-agent-cursor-gpt-5.5-extra-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "vitejs-vite-low-flatten-id-sanitized-chars",
+      "harness": "cursor",
+      "condition_id": "cursor:gpt-5.5-high:baseline",
+      "run_id": "2026-05-06T09-33-29-636Z-vitejs-vite-low-flatten-id-sanitized-chars-agent-cursor-gpt-5.5-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "vitejs-vite-low-flatten-id-sanitized-chars",
+      "harness": "cursor",
+      "condition_id": "cursor:gpt-5.5-medium:baseline",
+      "run_id": "2026-05-06T09-28-48-850Z-vitejs-vite-low-flatten-id-sanitized-chars-agent-cursor-gpt-5.5-medium-baseline-attempt-1"
+    },
+    {
+      "case_id": "vitejs-vite-mid-deno-workspace-root",
+      "harness": "claude",
+      "condition_id": "claude:claude-opus-4-7:high:baseline",
+      "run_id": "2026-05-05T20-58-30-348Z-vitejs-vite-mid-deno-workspace-root-agent-claude-claude-opus-4-7-high-baseline-attempt-1"
+    },
+    {
+      "case_id": "vitejs-vite-mid-deno-workspace-root",
+      "harness": "claude",
+      "condition_id": "claude:claude-opus-4-7:max:baseline",
+      "run_id": "2026-05-05T21-04-25-284Z-vitejs-vite-mid-deno-workspace-root-agent-claude-claude-opus-4-7-max-baseline-attempt-1"
+    },
+    {
+      "case_id": "vitejs-vite-mid-deno-workspace-root",
+      "harness": "claude",
+      "condition_id": "claude:claude-opus-4-7:xhigh:baseline",
+      "run_id": "2026-05-05T21-02-24-973Z-vitejs-vite-mid-deno-workspace-root-agent-claude-claude-opus-4-7-xhigh-baseline-attempt-1"
+    },
+    {
+      "case_id": "vitejs-vite-mid-deno-workspace-root",
+      "harness": "cursor",
+      "condition_id": "cursor:claude-opus-4-7-high:baseline",
+      "run_id": "2026-05-06T11-07-34-850Z-vitejs-vite-mid-deno-workspace-root-agent-cursor-claude-opus-4-7-high-baseline-attempt-1"
+    }
+  ]
+}

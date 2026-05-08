@@ -4,6 +4,12 @@ benchmark/workspaces/
 benchmark/archive/
 benchmark/cache/
 benchmark/experiments/
+!benchmark/experiments/
+!benchmark/experiments/harnessbench-v2-official-2026-05-04c/
+!benchmark/experiments/harnessbench-v2-official-2026-05-04c/failure-reviews.json
+!benchmark/experiments/harnessbench-v2-official-2026-05-04c/manifest.json
+!benchmark/experiments/harnessbench-v2-official-2026-05-04c/results.html
+!benchmark/experiments/harnessbench-v2-official-2026-05-04c/summary.json
 
 # Local caches and dependency outputs.
 node_modules/
