@@ -5,8 +5,8 @@ tasks.
 
 The benchmark asks each harness to fix the same bug from the same sanitized
 repository checkout, then scores the patch with hidden behavioral tests. The
-current scope is Codex, Claude Code, and Cursor Agent, but the condition schema
-is harness-neutral.
+current scope is Codex, Claude Code, Cursor Agent, and Antigravity CLI, but the
+condition schema is harness-neutral.
 
 Project name:
 
@@ -115,9 +115,9 @@ node scripts/run-matrix.mjs \
   --report true
 ```
 
-Official runs use a 60 minute per-issue timeout. Cursor conditions that require CLI model configuration should run with
-`--jobs 1` unless the runner has been updated to isolate Cursor configuration
-per process.
+Official runs use a 60 minute per-issue timeout. Runner-managed harness homes
+isolate Cursor and Antigravity host configuration per run, so matrices can use
+`--jobs` for parallelism while preserving per-run config patches and raw logs.
 
 To run only the 27-case authoring gate without agent jobs:
 
@@ -140,7 +140,11 @@ AGENTS.md
 agents.md
 CLAUDE.md
 claude.md
+GEMINI.md
+gemini.md
 .agents/
+.gemini/
+.antigravitycli/
 .claude/
 .codex/
 ```

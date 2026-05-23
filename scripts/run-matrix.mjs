@@ -570,7 +570,6 @@ function runJobAttempt(job, command, attempt) {
 
 function jobResourceKey(job) {
   if (job.kind === "verify") return `verify:${repoSlugForCase(job.casePath)}`;
-  if (job.condition?.harness === "cursor" && job.condition.cursor_config) return "agent:cursor-cli-config";
   return `agent:${job.casePath}:${job.condition?.id ?? ""}`;
 }
 
@@ -614,6 +613,9 @@ function buildCommand(job, attempt) {
     }
     if (job.condition.cursor_config) {
       command.push("--cursorConfig", JSON.stringify(job.condition.cursor_config));
+    }
+    if (job.condition.antigravity_config) {
+      command.push("--antigravityConfig", JSON.stringify(job.condition.antigravity_config));
     }
     if (job.condition.prompt_template_id) {
       command.push("--promptTemplateId", job.condition.prompt_template_id);
@@ -663,6 +665,7 @@ function harnessBinary(harnessName) {
   if (harnessName === "codex") return "codex";
   if (harnessName === "claude") return "claude";
   if (harnessName === "cursor") return "agent";
+  if (harnessName === "antigravity") return "agy";
   return harnessName;
 }
 
@@ -686,6 +689,7 @@ function loadConditions(path) {
     model: requiredCondition(condition.model, "model"),
     effort: condition.effort ?? null,
     cursor_config: condition.cursor_config ?? null,
+    antigravity_config: condition.antigravity_config ?? null,
     context: condition.context ?? null,
     max_mode: condition.max_mode ?? null,
     prompt_template_id: condition.prompt_template_id ?? data.prompt_template_id ?? null,

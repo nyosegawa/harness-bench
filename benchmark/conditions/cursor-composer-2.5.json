@@ -1,0 +1,73 @@
+{
+  "schema_version": 2,
+  "id": "harnessbench-v2-cursor-composer-2.5",
+  "description": "HarnessBench v2 Cursor Composer 2.5 and Composer 2.5 Fast single-sample conditions.",
+  "agent_timeout_ms": 3600000,
+  "prompt_template_id": "baseline-v1",
+  "prompt_policy": {
+    "hide_original_pr": true,
+    "hide_fixed_commit": true,
+    "hide_hidden_tests": true,
+    "disable_memory": true,
+    "custom_rules": false,
+    "agent_skills": false
+  },
+  "workspace_policy": {
+    "steering_policy": "remove_upstream_agent_instructions",
+    "git_root_policy": "fresh_sanitized_one_commit_root"
+  },
+  "conditions": [
+    {
+      "id": "cursor:composer-2.5-fast:baseline",
+      "harness": "cursor",
+      "model": "composer-2.5-fast",
+      "effort": "fast",
+      "context": "default",
+      "max_mode": true,
+      "cursor_config": {
+        "maxMode": true,
+        "model": {
+          "modelId": "composer-2.5",
+          "displayModelId": "composer-2.5",
+          "displayName": "Composer 2.5 Fast",
+          "displayNameShort": "Composer 2.5 Fast",
+          "aliases": [],
+          "maxMode": true
+        },
+        "hasChangedDefaultModel": true,
+        "selectedModel": {
+          "modelId": "composer-2.5",
+          "parameters": [
+            { "id": "fast", "value": "true" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "cursor:composer-2.5:baseline",
+      "harness": "cursor",
+      "model": "composer-2.5",
+      "effort": "standard",
+      "context": "default",
+      "max_mode": true,
+      "cursor_config": {
+        "maxMode": true,
+        "model": {
+          "modelId": "composer-2.5",
+          "displayModelId": "composer-2.5",
+          "displayName": "Composer 2.5",
+          "displayNameShort": "Composer 2.5",
+          "aliases": [],
+          "maxMode": true
+        },
+        "hasChangedDefaultModel": true,
+        "selectedModel": {
+          "modelId": "composer-2.5",
+          "parameters": [
+            { "id": "fast", "value": "false" }
+          ]
+        }
+      }
+    }
+  ]
+}

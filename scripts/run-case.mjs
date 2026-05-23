@@ -2,7 +2,7 @@
 
 import { spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
-import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { copyFileSync, cpSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { basename, dirname, resolve } from "node:path";
 
 const args = parseArgs(process.argv.slice(2));
@@ -15,11 +15,13 @@ const agentTimeoutMs = Number(args.agentTimeoutMs ?? 900000);
 const rateCardPath = args.rateCard ? resolve(args.rateCard) : null;
 const rateCard = rateCardPath ? loadRateCard(rateCardPath) : null;
 const cursorConfig = args.cursorConfig ? JSON.parse(args.cursorConfig) : null;
+const antigravityConfig = args.antigravityConfig ? JSON.parse(args.antigravityConfig) : null;
 const promptTemplateId = args.promptTemplateId ?? "baseline-v1";
 const promptTemplatePath = resolve(args.promptTemplate ?? `benchmark/prompts/${promptTemplateId}.txt`);
 const workRoot = resolve(args.workRoot ?? "benchmark/workspaces");
 const runsRoot = resolve(args.runsRoot ?? "benchmark/runs");
 const containerCacheRoot = resolve(args.containerCacheRoot ?? "benchmark/cache/container");
+const repoCacheRoot = resolve(args.repoCacheRoot ?? "benchmark/cache/repos");
 const repoOverride = args.repoDir ? resolve(args.repoDir) : null;
 const conditionId = args.conditionId ?? defaultConditionId({ harness, model, effort });
 const matrixId = args.matrixId ?? null;
@@ -88,7 +90,7 @@ try {
   if (mode === "agent") {
     activeRepoDir = repoOverride ?? resolve(runDir, "workspace");
     result.repo_dir = activeRepoDir;
-    ensureRepo(repoUrl, activeRepoDir);
+    ensureRepo(repoUrl, activeRepoDir, { repoSlug, caseData });
     checkout(activeRepoDir, required(caseData.base_commit, "base_commit is required"), {
       materializeSanitizedRoot: !repoOverride,
     });
@@ -106,6 +108,7 @@ try {
       runDir,
       timeoutMs: agentTimeoutMs,
       cursorConfig,
+      antigravityConfig,
     });
     result.agent_result = agentResult;
     result.agent_result.harness_version = result.harness_version;
@@ -114,7 +117,7 @@ try {
     applyCostEstimate(result.metrics.usage, agentResult.metrics.model ?? model, rateCard);
     saveDiff(activeRepoDir, runDir, result);
   } else {
-    ensureRepo(repoUrl, activeRepoDir);
+    ensureRepo(repoUrl, activeRepoDir, { repoSlug, caseData });
 
     if (mode === "verify-base") {
       checkout(activeRepoDir, required(caseData.base_commit, "base_commit is required"));
@@ -343,12 +346,12 @@ function emptyUsageMetrics() {
   };
 }
 
-function runAgent({ harness, model, effort, conditionId, matrixId, attempt, caseData, repoDir, runDir, timeoutMs, cursorConfig }) {
+function runAgent({ harness, model, effort, conditionId, matrixId, attempt, caseData, repoDir, runDir, timeoutMs, cursorConfig, antigravityConfig }) {
   const promptTemplate = loadPromptTemplate();
   const prompt = buildPrompt(caseData, promptTemplate.text);
   const promptPath = resolve(runDir, "prompt.txt");
   writeFileSync(promptPath, prompt);
-  writePromptBundle({ caseData, harness, model, effort, conditionId, matrixId, attempt, prompt, runDir, cursorConfig, promptTemplate });
+  writePromptBundle({ caseData, harness, model, effort, conditionId, matrixId, attempt, prompt, runDir, cursorConfig, antigravityConfig, promptTemplate });
 
   if (harness === "codex") {
     return runCodexAgent({ model, effort, prompt, repoDir, runDir, timeoutMs });
@@ -359,10 +362,13 @@ function runAgent({ harness, model, effort, conditionId, matrixId, attempt, case
   if (harness === "cursor") {
     return runCursorAgent({ model, prompt, repoDir, runDir, timeoutMs, cursorConfig });
   }
+  if (harness === "antigravity") {
+    return runAntigravityAgent({ model, prompt, repoDir, runDir, timeoutMs, antigravityConfig });
+  }
   fatal(`unsupported harness ${harness}`);
 }
 
-function writePromptBundle({ caseData, harness, model, effort, conditionId, matrixId, attempt, prompt, runDir, cursorConfig, promptTemplate }) {
+function writePromptBundle({ caseData, harness, model, effort, conditionId, matrixId, attempt, prompt, runDir, cursorConfig, antigravityConfig, promptTemplate }) {
   const bundle = {
     schema_version: 1,
     created_at: new Date().toISOString(),
@@ -373,6 +379,7 @@ function writePromptBundle({ caseData, harness, model, effort, conditionId, matr
     model,
     effort,
     cursor_config: cursorConfig ?? null,
+    antigravity_config: antigravityConfig ?? null,
     prompt_template: {
       id: promptTemplate.id,
       path: promptTemplate.path,
@@ -530,6 +537,7 @@ function runClaudeAgent({ model, effort, prompt, repoDir, runDir, timeoutMs }) {
 function runCursorAgent({ model, prompt, repoDir, runDir, timeoutMs, cursorConfig }) {
   const stdoutPath = resolve(runDir, "harness.events.jsonl");
   const stderrPath = resolve(runDir, "harness.stderr.log");
+  const cursorHome = prepareCursorHarnessHome(runDir);
   const command = [
     "agent",
     "-p",
@@ -543,8 +551,8 @@ function runCursorAgent({ model, prompt, repoDir, runDir, timeoutMs, cursorConfi
     command.push("--model", model);
   }
   command.push(prompt);
-  const execution = withCursorConfig(cursorConfig, () =>
-    runHarnessProcess(command, repoDir, stdoutPath, stderrPath, {}, timeoutMs),
+  const execution = withCursorConfig(cursorConfig, cursorHome, () =>
+    runHarnessProcess(command, repoDir, stdoutPath, stderrPath, { HOME: cursorHome }, timeoutMs),
   );
   const events = readJsonl(stdoutPath);
   return {
@@ -561,11 +569,55 @@ function runCursorAgent({ model, prompt, repoDir, runDir, timeoutMs, cursorConfi
   };
 }
 
-function withCursorConfig(configPatch, callback) {
+function runAntigravityAgent({ model, prompt, repoDir, runDir, timeoutMs, antigravityConfig }) {
+  const antigravityHome = prepareAntigravityHarnessHome(runDir);
+  assertCleanAntigravityEnvironment(antigravityHome);
+  assertNoAntigravityAncestorProject(repoDir);
+  ensureAntigravityKeyringReady();
+  const stdoutPath = resolve(runDir, "harness.result.txt");
+  const stderrPath = resolve(runDir, "harness.stderr.log");
+  const logPath = resolve(runDir, "harness.antigravity.log");
+  const requestedModel = model ?? antigravityConfig?.model ?? "Gemini 3.5 Flash (High)";
+  const command = [
+    "agy",
+    "--sandbox",
+    "--dangerously-skip-permissions",
+    "--log-file",
+    logPath,
+    "--add-dir",
+    repoDir,
+    "--print-timeout",
+    `${Math.max(1, Math.ceil(timeoutMs / 1000))}s`,
+    "-p",
+    prompt,
+  ];
+  const execution = withAntigravityConfig({ model: requestedModel, ...(antigravityConfig ?? {}) }, antigravityHome, () =>
+    runHarnessProcess(command, repoDir, stdoutPath, stderrPath, { HOME: antigravityHome }, timeoutMs),
+  );
+  cleanupAntigravityWorkspaceState(repoDir);
+  const stdout = readText(stdoutPath);
+  const log = readText(logPath);
+  return {
+    harness: "antigravity",
+    command,
+    stdout_path: stdoutPath,
+    stderr_path: stderrPath,
+    log_path: logPath,
+    exit_code: execution.status,
+    signal: execution.signal,
+    error: execution.error,
+    timed_out: execution.timed_out,
+    duration_ms: execution.duration_ms,
+    metrics: normalizeAntigravityMetrics({ stdout, log, execution, requestedModel }),
+  };
+}
+
+function withCursorConfig(configPatch, homeDir, callback) {
   if (!configPatch) return callback();
-  const configPath = resolve(process.env.HOME ?? "", ".cursor/cli-config.json");
+  const configPath = resolve(homeDir, ".cursor/cli-config.json");
   const original = existsSync(configPath) ? readFileSync(configPath, "utf8") : null;
   try {
+    mkdirSync(dirname(configPath), { recursive: true });
     const base = original ? JSON.parse(original) : {};
     writeFileSync(configPath, `${JSON.stringify({ ...base, ...configPatch }, null, 2)}\n`);
     return callback();
@@ -575,6 +627,154 @@ function withCursorConfig(configPatch, callback) {
     } else {
       writeFileSync(configPath, original);
     }
+  }
+}
+
+function prepareCursorHarnessHome(runDir) {
+  const sourceHome = resolve(process.env.HOME ?? "");
+  const sourceCursor = resolve(sourceHome, ".cursor");
+  const sourceCursorConfig = resolve(sourceHome, ".config/cursor");
+  const harnessHome = resolve(runDir, "harness-home");
+  const harnessCursor = resolve(harnessHome, ".cursor");
+  const harnessCursorConfig = resolve(harnessHome, ".config/cursor");
+  if (existsSync(sourceCursor)) {
+    mkdirSync(harnessCursor, { recursive: true });
+    for (const entry of readdirSync(sourceCursor, { withFileTypes: true })) {
+      if (!entry.isFile()) continue;
+      copyFileSync(resolve(sourceCursor, entry.name), resolve(harnessCursor, entry.name));
+    }
+  } else {
+    mkdirSync(harnessCursor, { recursive: true });
+  }
+  if (existsSync(sourceCursorConfig)) {
+    mkdirSync(harnessCursorConfig, { recursive: true });
+    for (const entry of readdirSync(sourceCursorConfig, { withFileTypes: true })) {
+      if (!entry.isFile()) continue;
+      copyFileSync(resolve(sourceCursorConfig, entry.name), resolve(harnessCursorConfig, entry.name));
+    }
+  }
+  return harnessHome;
+}
+
+function withAntigravityConfig(configPatch, homeDir, callback) {
+  const configPath = resolve(homeDir, ".gemini/antigravity-cli/settings.json");
+  const original = existsSync(configPath) ? readFileSync(configPath, "utf8") : null;
+  try {
+    mkdirSync(dirname(configPath), { recursive: true });
+    const base = original ? JSON.parse(original) : {};
+    writeFileSync(configPath, `${JSON.stringify({ ...base, ...configPatch }, null, 2)}\n`);
+    return callback();
+  } finally {
+    if (original == null) {
+      rmSync(configPath, { force: true });
+    } else {
+      writeFileSync(configPath, original);
+    }
+  }
+}
+
+function prepareAntigravityHarnessHome(runDir) {
+  const sourceHome = resolve(process.env.HOME ?? "");
+  const sourceGemini = resolve(sourceHome, ".gemini");
+  const harnessHome = resolve(runDir, "harness-home");
+  const harnessGemini = resolve(harnessHome, ".gemini");
+  if (existsSync(sourceGemini)) {
+    cpSync(sourceGemini, harnessGemini, {
+      recursive: true,
+      dereference: true,
+      force: true,
+      errorOnExist: false,
+    });
+  } else {
+    mkdirSync(harnessGemini, { recursive: true });
+  }
+  return harnessHome;
+}
+
+function assertCleanAntigravityEnvironment(home) {
+  const forbiddenFiles = [
+    ".gemini/GEMINI.md",
+    ".gemini/AGENTS.md",
+    ".agents/AGENTS.md",
+    ".agents/agents.md",
+  ];
+  for (const relativePath of forbiddenFiles) {
+    const path = resolve(home, relativePath);
+    if (existsSync(path)) {
+      throw new Error(`Antigravity global context file must be removed for baseline runs: ${path}`);
+    }
+  }
+  for (const relativePath of [".gemini/antigravity-cli/plugins", ".gemini/antigravity-cli/skills"]) {
+    const path = resolve(home, relativePath);
+    if (directoryHasEntries(path)) {
+      throw new Error(`Antigravity customization directory must be empty for baseline runs: ${path}`);
+    }
+  }
+}
+
+function assertNoAntigravityAncestorProject(repoDir) {
+  const workspace = resolve(repoDir);
+  let current = dirname(workspace);
+  while (current && current !== dirname(current)) {
+    const marker = resolve(current, ".antigravitycli");
+    if (existsSync(marker)) {
+      throw new Error(`Antigravity parent project marker would contaminate workspace discovery: ${marker}`);
+    }
+    current = dirname(current);
+  }
+}
+
+function ensureAntigravityKeyringReady() {
+  const store = spawnSync("sh", ["-c", "printf 'harnessbench' | secret-tool store --label='harnessbench antigravity preflight' harnessbench antigravity-preflight"], {
+    encoding: "utf8",
+    timeout: 10000,
+    maxBuffer: 1024 * 1024,
+  });
+  if (store.status === 0) {
+    spawnSync("secret-tool", ["clear", "harnessbench", "antigravity-preflight"], {
+      encoding: "utf8",
+      timeout: 5000,
+      maxBuffer: 1024 * 1024,
+    });
+    return;
+  }
+
+  spawnSync("gnome-keyring-daemon", ["--unlock", "--components=secrets"], {
+    input: "\n",
+    encoding: "utf8",
+    timeout: 5000,
+    maxBuffer: 1024 * 1024,
+  });
+
+  const retry = spawnSync("sh", ["-c", "printf 'harnessbench' | secret-tool store --label='harnessbench antigravity preflight' harnessbench antigravity-preflight"], {
+    encoding: "utf8",
+    timeout: 10000,
+    maxBuffer: 1024 * 1024,
+  });
+  if (retry.status === 0) {
+    spawnSync("secret-tool", ["clear", "harnessbench", "antigravity-preflight"], {
+      encoding: "utf8",
+      timeout: 5000,
+      maxBuffer: 1024 * 1024,
+    });
+    return;
+  }
+
+  throw new Error(`Antigravity keyring preflight failed: ${retry.stderr || retry.stdout || store.stderr || store.stdout || retry.error?.message || store.error?.message || "unknown error"}`);
+}
+
+function directoryHasEntries(path) {
+  if (!existsSync(path)) return false;
+  const result = spawnSync("find", [path, "-mindepth", "1", "-maxdepth", "1", "-print", "-quit"], {
+    encoding: "utf8",
+    maxBuffer: 1024 * 1024,
+  });
+  return Boolean(result.stdout.trim());
+}
+
+function cleanupAntigravityWorkspaceState(repoDir) {
+  for (const relativePath of [".antigravitycli", ".gemini"]) {
+    rmSync(resolve(repoDir, relativePath), { recursive: true, force: true });
   }
 }
 
@@ -746,6 +946,33 @@ function normalizeCursorMetrics(events, execution) {
   };
 }
 
+function normalizeAntigravityMetrics({ stdout, log, execution, requestedModel }) {
+  const assistantMessages = stdout.trim() ? 1 : 0;
+  return {
+    harness: "antigravity",
+    model: modelFromAntigravityLog(log) ?? requestedModel,
+    harness_duration_ms: execution.duration_ms,
+    usage: {
+      ...emptyUsageMetrics(),
+      conversation_turns: assistantMessages,
+      turns: assistantMessages,
+      assistant_messages: assistantMessages,
+      tool_calls: null,
+      command_calls: null,
+      file_changes: null,
+      cost_source: "unavailable",
+      raw_usage: {
+        stdout_bytes: Buffer.byteLength(stdout),
+        log_bytes: Buffer.byteLength(log),
+      },
+    },
+  };
+}
+
+function modelFromAntigravityLog(log) {
+  return log.match(/Resolving model ([^\n]+)/)?.[1]?.trim() ?? null;
+}
+
 function isCursorCommandToolCall(event) {
   return Boolean(event.tool_call?.shellToolCall);
 }
@@ -789,6 +1016,7 @@ function harnessBinary(harnessName) {
   if (harnessName === "codex") return "codex";
   if (harnessName === "claude") return "claude";
   if (harnessName === "cursor") return "agent";
+  if (harnessName === "antigravity") return "agy";
   return harnessName;
 }
 
@@ -967,9 +1195,14 @@ function invalidRunReason(result) {
   if (agent?.error?.code && agent.error.code !== "ETIMEDOUT") {
     return `infrastructure failure: harness process error ${agent.error.code}`;
   }
+  if (result.success === true) {
+    return null;
+  }
 
   const infraText = [
+    agent?.stdout_path ? readText(agent.stdout_path) : "",
     agent?.stderr_path ? readText(agent.stderr_path) : "",
+    agent?.log_path ? readText(agent.log_path) : "",
     ...(result.test_result?.core ?? []).flatMap((test) => [readText(test.stdout_path), readText(test.stderr_path)]),
     ...(result.test_result?.regressions ?? []).flatMap((test) => [readText(test.stdout_path), readText(test.stderr_path)]),
   ].join("\n");
@@ -980,11 +1213,26 @@ function invalidRunReason(result) {
   if (/ENOSPC/i.test(infraText)) {
     return "infrastructure failure: ENOSPC";
   }
-  if (/authentication failed|not authenticated|permission denied \(publickey\)|401 unauthorized/i.test(infraText)) {
+
+  const authText = [
+    agent?.stderr_path ? readText(agent.stderr_path) : "",
+    agent?.log_path ? readText(agent.log_path) : "",
+    agent?.harness === "cursor" ? "" : agent?.stdout_path ? readText(agent.stdout_path) : "",
+  ].join("\n");
+  const authenticated = /ChainedAuth: authenticated|silent auth succeeded|authentication completed successfully/i.test(authText);
+  if (!authenticated && /authentication failed|not authenticated|permission denied \(publickey\)|401 unauthorized|authentication required|authentication timed out|not logged into Antigravity|OAuth token/i.test(authText)) {
     return "infrastructure failure: authentication failure";
   }
-  if (/could not resolve host|temporary failure in name resolution|network is unreachable|connection timed out/i.test(infraText)) {
+  const harnessInfraText = [
+    agent?.stderr_path ? readText(agent.stderr_path) : "",
+    agent?.log_path ? readText(agent.log_path) : "",
+    agent?.harness === "cursor" ? "" : agent?.stdout_path ? readText(agent.stdout_path) : "",
+  ].join("\n");
+  if (/could not resolve host|temporary failure in name resolution|network is unreachable|connection timed out/i.test(harnessInfraText)) {
     return "infrastructure failure: network failure";
+  }
+  if (/RESOURCE_EXHAUSTED|Individual quota reached|quota reached|rate limit exceeded|\bcode 429\b/i.test(infraText)) {
+    return "infrastructure failure: provider quota/rate limit";
   }
 
   return null;
@@ -995,18 +1243,93 @@ function readText(path) {
   return readFileSync(path, "utf8");
 }
 
-function ensureRepo(repoUrl, repoDir) {
+function ensureRepo(repoUrl, repoDir, options = {}) {
   if (existsSync(resolve(repoDir, ".git"))) {
     git(repoDir, ["fetch", "origin", "--tags"]);
     return;
   }
   mkdirSync(dirname(repoDir), { recursive: true });
-  const result = spawnSync("git", ["clone", repoUrl, repoDir], {
+  const mirrorDir = ensureRepoMirror(repoUrl, options.repoSlug ?? safePathSegment(repoUrl), options.caseData);
+  const result = spawnSync("git", ["clone", mirrorDir, repoDir], {
     encoding: "utf8",
     maxBuffer: 50 * 1024 * 1024,
   });
   if (result.status !== 0) {
     throw new Error(`git clone failed: ${result.stderr || result.stdout}`);
+  }
+}
+
+function ensureRepoMirror(repoUrl, slug, caseData = {}) {
+  const mirrorDir = resolve(repoCacheRoot, `${slug}.git`);
+  if (existsSync(mirrorDir) && mirrorHasRequiredCommits(mirrorDir, caseData)) return mirrorDir;
+  mkdirSync(repoCacheRoot, { recursive: true });
+  const lockDir = resolve(repoCacheRoot, `${slug}.git.lock`);
+  while (true) {
+    try {
+      mkdirSync(lockDir);
+      break;
+    } catch {
+      if (existsSync(mirrorDir) && mirrorHasRequiredCommits(mirrorDir, caseData)) return mirrorDir;
+      spawnSync("sleep", ["1"]);
+    }
+  }
+  try {
+    if (!existsSync(mirrorDir)) {
+      const init = spawnSync("git", ["init", "--bare", mirrorDir], {
+        encoding: "utf8",
+        maxBuffer: 50 * 1024 * 1024,
+      });
+      if (init.status !== 0) {
+        throw new Error(`git mirror init failed: ${init.stderr || init.stdout}`);
+      }
+      const remote = spawnSync("git", ["remote", "add", "origin", repoUrl], {
+        cwd: mirrorDir,
+        encoding: "utf8",
+        maxBuffer: 50 * 1024 * 1024,
+      });
+      if (remote.status !== 0) {
+        throw new Error(`git mirror remote add failed: ${remote.stderr || remote.stdout}`);
+      }
+    }
+    updateRepoMirror(mirrorDir, caseData);
+  } finally {
+    rmSync(lockDir, { recursive: true, force: true });
+  }
+  return mirrorDir;
+}
+
+function mirrorHasRequiredCommits(mirrorDir, caseData = {}) {
+  const commits = [caseData.base_commit, caseData.fixed_commit].filter(Boolean);
+  return commits.every((commit) =>
+    spawnSync("git", ["cat-file", "-e", `${commit}^{commit}`], { cwd: mirrorDir }).status === 0
+  );
+}
+
+function updateRepoMirror(mirrorDir, caseData = {}) {
+  const result = spawnSync("git", ["fetch", "--prune", "origin", "+refs/heads/*:refs/heads/*", "+refs/tags/*:refs/tags/*"], {
+    cwd: mirrorDir,
+    encoding: "utf8",
+    maxBuffer: 200 * 1024 * 1024,
+  });
+  if (result.status !== 0) {
+    throw new Error(`git mirror fetch failed: ${result.stderr || result.stdout}`);
+  }
+  if (caseData.pr_number) {
+    for (const suffix of ["head", "merge"]) {
+      spawnSync("git", ["fetch", "origin", `+refs/pull/${caseData.pr_number}/${suffix}:refs/pull/${caseData.pr_number}/${suffix}`], {
+        cwd: mirrorDir,
+        encoding: "utf8",
+        maxBuffer: 50 * 1024 * 1024,
+      });
+    }
+  }
+  for (const commit of [caseData.base_commit, caseData.fixed_commit].filter(Boolean)) {
+    if (spawnSync("git", ["cat-file", "-e", `${commit}^{commit}`], { cwd: mirrorDir }).status === 0) continue;
+    spawnSync("git", ["fetch", "origin", commit], {
+      cwd: mirrorDir,
+      encoding: "utf8",
+      maxBuffer: 50 * 1024 * 1024,
+    });
   }
 }
 
@@ -1032,7 +1355,7 @@ function git(repoDir, args) {
 }
 
 function sanitizeWorkspaceInstructions(repoDir) {
-  for (const relativePath of ["AGENTS.md", "agents.md", "CLAUDE.md", "claude.md", ".agents", ".claude", ".codex"]) {
+  for (const relativePath of ["AGENTS.md", "agents.md", "GEMINI.md", "gemini.md", "CLAUDE.md", "claude.md", ".agents", ".gemini", ".antigravitycli", ".claude", ".codex"]) {
     rmSync(resolve(repoDir, relativePath), { recursive: true, force: true });
   }
 }

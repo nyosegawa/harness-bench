@@ -203,7 +203,10 @@ A condition describes one harness/model/policy configuration:
 ```
 
 Baseline conditions must disable memory and must not load harness-specific
-skills, plugins, or repository-local steering files.
+skills, plugins, or repository-local steering files. Harnesses that require
+native host authentication may copy only authentication/configuration state into
+a run-local home directory. Agent memory, skills, plugins, and target-repository
+steering files remain disabled or removed.
 
 ## Official Matrix
 
@@ -229,6 +232,8 @@ use Max Mode and 1M context where the selected model supports it.
 | --- | --- | --- | --- |
 | `cursor:composer-2-fast:baseline` | `composer-2` | `fast=true` | Composer default |
 | `cursor:composer-2:baseline` | `composer-2` | `fast=false` | Composer default |
+| `cursor:composer-2.5-fast:baseline` | `composer-2.5` | `fast=true` | Composer default |
+| `cursor:composer-2.5:baseline` | `composer-2.5` | `fast=false` | Composer default |
 | `cursor:gpt-5.5-medium:baseline` | `gpt-5.5` | `reasoning=medium` | 1M, Max Mode |
 | `cursor:gpt-5.5-high:baseline` | `gpt-5.5` | `reasoning=high` | 1M, Max Mode |
 | `cursor:gpt-5.5-extra-high:baseline` | `gpt-5.5` | `reasoning=extra-high` | 1M, Max Mode |
@@ -238,6 +243,25 @@ use Max Mode and 1M context where the selected model supports it.
 
 Cursor model selection must be confirmed from the stream `system/init` event.
 The runner records the selected init model and the full `cursor_config`.
+
+Cursor stdout is stream JSON that can contain source text, assistant reasoning,
+and tool results. Infrastructure invalid-run classification must not scan this
+stream for generic authentication or network phrases. Those checks are limited
+to harness stderr/log output.
+
+### Antigravity CLI
+
+Antigravity runs on the host CLI with native authentication and Secret Service
+credential storage. The baseline condition added for Antigravity is:
+
+| condition_id | model | effort |
+| --- | --- | --- |
+| `antigravity:gemini-3.5-flash-high:baseline` | `Gemini 3.5 Flash (High)` | `high` |
+
+Baseline Antigravity runs must not load global Gemini/Antigravity steering
+files, custom plugins, or custom skills. The runner rejects those files before
+starting the agent and removes `.gemini/` and `.antigravitycli/` from the target
+workspace.
 
 ### Codex CLI
 

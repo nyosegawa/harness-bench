@@ -1,0 +1,30 @@
+{
+  "schema_version": 2,
+  "id": "harnessbench-v2-antigravity-gemini-3.5-flash-high",
+  "description": "HarnessBench v2 Antigravity CLI condition using Gemini 3.5 Flash (High).",
+  "agent_timeout_ms": 3600000,
+  "prompt_template_id": "baseline-v1",
+  "prompt_policy": {
+    "hide_original_pr": true,
+    "hide_fixed_commit": true,
+    "hide_hidden_tests": true,
+    "disable_memory": true,
+    "custom_rules": false,
+    "agent_skills": false
+  },
+  "workspace_policy": {
+    "steering_policy": "remove_upstream_agent_instructions",
+    "git_root_policy": "fresh_sanitized_one_commit_root"
+  },
+  "conditions": [
+    {
+      "id": "antigravity:gemini-3.5-flash-high:baseline",
+      "harness": "antigravity",
+      "model": "Gemini 3.5 Flash (High)",
+      "effort": "high",
+      "antigravity_config": {
+        "model": "Gemini 3.5 Flash (High)"
+      }
+    }
+  ]
+}

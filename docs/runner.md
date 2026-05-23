@@ -61,10 +61,10 @@ Use `--includeAgents false` with `--includeVerify true` for the 27-case
 authoring gate before expensive agent runs.
 
 `--jobs` controls concurrent `run-case.mjs` processes. Official agent runs use
-a 60 minute per-issue timeout. Cursor conditions that use `cursor_config` are
-serialized by `run-matrix.mjs` because Cursor stores model selection in a host
-CLI config file. Codex and Claude jobs can still fill the remaining worker
-slots.
+a 60 minute per-issue timeout. Agent runs use a per-run harness home when a CLI
+needs host authentication/configuration state. Cursor config patches are written
+inside the run-local home, so Cursor conditions that use `cursor_config` can run
+in parallel without sharing `~/.cursor/cli-config.json`.
 
 When both `--includeVerify` and `--includeAgents` are enabled, `run-matrix.mjs`
 uses a hard stage boundary: all base/fixed verification jobs must finish before
@@ -80,8 +80,9 @@ existing `(matrix_id, case_id, condition_id)` agent pairs, then invokes
 
 Use it only after the verify stage has already passed for the same case set.
 It does not change prompts, cases, conditions, Docker images, or scoring logic;
-it only changes scheduling. Cursor jobs that write Cursor CLI config remain
-serialized.
+it only changes scheduling. Invalid infrastructure runs are skipped when
+discovering completed `(case_id, condition_id)` pairs, so resume retries them
+while preserving the invalid logs for auditability.
 
 Example:
 
@@ -106,6 +107,7 @@ benchmark/runs/<run-id>/
   prompt-bundle.json
   harness.events.jsonl
   harness.result.json
+  harness.antigravity.log
   harness.stderr.log
   harness.diff.patch
   harness.git-status.txt
@@ -115,8 +117,10 @@ benchmark/runs/<run-id>/
   regression-0.stderr.log
 ```
 
-Not every harness writes every raw file. Raw harness logs are kept because
-normalizers can improve after a run.
+Not every harness writes every raw file. Codex and Cursor primarily use
+`harness.events.jsonl`, Claude Code uses `harness.result.json`, and Antigravity
+uses `harness.result.txt` plus `harness.antigravity.log`. Raw harness logs are
+kept because normalizers can improve after a run.
 
 ## Result Schema
 
@@ -184,6 +188,14 @@ A benchmark failure is a valid outcome. An infrastructure failure is marked:
 
 Invalid runs are preserved but excluded from success-rate summaries.
 
+Infrastructure detection must not classify ordinary benchmark failures as
+invalid. Cursor stream JSON contains assistant reasoning, tool results, and
+source snippets, so authentication and network invalid-run checks intentionally
+ignore Cursor stdout/events and inspect only harness stderr/log output. This
+prevents target-repository strings such as `user not authenticated` or
+case-specific timeout messages from being misclassified as host authentication
+or network failures.
+
 ## Sanitization
 
 Runner-managed agent workspaces remove target-repository steering files:
@@ -193,13 +205,51 @@ AGENTS.md
 agents.md
 CLAUDE.md
 claude.md
+GEMINI.md
+gemini.md
 .agents/
+.gemini/
+.antigravitycli/
 .claude/
 .codex/
 ```
 
 The sanitized workspace is re-materialized as a fresh one-commit git repository
 before the agent starts.
+
+Agent workspaces are cloned from a local bare mirror cache under
+`benchmark/cache/repos`. The cache is local-only and is not published. Each run
+still receives its own workspace and checkout; the cache only avoids repeated
+network fetches and checkout setup cost.
+
+## Harness-Specific Notes
+
+### Cursor Agent
+
+Cursor runs through the `agent` CLI. The runner copies host Cursor
+authentication/config files into `benchmark/runs/<run-id>/harness-home`, applies
+the requested `cursor_config` there, and sets `HOME` to that directory for the
+agent process. This keeps model selection and credentials isolated between
+parallel runs while still using native host authentication.
+
+### Antigravity CLI
+
+Antigravity runs through `agy --sandbox --dangerously-skip-permissions` with a
+run-local home copied from the host `~/.gemini` directory. Baseline runs reject
+global Antigravity/Gemini steering files and customizations:
+
+```text
+~/.gemini/GEMINI.md
+~/.gemini/AGENTS.md
+~/.agents/AGENTS.md
+~/.gemini/antigravity-cli/plugins/*
+~/.gemini/antigravity-cli/skills/*
+```
+
+Antigravity authentication is stored through the desktop Secret Service. The
+runner performs a `secret-tool` preflight before invoking `agy` so missing or
+locked keyrings fail as infrastructure setup issues instead of silently hanging
+inside the agent.
 
 ## Hybrid Docker Execution
 

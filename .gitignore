@@ -21,6 +21,7 @@ coverage/
 # Local environment files.
 .env
 .env.*
+.antigravitycli/
 
 # Temporary files.
 *.log

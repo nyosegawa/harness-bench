@@ -197,6 +197,7 @@ function buildCommand(job, attempt) {
   ];
   if (job.condition.effort) command.push("--effort", job.condition.effort);
   if (job.condition.cursor_config) command.push("--cursorConfig", JSON.stringify(job.condition.cursor_config));
+  if (job.condition.antigravity_config) command.push("--antigravityConfig", JSON.stringify(job.condition.antigravity_config));
   if (job.condition.prompt_template_id) command.push("--promptTemplateId", job.condition.prompt_template_id);
   if (harnessVersionSnapshots[job.condition.harness]) {
     command.push("--harnessVersion", JSON.stringify(harnessVersionSnapshots[job.condition.harness]));
@@ -271,7 +272,6 @@ function runJobAttempt(job, command, attempt) {
 }
 
 function jobResourceKey(job) {
-  if (job.condition?.harness === "cursor" && job.condition.cursor_config) return "agent:cursor-cli-config";
   return `agent:${job.casePath}:${job.condition?.id ?? ""}`;
 }
 
@@ -280,6 +280,7 @@ function loadCompletedAgentPairs(root, id) {
   for (const resultPath of findResultJsons(root)) {
     const result = readResultJson(resultPath);
     if (!result || result.matrix_id !== id || result.mode !== "agent") continue;
+    if (result.invalid_run) continue;
     if (!result.case_id || !result.condition_id) continue;
     completed.add(pairKey(result.case_id, result.condition_id));
   }
@@ -331,6 +332,7 @@ function loadConditions(path) {
     model: required(condition.model, "condition.model is required"),
     effort: condition.effort ?? null,
     cursor_config: condition.cursor_config ?? null,
+    antigravity_config: condition.antigravity_config ?? null,
     prompt_template_id: condition.prompt_template_id ?? data.prompt_template_id ?? null,
   }));
 }
@@ -369,6 +371,7 @@ function harnessBinary(harnessName) {
   if (harnessName === "codex") return "codex";
   if (harnessName === "claude") return "claude";
   if (harnessName === "cursor") return "agent";
+  if (harnessName === "antigravity") return "agy";
   return harnessName;
 }
 
@@ -486,4 +489,3 @@ function fatal(message) {
   console.error(message);
   process.exit(1);
 }
-
