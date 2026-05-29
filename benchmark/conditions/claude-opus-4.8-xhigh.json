@@ -1,0 +1,27 @@
+{
+  "schema_version": 2,
+  "id": "harnessbench-v2-claude-opus-4.8-xhigh",
+  "description": "HarnessBench v2 Claude Code Opus 4.8 xhigh single-sample condition.",
+  "agent_timeout_ms": 3600000,
+  "prompt_template_id": "baseline-v1",
+  "prompt_policy": {
+    "hide_original_pr": true,
+    "hide_fixed_commit": true,
+    "hide_hidden_tests": true,
+    "disable_memory": true,
+    "custom_rules": false,
+    "agent_skills": false
+  },
+  "workspace_policy": {
+    "steering_policy": "remove_upstream_agent_instructions",
+    "git_root_policy": "fresh_sanitized_one_commit_root"
+  },
+  "conditions": [
+    {
+      "id": "claude:claude-opus-4-8:xhigh:baseline",
+      "harness": "claude",
+      "model": "claude-opus-4-8",
+      "effort": "xhigh"
+    }
+  ]
+}
